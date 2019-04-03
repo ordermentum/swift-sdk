@@ -1,0 +1,16 @@
+fastlane/test_output/
+fastlane/report.xml
+Ordermentum/.DS_Store
+Ordermentum/Images/.DS_Store
+.DS_Store
+Pods/
+build/
+vendor/bundle/
+Ordermentum.ipa
+Ordermentum.app.dSYM.zip
+AppStore_com.ordermentum.Ordermentum.mobileprovision
+DG3M6R8DLV.cer
+*.xcuserstate
+*.xcuserstate
+*.xcbkptlist
+*.xcuserdata
