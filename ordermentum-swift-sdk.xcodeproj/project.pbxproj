@@ -58,6 +58,8 @@
 		CAC39CC5225577C300D3099A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC4225577C300D3099A /* AuthService.swift */; };
 		CAC39CC922559AAF00D3099A /* AddOnsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC822559AAF00D3099A /* AddOnsService.swift */; };
 		CAC39CCB22559AC000D3099A /* AddOnsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CCA22559AC000D3099A /* AddOnsRouter.swift */; };
+		CAC39CD12255A55C00D3099A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CD02255A55C00D3099A /* Service.swift */; };
+		CAC39CD32255A99400D3099A /* EmptyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CD22255A99400D3099A /* EmptyDecodable.swift */; };
 		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,8 @@
 		CAC39CC4225577C300D3099A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CAC39CC822559AAF00D3099A /* AddOnsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnsService.swift; sourceTree = "<group>"; };
 		CAC39CCA22559AC000D3099A /* AddOnsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnsRouter.swift; sourceTree = "<group>"; };
+		CAC39CD02255A55C00D3099A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		CAC39CD22255A99400D3099A /* EmptyDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDecodable.swift; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				CA929F96225561A400E957AC /* Client.swift */,
+				CAC39CD02255A55C00D3099A /* Service.swift */,
 				CAC39CC3225572F500D3099A /* Services */,
 				CA929F4222555EFE00E957AC /* Models */,
 				CA929F93225560B100E957AC /* Routers */,
@@ -260,6 +265,7 @@
 				CA929F4622555FA500E957AC /* VenueInvite.swift */,
 				CA929F4922555FA600E957AC /* VenueProfile.swift */,
 				CA929F5422555FA700E957AC /* VenueSearch.swift */,
+				CAC39CD22255A99400D3099A /* EmptyDecodable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 				CA929F7422555FA900E957AC /* Category.swift in Sources */,
 				CA929F6B22555FA900E957AC /* Cart.swift in Sources */,
 				CA929F952255618300E957AC /* AuthRouter.swift in Sources */,
+				CAC39CD32255A99400D3099A /* EmptyDecodable.swift in Sources */,
 				CA929F6D22555FA900E957AC /* Venue.swift in Sources */,
 				CAC39CC22255639D00D3099A /* StringUtils.swift in Sources */,
 				CA929F97225561A400E957AC /* Client.swift in Sources */,
@@ -513,6 +520,7 @@
 				CA929F7322555FA900E957AC /* PaginatedAPIResponse.swift in Sources */,
 				CA929F8022555FA900E957AC /* Profile.swift in Sources */,
 				CA929F8922555FA900E957AC /* Product.swift in Sources */,
+				CAC39CD12255A55C00D3099A /* Service.swift in Sources */,
 				CA929F9022555FA900E957AC /* Insights.swift in Sources */,
 				CA929F8222555FA900E957AC /* Pagination.swift in Sources */,
 				CA929F7622555FA900E957AC /* CreditNotesReponse.swift in Sources */,

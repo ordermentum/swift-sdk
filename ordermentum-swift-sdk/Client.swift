@@ -38,7 +38,6 @@ class Client {
     func getHeaderToken() -> String {
         return String(format: "Bearer: \(token)")
     }
-    
 }
 
 enum ClientURL {
