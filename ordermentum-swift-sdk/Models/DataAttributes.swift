@@ -20,7 +20,7 @@ struct DataAttributesArrays {
     var tradingHours: TradingHours = TradingHours()
 }
 
-struct DataAttributes: Encodable {
+public struct DataAttributes: Encodable {
     var pos: String = ""
     var venue: String = ""
     var banking: String = ""
@@ -29,7 +29,7 @@ struct DataAttributes: Encodable {
     var tradingHours: TradingHours = TradingHours()
 }
 
-struct VenueOperationsUpdate {
+public struct VenueOperationsUpdate: Codable {
     var pos: String = ""
     var banking: String = ""
     var accounting: String = ""
@@ -47,7 +47,7 @@ extension DataAttributesResponse: Decodable {
 }
 
 extension DataAttributes: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

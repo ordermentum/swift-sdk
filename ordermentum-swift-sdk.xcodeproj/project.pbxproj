@@ -12,6 +12,8 @@
 		CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */; };
 		CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */; };
 		CA2F35122255B21500D1118C /* CreditNotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35112255B21500D1118C /* CreditNotesService.swift */; };
+		CA2F35142255BB8400D1118C /* DataAttributesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35132255BB8400D1118C /* DataAttributesService.swift */; };
+		CA2F35162255CFA500D1118C /* DataAttributesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35152255CFA500D1118C /* DataAttributesRouter.swift */; };
 		CA929F3122555DA400E957AC /* ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */; };
 		CA929F3622555DA400E957AC /* ordermentum_swift_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F3522555DA400E957AC /* ordermentum_swift_sdkTests.swift */; };
 		CA929F3822555DA400E957AC /* ordermentum_swift_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,6 +89,8 @@
 		CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosurePeriodsRouter.swift; sourceTree = "<group>"; };
 		CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesRouter.swift; sourceTree = "<group>"; };
 		CA2F35112255B21500D1118C /* CreditNotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesService.swift; sourceTree = "<group>"; };
+		CA2F35132255BB8400D1118C /* DataAttributesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAttributesService.swift; sourceTree = "<group>"; };
+		CA2F35152255CFA500D1118C /* DataAttributesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAttributesRouter.swift; sourceTree = "<group>"; };
 		CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ordermentum_swift_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ordermentum_swift_sdk.h; sourceTree = "<group>"; };
 		CA929F2B22555DA400E957AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 				CA929F942255618300E957AC /* AuthRouter.swift */,
 				CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */,
 				CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */,
+				CA2F35152255CFA500D1118C /* DataAttributesRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				CAC39CC4225577C300D3099A /* AuthService.swift */,
 				CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */,
 				CA2F35112255B21500D1118C /* CreditNotesService.swift */,
+				CA2F35132255BB8400D1118C /* DataAttributesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -504,6 +510,7 @@
 				CA929F97225561A400E957AC /* Client.swift in Sources */,
 				CA929F8522555FA900E957AC /* TradingHours.swift in Sources */,
 				CA929F9122555FA900E957AC /* FindSupplier.swift in Sources */,
+				CA2F35162255CFA500D1118C /* DataAttributesRouter.swift in Sources */,
 				CAC39CC5225577C300D3099A /* AuthService.swift in Sources */,
 				CA929F7922555FA900E957AC /* Image.swift in Sources */,
 				CA929F7522555FA900E957AC /* TrackingKeys.swift in Sources */,
@@ -512,6 +519,7 @@
 				CA929F8722555FA900E957AC /* PaymentMethod.swift in Sources */,
 				CA929F9222555FA900E957AC /* Brand.swift in Sources */,
 				CAC39CC02255632300D3099A /* CodableUtils.swift in Sources */,
+				CA2F35142255BB8400D1118C /* DataAttributesService.swift in Sources */,
 				CA2F35122255B21500D1118C /* CreditNotesService.swift in Sources */,
 				CA929F8F22555FA900E957AC /* Flags.swift in Sources */,
 				CA929F6F22555FA900E957AC /* CodingKeys.swift in Sources */,
