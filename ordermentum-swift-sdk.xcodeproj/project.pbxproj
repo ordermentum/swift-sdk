@@ -10,6 +10,8 @@
 		C2074A538974F92760EEEF61 /* Pods_ordermentum_swift_sdkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4960D35752AB83A29B46414 /* Pods_ordermentum_swift_sdkTests.framework */; };
 		CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */; };
 		CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */; };
+		CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */; };
+		CA2F35122255B21500D1118C /* CreditNotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35112255B21500D1118C /* CreditNotesService.swift */; };
 		CA929F3122555DA400E957AC /* ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */; };
 		CA929F3622555DA400E957AC /* ordermentum_swift_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F3522555DA400E957AC /* ordermentum_swift_sdkTests.swift */; };
 		CA929F3822555DA400E957AC /* ordermentum_swift_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -83,6 +85,8 @@
 		B4960D35752AB83A29B46414 /* Pods_ordermentum_swift_sdkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ordermentum_swift_sdkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesService.swift; sourceTree = "<group>"; };
 		CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosurePeriodsRouter.swift; sourceTree = "<group>"; };
+		CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesRouter.swift; sourceTree = "<group>"; };
+		CA2F35112255B21500D1118C /* CreditNotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesService.swift; sourceTree = "<group>"; };
 		CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ordermentum_swift_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ordermentum_swift_sdk.h; sourceTree = "<group>"; };
 		CA929F2B22555DA400E957AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 				CAC39CCA22559AC000D3099A /* AddOnsRouter.swift */,
 				CA929F942255618300E957AC /* AuthRouter.swift */,
 				CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */,
+				CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				CAC39CC822559AAF00D3099A /* AddOnsService.swift */,
 				CAC39CC4225577C300D3099A /* AuthService.swift */,
 				CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */,
+				CA2F35112255B21500D1118C /* CreditNotesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 				CA929F8722555FA900E957AC /* PaymentMethod.swift in Sources */,
 				CA929F9222555FA900E957AC /* Brand.swift in Sources */,
 				CAC39CC02255632300D3099A /* CodableUtils.swift in Sources */,
+				CA2F35122255B21500D1118C /* CreditNotesService.swift in Sources */,
 				CA929F8F22555FA900E957AC /* Flags.swift in Sources */,
 				CA929F6F22555FA900E957AC /* CodingKeys.swift in Sources */,
 				CA929F8622555FA900E957AC /* Auth.swift in Sources */,
@@ -527,6 +534,7 @@
 				CA929F8C22555FA900E957AC /* Error.swift in Sources */,
 				CA929F7322555FA900E957AC /* PaginatedAPIResponse.swift in Sources */,
 				CA929F8022555FA900E957AC /* Profile.swift in Sources */,
+				CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */,
 				CA929F8922555FA900E957AC /* Product.swift in Sources */,
 				CAC39CD12255A55C00D3099A /* Service.swift in Sources */,
 				CA929F9022555FA900E957AC /* Insights.swift in Sources */,
