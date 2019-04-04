@@ -9,11 +9,7 @@
 import Foundation
 import Alamofire
 
-class AuthService: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+class AuthService {
     /**
      * Login to the Ordermentum service.
      * Returns a Login object
