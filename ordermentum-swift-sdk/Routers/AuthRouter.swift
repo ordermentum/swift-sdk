@@ -11,54 +11,79 @@ import Alamofire
 
 public enum AuthRouter: URLRequestConvertible {
     //Routes
-    case content
-    case tags(String)
-    case colors(String)
+    case login(LoginRequest)
+    case requestPasswordReset(ForgotPasswordRequest)
+    case changePassword(String, ChangePasswordRequest)
+    case resetPassword(String)
     
-    // 3
+    //Methods
     var method: HTTPMethod {
         switch self {
-        case .content:
+        case .login:
             return .post
-        case .tags, .colors:
+        case .requestPasswordReset:
             return .get
+        case .changePassword:
+            return .patch
+        case .resetPassword:
+            return .put
         }
     }
     
-    // 4
+    //Paths
     var path: String {
         switch self {
-        case .content:
-            return "/content"
-        case .tags:
-            return "/tagging"
-        case .colors:
-            return "/colors"
+        case .login:
+            return "auth"
+        case .requestPasswordReset:
+            return "user/password"
+        case .changePassword(let userId):
+            return "users/\(userId)/password"
+        case .resetPassword:
+            return "user/password"
         }
     }
     
-    // 5
+    //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .tags(let contentID):
-            return ["content": contentID]
-        case .colors(let contentID):
-            return ["content": contentID, "extract_object_colors": 0]
+        case .resetPassword(let resetToken):
+            return ["password_reset_token": resetToken]
         default:
             return [:]
         }
     }
     
-    // 6
+    //Body
+    var body: Codable? {
+        switch self {
+        case .login(let requestObject):
+            return requestObject
+        case .requestPasswordReset(let requestObject):
+            return requestObject
+        case .changePassword(_, let requestObject):
+            return requestObject
+        default:
+            return nil
+        }
+    }
+    
+    //Builder
     public func asURLRequest() throws -> URLRequest {
-        //Create URL
-        let url = try Client.instance.getBaseURL().asURL()
+        //Setup Data
+        let url = try Client.instance.baseURL.asURL()
+        let timeoutSeconds: Int = 10
         
         //Build Request
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.setValue(Client.instance.getHeaderToken(), forHTTPHeaderField: "Authorization")
-        request.timeoutInterval = TimeInterval(10 * 1000)
+        request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
+        
+        //Set Conditional Body
+        if body != nil {
+            request.httpBody = body?.toJSONData()
+        }
         
         return try URLEncoding.default.encode(request, with: parameters)
     }

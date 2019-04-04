@@ -7,16 +7,18 @@
 //
 
 import Foundation
+import Alamofire
 
 class Client {
     //Data
-    private var baseURL: String = ""
-    private var token: String = ""
+    var baseURL: String = ""
+    var token: String = ""
     
     //Private Init to Stop Re-Initialisation
     private init() {}
     static let instance = Client()
     
+    // MARK: Convenience Methods
     func setProductionURL() {
         baseURL = ClientURL.rootURL
     }
@@ -33,17 +35,10 @@ class Client {
         token = tokenString
     }
     
-    func getBaseURL() -> String {
-        return baseURL
-    }
-    
-    func getRawToken() -> String {
-        return token
-    }
-    
     func getHeaderToken() -> String {
         return String(format: "Bearer: \(token)")
     }
+    
 }
 
 enum ClientURL {

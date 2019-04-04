@@ -55,6 +55,7 @@
 		CA929F97225561A400E957AC /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F96225561A400E957AC /* Client.swift */; };
 		CAC39CC02255632300D3099A /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CBF2255632300D3099A /* CodableUtils.swift */; };
 		CAC39CC22255639D00D3099A /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC12255639D00D3099A /* StringUtils.swift */; };
+		CAC39CC5225577C300D3099A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC4225577C300D3099A /* AuthService.swift */; };
 		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		CA929F96225561A400E957AC /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		CAC39CBF2255632300D3099A /* CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUtils.swift; sourceTree = "<group>"; };
 		CAC39CC12255639D00D3099A /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		CAC39CC4225577C300D3099A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,8 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				CA929F96225561A400E957AC /* Client.swift */,
-				CA929F93225560B100E957AC /* Routers */,
+				CAC39CC3225572F500D3099A /* Services */,
 				CA929F4222555EFE00E957AC /* Models */,
+				CA929F93225560B100E957AC /* Routers */,
 				CAC39CBE2255630E00D3099A /* Utilities */,
 				CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */,
 				CA929F2B22555DA400E957AC /* Info.plist */,
@@ -272,6 +275,14 @@
 				CAC39CC12255639D00D3099A /* StringUtils.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CAC39CC3225572F500D3099A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CAC39CC4225577C300D3099A /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +478,7 @@
 				CA929F97225561A400E957AC /* Client.swift in Sources */,
 				CA929F8522555FA900E957AC /* TradingHours.swift in Sources */,
 				CA929F9122555FA900E957AC /* FindSupplier.swift in Sources */,
+				CAC39CC5225577C300D3099A /* AuthService.swift in Sources */,
 				CA929F7922555FA900E957AC /* Image.swift in Sources */,
 				CA929F7522555FA900E957AC /* TrackingKeys.swift in Sources */,
 				CA929F7C22555FA900E957AC /* VenueSearch.swift in Sources */,

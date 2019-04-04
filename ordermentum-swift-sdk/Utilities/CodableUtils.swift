@@ -82,6 +82,10 @@ extension Encodable {
         }
         return data.utf8String()
     }
+    
+    func toJSONData() -> Data? {
+        return try? JSONEncoder().encode(self)
+    }
 }
 
 extension Decodable {

@@ -13,12 +13,12 @@ struct Login: Codable {
     var token_type: String = ""
 }
 
-struct LoginRequest: Codable {
+public struct LoginRequest: Codable {
     var username: String = ""
     var password: String = ""
 }
 
-struct ForgotPasswordRequest: Codable {
+public struct ForgotPasswordRequest: Codable {
     var email: String = ""
 }
 
@@ -27,7 +27,7 @@ struct ChangePassword: Codable {
     var message: String = ""
 }
 
-struct ChangePasswordRequest: Codable {
+public struct ChangePasswordRequest: Codable {
     var userId: String = ""
     var oldPassword: String = ""
     var password: String = ""
