@@ -14,7 +14,7 @@ struct ClosurePeriodsResponse {
     var data: [ClosurePeriod] = []
 }
 
-struct ClosurePeriod {
+public struct ClosurePeriod: Encodable {
     var id: String = ""
     var name: String = ""
     var userId: String = ""
@@ -36,7 +36,7 @@ extension ClosurePeriodsResponse: Decodable {
 }
 
 extension ClosurePeriod: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

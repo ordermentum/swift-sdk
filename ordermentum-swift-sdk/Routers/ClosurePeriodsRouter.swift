@@ -1,5 +1,5 @@
 //
-//  AuthRouter.swift
+//  ClosurePeriodsRouter.swift
 //  ordermentum-swift-sdk
 //
 //  Created by Brandon Stillitano on 4/4/19.
@@ -9,46 +9,46 @@
 import Foundation
 import Alamofire
 
-public enum AuthRouter: URLRequestConvertible {
+public enum ClosurePeriodsRouter: URLRequestConvertible {
     //Routes
-    case login(LoginRequest)
-    case requestPasswordReset(ForgotPasswordRequest)
-    case changePassword(String, ChangePasswordRequest)
-    case resetPassword(String)
+    case getClosurePeriods(String, Int, Int)
+    case createClosurePeriod(ClosurePeriod)
+    case updateClosurePeriod(String, ClosurePeriod)
+    case deleteClosurePeriod(String)
     
     //Methods
     var method: HTTPMethod {
         switch self {
-        case .login:
-            return .post
-        case .requestPasswordReset:
+        case .getClosurePeriods:
             return .get
-        case .changePassword:
-            return .patch
-        case .resetPassword:
+        case .createClosurePeriod:
+            return .post
+        case .updateClosurePeriod:
             return .put
+        case .deleteClosurePeriod:
+            return .delete
         }
     }
     
     //Paths
     var path: String {
         switch self {
-        case .login:
-            return "auth"
-        case .requestPasswordReset:
-            return "user/password"
-        case .changePassword(let userId, _):
-            return "users/\(userId)/password"
-        case .resetPassword:
-            return "user/password"
+        case .getClosurePeriods:
+            return "closure-periods"
+        case .createClosurePeriod:
+            return "closure-periods"
+        case .updateClosurePeriod(let closurePeriodId, _):
+            return "closure-periods/\(closurePeriodId)"
+        case .deleteClosurePeriod(let closurePeriodId):
+            return "closure-periods/\(closurePeriodId)"
         }
     }
     
     //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .resetPassword(let resetToken):
-            return ["password_reset_token": resetToken]
+        case .getClosurePeriods(let retailerId, let pageSize, let pageNo):
+            return ["retailerId": retailerId, "pageSize": pageSize, "pageNo": pageNo]
         default:
             return [:]
         }
@@ -57,11 +57,9 @@ public enum AuthRouter: URLRequestConvertible {
     //Body
     var body: Codable? {
         switch self {
-        case .login(let requestObject):
+        case .createClosurePeriod(let requestObject):
             return requestObject
-        case .requestPasswordReset(let requestObject):
-            return requestObject
-        case .changePassword(_, let requestObject):
+        case .updateClosurePeriod(_, let requestObject):
             return requestObject
         default:
             return nil
