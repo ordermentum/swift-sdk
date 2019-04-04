@@ -56,6 +56,8 @@
 		CAC39CC02255632300D3099A /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CBF2255632300D3099A /* CodableUtils.swift */; };
 		CAC39CC22255639D00D3099A /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC12255639D00D3099A /* StringUtils.swift */; };
 		CAC39CC5225577C300D3099A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC4225577C300D3099A /* AuthService.swift */; };
+		CAC39CC922559AAF00D3099A /* AddOnsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC822559AAF00D3099A /* AddOnsService.swift */; };
+		CAC39CCB22559AC000D3099A /* AddOnsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CCA22559AC000D3099A /* AddOnsRouter.swift */; };
 		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +128,8 @@
 		CAC39CBF2255632300D3099A /* CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUtils.swift; sourceTree = "<group>"; };
 		CAC39CC12255639D00D3099A /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		CAC39CC4225577C300D3099A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CAC39CC822559AAF00D3099A /* AddOnsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnsService.swift; sourceTree = "<group>"; };
+		CAC39CCA22559AC000D3099A /* AddOnsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnsRouter.swift; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -263,6 +267,7 @@
 		CA929F93225560B100E957AC /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				CAC39CCA22559AC000D3099A /* AddOnsRouter.swift */,
 				CA929F942255618300E957AC /* AuthRouter.swift */,
 			);
 			path = Routers;
@@ -280,6 +285,7 @@
 		CAC39CC3225572F500D3099A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CAC39CC822559AAF00D3099A /* AddOnsService.swift */,
 				CAC39CC4225577C300D3099A /* AuthService.swift */,
 			);
 			path = Services;
@@ -498,7 +504,9 @@
 				CA929F8322555FA900E957AC /* Marketplace.swift in Sources */,
 				CA929F8422555FA900E957AC /* AddOns.swift in Sources */,
 				CA929F7022555FA900E957AC /* Payment.swift in Sources */,
+				CAC39CC922559AAF00D3099A /* AddOnsService.swift in Sources */,
 				CA929F6C22555FA900E957AC /* Supplier.swift in Sources */,
+				CAC39CCB22559AC000D3099A /* AddOnsRouter.swift in Sources */,
 				CA929F7722555FA900E957AC /* Purchaser.swift in Sources */,
 				CA929F8122555FA900E957AC /* ClosurePeriod.swift in Sources */,
 				CA929F8C22555FA900E957AC /* Error.swift in Sources */,

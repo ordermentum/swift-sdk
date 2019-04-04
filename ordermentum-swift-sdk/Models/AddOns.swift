@@ -53,12 +53,12 @@ struct AddOnsDiscoverLinks {
     var connect: String = ""
 }
 
-struct AddOnUpdateObject {
+public struct AddOnUpdateObject: Codable {
     var accountId: String = ""
     var expenseAccountCode: String = ""
 }
 
-struct AddOnDisconnectObject {
+public struct AddOnDisconnectObject: Codable {
     var accountId: String = ""
 }
 
