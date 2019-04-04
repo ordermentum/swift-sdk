@@ -17,7 +17,7 @@ class Service<D: Decodable> {
                 case .success:
                     do {
                         guard let responseData = response.data else {
-                            completion(true, nil)
+                            completion(false, nil)
                             return
                         }
                         let responseObject = try JSONSerialization.jsonObject(with: responseData) as? D
