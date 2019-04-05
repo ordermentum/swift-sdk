@@ -14,7 +14,7 @@ struct FindSupplierResponse {
     var data: [FindSupplierData] = []
 }
 
-struct FindSupplierRequest: Codable {
+public struct FindSupplierRequest: Codable {
     var retailerId: String = ""
     var supplierId: String = ""
     var message: String = ""
@@ -22,7 +22,7 @@ struct FindSupplierRequest: Codable {
     var isTrading: Bool = false
 }
 
-struct FindSupplierReferralRequest {
+public struct FindSupplierReferralRequest: Codable {
     var email: String = ""
     var retailerId: String = ""
     var name: String = ""

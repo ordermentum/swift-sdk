@@ -1,5 +1,5 @@
 //
-//  ExperimentsRouter.swift
+//  FindSupplierRouter.swift
 //  ordermentum-swift-sdk
 //
 //  Created by Brandon Stillitano on 5/4/19.
@@ -9,17 +9,20 @@
 import Foundation
 import Alamofire
 
-public enum ExperimentsRouter: URLRequestConvertible {
+public enum FindSupplierRouter: URLRequestConvertible {
     //Routes
-    case getExperiments(String, String, String, String, Bool, String, [String])
-    case dismissExperiment(ExperimentsDismissRequest)
+    case getSuppliers(String, Int)
+    case sendSupplierEnquiry(FindSupplierRequest)
+    case sendSupplierReferral(FindSupplierReferralRequest)
     
     //Methods
     var method: HTTPMethod {
         switch self {
-        case .getExperiments:
+        case .getSuppliers:
             return .get
-        case .dismissExperiment:
+        case .sendSupplierEnquiry:
+            return .post
+        case .sendSupplierReferral:
             return .post
         }
     }
@@ -27,18 +30,20 @@ public enum ExperimentsRouter: URLRequestConvertible {
     //Paths
     var path: String {
         switch self {
-        case .getExperiments:
-            return "experiments/discover"
-        case .dismissExperiment:
-            return "experiments/dismiss"
+        case .getSuppliers:
+            return "suppliers/directory"
+        case .sendSupplierEnquiry:
+            return "suppliers/enquiry"
+        case .sendSupplierReferral:
+            return "suppliers/referral"
         }
     }
     
     //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .getExperiments(let slot, let source, let version, let retailerId, let isRetailer, let userId, let supplierId):
-            return ["slot": slot, "source": source, "version": version, "retailerId": retailerId, "isRetailer": isRetailer, "userId": userId, "supplierId[]": supplierId]
+        case .getSuppliers(let searchString, let pageSize):
+            return ["search": searchString, "pageSize": pageSize]
         default:
             return [:]
         }
@@ -47,7 +52,9 @@ public enum ExperimentsRouter: URLRequestConvertible {
     //Body
     var body: Codable? {
         switch self {
-        case .dismissExperiment(let requestObject):
+        case .sendSupplierEnquiry(let requestObject):
+            return requestObject
+        case .sendSupplierReferral(let requestObject):
             return requestObject
         default:
             return nil
