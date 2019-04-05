@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 extension KeyedDecodingContainer {
     func safeIntDecode(forKey key: K) throws -> Int? {
@@ -85,6 +86,27 @@ extension Encodable {
     
     func toJSONData() -> Data? {
         return try? JSONEncoder().encode(self)
+    }
+    
+    func asDictionary() throws -> [String: Any] {
+        let data = try JSONEncoder().encode(self)
+        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+            throw NSError()
+        }
+        return dictionary
+    }
+    
+    func toParameters() -> Parameters {
+        //Setup Data
+        var parametersDictionary: Parameters = Parameters()
+        let codableDictionary = try? self.asDictionary()
+        
+        //Iterrate Codable
+        for value in codableDictionary ?? [:] {
+            parametersDictionary[value.key] = value.value
+        }
+        
+        return parametersDictionary
     }
 }
 

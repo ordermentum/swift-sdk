@@ -49,21 +49,6 @@ public enum CreditNotesRouter: URLRequestConvertible {
     
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        //Setup Data
-        let url = try Client.instance.baseURL.asURL()
-        let timeoutSeconds: Int = 10
-        
-        //Build Request
-        var request = URLRequest(url: url.appendingPathComponent(path))
-        request.httpMethod = method.rawValue
-        request.setValue(Client.instance.getHeaderToken(), forHTTPHeaderField: "Authorization")
-        request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
-        
-        //Set Conditional Body
-        if body != nil {
-            request.httpBody = body?.toJSONData()
-        }
-        
-        return try URLEncoding.default.encode(request, with: parameters)
+        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }

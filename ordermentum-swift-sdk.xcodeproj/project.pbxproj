@@ -22,8 +22,8 @@
 		CA2F35222256D81C00D1118C /* ExperimentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35212256D81C00D1118C /* ExperimentsService.swift */; };
 		CA2F35242256DA1100D1118C /* FindSupplierRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35232256DA1100D1118C /* FindSupplierRouter.swift */; };
 		CA2F35262256DDE700D1118C /* FindSupplierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35252256DDE700D1118C /* FindSupplierService.swift */; };
+		CA2F35282256E5E800D1118C /* FlagsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35272256E5E800D1118C /* FlagsRouter.swift */; };
 		CA929F3122555DA400E957AC /* ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */; };
-		CA929F3622555DA400E957AC /* ordermentum_swift_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F3522555DA400E957AC /* ordermentum_swift_sdkTests.swift */; };
 		CA929F3822555DA400E957AC /* ordermentum_swift_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA929F6B22555FA900E957AC /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4322555FA500E957AC /* Cart.swift */; };
 		CA929F6C22555FA900E957AC /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4422555FA500E957AC /* Supplier.swift */; };
@@ -107,11 +107,11 @@
 		CA2F35212256D81C00D1118C /* ExperimentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentsService.swift; sourceTree = "<group>"; };
 		CA2F35232256DA1100D1118C /* FindSupplierRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSupplierRouter.swift; sourceTree = "<group>"; };
 		CA2F35252256DDE700D1118C /* FindSupplierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSupplierService.swift; sourceTree = "<group>"; };
+		CA2F35272256E5E800D1118C /* FlagsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsRouter.swift; sourceTree = "<group>"; };
 		CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ordermentum_swift_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ordermentum_swift_sdk.h; sourceTree = "<group>"; };
 		CA929F2B22555DA400E957AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA929F3022555DA400E957AC /* ordermentum-swift-sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ordermentum-swift-sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA929F3522555DA400E957AC /* ordermentum_swift_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ordermentum_swift_sdkTests.swift; sourceTree = "<group>"; };
 		CA929F3722555DA400E957AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA929F4322555FA500E957AC /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		CA929F4422555FA500E957AC /* Supplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supplier.swift; sourceTree = "<group>"; };
@@ -244,7 +244,6 @@
 		CA929F3422555DA400E957AC /* ordermentum-swift-sdkTests */ = {
 			isa = PBXGroup;
 			children = (
-				CA929F3522555DA400E957AC /* ordermentum_swift_sdkTests.swift */,
 				CA2F35172255D2BD00D1118C /* AuthServiceTests.swift */,
 				CA929F3722555DA400E957AC /* Info.plist */,
 			);
@@ -311,6 +310,7 @@
 				CA2F35192256CDDE00D1118C /* DeviceRouter.swift */,
 				CA2F351F2256D1CB00D1118C /* ExperimentsRouter.swift */,
 				CA2F35232256DA1100D1118C /* FindSupplierRouter.swift */,
+				CA2F35272256E5E800D1118C /* FlagsRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -551,6 +551,7 @@
 				CA929F8F22555FA900E957AC /* Flags.swift in Sources */,
 				CA929F6F22555FA900E957AC /* CodingKeys.swift in Sources */,
 				CA929F8622555FA900E957AC /* Auth.swift in Sources */,
+				CA2F35282256E5E800D1118C /* FlagsRouter.swift in Sources */,
 				CA929F7822555FA900E957AC /* Address.swift in Sources */,
 				CA929F8B22555FA900E957AC /* Order.swift in Sources */,
 				CA929F7F22555FA900E957AC /* AccountSettings.swift in Sources */,
@@ -589,7 +590,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA929F3622555DA400E957AC /* ordermentum_swift_sdkTests.swift in Sources */,
 				CA2F35182255D2BD00D1118C /* AuthServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

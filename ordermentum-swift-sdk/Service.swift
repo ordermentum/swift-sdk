@@ -20,7 +20,7 @@ class Service<D: Decodable> {
                             completion(false, nil)
                             return
                         }
-                        let responseObject = try JSONSerialization.jsonObject(with: responseData) as? D
+                        let responseObject = try JSONDecoder().decode(D.self, from: responseData)
                         completion(true, responseObject)
                     } catch {
                         completion(false, nil)

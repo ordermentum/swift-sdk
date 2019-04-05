@@ -26,14 +26,22 @@ class AuthServiceTests: XCTestCase {
     }
     
     func testLogin() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+
         //Build Login Object
         var loginRequest: LoginRequest = LoginRequest()
         loginRequest.username = "username"
         loginRequest.password = "password"
         
         //Call API
+        Client.instance.setProductionURL()
         AuthService().login(requestObject: loginRequest) { (result, loginObject) in
-            XCTAssertTrue(result)
+            XCTAssertNotNil(loginObject?.access_token)
+            expectation.fulfill()
         }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
 }

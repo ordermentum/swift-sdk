@@ -38,6 +38,27 @@ class Client {
     func getHeaderToken() -> String {
         return String(format: "Bearer: \(token)")
     }
+    
+    func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?) throws ->  URLRequest {
+        //Setup Data
+        let url = try baseURL.asURL()
+        let timeoutSeconds: Int = 10
+        
+        //Build Request
+        var request = URLRequest(url: url.appendingPathComponent(path))
+        request.httpMethod = method.rawValue
+        request.setValue(getHeaderToken(), forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
+        
+        //Set Conditional Body
+        switch method {
+        case .get:
+            return try URLEncoding.default.encode(request, with: parameters)
+        default:
+            return try JSONEncoding.default.encode(request, with: body?.toParameters())
+        }
+    }
 }
 
 enum ClientURL {
