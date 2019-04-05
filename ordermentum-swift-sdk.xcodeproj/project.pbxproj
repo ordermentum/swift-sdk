@@ -18,6 +18,8 @@
 		CA2F351A2256CDDE00D1118C /* DeviceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35192256CDDE00D1118C /* DeviceRouter.swift */; };
 		CA2F351C2256CE2E00D1118C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F351B2256CE2E00D1118C /* Device.swift */; };
 		CA2F351E2256CF9A00D1118C /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F351D2256CF9A00D1118C /* DeviceService.swift */; };
+		CA2F35202256D1CB00D1118C /* ExperimentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F351F2256D1CB00D1118C /* ExperimentsRouter.swift */; };
+		CA2F35222256D81C00D1118C /* ExperimentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35212256D81C00D1118C /* ExperimentsService.swift */; };
 		CA929F3122555DA400E957AC /* ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */; };
 		CA929F3622555DA400E957AC /* ordermentum_swift_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F3522555DA400E957AC /* ordermentum_swift_sdkTests.swift */; };
 		CA929F3822555DA400E957AC /* ordermentum_swift_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -99,6 +101,8 @@
 		CA2F35192256CDDE00D1118C /* DeviceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRouter.swift; sourceTree = "<group>"; };
 		CA2F351B2256CE2E00D1118C /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		CA2F351D2256CF9A00D1118C /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
+		CA2F351F2256D1CB00D1118C /* ExperimentsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentsRouter.swift; sourceTree = "<group>"; };
+		CA2F35212256D81C00D1118C /* ExperimentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentsService.swift; sourceTree = "<group>"; };
 		CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ordermentum_swift_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ordermentum_swift_sdk.h; sourceTree = "<group>"; };
 		CA929F2B22555DA400E957AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 				CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */,
 				CA2F35152255CFA500D1118C /* DataAttributesRouter.swift */,
 				CA2F35192256CDDE00D1118C /* DeviceRouter.swift */,
+				CA2F351F2256D1CB00D1118C /* ExperimentsRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				CA2F35112255B21500D1118C /* CreditNotesService.swift */,
 				CA2F35132255BB8400D1118C /* DataAttributesService.swift */,
 				CA2F351D2256CF9A00D1118C /* DeviceService.swift */,
+				CA2F35212256D81C00D1118C /* ExperimentsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 				CA929F8A22555FA900E957AC /* Experiments.swift in Sources */,
 				CA929F7E22555FA900E957AC /* DataAttributes.swift in Sources */,
 				CA929F7A22555FA900E957AC /* Notify.swift in Sources */,
+				CA2F35202256D1CB00D1118C /* ExperimentsRouter.swift in Sources */,
 				CA929F7222555FA900E957AC /* Projection.swift in Sources */,
 				CA929F7422555FA900E957AC /* Category.swift in Sources */,
 				CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */,
@@ -551,6 +558,7 @@
 				CA929F6C22555FA900E957AC /* Supplier.swift in Sources */,
 				CAC39CCB22559AC000D3099A /* AddOnsRouter.swift in Sources */,
 				CA929F7722555FA900E957AC /* Purchaser.swift in Sources */,
+				CA2F35222256D81C00D1118C /* ExperimentsService.swift in Sources */,
 				CA929F8122555FA900E957AC /* ClosurePeriod.swift in Sources */,
 				CA929F8C22555FA900E957AC /* Error.swift in Sources */,
 				CA929F7322555FA900E957AC /* PaginatedAPIResponse.swift in Sources */,

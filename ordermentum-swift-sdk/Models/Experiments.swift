@@ -19,7 +19,7 @@ struct ExperimentsData {
     var meta: [String: String] = [:]
 }
 
-struct ExperimentsDismissRequest {
+public struct ExperimentsDismissRequest: Encodable {
     var userId: String = ""
     var experimentId: String = ""
 }
@@ -48,12 +48,12 @@ extension ExperimentsData: Decodable {
 }
 
 extension ExperimentsDismissRequest: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        userId = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        userId = try container.decodeIfPresent(String.self, forKey: .userId) ?? ""
         experimentId = try container.decodeIfPresent(String.self, forKey: .experimentId) ?? ""
     }
 }
