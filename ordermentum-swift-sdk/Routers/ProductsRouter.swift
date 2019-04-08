@@ -1,0 +1,87 @@
+//
+//  ProductsRouter.swift
+//  ordermentum-swift-sdk
+//
+//  Created by Brandon Stillitano on 8/4/19.
+//  Copyright © 2019 Ordermentum. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+
+public enum ProductsRouter: URLRequestConvertible {
+    //Routes
+    case getProductCategories(String, String, Int, Int)
+    case getProducts(String, String, String, Bool, Int, Int)
+    case getMostOrderedProducts(String, String, Bool, Int, Int)
+    case getTrendingProducts(String, String, Bool, Int, Int)
+    case getRecommendedProducts(String, String, Int, [String])
+    case searchProducts(String, String, Bool, Int)
+
+    //Methods
+    var method: HTTPMethod {
+        switch self {
+        case .getProductCategories:
+            return .get
+        case .getProducts:
+            return .get
+        case .getMostOrderedProducts:
+            return .get
+        case .getTrendingProducts:
+            return .get
+        case .getRecommendedProducts:
+            return .get
+        case .searchProducts:
+            return .get
+        }
+    }
+    
+    //Paths
+    var path: String {
+        switch self {
+        case .getProductCategories:
+            return "categories"
+        case .getProducts:
+            return "products"
+        case .getMostOrderedProducts:
+            return "products/most-ordered"
+        case .getTrendingProducts:
+            return "products/trending"
+        case .getRecommendedProducts:
+            return "products/recommendations"
+        case .searchProducts:
+            return "products"
+        }
+    }
+    
+    //Parameters
+    var parameters: [String: Any] {
+        switch self {
+        case .getProductCategories(let retailerId, let supplierId, let pageSize, let pageNo):
+            return ["retailerId": retailerId, "supplierId": supplierId, "pageSize": pageSize, "pageNo": pageNo]
+        case .getProducts(let categoryId, let retailerId, let supplierId, let visible, let pageSize, let pageNo):
+            return ["categoryId": categoryId, "retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize, "pageNo": pageNo]
+        case .getMostOrderedProducts(let retailerId, let supplierId, let visible, let pageSize, let pageNo):
+            return ["retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize, "pageNo": pageNo]
+        case .getTrendingProducts(let retailerId, let supplierId, let visible, let pageSize, let pageNo):
+            return ["retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize, "pageNo": pageNo]
+        case .getRecommendedProducts(let retailerId, let supplierId, let pageSize, let productsArray):
+            return ["retailerId": retailerId, "supplierId": supplierId, "pageSize": pageSize, "id__not": productsArray]
+        case .searchProducts(let search, let supplierId, let visible, let pageSize):
+            return ["search": search, "supplierId": supplierId, "visible": visible, "pageSize": pageSize]
+        }
+    }
+    
+    //Body
+    var body: Codable? {
+        switch self {
+        default:
+            return nil
+        }
+    }
+    
+    //Builder
+    public func asURLRequest() throws -> URLRequest {
+        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
+    }
+}
