@@ -9,7 +9,7 @@
 import Foundation
 
 /** Request **/
-struct ValidationRequestBody: Codable {
+public struct ValidationRequestBody: Codable {
     var deliveryDate: String = ""
     var lineItems: [ValidationRequestBodyLineItem] = []
     var retailerId: String = ""
