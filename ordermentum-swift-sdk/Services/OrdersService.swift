@@ -28,7 +28,7 @@ class OrdersService {
      * Create an order for a retailer
      * Returns an Order
      */
-    func submitStandingORder(requestObject: CreateStandingOrder, completion: @escaping (Bool, Order?) -> ()) {
+    func submitStandingOrder(requestObject: CreateStandingOrder, completion: @escaping (Bool, Order?) -> ()) {
         //Build Route
         let route = OrdersRouter.submitStandingOrder(requestObject) as URLRequestConvertible
         

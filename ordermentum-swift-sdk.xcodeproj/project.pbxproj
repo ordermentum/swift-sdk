@@ -94,6 +94,7 @@
 		CAF2469E225B6F1E00EDAF68 /* NotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2469D225B6F1E00EDAF68 /* NotifyService.swift */; };
 		CAF246A0225B6F9400EDAF68 /* NPSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2469F225B6F9400EDAF68 /* NPSService.swift */; };
 		CAF246A2225B705C00EDAF68 /* OrdersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246A1225B705C00EDAF68 /* OrdersService.swift */; };
+		CAF246A4225C128700EDAF68 /* PaymentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246A3225C128700EDAF68 /* PaymentsService.swift */; };
 		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +203,7 @@
 		CAF2469D225B6F1E00EDAF68 /* NotifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyService.swift; sourceTree = "<group>"; };
 		CAF2469F225B6F9400EDAF68 /* NPSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPSService.swift; sourceTree = "<group>"; };
 		CAF246A1225B705C00EDAF68 /* OrdersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersService.swift; sourceTree = "<group>"; };
+		CAF246A3225C128700EDAF68 /* PaymentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsService.swift; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -395,6 +397,7 @@
 				CAF2469D225B6F1E00EDAF68 /* NotifyService.swift */,
 				CAF2469F225B6F9400EDAF68 /* NPSService.swift */,
 				CAF246A1225B705C00EDAF68 /* OrdersService.swift */,
+				CAF246A3225C128700EDAF68 /* PaymentsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				CA2F35142255BB8400D1118C /* DataAttributesService.swift in Sources */,
 				CAF24684225AE7D900EDAF68 /* NPSRouter.swift in Sources */,
 				CA2F35122255B21500D1118C /* CreditNotesService.swift in Sources */,
+				CAF246A4225C128700EDAF68 /* PaymentsService.swift in Sources */,
 				CA929F8F22555FA900E957AC /* Flags.swift in Sources */,
 				CAF24698225B24CC00EDAF68 /* InvoiceService.swift in Sources */,
 				CA929F6F22555FA900E957AC /* CodingKeys.swift in Sources */,
