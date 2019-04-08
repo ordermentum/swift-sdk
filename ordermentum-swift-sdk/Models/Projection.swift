@@ -60,6 +60,16 @@ struct SingleProjection {
     var color: String = ""
 }
 
+public struct ProjectionDeleteRequest: Codable {
+    var place: Bool = false
+    var retailerId: String = ""
+    var supplierId: String = ""
+}
+
+public struct ProjectionReinstateRequest: Codable {
+    var date: String = ""
+}
+
 extension ProjectionsResponse: Decodable {
     init(from decoder: Decoder) throws {
         //Create Container
@@ -165,3 +175,4 @@ extension SingleProjection {
         }
     }
 }
+
