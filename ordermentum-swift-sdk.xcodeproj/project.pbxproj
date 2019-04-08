@@ -89,6 +89,7 @@
 		CAF24694225B1B2000EDAF68 /* VenueRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24693225B1B2000EDAF68 /* VenueRouter.swift */; };
 		CAF24696225B22D800EDAF68 /* FlagsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24695225B22D800EDAF68 /* FlagsService.swift */; };
 		CAF24698225B24CC00EDAF68 /* InvoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24697225B24CC00EDAF68 /* InvoiceService.swift */; };
+		CAF2469A225B25F000EDAF68 /* MarketplaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24699225B25EF00EDAF68 /* MarketplaceService.swift */; };
 		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -192,6 +193,7 @@
 		CAF24693225B1B2000EDAF68 /* VenueRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueRouter.swift; sourceTree = "<group>"; };
 		CAF24695225B22D800EDAF68 /* FlagsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsService.swift; sourceTree = "<group>"; };
 		CAF24697225B24CC00EDAF68 /* InvoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceService.swift; sourceTree = "<group>"; };
+		CAF24699225B25EF00EDAF68 /* MarketplaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceService.swift; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -380,6 +382,7 @@
 				CA2F35252256DDE700D1118C /* FindSupplierService.swift */,
 				CAF24695225B22D800EDAF68 /* FlagsService.swift */,
 				CAF24697225B24CC00EDAF68 /* InvoiceService.swift */,
+				CAF24699225B25EF00EDAF68 /* MarketplaceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				CA929F8122555FA900E957AC /* ClosurePeriod.swift in Sources */,
 				CA4CF2E9225AE089006F18C8 /* NotifyRouter.swift in Sources */,
 				CA929F8C22555FA900E957AC /* Error.swift in Sources */,
+				CAF2469A225B25F000EDAF68 /* MarketplaceService.swift in Sources */,
 				CA929F7322555FA900E957AC /* PaginatedAPIResponse.swift in Sources */,
 				CA929F8022555FA900E957AC /* Profile.swift in Sources */,
 				CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */,
