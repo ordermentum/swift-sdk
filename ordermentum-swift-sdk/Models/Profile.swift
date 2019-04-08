@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserProfile {
+public struct UserProfile: Codable {
     var userId: String = ""
     var permissions: [String] = []
     var roles: Roles = Roles()
@@ -32,35 +32,35 @@ struct UserProfile {
     var verifiedAt: String = ""
 }
 
-struct Settings: Encodable {
+public struct Settings: Codable {
     var accessNewRetailerUi: Bool = false
 }
 
-struct Roles {
+public struct Roles: Codable {
     var superAdmin: Bool = false
     var admin: Bool = false
     var retailers: [RetailerRole] = []
     var suppliers: [SupplierRole] = []
 }
 
-struct RetailerRole {
+public struct RetailerRole: Codable {
     var id: String = ""
     var role: String = ""
 }
 
-struct SupplierRole {
+public struct SupplierRole: Codable {
     var id: String = ""
     var role: String = ""
 }
 
-struct Notifications {
+public struct Notifications: Codable {
     var enableSMS: Bool = false
     var enableEmail: Bool = false
     var pushNotifications: Bool = false
     var id: SupplierNotifications = SupplierNotifications()
 }
 
-struct SupplierNotifications {
+public struct SupplierNotifications: Codable {
     var alerts: Bool = false
     var enableSMS: Bool = false
     var remittance: Bool = false
@@ -71,32 +71,32 @@ struct SupplierNotifications {
     var pushNotifications: Bool = false
 }
 
-struct Name {
+public struct Name: Codable {
     var first: String = ""
     var last: String = ""
 }
 
-struct AdminPerms {
+public struct AdminPerms: Codable {
     var permissions: Permissions = Permissions()
     var isAdmin: Bool = false
     var isSuperAdmin: Bool = false
 }
 
-struct Permissions {
+public struct Permissions: Codable {
     var ordermentum: [String] = []
     var id: [String] = []
     var customers: [String] = []
 }
 
-struct UpdateUserRequest {
+public struct UpdateUserRequest: Codable {
     var email: String = ""
     var firstName: String = ""
     var lastName: String = ""
     var phone: String = ""
 }
 
-extension UserProfile: Decodable {
-    init(from decoder: Decoder) throws {
+extension UserProfile {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -125,8 +125,8 @@ extension UserProfile: Decodable {
     }
 }
 
-extension Settings: Decodable {
-    init(from decoder: Decoder) throws {
+extension Settings {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -135,8 +135,8 @@ extension Settings: Decodable {
     }
 }
 
-extension Roles: Decodable {
-    init(from decoder: Decoder) throws {
+extension Roles {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -147,8 +147,8 @@ extension Roles: Decodable {
     }
 }
 
-extension RetailerRole: Decodable {
-    init(from decoder: Decoder) throws {
+extension RetailerRole {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -158,8 +158,8 @@ extension RetailerRole: Decodable {
     }
 }
 
-extension SupplierRole: Decodable {
-    init(from decoder: Decoder) throws {
+extension SupplierRole {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -169,8 +169,8 @@ extension SupplierRole: Decodable {
     }
 }
 
-extension Notifications: Decodable {
-    init(from decoder: Decoder) throws {
+extension Notifications {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -182,8 +182,8 @@ extension Notifications: Decodable {
     }
 }
 
-extension SupplierNotifications: Decodable {
-    init(from decoder: Decoder) throws {
+extension SupplierNotifications {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -199,8 +199,8 @@ extension SupplierNotifications: Decodable {
     }
 }
 
-extension Name: Decodable {
-    init(from decoder: Decoder) throws {
+extension Name {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -210,8 +210,8 @@ extension Name: Decodable {
     }
 }
 
-extension AdminPerms: Decodable {
-    init(from decoder: Decoder) throws {
+extension AdminPerms {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -222,8 +222,8 @@ extension AdminPerms: Decodable {
     }
 }
 
-extension Permissions: Decodable {
-    init(from decoder: Decoder) throws {
+extension Permissions {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
