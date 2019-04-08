@@ -86,6 +86,7 @@
 		CAF2468E225B158000EDAF68 /* ProjectionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2468D225B158000EDAF68 /* ProjectionsRouter.swift */; };
 		CAF24690225B189C00EDAF68 /* PurchaserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2468F225B189C00EDAF68 /* PurchaserRouter.swift */; };
 		CAF24692225B1A6F00EDAF68 /* ValidationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24691225B1A6F00EDAF68 /* ValidationRouter.swift */; };
+		CAF24694225B1B2000EDAF68 /* VenueRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24693225B1B2000EDAF68 /* VenueRouter.swift */; };
 		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -186,6 +187,7 @@
 		CAF2468D225B158000EDAF68 /* ProjectionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionsRouter.swift; sourceTree = "<group>"; };
 		CAF2468F225B189C00EDAF68 /* PurchaserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaserRouter.swift; sourceTree = "<group>"; };
 		CAF24691225B1A6F00EDAF68 /* ValidationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationRouter.swift; sourceTree = "<group>"; };
+		CAF24693225B1B2000EDAF68 /* VenueRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueRouter.swift; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -347,6 +349,7 @@
 				CAF2468D225B158000EDAF68 /* ProjectionsRouter.swift */,
 				CAF2468F225B189C00EDAF68 /* PurchaserRouter.swift */,
 				CAF24691225B1A6F00EDAF68 /* ValidationRouter.swift */,
+				CAF24693225B1B2000EDAF68 /* VenueRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				CA929F6C22555FA900E957AC /* Supplier.swift in Sources */,
 				CA4CF2E5225ADAF6006F18C8 /* MarketplaceRouter.swift in Sources */,
 				CAC39CCB22559AC000D3099A /* AddOnsRouter.swift in Sources */,
+				CAF24694225B1B2000EDAF68 /* VenueRouter.swift in Sources */,
 				CA929F7722555FA900E957AC /* Purchaser.swift in Sources */,
 				CA2F35222256D81C00D1118C /* ExperimentsService.swift in Sources */,
 				CA929F8122555FA900E957AC /* ClosurePeriod.swift in Sources */,

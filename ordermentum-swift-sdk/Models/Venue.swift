@@ -109,7 +109,12 @@ struct User {
     var deleted_at: String = ""
 }
 
-struct AddUser: Codable {
+public struct RemoveUser: Codable {
+    var entityId: String = ""
+    var perms: [String] = []
+}
+
+public struct AddUser: Codable {
     var senderId: String = ""
     var senderType: String = ""
     var senderEntityName: String = ""

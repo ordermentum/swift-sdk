@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct VenueProfile: Encodable {
+public struct VenueProfile: Codable {
     var abn: String = ""
     var address: Address = Address()
     var billingAddress: Address = Address()
