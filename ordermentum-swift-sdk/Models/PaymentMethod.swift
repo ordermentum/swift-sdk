@@ -31,7 +31,7 @@ struct PaymentMethod {
     var updatedAt: String = ""
 }
 
-struct UpdatePaymentMethodRequest: Codable {
+public struct UpdatePaymentMethodRequest: Codable {
     var paymentMethodId: String = ""
     var defaultPaymentMethodType: String = ""
 }

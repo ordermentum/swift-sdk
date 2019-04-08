@@ -84,6 +84,7 @@
 		CAF2468A225B031200EDAF68 /* ProductsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24689225B031200EDAF68 /* ProductsRouter.swift */; };
 		CAF2468C225B083B00EDAF68 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2468B225B083B00EDAF68 /* ProfileRouter.swift */; };
 		CAF2468E225B158000EDAF68 /* ProjectionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2468D225B158000EDAF68 /* ProjectionsRouter.swift */; };
+		CAF24690225B189C00EDAF68 /* PurchaserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2468F225B189C00EDAF68 /* PurchaserRouter.swift */; };
 		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +183,7 @@
 		CAF24689225B031200EDAF68 /* ProductsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRouter.swift; sourceTree = "<group>"; };
 		CAF2468B225B083B00EDAF68 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		CAF2468D225B158000EDAF68 /* ProjectionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionsRouter.swift; sourceTree = "<group>"; };
+		CAF2468F225B189C00EDAF68 /* PurchaserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaserRouter.swift; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -341,6 +343,7 @@
 				CAF24689225B031200EDAF68 /* ProductsRouter.swift */,
 				CAF2468B225B083B00EDAF68 /* ProfileRouter.swift */,
 				CAF2468D225B158000EDAF68 /* ProjectionsRouter.swift */,
+				CAF2468F225B189C00EDAF68 /* PurchaserRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				CAC39CC22255639D00D3099A /* StringUtils.swift in Sources */,
 				CA929F97225561A400E957AC /* Client.swift in Sources */,
 				CA929F8522555FA900E957AC /* TradingHours.swift in Sources */,
+				CAF24690225B189C00EDAF68 /* PurchaserRouter.swift in Sources */,
 				CA929F9122555FA900E957AC /* FindSupplier.swift in Sources */,
 				CA2F35162255CFA500D1118C /* DataAttributesRouter.swift in Sources */,
 				CAC39CC5225577C300D3099A /* AuthService.swift in Sources */,
