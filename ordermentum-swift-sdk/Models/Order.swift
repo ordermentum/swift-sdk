@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CreateOrder: Codable {
+public struct CreateOrder: Codable {
     var comment: String = ""
     var deliveryDate: String = ""
     var lineItems: [CreateOrderLineItem] = []
@@ -197,7 +197,7 @@ struct ClassicStandingOrderUpdatedBy {
     var lastName: String = ""
 }
 
-struct CreateFavouriteRequest: Codable {
+public struct CreateFavouriteRequest: Codable {
     var comment: String = ""
     var deliveryDate: String = ""
     var lineItems: [CreateFavouriteRequestLineItem] = []
@@ -216,7 +216,7 @@ struct CreateFavouriteRequestLineItem: Codable {
     var quantity: Int = 0
 }
 
-struct CreateStandingOrder: Codable {
+public struct CreateStandingOrder: Codable {
     var lineItems: [CreateOrderLineItem] = []
     var origin: String = ""
     var retailerId: String = ""
@@ -224,7 +224,7 @@ struct CreateStandingOrder: Codable {
     var type: String = ""
 }
 
-struct CreatePurchaserSchedule: Codable {
+public struct CreatePurchaserSchedule: Codable {
     var orderId: String = ""
     var place: Bool = true
     var retailerId: String = ""
@@ -232,14 +232,14 @@ struct CreatePurchaserSchedule: Codable {
     var supplierId: String = ""
 }
 
-struct UpdateOrderRequest: Codable {
+public struct UpdateOrderRequest: Codable {
     var lineItems: [UpdateOrderRequestLineItem] = []
     var name: String = ""
     var origin: String = ""
     var type: String = ""
 }
 
-struct UpdateScheduleRequest: Codable {
+public struct UpdateScheduleRequest: Codable {
     var cutOff: String = ""
     var purchaserScheduleId: String = ""
     var runAt: String = ""

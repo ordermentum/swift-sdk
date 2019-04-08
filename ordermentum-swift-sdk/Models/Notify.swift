@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NotifyBody: Codable {
+public struct NotifyBody: Codable {
     var userId: String = ""
     var deviceId: String = ""
     var deviceToken: String = ""

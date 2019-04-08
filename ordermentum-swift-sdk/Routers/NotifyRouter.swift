@@ -1,39 +1,37 @@
 //
-//  FlagsRouter.swift
+//  NotifyRouter.swift
 //  ordermentum-swift-sdk
 //
-//  Created by Brandon Stillitano on 5/4/19.
+//  Created by Brandon Stillitano on 8/4/19.
 //  Copyright © 2019 Ordermentum. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-public enum FlagsRouter: URLRequestConvertible {
+public enum NotifyRouter: URLRequestConvertible {
     //Routes
-    case getFlags([String], [String], String, String)
+    case registerDevice(NotifyBody)
     
     //Methods
     var method: HTTPMethod {
         switch self {
-        case .getFlags:
-            return .get
+        case .registerDevice:
+            return .post
         }
     }
     
     //Paths
     var path: String {
         switch self {
-        case .getFlags:
-            return "flags/check"
+        case .registerDevice:
+            return "user_devices"
         }
     }
     
     //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .getFlags(let flagsArray, let supplierIdArray, let retailerId, let userId):
-            return ["flags[]": flagsArray, "supplierId[]": supplierIdArray, "context[retailerId]": retailerId, "context[userId]": userId]
         default:
             return [:]
         }
@@ -42,6 +40,8 @@ public enum FlagsRouter: URLRequestConvertible {
     //Body
     var body: Codable? {
         switch self {
+        case .registerDevice(let requestObject):
+            return requestObject
         default:
             return nil
         }
@@ -52,4 +52,3 @@ public enum FlagsRouter: URLRequestConvertible {
         return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }
-

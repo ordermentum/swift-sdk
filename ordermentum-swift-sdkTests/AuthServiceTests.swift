@@ -44,4 +44,23 @@ class AuthServiceTests: XCTestCase {
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
+    
+    func testRequestPasswordReset() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Build Request Object
+        var requestObject: ForgotPasswordRequest = ForgotPasswordRequest()
+        requestObject.email = "retailer+direct@ordermentum.com"
+        
+        //Call API
+        Client.instance.setProductionURL()
+        AuthService().requestPasswordReset(requestObject: requestObject) { (result) in
+            assert(result)
+            expectation.fulfill()
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+    }
 }

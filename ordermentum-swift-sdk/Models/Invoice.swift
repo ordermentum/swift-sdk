@@ -111,7 +111,7 @@ struct ExportResponse {
     var type: String = ""
 }
 
-struct ExportRequest {
+public struct ExportRequest: Codable {
     var data: ExportRequestData = ExportRequestData()
     var name: String = ""
     var retailerId: String = ""
@@ -120,13 +120,13 @@ struct ExportRequest {
     var socketId: String = ""
 }
 
-struct ExportRequestData {
+struct ExportRequestData: Codable {
     var includedIds: [String] = []
     var all: Bool = false
     var searchQuery: String = ""
 }
 
-struct InvoicePaymentRequest {
+public struct InvoicePaymentRequest: Codable {
     var paymentMethodId: String = ""
 }
 

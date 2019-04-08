@@ -1,22 +1,22 @@
 //
-//  FlagsRouter.swift
+//  MarketplaceRouter.swift
 //  ordermentum-swift-sdk
 //
-//  Created by Brandon Stillitano on 5/4/19.
+//  Created by Brandon Stillitano on 8/4/19.
 //  Copyright © 2019 Ordermentum. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-public enum FlagsRouter: URLRequestConvertible {
+public enum MarketplaceRouter: URLRequestConvertible {
     //Routes
-    case getFlags([String], [String], String, String)
+    case getMarketplaces(String, Int, Int)
     
     //Methods
     var method: HTTPMethod {
         switch self {
-        case .getFlags:
+        case .getMarketplaces:
             return .get
         }
     }
@@ -24,16 +24,16 @@ public enum FlagsRouter: URLRequestConvertible {
     //Paths
     var path: String {
         switch self {
-        case .getFlags:
-            return "flags/check"
+        case .getMarketplaces:
+            return "marketplaces"
         }
     }
     
     //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .getFlags(let flagsArray, let supplierIdArray, let retailerId, let userId):
-            return ["flags[]": flagsArray, "supplierId[]": supplierIdArray, "context[retailerId]": retailerId, "context[userId]": userId]
+        case .getMarketplaces(let retailerId, let pageSize, let pageNo):
+            return ["retailerId": retailerId, "pageSize": pageSize, "pageNo": pageNo]
         default:
             return [:]
         }
@@ -52,4 +52,3 @@ public enum FlagsRouter: URLRequestConvertible {
         return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }
-

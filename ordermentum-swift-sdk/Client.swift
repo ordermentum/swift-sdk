@@ -47,9 +47,13 @@ class Client {
         //Build Request
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
-        request.setValue(getHeaderToken(), forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
+        
+        //Set Token
+        if !token.isEmpty {
+            request.setValue(getHeaderToken(), forHTTPHeaderField: "Authorization")
+        }
         
         //Set Conditional Body
         switch method {
