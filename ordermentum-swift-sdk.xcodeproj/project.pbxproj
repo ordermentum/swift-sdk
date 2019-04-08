@@ -92,6 +92,7 @@
 		CAF2469A225B25F000EDAF68 /* MarketplaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24699225B25EF00EDAF68 /* MarketplaceService.swift */; };
 		CAF2469C225B283600EDAF68 /* NotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2469B225B283600EDAF68 /* NotificationsService.swift */; };
 		CAF2469E225B6F1E00EDAF68 /* NotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2469D225B6F1E00EDAF68 /* NotifyService.swift */; };
+		CAF246A0225B6F9400EDAF68 /* NPSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2469F225B6F9400EDAF68 /* NPSService.swift */; };
 		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +199,7 @@
 		CAF24699225B25EF00EDAF68 /* MarketplaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceService.swift; sourceTree = "<group>"; };
 		CAF2469B225B283600EDAF68 /* NotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsService.swift; sourceTree = "<group>"; };
 		CAF2469D225B6F1E00EDAF68 /* NotifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyService.swift; sourceTree = "<group>"; };
+		CAF2469F225B6F9400EDAF68 /* NPSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPSService.swift; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -389,6 +391,7 @@
 				CAF24699225B25EF00EDAF68 /* MarketplaceService.swift */,
 				CAF2469B225B283600EDAF68 /* NotificationsService.swift */,
 				CAF2469D225B6F1E00EDAF68 /* NotifyService.swift */,
+				CAF2469F225B6F9400EDAF68 /* NPSService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				CA2F35262256DDE700D1118C /* FindSupplierService.swift in Sources */,
 				CA929F8E22555FA900E957AC /* Exports.swift in Sources */,
 				CA929F7122555FA900E957AC /* VenueProfile.swift in Sources */,
+				CAF246A0225B6F9400EDAF68 /* NPSService.swift in Sources */,
 				CA929F7D22555FA900E957AC /* Invoice.swift in Sources */,
 				CA929F6E22555FA900E957AC /* VenueInvite.swift in Sources */,
 				CA929F8322555FA900E957AC /* Marketplace.swift in Sources */,
