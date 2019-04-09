@@ -109,6 +109,12 @@ struct User {
     var deleted_at: String = ""
 }
 
+struct VenueUsersResponse {
+    var meta: Meta = Meta()
+    var links: Links = Links()
+    var data: [User] = []
+}
+
 public struct RemoveUser: Codable {
     var entityId: String = ""
     var perms: [String] = []
@@ -272,6 +278,18 @@ extension VenueSettings: Decodable {
     }
 }
 
+extension VenueUsersResponse: Decodable {
+    init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        //Decode Data
+        meta = try container.decodeIfPresent(Meta.self, forKey: .meta) ?? Meta()
+        links = try container.decodeIfPresent(Links.self, forKey: .links) ?? Links()
+        data = try container.decodeIfPresent([User].self, forKey: .data) ?? []
+    }
+}
+
 extension User: Decodable {
     init(from decoder: Decoder) throws {
         //Create Container
@@ -331,3 +349,4 @@ extension User {
         return self.firstName + " " + self.lastName
     }
 }
+

@@ -36,7 +36,8 @@ class Client {
     }
     
     func getHeaderToken() -> String {
-        return String(format: "Bearer: \(token)")
+        print(String(format: "Bearer \(token)"))
+        return String(format: "Bearer \(token)")
     }
     
     func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?) throws ->  URLRequest {
