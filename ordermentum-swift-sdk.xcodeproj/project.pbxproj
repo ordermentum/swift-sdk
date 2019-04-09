@@ -98,6 +98,7 @@
 		CAF246A6225C143D00EDAF68 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246A5225C143D00EDAF68 /* ProductsService.swift */; };
 		CAF246A8225C162B00EDAF68 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246A7225C162B00EDAF68 /* ProfileService.swift */; };
 		CAF246AA225C185F00EDAF68 /* ProjectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246A9225C185F00EDAF68 /* ProjectionsService.swift */; };
+		CAF246AC225C24D700EDAF68 /* PurchaserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246AB225C24D700EDAF68 /* PurchaserService.swift */; };
 		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -210,6 +211,7 @@
 		CAF246A5225C143D00EDAF68 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
 		CAF246A7225C162B00EDAF68 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		CAF246A9225C185F00EDAF68 /* ProjectionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionsService.swift; sourceTree = "<group>"; };
+		CAF246AB225C24D700EDAF68 /* PurchaserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaserService.swift; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -407,6 +409,7 @@
 				CAF246A5225C143D00EDAF68 /* ProductsService.swift */,
 				CAF246A7225C162B00EDAF68 /* ProfileService.swift */,
 				CAF246A9225C185F00EDAF68 /* ProjectionsService.swift */,
+				CAF246AB225C24D700EDAF68 /* PurchaserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				CA2F35222256D81C00D1118C /* ExperimentsService.swift in Sources */,
 				CA929F8122555FA900E957AC /* ClosurePeriod.swift in Sources */,
 				CA4CF2E9225AE089006F18C8 /* NotifyRouter.swift in Sources */,
+				CAF246AC225C24D700EDAF68 /* PurchaserService.swift in Sources */,
 				CA929F8C22555FA900E957AC /* Error.swift in Sources */,
 				CAF2469A225B25F000EDAF68 /* MarketplaceService.swift in Sources */,
 				CA929F7322555FA900E957AC /* PaginatedAPIResponse.swift in Sources */,
