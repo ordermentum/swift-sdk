@@ -99,6 +99,7 @@
 		CAF246A8225C162B00EDAF68 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246A7225C162B00EDAF68 /* ProfileService.swift */; };
 		CAF246AA225C185F00EDAF68 /* ProjectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246A9225C185F00EDAF68 /* ProjectionsService.swift */; };
 		CAF246AC225C24D700EDAF68 /* PurchaserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246AB225C24D700EDAF68 /* PurchaserService.swift */; };
+		CAF246AE225C26C600EDAF68 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246AD225C26C600EDAF68 /* ValidationService.swift */; };
 		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -212,6 +213,7 @@
 		CAF246A7225C162B00EDAF68 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		CAF246A9225C185F00EDAF68 /* ProjectionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionsService.swift; sourceTree = "<group>"; };
 		CAF246AB225C24D700EDAF68 /* PurchaserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaserService.swift; sourceTree = "<group>"; };
+		CAF246AD225C26C600EDAF68 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -410,6 +412,7 @@
 				CAF246A7225C162B00EDAF68 /* ProfileService.swift */,
 				CAF246A9225C185F00EDAF68 /* ProjectionsService.swift */,
 				CAF246AB225C24D700EDAF68 /* PurchaserService.swift */,
+				CAF246AD225C26C600EDAF68 /* ValidationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				CA929F6F22555FA900E957AC /* CodingKeys.swift in Sources */,
 				CAF246A2225B705C00EDAF68 /* OrdersService.swift in Sources */,
 				CA929F8622555FA900E957AC /* Auth.swift in Sources */,
+				CAF246AE225C26C600EDAF68 /* ValidationService.swift in Sources */,
 				CA2F35282256E5E800D1118C /* FlagsRouter.swift in Sources */,
 				CA929F7822555FA900E957AC /* Address.swift in Sources */,
 				CA929F8B22555FA900E957AC /* Order.swift in Sources */,
