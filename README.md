@@ -11,7 +11,9 @@
 # Requirements
 
 iOS 10.0+ / macOS 10.12+ / tvOS 10.0+ / watchOS 3.0+
+
 Xcode 10.1+
+
 Swift 4.2+
 
 # Installation
