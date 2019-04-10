@@ -20,7 +20,7 @@ Swift 4.2+
 
 CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Alamofire into your Xcode project using CocoaPods, specify it in your Podfile:
 
-`pod 'Ordermentum', '~> 5.0.0-beta.3'`
+`pod 'Ordermentum'`
 
 ## Security
 • Security should be a first class citizen
