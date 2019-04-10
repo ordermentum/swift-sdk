@@ -31,11 +31,12 @@ class AuthServiceTests: XCTestCase {
 
         //Build Login Object
         var loginRequest: LoginRequest = LoginRequest()
-        loginRequest.username = "username"
-        loginRequest.password = "password"
+        loginRequest.username = ProcessInfo.processInfo.environment["LOGIN_USERNAME"] ?? ""
+        loginRequest.password = ProcessInfo.processInfo.environment["LOGIN_PASSWORD"] ?? ""
         
         //Call API
         Client.instance.setProductionURL()
+        Client.instance.setToken(tokenString: "")
         AuthService().login(requestObject: loginRequest) { (result, loginObject) in
             XCTAssertNotNil(loginObject?.access_token)
             expectation.fulfill()
@@ -51,10 +52,11 @@ class AuthServiceTests: XCTestCase {
         
         //Build Request Object
         var requestObject: ForgotPasswordRequest = ForgotPasswordRequest()
-        requestObject.email = "retailer+direct@ordermentum.com"
+        requestObject.email = ProcessInfo.processInfo.environment["PASSWORD_RESET_EMAIL"] ?? ""
         
         //Call API
         Client.instance.setProductionURL()
+        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
         AuthService().requestPasswordReset(requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
@@ -63,4 +65,28 @@ class AuthServiceTests: XCTestCase {
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
+    
+    func testChangePassword() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Build Request Object
+        var requestObject: ChangePasswordRequest = ChangePasswordRequest()
+        requestObject.userId = ProcessInfo.processInfo.environment["USER_ID"] ?? ""
+        requestObject.oldPassword = ProcessInfo.processInfo.environment["CHANGE_PASSWORD_OLD"] ?? ""
+        requestObject.password = ProcessInfo.processInfo.environment["CHANGE_PASSWORD_NEW"] ?? ""
+        requestObject.verifyPassword = ProcessInfo.processInfo.environment["CHANGE_PASSWORD_VERIFY"] ?? ""
+        
+        //Call API
+        Client.instance.setProductionURL()
+        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        AuthService().changePassword(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: requestObject) { (result, responseData) in
+            assert(result)
+            expectation.fulfill()
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+    }
 }
+

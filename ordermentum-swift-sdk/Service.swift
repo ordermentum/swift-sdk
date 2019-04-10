@@ -17,14 +17,14 @@ class Service<D: Decodable> {
                 case .success:
                     do {
                         guard let responseData = response.data else {
-                            completion(false, nil)
+                            completion(true, nil)
                             return
                         }
                         print(responseData.utf8String())
                         let responseObject = try JSONDecoder().decode(D.self, from: responseData)
                         completion(true, responseObject)
                     } catch {
-                        completion(false, nil)
+                        completion(true, nil)
                     }
                     break
                     

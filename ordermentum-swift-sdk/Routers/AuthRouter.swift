@@ -22,7 +22,7 @@ public enum AuthRouter: URLRequestConvertible {
         case .login:
             return .post
         case .requestPasswordReset:
-            return .get
+            return .post
         case .changePassword:
             return .patch
         case .resetPassword:
