@@ -56,7 +56,6 @@ class AuthServiceTests: XCTestCase {
         
         //Call API
         Client.instance.setProductionURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
         AuthService().requestPasswordReset(requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
