@@ -8,6 +8,19 @@
 
 • Library will be in Swift with the option compilation targets to different software and hardware platforms.
 
+# Requirements
+
+iOS 10.0+ / macOS 10.12+ / tvOS 10.0+ / watchOS 3.0+
+Xcode 10.1+
+Swift 4.2+
+
+# Installation
+
+## CocoaPods
+
+CocoaPods is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Alamofire into your Xcode project using CocoaPods, specify it in your Podfile:
+
+`pod 'Ordermentum', '~> 5.0.0-beta.3'`
 
 ## Security
 • Security should be a first class citizen
