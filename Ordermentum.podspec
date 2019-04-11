@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   s.version	= "0.0.1"
   s.summary	= "SwiftSDK that wraps the Ordermentum API."
   s.description	= "Ordermentum API functionality wrapped using Alamofire. Consumable by any Swift client."
-  s.homepage	= "https://ordermentum.com"
+  s.homepage	= "https://ordermentum.github.io/docs/"
 
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "Apache License 2.0"
+  s.license      = "Apache-2.0"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -140,6 +140,6 @@ Pod::Spec.new do |s|
   #  May or may not work given that I am just adding this to the podspec.
   #
 
-  s.swift_version = "4.2" 
+  s.swift_version = "4.2"
 
 end
