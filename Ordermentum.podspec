@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.name	= "OrdermentumSDK"
-  s.version	= "0.0.6"
+  s.version	= "0.0.7"
   s.summary	= "SwiftSDK that wraps the Ordermentum API."
   s.description	= "Ordermentum API functionality wrapped using Alamofire. Consumable by any Swift client."
   s.homepage	= "https://ordermentum.github.io/docs/"
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { git: "https://github.com/ordermentum/swift-sdk.git", tag: "0.0.6" }
+  s.source       = { git: "https://github.com/ordermentum/swift-sdk.git", tag: "0.0.7" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}", "ordermentum-swift-sdk"
+  s.source_files  = "Classes", "Classes/**/*.{h,m}", "Models", "Routers", "Services", "Utilities", "OrdermentumSDK"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
 
-  s.preserve_paths = "Models", "Routers", "Services", "Utilities"
+  # s.preserve_paths = "Models", "Routers", "Services", "Utilities"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
