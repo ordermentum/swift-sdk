@@ -62,7 +62,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :sos
+  # s.platform     = :ios
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
@@ -104,7 +104,8 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "Models/*.swift", "Routers/*.swift", "Services/*.swift", "Utilities/*.swift"
+  s.preserve_paths = "Models", "Routers", "Services", "Utilities"
 
   # s.preserve_paths = "Models", "Routers", "Services", "Utilities"
 
