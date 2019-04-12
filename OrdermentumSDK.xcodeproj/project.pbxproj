@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C2074A538974F92760EEEF61 /* Pods_ordermentum_swift_sdkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4960D35752AB83A29B46414 /* Pods_ordermentum_swift_sdkTests.framework */; };
+		2A6F52128EED75495252EE23 /* Pods_OrdermentumSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */; };
+		526155008E1402A0BB282A20 /* Pods_OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */; };
 		CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */; };
 		CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */; };
 		CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */; };
@@ -105,7 +106,6 @@
 		CAF246AE225C26C600EDAF68 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246AD225C26C600EDAF68 /* ValidationService.swift */; };
 		CAF246B0225C27B000EDAF68 /* VenueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246AF225C27B000EDAF68 /* VenueService.swift */; };
 		CAF246B2225C299300EDAF68 /* OrdersServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246B1225C299300EDAF68 /* OrdersServiceTests.swift */; };
-		DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,11 +119,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		249F582D16A080253A3CC3DE /* Pods-OrdermentumSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDK/Pods-OrdermentumSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		33B4FAFC0DAF94F90E526BB5 /* Pods-ordermentum-swift-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.debug.xcconfig"; sourceTree = "<group>"; };
 		3840BE69998B16C88F4D68A3 /* Pods-ordermentum-swift-sdkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdkTests/Pods-ordermentum-swift-sdkTests.debug.xcconfig"; sourceTree = "<group>"; };
-		55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ordermentum_swift_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		437682ED2DE8EC4E4AF30490 /* Pods-OrdermentumSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDK/Pods-OrdermentumSDK.release.xcconfig"; sourceTree = "<group>"; };
+		562A6CCA0334F73F071DBEC0 /* Pods-OrdermentumSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDKTests/Pods-OrdermentumSDKTests.release.xcconfig"; sourceTree = "<group>"; };
+		7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrdermentumSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		882D9FD307AAAB2EC007D839 /* Pods-ordermentum-swift-sdkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdkTests/Pods-ordermentum-swift-sdkTests.release.xcconfig"; sourceTree = "<group>"; };
-		B4960D35752AB83A29B46414 /* Pods_ordermentum_swift_sdkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ordermentum_swift_sdkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrdermentumSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesService.swift; sourceTree = "<group>"; };
 		CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosurePeriodsRouter.swift; sourceTree = "<group>"; };
 		CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesRouter.swift; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 		CAF246AD225C26C600EDAF68 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		CAF246AF225C27B000EDAF68 /* VenueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueService.swift; sourceTree = "<group>"; };
 		CAF246B1225C299300EDAF68 /* OrdersServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersServiceTests.swift; sourceTree = "<group>"; };
+		F10DCAFE816FD2195B5952D6 /* Pods-OrdermentumSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDKTests/Pods-OrdermentumSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,7 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECA9ACDA55269AF1C6395FD /* Pods_ordermentum_swift_sdk.framework in Frameworks */,
+				526155008E1402A0BB282A20 /* Pods_OrdermentumSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA929F3122555DA400E957AC /* OrdermentumSDK.framework in Frameworks */,
-				C2074A538974F92760EEEF61 /* Pods_ordermentum_swift_sdkTests.framework in Frameworks */,
+				2A6F52128EED75495252EE23 /* Pods_OrdermentumSDKTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +259,10 @@
 				F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */,
 				3840BE69998B16C88F4D68A3 /* Pods-ordermentum-swift-sdkTests.debug.xcconfig */,
 				882D9FD307AAAB2EC007D839 /* Pods-ordermentum-swift-sdkTests.release.xcconfig */,
+				249F582D16A080253A3CC3DE /* Pods-OrdermentumSDK.debug.xcconfig */,
+				437682ED2DE8EC4E4AF30490 /* Pods-OrdermentumSDK.release.xcconfig */,
+				F10DCAFE816FD2195B5952D6 /* Pods-OrdermentumSDKTests.debug.xcconfig */,
+				562A6CCA0334F73F071DBEC0 /* Pods-OrdermentumSDKTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -262,8 +270,8 @@
 		4A5AC22735A3E572BD78B63E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				55E34C75134B5165312DB105 /* Pods_ordermentum_swift_sdk.framework */,
-				B4960D35752AB83A29B46414 /* Pods_ordermentum_swift_sdkTests.framework */,
+				7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */,
+				897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -555,7 +563,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ordermentum-swift-sdkTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OrdermentumSDKTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -577,7 +585,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ordermentum-swift-sdk-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OrdermentumSDK-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -592,7 +600,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ordermentum-swift-sdkTests/Pods-ordermentum-swift-sdkTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-OrdermentumSDKTests/Pods-OrdermentumSDKTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -603,7 +611,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ordermentum-swift-sdkTests/Pods-ordermentum-swift-sdkTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OrdermentumSDKTests/Pods-OrdermentumSDKTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -853,7 +861,7 @@
 		};
 		CA929F3C22555DA400E957AC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33B4FAFC0DAF94F90E526BB5 /* Pods-ordermentum-swift-sdk.debug.xcconfig */;
+			baseConfigurationReference = 249F582D16A080253A3CC3DE /* Pods-OrdermentumSDK.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -863,7 +871,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "ordermentum-swift-sdk/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/OrdermentumSDK/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -881,7 +889,7 @@
 		};
 		CA929F3D22555DA400E957AC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */;
+			baseConfigurationReference = 437682ED2DE8EC4E4AF30490 /* Pods-OrdermentumSDK.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -891,7 +899,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "ordermentum-swift-sdk/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/OrdermentumSDK/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -908,7 +916,7 @@
 		};
 		CA929F3F22555DA400E957AC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3840BE69998B16C88F4D68A3 /* Pods-ordermentum-swift-sdkTests.debug.xcconfig */;
+			baseConfigurationReference = F10DCAFE816FD2195B5952D6 /* Pods-OrdermentumSDKTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -928,7 +936,7 @@
 		};
 		CA929F4022555DA400E957AC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 882D9FD307AAAB2EC007D839 /* Pods-ordermentum-swift-sdkTests.release.xcconfig */;
+			baseConfigurationReference = 562A6CCA0334F73F071DBEC0 /* Pods-OrdermentumSDKTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -8,7 +8,7 @@
 
 import Foundation
 import XCTest
-@testable import ordermentum_swift_sdk
+@testable import OrdermentumSDK
 
 class AuthServiceTests: XCTestCase {
     

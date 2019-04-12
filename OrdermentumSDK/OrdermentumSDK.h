@@ -1,6 +1,6 @@
 //
-//  ordermentum_swift_sdk.h
-//  ordermentum-swift-sdk
+//  OrdermentumSDK.h
+//  OrdermentumSDK
 //
 //  Created by Brandon Stillitano on 4/4/19.
 //  Copyright © 2019 Ordermentum. All rights reserved.
@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for ordermentum_swift_sdk.
-FOUNDATION_EXPORT double ordermentum_swift_sdkVersionNumber;
+//! Project version number for OrdermentumSDK.
+FOUNDATION_EXPORT double OrdermentumSDKVersionNumber;
 
-//! Project version string for ordermentum_swift_sdk.
-FOUNDATION_EXPORT const unsigned char ordermentum_swift_sdkVersionString[];
+//! Project version string for OrdermentumSDK.
+FOUNDATION_EXPORT const unsigned char OrdermentumSDKVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <ordermentum_swift_sdk/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <OrdermentumSDK/PublicHeader.h>
 
 
