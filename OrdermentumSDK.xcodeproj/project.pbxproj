@@ -30,8 +30,8 @@
 		CA6BB820225D993700A34A01 /* FindSupplierServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */; };
 		CA6BB822225DA60300A34A01 /* ProjectionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6BB821225DA60300A34A01 /* ProjectionsServiceTests.swift */; };
 		CA72972A225D966F00224410 /* BoolUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA729729225D966F00224410 /* BoolUtils.swift */; };
-		CA929F3122555DA400E957AC /* ordermentum_swift_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */; };
-		CA929F3822555DA400E957AC /* ordermentum_swift_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA929F3122555DA400E957AC /* OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA929F2722555DA400E957AC /* OrdermentumSDK.framework */; };
+		CA929F3822555DA400E957AC /* OrdermentumSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = CA929F2A22555DA400E957AC /* OrdermentumSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA929F6B22555FA900E957AC /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4322555FA500E957AC /* Cart.swift */; };
 		CA929F6C22555FA900E957AC /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4422555FA500E957AC /* Supplier.swift */; };
 		CA929F6D22555FA900E957AC /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4522555FA500E957AC /* Venue.swift */; };
@@ -146,10 +146,10 @@
 		CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSupplierServiceTests.swift; sourceTree = "<group>"; };
 		CA6BB821225DA60300A34A01 /* ProjectionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionsServiceTests.swift; sourceTree = "<group>"; };
 		CA729729225D966F00224410 /* BoolUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolUtils.swift; sourceTree = "<group>"; };
-		CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ordermentum_swift_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ordermentum_swift_sdk.h; sourceTree = "<group>"; };
+		CA929F2722555DA400E957AC /* OrdermentumSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrdermentumSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA929F2A22555DA400E957AC /* OrdermentumSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrdermentumSDK.h; sourceTree = "<group>"; };
 		CA929F2B22555DA400E957AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA929F3022555DA400E957AC /* ordermentum-swift-sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ordermentum-swift-sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA929F3022555DA400E957AC /* OrdermentumSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrdermentumSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA929F3722555DA400E957AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA929F4322555FA500E957AC /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		CA929F4422555FA500E957AC /* Supplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supplier.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA929F3122555DA400E957AC /* ordermentum_swift_sdk.framework in Frameworks */,
+				CA929F3122555DA400E957AC /* OrdermentumSDK.framework in Frameworks */,
 				C2074A538974F92760EEEF61 /* Pods_ordermentum_swift_sdkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,8 +271,8 @@
 		CA929F1D22555DA400E957AC = {
 			isa = PBXGroup;
 			children = (
-				CA929F2922555DA400E957AC /* ordermentum-swift-sdk */,
-				CA929F3422555DA400E957AC /* ordermentum-swift-sdkTests */,
+				CA929F2922555DA400E957AC /* OrdermentumSDK */,
+				CA929F3422555DA400E957AC /* OrdermentumSDKTests */,
 				CA929F2822555DA400E957AC /* Products */,
 				41D78D65B6A7C68FC7D24C9A /* Pods */,
 				4A5AC22735A3E572BD78B63E /* Frameworks */,
@@ -282,13 +282,13 @@
 		CA929F2822555DA400E957AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */,
-				CA929F3022555DA400E957AC /* ordermentum-swift-sdkTests.xctest */,
+				CA929F2722555DA400E957AC /* OrdermentumSDK.framework */,
+				CA929F3022555DA400E957AC /* OrdermentumSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CA929F2922555DA400E957AC /* ordermentum-swift-sdk */ = {
+		CA929F2922555DA400E957AC /* OrdermentumSDK */ = {
 			isa = PBXGroup;
 			children = (
 				CA929F96225561A400E957AC /* Client.swift */,
@@ -297,13 +297,13 @@
 				CA929F93225560B100E957AC /* Routers */,
 				CAC39CC3225572F500D3099A /* Services */,
 				CAC39CBE2255630E00D3099A /* Utilities */,
-				CA929F2A22555DA400E957AC /* ordermentum_swift_sdk.h */,
+				CA929F2A22555DA400E957AC /* OrdermentumSDK.h */,
 				CA929F2B22555DA400E957AC /* Info.plist */,
 			);
-			path = "ordermentum-swift-sdk";
+			path = OrdermentumSDK;
 			sourceTree = "<group>";
 		};
-		CA929F3422555DA400E957AC /* ordermentum-swift-sdkTests */ = {
+		CA929F3422555DA400E957AC /* OrdermentumSDKTests */ = {
 			isa = PBXGroup;
 			children = (
 				CA929F3722555DA400E957AC /* Info.plist */,
@@ -312,7 +312,7 @@
 				CAF246B1225C299300EDAF68 /* OrdersServiceTests.swift */,
 				CA6BB821225DA60300A34A01 /* ProjectionsServiceTests.swift */,
 			);
-			path = "ordermentum-swift-sdkTests";
+			path = OrdermentumSDKTests;
 			sourceTree = "<group>";
 		};
 		CA929F4222555EFE00E957AC /* Models */ = {
@@ -439,16 +439,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA929F3822555DA400E957AC /* ordermentum_swift_sdk.h in Headers */,
+				CA929F3822555DA400E957AC /* OrdermentumSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CA929F2622555DA400E957AC /* ordermentum-swift-sdk */ = {
+		CA929F2622555DA400E957AC /* OrdermentumSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CA929F3B22555DA400E957AC /* Build configuration list for PBXNativeTarget "ordermentum-swift-sdk" */;
+			buildConfigurationList = CA929F3B22555DA400E957AC /* Build configuration list for PBXNativeTarget "OrdermentumSDK" */;
 			buildPhases = (
 				90D88C2953666201AA5A8055 /* [CP] Check Pods Manifest.lock */,
 				CA929F2222555DA400E957AC /* Headers */,
@@ -460,14 +460,14 @@
 			);
 			dependencies = (
 			);
-			name = "ordermentum-swift-sdk";
+			name = OrdermentumSDK;
 			productName = "ordermentum-swift-sdk";
-			productReference = CA929F2722555DA400E957AC /* ordermentum_swift_sdk.framework */;
+			productReference = CA929F2722555DA400E957AC /* OrdermentumSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CA929F2F22555DA400E957AC /* ordermentum-swift-sdkTests */ = {
+		CA929F2F22555DA400E957AC /* OrdermentumSDKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CA929F3E22555DA400E957AC /* Build configuration list for PBXNativeTarget "ordermentum-swift-sdkTests" */;
+			buildConfigurationList = CA929F3E22555DA400E957AC /* Build configuration list for PBXNativeTarget "OrdermentumSDKTests" */;
 			buildPhases = (
 				383A7E9BB7A9EF2DD24F6FB4 /* [CP] Check Pods Manifest.lock */,
 				CA929F2C22555DA400E957AC /* Sources */,
@@ -480,9 +480,9 @@
 			dependencies = (
 				CA929F3322555DA400E957AC /* PBXTargetDependency */,
 			);
-			name = "ordermentum-swift-sdkTests";
+			name = OrdermentumSDKTests;
 			productName = "ordermentum-swift-sdkTests";
-			productReference = CA929F3022555DA400E957AC /* ordermentum-swift-sdkTests.xctest */;
+			productReference = CA929F3022555DA400E957AC /* OrdermentumSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -504,7 +504,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CA929F2122555DA400E957AC /* Build configuration list for PBXProject "ordermentum-swift-sdk" */;
+			buildConfigurationList = CA929F2122555DA400E957AC /* Build configuration list for PBXProject "OrdermentumSDK" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -516,8 +516,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CA929F2622555DA400E957AC /* ordermentum-swift-sdk */,
-				CA929F2F22555DA400E957AC /* ordermentum-swift-sdkTests */,
+				CA929F2622555DA400E957AC /* OrdermentumSDK */,
+				CA929F2F22555DA400E957AC /* OrdermentumSDKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -723,7 +723,7 @@
 /* Begin PBXTargetDependency section */
 		CA929F3322555DA400E957AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CA929F2622555DA400E957AC /* ordermentum-swift-sdk */;
+			target = CA929F2622555DA400E957AC /* OrdermentumSDK */;
 			targetProxy = CA929F3222555DA400E957AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -949,7 +949,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CA929F2122555DA400E957AC /* Build configuration list for PBXProject "ordermentum-swift-sdk" */ = {
+		CA929F2122555DA400E957AC /* Build configuration list for PBXProject "OrdermentumSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA929F3922555DA400E957AC /* Debug */,
@@ -958,7 +958,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CA929F3B22555DA400E957AC /* Build configuration list for PBXNativeTarget "ordermentum-swift-sdk" */ = {
+		CA929F3B22555DA400E957AC /* Build configuration list for PBXNativeTarget "OrdermentumSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA929F3C22555DA400E957AC /* Debug */,
@@ -967,7 +967,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CA929F3E22555DA400E957AC /* Build configuration list for PBXNativeTarget "ordermentum-swift-sdkTests" */ = {
+		CA929F3E22555DA400E957AC /* Build configuration list for PBXNativeTarget "OrdermentumSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA929F3F22555DA400E957AC /* Debug */,

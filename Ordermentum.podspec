@@ -115,7 +115,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "ordermentum-swift-sdk"
+  s.framework  = "OrdermentumSDK"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
