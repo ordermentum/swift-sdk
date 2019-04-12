@@ -21,8 +21,8 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.name	= "Ordermentum"
-  s.version	= "0.0.1"
+  s.name	= "OrdermentumSDK"
+  s.version	= "0.0.2"
   s.summary	= "SwiftSDK that wraps the Ordermentum API."
   s.description	= "Ordermentum API functionality wrapped using Alamofire. Consumable by any Swift client."
   s.homepage	= "https://ordermentum.github.io/docs/"
