@@ -921,13 +921,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 242DUSW4JB;
-				INFOPLIST_FILE = "ordermentum-swift-sdkTests/Info.plist";
+				INFOPLIST_FILE = OrdermentumSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.ordermentum.ordermentum-swift-sdkTests";
+				PRODUCT_BUNDLE_IDENTIFIER = io.ordermentum.OrdermentumSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -941,13 +941,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 242DUSW4JB;
-				INFOPLIST_FILE = "ordermentum-swift-sdkTests/Info.plist";
+				INFOPLIST_FILE = OrdermentumSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.ordermentum.ordermentum-swift-sdkTests";
+				PRODUCT_BUNDLE_IDENTIFIER = io.ordermentum.OrdermentumSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
