@@ -23,7 +23,7 @@ class DeviceServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Build Disconnnect Request Object
+        //Build Device Request Object
         var requestObject: Device = Device()
         requestObject.user_id = ProcessInfo.processInfo.environment["DEVICE_USER_ID"] ?? ""
         requestObject.primary_device_id = ProcessInfo.processInfo.environment["DEVICE_PRIMARY_ID"] ?? ""
@@ -47,7 +47,7 @@ class DeviceServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Build Disconnnect Request Object
+        //Build Device Request Object
         var requestObject: Device = Device()
         requestObject.user_id = ProcessInfo.processInfo.environment["DEVICE_USER_ID"] ?? ""
         requestObject.primary_device_id = ProcessInfo.processInfo.environment["DEVICE_PRIMARY_ID"] ?? ""
@@ -71,7 +71,7 @@ class DeviceServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Build Disconnnect Request Object
+        //Build VenueOperationsUpdate Request Object
         var requestObject: VenueOperationsUpdate = VenueOperationsUpdate()
         requestObject.pos = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_POS"] ?? ""
         requestObject.venue = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_VENUE"] ?? ""

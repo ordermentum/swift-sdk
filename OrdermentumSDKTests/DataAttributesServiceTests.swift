@@ -38,7 +38,7 @@ class DataAttributesServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Build Disconnnect Request Object
+        //Build DataAttributes Request Object
         var requestObject: DataAttributes = DataAttributes()
         requestObject.pos = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_POS"] ?? ""
         requestObject.venue = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_VENUE"] ?? ""
@@ -61,7 +61,7 @@ class DataAttributesServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Build Disconnnect Request Object
+        //Build VenueOperationsUpdate Request Object
         var requestObject: VenueOperationsUpdate = VenueOperationsUpdate()
         requestObject.pos = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_POS"] ?? ""
         requestObject.venue = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_VENUE"] ?? ""

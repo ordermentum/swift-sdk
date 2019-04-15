@@ -37,7 +37,7 @@ class ClosureDatesServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Build Disconnnect Request Object
+        //Build ClosurePeriod Request Object
         var requestObject: ClosurePeriod = ClosurePeriod()
         requestObject.id = ProcessInfo.processInfo.environment["CLOSURE_PERIOD_ID"] ?? ""
         requestObject.name = ProcessInfo.processInfo.environment["CLOSURE_PERIOD_NAME"] ?? ""
@@ -61,7 +61,7 @@ class ClosureDatesServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Build Disconnnect Request Object
+        //Build ClosurePeriod Request Object
         var requestObject: ClosurePeriod = ClosurePeriod()
         requestObject.id = ProcessInfo.processInfo.environment["CLOSURE_PERIOD_ID"] ?? ""
         requestObject.name = ProcessInfo.processInfo.environment["CLOSURE_PERIOD_NAME"] ?? ""

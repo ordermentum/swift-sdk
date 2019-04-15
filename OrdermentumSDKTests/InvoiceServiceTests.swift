@@ -38,7 +38,7 @@ class InvoiceServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Build Disconnnect Request Object
+        //Build ExportRequest Request Object
         var requestObject: ExportRequest = ExportRequest()
         requestObject.name = ProcessInfo.processInfo.environment["EXPORT_NAME"] ?? ""
         requestObject.retailerId = ProcessInfo.processInfo.environment["EXPORT_RETAILER_ID"] ?? ""
@@ -76,7 +76,7 @@ class InvoiceServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Build Disconnnect Request Object
+        //Build InvoicePaymentRequest Request Object
         var requestObject: InvoicePaymentRequest = InvoicePaymentRequest()
         requestObject.paymentMethodId = ProcessInfo.processInfo.environment["INVOICE_PAYMENT_METHOD_ID"] ?? ""
         
