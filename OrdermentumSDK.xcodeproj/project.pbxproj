@@ -14,6 +14,7 @@
 		26A2799422645C88007A52EF /* DeviceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799322645C88007A52EF /* DeviceServiceTests.swift */; };
 		26A2799622645F29007A52EF /* ExperimentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799522645F29007A52EF /* ExperimentsServiceTests.swift */; };
 		26A279982264613F007A52EF /* FlagsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A279972264613F007A52EF /* FlagsServiceTests.swift */; };
+		26A2799A22646214007A52EF /* MarketplaceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799922646214007A52EF /* MarketplaceServiceTests.swift */; };
 		2A6F52128EED75495252EE23 /* Pods_OrdermentumSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */; };
 		526155008E1402A0BB282A20 /* Pods_OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */; };
 		CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */; };
@@ -134,6 +135,7 @@
 		26A2799322645C88007A52EF /* DeviceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceServiceTests.swift; sourceTree = "<group>"; };
 		26A2799522645F29007A52EF /* ExperimentsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentsServiceTests.swift; sourceTree = "<group>"; };
 		26A279972264613F007A52EF /* FlagsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsServiceTests.swift; sourceTree = "<group>"; };
+		26A2799922646214007A52EF /* MarketplaceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceServiceTests.swift; sourceTree = "<group>"; };
 		33B4FAFC0DAF94F90E526BB5 /* Pods-ordermentum-swift-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.debug.xcconfig"; sourceTree = "<group>"; };
 		3840BE69998B16C88F4D68A3 /* Pods-ordermentum-swift-sdkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdkTests/Pods-ordermentum-swift-sdkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		437682ED2DE8EC4E4AF30490 /* Pods-OrdermentumSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDK/Pods-OrdermentumSDK.release.xcconfig"; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				26A2799322645C88007A52EF /* DeviceServiceTests.swift */,
 				26A2799522645F29007A52EF /* ExperimentsServiceTests.swift */,
 				26A279972264613F007A52EF /* FlagsServiceTests.swift */,
+				26A2799922646214007A52EF /* MarketplaceServiceTests.swift */,
 			);
 			path = OrdermentumSDKTests;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				26A2799622645F29007A52EF /* ExperimentsServiceTests.swift in Sources */,
 				26A279982264613F007A52EF /* FlagsServiceTests.swift in Sources */,
 				268EE201226439E3008E10B5 /* AddOnsServiceTests.swift in Sources */,
+				26A2799A22646214007A52EF /* MarketplaceServiceTests.swift in Sources */,
 				CA6BB820225D993700A34A01 /* FindSupplierServiceTests.swift in Sources */,
 				CAF246B2225C299300EDAF68 /* OrdersServiceTests.swift in Sources */,
 				CA2F35182255D2BD00D1118C /* AuthServiceTests.swift in Sources */,
