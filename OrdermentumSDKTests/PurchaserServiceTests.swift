@@ -26,44 +26,32 @@ class PurchaserServiceTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    
     func testGetPurchasers() {
-        
         let expectation = XCTestExpectation(description: "Async Test")
         
         var requestObject: PurchaserResponse = PurchaserResponse()
         requestObject.data = []
         requestObject.links = Links()
         
-        
         Client.instance.setTestingURL()
         Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
         
         PurchaserService().getPurchasers(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "") { (result, requestObject) in
             assert(result)
             expectation.fulfill()
         }
-        
     }
     
-    
-    
-    
-    
     func testGetPurchasersForPaymentMethod() {
-        
         //Build Request Object
         let expectation = XCTestExpectation(description: "Async Test")
         
         var requestObject: PurchaserResponse = PurchaserResponse()
         requestObject.data = []
         requestObject.links = Links()
-        
-        
+    
         Client.instance.setTestingURL()
         Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
         
         PurchaserService().getPurchasersForPaymentMethod(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", paymentMethodType: ProcessInfo.processInfo.environment["PAYMENT_METHOD"] ?? "") { (result, requestObject) in
             assert(result)
@@ -71,9 +59,7 @@ class PurchaserServiceTests: XCTestCase {
         }
     }
     
-    
     func testUpdatePaymentMethod() {
-        
         //Build Request Object
         let expectation = XCTestExpectation(description: "Async Test")
         
