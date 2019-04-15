@@ -37,7 +37,7 @@ struct Product: Encodable {
     var addTax: Bool = false
     var visible: Bool = false
     var batchCode: String = ""
-    var leadTime: String = ""
+    var leadTime: Int = 0
     var deliveryDays: [String] = []
 }
 
@@ -88,7 +88,7 @@ extension Product: Decodable {
         addTax = try container.decodeIfPresent(Bool.self, forKey: .addTax) ?? false
         visible = try container.decodeIfPresent(Bool.self, forKey: .visible) ?? false
         batchCode = try container.decodeIfPresent(String.self, forKey: .batchCode) ?? ""
-        leadTime = try container.decodeIfPresent(String.self, forKey: .leadTime) ?? ""
+        leadTime = try container.safeIntDecode(forKey: .leadTime) ?? 0
         deliveryDays = try container.decodeIfPresent([String].self, forKey: .deliveryDays) ?? []
     }
 }

@@ -372,9 +372,9 @@ extension LineItem: Decodable {
         tax = try container.decodeIfPresent(String.self, forKey: .tax) ?? ""
         taxable = try container.decodeIfPresent(Bool.self, forKey: .taxable) ?? false
         total = try container.decodeIfPresent(String.self, forKey: .total) ?? ""
-        totalWeight = try container.decodeIfPresent(Float.self, forKey: .totalWeight) ?? 0
+        totalWeight = try container.safeFloatDecode(forKey: .totalWeight) ?? 0
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
-        weight = try container.decodeIfPresent(Float.self, forKey: .weight) ?? 0
+        weight = try container.safeFloatDecode(forKey: .weight) ?? 0
     }
 }
 
