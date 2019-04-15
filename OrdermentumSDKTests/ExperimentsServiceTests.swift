@@ -38,7 +38,7 @@ class ExperimentsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Build Disconnnect Request Object
+        //Build ExperimentsDismissRequest Request Object
         var requestObject: ExperimentsDismissRequest = ExperimentsDismissRequest()
         requestObject.userId = ProcessInfo.processInfo.environment["EPERIMENT_DISMISS_USER_ID"] ?? ""
         requestObject.experimentId = ProcessInfo.processInfo.environment["EPERIMENT_DISMISS_ID"] ?? ""
