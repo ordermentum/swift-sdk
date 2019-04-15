@@ -52,4 +52,3 @@ public enum FlagsRouter: URLRequestConvertible {
         return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }
-

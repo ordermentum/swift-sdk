@@ -79,6 +79,7 @@ struct Order: Encodable {
     var paymentDelay: Int = 0
     var paymentMethodType: PaymentMethodType = PaymentMethodType()
     var paymentStatus: String = ""
+    var placedByName: String = ""
     var processingError: String = ""
     var properties: Properties = Properties()
     var randomWeight: Bool = false
@@ -96,6 +97,7 @@ struct Order: Encodable {
     var totalQuantity: Float = 0.00
     var type: String = ""
     var updatedAt: String = ""
+    var updatedByName: String = ""
 }
 
 struct LineItem: Encodable {
@@ -322,6 +324,7 @@ extension Order: Decodable {
         paymentDelay = try container.decodeIfPresent(Int.self, forKey: .paymentDelay) ?? 0
         paymentMethodType = try container.decodeIfPresent(PaymentMethodType.self, forKey: .paymentMethodType) ?? PaymentMethodType()
         paymentStatus = try container.decodeIfPresent(String.self, forKey: .paymentStatus) ?? ""
+        placedByName = try container.decodeIfPresent(String.self, forKey: .placedByName) ?? ""
         processingError = try container.decodeIfPresent(String.self, forKey: .processingError) ?? ""
         properties = try container.decodeIfPresent(Properties.self, forKey: .properties) ?? Properties()
         randomWeight = try container.decodeIfPresent(Bool.self, forKey: .randomWeight) ?? false
@@ -339,6 +342,7 @@ extension Order: Decodable {
         totalQuantity = try container.decodeIfPresent(Float.self, forKey: .totalQuantity) ?? 0.00
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
+        updatedByName = try container.decodeIfPresent(String.self, forKey: .updatedByName) ?? ""
     }
 }
 
