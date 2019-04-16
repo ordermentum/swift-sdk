@@ -38,8 +38,23 @@ class InvoiceServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
+        //Build ExportRequestData for ExportRequest Object
+        var exportRequestData: ExportRequestData = ExportRequestData()
+        var includedIds:[String] = []
+        let includedIdsJSONString = ProcessInfo.processInfo.environment["EXPORT_REQUEST_DATA_INCLUDED_IDS"] ?? ""
+        if !includedIdsJSONString.isEmpty {
+            let includedIdsJSONData = includedIdsJSONString.data(using: .utf8) ?? Data()
+            if let json = try? JSONSerialization.jsonObject(with: includedIdsJSONData), let array = json as? [String] {
+                includedIds = array
+            }
+        }
+        exportRequestData.includedIds = includedIds
+        exportRequestData.all = (ProcessInfo.processInfo.environment["EXPORT_REQUEST_DATA_ALL"] ?? "").toBool()
+        exportRequestData.searchQuery = ProcessInfo.processInfo.environment["EXPORT_REQUEST_DATA_SEARCH_QUERY"] ?? ""
+        
         //Build ExportRequest Request Object
         var requestObject: ExportRequest = ExportRequest()
+        requestObject.data = exportRequestData
         requestObject.name = ProcessInfo.processInfo.environment["EXPORT_NAME"] ?? ""
         requestObject.retailerId = ProcessInfo.processInfo.environment["EXPORT_RETAILER_ID"] ?? ""
         requestObject.supplierId = ProcessInfo.processInfo.environment["EXPORT_SUPPLIER_ID"] ?? ""
@@ -90,5 +105,4 @@ class InvoiceServiceTests: XCTestCase {
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
-
 }
