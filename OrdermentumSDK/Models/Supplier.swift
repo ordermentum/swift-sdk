@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Supplier: Encodable {
+public struct Supplier: Encodable {
     var live: Bool = false
     var id: String = ""
     var name: String = ""
@@ -45,7 +45,7 @@ struct Supplier: Encodable {
 }
 
 extension Supplier: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

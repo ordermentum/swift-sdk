@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class FindSupplierService {
+public class FindSupplierService {
     /**
      * Get suppliers available based on search string
      * Returns a FindSupplierResponse

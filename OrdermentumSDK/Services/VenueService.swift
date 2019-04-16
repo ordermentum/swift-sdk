@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class VenueService {
+public class VenueService {
     /**
      * Fetch the venues of the currently logged in user
      * Returns a Venue object

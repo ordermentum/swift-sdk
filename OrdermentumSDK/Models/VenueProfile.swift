@@ -16,12 +16,12 @@ public struct VenueProfile: Codable {
     var tradingName: String = ""
 }
 
-struct Completion {
+public struct Completion {
     var profilePercent: Int = 0
 }
 
 extension Completion: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

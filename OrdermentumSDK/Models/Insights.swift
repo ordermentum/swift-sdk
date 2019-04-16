@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Insights: Encodable {
+public struct Insights: Encodable {
     var trending: Bool = false
     var mostOrdered: Bool = false
 }
 
 extension Insights: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

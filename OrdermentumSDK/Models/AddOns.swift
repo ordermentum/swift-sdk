@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct AddOnsResponse {
+public struct AddOnsResponse {
     var data: [AddOn] = []
 }
 
-struct AddOn {
+public struct AddOn {
     var connectUrl: String = ""
     var disconnectUrl: String = ""
     var entityName: String = ""
@@ -27,18 +27,18 @@ struct AddOn {
     var updateUrl: String = ""
 }
 
-struct IntegrationData {
+public struct IntegrationData {
     var accountId: String = ""
     var expenseAccountCode: String = ""
     var lastInvoiceSyncedAt: String = ""
     var supplierName: String = ""
 }
 
-struct AddOnsDiscoverResponse {
+public struct AddOnsDiscoverResponse {
     var data: [AddOnsDiscover] = []
 }
 
-struct AddOnsDiscover {
+public struct AddOnsDiscover {
     var description: String = ""
     var links: AddOnsDiscoverLinks = AddOnsDiscoverLinks()
     var logo: String = ""
@@ -49,7 +49,7 @@ struct AddOnsDiscover {
     var type: String = ""
 }
 
-struct AddOnsDiscoverLinks {
+public struct AddOnsDiscoverLinks {
     var connect: String = ""
 }
 
@@ -63,7 +63,7 @@ public struct AddOnDisconnectObject: Codable {
 }
 
 extension AddOn: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -84,7 +84,7 @@ extension AddOn: Decodable {
 }
 
 extension IntegrationData: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -97,7 +97,7 @@ extension IntegrationData: Decodable {
 }
 
 extension AddOnsDiscoverResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -107,7 +107,7 @@ extension AddOnsDiscoverResponse: Decodable {
 }
 
 extension AddOnsDiscover: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -124,7 +124,7 @@ extension AddOnsDiscover: Decodable {
 }
 
 extension AddOnsDiscoverLinks: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

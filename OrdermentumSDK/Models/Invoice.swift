@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct InvoiceResponse {
+public struct InvoiceResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [Invoice] = []
 }
 
-struct Invoice: Encodable {
+public struct Invoice: Encodable {
     var cancelledAt: String = ""
     var chargedByUserId: String = ""
     var charged_by_user_id: String = ""
@@ -72,7 +72,7 @@ struct Invoice: Encodable {
     var user_id: String = ""
 }
 
-struct InvoiceFrequency {
+public struct InvoiceFrequency {
     var daily: Bool = false
     var weekly: Bool = false
     var monthly: Bool = false
@@ -80,12 +80,12 @@ struct InvoiceFrequency {
     var fortnightly: Bool = false
 }
 
-struct InvoiceSetting {
+public struct InvoiceSetting {
     var creation: Bool = false
     var delivery: Bool = false
 }
 
-struct InvoiceDisplay: Encodable {
+public struct InvoiceDisplay: Encodable {
     var subtotal: String = ""
     var total: String = ""
     var totalCost: String = ""
@@ -100,7 +100,7 @@ struct InvoiceDisplay: Encodable {
     var billingEndDate: String = ""
 }
 
-struct ExportResponse {
+public struct ExportResponse {
     var completedAt: String = ""
     var createdAt: String = ""
     var fileType: String = ""
@@ -120,7 +120,7 @@ public struct ExportRequest: Codable {
     var socketId: String = ""
 }
 
-struct ExportRequestData: Codable {
+public struct ExportRequestData: Codable {
     var includedIds: [String] = []
     var all: Bool = false
     var searchQuery: String = ""
@@ -131,7 +131,7 @@ public struct InvoicePaymentRequest: Codable {
 }
 
 extension InvoiceResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -143,7 +143,7 @@ extension InvoiceResponse: Decodable {
 }
 
 extension Invoice: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -207,7 +207,7 @@ extension Invoice: Decodable {
 }
 
 extension InvoiceFrequency: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -221,7 +221,7 @@ extension InvoiceFrequency: Decodable {
 }
 
 extension InvoiceSetting: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -232,7 +232,7 @@ extension InvoiceSetting: Decodable {
 }
 
 extension InvoiceDisplay: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -253,7 +253,7 @@ extension InvoiceDisplay: Decodable {
 }
 
 extension ExportResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

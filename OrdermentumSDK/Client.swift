@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class Client {
+public class Client {
     //Data
     var baseURL: String = ""
     var token: String = ""

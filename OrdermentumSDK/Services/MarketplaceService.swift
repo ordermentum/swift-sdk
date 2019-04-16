@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class MarketplaceService {
+public class MarketplaceService {
     /**
      * Fetch the marketplaces for a selected retailer
      * Returns a Marketplace object

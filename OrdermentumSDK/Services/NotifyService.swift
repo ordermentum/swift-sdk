@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class NotifyService {
+public class NotifyService {
     /**
      * Send device details for a user to the Ordermentum service
      * Returns a ResponseBody which can be used to check for a 200 response

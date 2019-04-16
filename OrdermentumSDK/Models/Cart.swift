@@ -8,19 +8,19 @@
 
 import Foundation
 
-struct Cart {
+public struct Cart {
     var deliveryDate: String?
     var lineItems: [CartLineItem]?
     var retailerId: String?
     var supplierId: String?
 }
 
-struct CartProduct {
+public struct CartProduct {
     var product: Product
     var quantity: Int
 }
 
-struct CartOrder {
+public struct CartOrder {
     var lineItems: [CartLineItem]?
     var supplierId: String?
     var retailerId: String?
@@ -33,13 +33,13 @@ struct CartOrder {
     var origin: String?
 }
 
-struct CartLineItem {
+public struct CartLineItem {
     var productId: String?
     var quantity: Int?
 }
 
 extension Cart: Encodable {
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         //Init Container
         var container = encoder.container(keyedBy: CodingKeys.self)
         
@@ -52,7 +52,7 @@ extension Cart: Encodable {
 }
 
 extension CartOrder: Encodable {
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         //Init Container
         var container = encoder.container(keyedBy: CodingKeys.self)
         
@@ -71,7 +71,7 @@ extension CartOrder: Encodable {
 }
 
 extension CartLineItem: Encodable {
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         //Init Container
         var container = encoder.container(keyedBy: CodingKeys.self)
         
@@ -82,8 +82,7 @@ extension CartLineItem: Encodable {
 }
 
 extension CartProduct: Equatable {
-    
-    static func == (lhs: CartProduct, rhs: CartProduct) -> Bool {
+    public static func == (lhs: CartProduct, rhs: CartProduct) -> Bool {
         return lhs.product.id == rhs.product.id
     }
 }

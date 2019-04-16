@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PaymentMethod {
+public struct PaymentMethod {
     var account: String = ""
     var accountName: String = ""
     var bankConfigured: Bool = false
@@ -65,7 +65,7 @@ public struct CreateDirectDebitPaymentMethodRequest: Codable {
 }
 
 extension PaymentMethod: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

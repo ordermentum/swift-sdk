@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class ExperimentsService {
+public class ExperimentsService {
     /**
      * Get the experiments belonging to a user
      * Returns a ExperimentsResponse

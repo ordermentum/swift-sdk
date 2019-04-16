@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class CreditNotesService {
+public class CreditNotesService {
     /**
      * Get the credit notes belonging to a purchaser
      * Returns a CreditNotesResponse

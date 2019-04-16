@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class InvoiceService {
+public class InvoiceService {
     /**
      * Get the invoices belonging to a retailer/supplier relationship
      * Returns a InvoiceResponse

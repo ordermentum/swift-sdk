@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class NPSService {
+public class NPSService {
     /**
      * Fetch the NPS parameters for the current user
      * which can be used to determine whether or not the NPS should be shown

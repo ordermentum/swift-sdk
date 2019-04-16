@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class PurchaserService {
+public class PurchaserService {
     /**
      * Fetch the purchasers for a supplier retailer relationship
      * Returns a PurchaserResponse

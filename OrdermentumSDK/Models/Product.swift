@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct ProductResponse {
+public struct ProductResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [Product] = []
 }
 
-struct Product: Encodable {
+public struct Product: Encodable {
     var id: String = ""
     var name: String = ""
     var price: String = ""
@@ -41,7 +41,7 @@ struct Product: Encodable {
     var deliveryDays: [String] = []
 }
 
-struct Display: Encodable {
+public struct Display: Encodable {
     var displayUOM: String = ""
     var price: String = ""
     var unitPrice: String = ""
@@ -49,7 +49,7 @@ struct Display: Encodable {
 }
 
 extension ProductResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -61,7 +61,7 @@ extension ProductResponse: Decodable {
 }
 
 extension Product: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -94,7 +94,7 @@ extension Product: Decodable {
 }
 
 extension Display: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         displayUOM = try container.decodeIfPresent(String.self, forKey: .displayUOM) ?? ""

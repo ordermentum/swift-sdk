@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ClosurePeriodsResponse {
+public struct ClosurePeriodsResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [ClosurePeriod] = []
@@ -24,7 +24,7 @@ public struct ClosurePeriod: Encodable {
 }
 
 extension ClosurePeriodsResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

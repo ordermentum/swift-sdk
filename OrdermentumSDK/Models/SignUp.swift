@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct SignUpResponse {
+public struct SignUpResponse {
     var user: SignUpUser = SignUpUser()
     var token: String = ""
 }
 
-struct SignUpUser {
+public struct SignUpUser {
     var id: String = ""
     var firstName: String = ""
     var lastName: String = ""
@@ -23,7 +23,7 @@ struct SignUpUser {
 }
 
 extension SignUpResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         user = try container.decodeIfPresent(SignUpUser.self, forKey: .user) ?? SignUpUser()
         token = try container.decodeIfPresent(String.self, forKey: .token) ?? ""
@@ -31,7 +31,7 @@ extension SignUpResponse: Decodable {
 }
 
 extension SignUpUser: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         firstName = try container.decodeIfPresent(String.self, forKey: .firstName) ?? ""

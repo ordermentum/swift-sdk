@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class ProductsService {
+public class ProductsService {
     /**
      * Fetch the product categories for a particular supplier-retailer relationship
      * Returns a Category object

@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct VenueResponse {
+public struct VenueResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [Venue] = []
 }
 
-struct Venue {
+public struct Venue {
     var id: String = ""
     var name: String = ""
     var legalName: String = ""
@@ -36,7 +36,7 @@ struct Venue {
     var updatedAt: String = ""
 }
 
-struct VenueAccountSettings: Encodable {
+public struct VenueAccountSettings: Encodable {
     var flags: [String] = []
     var insights: Insights = Insights()
     var orderPrefix: String = ""
@@ -48,7 +48,7 @@ struct VenueAccountSettings: Encodable {
     var defaultDeliveryDelay: Int = 0
 }
 
-struct VenueAddress {
+public struct VenueAddress {
     var formatted: String = ""
     var id: String = ""
     var name: String = ""
@@ -70,12 +70,12 @@ struct VenueAddress {
     var deleted_at: String = ""
 }
 
-struct VenueBrand {
+public struct VenueBrand {
     var logo: VenueImage = VenueImage()
     var images: [VenueImage] = []
 }
 
-struct VenueImage {
+public struct VenueImage {
     var url: String = ""
     var width: Int = 0
     var format: String = ""
@@ -87,12 +87,12 @@ struct VenueImage {
     var resource_type: String = ""
 }
 
-struct VenueSettings {
+public struct VenueSettings {
     var flags: [String] = []
     var brand: VenueBrand = VenueBrand()
 }
 
-struct User {
+public struct User {
     var id: String = ""
     var email: String = ""
     var dob: String = ""
@@ -109,7 +109,7 @@ struct User {
     var deleted_at: String = ""
 }
 
-struct VenueUsersResponse {
+public struct VenueUsersResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [User] = []
@@ -133,7 +133,7 @@ public struct AddUser: Codable {
     var inviteType: String = ""
 }
 
-struct AddUserResponse {
+public struct AddUserResponse {
     var id: String = ""
     var senderEntityName: String = ""
     var senderId: String = ""
@@ -153,7 +153,7 @@ struct AddUserResponse {
 }
 
 extension VenueResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -165,7 +165,7 @@ extension VenueResponse: Decodable {
 }
 
 extension Venue: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -193,7 +193,7 @@ extension Venue: Decodable {
 }
 
 extension VenueAccountSettings: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -211,7 +211,7 @@ extension VenueAccountSettings: Decodable {
 }
 
 extension VenueAddress: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -239,7 +239,7 @@ extension VenueAddress: Decodable {
 }
 
 extension VenueBrand: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -250,7 +250,7 @@ extension VenueBrand: Decodable {
 }
 
 extension VenueImage: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -268,7 +268,7 @@ extension VenueImage: Decodable {
 }
 
 extension VenueSettings: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -279,7 +279,7 @@ extension VenueSettings: Decodable {
 }
 
 extension VenueUsersResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -291,7 +291,7 @@ extension VenueUsersResponse: Decodable {
 }
 
 extension User: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -314,7 +314,7 @@ extension User: Decodable {
 }
 
 extension AddUserResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -339,7 +339,7 @@ extension AddUserResponse: Decodable {
 }
 
 extension Venue: Equatable {
-    static func == (lhs: Venue, rhs: Venue) -> Bool {
+    public static func == (lhs: Venue, rhs: Venue) -> Bool {
         return lhs.id == rhs.id
     }
 }

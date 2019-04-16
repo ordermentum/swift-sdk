@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct MarketplaceResponse {
+public struct MarketplaceResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [Marketplace] = []
 }
 
-struct Marketplace {
+public struct Marketplace {
     var id: String = ""
     var address: Address = Address()
     var name: String = ""
@@ -39,16 +39,16 @@ struct Marketplace {
     var updatedAt: String = ""
 }
 
-struct Properties: Encodable {
+public struct Properties: Encodable {
     var demoSupplier: String = ""
 }
 
-struct MarketplaceSettings {
+public struct MarketplaceSettings {
     var brand: Brand = Brand()
 }
 
 extension MarketplaceResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -60,7 +60,7 @@ extension MarketplaceResponse: Decodable {
 }
 
 extension Marketplace: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -91,7 +91,7 @@ extension Marketplace: Decodable {
 }
 
 extension Properties: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -101,7 +101,7 @@ extension Properties: Decodable {
 }
 
 extension MarketplaceSettings: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

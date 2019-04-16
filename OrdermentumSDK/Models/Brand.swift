@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Brand {
+public struct Brand {
     var logo: Image = Image()
     var images: [Image] = []
 }
 
 extension Brand: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

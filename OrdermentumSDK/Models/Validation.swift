@@ -17,13 +17,13 @@ public struct ValidationRequestBody: Codable {
     var type: String = ""
 }
 
-struct ValidationRequestBodyLineItem: Codable {
+public struct ValidationRequestBodyLineItem: Codable {
     var productId: String = ""
     var quantity: Int = 0
 }
 
 /** Response **/
-struct Validation {
+public struct Validation {
     var cart: ValidationCart = ValidationCart()
     var display: ValidationDisplay = ValidationDisplay()
     var lineItems: [ValidationLineItem] = []
@@ -43,30 +43,30 @@ struct Validation {
     var totalFreightIncGST: Float = 0.00
 }
 
-struct ValidationCart {
+public struct ValidationCart {
     var errors: [ValidationError] = []
 }
 
-struct ValidationError {
+public struct ValidationError {
     var message: String = ""
     var type: String = ""
 }
 
-struct ValidationDisplay {
+public struct ValidationDisplay {
     var totalFreight: String = ""
     var totalCost: String = ""
     var totalGST: String = ""
     var total: String = ""
 }
 
-struct ValidationLineItem {
+public struct ValidationLineItem {
     var productId: String = ""
     var errors: [ValidationError] = []
     var display: ValidationLineItemDisplay = ValidationLineItemDisplay()
     var locked: Bool = false
 }
 
-struct ValidationLineItemDisplay {
+public struct ValidationLineItemDisplay {
     var price: Float = 0.00
     var priceFromTotal: Float = 0.00
     var priceInc: Float = 0.00
@@ -76,7 +76,7 @@ struct ValidationLineItemDisplay {
 }
 
 extension Validation: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -102,7 +102,7 @@ extension Validation: Decodable {
 }
 
 extension ValidationCart: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -112,7 +112,7 @@ extension ValidationCart: Decodable {
 }
 
 extension ValidationError: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -123,7 +123,7 @@ extension ValidationError: Decodable {
 }
 
 extension ValidationDisplay: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -136,7 +136,7 @@ extension ValidationDisplay: Decodable {
 }
 
 extension ValidationLineItem: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -149,7 +149,7 @@ extension ValidationLineItem: Decodable {
 }
 
 extension ValidationLineItemDisplay: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

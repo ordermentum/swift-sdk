@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Login: Codable {
+public struct Login: Codable {
     var access_token: String = ""
     var token_type: String = ""
 }
@@ -22,7 +22,7 @@ public struct ForgotPasswordRequest: Codable {
     var email: String = ""
 }
 
-struct ChangePassword: Codable {
+public struct ChangePassword: Codable {
     var success: Bool = false
     var message: String = ""
 }

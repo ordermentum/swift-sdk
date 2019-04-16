@@ -11,7 +11,6 @@ import Alamofire
 
 class Service<D: Decodable> {
     func request(route: URLRequestConvertible, completion: @escaping (Bool, D?) -> ()) {
-        print(route.urlRequest?.url)
         AF.request(route)
             .responseJSON { response in
                 switch response.result {

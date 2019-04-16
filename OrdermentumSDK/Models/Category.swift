@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct CategoryResponse {
+public struct CategoryResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [Category] = []
 }
 
-struct Category: Encodable {
+public struct Category: Encodable {
     var id: String = ""
     var name: String = ""
     var description: String = ""
@@ -26,7 +26,7 @@ struct Category: Encodable {
 }
 
 extension CategoryResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -38,7 +38,7 @@ extension CategoryResponse: Decodable {
 }
 
 extension Category: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -55,7 +55,7 @@ extension Category: Decodable {
 }
 
 extension Category: Equatable {
-    static func == (lhs: Category, rhs: Category) -> Bool {
+    public static func == (lhs: Category, rhs: Category) -> Bool {
         return lhs.id == rhs.id
     }
 }

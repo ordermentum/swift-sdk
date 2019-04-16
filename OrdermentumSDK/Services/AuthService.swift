@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class AuthService {
+public class AuthService {
     /**
      * Login to the Ordermentum service.
      * Returns a Login object

@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct PurchaserResponse {
+public struct PurchaserResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [Purchaser] = []
 }
 
-struct Purchaser {
+public struct Purchaser {
     var id: String = ""
     var reference: String = ""
     var name: String = ""
@@ -62,22 +62,22 @@ struct Purchaser {
     var orderedAt: String = ""
 }
 
-struct PaymentMethodTypes {
+public struct PaymentMethodTypes {
     var value: [String] = []
     var display: String = ""
 }
 
-struct PaymentMethodType: Encodable {
+public struct PaymentMethodType: Encodable {
     var display: String = ""
     var value: String = ""
 }
 
-struct Schedule {
+public struct Schedule {
     var id: String = ""
     var name: String = ""
 }
 
-struct RetailerAddress {
+public struct RetailerAddress {
     var number: String = ""
     var street1: String = ""
     var street2: String = ""
@@ -89,7 +89,7 @@ struct RetailerAddress {
     var type: String = ""
 }
 
-struct Retailer {
+public struct Retailer {
     var id: String = ""
     var name: String = ""
     var legalName: String = ""
@@ -111,7 +111,7 @@ struct Retailer {
     var updatedAt: String = ""
 }
 
-struct RetailerDataAttributes {
+public struct RetailerDataAttributes {
     var pos: String = ""
     var venue: String = ""
     var banking: String = ""
@@ -119,12 +119,12 @@ struct RetailerDataAttributes {
     var tradingHours: TradingHours = TradingHours()
 }
 
-struct PurchaserPaymentMethod {
+public struct PurchaserPaymentMethod {
     var bankConfigured: Bool = false
     var cardConfigured: Bool = false
 }
 
-struct PurchaserSettings {
+public struct PurchaserSettings {
     var brand: Brand = Brand()
     var flags: [String] = []
     var dayStart: String = ""
@@ -147,11 +147,11 @@ struct PurchaserSettings {
     var includeOrderUpdatesInReports: Bool = false
 }
 
-struct PurchaserProperties {
+public struct PurchaserProperties {
     var demoSupplier: Bool = false
 }
 
-struct PriceGroup {
+public struct PriceGroup {
     var id: String = ""
     var name: String = ""
     var supplierId: String = ""
@@ -167,7 +167,7 @@ struct PriceGroup {
     var user_id: String = ""
 }
 
-struct VisibilityGroup {
+public struct VisibilityGroup {
     var id: String = ""
     var name: String = ""
     var supplierId: String = ""
@@ -183,7 +183,7 @@ struct VisibilityGroup {
     var user_id: String = ""
 }
 
-struct FreightGroup {
+public struct FreightGroup {
     var id: String = ""
     var name: String = ""
     var type: String = ""
@@ -204,7 +204,7 @@ struct FreightGroup {
 }
 
 extension PurchaserResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -216,7 +216,7 @@ extension PurchaserResponse: Decodable {
 }
 
 extension Purchaser: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -270,7 +270,7 @@ extension Purchaser: Decodable {
 }
 
 extension PaymentMethodTypes: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -281,7 +281,7 @@ extension PaymentMethodTypes: Decodable {
 }
 
 extension PaymentMethodType: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -292,7 +292,7 @@ extension PaymentMethodType: Decodable {
 }
 
 extension Schedule: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -303,7 +303,7 @@ extension Schedule: Decodable {
 }
 
 extension RetailerAddress: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -321,7 +321,7 @@ extension RetailerAddress: Decodable {
 }
 
 extension Retailer: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -349,7 +349,7 @@ extension Retailer: Decodable {
 }
 
 extension RetailerDataAttributes: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -363,7 +363,7 @@ extension RetailerDataAttributes: Decodable {
 }
 
 extension PurchaserPaymentMethod: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -374,7 +374,7 @@ extension PurchaserPaymentMethod: Decodable {
 }
 
 extension PurchaserSettings: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -403,7 +403,7 @@ extension PurchaserSettings: Decodable {
 }
 
 extension PurchaserProperties: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -413,7 +413,7 @@ extension PurchaserProperties: Decodable {
 }
 
 extension PriceGroup: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -435,7 +435,7 @@ extension PriceGroup: Decodable {
 }
 
 extension VisibilityGroup: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -457,7 +457,7 @@ extension VisibilityGroup: Decodable {
 }
 
 extension FreightGroup: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

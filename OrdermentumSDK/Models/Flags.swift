@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Flags {
+public struct Flags {
     var findSupplier: Bool = false
     var review: Bool = false
     var dashboardProfile: Bool = false
@@ -22,7 +22,7 @@ struct Flags {
 }
 
 extension Flags: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         findSupplier = try container.decodeIfPresent(Bool.self, forKey: .findSupplier) ?? false

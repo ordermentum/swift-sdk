@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class ClosureDatesService {
+public class ClosureDatesService {
     /**
      * Get the closure periods belonging to a retailer
      * Returns a ClosurePeriodsResponse

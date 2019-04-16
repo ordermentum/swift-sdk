@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct ErrorResponse {
+public struct ErrorResponse {
     var message: String = ""
     var name: String = ""
     var code: Int = 0
 }
 
 extension ErrorResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         do {

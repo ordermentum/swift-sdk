@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FindSupplierResponse {
+public struct FindSupplierResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [FindSupplierData] = []
@@ -33,7 +33,7 @@ public struct FindSupplierReferralRequest: Codable {
     var source: String = ""
 }
 
-struct FindSupplierData {
+public struct FindSupplierData {
     var id: String = ""
     var logo: Image = Image()
     var name: String = ""
@@ -42,7 +42,7 @@ struct FindSupplierData {
 }
 
 extension FindSupplierResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -54,7 +54,7 @@ extension FindSupplierResponse: Decodable {
 }
 
 extension FindSupplierData: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

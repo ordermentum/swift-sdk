@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct VenueSearchResponse {
+public struct VenueSearchResponse {
     var data: [VenueSearch] = []
 }
 
-struct VenueSearch {
+public struct VenueSearch {
     var id: String = ""
     var legalName: String = ""
     var tradingName: String = ""
@@ -20,7 +20,7 @@ struct VenueSearch {
 }
 
 extension VenueSearchResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -30,7 +30,7 @@ extension VenueSearchResponse: Decodable {
 }
 
 extension VenueSearch: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

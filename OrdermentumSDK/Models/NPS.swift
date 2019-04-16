@@ -13,7 +13,7 @@ public struct NPSFeedback: Codable {
     var comment: String = ""
 }
 
-struct NPSResponse {
+public struct NPSResponse {
     var id: String = ""
     var email: String = ""
     var survey_scheduled_at: String = ""
@@ -22,7 +22,7 @@ struct NPSResponse {
 }
 
 extension NPSResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

@@ -8,24 +8,24 @@
 
 import Foundation
 
-struct ProjectionsResponse {
+public struct ProjectionsResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [Projection] = []
 }
 
-struct Projection {
+public struct Projection {
     var date: String = ""
     var deliveries: [Delivery] = []
     var projections: [SingleProjection] = []
 }
 
-struct Delivery {
+public struct Delivery {
     var runAt: String = ""
     var purchaserScheduleId: String = ""
 }
 
-struct SingleProjection {
+public struct SingleProjection {
     var orderId: String = ""
     var supplierId: String = ""
     var timeZone: String = ""
@@ -72,7 +72,7 @@ public struct ProjectionReinstateRequest: Codable {
 }
 
 extension ProjectionsResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -84,7 +84,7 @@ extension ProjectionsResponse: Decodable {
 }
 
 extension Projection: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -96,7 +96,7 @@ extension Projection: Decodable {
 }
 
 extension Delivery: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -107,7 +107,7 @@ extension Delivery: Decodable {
 }
 
 extension SingleProjection: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -149,11 +149,11 @@ extension SingleProjection: Decodable {
 }
 
 extension SingleProjection: Equatable {
-    static func == (lhs: SingleProjection, rhs: SingleProjection) -> Bool {
+    public static func == (lhs: SingleProjection, rhs: SingleProjection) -> Bool {
         return lhs.orderId == rhs.orderId
     }
     
-    func displayOrderName() -> String {
+    public func displayOrderName() -> String {
         //Check Order Name
         if !scheduleName.isEmpty {
             return scheduleName

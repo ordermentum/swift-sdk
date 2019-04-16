@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Meta {
+public struct Meta {
     var totalResults: Int = 0
     var totalPages: Int = 0
     var pageSize: Int = 0
     var pageNo: Int = 0
 }
 
-struct Links {
+public struct Links {
     var linksSelf: String = ""
     var first: String = ""
     var prev: String = ""
@@ -24,7 +24,7 @@ struct Links {
 }
 
 extension Meta: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -37,7 +37,7 @@ extension Meta: Decodable {
 }
 
 extension Links: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

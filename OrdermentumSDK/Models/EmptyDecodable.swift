@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct EmptyDecodable: Decodable {
+public struct EmptyDecodable: Decodable {
     // leave it as blank
 }

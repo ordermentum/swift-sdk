@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class NotificationsService {
+public class NotificationsService {
     /**
      * Update a particular notification setting for a supplier to retailer relationship
      * Returns a ResponseBody

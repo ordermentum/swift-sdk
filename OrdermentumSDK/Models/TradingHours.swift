@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TradingHours: Codable {
+public struct TradingHours: Codable {
     var enabled: Bool = false
     var mon: TradingHoursDay = TradingHoursDay()
     var tue: TradingHoursDay = TradingHoursDay()
@@ -19,7 +19,7 @@ struct TradingHours: Codable {
     var sun: TradingHoursDay = TradingHoursDay()
 }
 
-struct TradingHoursDay: Codable {
+public struct TradingHoursDay: Codable {
     var isOpen: Bool = false
     var closeHour: Int = 17
     var closeMinute: Int = 0
@@ -28,7 +28,7 @@ struct TradingHoursDay: Codable {
 }
 
 extension TradingHours {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -45,7 +45,7 @@ extension TradingHours {
 }
 
 extension TradingHoursDay {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

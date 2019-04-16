@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class ProfileService {
+public class ProfileService {
     /**
      * Fetch the currently logged in users profile
      * Returns a UserProfile

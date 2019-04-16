@@ -22,26 +22,26 @@ public struct CreateOrder: Codable {
     var paymentMethodId: String = ""
 }
 
-struct CreateOrderLineItem: Codable {
+public struct CreateOrderLineItem: Codable {
     var name: String = ""
     var price: Float = 0.00
     var productId: String = ""
     var quantity: Int
 }
 
-struct OrderResponse {
+public struct OrderResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [Order] = []
 }
 
-struct ClassicStandingOrderResponse {
+public struct ClassicStandingOrderResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [ClassicStandingOrder] = []
 }
 
-struct Order: Encodable {
+public struct Order: Encodable {
     var canMarkAsPaid: Bool = false
     var canMarkAsUnpaid: Bool = false
     var cancelledAt: String = ""
@@ -100,7 +100,7 @@ struct Order: Encodable {
     var updatedByName: String = ""
 }
 
-struct LineItem: Encodable {
+public struct LineItem: Encodable {
     var SKU: String = ""
     var batchCode: String = ""
     var createdAt: String = ""
@@ -126,7 +126,7 @@ struct LineItem: Encodable {
     var weight: Float = 0
 }
 
-struct ClassicStandingOrder {
+public struct ClassicStandingOrder {
     var id: String = ""
     var name: String = ""
     var alias: String = ""
@@ -153,7 +153,7 @@ struct ClassicStandingOrder {
     var endDate: String = ""
 }
 
-struct ClassicStandingOrderSchedule {
+public struct ClassicStandingOrderSchedule {
     var id: String = ""
     var name: String = ""
     var alias: String = ""
@@ -182,7 +182,7 @@ struct ClassicStandingOrderSchedule {
     var timezone: String = ""
 }
 
-struct ClassicStandingOrderRecurrenceInfo {
+public struct ClassicStandingOrderRecurrenceInfo {
     var freq: String = ""
     var byhour: String = ""
     var byminute: String = ""
@@ -190,11 +190,11 @@ struct ClassicStandingOrderRecurrenceInfo {
     var timezone: String = ""
 }
 
-struct ClassicStandingOrderSupplier {
+public struct ClassicStandingOrderSupplier {
     var name: String = ""
 }
 
-struct ClassicStandingOrderUpdatedBy {
+public struct ClassicStandingOrderUpdatedBy {
     var firstName: String = ""
     var lastName: String = ""
 }
@@ -211,7 +211,7 @@ public struct CreateFavouriteRequest: Codable {
     var type: String = ""
 }
 
-struct CreateFavouriteRequestLineItem: Codable {
+public struct CreateFavouriteRequestLineItem: Codable {
     var name: String = ""
     var price: Float = 0.00
     var productId: String = ""
@@ -252,13 +252,13 @@ public struct UpdateScheduleRequest: Codable {
     var type: String = ""
 }
 
-struct UpdateOrderRequestLineItem: Codable {
+public struct UpdateOrderRequestLineItem: Codable {
     var productId: String = ""
     var quantity: Int = 0
 }
 
 extension OrderResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -270,7 +270,7 @@ extension OrderResponse: Decodable {
 }
 
 extension ClassicStandingOrderResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -282,7 +282,7 @@ extension ClassicStandingOrderResponse: Decodable {
 }
 
 extension Order: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -347,7 +347,7 @@ extension Order: Decodable {
 }
 
 extension LineItem: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -379,7 +379,7 @@ extension LineItem: Decodable {
 }
 
 extension ClassicStandingOrder: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -412,7 +412,7 @@ extension ClassicStandingOrder: Decodable {
 }
 
 extension ClassicStandingOrderSchedule: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -447,7 +447,7 @@ extension ClassicStandingOrderSchedule: Decodable {
 }
 
 extension ClassicStandingOrderRecurrenceInfo: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -461,7 +461,7 @@ extension ClassicStandingOrderRecurrenceInfo: Decodable {
 }
 
 extension ClassicStandingOrderSupplier: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -471,7 +471,7 @@ extension ClassicStandingOrderSupplier: Decodable {
 }
 
 extension ClassicStandingOrderUpdatedBy: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -482,13 +482,13 @@ extension ClassicStandingOrderUpdatedBy: Decodable {
 }
 
 extension Order: Equatable {
-    static func == (lhs: Order, rhs: Order) -> Bool {
+    public static func == (lhs: Order, rhs: Order) -> Bool {
         return lhs.id == rhs.id
     }
 }
 
 extension LineItem: Equatable {
-    static func == (lhs: LineItem, rhs: LineItem) -> Bool {
+    public static func == (lhs: LineItem, rhs: LineItem) -> Bool {
         return lhs.product.id == rhs.product.id
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class OrdersService {
+public class OrdersService {
     /**
      * Create an order for a retailer
      * Returns an Order

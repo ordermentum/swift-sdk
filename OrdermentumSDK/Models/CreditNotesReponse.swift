@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct CreditNotesResponse {
+public struct CreditNotesResponse {
     var meta: Meta = Meta()
     var links: Links = Links()
     var data: [CreditNote] = []
 }
 
-struct CreditNote {
+public struct CreditNote {
     var id: String = ""
     var number: String = ""
     var userId: String = ""
@@ -40,7 +40,7 @@ struct CreditNote {
 }
 
 extension CreditNotesResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -52,7 +52,7 @@ extension CreditNotesResponse: Decodable {
 }
 
 extension CreditNote: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

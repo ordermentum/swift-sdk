@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class PaymentsService {
+public class PaymentsService {
     /**
      * Fetch the payment methods belonging to a retailer
      * Returns an array of PaymentMethod

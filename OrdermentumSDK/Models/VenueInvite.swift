@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct VenueInviteResponse {
+public struct VenueInviteResponse {
     var data: [VenueInvite] = []
 }
 
-struct VenueInvite {
+public struct VenueInvite {
     var id: String = ""
     var senderEntityName: String = ""
     var senderType: String = ""
@@ -33,14 +33,14 @@ struct VenueInvite {
 }
 
 extension VenueInviteResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         data = try container.decodeIfPresent([VenueInvite].self, forKey: .data) ?? []
     }
 }
 
 extension VenueInvite: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         senderEntityName = try container.decodeIfPresent(String.self, forKey: .senderEntityName) ?? ""

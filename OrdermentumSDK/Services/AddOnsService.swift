@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class AddOnsService {
+public class AddOnsService {
     /**
      * Get already connected add-ons
      * Returns a AddOnsResponse

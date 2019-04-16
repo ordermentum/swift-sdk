@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct ExperimentsResponse {
+public struct ExperimentsResponse {
     var data: [ExperimentsData] = []
 }
 
-struct ExperimentsData {
+public struct ExperimentsData {
     var id: String = ""
     var slot: String = ""
     var name: String = ""
@@ -25,7 +25,7 @@ public struct ExperimentsDismissRequest: Encodable {
 }
 
 extension ExperimentsResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -35,7 +35,7 @@ extension ExperimentsResponse: Decodable {
 }
 
 extension ExperimentsData: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -59,7 +59,7 @@ extension ExperimentsDismissRequest: Decodable {
 }
 
 extension ExperimentsData: Equatable {
-    static func == (lhs: ExperimentsData, rhs: ExperimentsData) -> Bool {
+    public static func == (lhs: ExperimentsData, rhs: ExperimentsData) -> Bool {
         return lhs.id == rhs.id
     }
 }

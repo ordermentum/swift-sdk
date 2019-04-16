@@ -8,19 +8,19 @@
 
 import Foundation
 
-struct PaginatedAPIResponse<D: Decodable>: Decodable {
+public struct PaginatedAPIResponse<D: Decodable>: Decodable {
     var meta: PaginatedAPIMeta?
     var links: PaginatedAPILink?
     var data: [D]?
 }
 
-struct PaginatedAPIMeta: Decodable {
+public struct PaginatedAPIMeta: Decodable {
     var totalResults: Int
     var totalPages: Int
     var pageSize: Int
     var pageNo: Int
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: PaginatedAPIMetaCodingKeys.self)
         totalResults = try container.safeIntDecode(forKey: .totalResults) ?? 0
         totalPages = try container.safeIntDecode(forKey: .totalPages) ?? 0
@@ -37,7 +37,7 @@ struct PaginatedAPIMeta: Decodable {
 
 }
 
-struct PaginatedAPILink: Decodable {
+public struct PaginatedAPILink: Decodable {
     var linksSelf: String?
     var first: String?
     var prev: String?

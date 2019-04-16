@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Image: Encodable {
+public struct Image: Encodable {
     var secure_url: String = ""
     var original: String = ""
     var logo: String = ""
@@ -21,7 +21,7 @@ struct Image: Encodable {
 }
 
 extension Image: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         secure_url = try container.decodeIfPresent(String.self, forKey: .secure_url) ?? ""

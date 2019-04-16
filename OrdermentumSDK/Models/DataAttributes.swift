@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct DataAttributesResponse {
+public struct DataAttributesResponse {
     var data: DataAttributesArrays = DataAttributesArrays()
 }
 
-struct DataAttributesArrays {
+public struct DataAttributesArrays {
     var pos: [String] = []
     var banking: [String] = []
     var accounting: [String] = []
@@ -37,7 +37,7 @@ public struct VenueOperationsUpdate: Codable {
 }
 
 extension DataAttributesResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -61,7 +61,7 @@ extension DataAttributes: Decodable {
 }
 
 extension DataAttributesArrays: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

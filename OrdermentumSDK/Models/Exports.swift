@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct RetailerExports: Encodable {
+public struct RetailerExports: Encodable {
     var retailersCsv: Bool = false
     var retailersUsers: Bool = false
 }
 
-struct OrderExports: Encodable {
+public struct OrderExports: Encodable {
     var ordersCsv: Bool = false
     var attacheXml: Bool = false
     var reckonReport: Bool = false
@@ -29,12 +29,12 @@ struct OrderExports: Encodable {
     var ordersProductionReportPdf: Bool = false
 }
 
-struct ProductExports: Encodable {
+public struct ProductExports: Encodable {
     var productsCsv: Bool = false
 }
 
 extension RetailerExports: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -45,7 +45,7 @@ extension RetailerExports: Decodable {
 }
 
 extension OrderExports: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -67,7 +67,7 @@ extension OrderExports: Decodable {
 }
 
 extension ProductExports: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class FlagsService {
+public class FlagsService {
     /**
      * Get the flags belonging to a retailer/supplier relationship
      * Returns a Flags object
