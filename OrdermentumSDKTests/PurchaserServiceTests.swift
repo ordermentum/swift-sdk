@@ -27,12 +27,14 @@ class PurchaserServiceTests: XCTestCase {
     }
     
     func testGetPurchasers() {
+        //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
         var requestObject: PurchaserResponse = PurchaserResponse()
         requestObject.data = []
         requestObject.links = Links()
         
+        //Call API
         Client.instance.setTestingURL()
         Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
         
@@ -43,13 +45,15 @@ class PurchaserServiceTests: XCTestCase {
     }
     
     func testGetPurchasersForPaymentMethod() {
-        //Build Request Object
+        //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
         var requestObject: PurchaserResponse = PurchaserResponse()
-        requestObject.data = []
+        requestObject.meta = Meta()
         requestObject.links = Links()
-    
+        requestObject.data = []
+        
+        //Call API
         Client.instance.setTestingURL()
         Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
         
@@ -60,13 +64,14 @@ class PurchaserServiceTests: XCTestCase {
     }
     
     func testUpdatePaymentMethod() {
-        //Build Request Object
+        //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
         var requestObject: UpdatePaymentMethodRequest = UpdatePaymentMethodRequest()
         requestObject.defaultPaymentMethodType = ProcessInfo.processInfo.environment["PAYMENT_METHOD"] ?? ""
         requestObject.paymentMethodId = ProcessInfo.processInfo.environment["PAYMENT_METHOD_ID"] ?? ""
         
+        //Call API
         Client.instance.setTestingURL()
         Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
         
