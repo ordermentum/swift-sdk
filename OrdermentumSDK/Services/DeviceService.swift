@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class DeviceService {
+    public init() {}
+    
     /**
      * Send device details for a user to the Ordermentum service
      * Returns a ResponseBody which can be used to check for a 200 response

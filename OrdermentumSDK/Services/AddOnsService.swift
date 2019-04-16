@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class AddOnsService {
+    public init() {}
+    
     /**
      * Get already connected add-ons
      * Returns a AddOnsResponse

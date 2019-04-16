@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class AuthService {
+    public init() {}
+    
     /**
      * Login to the Ordermentum service.
      * Returns a Login object

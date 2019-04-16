@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class ProductsService {
+    public init() {}
+    
     /**
      * Fetch the product categories for a particular supplier-retailer relationship
      * Returns a Category object

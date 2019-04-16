@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class ProfileService {
+    public init() {}
+    
     /**
      * Fetch the currently logged in users profile
      * Returns a UserProfile

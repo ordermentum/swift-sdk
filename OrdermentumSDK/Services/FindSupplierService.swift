@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class FindSupplierService {
+    public init() {}
+    
     /**
      * Get suppliers available based on search string
      * Returns a FindSupplierResponse

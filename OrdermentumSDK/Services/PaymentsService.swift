@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class PaymentsService {
+    public init() {}
+    
     /**
      * Fetch the payment methods belonging to a retailer
      * Returns an array of PaymentMethod

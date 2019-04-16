@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class ExperimentsService {
+    public init() {}
+    
     /**
      * Get the experiments belonging to a user
      * Returns a ExperimentsResponse

@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class NotificationsService {
+    public init() {}
+    
     /**
      * Update a particular notification setting for a supplier to retailer relationship
      * Returns a ResponseBody

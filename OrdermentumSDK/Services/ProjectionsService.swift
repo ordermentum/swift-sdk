@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class ProjectionsService {
+    public init() {}
+    
     /**
      * Fetch an array of projections belonging to a retailer/supplier relationship
      * startDate must be set in the following format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z

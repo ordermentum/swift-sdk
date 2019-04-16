@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class PurchaserService {
+    public init() {}
+    
     /**
      * Fetch the purchasers for a supplier retailer relationship
      * Returns a PurchaserResponse

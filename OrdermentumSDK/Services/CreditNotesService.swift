@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class CreditNotesService {
+    public init() {}
+    
     /**
      * Get the credit notes belonging to a purchaser
      * Returns a CreditNotesResponse

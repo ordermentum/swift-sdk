@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class DataAttributesService {
+    public init() {}
+    
     /**
      * Get the data attributes currently available on the Ordermentum Service
      * Returns a DataAttributesResponse object

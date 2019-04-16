@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class MarketplaceService {
+    public init() {}
+    
     /**
      * Fetch the marketplaces for a selected retailer
      * Returns a Marketplace object

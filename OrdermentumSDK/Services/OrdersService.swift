@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class OrdersService {
+    public init() {}
+    
     /**
      * Create an order for a retailer
      * Returns an Order

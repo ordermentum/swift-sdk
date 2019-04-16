@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class VenueService {
+    public init() {}
+    
     /**
      * Fetch the venues of the currently logged in user
      * Returns a Venue object

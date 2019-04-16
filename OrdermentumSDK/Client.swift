@@ -16,31 +16,31 @@ public class Client {
     
     //Private Init to Stop Re-Initialisation
     private init() {}
-    static let instance = Client()
+    public static let instance = Client()
     
     // MARK: Convenience Methods
-    func setProductionURL() {
+    public func setProductionURL() {
         baseURL = ClientURL.rootURL
     }
     
-    func setTestingURL() {
+    public func setTestingURL() {
         baseURL = ClientURL.rootTestingURL
     }
     
-    func setCustomURL(urlString: String) {
+    public func setCustomURL(urlString: String) {
         baseURL = urlString
     }
     
-    func setToken(tokenString: String) {
+    public func setToken(tokenString: String) {
         token = tokenString
     }
     
-    func getHeaderToken() -> String {
+    public func getHeaderToken() -> String {
         print(String(format: "Bearer \(token)"))
         return String(format: "Bearer \(token)")
     }
     
-    func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?) throws ->  URLRequest {
+    public func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?) throws ->  URLRequest {
         //Setup Data
         let url = try baseURL.asURL()
         let timeoutSeconds: Int = 10
@@ -66,9 +66,9 @@ public class Client {
     }
 }
 
-enum ClientURL {
-    static let rootURL = "https://app.ordermentum.com/v1/"
-    static let rootWebURL = "https://app.ordermentum.com/"
-    static let rootTestingURL = "https://app-testing.ordermentum.com/v1/"
-    static let rootTestingWebURL = "https://app-testing.ordermentum.com/"
+public enum ClientURL {
+    public static let rootURL = "https://app.ordermentum.com/v1/"
+    public static let rootWebURL = "https://app.ordermentum.com/"
+    public static let rootTestingURL = "https://app-testing.ordermentum.com/v1/"
+    public static let rootTestingWebURL = "https://app-testing.ordermentum.com/"
 }

@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class FlagsService {
+    public init() {}
+    
     /**
      * Get the flags belonging to a retailer/supplier relationship
      * Returns a Flags object

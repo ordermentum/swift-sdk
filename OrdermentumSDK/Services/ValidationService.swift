@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 public class ValidationService {
+    public init() {}
+    
     /**
      * Validate a list of products to ensure that they are orderable in their
      * current configuration.
