@@ -9,27 +9,27 @@
 import Foundation
 
 public struct VenueInviteResponse {
-    var data: [VenueInvite] = []
+    public var data: [VenueInvite] = []
 }
 
 public struct VenueInvite {
-    var id: String = ""
-    var senderEntityName: String = ""
-    var senderType: String = ""
-    var senderId: String = ""
-    var recipientFirstName: String = ""
-    var recipientLastName: String = ""
-    var recipientFullName: String = ""
-    var recipientEmail: String = ""
-    var recipientPhone: String = ""
-    var recipientEntityName: String = ""
-    var referenceId: String = ""
-    var status: String = ""
-    var permissions: [String] = []
-    var isApproved: Bool = false
-    var approvedByName: String = ""
-    var createdAt: String = ""
-    var createdByName: String = ""
+    public var id: String = ""
+    public var senderEntityName: String = ""
+    public var senderType: String = ""
+    public var senderId: String = ""
+    public var recipientFirstName: String = ""
+    public var recipientLastName: String = ""
+    public var recipientFullName: String = ""
+    public var recipientEmail: String = ""
+    public var recipientPhone: String = ""
+    public var recipientEntityName: String = ""
+    public var referenceId: String = ""
+    public var status: String = ""
+    public var permissions: [String] = []
+    public var isApproved: Bool = false
+    public var approvedByName: String = ""
+    public var createdAt: String = ""
+    public var createdByName: String = ""
 }
 
 extension VenueInviteResponse: Decodable {

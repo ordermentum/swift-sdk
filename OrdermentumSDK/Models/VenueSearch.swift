@@ -9,14 +9,14 @@
 import Foundation
 
 public struct VenueSearchResponse {
-    var data: [VenueSearch] = []
+    public var data: [VenueSearch] = []
 }
 
 public struct VenueSearch {
-    var id: String = ""
-    var legalName: String = ""
-    var tradingName: String = ""
-    var address: VenueAddress = VenueAddress()
+    public var id: String = ""
+    public var legalName: String = ""
+    public var tradingName: String = ""
+    public var address: VenueAddress = VenueAddress()
 }
 
 extension VenueSearchResponse: Decodable {

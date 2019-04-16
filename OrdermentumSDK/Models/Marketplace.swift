@@ -9,42 +9,42 @@
 import Foundation
 
 public struct MarketplaceResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [Marketplace] = []
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [Marketplace] = []
 }
 
 public struct Marketplace {
-    var id: String = ""
-    var address: Address = Address()
-    var name: String = ""
-    var abn: String = ""
-    var slug: String = ""
-    var email: String = ""
-    var tradingName: String = ""
-    var accountSettings: AccountSettings = AccountSettings()
-    var brandImages: [Image] = []
-    var logo: Image = Image()
-    var settings: MarketplaceSettings = MarketplaceSettings()
-    var properties: Properties = Properties()
-    var shortName: String = ""
-    var phone: String = ""
-    var activeRetailerIds: [String] = []
-    var paymentMethodId: String = ""
-    var billingStart: String = ""
-    var billingEnd: String = ""
-    var paymentRecurrence: String = ""
-    var timezone: String = ""
-    var createdAt: String = ""
-    var updatedAt: String = ""
+    public var id: String = ""
+    public var address: Address = Address()
+    public var name: String = ""
+    public var abn: String = ""
+    public var slug: String = ""
+    public var email: String = ""
+    public var tradingName: String = ""
+    public var accountSettings: AccountSettings = AccountSettings()
+    public var brandImages: [Image] = []
+    public var logo: Image = Image()
+    public var settings: MarketplaceSettings = MarketplaceSettings()
+    public var properties: Properties = Properties()
+    public var shortName: String = ""
+    public var phone: String = ""
+    public var activeRetailerIds: [String] = []
+    public var paymentMethodId: String = ""
+    public var billingStart: String = ""
+    public var billingEnd: String = ""
+    public var paymentRecurrence: String = ""
+    public var timezone: String = ""
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
 }
 
 public struct Properties: Encodable {
-    var demoSupplier: String = ""
+    public var demoSupplier: String = ""
 }
 
 public struct MarketplaceSettings {
-    var brand: Brand = Brand()
+    public var brand: Brand = Brand()
 }
 
 extension MarketplaceResponse: Decodable {

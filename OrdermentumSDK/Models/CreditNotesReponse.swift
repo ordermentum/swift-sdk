@@ -9,34 +9,34 @@
 import Foundation
 
 public struct CreditNotesResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [CreditNote] = []
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [CreditNote] = []
 }
 
 public struct CreditNote {
-    var id: String = ""
-    var number: String = ""
-    var userId: String = ""
-    var comments: String = ""
-    var retailerId: String = ""
-    var purchaserId: String = ""
-    var purchaserName: String = ""
-    var supplierId: String = ""
-    var supplierName: String = ""
-    var updatedUserId: String = ""
-    var invoiceIds: [String] = []
-    var lineItems: [LineItem] = []
-    var subtotal: String = ""
-    var tax: String = ""
-    var total: String = ""
-    var status: String = ""
-    var date: String = ""
-    var cancelledAt: String = ""
-    var deletedAt: String = ""
-    var completedAt: String = ""
-    var createdAt: String = ""
-    var updatedAt: String = ""
+    public var id: String = ""
+    public var number: String = ""
+    public var userId: String = ""
+    public var comments: String = ""
+    public var retailerId: String = ""
+    public var purchaserId: String = ""
+    public var purchaserName: String = ""
+    public var supplierId: String = ""
+    public var supplierName: String = ""
+    public var updatedUserId: String = ""
+    public var invoiceIds: [String] = []
+    public var lineItems: [LineItem] = []
+    public var subtotal: String = ""
+    public var tax: String = ""
+    public var total: String = ""
+    public var status: String = ""
+    public var date: String = ""
+    public var cancelledAt: String = ""
+    public var deletedAt: String = ""
+    public var completedAt: String = ""
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
 }
 
 extension CreditNotesResponse: Decodable {

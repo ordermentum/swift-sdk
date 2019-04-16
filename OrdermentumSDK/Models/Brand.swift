@@ -9,8 +9,8 @@
 import Foundation
 
 public struct Brand {
-    var logo: Image = Image()
-    var images: [Image] = []
+    public var logo: Image = Image()
+    public var images: [Image] = []
 }
 
 extension Brand: Decodable {

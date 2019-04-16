@@ -9,147 +9,147 @@
 import Foundation
 
 public struct VenueResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [Venue] = []
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [Venue] = []
 }
 
 public struct Venue {
-    var id: String = ""
-    var name: String = ""
-    var legalName: String = ""
-    var tradingName: String = ""
-    var email: String = ""
-    var phone: String = ""
-    var dataAttributes: DataAttributes = DataAttributes()
-    var liquorLicense: String = ""
-    var abn: String = ""
-    var suppliers: [Supplier] = []
-    var user: User = User()
-    var address: VenueAddress = VenueAddress()
-    var addressId: String = ""
-    var billingAddress: Address = Address()
-    var billingAddressId: String = ""
-    var sameDeliveryAndBillingAddress: Bool = false
-    var settings: VenueSettings = VenueSettings()
-    var createdAt: String = ""
-    var updatedAt: String = ""
+    public var id: String = ""
+    public var name: String = ""
+    public var legalName: String = ""
+    public var tradingName: String = ""
+    public var email: String = ""
+    public var phone: String = ""
+    public var dataAttributes: DataAttributes = DataAttributes()
+    public var liquorLicense: String = ""
+    public var abn: String = ""
+    public var suppliers: [Supplier] = []
+    public var user: User = User()
+    public var address: VenueAddress = VenueAddress()
+    public var addressId: String = ""
+    public var billingAddress: Address = Address()
+    public var billingAddressId: String = ""
+    public var sameDeliveryAndBillingAddress: Bool = false
+    public var settings: VenueSettings = VenueSettings()
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
 }
 
 public struct VenueAccountSettings: Encodable {
-    var flags: [String] = []
-    var insights: Insights = Insights()
-    var orderPrefix: String = ""
-    var orderExports: OrderExports = OrderExports()
-    var invoicePrefix: String = ""
-    var productExports: ProductExports = ProductExports()
-    var retailerExports: RetailerExports = RetailerExports()
-    var enableDeliveryDate: Bool = false
-    var defaultDeliveryDelay: Int = 0
+    public var flags: [String] = []
+    public var insights: Insights = Insights()
+    public var orderPrefix: String = ""
+    public var orderExports: OrderExports = OrderExports()
+    public var invoicePrefix: String = ""
+    public var productExports: ProductExports = ProductExports()
+    public var retailerExports: RetailerExports = RetailerExports()
+    public var enableDeliveryDate: Bool = false
+    public var defaultDeliveryDelay: Int = 0
 }
 
 public struct VenueAddress {
-    var formatted: String = ""
-    var id: String = ""
-    var name: String = ""
-    var number: String = ""
-    var type: String = ""
-    var description: String = ""
-    var street1: String = ""
-    var street2: String = ""
-    var suburb: String = ""
-    var state: String = ""
-    var postcode: String = ""
-    var country: String = ""
-    var latitude: Float = 0.0
-    var longitude: Float = 0.0
-    var addressableType: String = ""
-    var addressableId: String = ""
-    var created_at: String = ""
-    var updated_at: String = ""
-    var deleted_at: String = ""
+    public var formatted: String = ""
+    public var id: String = ""
+    public var name: String = ""
+    public var number: String = ""
+    public var type: String = ""
+    public var description: String = ""
+    public var street1: String = ""
+    public var street2: String = ""
+    public var suburb: String = ""
+    public var state: String = ""
+    public var postcode: String = ""
+    public var country: String = ""
+    public var latitude: Float = 0.0
+    public var longitude: Float = 0.0
+    public var addressableType: String = ""
+    public var addressableId: String = ""
+    public var created_at: String = ""
+    public var updated_at: String = ""
+    public var deleted_at: String = ""
 }
 
 public struct VenueBrand {
-    var logo: VenueImage = VenueImage()
-    var images: [VenueImage] = []
+    public var logo: VenueImage = VenueImage()
+    public var images: [VenueImage] = []
 }
 
 public struct VenueImage {
-    var url: String = ""
-    var width: Int = 0
-    var format: String = ""
-    var height: Int = 0
-    var version: Int = 0
-    var public_id: String = ""
-    var signature: String = ""
-    var secure_url: String = ""
-    var resource_type: String = ""
+    public var url: String = ""
+    public var width: Int = 0
+    public var format: String = ""
+    public var height: Int = 0
+    public var version: Int = 0
+    public var public_id: String = ""
+    public var signature: String = ""
+    public var secure_url: String = ""
+    public var resource_type: String = ""
 }
 
 public struct VenueSettings {
-    var flags: [String] = []
-    var brand: VenueBrand = VenueBrand()
+    public var flags: [String] = []
+    public var brand: VenueBrand = VenueBrand()
 }
 
 public struct User {
-    var id: String = ""
-    var email: String = ""
-    var dob: String = ""
-    var phone: String = ""
-    var firstName: String = ""
-    var lastName: String = ""
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var deletedAt: String = ""
-    var passwordResetToken: String = ""
-    var passwordResetSentAt: String = ""
-    var created_at: String = ""
-    var updated_at: String = ""
-    var deleted_at: String = ""
+    public var id: String = ""
+    public var email: String = ""
+    public var dob: String = ""
+    public var phone: String = ""
+    public var firstName: String = ""
+    public var lastName: String = ""
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var deletedAt: String = ""
+    public var passwordResetToken: String = ""
+    public var passwordResetSentAt: String = ""
+    public var created_at: String = ""
+    public var updated_at: String = ""
+    public var deleted_at: String = ""
 }
 
 public struct VenueUsersResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [User] = []
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [User] = []
 }
 
 public struct RemoveUser: Codable {
-    var entityId: String = ""
-    var perms: [String] = []
+    public var entityId: String = ""
+    public var perms: [String] = []
 }
 
 public struct AddUser: Codable {
-    var senderId: String = ""
-    var senderType: String = ""
-    var senderEntityName: String = ""
-    var recipientEntityType: String = ""
-    var recipientEntityId: String = ""
-    var recipientEmail: String = ""
-    var recipientFirstName: String = ""
-    var recipientLastName: String = ""
-    var role: String = ""
-    var inviteType: String = ""
+    public var senderId: String = ""
+    public var senderType: String = ""
+    public var senderEntityName: String = ""
+    public var recipientEntityType: String = ""
+    public var recipientEntityId: String = ""
+    public var recipientEmail: String = ""
+    public var recipientFirstName: String = ""
+    public var recipientLastName: String = ""
+    public var role: String = ""
+    public var inviteType: String = ""
 }
 
 public struct AddUserResponse {
-    var id: String = ""
-    var senderEntityName: String = ""
-    var senderId: String = ""
-    var recipientFirstName: String = ""
-    var recipientLastName: String = ""
-    var recipientFullName: String = ""
-    var recipientPhone: String = ""
-    var recipientEntityName: String = ""
-    var referenceId: String = ""
-    var status: String = ""
-    var permissions: [String] = []
-    var isApproved: Bool = false
-    var approvedByName: String = ""
-    var createdAt: String = ""
-    var createdByName: String = ""
-    var updatedAt: String = ""
+    public var id: String = ""
+    public var senderEntityName: String = ""
+    public var senderId: String = ""
+    public var recipientFirstName: String = ""
+    public var recipientLastName: String = ""
+    public var recipientFullName: String = ""
+    public var recipientPhone: String = ""
+    public var recipientEntityName: String = ""
+    public var referenceId: String = ""
+    public var status: String = ""
+    public var permissions: [String] = []
+    public var isApproved: Bool = false
+    public var approvedByName: String = ""
+    public var createdAt: String = ""
+    public var createdByName: String = ""
+    public var updatedAt: String = ""
 }
 
 extension VenueResponse: Decodable {
@@ -345,7 +345,7 @@ extension Venue: Equatable {
 }
 
 extension User {
-    var fullName: String {
+    public var fullName: String {
         return self.firstName + " " + self.lastName
     }
 }

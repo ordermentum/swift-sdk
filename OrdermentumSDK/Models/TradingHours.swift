@@ -9,22 +9,22 @@
 import Foundation
 
 public struct TradingHours: Codable {
-    var enabled: Bool = false
-    var mon: TradingHoursDay = TradingHoursDay()
-    var tue: TradingHoursDay = TradingHoursDay()
-    var wed: TradingHoursDay = TradingHoursDay()
-    var thu: TradingHoursDay = TradingHoursDay()
-    var fri: TradingHoursDay = TradingHoursDay()
-    var sat: TradingHoursDay = TradingHoursDay()
-    var sun: TradingHoursDay = TradingHoursDay()
+    public var enabled: Bool = false
+    public var mon: TradingHoursDay = TradingHoursDay()
+    public var tue: TradingHoursDay = TradingHoursDay()
+    public var wed: TradingHoursDay = TradingHoursDay()
+    public var thu: TradingHoursDay = TradingHoursDay()
+    public var fri: TradingHoursDay = TradingHoursDay()
+    public var sat: TradingHoursDay = TradingHoursDay()
+    public var sun: TradingHoursDay = TradingHoursDay()
 }
 
 public struct TradingHoursDay: Codable {
-    var isOpen: Bool = false
-    var closeHour: Int = 17
-    var closeMinute: Int = 0
-    var openHour: Int = 9
-    var openMinute: Int = 0
+    public var isOpen: Bool = false
+    public var closeHour: Int = 17
+    public var closeMinute: Int = 0
+    public var openHour: Int = 9
+    public var openMinute: Int = 0
 }
 
 extension TradingHours {

@@ -9,15 +9,15 @@
 import Foundation
 
 public struct VenueProfile: Codable {
-    var abn: String = ""
-    var address: Address = Address()
-    var billingAddress: Address = Address()
-    var legalName: String = ""
-    var tradingName: String = ""
+    public var abn: String = ""
+    public var address: Address = Address()
+    public var billingAddress: Address = Address()
+    public var legalName: String = ""
+    public var tradingName: String = ""
 }
 
 public struct Completion {
-    var profilePercent: Int = 0
+    public var profilePercent: Int = 0
 }
 
 extension Completion: Decodable {

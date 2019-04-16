@@ -9,252 +9,252 @@
 import Foundation
 
 public struct CreateOrder: Codable {
-    var comment: String = ""
-    var deliveryDate: String = ""
-    var lineItems: [CreateOrderLineItem] = []
-    var origin: String = ""
-    var reference: String = ""
-    var retailerId: String = ""
-    var status: String = ""
-    var supplierId: String = ""
-    var tokenId: String = ""
-    var type: String = ""
-    var paymentMethodId: String = ""
+    public var comment: String = ""
+    public var deliveryDate: String = ""
+    public var lineItems: [CreateOrderLineItem] = []
+    public var origin: String = ""
+    public var reference: String = ""
+    public var retailerId: String = ""
+    public var status: String = ""
+    public var supplierId: String = ""
+    public var tokenId: String = ""
+    public var type: String = ""
+    public var paymentMethodId: String = ""
 }
 
 public struct CreateOrderLineItem: Codable {
-    var name: String = ""
-    var price: Float = 0.00
-    var productId: String = ""
-    var quantity: Int
+    public var name: String = ""
+    public var price: Float = 0.00
+    public var productId: String = ""
+    public var quantity: Int
 }
 
 public struct OrderResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [Order] = []
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [Order] = []
 }
 
 public struct ClassicStandingOrderResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [ClassicStandingOrder] = []
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [ClassicStandingOrder] = []
 }
 
 public struct Order: Encodable {
-    var canMarkAsPaid: Bool = false
-    var canMarkAsUnpaid: Bool = false
-    var cancelledAt: String = ""
-    var chargable: Bool = false
-    var chargedAt: String = ""
-    var chargedBy: String = ""
-    var chargedByUser: String = ""
-    var comment: String = ""
-    var completeAt: String = ""
-    var color: String = ""
-    var createdAt: String = ""
-    var createdBy: String = ""
-    var deliveryDate: String = ""
-    var directProcessing: Bool = false
-    var display: Display = Display()
-    var dueAt: String = ""
-    var editable: Bool = false
-    var freight: Float = 0.00
-    var id: String = ""
-    var invoice: Invoice = Invoice()
-    var invoiceId: String = ""
-    var invoiceNumber: String = ""
-    var invoiceReference: String = ""
-    var isOutstanding: Bool = false
-    var label: String = ""
-    var lineItems: [LineItem] = []
-    var locked: Bool = false
-    var name: String = ""
-    var noPaymentActions: Bool = false
-    var number: String = ""
-    var orderNumber: String = ""
-    var orderStatus: String = ""
-    var paidAt: String = ""
-    var paidToSupplier: String = ""
-    var paymentDelay: Int = 0
-    var paymentMethodType: PaymentMethodType = PaymentMethodType()
-    var paymentStatus: String = ""
-    var placedByName: String = ""
-    var processingError: String = ""
-    var properties: Properties = Properties()
-    var randomWeight: Bool = false
-    var retailerAlias: String = ""
-    var retailerEditable: Bool = false
-    var retailerName: String = ""
-    var status: String = ""
-    var subtotal: Float = 0.00
-    var supplier: Supplier = Supplier()
-    var total: Float = 0.00
-    var totalCost: Float = 0.00
-    var totalDue: Float = 0.00
-    var totalFreight: Float = 0.00
-    var totalGST: Float = 0.00
-    var totalQuantity: Float = 0.00
-    var type: String = ""
-    var updatedAt: String = ""
-    var updatedByName: String = ""
+    public var canMarkAsPaid: Bool = false
+    public var canMarkAsUnpaid: Bool = false
+    public var cancelledAt: String = ""
+    public var chargable: Bool = false
+    public var chargedAt: String = ""
+    public var chargedBy: String = ""
+    public var chargedByUser: String = ""
+    public var comment: String = ""
+    public var completeAt: String = ""
+    public var color: String = ""
+    public var createdAt: String = ""
+    public var createdBy: String = ""
+    public var deliveryDate: String = ""
+    public var directProcessing: Bool = false
+    public var display: Display = Display()
+    public var dueAt: String = ""
+    public var editable: Bool = false
+    public var freight: Float = 0.00
+    public var id: String = ""
+    public var invoice: Invoice = Invoice()
+    public var invoiceId: String = ""
+    public var invoiceNumber: String = ""
+    public var invoiceReference: String = ""
+    public var isOutstanding: Bool = false
+    public var label: String = ""
+    public var lineItems: [LineItem] = []
+    public var locked: Bool = false
+    public var name: String = ""
+    public var noPaymentActions: Bool = false
+    public var number: String = ""
+    public var orderNumber: String = ""
+    public var orderStatus: String = ""
+    public var paidAt: String = ""
+    public var paidToSupplier: String = ""
+    public var paymentDelay: Int = 0
+    public var paymentMethodType: PaymentMethodType = PaymentMethodType()
+    public var paymentStatus: String = ""
+    public var placedByName: String = ""
+    public var processingError: String = ""
+    public var properties: Properties = Properties()
+    public var randomWeight: Bool = false
+    public var retailerAlias: String = ""
+    public var retailerEditable: Bool = false
+    public var retailerName: String = ""
+    public var status: String = ""
+    public var subtotal: Float = 0.00
+    public var supplier: Supplier = Supplier()
+    public var total: Float = 0.00
+    public var totalCost: Float = 0.00
+    public var totalDue: Float = 0.00
+    public var totalFreight: Float = 0.00
+    public var totalGST: Float = 0.00
+    public var totalQuantity: Float = 0.00
+    public var type: String = ""
+    public var updatedAt: String = ""
+    public var updatedByName: String = ""
 }
 
 public struct LineItem: Encodable {
-    var SKU: String = ""
-    var batchCode: String = ""
-    var createdAt: String = ""
-    var display: Display = Display()
-    var gst: String = ""
-    var looseCount: Int = 0
-    var locked: Bool = false
-    var name: String = ""
-    var orderId: String = ""
-    var packCount: Int = 0
-    var price: String = ""
-    var product: Product = Product()
-    var productId: String = ""
-    var properties: Properties = Properties()
-    var quantity: Int = 0
-    var ratePrice: String = ""
-    var subtotal: String = ""
-    var tax: String = ""
-    var taxable: Bool = false
-    var total: String = ""
-    var totalWeight: Float = 0
-    var updatedAt: String = ""
-    var weight: Float = 0
+    public var SKU: String = ""
+    public var batchCode: String = ""
+    public var createdAt: String = ""
+    public var display: Display = Display()
+    public var gst: String = ""
+    public var looseCount: Int = 0
+    public var locked: Bool = false
+    public var name: String = ""
+    public var orderId: String = ""
+    public var packCount: Int = 0
+    public var price: String = ""
+    public var product: Product = Product()
+    public var productId: String = ""
+    public var properties: Properties = Properties()
+    public var quantity: Int = 0
+    public var ratePrice: String = ""
+    public var subtotal: String = ""
+    public var tax: String = ""
+    public var taxable: Bool = false
+    public var total: String = ""
+    public var totalWeight: Float = 0
+    public var updatedAt: String = ""
+    public var weight: Float = 0
 }
 
 public struct ClassicStandingOrder {
-    var id: String = ""
-    var name: String = ""
-    var alias: String = ""
-    var remindedAt: String = ""
-    var placedAt: String = ""
-    var place: Bool = false
-    var purchaserId: String = ""
-    var userId: String = ""
-    var orderId: String = ""
-    var supplierId: String = ""
-    var schedule: ClassicStandingOrderSchedule = ClassicStandingOrderSchedule()
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var activityEnded: Bool = false
-    var nextRunAt: String = ""
-    var nextFinishAt: String = ""
-    var scheduleId: String = ""
-    var nextRunDate: String = ""
-    var cancelled: [String] = []
-    var updatedBy: ClassicStandingOrderUpdatedBy = ClassicStandingOrderUpdatedBy()
-    var nextRunCancelled: Bool = false
-    var scheduleEnabled: Bool = false
-    var startDate: String = ""
-    var endDate: String = ""
+    public var id: String = ""
+    public var name: String = ""
+    public var alias: String = ""
+    public var remindedAt: String = ""
+    public var placedAt: String = ""
+    public var place: Bool = false
+    public var purchaserId: String = ""
+    public var userId: String = ""
+    public var orderId: String = ""
+    public var supplierId: String = ""
+    public var schedule: ClassicStandingOrderSchedule = ClassicStandingOrderSchedule()
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var activityEnded: Bool = false
+    public var nextRunAt: String = ""
+    public var nextFinishAt: String = ""
+    public var scheduleId: String = ""
+    public var nextRunDate: String = ""
+    public var cancelled: [String] = []
+    public var updatedBy: ClassicStandingOrderUpdatedBy = ClassicStandingOrderUpdatedBy()
+    public var nextRunCancelled: Bool = false
+    public var scheduleEnabled: Bool = false
+    public var startDate: String = ""
+    public var endDate: String = ""
 }
 
 public struct ClassicStandingOrderSchedule {
-    var id: String = ""
-    var name: String = ""
-    var alias: String = ""
-    var cutOffTime: String = ""
-    var editableUntil: Int = 0
-    var includeWeekends: Bool = false
-    var recurrence: String = ""
-    var frequency: String = ""
-    var deliveryDelay: Int = 0
-    var supplierId: String = ""
-    var userId: String = ""
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var recurrenceInfo: ClassicStandingOrderRecurrenceInfo = ClassicStandingOrderRecurrenceInfo()
-    var escalationTime: String = ""
-    var firstReminder: String = ""
-    var enabled: Bool = false
-    var lastFinishedAt: String = ""
-    var supplierName: String = ""
-    var standingOrders: Bool = false
-    var supplier: ClassicStandingOrderSupplier = ClassicStandingOrderSupplier()
-    var lastStartedAt: String = ""
-    var defaultSchedule: Bool = false
-    var cutOffPassed: Bool = false
-    var nextRun: [String] = []
-    var timezone: String = ""
+    public var id: String = ""
+    public var name: String = ""
+    public var alias: String = ""
+    public var cutOffTime: String = ""
+    public var editableUntil: Int = 0
+    public var includeWeekends: Bool = false
+    public var recurrence: String = ""
+    public var frequency: String = ""
+    public var deliveryDelay: Int = 0
+    public var supplierId: String = ""
+    public var userId: String = ""
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var recurrenceInfo: ClassicStandingOrderRecurrenceInfo = ClassicStandingOrderRecurrenceInfo()
+    public var escalationTime: String = ""
+    public var firstReminder: String = ""
+    public var enabled: Bool = false
+    public var lastFinishedAt: String = ""
+    public var supplierName: String = ""
+    public var standingOrders: Bool = false
+    public var supplier: ClassicStandingOrderSupplier = ClassicStandingOrderSupplier()
+    public var lastStartedAt: String = ""
+    public var defaultSchedule: Bool = false
+    public var cutOffPassed: Bool = false
+    public var nextRun: [String] = []
+    public var timezone: String = ""
 }
 
 public struct ClassicStandingOrderRecurrenceInfo {
-    var freq: String = ""
-    var byhour: String = ""
-    var byminute: String = ""
-    var interval: String = ""
-    var timezone: String = ""
+    public var freq: String = ""
+    public var byhour: String = ""
+    public var byminute: String = ""
+    public var interval: String = ""
+    public var timezone: String = ""
 }
 
 public struct ClassicStandingOrderSupplier {
-    var name: String = ""
+    public var name: String = ""
 }
 
 public struct ClassicStandingOrderUpdatedBy {
-    var firstName: String = ""
-    var lastName: String = ""
+    public var firstName: String = ""
+    public var lastName: String = ""
 }
 
 public struct CreateFavouriteRequest: Codable {
-    var comment: String = ""
-    var deliveryDate: String = ""
-    var lineItems: [CreateFavouriteRequestLineItem] = []
-    var origin: String = ""
-    var reference: String = ""
-    var retailerId: String = ""
-    var status: String = ""
-    var supplierId: String = ""
-    var type: String = ""
+    public var comment: String = ""
+    public var deliveryDate: String = ""
+    public var lineItems: [CreateFavouriteRequestLineItem] = []
+    public var origin: String = ""
+    public var reference: String = ""
+    public var retailerId: String = ""
+    public var status: String = ""
+    public var supplierId: String = ""
+    public var type: String = ""
 }
 
 public struct CreateFavouriteRequestLineItem: Codable {
-    var name: String = ""
-    var price: Float = 0.00
-    var productId: String = ""
-    var quantity: Int = 0
+    public var name: String = ""
+    public var price: Float = 0.00
+    public var productId: String = ""
+    public var quantity: Int = 0
 }
 
 public struct CreateStandingOrder: Codable {
-    var lineItems: [CreateOrderLineItem] = []
-    var origin: String = ""
-    var retailerId: String = ""
-    var supplierId: String = ""
-    var type: String = ""
+    public var lineItems: [CreateOrderLineItem] = []
+    public var origin: String = ""
+    public var retailerId: String = ""
+    public var supplierId: String = ""
+    public var type: String = ""
 }
 
 public struct CreatePurchaserSchedule: Codable {
-    var orderId: String = ""
-    var place: Bool = true
-    var retailerId: String = ""
-    var startDate: String = ""
-    var supplierId: String = ""
+    public var orderId: String = ""
+    public var place: Bool = true
+    public var retailerId: String = ""
+    public var startDate: String = ""
+    public var supplierId: String = ""
 }
 
 public struct UpdateOrderRequest: Codable {
-    var lineItems: [UpdateOrderRequestLineItem] = []
-    var name: String = ""
-    var origin: String = ""
-    var type: String = ""
+    public var lineItems: [UpdateOrderRequestLineItem] = []
+    public var name: String = ""
+    public var origin: String = ""
+    public var type: String = ""
 }
 
 public struct UpdateScheduleRequest: Codable {
-    var cutOff: String = ""
-    var purchaserScheduleId: String = ""
-    var runAt: String = ""
-    var scheduleId: String = ""
-    var lineItems: [UpdateOrderRequestLineItem] = []
-    var retailerId: String = ""
-    var supplierId: String = ""
-    var type: String = ""
+    public var cutOff: String = ""
+    public var purchaserScheduleId: String = ""
+    public var runAt: String = ""
+    public var scheduleId: String = ""
+    public var lineItems: [UpdateOrderRequestLineItem] = []
+    public var retailerId: String = ""
+    public var supplierId: String = ""
+    public var type: String = ""
 }
 
 public struct UpdateOrderRequestLineItem: Codable {
-    var productId: String = ""
-    var quantity: Int = 0
+    public var productId: String = ""
+    public var quantity: Int = 0
 }
 
 extension OrderResponse: Decodable {

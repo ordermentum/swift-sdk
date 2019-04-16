@@ -9,15 +9,15 @@
 import Foundation
 
 public struct PaymentTerms {
-    var days: Bool = false
-    var endOfWeek: Bool = false
-    var endOfMonth: Bool = false
+    public var days: Bool = false
+    public var endOfWeek: Bool = false
+    public var endOfMonth: Bool = false
 }
 
 public struct PaymentMethods {
-    var other: Bool = false
-    var creditCard: Bool = false
-    var directDebit: Bool = false
+    public var other: Bool = false
+    public var creditCard: Bool = false
+    public var directDebit: Bool = false
 }
 
 extension PaymentTerms: Decodable {

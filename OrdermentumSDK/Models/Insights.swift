@@ -9,8 +9,8 @@
 import Foundation
 
 public struct Insights: Encodable {
-    var trending: Bool = false
-    var mostOrdered: Bool = false
+    public var trending: Bool = false
+    public var mostOrdered: Bool = false
 }
 
 extension Insights: Decodable {

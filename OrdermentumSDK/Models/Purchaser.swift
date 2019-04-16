@@ -9,198 +9,198 @@
 import Foundation
 
 public struct PurchaserResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [Purchaser] = []
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [Purchaser] = []
 }
 
 public struct Purchaser {
-    var id: String = ""
-    var reference: String = ""
-    var name: String = ""
-    var retailerName: String = ""
-    var retailerAlias: String = ""
-    var retailerLegalName: String = ""
-    var retailerTradingName: String = ""
-    var retailerPhone: String = ""
-    var retailerEmail: String = ""
-    var retailerAddress: RetailerAddress = RetailerAddress()
-    var billingAddress: Address = Address()
-    var retailerDataAttributes: RetailerDataAttributes = RetailerDataAttributes()
-    var retailerAddressLine: String = ""
-    var billingAddressLine: String = ""
-    var retailerId: String = ""
-    var retailer: Retailer = Retailer()
-    var supplierId: String = ""
-    var supplier: Supplier = Supplier()
-    var invoiceSetting: String = ""
-    var invoiceFrequency: String = ""
-    var paymentTerms: String = ""
-    var paymentDelay: Int = 0
-    var paymentMethodTypes: PaymentMethodTypes = PaymentMethodTypes()
-    var paymentMethodId: String?
-    var defaultPaymentMethodType: PaymentMethodType = PaymentMethodType()
-    var paymentMethod: PurchaserPaymentMethod = PurchaserPaymentMethod()
-    var paymentSchedule: String = ""
-    var canCharge: Bool = false
-    var freightGroupId: String = ""
-    var freightGroup: FreightGroup = FreightGroup()
-    var visibilityGroupId: String = ""
-    var visibilityGroup: VisibilityGroup = VisibilityGroup()
-    var priceGroupId: String = ""
-    var priceGroup: PriceGroup = PriceGroup()
-    var stopCredit: Bool = false
-    var minimumOrderValue: Int = 0
-    var disabled: Bool = false
-    var deliveryInstructions: String = ""
-    var notes: String = ""
-    var schedules: [Schedule] = []
-    var externalCustomerId: String = ""
-    var properties: PurchaserProperties = PurchaserProperties()
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var orderedAt: String = ""
+    public var id: String = ""
+    public var reference: String = ""
+    public var name: String = ""
+    public var retailerName: String = ""
+    public var retailerAlias: String = ""
+    public var retailerLegalName: String = ""
+    public var retailerTradingName: String = ""
+    public var retailerPhone: String = ""
+    public var retailerEmail: String = ""
+    public var retailerAddress: RetailerAddress = RetailerAddress()
+    public var billingAddress: Address = Address()
+    public var retailerDataAttributes: RetailerDataAttributes = RetailerDataAttributes()
+    public var retailerAddressLine: String = ""
+    public var billingAddressLine: String = ""
+    public var retailerId: String = ""
+    public var retailer: Retailer = Retailer()
+    public var supplierId: String = ""
+    public var supplier: Supplier = Supplier()
+    public var invoiceSetting: String = ""
+    public var invoiceFrequency: String = ""
+    public var paymentTerms: String = ""
+    public var paymentDelay: Int = 0
+    public var paymentMethodTypes: PaymentMethodTypes = PaymentMethodTypes()
+    public var paymentMethodId: String?
+    public var defaultPaymentMethodType: PaymentMethodType = PaymentMethodType()
+    public var paymentMethod: PurchaserPaymentMethod = PurchaserPaymentMethod()
+    public var paymentSchedule: String = ""
+    public var canCharge: Bool = false
+    public var freightGroupId: String = ""
+    public var freightGroup: FreightGroup = FreightGroup()
+    public var visibilityGroupId: String = ""
+    public var visibilityGroup: VisibilityGroup = VisibilityGroup()
+    public var priceGroupId: String = ""
+    public var priceGroup: PriceGroup = PriceGroup()
+    public var stopCredit: Bool = false
+    public var minimumOrderValue: Int = 0
+    public var disabled: Bool = false
+    public var deliveryInstructions: String = ""
+    public var notes: String = ""
+    public var schedules: [Schedule] = []
+    public var externalCustomerId: String = ""
+    public var properties: PurchaserProperties = PurchaserProperties()
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var orderedAt: String = ""
 }
 
 public struct PaymentMethodTypes {
-    var value: [String] = []
-    var display: String = ""
+    public var value: [String] = []
+    public var display: String = ""
 }
 
 public struct PaymentMethodType: Encodable {
-    var display: String = ""
-    var value: String = ""
+    public var display: String = ""
+    public var value: String = ""
 }
 
 public struct Schedule {
-    var id: String = ""
-    var name: String = ""
+    public var id: String = ""
+    public var name: String = ""
 }
 
 public struct RetailerAddress {
-    var number: String = ""
-    var street1: String = ""
-    var street2: String = ""
-    var suburb: String = ""
-    var state: String = ""
-    var postcode: String = ""
-    var country: String = ""
-    var description: String = ""
-    var type: String = ""
+    public var number: String = ""
+    public var street1: String = ""
+    public var street2: String = ""
+    public var suburb: String = ""
+    public var state: String = ""
+    public var postcode: String = ""
+    public var country: String = ""
+    public var description: String = ""
+    public var type: String = ""
 }
 
 public struct Retailer {
-    var id: String = ""
-    var name: String = ""
-    var legalName: String = ""
-    var tradingName: String = ""
-    var email: String = ""
-    var phone: String = ""
-    var dataAttributes: DataAttributes = DataAttributes()
-    var liquorLicense: String = ""
-    var abn: String = ""
-    var paymentMethod: PaymentMethods = PaymentMethods()
-    var user: User = User()
-    var address: Address = Address()
-    var addressId: String = ""
-    var billingAddress: Address = Address()
-    var billingAddressId: String = ""
-    var sameDeliveryAndBillingAddress: Bool = false
-    var settings: PurchaserSettings = PurchaserSettings()
-    var createdAt: String = ""
-    var updatedAt: String = ""
+    public var id: String = ""
+    public var name: String = ""
+    public var legalName: String = ""
+    public var tradingName: String = ""
+    public var email: String = ""
+    public var phone: String = ""
+    public var dataAttributes: DataAttributes = DataAttributes()
+    public var liquorLicense: String = ""
+    public var abn: String = ""
+    public var paymentMethod: PaymentMethods = PaymentMethods()
+    public var user: User = User()
+    public var address: Address = Address()
+    public var addressId: String = ""
+    public var billingAddress: Address = Address()
+    public var billingAddressId: String = ""
+    public var sameDeliveryAndBillingAddress: Bool = false
+    public var settings: PurchaserSettings = PurchaserSettings()
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
 }
 
 public struct RetailerDataAttributes {
-    var pos: String = ""
-    var venue: String = ""
-    var banking: String = ""
-    var accounting: String = ""
-    var tradingHours: TradingHours = TradingHours()
+    public var pos: String = ""
+    public var venue: String = ""
+    public var banking: String = ""
+    public var accounting: String = ""
+    public var tradingHours: TradingHours = TradingHours()
 }
 
 public struct PurchaserPaymentMethod {
-    var bankConfigured: Bool = false
-    var cardConfigured: Bool = false
+    public var bankConfigured: Bool = false
+    public var cardConfigured: Bool = false
 }
 
 public struct PurchaserSettings {
-    var brand: Brand = Brand()
-    var flags: [String] = []
-    var dayStart: String = ""
-    var insights: Insights = Insights()
-    var monthStart: String = ""
-    var weightType: String = ""
-    var orderPrefix: String = ""
-    var paymentTerms: PaymentTerms = PaymentTerms()
-    var randomWeight: Bool = false
-    var deliveryDelay: Int = 0
-    var groupPayments: Bool = false
-    var invoicePrefix: String = ""
-    var orderSchedule: String = ""
-    var paymentMethod: PaymentMethods = PaymentMethods()
-    var invoiceSetting: InvoiceSetting = InvoiceSetting()
-    var includeWeekends: Bool = false
-    var invoiceFrequency: InvoiceFrequency = InvoiceFrequency()
-    var defaultDeliveryDelay: String = ""
-    var defaultSalesAccountCode: String = ""
-    var includeOrderUpdatesInReports: Bool = false
+    public var brand: Brand = Brand()
+    public var flags: [String] = []
+    public var dayStart: String = ""
+    public var insights: Insights = Insights()
+    public var monthStart: String = ""
+    public var weightType: String = ""
+    public var orderPrefix: String = ""
+    public var paymentTerms: PaymentTerms = PaymentTerms()
+    public var randomWeight: Bool = false
+    public var deliveryDelay: Int = 0
+    public var groupPayments: Bool = false
+    public var invoicePrefix: String = ""
+    public var orderSchedule: String = ""
+    public var paymentMethod: PaymentMethods = PaymentMethods()
+    public var invoiceSetting: InvoiceSetting = InvoiceSetting()
+    public var includeWeekends: Bool = false
+    public var invoiceFrequency: InvoiceFrequency = InvoiceFrequency()
+    public var defaultDeliveryDelay: String = ""
+    public var defaultSalesAccountCode: String = ""
+    public var includeOrderUpdatesInReports: Bool = false
 }
 
 public struct PurchaserProperties {
-    var demoSupplier: Bool = false
+    public var demoSupplier: Bool = false
 }
 
 public struct PriceGroup {
-    var id: String = ""
-    var name: String = ""
-    var supplierId: String = ""
-    var userId: String = ""
-    var single: Bool = false
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var deletedAt: String = ""
-    var created_at: String = ""
-    var updated_at: String = ""
-    var deleted_at: String = ""
-    var supplier_id: String = ""
-    var user_id: String = ""
+    public var id: String = ""
+    public var name: String = ""
+    public var supplierId: String = ""
+    public var userId: String = ""
+    public var single: Bool = false
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var deletedAt: String = ""
+    public var created_at: String = ""
+    public var updated_at: String = ""
+    public var deleted_at: String = ""
+    public var supplier_id: String = ""
+    public var user_id: String = ""
 }
 
 public struct VisibilityGroup {
-    var id: String = ""
-    var name: String = ""
-    var supplierId: String = ""
-    var userId: String = ""
-    var single: Bool = false
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var deletedAt: String = ""
-    var created_at: String = ""
-    var updated_at: String = ""
-    var deleted_at: String = ""
-    var supplier_id: String = ""
-    var user_id: String = ""
+    public var id: String = ""
+    public var name: String = ""
+    public var supplierId: String = ""
+    public var userId: String = ""
+    public var single: Bool = false
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var deletedAt: String = ""
+    public var created_at: String = ""
+    public var updated_at: String = ""
+    public var deleted_at: String = ""
+    public var supplier_id: String = ""
+    public var user_id: String = ""
 }
 
 public struct FreightGroup {
-    var id: String = ""
-    var name: String = ""
-    var type: String = ""
-    var cost: String = ""
-    var valueThreshold: String = ""
-    var quantityThreshold: String = ""
-    var active: Bool = false
-    var supplierId: String = ""
-    var userId: String = ""
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var deletedAt: String = ""
-    var created_at: String = ""
-    var updated_at: String = ""
-    var deleted_at: String = ""
-    var supplier_id: String = ""
-    var user_id: String = ""
+    public var id: String = ""
+    public var name: String = ""
+    public var type: String = ""
+    public var cost: String = ""
+    public var valueThreshold: String = ""
+    public var quantityThreshold: String = ""
+    public var active: Bool = false
+    public var supplierId: String = ""
+    public var userId: String = ""
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var deletedAt: String = ""
+    public var created_at: String = ""
+    public var updated_at: String = ""
+    public var deleted_at: String = ""
+    public var supplier_id: String = ""
+    public var user_id: String = ""
 }
 
 extension PurchaserResponse: Decodable {

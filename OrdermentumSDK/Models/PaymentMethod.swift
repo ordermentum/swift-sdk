@@ -9,59 +9,59 @@
 import Foundation
 
 public struct PaymentMethod {
-    var account: String = ""
-    var accountName: String = ""
-    var bankConfigured: Bool = false
-    var bsb: String = ""
-    var cardConfigured: Bool = false
-    var cardLast4Digits: String = ""
-    var cardName: String = ""
-    var cardType: String = ""
-    var createdAt: String = ""
-    var displayName: String = ""
-    var firstName: String = ""
-    var id: String = ""
-    var isCard: Bool = false
-    var isDirect: Bool = false
-    var lastName: String = ""
-    var maskedNumber: String = ""
-    var name: String = ""
-    var title: String = ""
-    var type: String = ""
-    var updatedAt: String = ""
+    public var account: String = ""
+    public var accountName: String = ""
+    public var bankConfigured: Bool = false
+    public var bsb: String = ""
+    public var cardConfigured: Bool = false
+    public var cardLast4Digits: String = ""
+    public var cardName: String = ""
+    public var cardType: String = ""
+    public var createdAt: String = ""
+    public var displayName: String = ""
+    public var firstName: String = ""
+    public var id: String = ""
+    public var isCard: Bool = false
+    public var isDirect: Bool = false
+    public var lastName: String = ""
+    public var maskedNumber: String = ""
+    public var name: String = ""
+    public var title: String = ""
+    public var type: String = ""
+    public var updatedAt: String = ""
 }
 
 public struct UpdatePaymentMethodRequest: Codable {
-    var paymentMethodId: String = ""
-    var defaultPaymentMethodType: String = ""
+    public var paymentMethodId: String = ""
+    public var defaultPaymentMethodType: String = ""
 }
 
 public struct CreateCardPaymentMethodRequest: Codable {
-    var number: String = ""
-    var issuer: String = ""
-    var isCard: Bool = false
-    var firstName: String = ""
-    var lastName: String = ""
-    var fullName: String = ""
-    var expiryMonth: String = ""
-    var expiryYear: String = ""
-    var cvv: String = ""
-    var isDirect: Bool = false
-    var defaultAll: Bool = false
-    var userId: String = ""
+    public var number: String = ""
+    public var issuer: String = ""
+    public var isCard: Bool = false
+    public var firstName: String = ""
+    public var lastName: String = ""
+    public var fullName: String = ""
+    public var expiryMonth: String = ""
+    public var expiryYear: String = ""
+    public var cvv: String = ""
+    public var isDirect: Bool = false
+    public var defaultAll: Bool = false
+    public var userId: String = ""
 }
 
 public struct CreateDirectDebitPaymentMethodRequest: Codable {
-    var accountName: String = ""
-    var account: String = ""
-    var bsb: String = ""
-    var isDirect: Bool = false
-    var type: String = ""
-    var country: String = ""
-    var currency: String = ""
-    var defaultAll: Bool = false
-    var terms: Bool = true
-    var userId: String = ""
+    public var accountName: String = ""
+    public var account: String = ""
+    public var bsb: String = ""
+    public var isDirect: Bool = false
+    public var type: String = ""
+    public var country: String = ""
+    public var currency: String = ""
+    public var defaultAll: Bool = false
+    public var terms: Bool = true
+    public var userId: String = ""
 }
 
 extension PaymentMethod: Decodable {

@@ -9,19 +9,19 @@
 import Foundation
 
 public struct ExperimentsResponse {
-    var data: [ExperimentsData] = []
+    public var data: [ExperimentsData] = []
 }
 
 public struct ExperimentsData {
-    var id: String = ""
-    var slot: String = ""
-    var name: String = ""
-    var meta: [String: String] = [:]
+    public var id: String = ""
+    public var slot: String = ""
+    public var name: String = ""
+    public var meta: [String: String] = [:]
 }
 
 public struct ExperimentsDismissRequest: Encodable {
-    var userId: String = ""
-    var experimentId: String = ""
+    public var userId: String = ""
+    public var experimentId: String = ""
 }
 
 extension ExperimentsResponse: Decodable {

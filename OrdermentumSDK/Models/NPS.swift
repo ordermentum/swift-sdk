@@ -9,16 +9,16 @@
 import Foundation
 
 public struct NPSFeedback: Codable {
-    var score: Int = 0
-    var comment: String = ""
+    public var score: Int = 0
+    public var comment: String = ""
 }
 
 public struct NPSResponse {
-    var id: String = ""
-    var email: String = ""
-    var survey_scheduled_at: String = ""
-    var name: String = ""
-    var show: Bool = false
+    public var id: String = ""
+    public var email: String = ""
+    public var survey_scheduled_at: String = ""
+    public var name: String = ""
+    public var show: Bool = false
 }
 
 extension NPSResponse: Decodable {

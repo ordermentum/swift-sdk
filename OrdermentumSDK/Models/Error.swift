@@ -9,9 +9,9 @@
 import Foundation
 
 public struct ErrorResponse {
-    var message: String = ""
-    var name: String = ""
-    var code: Int = 0
+    public var message: String = ""
+    public var name: String = ""
+    public var code: Int = 0
 }
 
 extension ErrorResponse: Decodable {

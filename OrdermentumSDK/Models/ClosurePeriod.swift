@@ -9,18 +9,18 @@
 import Foundation
 
 public struct ClosurePeriodsResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [ClosurePeriod] = []
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [ClosurePeriod] = []
 }
 
 public struct ClosurePeriod: Encodable {
-    var id: String = ""
-    var name: String = ""
-    var userId: String = ""
-    var retailerId: String = ""
-    var startDate: String = ""
-    var endDate: String = ""
+    public var id: String = ""
+    public var name: String = ""
+    public var userId: String = ""
+    public var retailerId: String = ""
+    public var startDate: String = ""
+    public var endDate: String = ""
 }
 
 extension ClosurePeriodsResponse: Decodable {

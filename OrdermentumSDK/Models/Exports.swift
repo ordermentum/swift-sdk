@@ -9,28 +9,28 @@
 import Foundation
 
 public struct RetailerExports: Encodable {
-    var retailersCsv: Bool = false
-    var retailersUsers: Bool = false
+    public var retailersCsv: Bool = false
+    public var retailersUsers: Bool = false
 }
 
 public struct OrderExports: Encodable {
-    var ordersCsv: Bool = false
-    var attacheXml: Bool = false
-    var reckonReport: Bool = false
-    var globalBakeXml: Bool = false
-    var ordersPickPdf: Bool = false
-    var ordersInvoicePdf: Bool = false
-    var ordersDeliveryPdf: Bool = false
-    var ordersLineItemsCsv: Bool = false
-    var ordersProductionCsv: Bool = false
-    var ordersDeliverySummaryPdf: Bool = false
-    var ordersDeliveryManifestPdf: Bool = false
-    var ordersLineItemsDetailsCsv: Bool = false
-    var ordersProductionReportPdf: Bool = false
+    public var ordersCsv: Bool = false
+    public var attacheXml: Bool = false
+    public var reckonReport: Bool = false
+    public var globalBakeXml: Bool = false
+    public var ordersPickPdf: Bool = false
+    public var ordersInvoicePdf: Bool = false
+    public var ordersDeliveryPdf: Bool = false
+    public var ordersLineItemsCsv: Bool = false
+    public var ordersProductionCsv: Bool = false
+    public var ordersDeliverySummaryPdf: Bool = false
+    public var ordersDeliveryManifestPdf: Bool = false
+    public var ordersLineItemsDetailsCsv: Bool = false
+    public var ordersProductionReportPdf: Bool = false
 }
 
 public struct ProductExports: Encodable {
-    var productsCsv: Bool = false
+    public var productsCsv: Bool = false
 }
 
 extension RetailerExports: Decodable {

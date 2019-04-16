@@ -9,31 +9,31 @@
 import Foundation
 
 public struct DataAttributesResponse {
-    var data: DataAttributesArrays = DataAttributesArrays()
+    public var data: DataAttributesArrays = DataAttributesArrays()
 }
 
 public struct DataAttributesArrays {
-    var pos: [String] = []
-    var banking: [String] = []
-    var accounting: [String] = []
-    var venueTypes: [String] = []
-    var tradingHours: TradingHours = TradingHours()
+    public var pos: [String] = []
+    public var banking: [String] = []
+    public var accounting: [String] = []
+    public var venueTypes: [String] = []
+    public var tradingHours: TradingHours = TradingHours()
 }
 
 public struct DataAttributes: Encodable {
-    var pos: String = ""
-    var venue: String = ""
-    var banking: String = ""
-    var accounting: String = ""
-    var venueTypes: String = ""
-    var tradingHours: TradingHours = TradingHours()
+    public var pos: String = ""
+    public var venue: String = ""
+    public var banking: String = ""
+    public var accounting: String = ""
+    public var venueTypes: String = ""
+    public var tradingHours: TradingHours = TradingHours()
 }
 
 public struct VenueOperationsUpdate: Codable {
-    var pos: String = ""
-    var banking: String = ""
-    var accounting: String = ""
-    var venue: String = ""
+    public var pos: String = ""
+    public var banking: String = ""
+    public var accounting: String = ""
+    public var venue: String = ""
 }
 
 extension DataAttributesResponse: Decodable {

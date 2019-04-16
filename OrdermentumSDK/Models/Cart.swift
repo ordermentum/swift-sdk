@@ -9,33 +9,33 @@
 import Foundation
 
 public struct Cart {
-    var deliveryDate: String?
-    var lineItems: [CartLineItem]?
-    var retailerId: String?
-    var supplierId: String?
+    public var deliveryDate: String?
+    public var lineItems: [CartLineItem]?
+    public var retailerId: String?
+    public var supplierId: String?
 }
 
 public struct CartProduct {
-    var product: Product
-    var quantity: Int
+    public var product: Product
+    public var quantity: Int
 }
 
 public struct CartOrder {
-    var lineItems: [CartLineItem]?
-    var supplierId: String?
-    var retailerId: String?
-    var deliveryDate: String?
-    var comment: String?
-    var reference: String?
-    var status: String?
-    var type: String?
-    var paymentMethodId: String?
-    var origin: String?
+    public var lineItems: [CartLineItem]?
+    public var supplierId: String?
+    public var retailerId: String?
+    public var deliveryDate: String?
+    public var comment: String?
+    public var reference: String?
+    public var status: String?
+    public var type: String?
+    public var paymentMethodId: String?
+    public var origin: String?
 }
 
 public struct CartLineItem {
-    var productId: String?
-    var quantity: Int?
+    public var productId: String?
+    public var quantity: Int?
 }
 
 extension Cart: Encodable {

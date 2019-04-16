@@ -9,57 +9,57 @@
 import Foundation
 
 public struct AddOnsResponse {
-    var data: [AddOn] = []
+    public var data: [AddOn] = []
 }
 
 public struct AddOn {
-    var connectUrl: String = ""
-    var disconnectUrl: String = ""
-    var entityName: String = ""
-    var entityType: String = ""
-    var id: String = ""
-    var integrationData: IntegrationData = IntegrationData()
-    var logo: String = ""
-    var name: String = ""
-    var plan: String = ""
-    var readUrl: String = ""
-    var type: String = ""
-    var updateUrl: String = ""
+    public var connectUrl: String = ""
+    public var disconnectUrl: String = ""
+    public var entityName: String = ""
+    public var entityType: String = ""
+    public var id: String = ""
+    public var integrationData: IntegrationData = IntegrationData()
+    public var logo: String = ""
+    public var name: String = ""
+    public var plan: String = ""
+    public var readUrl: String = ""
+    public var type: String = ""
+    public var updateUrl: String = ""
 }
 
 public struct IntegrationData {
-    var accountId: String = ""
-    var expenseAccountCode: String = ""
-    var lastInvoiceSyncedAt: String = ""
-    var supplierName: String = ""
+    public var accountId: String = ""
+    public var expenseAccountCode: String = ""
+    public var lastInvoiceSyncedAt: String = ""
+    public var supplierName: String = ""
 }
 
 public struct AddOnsDiscoverResponse {
-    var data: [AddOnsDiscover] = []
+    public var data: [AddOnsDiscover] = []
 }
 
 public struct AddOnsDiscover {
-    var description: String = ""
-    var links: AddOnsDiscoverLinks = AddOnsDiscoverLinks()
-    var logo: String = ""
-    var name: String = ""
-    var plan: String = ""
-    var slug: String = ""
-    var subtext: String = ""
-    var type: String = ""
+    public var description: String = ""
+    public var links: AddOnsDiscoverLinks = AddOnsDiscoverLinks()
+    public var logo: String = ""
+    public var name: String = ""
+    public var plan: String = ""
+    public var slug: String = ""
+    public var subtext: String = ""
+    public var type: String = ""
 }
 
 public struct AddOnsDiscoverLinks {
-    var connect: String = ""
+    public var connect: String = ""
 }
 
 public struct AddOnUpdateObject: Codable {
-    var accountId: String = ""
-    var expenseAccountCode: String = ""
+    public var accountId: String = ""
+    public var expenseAccountCode: String = ""
 }
 
 public struct AddOnDisconnectObject: Codable {
-    var accountId: String = ""
+    public var accountId: String = ""
 }
 
 extension AddOn: Decodable {

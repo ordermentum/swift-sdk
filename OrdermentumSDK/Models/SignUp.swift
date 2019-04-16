@@ -9,17 +9,17 @@
 import Foundation
 
 public struct SignUpResponse {
-    var user: SignUpUser = SignUpUser()
-    var token: String = ""
+    public var user: SignUpUser = SignUpUser()
+    public var token: String = ""
 }
 
 public struct SignUpUser {
-    var id: String = ""
-    var firstName: String = ""
-    var lastName: String = ""
-    var fullName: String = ""
-    var dob: String = ""
-    var email: String = ""
+    public var id: String = ""
+    public var firstName: String = ""
+    public var lastName: String = ""
+    public var fullName: String = ""
+    public var dob: String = ""
+    public var email: String = ""
 }
 
 extension SignUpResponse: Decodable {

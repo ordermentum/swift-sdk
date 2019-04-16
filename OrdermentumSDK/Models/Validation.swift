@@ -10,69 +10,69 @@ import Foundation
 
 /** Request **/
 public struct ValidationRequestBody: Codable {
-    var deliveryDate: String = ""
-    var lineItems: [ValidationRequestBodyLineItem] = []
-    var retailerId: String = ""
-    var supplierId: String = ""
-    var type: String = ""
+    public var deliveryDate: String = ""
+    public var lineItems: [ValidationRequestBodyLineItem] = []
+    public var retailerId: String = ""
+    public var supplierId: String = ""
+    public var type: String = ""
 }
 
 public struct ValidationRequestBodyLineItem: Codable {
-    var productId: String = ""
-    var quantity: Int = 0
+    public var productId: String = ""
+    public var quantity: Int = 0
 }
 
 /** Response **/
 public struct Validation {
-    var cart: ValidationCart = ValidationCart()
-    var display: ValidationDisplay = ValidationDisplay()
-    var lineItems: [ValidationLineItem] = []
-    var cartErrorCount: Int = 0
-    var cartWarningCount: Int = 0
-    var cartInfoCount: Int = 0
-    var lineItemErrorCount: Int = 0
-    var lineItemWarningCount: Int = 0
-    var lineItemInfosCount: Int = 0
-    var totalCost: Float = 0.00
-    var totalFreight: Float = 0.00
-    var subtotal: Float = 0.00
-    var totalGST: Float = 0.00
-    var total: Float = 0.00
-    var totalPaid: Float = 0.00
-    var totalDue: Float = 0.00
-    var totalFreightIncGST: Float = 0.00
+    public var cart: ValidationCart = ValidationCart()
+    public var display: ValidationDisplay = ValidationDisplay()
+    public var lineItems: [ValidationLineItem] = []
+    public var cartErrorCount: Int = 0
+    public var cartWarningCount: Int = 0
+    public var cartInfoCount: Int = 0
+    public var lineItemErrorCount: Int = 0
+    public var lineItemWarningCount: Int = 0
+    public var lineItemInfosCount: Int = 0
+    public var totalCost: Float = 0.00
+    public var totalFreight: Float = 0.00
+    public var subtotal: Float = 0.00
+    public var totalGST: Float = 0.00
+    public var total: Float = 0.00
+    public var totalPaid: Float = 0.00
+    public var totalDue: Float = 0.00
+    public var totalFreightIncGST: Float = 0.00
 }
 
 public struct ValidationCart {
-    var errors: [ValidationError] = []
+    public var errors: [ValidationError] = []
 }
 
 public struct ValidationError {
-    var message: String = ""
-    var type: String = ""
+    public var message: String = ""
+    public var type: String = ""
 }
 
 public struct ValidationDisplay {
-    var totalFreight: String = ""
-    var totalCost: String = ""
-    var totalGST: String = ""
-    var total: String = ""
+    public var totalFreight: String = ""
+    public var totalCost: String = ""
+    public var totalGST: String = ""
+    public var total: String = ""
 }
 
 public struct ValidationLineItem {
-    var productId: String = ""
-    var errors: [ValidationError] = []
-    var display: ValidationLineItemDisplay = ValidationLineItemDisplay()
-    var locked: Bool = false
+    public var productId: String = ""
+    public var errors: [ValidationError] = []
+    public var display: ValidationLineItemDisplay = ValidationLineItemDisplay()
+    public var locked: Bool = false
 }
 
 public struct ValidationLineItemDisplay {
-    var price: Float = 0.00
-    var priceFromTotal: Float = 0.00
-    var priceInc: Float = 0.00
-    var subtotal: Float = 0.00
-    var tax: Float = 0.00
-    var total: Float = 0.00
+    public var price: Float = 0.00
+    public var priceFromTotal: Float = 0.00
+    public var priceInc: Float = 0.00
+    public var subtotal: Float = 0.00
+    public var tax: Float = 0.00
+    public var total: Float = 0.00
 }
 
 extension Validation: Decodable {
