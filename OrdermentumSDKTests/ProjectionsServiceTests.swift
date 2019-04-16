@@ -25,8 +25,8 @@
 //        let expectation = XCTestExpectation(description: "Async Test")
 //        
 //        //Call API
-//        Client.instance.setProductionURL()
-//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//        Client.instance.baseURL = ClientURL.rootTestingURL
+//        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
 //        ProjectionsService().cancelOrder(purchaserScheduleId: <#T##String#>, date: <#T##String#>) { (result) in
 //            assert(result)
 //            expectation.fulfill()
@@ -41,8 +41,8 @@
 //        let expectation = XCTestExpectation(description: "Async Test")
 //        
 //        //Call API
-//        Client.instance.setProductionURL()
-//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//        Client.instance.baseURL = ClientURL.rootTestingURL
+//        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
 //        ProjectionsService().deleteOrder(purchaserScheduleId: <#T##String#>, requestObject: <#T##ProjectionDeleteRequest#>) { (result) in
 //            assert(result)
 //            expectation.fulfill()
@@ -57,8 +57,8 @@
 //        let expectation = XCTestExpectation(description: "Async Test")
 //        
 //        //Call API
-//        Client.instance.setProductionURL()
-//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//        Client.instance.baseURL = ClientURL.rootTestingURL
+//        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
 //        ProjectionsService().getOrder(orderId: <#T##String#>) { (result, responseData) in
 //            assert(result)
 //            expectation.fulfill()
@@ -73,8 +73,8 @@
 //        let expectation = XCTestExpectation(description: "Async Test")
 //        
 //        //Call API
-//        Client.instance.setProductionURL()
-//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//        Client.instance.baseURL = ClientURL.rootTestingURL
+//        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
 //        ProjectionsService().getProjections(purchaserId: <#T##String#>, startDate: <#T##String#>, timezone: <#T##String#>) { (result, responseData) in
 //            assert(result)
 //            expectation.fulfill()
@@ -89,8 +89,8 @@
 //        let expectation = XCTestExpectation(description: "Async Test")
 //        
 //        //Call API
-//        Client.instance.setProductionURL()
-//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//        Client.instance.baseURL = ClientURL.rootTestingURL
+//        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
 //        ProjectionsService().reinstateOrder(purchaserScheduleId: <#T##String#>, requestObject: <#T##ProjectionReinstateRequest#>) { (result) in
 //            assert(result)
 //            expectation.fulfill()

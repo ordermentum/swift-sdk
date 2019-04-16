@@ -24,8 +24,8 @@ class MarketplaceServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        MarketplaceService().getMarketplaces(retailerId: "", pageSize:0, pageNo:0) { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.marketplaces.getMarketplaces(retailerId: "", pageSize:0, pageNo:0) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }

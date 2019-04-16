@@ -24,8 +24,8 @@ class ClosureDatesServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        ClosureDatesService().getClosurePeriods(retailerId: "", pageSize:0, pageNo:0) { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.closureDates.getClosurePeriods("", 0, 0) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -47,8 +47,8 @@ class ClosureDatesServiceTests: XCTestCase {
         requestObject.endDate = ProcessInfo.processInfo.environment["CLOSURE_PERIOD_END_DATE"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        ClosureDatesService().createClosurePeriod(requestObject: requestObject) { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.closureDates.createClosurePeriod(requestObject) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -71,8 +71,8 @@ class ClosureDatesServiceTests: XCTestCase {
         requestObject.endDate = ProcessInfo.processInfo.environment["CLOSURE_PERIOD_END_DATE"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        ClosureDatesService().updateClosurePeriod(closurePeriodId: "", requestObject: requestObject) { (result) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.closureDates.updateClosurePeriod(closurePeriodId: "", requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
@@ -86,8 +86,8 @@ class ClosureDatesServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        ClosureDatesService().deleteClosurePeriod(closurePeriodId: "") { (result) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.closureDates.deleteClosurePeriod(closurePeriodId: "") { (result) in
             assert(result)
             expectation.fulfill()
         }

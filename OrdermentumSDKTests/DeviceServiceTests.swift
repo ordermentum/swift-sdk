@@ -33,8 +33,8 @@ class DeviceServiceTests: XCTestCase {
         requestObject.device_hw_version = ProcessInfo.processInfo.environment["DEVICE_HW_VERSION"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        DeviceService().registerDevice(requestObject: requestObject) { (result) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.devices.registerDevice(requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
@@ -57,8 +57,8 @@ class DeviceServiceTests: XCTestCase {
         requestObject.device_hw_version = ProcessInfo.processInfo.environment["DEVICE_HW_VERSION"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        DeviceService().unregisterDevice(requestObject: requestObject) { (result) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.devices.unregisterDevice(requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
@@ -79,8 +79,8 @@ class DeviceServiceTests: XCTestCase {
         requestObject.accounting = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_ACCOUNTING"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        DeviceService().updateVenueOperations(retailerId: "", requestObject: requestObject) { (result) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.devices.updateVenueOperations(retailerId: "", requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }

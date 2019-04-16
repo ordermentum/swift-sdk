@@ -24,8 +24,8 @@ class ExperimentsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        ExperimentsService().getExperiments(slot: "", source: "", version: "", retailerId: "", isRetailer: false, userId: "", supplierIds: []) { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.experiments.getExperiments(slot: "", source: "", version: "", retailerId: "", isRetailer: false, userId: "", supplierIds: []) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -44,8 +44,8 @@ class ExperimentsServiceTests: XCTestCase {
         requestObject.experimentId = ProcessInfo.processInfo.environment["EPERIMENT_DISMISS_ID"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        ExperimentsService().dismissExperiment(requestObject: requestObject) { (result) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.experiments.dismissExperiment(requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }

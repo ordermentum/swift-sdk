@@ -25,8 +25,8 @@ class OrderServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
 
         //Call API
-        Client.instance.setProductionURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         OrdersService().getDeliveryDates(retailerId: "", supplierId: "") { (result, responseData) in
             assert(result)
             expectation.fulfill()
@@ -41,8 +41,8 @@ class OrderServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
 
         //Call API
-        Client.instance.setProductionURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         OrdersService().getOrders(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", sortBy: "-1") { (result, responseData) in
             assert(responseData?.data != nil)
             expectation.fulfill()

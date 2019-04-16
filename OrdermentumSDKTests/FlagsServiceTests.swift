@@ -24,8 +24,8 @@ class FlagsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        FlagsService().getFlags(flagsArray: [], supplierIdArray: [], retailerId: "", userId: "") { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.flags.getFlags(flagsArray: [], supplierIdArray: [], retailerId: "", userId: "") { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }

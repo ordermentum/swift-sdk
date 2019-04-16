@@ -24,8 +24,8 @@ class AddOnsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        AddOnsService().searchAddons(entityType: "", entityId: []) { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.addons.searchAddons(entityType: "", entityId: []) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -38,8 +38,8 @@ class AddOnsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        AddOnsService().discoverAddons(entityType: "", entityId:"") { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.addons.discoverAddons(entityType: "", entityId:"") { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -52,8 +52,8 @@ class AddOnsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        AddOnsService().readAddon(addonId: "", accountId:"") { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.addons.readAddon(addonId: "", accountId:"") { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -71,8 +71,8 @@ class AddOnsServiceTests: XCTestCase {
         requestObject.expenseAccountCode = ProcessInfo.processInfo.environment["EXPENSE_ACCOUNT_CODE"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        AddOnsService().updateAddon(addonId: "", accountId: "", requestObject: requestObject) { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.addons.updateAddon(addonId: "", accountId: "", requestObject: requestObject) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -90,8 +90,8 @@ class AddOnsServiceTests: XCTestCase {
         requestObject.accountId = ProcessInfo.processInfo.environment["ACCOUNT_ID"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        AddOnsService().disconnectAddon(addonId: "", accountId: "", requestObject: requestObject) { (result) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.addons.disconnectAddon(addonId: "", accountId: "", requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }

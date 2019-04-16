@@ -24,8 +24,8 @@ class InvoiceServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        InvoiceService().getSuppliers(retailerId: "", supplierId: "", sortBy: "") { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.invoices.getSuppliers(retailerId: "", supplierId: "", sortBy: "") { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -62,8 +62,8 @@ class InvoiceServiceTests: XCTestCase {
         requestObject.socketId = ProcessInfo.processInfo.environment["EXPORT_SOCKET_ID"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        InvoiceService().exportInvoice(requestObject: requestObject) { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.invoices.exportInvoice(requestObject) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -77,8 +77,8 @@ class InvoiceServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        InvoiceService().downloadInvoice(invoiceId: "") { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.invoices.downloadInvoice(invoiceId: "") { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -96,8 +96,8 @@ class InvoiceServiceTests: XCTestCase {
         requestObject.paymentMethodId = ProcessInfo.processInfo.environment["INVOICE_PAYMENT_METHOD_ID"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        InvoiceService().applyPayment(invoiceId: "", requestObject: requestObject) { (result) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.invoices.applyPayment(invoiceId: "", requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }

@@ -24,8 +24,8 @@ class DataAttributesServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setProductionURL()
-        DataAttributesService().getDataAttributes(purchaserId: "", pageSize:0, pageNo:0) { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.dataAttributes.getDataAttributes(purchaserId: "", pageSize:0, pageNo:0) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -58,8 +58,8 @@ class DataAttributesServiceTests: XCTestCase {
         requestObject.venueTypes = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_VENUE_TYPES"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        DataAttributesService().updateVenueHours(retailerId: "", requestObject: requestObject) { (result) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.dataAttributes.updateVenueHours(retailerId: "", requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
@@ -80,8 +80,8 @@ class DataAttributesServiceTests: XCTestCase {
         requestObject.accounting = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_ACCOUNTING"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        DataAttributesService().updateVenueOperations(retailerId: "", requestObject: requestObject) { (result) in
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.dataAttributes.updateVenueOperations(retailerId: "", requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
