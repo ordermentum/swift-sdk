@@ -30,7 +30,7 @@ public class InvoiceService {
      * Sends a request to export an invoice
      * Returns an ExportResponse
      */
-    public func exportInvoice(requestObject: ExportRequest, completion: @escaping (Bool, ExportResponse?) -> ()) {
+    public func exportInvoice(_ requestObject: ExportRequest, completion: @escaping (Bool, ExportResponse?) -> ()) {
         //Build Route
         let route = InvoiceRouter.exportInvoice(requestObject) as URLRequestConvertible
         

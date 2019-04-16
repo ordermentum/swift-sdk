@@ -31,7 +31,7 @@ public class NPSService {
      * Submit an NPS response to the Ordermentum server
      * Returns a ResponseBody
      */
-    public func sendFeedback(requestObject: NPSFeedback, completion: @escaping (Bool) -> ()) {
+    public func sendFeedback(_ requestObject: NPSFeedback, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = NPSRouter.sendFeedback(requestObject) as URLRequestConvertible
         

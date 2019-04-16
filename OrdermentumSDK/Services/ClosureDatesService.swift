@@ -16,7 +16,7 @@ public class ClosureDatesService {
      * Get the closure periods belonging to a retailer
      * Returns a ClosurePeriodsResponse
      */
-    public func getClosurePeriods(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ClosurePeriodsResponse?) -> ()) {
+    public func getClosurePeriods(_ retailerId: String, _ pageSize: Int, _ pageNo: Int, completion: @escaping (Bool, ClosurePeriodsResponse?) -> ()) {
         //Build Route
         let route = ClosurePeriodsRouter.getClosurePeriods(retailerId, pageSize, pageNo) as URLRequestConvertible
         
@@ -30,7 +30,7 @@ public class ClosureDatesService {
      * Create a closure period for the currently authenticated user
      * Returns a ClosurePeriodsResponse
      */
-    public func createClosurePeriod(requestObject: ClosurePeriod, completion: @escaping (Bool, ClosurePeriodsResponse?) -> ()) {
+    public func createClosurePeriod(_ requestObject: ClosurePeriod, completion: @escaping (Bool, ClosurePeriodsResponse?) -> ()) {
         //Build Route
         let route = ClosurePeriodsRouter.createClosurePeriod(requestObject) as URLRequestConvertible
         

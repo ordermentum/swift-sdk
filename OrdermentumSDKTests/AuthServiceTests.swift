@@ -37,7 +37,7 @@ class AuthServiceTests: XCTestCase {
         //Call API
         Client.instance.setProductionURL()
         Client.instance.setToken(tokenString: "")
-        AuthService().login(requestObject: loginRequest) { (result, loginObject) in
+        AuthService().login(_ requestObject: loginRequest) { (result, loginObject) in
             XCTAssertNotNil(loginObject?.access_token)
             expectation.fulfill()
         }
@@ -56,7 +56,7 @@ class AuthServiceTests: XCTestCase {
         
         //Call API
         Client.instance.setProductionURL()
-        AuthService().requestPasswordReset(requestObject: requestObject) { (result) in
+        AuthService().requestPasswordReset(_ requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }

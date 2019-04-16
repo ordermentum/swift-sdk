@@ -16,7 +16,7 @@ public class AuthService {
      * Login to the Ordermentum service.
      * Returns a Login object
      */
-    public func login(requestObject: LoginRequest, completion: @escaping (Bool, Login?) -> ()) {
+    public func login(_ requestObject: LoginRequest, completion: @escaping (Bool, Login?) -> ()) {
         //Build Route
         let route = AuthRouter.login(requestObject) as URLRequestConvertible
         
@@ -30,7 +30,7 @@ public class AuthService {
      * Request a password reset email be sent to the specified user.
      * Returns a response body which can be used to check for a 200 status which indicates a success.
      */
-    public func requestPasswordReset(requestObject: ForgotPasswordRequest, completion: @escaping (Bool) -> ()) {
+    public func requestPasswordReset(_ requestObject: ForgotPasswordRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = AuthRouter.requestPasswordReset(requestObject) as URLRequestConvertible
         

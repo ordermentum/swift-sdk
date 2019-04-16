@@ -16,7 +16,7 @@ public class DeviceService {
      * Send device details for a user to the Ordermentum service
      * Returns a ResponseBody which can be used to check for a 200 response
      */
-    public func registerDevice(requestObject: Device, completion: @escaping (Bool) -> ()) {
+    public func registerDevice(_ requestObject: Device, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = DeviceRouter.registerDevice(requestObject) as URLRequestConvertible
         
@@ -30,7 +30,7 @@ public class DeviceService {
      * Remove device details for a user to the Ordermentum service
      * Returns a ResponseBody which can be used to check for a 200 response
      */
-    public func unregisterDevice(requestObject: Device, completion: @escaping (Bool) -> ()) {
+    public func unregisterDevice(_ requestObject: Device, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = DeviceRouter.unregisterDevice(requestObject) as URLRequestConvertible
         
