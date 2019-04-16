@@ -11,30 +11,38 @@ import Alamofire
 
 public class Client {
     //Data
-    var baseURL: String = ""
-    var token: String = ""
+    public var baseURL: String = ""
+    public var token: String = ""
     
     //Private Init to Stop Re-Initialisation
     private init() {}
     public static let instance = Client()
     
+    //Services
+    public var addons: AddOnsService = AddOnsService()
+    public var auth: AuthService = AuthService()
+    public var closureDates: ClosureDatesService = ClosureDatesService()
+    public var creditNotes: CreditNotesService = CreditNotesService()
+    public var dataAttributes: DataAttributesService = DataAttributesService()
+    public var devices: DeviceService = DeviceService()
+    public var experiments: ExperimentsService = ExperimentsService()
+    public var findSuppliers: FindSupplierService = FindSupplierService()
+    public var flags: FlagsService = FlagsService()
+    public var invoices: InvoiceService = InvoiceService()
+    public var marketplaces: MarketplaceService = MarketplaceService()
+    public var notifications: NotificationsService = NotificationsService()
+    public var notify: NotifyService = NotifyService()
+    public var nps: NPSService = NPSService()
+    public var orders: OrdersService = OrdersService()
+    public var payments: PaymentsService = PaymentsService()
+    public var products: ProductsService = ProductsService()
+    public var profiles: ProfileService = ProfileService()
+    public var projections: ProjectionsService = ProjectionsService()
+    public var purchasers: PurchaserService = PurchaserService()
+    public var validation: ValidationService = ValidationService()
+    public var venues: VenueService = VenueService()
+    
     // MARK: Convenience Methods
-    public func setProductionURL() {
-        baseURL = ClientURL.rootURL
-    }
-    
-    public func setTestingURL() {
-        baseURL = ClientURL.rootTestingURL
-    }
-    
-    public func setCustomURL(urlString: String) {
-        baseURL = urlString
-    }
-    
-    public func setToken(tokenString: String) {
-        token = tokenString
-    }
-    
     public func getHeaderToken() -> String {
         print(String(format: "Bearer \(token)"))
         return String(format: "Bearer \(token)")
