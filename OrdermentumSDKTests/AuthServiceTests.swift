@@ -35,9 +35,8 @@ class AuthServiceTests: XCTestCase {
         loginRequest.password = ProcessInfo.processInfo.environment["LOGIN_PASSWORD"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        Client.instance.setToken(tokenString: "")
-        AuthService().login(_ requestObject: loginRequest) { (result, loginObject) in
+        Client.instance.baseURL = ClientURL.rootURL
+        Client.instance.auth.login(loginRequest) { (result, loginObject) in
             XCTAssertNotNil(loginObject?.access_token)
             expectation.fulfill()
         }
@@ -55,8 +54,8 @@ class AuthServiceTests: XCTestCase {
         requestObject.email = ProcessInfo.processInfo.environment["PASSWORD_RESET_EMAIL"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        AuthService().requestPasswordReset(_ requestObject: requestObject) { (result) in
+        Client.instance.baseURL = ClientURL.rootURL
+        Client.instance.auth.requestPasswordReset(requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
@@ -77,9 +76,9 @@ class AuthServiceTests: XCTestCase {
         requestObject.verifyPassword = ProcessInfo.processInfo.environment["CHANGE_PASSWORD_VERIFY"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        AuthService().changePassword(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: requestObject) { (result, responseData) in
+        Client.instance.baseURL = ClientURL.rootURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        Client.instance.auth.changePassword(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: requestObject) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }

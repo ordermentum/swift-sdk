@@ -203,7 +203,7 @@ public struct ClassicStandingOrderSupplier {
     public var name: String = ""
 }
 
-public struct UpdatedBy {
+public struct UpdatedBy: Encodable {
     public var firstName: String = ""
     public var lastName: String = ""
     public var fullName: String = ""
