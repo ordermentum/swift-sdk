@@ -38,8 +38,19 @@ class DataAttributesServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
+        //Build TradingHours for DataAttributes Request Object
+        var tradingHoursObj: TradingHours = TradingHours()
+        let tradingHoursJSONString = ProcessInfo.processInfo.environment["DATA_ATTRIBUTES_TRADING_HOURS"] ?? ""
+        if !tradingHoursJSONString.isEmpty {
+            let tradingHoursJSONData = tradingHoursJSONString.data(using: .utf8) ?? Data()
+            if let tradingHours = try? JSONDecoder().decode(TradingHours.self, from: tradingHoursJSONData) {
+                tradingHoursObj = tradingHours
+            }
+        }
+        
         //Build DataAttributes Request Object
         var requestObject: DataAttributes = DataAttributes()
+        requestObject.tradingHours = tradingHoursObj
         requestObject.pos = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_POS"] ?? ""
         requestObject.venue = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_VENUE"] ?? ""
         requestObject.banking = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_BANKING"] ?? ""
