@@ -9,6 +9,8 @@
 import Foundation
 
 public struct TradingHours: Codable {
+    public init() {}
+    
     public var enabled: Bool = false
     public var mon: TradingHoursDay = TradingHoursDay()
     public var tue: TradingHoursDay = TradingHoursDay()
@@ -20,6 +22,8 @@ public struct TradingHours: Codable {
 }
 
 public struct TradingHoursDay: Codable {
+    public init() {}
+    
     public var isOpen: Bool = false
     public var closeHour: Int = 17
     public var closeMinute: Int = 0

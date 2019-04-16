@@ -9,6 +9,8 @@
 import Foundation
 
 public struct NPSFeedback: Codable {
+    public init() {}
+    
     public var score: Int = 0
     public var comment: String = ""
 }

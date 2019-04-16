@@ -15,6 +15,8 @@ public struct FindSupplierResponse {
 }
 
 public struct FindSupplierRequest: Codable {
+    public init() {}
+    
     public var retailerId: String = ""
     public var supplierId: String = ""
     public var message: String = ""
@@ -24,6 +26,8 @@ public struct FindSupplierRequest: Codable {
 }
 
 public struct FindSupplierReferralRequest: Codable {
+    public init() {}
+    
     public var email: String = ""
     public var retailerId: String = ""
     public var name: String = ""

@@ -32,11 +32,15 @@ public struct PaymentMethod {
 }
 
 public struct UpdatePaymentMethodRequest: Codable {
+    public init() {}
+    
     public var paymentMethodId: String = ""
     public var defaultPaymentMethodType: String = ""
 }
 
 public struct CreateCardPaymentMethodRequest: Codable {
+    public init() {}
+    
     public var number: String = ""
     public var issuer: String = ""
     public var isCard: Bool = false
@@ -52,6 +56,8 @@ public struct CreateCardPaymentMethodRequest: Codable {
 }
 
 public struct CreateDirectDebitPaymentMethodRequest: Codable {
+    public init() {}
+    
     public var accountName: String = ""
     public var account: String = ""
     public var bsb: String = ""

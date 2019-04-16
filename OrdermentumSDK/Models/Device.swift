@@ -9,6 +9,8 @@
 import Foundation
 
 public struct Device: Codable {
+    public init() {}
+    
     public var user_id: String = ""
     public var primary_device_id: String = ""
     public var secondary_device_id: String = ""

@@ -9,6 +9,8 @@
 import Foundation
 
 public struct PaginatedAPIResponse<D: Decodable>: Decodable {
+    public init() {}
+    
     public var meta: PaginatedAPIMeta?
     public var links: PaginatedAPILink?
     public var data: [D]?
@@ -34,7 +36,6 @@ public struct PaginatedAPIMeta: Decodable {
         case pageSize
         case pageNo
     }
-
 }
 
 public struct PaginatedAPILink: Decodable {

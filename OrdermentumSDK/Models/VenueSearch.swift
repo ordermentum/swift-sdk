@@ -13,6 +13,8 @@ public struct VenueSearchResponse {
 }
 
 public struct VenueSearch {
+    public init() {}
+    
     public var id: String = ""
     public var legalName: String = ""
     public var tradingName: String = ""

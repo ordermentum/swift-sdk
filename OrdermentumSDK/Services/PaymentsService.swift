@@ -14,7 +14,7 @@ public class PaymentsService {
      * Fetch the payment methods belonging to a retailer
      * Returns an array of PaymentMethod
      */
-    func getPaymentMethods(retailerId: String, completion: @escaping (Bool, [PaymentMethod]?) -> ()) {
+    public func getPaymentMethods(retailerId: String, completion: @escaping (Bool, [PaymentMethod]?) -> ()) {
         //Build Route
         let route = PaymentsRouter.getPaymentMethods(retailerId) as URLRequestConvertible
         
@@ -28,7 +28,7 @@ public class PaymentsService {
      * Fetch a single payment method belonging to a retailer
      * Returns a PaymentMethod
      */
-    func getSinglePaymentMethod(retailerId: String, paymentMethodId: String, completion: @escaping (Bool, PaymentMethod?) -> ()) {
+    public func getSinglePaymentMethod(retailerId: String, paymentMethodId: String, completion: @escaping (Bool, PaymentMethod?) -> ()) {
         //Build Route
         let route = PaymentsRouter.getSinglePaymentMethod(retailerId, paymentMethodId) as URLRequestConvertible
         
@@ -43,7 +43,7 @@ public class PaymentsService {
      * Takes a CreateCardPaymentMethodRequest object
      * Returns a PaymentMethod
      */
-    func createCardPaymentMethod(retailerId: String, requestObject: CreateCardPaymentMethodRequest, completion: @escaping (Bool, PaymentMethod?) -> ()) {
+    public func createCardPaymentMethod(retailerId: String, requestObject: CreateCardPaymentMethodRequest, completion: @escaping (Bool, PaymentMethod?) -> ()) {
         //Build Route
         let route = PaymentsRouter.createCardPaymentMethod(retailerId, requestObject) as URLRequestConvertible
         
@@ -58,7 +58,7 @@ public class PaymentsService {
      * Takes a CreateDirectDebitPaymentMethodRequest object
      * Returns a PaymentMethod
      */
-    func createDebitPaymentMethod(retailerId: String, requestObject: CreateDirectDebitPaymentMethodRequest, completion: @escaping (Bool, PaymentMethod?) -> ()) {
+    public func createDebitPaymentMethod(retailerId: String, requestObject: CreateDirectDebitPaymentMethodRequest, completion: @escaping (Bool, PaymentMethod?) -> ()) {
         //Build Route
         let route = PaymentsRouter.createDebitPaymentMethod(retailerId, requestObject) as URLRequestConvertible
         
@@ -72,7 +72,7 @@ public class PaymentsService {
      * Delete a payment method
      * Returns a ResponseBody
      */
-    func deletePaymentMethod(retailerId: String, paymentMethodId: String, completion: @escaping (Bool) -> ()) {
+    public func deletePaymentMethod(retailerId: String, paymentMethodId: String, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = PaymentsRouter.deletePaymentMethod(retailerId, paymentMethodId) as URLRequestConvertible
         

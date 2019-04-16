@@ -15,6 +15,8 @@ public struct InvoiceResponse {
 }
 
 public struct Invoice: Encodable {
+    public init() {}
+    
     public var cancelledAt: String = ""
     public var chargedByUserId: String = ""
     public var charged_by_user_id: String = ""

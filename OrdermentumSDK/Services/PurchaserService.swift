@@ -14,7 +14,7 @@ public class PurchaserService {
      * Fetch the purchasers for a supplier retailer relationship
      * Returns a PurchaserResponse
      */
-    func getPurchasers(retailerId: String, supplierId: String, completion: @escaping (Bool, PurchaserResponse?) -> ()) {
+    public func getPurchasers(retailerId: String, supplierId: String, completion: @escaping (Bool, PurchaserResponse?) -> ()) {
         //Build Route
         let route = PurchaserRouter.getPurchasers(retailerId, supplierId) as URLRequestConvertible
         
@@ -28,7 +28,7 @@ public class PurchaserService {
      * Fetch the purchasers for a retailer with a given payment method
      * Returns a PurchaserResponse
      */
-    func getPurchasersForPaymentMethod(retailerId: String, paymentMethodType: String, completion: @escaping (Bool, PurchaserResponse?) -> ()) {
+    public func getPurchasersForPaymentMethod(retailerId: String, paymentMethodType: String, completion: @escaping (Bool, PurchaserResponse?) -> ()) {
         //Build Route
         let route = PurchaserRouter.getPurchasersForPaymentMethod(retailerId, paymentMethodType) as URLRequestConvertible
         
@@ -42,7 +42,7 @@ public class PurchaserService {
      * Update a payment method
      * Returns a ResponseBody
      */
-    func updatePaymentMethod(purchaserId: String, requestObject: UpdatePaymentMethodRequest, completion: @escaping (Bool) -> ()) {
+    public func updatePaymentMethod(purchaserId: String, requestObject: UpdatePaymentMethodRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = PurchaserRouter.updatePaymentMethod(purchaserId, requestObject) as URLRequestConvertible
         

@@ -9,6 +9,8 @@
 import Foundation
 
 public struct VenueProfile: Codable {
+    public init() {}
+    
     public var abn: String = ""
     public var address: Address = Address()
     public var billingAddress: Address = Address()
@@ -17,6 +19,8 @@ public struct VenueProfile: Codable {
 }
 
 public struct Completion {
+    public init() {}
+    
     public var profilePercent: Int = 0
 }
 

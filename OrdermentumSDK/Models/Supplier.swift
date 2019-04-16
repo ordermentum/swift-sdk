@@ -9,6 +9,8 @@
 import Foundation
 
 public struct Supplier: Encodable {
+    public init() {}
+    
     public var live: Bool = false
     public var id: String = ""
     public var name: String = ""

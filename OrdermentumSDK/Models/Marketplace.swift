@@ -40,6 +40,8 @@ public struct Marketplace {
 }
 
 public struct Properties: Encodable {
+    public init() {}
+    
     public var demoSupplier: String = ""
 }
 

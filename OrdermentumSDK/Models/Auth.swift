@@ -9,6 +9,8 @@
 import Foundation
 
 public struct Login: Codable {
+    public init() {}
+    
     public var access_token: String = ""
     public var token_type: String = ""
 }

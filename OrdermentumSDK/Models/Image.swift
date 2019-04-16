@@ -9,6 +9,8 @@
 import Foundation
 
 public struct Image: Encodable {
+    public init() {}
+    
     public var secure_url: String = ""
     public var original: String = ""
     public var logo: String = ""

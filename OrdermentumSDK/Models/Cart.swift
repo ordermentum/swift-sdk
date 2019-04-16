@@ -9,6 +9,8 @@
 import Foundation
 
 public struct Cart {
+    public init() {}
+    
     public var deliveryDate: String?
     public var lineItems: [CartLineItem]?
     public var retailerId: String?
@@ -16,11 +18,15 @@ public struct Cart {
 }
 
 public struct CartProduct {
-    public var product: Product
-    public var quantity: Int
+    public init() {}
+    
+    public var product: Product = Product()
+    public var quantity: Int = 0
 }
 
 public struct CartOrder {
+    public init() {}
+    
     public var lineItems: [CartLineItem]?
     public var supplierId: String?
     public var retailerId: String?
@@ -34,6 +40,8 @@ public struct CartOrder {
 }
 
 public struct CartLineItem {
+    public init() {}
+    
     public var productId: String?
     public var quantity: Int?
 }

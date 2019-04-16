@@ -15,6 +15,8 @@ public struct ClosurePeriodsResponse {
 }
 
 public struct ClosurePeriod: Encodable {
+    public init() {}
+    
     public var id: String = ""
     public var name: String = ""
     public var userId: String = ""

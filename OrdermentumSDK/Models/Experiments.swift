@@ -20,6 +20,8 @@ public struct ExperimentsData {
 }
 
 public struct ExperimentsDismissRequest: Encodable {
+    public init() {}
+    
     public var userId: String = ""
     public var experimentId: String = ""
 }

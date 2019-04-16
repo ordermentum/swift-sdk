@@ -9,11 +9,15 @@
 import Foundation
 
 public struct RetailerExports: Encodable {
+    public init() {}
+    
     public var retailersCsv: Bool = false
     public var retailersUsers: Bool = false
 }
 
 public struct OrderExports: Encodable {
+    public init() {}
+    
     public var ordersCsv: Bool = false
     public var attacheXml: Bool = false
     public var reckonReport: Bool = false
@@ -30,6 +34,8 @@ public struct OrderExports: Encodable {
 }
 
 public struct ProductExports: Encodable {
+    public init() {}
+    
     public var productsCsv: Bool = false
 }
 

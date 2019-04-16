@@ -10,6 +10,8 @@ import Foundation
 
 /** Request **/
 public struct ValidationRequestBody: Codable {
+    public init() {}
+    
     public var deliveryDate: String = ""
     public var lineItems: [ValidationRequestBodyLineItem] = []
     public var retailerId: String = ""
@@ -18,6 +20,8 @@ public struct ValidationRequestBody: Codable {
 }
 
 public struct ValidationRequestBodyLineItem: Codable {
+    public init() {}
+    
     public var productId: String = ""
     public var quantity: Int = 0
 }

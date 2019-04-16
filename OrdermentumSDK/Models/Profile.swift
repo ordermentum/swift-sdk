@@ -9,6 +9,8 @@
 import Foundation
 
 public struct UserProfile: Codable {
+    public init() {}
+    
     public var userId: String = ""
     public var permissions: [String] = []
     public var roles: Roles = Roles()
@@ -37,6 +39,8 @@ public struct Settings: Codable {
 }
 
 public struct Roles: Codable {
+    public init() {}
+    
     public var superAdmin: Bool = false
     public var admin: Bool = false
     public var retailers: [RetailerRole] = []
@@ -44,16 +48,22 @@ public struct Roles: Codable {
 }
 
 public struct RetailerRole: Codable {
+    public init() {}
+    
     public var id: String = ""
     public var role: String = ""
 }
 
 public struct SupplierRole: Codable {
+    public init() {}
+    
     public var id: String = ""
     public var role: String = ""
 }
 
 public struct Notifications: Codable {
+    public init() {}
+    
     public var enableSMS: Bool = false
     public var enableEmail: Bool = false
     public var pushNotifications: Bool = false
@@ -61,6 +71,8 @@ public struct Notifications: Codable {
 }
 
 public struct SupplierNotifications: Codable {
+    public init() {}
+    
     public var alerts: Bool = false
     public var enableSMS: Bool = false
     public var remittance: Bool = false
@@ -72,23 +84,31 @@ public struct SupplierNotifications: Codable {
 }
 
 public struct Name: Codable {
+    public init() {}
+    
     public var first: String = ""
     public var last: String = ""
 }
 
 public struct AdminPerms: Codable {
+    public init() {}
+    
     public var permissions: Permissions = Permissions()
     public var isAdmin: Bool = false
     public var isSuperAdmin: Bool = false
 }
 
 public struct Permissions: Codable {
+    public init() {}
+    
     public var ordermentum: [String] = []
     public var id: [String] = []
     public var customers: [String] = []
 }
 
 public struct UpdateUserRequest: Codable {
+    public init() {}
+    
     public var email: String = ""
     public var firstName: String = ""
     public var lastName: String = ""

@@ -9,5 +9,7 @@
 import Foundation
 
 public struct EmptyDecodable: Decodable {
+    public init() {}
+    
     // leave it as blank
 }

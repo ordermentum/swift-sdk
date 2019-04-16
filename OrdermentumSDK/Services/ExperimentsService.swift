@@ -14,7 +14,7 @@ public class ExperimentsService {
      * Get the experiments belonging to a user
      * Returns a ExperimentsResponse
      */
-    func getExperiments(slot: String, source: String, version: String, retailerId: String, isRetailer: Bool, userId: String, supplierIds: [String], completion: @escaping (Bool, ExperimentsResponse?) -> ()) {
+    public func getExperiments(slot: String, source: String, version: String, retailerId: String, isRetailer: Bool, userId: String, supplierIds: [String], completion: @escaping (Bool, ExperimentsResponse?) -> ()) {
         //Build Route
         let route = ExperimentsRouter.getExperiments(slot, source, version, retailerId, isRetailer, userId, supplierIds) as URLRequestConvertible
         
@@ -28,7 +28,7 @@ public class ExperimentsService {
      * Dismiss an experiment
      * Returns a ResponseBody which can be used to check for a 200 response code
      */
-    func dismissExperiment(requestObject: ExperimentsDismissRequest, completion: @escaping (Bool) -> ()) {
+    public func dismissExperiment(requestObject: ExperimentsDismissRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = ExperimentsRouter.dismissExperiment(requestObject) as URLRequestConvertible
         

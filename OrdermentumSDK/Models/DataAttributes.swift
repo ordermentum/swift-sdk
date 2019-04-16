@@ -21,6 +21,8 @@ public struct DataAttributesArrays {
 }
 
 public struct DataAttributes: Encodable {
+    public init() {}
+    
     public var pos: String = ""
     public var venue: String = ""
     public var banking: String = ""
@@ -30,6 +32,8 @@ public struct DataAttributes: Encodable {
 }
 
 public struct VenueOperationsUpdate: Codable {
+    public init() {}
+    
     public var pos: String = ""
     public var banking: String = ""
     public var accounting: String = ""

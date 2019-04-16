@@ -15,6 +15,8 @@ public struct VenueResponse {
 }
 
 public struct Venue {
+    public init() {}
+    
     public var id: String = ""
     public var name: String = ""
     public var legalName: String = ""
@@ -37,6 +39,8 @@ public struct Venue {
 }
 
 public struct VenueAccountSettings: Encodable {
+    public init() {}
+    
     public var flags: [String] = []
     public var insights: Insights = Insights()
     public var orderPrefix: String = ""
@@ -49,6 +53,8 @@ public struct VenueAccountSettings: Encodable {
 }
 
 public struct VenueAddress {
+    public init() {}
+    
     public var formatted: String = ""
     public var id: String = ""
     public var name: String = ""
@@ -88,11 +94,15 @@ public struct VenueImage {
 }
 
 public struct VenueSettings {
+    public init() {}
+    
     public var flags: [String] = []
     public var brand: VenueBrand = VenueBrand()
 }
 
 public struct User {
+    public init() {}
+    
     public var id: String = ""
     public var email: String = ""
     public var dob: String = ""
@@ -110,17 +120,23 @@ public struct User {
 }
 
 public struct VenueUsersResponse {
+    public init() {}
+    
     public var meta: Meta = Meta()
     public var links: Links = Links()
     public var data: [User] = []
 }
 
 public struct RemoveUser: Codable {
+    public init() {}
+    
     public var entityId: String = ""
     public var perms: [String] = []
 }
 
 public struct AddUser: Codable {
+    public init() {}
+    
     public var senderId: String = ""
     public var senderType: String = ""
     public var senderEntityName: String = ""

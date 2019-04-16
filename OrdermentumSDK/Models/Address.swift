@@ -9,6 +9,8 @@
 import Foundation
 
 public struct Address: Codable {
+    public init() {}
+    
     public var number: String = ""
     public var description: String = ""
     public var street1: String = ""

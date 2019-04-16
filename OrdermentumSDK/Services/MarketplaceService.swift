@@ -14,7 +14,7 @@ public class MarketplaceService {
      * Fetch the marketplaces for a selected retailer
      * Returns a Marketplace object
      */
-    func getMarketplaces(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, MarketplaceResponse?) -> ()) {
+    public func getMarketplaces(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, MarketplaceResponse?) -> ()) {
         //Build Route
         let route = MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo) as URLRequestConvertible
         

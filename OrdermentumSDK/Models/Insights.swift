@@ -9,6 +9,8 @@
 import Foundation
 
 public struct Insights: Encodable {
+    public init() {}
+    
     public var trending: Bool = false
     public var mostOrdered: Bool = false
 }

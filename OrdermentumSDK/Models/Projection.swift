@@ -62,12 +62,16 @@ public struct SingleProjection {
 }
 
 public struct ProjectionDeleteRequest: Codable {
+    public init() {}
+    
     public var place: Bool = false
     public var retailerId: String = ""
     public var supplierId: String = ""
 }
 
 public struct ProjectionReinstateRequest: Codable {
+    public init() {}
+    
     public var date: String = ""
 }
 

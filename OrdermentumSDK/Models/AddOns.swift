@@ -54,11 +54,15 @@ public struct AddOnsDiscoverLinks {
 }
 
 public struct AddOnUpdateObject: Codable {
+    public init() {}
+    
     public var accountId: String = ""
     public var expenseAccountCode: String = ""
 }
 
 public struct AddOnDisconnectObject: Codable {
+    public init() {}
+    
     public var accountId: String = ""
 }
 

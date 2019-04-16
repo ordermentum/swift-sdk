@@ -14,7 +14,7 @@ public class ClosureDatesService {
      * Get the closure periods belonging to a retailer
      * Returns a ClosurePeriodsResponse
      */
-    func getClosurePeriods(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ClosurePeriodsResponse?) -> ()) {
+    public func getClosurePeriods(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ClosurePeriodsResponse?) -> ()) {
         //Build Route
         let route = ClosurePeriodsRouter.getClosurePeriods(retailerId, pageSize, pageNo) as URLRequestConvertible
         
@@ -28,7 +28,7 @@ public class ClosureDatesService {
      * Create a closure period for the currently authenticated user
      * Returns a ClosurePeriodsResponse
      */
-    func createClosurePeriod(requestObject: ClosurePeriod, completion: @escaping (Bool, ClosurePeriodsResponse?) -> ()) {
+    public func createClosurePeriod(requestObject: ClosurePeriod, completion: @escaping (Bool, ClosurePeriodsResponse?) -> ()) {
         //Build Route
         let route = ClosurePeriodsRouter.createClosurePeriod(requestObject) as URLRequestConvertible
         
@@ -42,7 +42,7 @@ public class ClosureDatesService {
      * Update an existing closure period
      * Returns a response body which can be used to check for a 200 response
      */
-    func updateClosurePeriod(closurePeriodId: String, requestObject: ClosurePeriod, completion: @escaping (Bool) -> ()) {
+    public func updateClosurePeriod(closurePeriodId: String, requestObject: ClosurePeriod, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = ClosurePeriodsRouter.updateClosurePeriod(closurePeriodId, requestObject) as URLRequestConvertible
         
@@ -56,7 +56,7 @@ public class ClosureDatesService {
      * Delete an existing closure period
      * Returns a response body which can be used to check for a 200 response
      */
-    func deleteClosurePeriod(closurePeriodId: String, completion: @escaping (Bool) -> ()) {
+    public func deleteClosurePeriod(closurePeriodId: String, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = ClosurePeriodsRouter.deleteClosurePeriod(closurePeriodId) as URLRequestConvertible
         

@@ -9,6 +9,8 @@
 import Foundation
 
 public struct NotifyBody: Codable {
+    public init() {}
+    
     public var userId: String = ""
     public var deviceId: String = ""
     public var deviceToken: String = ""

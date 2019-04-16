@@ -13,6 +13,8 @@ public struct VenueInviteResponse {
 }
 
 public struct VenueInvite {
+    public init() {}
+    
     public var id: String = ""
     public var senderEntityName: String = ""
     public var senderType: String = ""

@@ -14,6 +14,8 @@ public struct SignUpResponse {
 }
 
 public struct SignUpUser {
+    public init() {}
+    
     public var id: String = ""
     public var firstName: String = ""
     public var lastName: String = ""

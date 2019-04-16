@@ -9,6 +9,8 @@
 import Foundation
 
 public struct CreateOrder: Codable {
+    public init() {}
+    
     public var comment: String = ""
     public var deliveryDate: String = ""
     public var lineItems: [CreateOrderLineItem] = []
@@ -23,10 +25,12 @@ public struct CreateOrder: Codable {
 }
 
 public struct CreateOrderLineItem: Codable {
+    public init() {}
+    
     public var name: String = ""
     public var price: Float = 0.00
     public var productId: String = ""
-    public var quantity: Int
+    public var quantity: Int = 0
 }
 
 public struct OrderResponse {
@@ -42,6 +46,8 @@ public struct ClassicStandingOrderResponse {
 }
 
 public struct Order: Encodable {
+    public init() {}
+    
     public var canMarkAsPaid: Bool = false
     public var canMarkAsUnpaid: Bool = false
     public var cancelledAt: String = ""
@@ -101,6 +107,8 @@ public struct Order: Encodable {
 }
 
 public struct LineItem: Encodable {
+    public init() {}
+    
     public var SKU: String = ""
     public var batchCode: String = ""
     public var createdAt: String = ""
@@ -200,6 +208,8 @@ public struct ClassicStandingOrderUpdatedBy {
 }
 
 public struct CreateFavouriteRequest: Codable {
+    public init() {}
+    
     public var comment: String = ""
     public var deliveryDate: String = ""
     public var lineItems: [CreateFavouriteRequestLineItem] = []
@@ -212,6 +222,8 @@ public struct CreateFavouriteRequest: Codable {
 }
 
 public struct CreateFavouriteRequestLineItem: Codable {
+    public init() {}
+    
     public var name: String = ""
     public var price: Float = 0.00
     public var productId: String = ""
@@ -219,6 +231,8 @@ public struct CreateFavouriteRequestLineItem: Codable {
 }
 
 public struct CreateStandingOrder: Codable {
+    public init() {}
+    
     public var lineItems: [CreateOrderLineItem] = []
     public var origin: String = ""
     public var retailerId: String = ""
@@ -227,6 +241,8 @@ public struct CreateStandingOrder: Codable {
 }
 
 public struct CreatePurchaserSchedule: Codable {
+    public init() {}
+    
     public var orderId: String = ""
     public var place: Bool = true
     public var retailerId: String = ""
@@ -235,6 +251,8 @@ public struct CreatePurchaserSchedule: Codable {
 }
 
 public struct UpdateOrderRequest: Codable {
+    public init() {}
+    
     public var lineItems: [UpdateOrderRequestLineItem] = []
     public var name: String = ""
     public var origin: String = ""
@@ -242,6 +260,8 @@ public struct UpdateOrderRequest: Codable {
 }
 
 public struct UpdateScheduleRequest: Codable {
+    public init() {}
+    
     public var cutOff: String = ""
     public var purchaserScheduleId: String = ""
     public var runAt: String = ""
@@ -253,6 +273,8 @@ public struct UpdateScheduleRequest: Codable {
 }
 
 public struct UpdateOrderRequestLineItem: Codable {
+    public init() {}
+    
     public var productId: String = ""
     public var quantity: Int = 0
 }
