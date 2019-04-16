@@ -30,7 +30,7 @@ public class FindSupplierService {
      * Send an enquiry requesting that a retailer be joined with a supplier
      * Returns a response body which can be used to check for a 200 response
      */
-    public func sendSupplierEnquiry(requestObject: FindSupplierRequest, completion: @escaping (Bool) -> ()) {
+    public func sendSupplierEnquiry(_ requestObject: FindSupplierRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = FindSupplierRouter.sendSupplierEnquiry(requestObject) as URLRequestConvertible
         
@@ -44,7 +44,7 @@ public class FindSupplierService {
      * Send an enquiry requesting that a supplier be added to the Ordermentum network
      * Returns a response body which can be used to check for a 200 response
      */
-    public func sendSupplierReferral(requestObject: FindSupplierReferralRequest, completion: @escaping (Bool) -> ()) {
+    public func sendSupplierReferral(_ requestObject: FindSupplierReferralRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = FindSupplierRouter.sendSupplierReferral(requestObject) as URLRequestConvertible
         

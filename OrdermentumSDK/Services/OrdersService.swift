@@ -16,7 +16,7 @@ public class OrdersService {
      * Create an order for a retailer
      * Returns an Order
      */
-    public func submitOrder(requestObject: CreateOrder, completion: @escaping (Bool, Order?) -> ()) {
+    public func submitOrder(_ requestObject: CreateOrder, completion: @escaping (Bool, Order?) -> ()) {
         //Build Route
         let route = OrdersRouter.submitOrder(requestObject) as URLRequestConvertible
         
@@ -30,7 +30,7 @@ public class OrdersService {
      * Create an order for a retailer
      * Returns an Order
      */
-    public func submitStandingOrder(requestObject: CreateStandingOrder, completion: @escaping (Bool, Order?) -> ()) {
+    public func submitStandingOrder(_ requestObject: CreateStandingOrder, completion: @escaping (Bool, Order?) -> ()) {
         //Build Route
         let route = OrdersRouter.submitStandingOrder(requestObject) as URLRequestConvertible
         
@@ -117,7 +117,7 @@ public class OrdersService {
      * Update an order for the first time
      * Returns a ResponseBody
      */
-    public func updateOrderFirstTime(requestObject: UpdateScheduleRequest, completion: @escaping (Bool) -> ()) {
+    public func updateOrderFirstTime(_ requestObject: UpdateScheduleRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = OrdersRouter.updateOrderFirstTime(requestObject) as URLRequestConvertible
         
@@ -146,7 +146,7 @@ public class OrdersService {
      * Add an order to a users favourite orders
      * Returns an Order
      */
-    public func createFavourite(requestObject: CreateFavouriteRequest, completion: @escaping (Bool, Order?) -> ()) {
+    public func createFavourite(_ requestObject: CreateFavouriteRequest, completion: @escaping (Bool, Order?) -> ()) {
         //Build Route
         let route = OrdersRouter.createFavouriteOrder(requestObject) as URLRequestConvertible
         

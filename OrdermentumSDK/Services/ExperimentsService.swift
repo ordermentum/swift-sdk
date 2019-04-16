@@ -30,7 +30,7 @@ public class ExperimentsService {
      * Dismiss an experiment
      * Returns a ResponseBody which can be used to check for a 200 response code
      */
-    public func dismissExperiment(requestObject: ExperimentsDismissRequest, completion: @escaping (Bool) -> ()) {
+    public func dismissExperiment(_ requestObject: ExperimentsDismissRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = ExperimentsRouter.dismissExperiment(requestObject) as URLRequestConvertible
         

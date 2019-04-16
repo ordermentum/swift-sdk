@@ -103,6 +103,7 @@ public struct Order: Encodable {
     public var totalQuantity: Float = 0.00
     public var type: String = ""
     public var updatedAt: String = ""
+    public var updatedBy: UpdatedBy = UpdatedBy()
     public var updatedByName: String = ""
 }
 
@@ -154,7 +155,7 @@ public struct ClassicStandingOrder {
     public var scheduleId: String = ""
     public var nextRunDate: String = ""
     public var cancelled: [String] = []
-    public var updatedBy: ClassicStandingOrderUpdatedBy = ClassicStandingOrderUpdatedBy()
+    public var updatedBy: UpdatedBy = UpdatedBy()
     public var nextRunCancelled: Bool = false
     public var scheduleEnabled: Bool = false
     public var startDate: String = ""
@@ -202,9 +203,10 @@ public struct ClassicStandingOrderSupplier {
     public var name: String = ""
 }
 
-public struct ClassicStandingOrderUpdatedBy {
+public struct UpdatedBy: Encodable {
     public var firstName: String = ""
     public var lastName: String = ""
+    public var fullName: String = ""
 }
 
 public struct CreateFavouriteRequest: Codable {
@@ -364,6 +366,7 @@ extension Order: Decodable {
         totalQuantity = try container.decodeIfPresent(Float.self, forKey: .totalQuantity) ?? 0.00
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
+        updatedBy = try container.decodeIfPresent(UpdatedBy.self, forKey: .updatedBy) ?? UpdatedBy()
         updatedByName = try container.decodeIfPresent(String.self, forKey: .updatedByName) ?? ""
     }
 }
@@ -425,7 +428,7 @@ extension ClassicStandingOrder: Decodable {
         scheduleId = try container.decodeIfPresent(String.self, forKey: .scheduleId) ?? ""
         nextRunDate = try container.decodeIfPresent(String.self, forKey: .nextRunDate) ?? ""
         cancelled = try container.decodeIfPresent([String].self, forKey: .cancelled) ??  []
-        updatedBy = try container.decodeIfPresent(ClassicStandingOrderUpdatedBy.self, forKey: .updatedBy) ?? ClassicStandingOrderUpdatedBy()
+        updatedBy = try container.decodeIfPresent(UpdatedBy.self, forKey: .updatedBy) ?? UpdatedBy()
         nextRunCancelled = try container.decodeIfPresent(Bool.self, forKey: .nextRunCancelled) ?? false
         scheduleEnabled = try container.decodeIfPresent(Bool.self, forKey: .scheduleEnabled) ?? false
         startDate = try container.decodeIfPresent(String.self, forKey: .startDate) ?? ""
@@ -492,7 +495,7 @@ extension ClassicStandingOrderSupplier: Decodable {
     }
 }
 
-extension ClassicStandingOrderUpdatedBy: Decodable {
+extension UpdatedBy: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -500,6 +503,7 @@ extension ClassicStandingOrderUpdatedBy: Decodable {
         //Decode Data
         firstName = try container.decodeIfPresent(String.self, forKey: .firstName) ?? ""
         lastName = try container.decodeIfPresent(String.self, forKey: .lastName) ?? ""
+        fullName = try container.decodeIfPresent(String.self, forKey: .fullName) ?? ""
     }
 }
 

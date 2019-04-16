@@ -58,7 +58,7 @@ public class VenueService {
      * Send an invite to a user for a particular venue
      * Returns an AddUserResponse
      */
-    public func sendVenueInvite(requestObject: AddUser, completion: @escaping (Bool, AddUserResponse?) -> ()) {
+    public func sendVenueInvite(_ requestObject: AddUser, completion: @escaping (Bool, AddUserResponse?) -> ()) {
         //Build Route
         let route = VenueRouter.sendVenueInvite(requestObject) as URLRequestConvertible
         
