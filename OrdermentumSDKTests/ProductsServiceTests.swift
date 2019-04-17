@@ -30,8 +30,8 @@ class ProductsServiceTests: XCTestCase {
         requestObject.data = []
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         ProductsService().getProductCategories(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", pageSize: 10, pageNo: 1) { (result, requestObject) in
             assert(result)
@@ -49,8 +49,8 @@ class ProductsServiceTests: XCTestCase {
         requestObject.data = []
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         ProductsService().getProducts(categoryId: ProcessInfo.processInfo.environment["CATEGORY_ID"] ?? "", retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", visible: true, pageSize: 10, pageNo: 1) { (result, requestObject) in
             assert(result)
@@ -68,8 +68,8 @@ class ProductsServiceTests: XCTestCase {
         requestObject.data = []
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         ProductsService().getMostOrderedProducts(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", visible: true, pageSize: 10, pageNo: 1) { (result, requestObject) in
             assert(result)
@@ -87,8 +87,8 @@ class ProductsServiceTests: XCTestCase {
         requestObject.data = []
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         ProductsService().getTrendingProducts(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", visible: true, pageSize: 10, pageNo: 1) { (result, requestObject) in
             assert(result)
@@ -106,8 +106,8 @@ class ProductsServiceTests: XCTestCase {
         requestObject.data = []
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         ProductsService().getRecommendedProducts(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", pageSize: 10, excludedProductIdsArray: []) { (result, requestObject) in
             assert(result)
@@ -125,8 +125,8 @@ class ProductsServiceTests: XCTestCase {
         requestObject.data = []
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         ProductsService().searchProducts(search: ProcessInfo.processInfo.environment["SEARCH_STRING"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", visible: true, pageSize: 10) { (result, requestObject) in
             assert(result)

@@ -51,3 +51,4 @@ extension NetworkStubs {
 }
 
 extension AddOnsServiceTests : NetworkStubs {}
+extension NotifyServiceTests : NetworkStubs {}

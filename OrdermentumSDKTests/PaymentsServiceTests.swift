@@ -31,8 +31,8 @@ class PaymentsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         PaymentsService().getPaymentMethods(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, responseData) in
             assert(result)
@@ -48,8 +48,8 @@ class PaymentsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         PaymentsService().getSinglePaymentMethod(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", paymentMethodId: ProcessInfo.processInfo.environment["PAYMENT_METHOD_ID"] ?? "") { (result, responseData) in
             assert(result)
@@ -79,8 +79,8 @@ class PaymentsServiceTests: XCTestCase {
         requestObject.userId = ProcessInfo.processInfo.environment["CARD_USER_ID"] ?? ""
 
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         PaymentsService().createCardPaymentMethod(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", requestObject: requestObject) { (result, resposeData) in
             assert(result)
@@ -96,8 +96,8 @@ class PaymentsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         PaymentsService().deletePaymentMethod(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", paymentMethodId: ProcessInfo.processInfo.environment["PAYMENT_METHOD_ID"] ?? "") { (result) in
             assert(result)

@@ -35,8 +35,8 @@ class PurchaserServiceTests: XCTestCase {
         requestObject.links = Links()
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         PurchaserService().getPurchasers(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "") { (result, requestObject) in
             assert(result)
@@ -54,8 +54,8 @@ class PurchaserServiceTests: XCTestCase {
         requestObject.data = []
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         PurchaserService().getPurchasersForPaymentMethod(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", paymentMethodType: ProcessInfo.processInfo.environment["PAYMENT_METHOD"] ?? "") { (result, requestObject) in
             assert(result)
@@ -72,8 +72,8 @@ class PurchaserServiceTests: XCTestCase {
         requestObject.paymentMethodId = ProcessInfo.processInfo.environment["PAYMENT_METHOD_ID"] ?? ""
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         PurchaserService().updatePaymentMethod(purchaserId: ProcessInfo.processInfo.environment["PURCHASER_ID"] ?? "", requestObject: requestObject) { (result) in
             assert(result)

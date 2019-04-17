@@ -37,10 +37,10 @@ class ValidationServiceTest: XCTestCase {
         requestObject.lineItems = []
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        ValidationService().validateItems(requestObject: requestObject) { (result, responseData) in
+        ValidationService().validateItems(requestObject) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }

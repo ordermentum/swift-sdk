@@ -30,8 +30,8 @@ class NPSServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Aysnc Test")
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         NPSService().getNPS { (result, response) in
             assert(result)
@@ -51,10 +51,10 @@ class NPSServiceTests: XCTestCase {
         requestObject.comment = ""
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        NPSService().sendFeedback(requestObject: requestObject) { (result) in
+        NPSService().sendFeedback(requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
