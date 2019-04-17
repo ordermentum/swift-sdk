@@ -8,130 +8,132 @@
 
 import Foundation
 
-struct InvoiceResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [Invoice] = []
+public struct InvoiceResponse {
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [Invoice] = []
 }
 
-struct Invoice: Encodable {
-    var cancelledAt: String = ""
-    var chargedByUserId: String = ""
-    var charged_by_user_id: String = ""
-    var createdAt: String = ""
-    var created_at: String = ""
-    var credit: String = ""
-    var creditNoteIds: [String] = []
-    var date: String = ""
-    var deletedAt: String = ""
-    var deleted_at: String = ""
-    var dueAt: String = ""
-    var display: InvoiceDisplay = InvoiceDisplay()
-    var externalId: String = ""
-    var id: String = ""
-    var invoiceSendAt: String = ""
-    var invoiceSentAt: String = ""
-    var invoiceSyncedAt: String = ""
-    var locked: Bool = false
-    var number: String = ""
-    var orders: [Order] = []
-    var paidAt: String = ""
-    var paidSupplierAt: String = ""
-    var payable: Bool = false
-    var paymentMethod: String = ""
-    var paymentMethodId: String = ""
-    var paymentStatus: String = ""
-    var paymentTransactionId: String = ""
-    var processing: Bool = false
-    var processingError: String = ""
-    var properties: Properties = Properties()
-    var purchaserId: String = ""
-    var purchaser_id: String = ""
-    var reference: String = ""
-    var retailerChargeable: Bool = false
-    var retailerId: String = ""
-    var retailer_id: String = ""
-    var sentLateNotificationAt: Bool = false
-    var sentOverdueNotificationAt: Bool = false
-    var settlementReference: String = ""
-    var submittedAt: String = ""
-    var subtotal: Float = 0
-    var supplierId: String = ""
-    var supplier_id: String = ""
-    var syncError: String = ""
-    var total: Float = 0
-    var totalCost: Float = 0
-    var totalDue: Float = 0
-    var totalFreight: Float = 0
-    var totalGST: Float = 0
-    var updatedAt: String = ""
-    var updatedById: String = ""
-    var updated_at: String = ""
-    var updated_by_id: String = ""
-    var userId: String = ""
-    var user_id: String = ""
+public struct Invoice: Encodable {
+    public init() {}
+    
+    public var cancelledAt: String = ""
+    public var chargedByUserId: String = ""
+    public var charged_by_user_id: String = ""
+    public var createdAt: String = ""
+    public var created_at: String = ""
+    public var credit: String = ""
+    public var creditNoteIds: [String] = []
+    public var date: String = ""
+    public var deletedAt: String = ""
+    public var deleted_at: String = ""
+    public var dueAt: String = ""
+    public var display: InvoiceDisplay = InvoiceDisplay()
+    public var externalId: String = ""
+    public var id: String = ""
+    public var invoiceSendAt: String = ""
+    public var invoiceSentAt: String = ""
+    public var invoiceSyncedAt: String = ""
+    public var locked: Bool = false
+    public var number: String = ""
+    public var orders: [Order] = []
+    public var paidAt: String = ""
+    public var paidSupplierAt: String = ""
+    public var payable: Bool = false
+    public var paymentMethod: String = ""
+    public var paymentMethodId: String = ""
+    public var paymentStatus: String = ""
+    public var paymentTransactionId: String = ""
+    public var processing: Bool = false
+    public var processingError: String = ""
+    public var properties: Properties = Properties()
+    public var purchaserId: String = ""
+    public var purchaser_id: String = ""
+    public var reference: String = ""
+    public var retailerChargeable: Bool = false
+    public var retailerId: String = ""
+    public var retailer_id: String = ""
+    public var sentLateNotificationAt: Bool = false
+    public var sentOverdueNotificationAt: Bool = false
+    public var settlementReference: String = ""
+    public var submittedAt: String = ""
+    public var subtotal: Float = 0
+    public var supplierId: String = ""
+    public var supplier_id: String = ""
+    public var syncError: String = ""
+    public var total: Float = 0
+    public var totalCost: Float = 0
+    public var totalDue: Float = 0
+    public var totalFreight: Float = 0
+    public var totalGST: Float = 0
+    public var updatedAt: String = ""
+    public var updatedById: String = ""
+    public var updated_at: String = ""
+    public var updated_by_id: String = ""
+    public var userId: String = ""
+    public var user_id: String = ""
 }
 
-struct InvoiceFrequency {
-    var daily: Bool = false
-    var weekly: Bool = false
-    var monthly: Bool = false
-    var onPlace: Bool = false
-    var fortnightly: Bool = false
+public struct InvoiceFrequency {
+    public var daily: Bool = false
+    public var weekly: Bool = false
+    public var monthly: Bool = false
+    public var onPlace: Bool = false
+    public var fortnightly: Bool = false
 }
 
-struct InvoiceSetting {
-    var creation: Bool = false
-    var delivery: Bool = false
+public struct InvoiceSetting {
+    public var creation: Bool = false
+    public var delivery: Bool = false
 }
 
-struct InvoiceDisplay: Encodable {
-    var subtotal: String = ""
-    var total: String = ""
-    var totalCost: String = ""
-    var totalFreight: String = ""
-    var totalGST: String = ""
-    var totalFreightTax: String = ""
-    var totalDue: String = ""
-    var date: String = ""
-    var dueAt: String = ""
-    var createdAt: String = ""
-    var billingStartDate: String = ""
-    var billingEndDate: String = ""
+public struct InvoiceDisplay: Encodable {
+    public var subtotal: String = ""
+    public var total: String = ""
+    public var totalCost: String = ""
+    public var totalFreight: String = ""
+    public var totalGST: String = ""
+    public var totalFreightTax: String = ""
+    public var totalDue: String = ""
+    public var date: String = ""
+    public var dueAt: String = ""
+    public var createdAt: String = ""
+    public var billingStartDate: String = ""
+    public var billingEndDate: String = ""
 }
 
-struct ExportResponse {
-    var completedAt: String = ""
-    var createdAt: String = ""
-    var fileType: String = ""
-    var id: String = ""
-    var link: String = ""
-    var restart: Bool = false
-    var status: String = ""
-    var type: String = ""
+public struct ExportResponse {
+    public var completedAt: String = ""
+    public var createdAt: String = ""
+    public var fileType: String = ""
+    public var id: String = ""
+    public var link: String = ""
+    public var restart: Bool = false
+    public var status: String = ""
+    public var type: String = ""
 }
 
 public struct ExportRequest: Codable {
-    var data: ExportRequestData = ExportRequestData()
-    var name: String = ""
-    var retailerId: String = ""
-    var supplierId: String = ""
-    var type: String = ""
-    var socketId: String = ""
+    public var data: ExportRequestData = ExportRequestData()
+    public var name: String = ""
+    public var retailerId: String = ""
+    public var supplierId: String = ""
+    public var type: String = ""
+    public var socketId: String = ""
 }
 
-struct ExportRequestData: Codable {
-    var includedIds: [String] = []
-    var all: Bool = false
-    var searchQuery: String = ""
+public struct ExportRequestData: Codable {
+    public var includedIds: [String] = []
+    public var all: Bool = false
+    public var searchQuery: String = ""
 }
 
 public struct InvoicePaymentRequest: Codable {
-    var paymentMethodId: String = ""
+    public var paymentMethodId: String = ""
 }
 
 extension InvoiceResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -143,7 +145,7 @@ extension InvoiceResponse: Decodable {
 }
 
 extension Invoice: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -207,7 +209,7 @@ extension Invoice: Decodable {
 }
 
 extension InvoiceFrequency: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -221,7 +223,7 @@ extension InvoiceFrequency: Decodable {
 }
 
 extension InvoiceSetting: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -232,7 +234,7 @@ extension InvoiceSetting: Decodable {
 }
 
 extension InvoiceDisplay: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -253,7 +255,7 @@ extension InvoiceDisplay: Decodable {
 }
 
 extension ExportResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

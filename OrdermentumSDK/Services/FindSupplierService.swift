@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class FindSupplierService {
+public class FindSupplierService {
+    public init() {}
+    
     /**
      * Get suppliers available based on search string
      * Returns a FindSupplierResponse
      */
-    func getSuppliers(searchString: String, pageSize: Int, completion: @escaping (Bool, FindSupplierResponse?) -> ()) {
+    public func getSuppliers(searchString: String, pageSize: Int, completion: @escaping (Bool, FindSupplierResponse?) -> ()) {
         //Build Route
         let route = FindSupplierRouter.getSuppliers(searchString, pageSize) as URLRequestConvertible
         
@@ -28,7 +30,7 @@ class FindSupplierService {
      * Send an enquiry requesting that a retailer be joined with a supplier
      * Returns a response body which can be used to check for a 200 response
      */
-    func sendSupplierEnquiry(requestObject: FindSupplierRequest, completion: @escaping (Bool) -> ()) {
+    public func sendSupplierEnquiry(_ requestObject: FindSupplierRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = FindSupplierRouter.sendSupplierEnquiry(requestObject) as URLRequestConvertible
         
@@ -42,7 +44,7 @@ class FindSupplierService {
      * Send an enquiry requesting that a supplier be added to the Ordermentum network
      * Returns a response body which can be used to check for a 200 response
      */
-    func sendSupplierReferral(requestObject: FindSupplierReferralRequest, completion: @escaping (Bool) -> ()) {
+    public func sendSupplierReferral(_ requestObject: FindSupplierReferralRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = FindSupplierRouter.sendSupplierReferral(requestObject) as URLRequestConvertible
         

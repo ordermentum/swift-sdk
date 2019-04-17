@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class ProfileService {
+public class ProfileService {
+    public init() {}
+    
     /**
      * Fetch the currently logged in users profile
      * Returns a UserProfile
      */
-    func getProfile(completion: @escaping (Bool, UserProfile?) -> ()) {
+    public func getProfile(completion: @escaping (Bool, UserProfile?) -> ()) {
         //Build Route
         let route = ProfileRouter.getProfile as URLRequestConvertible
         
@@ -28,7 +30,7 @@ class ProfileService {
      * Takes a Profile.UpdateUserRequest object and updates the logged in user.
      * Returns a response body which can be used to check for a 200 status which indicates a success.
      */
-    func updateProfile(userId: String, requestObject: UpdateUserRequest, completion: @escaping (Bool) -> ()) {
+    public func updateProfile(userId: String, requestObject: UpdateUserRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = ProfileRouter.updateProfile(userId, requestObject) as URLRequestConvertible
         

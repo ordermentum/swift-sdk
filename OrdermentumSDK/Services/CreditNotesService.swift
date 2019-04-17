@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class CreditNotesService {
+public class CreditNotesService {
+    public init() {}
+    
     /**
      * Get the credit notes belonging to a purchaser
      * Returns a CreditNotesResponse
      */
-    func getCreditNotes(purchaserId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, CreditNotesResponse?) -> ()) {
+    public func getCreditNotes(purchaserId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, CreditNotesResponse?) -> ()) {
         //Build Route
         let route = CreditNotesRouter.getCreditNotes(purchaserId, pageSize, pageNo) as URLRequestConvertible
         

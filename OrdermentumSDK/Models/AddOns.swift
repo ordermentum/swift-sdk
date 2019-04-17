@@ -8,62 +8,66 @@
 
 import Foundation
 
-struct AddOnsResponse {
-    var data: [AddOn] = []
+public struct AddOnsResponse {
+    public var data: [AddOn] = []
 }
 
-struct AddOn {
-    var connectUrl: String = ""
-    var disconnectUrl: String = ""
-    var entityName: String = ""
-    var entityType: String = ""
-    var id: String = ""
-    var integrationData: IntegrationData = IntegrationData()
-    var logo: String = ""
-    var name: String = ""
-    var plan: String = ""
-    var readUrl: String = ""
-    var type: String = ""
-    var updateUrl: String = ""
+public struct AddOn {
+    public var connectUrl: String = ""
+    public var disconnectUrl: String = ""
+    public var entityName: String = ""
+    public var entityType: String = ""
+    public var id: String = ""
+    public var integrationData: IntegrationData = IntegrationData()
+    public var logo: String = ""
+    public var name: String = ""
+    public var plan: String = ""
+    public var readUrl: String = ""
+    public var type: String = ""
+    public var updateUrl: String = ""
 }
 
-struct IntegrationData {
-    var accountId: String = ""
-    var expenseAccountCode: String = ""
-    var lastInvoiceSyncedAt: String = ""
-    var supplierName: String = ""
+public struct IntegrationData {
+    public var accountId: String = ""
+    public var expenseAccountCode: String = ""
+    public var lastInvoiceSyncedAt: String = ""
+    public var supplierName: String = ""
 }
 
-struct AddOnsDiscoverResponse {
-    var data: [AddOnsDiscover] = []
+public struct AddOnsDiscoverResponse {
+    public var data: [AddOnsDiscover] = []
 }
 
-struct AddOnsDiscover {
-    var description: String = ""
-    var links: AddOnsDiscoverLinks = AddOnsDiscoverLinks()
-    var logo: String = ""
-    var name: String = ""
-    var plan: String = ""
-    var slug: String = ""
-    var subtext: String = ""
-    var type: String = ""
+public struct AddOnsDiscover {
+    public var description: String = ""
+    public var links: AddOnsDiscoverLinks = AddOnsDiscoverLinks()
+    public var logo: String = ""
+    public var name: String = ""
+    public var plan: String = ""
+    public var slug: String = ""
+    public var subtext: String = ""
+    public var type: String = ""
 }
 
-struct AddOnsDiscoverLinks {
-    var connect: String = ""
+public struct AddOnsDiscoverLinks {
+    public var connect: String = ""
 }
 
 public struct AddOnUpdateObject: Codable {
-    var accountId: String = ""
-    var expenseAccountCode: String = ""
+    public init() {}
+    
+    public var accountId: String = ""
+    public var expenseAccountCode: String = ""
 }
 
 public struct AddOnDisconnectObject: Codable {
-    var accountId: String = ""
+    public init() {}
+    
+    public var accountId: String = ""
 }
 
 extension AddOn: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -84,7 +88,7 @@ extension AddOn: Decodable {
 }
 
 extension IntegrationData: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -97,7 +101,7 @@ extension IntegrationData: Decodable {
 }
 
 extension AddOnsDiscoverResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -107,7 +111,7 @@ extension AddOnsDiscoverResponse: Decodable {
 }
 
 extension AddOnsDiscover: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -124,7 +128,7 @@ extension AddOnsDiscover: Decodable {
 }
 
 extension AddOnsDiscoverLinks: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

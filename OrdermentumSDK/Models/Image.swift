@@ -8,20 +8,22 @@
 
 import Foundation
 
-struct Image: Encodable {
-    var secure_url: String = ""
-    var original: String = ""
-    var logo: String = ""
-    var icon: String = ""
-    var print: String = ""
-    var mini: String = ""
-    var small: String = ""
-    var medium: String = ""
-    var large: String = ""
+public struct Image: Encodable {
+    public init() {}
+    
+    public var secure_url: String = ""
+    public var original: String = ""
+    public var logo: String = ""
+    public var icon: String = ""
+    public var print: String = ""
+    public var mini: String = ""
+    public var small: String = ""
+    public var medium: String = ""
+    public var large: String = ""
 }
 
 extension Image: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         secure_url = try container.decodeIfPresent(String.self, forKey: .secure_url) ?? ""

@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class DataAttributesService {
+public class DataAttributesService {
+    public init() {}
+    
     /**
      * Get the data attributes currently available on the Ordermentum Service
      * Returns a DataAttributesResponse object
      */
-    func getDataAttributes(purchaserId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, DataAttributesResponse?) -> ()) {
+    public func getDataAttributes(purchaserId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, DataAttributesResponse?) -> ()) {
         //Build Route
         let route = DataAttributesRouter.getDataAttributes as URLRequestConvertible
         
@@ -28,7 +30,7 @@ class DataAttributesService {
      * Update the business hours of a venue
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */
-    func updateVenueHours(retailerId: String, requestObject: DataAttributes, completion: @escaping (Bool) -> ()) {
+    public func updateVenueHours(retailerId: String, requestObject: DataAttributes, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = DataAttributesRouter.updateVenueHours(retailerId, requestObject) as URLRequestConvertible
         
@@ -42,7 +44,7 @@ class DataAttributesService {
      * Update the operating information of a venue
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */
-    func updateVenueOperations(retailerId: String, requestObject: VenueOperationsUpdate, completion: @escaping (Bool) -> ()) {
+    public func updateVenueOperations(retailerId: String, requestObject: VenueOperationsUpdate, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = DataAttributesRouter.updateVenueOperations(retailerId, requestObject) as URLRequestConvertible
         

@@ -8,24 +8,26 @@
 
 import Foundation
 
-struct ExperimentsResponse {
-    var data: [ExperimentsData] = []
+public struct ExperimentsResponse {
+    public var data: [ExperimentsData] = []
 }
 
-struct ExperimentsData {
-    var id: String = ""
-    var slot: String = ""
-    var name: String = ""
-    var meta: [String: String] = [:]
+public struct ExperimentsData {
+    public var id: String = ""
+    public var slot: String = ""
+    public var name: String = ""
+    public var meta: [String: String] = [:]
 }
 
 public struct ExperimentsDismissRequest: Encodable {
-    var userId: String = ""
-    var experimentId: String = ""
+    public init() {}
+    
+    public var userId: String = ""
+    public var experimentId: String = ""
 }
 
 extension ExperimentsResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -35,7 +37,7 @@ extension ExperimentsResponse: Decodable {
 }
 
 extension ExperimentsData: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -59,7 +61,7 @@ extension ExperimentsDismissRequest: Decodable {
 }
 
 extension ExperimentsData: Equatable {
-    static func == (lhs: ExperimentsData, rhs: ExperimentsData) -> Bool {
+    public static func == (lhs: ExperimentsData, rhs: ExperimentsData) -> Bool {
         return lhs.id == rhs.id
     }
 }

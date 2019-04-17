@@ -8,71 +8,75 @@
 
 import Foundation
 
-struct ProjectionsResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [Projection] = []
+public struct ProjectionsResponse {
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [Projection] = []
 }
 
-struct Projection {
-    var date: String = ""
-    var deliveries: [Delivery] = []
-    var projections: [SingleProjection] = []
+public struct Projection {
+    public var date: String = ""
+    public var deliveries: [Delivery] = []
+    public var projections: [SingleProjection] = []
 }
 
-struct Delivery {
-    var runAt: String = ""
-    var purchaserScheduleId: String = ""
+public struct Delivery {
+    public var runAt: String = ""
+    public var purchaserScheduleId: String = ""
 }
 
-struct SingleProjection {
-    var orderId: String = ""
-    var supplierId: String = ""
-    var timeZone: String = ""
-    var purchaserId: String = ""
-    var scheduleId: String = ""
-    var purchaserScheduleId: String = ""
-    var scheduleName: String = ""
-    var type: String = ""
-    var number: String = ""
-    var productCount: Int = 0
-    var total: Float = 0
-    var cutoff: String = ""
-    var runAt: String = ""
-    var placedById: String = ""
-    var placedByName: String = ""
-    var updatedAt: String = ""
-    var updatedById: String = ""
-    var updatedByName: String = ""
-    var cancelledByName: String = ""
-    var cancelledAt: String = ""
-    var deliveryAt: String = ""
-    var completeAt: String = ""
-    var retailerEditable: Bool = false
-    var runStatus: String = ""
-    var sequence: Float = 0
-    var state: String = ""
-    var label: String = ""
-    var isCancellable: Bool = false
-    var isCancelled: Bool = false
-    var isEditable: Bool = false
-    var isReinstatable: Bool = false
-    var isLocked: Bool = false
-    var color: String = ""
+public struct SingleProjection {
+    public var orderId: String = ""
+    public var supplierId: String = ""
+    public var timeZone: String = ""
+    public var purchaserId: String = ""
+    public var scheduleId: String = ""
+    public var purchaserScheduleId: String = ""
+    public var scheduleName: String = ""
+    public var type: String = ""
+    public var number: String = ""
+    public var productCount: Int = 0
+    public var total: Float = 0
+    public var cutoff: String = ""
+    public var runAt: String = ""
+    public var placedById: String = ""
+    public var placedByName: String = ""
+    public var updatedAt: String = ""
+    public var updatedById: String = ""
+    public var updatedByName: String = ""
+    public var cancelledByName: String = ""
+    public var cancelledAt: String = ""
+    public var deliveryAt: String = ""
+    public var completeAt: String = ""
+    public var retailerEditable: Bool = false
+    public var runStatus: String = ""
+    public var sequence: Float = 0
+    public var state: String = ""
+    public var label: String = ""
+    public var isCancellable: Bool = false
+    public var isCancelled: Bool = false
+    public var isEditable: Bool = false
+    public var isReinstatable: Bool = false
+    public var isLocked: Bool = false
+    public var color: String = ""
 }
 
 public struct ProjectionDeleteRequest: Codable {
-    var place: Bool = false
-    var retailerId: String = ""
-    var supplierId: String = ""
+    public init() {}
+    
+    public var place: Bool = false
+    public var retailerId: String = ""
+    public var supplierId: String = ""
 }
 
 public struct ProjectionReinstateRequest: Codable {
-    var date: String = ""
+    public init() {}
+    
+    public var date: String = ""
 }
 
 extension ProjectionsResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -84,7 +88,7 @@ extension ProjectionsResponse: Decodable {
 }
 
 extension Projection: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -96,7 +100,7 @@ extension Projection: Decodable {
 }
 
 extension Delivery: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -107,7 +111,7 @@ extension Delivery: Decodable {
 }
 
 extension SingleProjection: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -149,11 +153,11 @@ extension SingleProjection: Decodable {
 }
 
 extension SingleProjection: Equatable {
-    static func == (lhs: SingleProjection, rhs: SingleProjection) -> Bool {
+    public static func == (lhs: SingleProjection, rhs: SingleProjection) -> Bool {
         return lhs.orderId == rhs.orderId
     }
     
-    func displayOrderName() -> String {
+    public func displayOrderName() -> String {
         //Check Order Name
         if !scheduleName.isEmpty {
             return scheduleName
@@ -165,11 +169,11 @@ extension SingleProjection: Equatable {
 }
 
 extension SingleProjection {
-    var isStandingOrder: Bool {
+    public var isStandingOrder: Bool {
         return !self.scheduleId.isEmpty
     }
     
-    var updateButtonString: String {
+    public var updateButtonString: String {
         if self.isStandingOrder {
             return "Update Standing Order"
         } else {

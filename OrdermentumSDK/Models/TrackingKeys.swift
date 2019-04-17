@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum ActionTrackingStatusKey: String {
+public enum ActionTrackingStatusKey: String {
     case success
     case failed
 }
 
-enum ActionTrackingKey: String {
+public enum ActionTrackingKey: String {
     // Generic actions
     case loggedIn = "Logged In"
     case selected = "Selected"
@@ -32,7 +32,7 @@ enum ActionTrackingKey: String {
     case experimentClicked = "EXPERIMENT_CLICKED"
 }
 
-enum ScreenTrackingKey: String {
+public enum ScreenTrackingKey: String {
     case dashboard
     case home
     case orders

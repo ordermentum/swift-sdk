@@ -9,38 +9,46 @@
 import Foundation
 import Alamofire
 
-class Client {
+public class Client {
     //Data
-    var baseURL: String = ""
-    var token: String = ""
+    public var baseURL: String = ""
+    public var token: String = ""
     
     //Private Init to Stop Re-Initialisation
     private init() {}
-    static let instance = Client()
+    public static let instance = Client()
+    
+    //Services
+    public var addons: AddOnsService = AddOnsService()
+    public var auth: AuthService = AuthService()
+    public var closureDates: ClosureDatesService = ClosureDatesService()
+    public var creditNotes: CreditNotesService = CreditNotesService()
+    public var dataAttributes: DataAttributesService = DataAttributesService()
+    public var devices: DeviceService = DeviceService()
+    public var experiments: ExperimentsService = ExperimentsService()
+    public var findSuppliers: FindSupplierService = FindSupplierService()
+    public var flags: FlagsService = FlagsService()
+    public var invoices: InvoiceService = InvoiceService()
+    public var marketplaces: MarketplaceService = MarketplaceService()
+    public var notifications: NotificationsService = NotificationsService()
+    public var notify: NotifyService = NotifyService()
+    public var nps: NPSService = NPSService()
+    public var orders: OrdersService = OrdersService()
+    public var payments: PaymentsService = PaymentsService()
+    public var products: ProductsService = ProductsService()
+    public var profiles: ProfileService = ProfileService()
+    public var projections: ProjectionsService = ProjectionsService()
+    public var purchasers: PurchaserService = PurchaserService()
+    public var validation: ValidationService = ValidationService()
+    public var venues: VenueService = VenueService()
     
     // MARK: Convenience Methods
-    func setProductionURL() {
-        baseURL = ClientURL.rootURL
-    }
-    
-    func setTestingURL() {
-        baseURL = ClientURL.rootTestingURL
-    }
-    
-    func setCustomURL(urlString: String) {
-        baseURL = urlString
-    }
-    
-    func setToken(tokenString: String) {
-        token = tokenString
-    }
-    
-    func getHeaderToken() -> String {
+    public func getHeaderToken() -> String {
         print(String(format: "Bearer \(token)"))
         return String(format: "Bearer \(token)")
     }
     
-    func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?) throws ->  URLRequest {
+    public func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?) throws ->  URLRequest {
         //Setup Data
         let url = try baseURL.asURL()
         let timeoutSeconds: Int = 10
@@ -66,9 +74,9 @@ class Client {
     }
 }
 
-enum ClientURL {
-    static let rootURL = "https://app.ordermentum.com/v1/"
-    static let rootWebURL = "https://app.ordermentum.com/"
-    static let rootTestingURL = "https://app-testing.ordermentum.com/v1/"
-    static let rootTestingWebURL = "https://app-testing.ordermentum.com/"
+public enum ClientURL {
+    public static let rootURL = "https://app.ordermentum.com/v1/"
+    public static let rootWebURL = "https://app.ordermentum.com/"
+    public static let rootTestingURL = "https://app-testing.ordermentum.com/v1/"
+    public static let rootTestingWebURL = "https://app-testing.ordermentum.com/"
 }

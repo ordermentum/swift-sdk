@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class NotifyService {
+public class NotifyService {
+    public init() {}
+    
     /**
      * Send device details for a user to the Ordermentum service
      * Returns a ResponseBody which can be used to check for a 200 response
      */
-    func registerDevice(requestObject: NotifyBody, completion: @escaping (Bool) -> ()) {
+    public func registerDevice(_ requestObject: NotifyBody, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = NotifyRouter.registerDevice(requestObject) as URLRequestConvertible
         

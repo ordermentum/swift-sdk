@@ -8,44 +8,46 @@
 
 import Foundation
 
-struct Supplier: Encodable {
-    var live: Bool = false
-    var id: String = ""
-    var name: String = ""
-    var slug: String = ""
-    var tradingName: String = ""
-    var dataAttributes: DataAttributes = DataAttributes()
-    var accountSettings: VenueAccountSettings = VenueAccountSettings()
-    var settings: Settings = Settings()
-    var shortName: String = ""
-    var active: Bool = false
-    var phone: String = ""
-    var abn: String = ""
-    var email: String = ""
-    var sharedSecret: String = ""
-    var addressId: String = ""
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var deletedAt: String = ""
-    var billingStart: String = ""
-    var billingEnd: String = ""
-    var userId: String = ""
-    var paymentRecurrence: String = ""
-    var invoiceSetting: String = ""
-    var timezone: String = ""
-    var paymentMethodId: String = ""
-    var contactFirstName: String = ""
-    var contactLastName: String = ""
-    var contactEmail: String = ""
-    var corporateEntity: String = ""
-    var created_at: String = ""
-    var updated_at: String = ""
-    var user_id: String = ""
-    var address_id: String = ""
+public struct Supplier: Encodable {
+    public init() {}
+    
+    public var live: Bool = false
+    public var id: String = ""
+    public var name: String = ""
+    public var slug: String = ""
+    public var tradingName: String = ""
+    public var dataAttributes: DataAttributes = DataAttributes()
+    public var accountSettings: VenueAccountSettings = VenueAccountSettings()
+    public var settings: Settings = Settings()
+    public var shortName: String = ""
+    public var active: Bool = false
+    public var phone: String = ""
+    public var abn: String = ""
+    public var email: String = ""
+    public var sharedSecret: String = ""
+    public var addressId: String = ""
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var deletedAt: String = ""
+    public var billingStart: String = ""
+    public var billingEnd: String = ""
+    public var userId: String = ""
+    public var paymentRecurrence: String = ""
+    public var invoiceSetting: String = ""
+    public var timezone: String = ""
+    public var paymentMethodId: String = ""
+    public var contactFirstName: String = ""
+    public var contactLastName: String = ""
+    public var contactEmail: String = ""
+    public var corporateEntity: String = ""
+    public var created_at: String = ""
+    public var updated_at: String = ""
+    public var user_id: String = ""
+    public var address_id: String = ""
 }
 
 extension Supplier: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

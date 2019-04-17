@@ -8,20 +8,20 @@
 
 import Foundation
 
-struct PaymentTerms {
-    var days: Bool = false
-    var endOfWeek: Bool = false
-    var endOfMonth: Bool = false
+public struct PaymentTerms {
+    public var days: Bool = false
+    public var endOfWeek: Bool = false
+    public var endOfMonth: Bool = false
 }
 
-struct PaymentMethods {
-    var other: Bool = false
-    var creditCard: Bool = false
-    var directDebit: Bool = false
+public struct PaymentMethods {
+    public var other: Bool = false
+    public var creditCard: Bool = false
+    public var directDebit: Bool = false
 }
 
 extension PaymentTerms: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -33,7 +33,7 @@ extension PaymentTerms: Decodable {
 }
 
 extension PaymentMethods: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

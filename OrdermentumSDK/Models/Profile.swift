@@ -9,90 +9,110 @@
 import Foundation
 
 public struct UserProfile: Codable {
-    var userId: String = ""
-    var permissions: [String] = []
-    var roles: Roles = Roles()
-    var id: String = ""
-    var firstName: String = ""
-    var lastName: String = ""
-    var fullName: String = ""
-    var name: Name = Name()
-    var profileImage: String = ""
-    var dob: String = ""
-    var email: String = ""
-    var phone: String = ""
-    var defaultNotifications: SupplierNotifications = SupplierNotifications()
-    var entityNotifications: [String: SupplierNotifications] = [:]
-    var parentNotifications: SupplierNotifications = SupplierNotifications()
-    var notifications: Notifications = Notifications()
-    var settings: Settings = Settings()
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var adminPerms: AdminPerms = AdminPerms()
-    var verifiedAt: String = ""
+    public init() {}
+    
+    public var userId: String = ""
+    public var permissions: [String] = []
+    public var roles: Roles = Roles()
+    public var id: String = ""
+    public var firstName: String = ""
+    public var lastName: String = ""
+    public var fullName: String = ""
+    public var name: Name = Name()
+    public var profileImage: String = ""
+    public var dob: String = ""
+    public var email: String = ""
+    public var phone: String = ""
+    public var defaultNotifications: SupplierNotifications = SupplierNotifications()
+    public var entityNotifications: [String: SupplierNotifications] = [:]
+    public var parentNotifications: SupplierNotifications = SupplierNotifications()
+    public var notifications: Notifications = Notifications()
+    public var settings: Settings = Settings()
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var adminPerms: AdminPerms = AdminPerms()
+    public var verifiedAt: String = ""
 }
 
 public struct Settings: Codable {
-    var accessNewRetailerUi: Bool = false
+    public var accessNewRetailerUi: Bool = false
 }
 
 public struct Roles: Codable {
-    var superAdmin: Bool = false
-    var admin: Bool = false
-    var retailers: [RetailerRole] = []
-    var suppliers: [SupplierRole] = []
+    public init() {}
+    
+    public var superAdmin: Bool = false
+    public var admin: Bool = false
+    public var retailers: [RetailerRole] = []
+    public var suppliers: [SupplierRole] = []
 }
 
 public struct RetailerRole: Codable {
-    var id: String = ""
-    var role: String = ""
+    public init() {}
+    
+    public var id: String = ""
+    public var role: String = ""
 }
 
 public struct SupplierRole: Codable {
-    var id: String = ""
-    var role: String = ""
+    public init() {}
+    
+    public var id: String = ""
+    public var role: String = ""
 }
 
 public struct Notifications: Codable {
-    var enableSMS: Bool = false
-    var enableEmail: Bool = false
-    var pushNotifications: Bool = false
-    var id: SupplierNotifications = SupplierNotifications()
+    public init() {}
+    
+    public var enableSMS: Bool = false
+    public var enableEmail: Bool = false
+    public var pushNotifications: Bool = false
+    public var id: SupplierNotifications = SupplierNotifications()
 }
 
 public struct SupplierNotifications: Codable {
-    var alerts: Bool = false
-    var enableSMS: Bool = false
-    var remittance: Bool = false
-    var enableEmail: Bool = false
-    var sendInvoice: Bool = false
-    var placedOrders: Bool = false
-    var overdueOrders: Bool = false
-    var pushNotifications: Bool = false
+    public init() {}
+    
+    public var alerts: Bool = false
+    public var enableSMS: Bool = false
+    public var remittance: Bool = false
+    public var enableEmail: Bool = false
+    public var sendInvoice: Bool = false
+    public var placedOrders: Bool = false
+    public var overdueOrders: Bool = false
+    public var pushNotifications: Bool = false
 }
 
 public struct Name: Codable {
-    var first: String = ""
-    var last: String = ""
+    public init() {}
+    
+    public var first: String = ""
+    public var last: String = ""
 }
 
 public struct AdminPerms: Codable {
-    var permissions: Permissions = Permissions()
-    var isAdmin: Bool = false
-    var isSuperAdmin: Bool = false
+    public init() {}
+    
+    public var permissions: Permissions = Permissions()
+    public var isAdmin: Bool = false
+    public var isSuperAdmin: Bool = false
 }
 
 public struct Permissions: Codable {
-    var ordermentum: [String] = []
-    var id: [String] = []
-    var customers: [String] = []
+    public init() {}
+    
+    public var ordermentum: [String] = []
+    public var id: [String] = []
+    public var customers: [String] = []
 }
 
 public struct UpdateUserRequest: Codable {
-    var email: String = ""
-    var firstName: String = ""
-    var lastName: String = ""
-    var phone: String = ""
+    public init() {}
+    
+    public var email: String = ""
+    public var firstName: String = ""
+    public var lastName: String = ""
+    public var phone: String = ""
 }
 
 extension UserProfile {

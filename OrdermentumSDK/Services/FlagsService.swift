@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class FlagsService {
+public class FlagsService {
+    public init() {}
+    
     /**
      * Get the flags belonging to a retailer/supplier relationship
      * Returns a Flags object
      */
-    func getFlags(flagsArray: [String], supplierIdArray: [String], retailerId: String, userId: String, completion: @escaping (Bool, Flags?) -> ()) {
+    public func getFlags(flagsArray: [String], supplierIdArray: [String], retailerId: String, userId: String, completion: @escaping (Bool, Flags?) -> ()) {
         //Build Route
         let route = FlagsRouter.getFlags(flagsArray, supplierIdArray, retailerId, userId) as URLRequestConvertible
         

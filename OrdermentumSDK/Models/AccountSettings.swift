@@ -8,39 +8,39 @@
 
 import Foundation
 
-struct AccountSettings {
-    var invoiceSetting: InvoiceSetting = InvoiceSetting()
-    var invoiceFrequency: InvoiceFrequency = InvoiceFrequency()
-    var dayStart: String = ""
-    var monthStart: String = ""
-    var paymentMethod: PaymentMethods = PaymentMethods()
-    var paymentTerms: PaymentTerms = PaymentTerms()
-    var insights: Insights = Insights()
-    var liquorLicenseRequired: Bool = false
-    var includeOrderUpdatesInReports: Bool = false
-    var randomWeight: Bool = false
-    var orderSchedule: String = ""
-    var flags: [String] = []
-    var weightType: String = ""
-    var orderPrefix: String = ""
-    var sendInvoice: Bool = false
-    var orderExports: OrderExports = OrderExports()
-    var deliveryDelay: Int = 0
-    var groupPayments: Bool = false
-    var invoicePrefix: String = ""
-    var invoiceStatus: String = ""
-    var productExports: ProductExports = ProductExports()
-    var includeWeekends: Bool = false
-    var retailerExports: RetailerExports = RetailerExports()
-    var invoiceEmailDelay: String = ""
-    var enableDeliveryDate: Bool = false
-    var defaultDeliveryDelay: Int = 0
-    var classicStandingOrders: Bool = false
-    var defaultSalesAccountCode: String = ""
+public struct AccountSettings {
+    public var invoiceSetting: InvoiceSetting = InvoiceSetting()
+    public var invoiceFrequency: InvoiceFrequency = InvoiceFrequency()
+    public var dayStart: String = ""
+    public var monthStart: String = ""
+    public var paymentMethod: PaymentMethods = PaymentMethods()
+    public var paymentTerms: PaymentTerms = PaymentTerms()
+    public var insights: Insights = Insights()
+    public var liquorLicenseRequired: Bool = false
+    public var includeOrderUpdatesInReports: Bool = false
+    public var randomWeight: Bool = false
+    public var orderSchedule: String = ""
+    public var flags: [String] = []
+    public var weightType: String = ""
+    public var orderPrefix: String = ""
+    public var sendInvoice: Bool = false
+    public var orderExports: OrderExports = OrderExports()
+    public var deliveryDelay: Int = 0
+    public var groupPayments: Bool = false
+    public var invoicePrefix: String = ""
+    public var invoiceStatus: String = ""
+    public var productExports: ProductExports = ProductExports()
+    public var includeWeekends: Bool = false
+    public var retailerExports: RetailerExports = RetailerExports()
+    public var invoiceEmailDelay: String = ""
+    public var enableDeliveryDate: Bool = false
+    public var defaultDeliveryDelay: Int = 0
+    public var classicStandingOrders: Bool = false
+    public var defaultSalesAccountCode: String = ""
 }
 
 extension AccountSettings: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

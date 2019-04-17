@@ -8,41 +8,45 @@
 
 import Foundation
 
-struct FindSupplierResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [FindSupplierData] = []
+public struct FindSupplierResponse {
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [FindSupplierData] = []
 }
 
 public struct FindSupplierRequest: Codable {
-    var retailerId: String = ""
-    var supplierId: String = ""
-    var message: String = ""
-    var source: String = ""
-    var existing: Bool = false
-    var recommended: Bool = false
+    public init() {}
+    
+    public var retailerId: String = ""
+    public var supplierId: String = ""
+    public var message: String = ""
+    public var source: String = ""
+    public var existing: Bool = false
+    public var recommended: Bool = false
 }
 
 public struct FindSupplierReferralRequest: Codable {
-    var email: String = ""
-    var retailerId: String = ""
-    var name: String = ""
-    var phone: String = ""
-    var userId: String = ""
-    var message: String = ""
-    var source: String = ""
+    public init() {}
+    
+    public var email: String = ""
+    public var retailerId: String = ""
+    public var name: String = ""
+    public var phone: String = ""
+    public var userId: String = ""
+    public var message: String = ""
+    public var source: String = ""
 }
 
-struct FindSupplierData {
-    var id: String = ""
-    var logo: Image = Image()
-    var name: String = ""
-    var address: Address = Address()
-    var phone: String = ""
+public struct FindSupplierData {
+    public var id: String = ""
+    public var logo: Image = Image()
+    public var name: String = ""
+    public var address: Address = Address()
+    public var phone: String = ""
 }
 
 extension FindSupplierResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -54,7 +58,7 @@ extension FindSupplierResponse: Decodable {
 }
 
 extension FindSupplierData: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

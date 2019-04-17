@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class NotificationsService {
+public class NotificationsService {
+    public init() {}
+    
     /**
      * Update a particular notification setting for a supplier to retailer relationship
      * Returns a ResponseBody
      */
-    func updateNotificationSetting(userId: String, supplierId: String, updateObject: [String: Bool], completion: @escaping (Bool) -> ()) {
+    public func updateNotificationSetting(userId: String, supplierId: String, updateObject: [String: Bool], completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = NotificationsRouter.updateNotificationSetting(userId, supplierId, updateObject) as URLRequestConvertible
         

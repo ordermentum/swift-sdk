@@ -9,256 +9,280 @@
 import Foundation
 
 public struct CreateOrder: Codable {
-    var comment: String = ""
-    var deliveryDate: String = ""
-    var lineItems: [CreateOrderLineItem] = []
-    var origin: String = ""
-    var reference: String = ""
-    var retailerId: String = ""
-    var status: String = ""
-    var supplierId: String = ""
-    var tokenId: String = ""
-    var type: String = ""
-    var paymentMethodId: String = ""
+    public init() {}
+    
+    public var comment: String = ""
+    public var deliveryDate: String = ""
+    public var lineItems: [CreateOrderLineItem] = []
+    public var origin: String = ""
+    public var reference: String = ""
+    public var retailerId: String = ""
+    public var status: String = ""
+    public var supplierId: String = ""
+    public var tokenId: String = ""
+    public var type: String = ""
+    public var paymentMethodId: String = ""
 }
 
-struct CreateOrderLineItem: Codable {
-    var name: String = ""
-    var price: Float = 0.00
-    var productId: String = ""
-    var quantity: Int
+public struct CreateOrderLineItem: Codable {
+    public init() {}
+    
+    public var name: String = ""
+    public var price: Float = 0.00
+    public var productId: String = ""
+    public var quantity: Int = 0
 }
 
-struct OrderResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [Order] = []
+public struct OrderResponse {
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [Order] = []
 }
 
-struct ClassicStandingOrderResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [ClassicStandingOrder] = []
+public struct ClassicStandingOrderResponse {
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [ClassicStandingOrder] = []
 }
 
-struct Order: Encodable {
-    var canMarkAsPaid: Bool = false
-    var canMarkAsUnpaid: Bool = false
-    var cancelledAt: String = ""
-    var chargable: Bool = false
-    var chargedAt: String = ""
-    var chargedBy: String = ""
-    var chargedByUser: String = ""
-    var comment: String = ""
-    var completeAt: String = ""
-    var color: String = ""
-    var createdAt: String = ""
-    var createdBy: String = ""
-    var deliveryDate: String = ""
-    var directProcessing: Bool = false
-    var display: Display = Display()
-    var dueAt: String = ""
-    var editable: Bool = false
-    var freight: Float = 0.00
-    var id: String = ""
-    var invoice: Invoice = Invoice()
-    var invoiceId: String = ""
-    var invoiceNumber: String = ""
-    var invoiceReference: String = ""
-    var isOutstanding: Bool = false
-    var label: String = ""
-    var lineItems: [LineItem] = []
-    var locked: Bool = false
-    var name: String = ""
-    var noPaymentActions: Bool = false
-    var number: String = ""
-    var orderNumber: String = ""
-    var orderStatus: String = ""
-    var paidAt: String = ""
-    var paidToSupplier: String = ""
-    var paymentDelay: Int = 0
-    var paymentMethodType: PaymentMethodType = PaymentMethodType()
-    var paymentStatus: String = ""
-    var placedByName: String = ""
-    var processingError: String = ""
-    var properties: Properties = Properties()
-    var randomWeight: Bool = false
-    var retailerAlias: String = ""
-    var retailerEditable: Bool = false
-    var retailerName: String = ""
-    var status: String = ""
-    var subtotal: Float = 0.00
-    var supplier: Supplier = Supplier()
-    var total: Float = 0.00
-    var totalCost: Float = 0.00
-    var totalDue: Float = 0.00
-    var totalFreight: Float = 0.00
-    var totalGST: Float = 0.00
-    var totalQuantity: Float = 0.00
-    var type: String = ""
-    var updatedAt: String = ""
-    var updatedByName: String = ""
+public struct Order: Encodable {
+    public init() {}
+    
+    public var canMarkAsPaid: Bool = false
+    public var canMarkAsUnpaid: Bool = false
+    public var cancelledAt: String = ""
+    public var chargable: Bool = false
+    public var chargedAt: String = ""
+    public var chargedBy: String = ""
+    public var chargedByUser: String = ""
+    public var comment: String = ""
+    public var completeAt: String = ""
+    public var color: String = ""
+    public var createdAt: String = ""
+    public var createdBy: String = ""
+    public var deliveryDate: String = ""
+    public var directProcessing: Bool = false
+    public var display: Display = Display()
+    public var dueAt: String = ""
+    public var editable: Bool = false
+    public var freight: Float = 0.00
+    public var id: String = ""
+    public var invoice: Invoice = Invoice()
+    public var invoiceId: String = ""
+    public var invoiceNumber: String = ""
+    public var invoiceReference: String = ""
+    public var isOutstanding: Bool = false
+    public var label: String = ""
+    public var lineItems: [LineItem] = []
+    public var locked: Bool = false
+    public var name: String = ""
+    public var noPaymentActions: Bool = false
+    public var number: String = ""
+    public var orderNumber: String = ""
+    public var orderStatus: String = ""
+    public var paidAt: String = ""
+    public var paidToSupplier: String = ""
+    public var paymentDelay: Int = 0
+    public var paymentMethodType: PaymentMethodType = PaymentMethodType()
+    public var paymentStatus: String = ""
+    public var placedByName: String = ""
+    public var processingError: String = ""
+    public var properties: Properties = Properties()
+    public var randomWeight: Bool = false
+    public var retailerAlias: String = ""
+    public var retailerEditable: Bool = false
+    public var retailerName: String = ""
+    public var status: String = ""
+    public var subtotal: Float = 0.00
+    public var supplier: Supplier = Supplier()
+    public var total: Float = 0.00
+    public var totalCost: Float = 0.00
+    public var totalDue: Float = 0.00
+    public var totalFreight: Float = 0.00
+    public var totalGST: Float = 0.00
+    public var totalQuantity: Float = 0.00
+    public var type: String = ""
+    public var updatedAt: String = ""
+    public var updatedBy: UpdatedBy = UpdatedBy()
+    public var updatedByName: String = ""
 }
 
-struct LineItem: Encodable {
-    var SKU: String = ""
-    var batchCode: String = ""
-    var createdAt: String = ""
-    var display: Display = Display()
-    var gst: String = ""
-    var looseCount: Int = 0
-    var locked: Bool = false
-    var name: String = ""
-    var orderId: String = ""
-    var packCount: Int = 0
-    var price: String = ""
-    var product: Product = Product()
-    var productId: String = ""
-    var properties: Properties = Properties()
-    var quantity: Int = 0
-    var ratePrice: String = ""
-    var subtotal: String = ""
-    var tax: String = ""
-    var taxable: Bool = false
-    var total: String = ""
-    var totalWeight: Float = 0
-    var updatedAt: String = ""
-    var weight: Float = 0
+public struct LineItem: Encodable {
+    public init() {}
+    
+    public var SKU: String = ""
+    public var batchCode: String = ""
+    public var createdAt: String = ""
+    public var display: Display = Display()
+    public var gst: String = ""
+    public var looseCount: Int = 0
+    public var locked: Bool = false
+    public var name: String = ""
+    public var orderId: String = ""
+    public var packCount: Int = 0
+    public var price: String = ""
+    public var product: Product = Product()
+    public var productId: String = ""
+    public var properties: Properties = Properties()
+    public var quantity: Int = 0
+    public var ratePrice: String = ""
+    public var subtotal: String = ""
+    public var tax: String = ""
+    public var taxable: Bool = false
+    public var total: String = ""
+    public var totalWeight: Float = 0
+    public var updatedAt: String = ""
+    public var weight: Float = 0
 }
 
-struct ClassicStandingOrder {
-    var id: String = ""
-    var name: String = ""
-    var alias: String = ""
-    var remindedAt: String = ""
-    var placedAt: String = ""
-    var place: Bool = false
-    var purchaserId: String = ""
-    var userId: String = ""
-    var orderId: String = ""
-    var supplierId: String = ""
-    var schedule: ClassicStandingOrderSchedule = ClassicStandingOrderSchedule()
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var activityEnded: Bool = false
-    var nextRunAt: String = ""
-    var nextFinishAt: String = ""
-    var scheduleId: String = ""
-    var nextRunDate: String = ""
-    var cancelled: [String] = []
-    var updatedBy: ClassicStandingOrderUpdatedBy = ClassicStandingOrderUpdatedBy()
-    var nextRunCancelled: Bool = false
-    var scheduleEnabled: Bool = false
-    var startDate: String = ""
-    var endDate: String = ""
+public struct ClassicStandingOrder {
+    public var id: String = ""
+    public var name: String = ""
+    public var alias: String = ""
+    public var remindedAt: String = ""
+    public var placedAt: String = ""
+    public var place: Bool = false
+    public var purchaserId: String = ""
+    public var userId: String = ""
+    public var orderId: String = ""
+    public var supplierId: String = ""
+    public var schedule: ClassicStandingOrderSchedule = ClassicStandingOrderSchedule()
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var activityEnded: Bool = false
+    public var nextRunAt: String = ""
+    public var nextFinishAt: String = ""
+    public var scheduleId: String = ""
+    public var nextRunDate: String = ""
+    public var cancelled: [String] = []
+    public var updatedBy: UpdatedBy = UpdatedBy()
+    public var nextRunCancelled: Bool = false
+    public var scheduleEnabled: Bool = false
+    public var startDate: String = ""
+    public var endDate: String = ""
 }
 
-struct ClassicStandingOrderSchedule {
-    var id: String = ""
-    var name: String = ""
-    var alias: String = ""
-    var cutOffTime: String = ""
-    var editableUntil: Int = 0
-    var includeWeekends: Bool = false
-    var recurrence: String = ""
-    var frequency: String = ""
-    var deliveryDelay: Int = 0
-    var supplierId: String = ""
-    var userId: String = ""
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var recurrenceInfo: ClassicStandingOrderRecurrenceInfo = ClassicStandingOrderRecurrenceInfo()
-    var escalationTime: String = ""
-    var firstReminder: String = ""
-    var enabled: Bool = false
-    var lastFinishedAt: String = ""
-    var supplierName: String = ""
-    var standingOrders: Bool = false
-    var supplier: ClassicStandingOrderSupplier = ClassicStandingOrderSupplier()
-    var lastStartedAt: String = ""
-    var defaultSchedule: Bool = false
-    var cutOffPassed: Bool = false
-    var nextRun: [String] = []
-    var timezone: String = ""
+public struct ClassicStandingOrderSchedule {
+    public var id: String = ""
+    public var name: String = ""
+    public var alias: String = ""
+    public var cutOffTime: String = ""
+    public var editableUntil: Int = 0
+    public var includeWeekends: Bool = false
+    public var recurrence: String = ""
+    public var frequency: String = ""
+    public var deliveryDelay: Int = 0
+    public var supplierId: String = ""
+    public var userId: String = ""
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var recurrenceInfo: ClassicStandingOrderRecurrenceInfo = ClassicStandingOrderRecurrenceInfo()
+    public var escalationTime: String = ""
+    public var firstReminder: String = ""
+    public var enabled: Bool = false
+    public var lastFinishedAt: String = ""
+    public var supplierName: String = ""
+    public var standingOrders: Bool = false
+    public var supplier: ClassicStandingOrderSupplier = ClassicStandingOrderSupplier()
+    public var lastStartedAt: String = ""
+    public var defaultSchedule: Bool = false
+    public var cutOffPassed: Bool = false
+    public var nextRun: [String] = []
+    public var timezone: String = ""
 }
 
-struct ClassicStandingOrderRecurrenceInfo {
-    var freq: String = ""
-    var byhour: String = ""
-    var byminute: String = ""
-    var interval: String = ""
-    var timezone: String = ""
+public struct ClassicStandingOrderRecurrenceInfo {
+    public var freq: String = ""
+    public var byhour: String = ""
+    public var byminute: String = ""
+    public var interval: String = ""
+    public var timezone: String = ""
 }
 
-struct ClassicStandingOrderSupplier {
-    var name: String = ""
+public struct ClassicStandingOrderSupplier {
+    public var name: String = ""
 }
 
-struct ClassicStandingOrderUpdatedBy {
-    var firstName: String = ""
-    var lastName: String = ""
+public struct UpdatedBy: Encodable {
+    public var firstName: String = ""
+    public var lastName: String = ""
+    public var fullName: String = ""
 }
 
 public struct CreateFavouriteRequest: Codable {
-    var comment: String = ""
-    var deliveryDate: String = ""
-    var lineItems: [CreateFavouriteRequestLineItem] = []
-    var origin: String = ""
-    var reference: String = ""
-    var retailerId: String = ""
-    var status: String = ""
-    var supplierId: String = ""
-    var type: String = ""
+    public init() {}
+    
+    public var comment: String = ""
+    public var deliveryDate: String = ""
+    public var lineItems: [CreateFavouriteRequestLineItem] = []
+    public var origin: String = ""
+    public var reference: String = ""
+    public var retailerId: String = ""
+    public var status: String = ""
+    public var supplierId: String = ""
+    public var type: String = ""
 }
 
-struct CreateFavouriteRequestLineItem: Codable {
-    var name: String = ""
-    var price: Float = 0.00
-    var productId: String = ""
-    var quantity: Int = 0
+public struct CreateFavouriteRequestLineItem: Codable {
+    public init() {}
+    
+    public var name: String = ""
+    public var price: Float = 0.00
+    public var productId: String = ""
+    public var quantity: Int = 0
 }
 
 public struct CreateStandingOrder: Codable {
-    var lineItems: [CreateOrderLineItem] = []
-    var origin: String = ""
-    var retailerId: String = ""
-    var supplierId: String = ""
-    var type: String = ""
+    public init() {}
+    
+    public var lineItems: [CreateOrderLineItem] = []
+    public var origin: String = ""
+    public var retailerId: String = ""
+    public var supplierId: String = ""
+    public var type: String = ""
 }
 
 public struct CreatePurchaserSchedule: Codable {
-    var orderId: String = ""
-    var place: Bool = true
-    var retailerId: String = ""
-    var startDate: String = ""
-    var supplierId: String = ""
+    public init() {}
+    
+    public var orderId: String = ""
+    public var place: Bool = true
+    public var retailerId: String = ""
+    public var startDate: String = ""
+    public var supplierId: String = ""
 }
 
 public struct UpdateOrderRequest: Codable {
-    var lineItems: [UpdateOrderRequestLineItem] = []
-    var name: String = ""
-    var origin: String = ""
-    var type: String = ""
+    public init() {}
+    
+    public var lineItems: [UpdateOrderRequestLineItem] = []
+    public var name: String = ""
+    public var origin: String = ""
+    public var type: String = ""
 }
 
 public struct UpdateScheduleRequest: Codable {
-    var cutOff: String = ""
-    var purchaserScheduleId: String = ""
-    var runAt: String = ""
-    var scheduleId: String = ""
-    var lineItems: [UpdateOrderRequestLineItem] = []
-    var retailerId: String = ""
-    var supplierId: String = ""
-    var type: String = ""
+    public init() {}
+    
+    public var cutOff: String = ""
+    public var purchaserScheduleId: String = ""
+    public var runAt: String = ""
+    public var scheduleId: String = ""
+    public var lineItems: [UpdateOrderRequestLineItem] = []
+    public var retailerId: String = ""
+    public var supplierId: String = ""
+    public var type: String = ""
 }
 
-struct UpdateOrderRequestLineItem: Codable {
-    var productId: String = ""
-    var quantity: Int = 0
+public struct UpdateOrderRequestLineItem: Codable {
+    public init() {}
+    
+    public var productId: String = ""
+    public var quantity: Int = 0
 }
 
 extension OrderResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -270,7 +294,7 @@ extension OrderResponse: Decodable {
 }
 
 extension ClassicStandingOrderResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -282,7 +306,7 @@ extension ClassicStandingOrderResponse: Decodable {
 }
 
 extension Order: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -342,12 +366,13 @@ extension Order: Decodable {
         totalQuantity = try container.decodeIfPresent(Float.self, forKey: .totalQuantity) ?? 0.00
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
+        updatedBy = try container.decodeIfPresent(UpdatedBy.self, forKey: .updatedBy) ?? UpdatedBy()
         updatedByName = try container.decodeIfPresent(String.self, forKey: .updatedByName) ?? ""
     }
 }
 
 extension LineItem: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -372,14 +397,14 @@ extension LineItem: Decodable {
         tax = try container.decodeIfPresent(String.self, forKey: .tax) ?? ""
         taxable = try container.decodeIfPresent(Bool.self, forKey: .taxable) ?? false
         total = try container.decodeIfPresent(String.self, forKey: .total) ?? ""
-        totalWeight = try container.decodeIfPresent(Float.self, forKey: .totalWeight) ?? 0
+        totalWeight = try container.safeFloatDecode(forKey: .totalWeight) ?? 0
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
-        weight = try container.decodeIfPresent(Float.self, forKey: .weight) ?? 0
+        weight = try container.safeFloatDecode(forKey: .weight) ?? 0
     }
 }
 
 extension ClassicStandingOrder: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -403,7 +428,7 @@ extension ClassicStandingOrder: Decodable {
         scheduleId = try container.decodeIfPresent(String.self, forKey: .scheduleId) ?? ""
         nextRunDate = try container.decodeIfPresent(String.self, forKey: .nextRunDate) ?? ""
         cancelled = try container.decodeIfPresent([String].self, forKey: .cancelled) ??  []
-        updatedBy = try container.decodeIfPresent(ClassicStandingOrderUpdatedBy.self, forKey: .updatedBy) ?? ClassicStandingOrderUpdatedBy()
+        updatedBy = try container.decodeIfPresent(UpdatedBy.self, forKey: .updatedBy) ?? UpdatedBy()
         nextRunCancelled = try container.decodeIfPresent(Bool.self, forKey: .nextRunCancelled) ?? false
         scheduleEnabled = try container.decodeIfPresent(Bool.self, forKey: .scheduleEnabled) ?? false
         startDate = try container.decodeIfPresent(String.self, forKey: .startDate) ?? ""
@@ -412,7 +437,7 @@ extension ClassicStandingOrder: Decodable {
 }
 
 extension ClassicStandingOrderSchedule: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -447,7 +472,7 @@ extension ClassicStandingOrderSchedule: Decodable {
 }
 
 extension ClassicStandingOrderRecurrenceInfo: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -461,7 +486,7 @@ extension ClassicStandingOrderRecurrenceInfo: Decodable {
 }
 
 extension ClassicStandingOrderSupplier: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -470,25 +495,26 @@ extension ClassicStandingOrderSupplier: Decodable {
     }
 }
 
-extension ClassicStandingOrderUpdatedBy: Decodable {
-    init(from decoder: Decoder) throws {
+extension UpdatedBy: Decodable {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
         firstName = try container.decodeIfPresent(String.self, forKey: .firstName) ?? ""
         lastName = try container.decodeIfPresent(String.self, forKey: .lastName) ?? ""
+        fullName = try container.decodeIfPresent(String.self, forKey: .fullName) ?? ""
     }
 }
 
 extension Order: Equatable {
-    static func == (lhs: Order, rhs: Order) -> Bool {
+    public static func == (lhs: Order, rhs: Order) -> Bool {
         return lhs.id == rhs.id
     }
 }
 
 extension LineItem: Equatable {
-    static func == (lhs: LineItem, rhs: LineItem) -> Bool {
+    public static func == (lhs: LineItem, rhs: LineItem) -> Bool {
         return lhs.product.id == rhs.product.id
     }
 }

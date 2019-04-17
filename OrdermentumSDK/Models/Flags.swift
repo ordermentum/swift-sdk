@@ -8,21 +8,21 @@
 
 import Foundation
 
-struct Flags {
-    var findSupplier: Bool = false
-    var review: Bool = false
-    var dashboardProfile: Bool = false
-    var userInvite: Bool = false
-    var popularProducts: Bool = false
-    var addons: Bool = false
-    var homePopularProducts: Bool = false
-    var retailerSignup: Bool = false
-    var addVenue: Bool = false
-    var projectionsV2: Bool = false
+public struct Flags {
+    public var findSupplier: Bool = false
+    public var review: Bool = false
+    public var dashboardProfile: Bool = false
+    public var userInvite: Bool = false
+    public var popularProducts: Bool = false
+    public var addons: Bool = false
+    public var homePopularProducts: Bool = false
+    public var retailerSignup: Bool = false
+    public var addVenue: Bool = false
+    public var projectionsV2: Bool = false
 }
 
 extension Flags: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         findSupplier = try container.decodeIfPresent(Bool.self, forKey: .findSupplier) ?? false

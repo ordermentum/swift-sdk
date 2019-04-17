@@ -8,48 +8,48 @@
 
 import Foundation
 
-struct ProductResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [Product] = []
+public struct ProductResponse {
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [Product] = []
 }
 
-struct Product: Encodable {
-    var id: String = ""
-    var name: String = ""
-    var price: String = ""
-    var formattedPrice: String = ""
-    var SKU: String = ""
-    var categories: [Category] = []
-    var weight: Float = 0
-    var display: Display = Display()
-    var displayUOM: String = ""
-    var uom: String = ""
-    var unit: String = ""
-    var unitSize: Int = 0
-    var minQuantity: Int = 0
-    var randomWeight: Bool = false
-    var productCategories: [Category] = []
-    var description: String = ""
-    var supplierId: String = ""
-    var images: Image = Image()
-    var sortOrder: Int = 0
-    var addTax: Bool = false
-    var visible: Bool = false
-    var batchCode: String = ""
-    var leadTime: String = ""
-    var deliveryDays: [String] = []
+public struct Product: Encodable {
+    public var id: String = ""
+    public var name: String = ""
+    public var price: String = ""
+    public var formattedPrice: String = ""
+    public var SKU: String = ""
+    public var categories: [Category] = []
+    public var weight: Float = 0
+    public var display: Display = Display()
+    public var displayUOM: String = ""
+    public var uom: String = ""
+    public var unit: String = ""
+    public var unitSize: Int = 0
+    public var minQuantity: Int = 0
+    public var randomWeight: Bool = false
+    public var productCategories: [Category] = []
+    public var description: String = ""
+    public var supplierId: String = ""
+    public var images: Image = Image()
+    public var sortOrder: Int = 0
+    public var addTax: Bool = false
+    public var visible: Bool = false
+    public var batchCode: String = ""
+    public var leadTime: Int = 0
+    public var deliveryDays: [String] = []
 }
 
-struct Display: Encodable {
-    var displayUOM: String = ""
-    var price: String = ""
-    var unitPrice: String = ""
-    var uom: String = ""
+public struct Display: Encodable {
+    public var displayUOM: String = ""
+    public var price: String = ""
+    public var unitPrice: String = ""
+    public var uom: String = ""
 }
 
 extension ProductResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -61,7 +61,7 @@ extension ProductResponse: Decodable {
 }
 
 extension Product: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -88,13 +88,13 @@ extension Product: Decodable {
         addTax = try container.decodeIfPresent(Bool.self, forKey: .addTax) ?? false
         visible = try container.decodeIfPresent(Bool.self, forKey: .visible) ?? false
         batchCode = try container.decodeIfPresent(String.self, forKey: .batchCode) ?? ""
-        leadTime = try container.decodeIfPresent(String.self, forKey: .leadTime) ?? ""
+        leadTime = try container.safeIntDecode(forKey: .leadTime) ?? 0
         deliveryDays = try container.decodeIfPresent([String].self, forKey: .deliveryDays) ?? []
     }
 }
 
 extension Display: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         displayUOM = try container.decodeIfPresent(String.self, forKey: .displayUOM) ?? ""

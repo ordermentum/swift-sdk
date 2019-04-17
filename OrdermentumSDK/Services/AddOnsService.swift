@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class AddOnsService {
+public class AddOnsService {
+    public init() {}
+    
     /**
      * Get already connected add-ons
      * Returns a AddOnsResponse
      */
-    func searchAddons(entityType: String, entityId: [String], completion: @escaping (Bool, [AddOn]?) -> ()) {
+    public func searchAddons(entityType: String, entityId: [String], completion: @escaping (Bool, [AddOn]?) -> ()) {
         //Build Route
         let route = AddOnsRouter.searchAddons(entityType, entityId) as URLRequestConvertible
         
@@ -28,7 +30,7 @@ class AddOnsService {
      * Get non-connected add-ons
      * Returns a AddOnsDiscoverResponse
      */
-    func discoverAddons(entityType: String, entityId: String, completion: @escaping (Bool, [AddOnsDiscover]?) -> ()) {
+    public func discoverAddons(entityType: String, entityId: String, completion: @escaping (Bool, [AddOnsDiscover]?) -> ()) {
         //Build Route
         let route = AddOnsRouter.discoverAddons(entityType, entityId) as URLRequestConvertible
         
@@ -42,7 +44,7 @@ class AddOnsService {
      * Get details of an already connected add-on
      * Returns an AddOn Object
      */
-    func readAddon(addonId: String, accountId: String, completion: @escaping (Bool, AddOn?) -> ()) {
+    public func readAddon(addonId: String, accountId: String, completion: @escaping (Bool, AddOn?) -> ()) {
         //Build Route
         let route = AddOnsRouter.readAddon(addonId, accountId) as URLRequestConvertible
         
@@ -56,7 +58,7 @@ class AddOnsService {
      * Update an add-on
      * Returns an AddOn Object
      */
-    func updateAddon(addonId: String, accountId: String, requestObject: AddOnUpdateObject, completion: @escaping (Bool, AddOn?) -> ()) {
+    public func updateAddon(addonId: String, accountId: String, requestObject: AddOnUpdateObject, completion: @escaping (Bool, AddOn?) -> ()) {
         //Build Route
         let route = AddOnsRouter.updateAddon(addonId, accountId, requestObject) as URLRequestConvertible
         
@@ -70,7 +72,7 @@ class AddOnsService {
      * Disconnect an add-on
      * Returns a ResponseBody which can be used to check for a 200 response
      */
-    func disconnectAddon(addonId: String, accountId: String, requestObject: AddOnDisconnectObject, completion: @escaping (Bool) -> ()) {
+    public func disconnectAddon(addonId: String, accountId: String, requestObject: AddOnDisconnectObject, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = AddOnsRouter.disconnectAddon(addonId, accountId, requestObject) as URLRequestConvertible
         

@@ -9,19 +9,23 @@
 import Foundation
 
 public struct VenueProfile: Codable {
-    var abn: String = ""
-    var address: Address = Address()
-    var billingAddress: Address = Address()
-    var legalName: String = ""
-    var tradingName: String = ""
+    public init() {}
+    
+    public var abn: String = ""
+    public var address: Address = Address()
+    public var billingAddress: Address = Address()
+    public var legalName: String = ""
+    public var tradingName: String = ""
 }
 
-struct Completion {
-    var profilePercent: Int = 0
+public struct Completion {
+    public init() {}
+    
+    public var profilePercent: Int = 0
 }
 
 extension Completion: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

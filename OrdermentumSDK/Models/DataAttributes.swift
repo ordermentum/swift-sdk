@@ -8,36 +8,40 @@
 
 import Foundation
 
-struct DataAttributesResponse {
-    var data: DataAttributesArrays = DataAttributesArrays()
+public struct DataAttributesResponse {
+    public var data: DataAttributesArrays = DataAttributesArrays()
 }
 
-struct DataAttributesArrays {
-    var pos: [String] = []
-    var banking: [String] = []
-    var accounting: [String] = []
-    var venueTypes: [String] = []
-    var tradingHours: TradingHours = TradingHours()
+public struct DataAttributesArrays {
+    public var pos: [String] = []
+    public var banking: [String] = []
+    public var accounting: [String] = []
+    public var venueTypes: [String] = []
+    public var tradingHours: TradingHours = TradingHours()
 }
 
 public struct DataAttributes: Encodable {
-    var pos: String = ""
-    var venue: String = ""
-    var banking: String = ""
-    var accounting: String = ""
-    var venueTypes: String = ""
-    var tradingHours: TradingHours = TradingHours()
+    public init() {}
+    
+    public var pos: String = ""
+    public var venue: String = ""
+    public var banking: String = ""
+    public var accounting: String = ""
+    public var venueTypes: String = ""
+    public var tradingHours: TradingHours = TradingHours()
 }
 
 public struct VenueOperationsUpdate: Codable {
-    var pos: String = ""
-    var banking: String = ""
-    var accounting: String = ""
-    var venue: String = ""
+    public init() {}
+    
+    public var pos: String = ""
+    public var banking: String = ""
+    public var accounting: String = ""
+    public var venue: String = ""
 }
 
 extension DataAttributesResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -61,7 +65,7 @@ extension DataAttributes: Decodable {
 }
 
 extension DataAttributesArrays: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

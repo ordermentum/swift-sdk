@@ -8,25 +8,25 @@
 
 import Foundation
 
-struct CategoryResponse {
-    var meta: Meta = Meta()
-    var links: Links = Links()
-    var data: [Category] = []
+public struct CategoryResponse {
+    public var meta: Meta = Meta()
+    public var links: Links = Links()
+    public var data: [Category] = []
 }
 
-struct Category: Encodable {
-    var id: String = ""
-    var name: String = ""
-    var description: String = ""
-    var createdAt: String = ""
-    var updatedAt: String = ""
-    var deletedAt: String = ""
-    var images: Image = Image()
-    var sortOrder: Int = 0
+public struct Category: Encodable {
+    public var id: String = ""
+    public var name: String = ""
+    public var description: String = ""
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var deletedAt: String = ""
+    public var images: Image = Image()
+    public var sortOrder: Int = 0
 }
 
 extension CategoryResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -38,7 +38,7 @@ extension CategoryResponse: Decodable {
 }
 
 extension Category: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -55,7 +55,7 @@ extension Category: Decodable {
 }
 
 extension Category: Equatable {
-    static func == (lhs: Category, rhs: Category) -> Bool {
+    public static func == (lhs: Category, rhs: Category) -> Bool {
         return lhs.id == rhs.id
     }
 }

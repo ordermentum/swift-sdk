@@ -9,20 +9,22 @@
 import Foundation
 
 public struct NPSFeedback: Codable {
-    var score: Int = 0
-    var comment: String = ""
+    public init() {}
+    
+    public var score: Int = 0
+    public var comment: String = ""
 }
 
-struct NPSResponse {
-    var id: String = ""
-    var email: String = ""
-    var survey_scheduled_at: String = ""
-    var name: String = ""
-    var show: Bool = false
+public struct NPSResponse {
+    public var id: String = ""
+    public var email: String = ""
+    public var survey_scheduled_at: String = ""
+    public var name: String = ""
+    public var show: Bool = false
 }
 
 extension NPSResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

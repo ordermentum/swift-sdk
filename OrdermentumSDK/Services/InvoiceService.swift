@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class InvoiceService {
+public class InvoiceService {
+    public init() {}
+    
     /**
      * Get the invoices belonging to a retailer/supplier relationship
      * Returns a InvoiceResponse
      */
-    func getSuppliers(retailerId: String, supplierId: String, sortBy: String, completion: @escaping (Bool, InvoiceResponse?) -> ()) {
+    public func getSuppliers(retailerId: String, supplierId: String, sortBy: String, completion: @escaping (Bool, InvoiceResponse?) -> ()) {
         //Build Route
         let route = InvoiceRouter.getInvoices(retailerId, supplierId, sortBy) as URLRequestConvertible
         
@@ -28,7 +30,7 @@ class InvoiceService {
      * Sends a request to export an invoice
      * Returns an ExportResponse
      */
-    func exportInvoice(requestObject: ExportRequest, completion: @escaping (Bool, ExportResponse?) -> ()) {
+    public func exportInvoice(_ requestObject: ExportRequest, completion: @escaping (Bool, ExportResponse?) -> ()) {
         //Build Route
         let route = InvoiceRouter.exportInvoice(requestObject) as URLRequestConvertible
         
@@ -42,7 +44,7 @@ class InvoiceService {
      * Download an invoice PDF file
      * Returns an ExportResponse
      */
-    func downloadInvoice(invoiceId: String, completion: @escaping (Bool, ExportResponse?) -> ()) {
+    public func downloadInvoice(invoiceId: String, completion: @escaping (Bool, ExportResponse?) -> ()) {
         //Build Route
         let route = InvoiceRouter.downloadInvoice(invoiceId) as URLRequestConvertible
         
@@ -56,7 +58,7 @@ class InvoiceService {
      * Make payment on an invoice, used for 'Click to Pay'
      * Returns a ResponseBody which can be used to check for a 200 response
      */
-    func applyPayment(invoiceId: String, requestObject: InvoicePaymentRequest, completion: @escaping (Bool) -> ()) {
+    public func applyPayment(invoiceId: String, requestObject: InvoicePaymentRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = InvoiceRouter.applyPayment(invoiceId, requestObject) as URLRequestConvertible
         

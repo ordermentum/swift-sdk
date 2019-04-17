@@ -8,13 +8,15 @@
 
 import Foundation
 
-struct Address: Codable {
-    var number: String = ""
-    var description: String = ""
-    var street1: String = ""
-    var street2: String = ""
-    var suburb: String = ""
-    var state: String = ""
-    var postcode: String = ""
-    var country: String = ""
+public struct Address: Codable {
+    public init() {}
+    
+    public var number: String = ""
+    public var description: String = ""
+    public var street1: String = ""
+    public var street2: String = ""
+    public var suburb: String = ""
+    public var state: String = ""
+    public var postcode: String = ""
+    public var country: String = ""
 }

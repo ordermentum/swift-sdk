@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class MarketplaceService {
+public class MarketplaceService {
+    public init() {}
+    
     /**
      * Fetch the marketplaces for a selected retailer
      * Returns a Marketplace object
      */
-    func getMarketplaces(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, MarketplaceResponse?) -> ()) {
+    public func getMarketplaces(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, MarketplaceResponse?) -> ()) {
         //Build Route
         let route = MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo) as URLRequestConvertible
         
