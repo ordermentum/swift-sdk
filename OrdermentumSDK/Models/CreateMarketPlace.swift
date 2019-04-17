@@ -16,9 +16,11 @@ public struct CreateMarketPlace: Codable {
     var slug: String = ""
     var email: String = ""
     var tradingName: String = ""
+    
     //var accountSettings: AccountSettings = AccountSettings()
     var brandImages: [Image] = []
     var logo: Image = Image()
+    
    //var settings: MarketplaceSettings = MarketplaceSettings()
     var properties: Properties = Properties()
     var shortName: String = ""

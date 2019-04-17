@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
   s.framework  = "OrdermentumSDK"
 
   s.dependency "Alamofire", "~> 5.0.0-beta.3"
+  s.dependency "Hippolyte" "~> 0.6.0"
 
   s.swift_version = "4.2"
 end
