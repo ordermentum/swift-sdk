@@ -17,7 +17,6 @@ class AuthService {
     func login(requestObject: LoginRequest, completion: @escaping (Bool, Login?) -> ()) {
         //Build Route
         let route = AuthRouter.login(requestObject) as URLRequestConvertible
-        
         //Call API
         Service<Login>().request(route: route) { (result, responseObject) in
             completion(result, responseObject)

@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		2A6F52128EED75495252EE23 /* Pods_OrdermentumSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */; };
 		526155008E1402A0BB282A20 /* Pods_OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */; };
+		BB31861E226588280028101E /* ProductsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318615226588280028101E /* ProductsServiceTests.swift */; };
+		BB31861F226588280028101E /* VenueServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318616226588280028101E /* VenueServiceTests.swift */; };
+		BB318620226588280028101E /* NotifyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318617226588280028101E /* NotifyServiceTests.swift */; };
+		BB318621226588280028101E /* NPSServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318618226588280028101E /* NPSServiceTests.swift */; };
+		BB318622226588280028101E /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318619226588280028101E /* PurchaserServiceTests.swift */; };
+		BB318623226588280028101E /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861A226588280028101E /* ValidationServiceTest.swift */; };
+		BB318624226588280028101E /* ProfileServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861B226588280028101E /* ProfileServiceTest.swift */; };
+		BB318625226588280028101E /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861C226588280028101E /* NotificationServiceTests.swift */; };
+		BB318626226588280028101E /* PaymentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861D226588280028101E /* PaymentsServiceTests.swift */; };
+		BB3186282265888A0028101E /* CreateProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3186272265888A0028101E /* CreateProfileService.swift */; };
+		BB31862A226589BA0028101E /* CreateProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318629226589BA0028101E /* CreateProfileRouter.swift */; };
+		BB31862C226597AE0028101E /* CreateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31862B226597AE0028101E /* CreateProfile.swift */; };
+		BB31862E2265A7A00028101E /* CreateMarketPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31862D2265A7A00028101E /* CreateMarketPlace.swift */; };
+		BB3186332266ED4E0028101E /* ReadFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3186322266ED4E0028101E /* ReadFile.swift */; };
 		CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */; };
 		CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */; };
 		CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */; };
@@ -127,6 +141,20 @@
 		7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrdermentumSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		882D9FD307AAAB2EC007D839 /* Pods-ordermentum-swift-sdkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdkTests/Pods-ordermentum-swift-sdkTests.release.xcconfig"; sourceTree = "<group>"; };
 		897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrdermentumSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB318615226588280028101E /* ProductsServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsServiceTests.swift; sourceTree = "<group>"; };
+		BB318616226588280028101E /* VenueServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueServiceTests.swift; sourceTree = "<group>"; };
+		BB318617226588280028101E /* NotifyServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyServiceTests.swift; sourceTree = "<group>"; };
+		BB318618226588280028101E /* NPSServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPSServiceTests.swift; sourceTree = "<group>"; };
+		BB318619226588280028101E /* PurchaserServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaserServiceTests.swift; sourceTree = "<group>"; };
+		BB31861A226588280028101E /* ValidationServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationServiceTest.swift; sourceTree = "<group>"; };
+		BB31861B226588280028101E /* ProfileServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileServiceTest.swift; sourceTree = "<group>"; };
+		BB31861C226588280028101E /* NotificationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
+		BB31861D226588280028101E /* PaymentsServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsServiceTests.swift; sourceTree = "<group>"; };
+		BB3186272265888A0028101E /* CreateProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileService.swift; sourceTree = "<group>"; };
+		BB318629226589BA0028101E /* CreateProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileRouter.swift; sourceTree = "<group>"; };
+		BB31862B226597AE0028101E /* CreateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfile.swift; sourceTree = "<group>"; };
+		BB31862D2265A7A00028101E /* CreateMarketPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMarketPlace.swift; sourceTree = "<group>"; };
+		BB3186322266ED4E0028101E /* ReadFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFile.swift; sourceTree = "<group>"; };
 		CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesService.swift; sourceTree = "<group>"; };
 		CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosurePeriodsRouter.swift; sourceTree = "<group>"; };
 		CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesRouter.swift; sourceTree = "<group>"; };
@@ -319,6 +347,16 @@
 				CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */,
 				CAF246B1225C299300EDAF68 /* OrdersServiceTests.swift */,
 				CA6BB821225DA60300A34A01 /* ProjectionsServiceTests.swift */,
+				BB31861C226588280028101E /* NotificationServiceTests.swift */,
+				BB318617226588280028101E /* NotifyServiceTests.swift */,
+				BB318618226588280028101E /* NPSServiceTests.swift */,
+				BB31861D226588280028101E /* PaymentsServiceTests.swift */,
+				BB318615226588280028101E /* ProductsServiceTests.swift */,
+				BB31861B226588280028101E /* ProfileServiceTest.swift */,
+				BB318619226588280028101E /* PurchaserServiceTests.swift */,
+				BB318616226588280028101E /* VenueServiceTests.swift */,
+				BB31861A226588280028101E /* ValidationServiceTest.swift */,
+				BB3186322266ED4E0028101E /* ReadFile.swift */,
 			);
 			path = OrdermentumSDKTests;
 			sourceTree = "<group>";
@@ -368,6 +406,8 @@
 				CA929F4922555FA600E957AC /* VenueProfile.swift */,
 				CA929F5422555FA700E957AC /* VenueSearch.swift */,
 				CAC39CD22255A99400D3099A /* EmptyDecodable.swift */,
+				BB31862B226597AE0028101E /* CreateProfile.swift */,
+				BB31862D2265A7A00028101E /* CreateMarketPlace.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -397,6 +437,7 @@
 				CAF2468F225B189C00EDAF68 /* PurchaserRouter.swift */,
 				CAF24691225B1A6F00EDAF68 /* ValidationRouter.swift */,
 				CAF24693225B1B2000EDAF68 /* VenueRouter.swift */,
+				BB318629226589BA0028101E /* CreateProfileRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -436,6 +477,7 @@
 				CAF246AB225C24D700EDAF68 /* PurchaserService.swift */,
 				CAF246AD225C26C600EDAF68 /* ValidationService.swift */,
 				CAF246AF225C27B000EDAF68 /* VenueService.swift */,
+				BB3186272265888A0028101E /* CreateProfileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -602,12 +644,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OrdermentumSDKTests/Pods-OrdermentumSDKTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Hippolyte/Hippolyte.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hippolyte.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -638,6 +682,7 @@
 				CAC39CD32255A99400D3099A /* EmptyDecodable.swift in Sources */,
 				CAF24692225B1A6F00EDAF68 /* ValidationRouter.swift in Sources */,
 				CA929F6D22555FA900E957AC /* Venue.swift in Sources */,
+				BB31862C226597AE0028101E /* CreateProfile.swift in Sources */,
 				CAF2469E225B6F1E00EDAF68 /* NotifyService.swift in Sources */,
 				CAC39CC22255639D00D3099A /* StringUtils.swift in Sources */,
 				CA929F97225561A400E957AC /* Client.swift in Sources */,
@@ -667,11 +712,13 @@
 				CA929F6F22555FA900E957AC /* CodingKeys.swift in Sources */,
 				CAF246A2225B705C00EDAF68 /* OrdersService.swift in Sources */,
 				CAF246B0225C27B000EDAF68 /* VenueService.swift in Sources */,
+				BB31862A226589BA0028101E /* CreateProfileRouter.swift in Sources */,
 				CA929F8622555FA900E957AC /* Auth.swift in Sources */,
 				CAF246AE225C26C600EDAF68 /* ValidationService.swift in Sources */,
 				CA2F35282256E5E800D1118C /* FlagsRouter.swift in Sources */,
 				CA929F7822555FA900E957AC /* Address.swift in Sources */,
 				CA929F8B22555FA900E957AC /* Order.swift in Sources */,
+				BB31862E2265A7A00028101E /* CreateMarketPlace.swift in Sources */,
 				CA929F7F22555FA900E957AC /* AccountSettings.swift in Sources */,
 				CA2F35262256DDE700D1118C /* FindSupplierService.swift in Sources */,
 				CA929F8E22555FA900E957AC /* Exports.swift in Sources */,
@@ -688,6 +735,7 @@
 				CA4CF2E5225ADAF6006F18C8 /* MarketplaceRouter.swift in Sources */,
 				CAC39CCB22559AC000D3099A /* AddOnsRouter.swift in Sources */,
 				CAF24694225B1B2000EDAF68 /* VenueRouter.swift in Sources */,
+				BB3186282265888A0028101E /* CreateProfileService.swift in Sources */,
 				CA72972A225D966F00224410 /* BoolUtils.swift in Sources */,
 				CA929F7722555FA900E957AC /* Purchaser.swift in Sources */,
 				CAF246A6225C143D00EDAF68 /* ProductsService.swift in Sources */,
@@ -719,10 +767,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB318625226588280028101E /* NotificationServiceTests.swift in Sources */,
 				CA6BB822225DA60300A34A01 /* ProjectionsServiceTests.swift in Sources */,
+				BB31861F226588280028101E /* VenueServiceTests.swift in Sources */,
 				CA6BB820225D993700A34A01 /* FindSupplierServiceTests.swift in Sources */,
+				BB318626226588280028101E /* PaymentsServiceTests.swift in Sources */,
 				CAF246B2225C299300EDAF68 /* OrdersServiceTests.swift in Sources */,
+				BB318620226588280028101E /* NotifyServiceTests.swift in Sources */,
+				BB318621226588280028101E /* NPSServiceTests.swift in Sources */,
+				BB318623226588280028101E /* ValidationServiceTest.swift in Sources */,
 				CA2F35182255D2BD00D1118C /* AuthServiceTests.swift in Sources */,
+				BB318624226588280028101E /* ProfileServiceTest.swift in Sources */,
+				BB318622226588280028101E /* PurchaserServiceTests.swift in Sources */,
+				BB31861E226588280028101E /* ProductsServiceTests.swift in Sources */,
+				BB3186332266ED4E0028101E /* ReadFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

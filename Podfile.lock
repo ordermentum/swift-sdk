@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.0.0-beta.4)
+  - Hippolyte (0.6.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.3)
+  - Hippolyte
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Hippolyte
 
 SPEC CHECKSUMS:
   Alamofire: 6458d95477bc40adf10129f22c67cfb014162dc8
+  Hippolyte: 6c481f77bf50e7a7c58a313fdb3e424723106609
 
-PODFILE CHECKSUM: 621a9c097ce4a081eddfc54c58f7d1a12bcb3438
+PODFILE CHECKSUM: 32064767c45780d7061c80abf8c12bc0016a1115
 
 COCOAPODS: 1.5.3

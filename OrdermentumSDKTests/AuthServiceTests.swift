@@ -35,8 +35,9 @@ class AuthServiceTests: XCTestCase {
         loginRequest.password = ProcessInfo.processInfo.environment["LOGIN_PASSWORD"] ?? ""
         
         //Call API
-        Client.instance.setProductionURL()
-        Client.instance.setToken(tokenString: "")
+        Client.instance.setTestingURL()
+        //Client.instance.setToken(tokenString: "")
+        
         AuthService().login(requestObject: loginRequest) { (result, loginObject) in
             XCTAssertNotNil(loginObject?.access_token)
             expectation.fulfill()

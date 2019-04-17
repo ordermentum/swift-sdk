@@ -44,7 +44,7 @@ struct Properties: Encodable {
 }
 
 struct MarketplaceSettings {
-    var brand: Brand = Brand()
+    var brand: Brand =  Brand()
 }
 
 extension MarketplaceResponse: Decodable {
