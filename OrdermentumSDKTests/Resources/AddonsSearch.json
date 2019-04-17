@@ -1,0 +1,37 @@
+[{
+    "connectUrl": "test1",
+    "disconnectUrl": "",
+    "entityName": "",
+    "entityType": "",
+    "id": "",
+    "integrationData": {
+        "accountId": "",
+        "expenseAccountCode": "",
+        "lastInvoiceSyncedAt": "",
+        "supplierName": ""
+    },
+    "logo": "",
+    "name": "HttpError",
+    "plan": "",
+    "readUrl": "",
+    "type": "",
+    "updateUrl": ""
+}, {
+    "connectUrl": "test2",
+    "disconnectUrl": "",
+    "entityName": "",
+    "entityType": "",
+    "id": "",
+    "integrationData": {
+        "accountId": "",
+        "expenseAccountCode": "",
+        "lastInvoiceSyncedAt": "",
+        "supplierName": ""
+    },
+    "logo": "",
+    "name": "HttpError",
+    "plan": "",
+    "readUrl": "",
+    "type": "",
+    "updateUrl": ""
+}]

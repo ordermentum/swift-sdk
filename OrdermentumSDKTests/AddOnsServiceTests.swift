@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Hippolyte
 @testable import OrdermentumSDK
 
 class AddOnsServiceTests: XCTestCase {
@@ -17,15 +18,23 @@ class AddOnsServiceTests: XCTestCase {
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+        Hippolyte.shared.stop()
     }
     
     func testSearchAddons() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let entityType:String = ""
+        let entityId:[String] = []
+        if let route = try? AddOnsRouter.searchAddons(entityType, entityId).asURLRequest() {
+            self.startStub(route, method: .GET, stubData: .AddonsSearch )
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.addons.searchAddons(entityType: "", entityId: []) { (result, responseData) in
+        Client.instance.addons.searchAddons(entityType: entityType, entityId: entityId) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
