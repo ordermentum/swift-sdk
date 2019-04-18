@@ -8,7 +8,6 @@
 
 import XCTest
 import Hippolyte
-import Alamofire
 
 @testable import OrdermentumSDK
 
@@ -26,16 +25,20 @@ class NotifyServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
+        //Build Request body and params
         let requestObject: NotifyBody = NotifyBody()
+        requestObject.userId = 
         
-        if let route = try? NotifyRouter.registerDevice(requestObject).asURLRequest() {
-            self.startStub(route, method: .GET, stubData: .AddonsSearch )
-        }
-        
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
+        //Stubbing
+        if let route = try? NotifyRouter.registerDevice(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .AddonsSearch )
+        }
+        
+        //Call API
         Client.instance.notify.registerDevice(requestObject){ (result) in
             assert(result)
             expectation.fulfill()
