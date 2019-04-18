@@ -27,7 +27,6 @@ class NotifyServiceTests: XCTestCase {
         
         //Build Request body and params
         let requestObject: NotifyBody = NotifyBody()
-        requestObject.userId = 
         
         //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
