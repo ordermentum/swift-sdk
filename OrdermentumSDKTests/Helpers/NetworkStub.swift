@@ -30,8 +30,9 @@ extension NetworkStubs {
         }
     }
     
-    func startStub(_ route: URLRequest, method: HTTPMethod, stubData: StubDataFile) {
-        if let url = route.url {
+    func startStub(_ route: URLRequest, stubData: StubDataFile) {
+        if let url = route.url, let methodString = route.httpMethod, let method = HTTPMethod(rawValue: methodString) {
+            
             var stub = StubRequest(method: method, url: url)
             var response = StubResponse()
             
