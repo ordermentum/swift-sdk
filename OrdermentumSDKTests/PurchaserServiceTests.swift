@@ -8,6 +8,8 @@
 
 import Foundation
 import XCTest
+import Hippolyte
+
 @testable import OrdermentumSDK
 
 
@@ -21,64 +23,77 @@ class PurchaserServiceTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
     func testGetPurchasers() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerID:String = ""
+        let supplierID:String = ""
+        let method = self.getRouterMethod(url: PurchaserRouter.getPurchasers(retailerID, supplierID))
+
+        if let route = try? PurchaserRouter.getPurchasers(retailerID, supplierID).asURLRequest() {
+            self.startStub(route, method: HTTPMethod(rawValue: method)!, stubData: .GetPurchasers)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        var requestObject: PurchaserResponse = PurchaserResponse()
-        requestObject.data = []
-        requestObject.links = Links()
-        
-        //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
-        PurchaserService().getPurchasers(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "") { (result, requestObject) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.purchasers.getPurchasers(retailerId: retailerID, supplierId: supplierID) { (result, responseData) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testGetPurchasersForPaymentMethod() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerID:String = ""
+        let supplierID:String = ""
+        let paymentMethodType = ""
+        let method = self.getRouterMethod(url: PurchaserRouter.getPurchasersForPaymentMethod(retailerID, supplierID))
+        
+        if let route = try? PurchaserRouter.getPurchasersForPaymentMethod(retailerID, supplierID).asURLRequest() {
+            
+            self.startStub(route, method: HTTPMethod(rawValue: method)!, stubData: .GetPurchaserForPaymentMethod)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        var requestObject: PurchaserResponse = PurchaserResponse()
-        requestObject.meta = Meta()
-        requestObject.links = Links()
-        requestObject.data = []
-        
-        //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
-        PurchaserService().getPurchasersForPaymentMethod(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", paymentMethodType: ProcessInfo.processInfo.environment["PAYMENT_METHOD"] ?? "") { (result, requestObject) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.purchasers.getPurchasersForPaymentMethod(retailerId: retailerID, paymentMethodType: paymentMethodType) { (result, responseData) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testUpdatePaymentMethod() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let purchaserID:String = "414c664f-ccba-4385-9679-279cac329566"
+        let updatePaymentMethodRequest:UpdatePaymentMethodRequest =  UpdatePaymentMethodRequest()
+
+        let method = self.getRouterMethod(url: PurchaserRouter.updatePaymentMethod(purchaserID, updatePaymentMethodRequest))
+        
+        if let route = try? PurchaserRouter.updatePaymentMethod(purchaserID, updatePaymentMethodRequest).asURLRequest() {
+            self.startStub(route, method: HTTPMethod(rawValue: method)!, bodyJSONString: "{\"paymentMethodId\" : \"e7e54d1a-e01a-49d8-8899-4f8841b2f159\"}")
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        var requestObject: UpdatePaymentMethodRequest = UpdatePaymentMethodRequest()
-        requestObject.defaultPaymentMethodType = ProcessInfo.processInfo.environment["PAYMENT_METHOD"] ?? ""
-        requestObject.paymentMethodId = ProcessInfo.processInfo.environment["PAYMENT_METHOD_ID"] ?? ""
-        
-        //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
-        PurchaserService().updatePaymentMethod(purchaserId: ProcessInfo.processInfo.environment["PURCHASER_ID"] ?? "", requestObject: requestObject) { (result) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.purchasers.updatePaymentMethod(purchaserId: purchaserID, requestObject: updatePaymentMethodRequest) { (result) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
+
     }
     
 }

@@ -1,0 +1,494 @@
+{
+    "id": "414c664f-ccba-4385-9679-279cac329566",
+    "reference": "",
+    "name": "Agave Mexican Cantina",
+    "retailerName": "Agave Mexican Cantina",
+    "retailerAlias": "Agave Mexican Cantina",
+    "retailerLegalName": "Agave Mexican Cantino",
+    "retailerTradingName": "Agave Mexican Cantina",
+    "retailerPhone": "5853953002",
+    "retailerEmail": "unli@margarita.com",
+    "retailerAddress": {
+        "id": "6c4752bc-02a8-4ee9-891c-2c177ae40617",
+        "name": "",
+        "number": "",
+        "street1": "494 Rose Ave.",
+        "street2": "Apartment #8",
+        "suburb": "Pleasanton",
+        "state": "NSW",
+        "postcode": "2000",
+        "country": "",
+        "latitude": null,
+        "longitude": null,
+        "createdAt": "2018-12-04T22:45:18.659Z",
+        "updatedAt": "2019-04-02T01:46:34.507Z",
+        "description": "Go Right Then Left",
+        "type": "delivery"
+    },
+    "billingAddress": {
+        "id": "foo",
+        "number": "",
+        "street1": "",
+        "street2": "",
+        "suburb": "",
+        "state": "",
+        "postcode": "",
+        "country": "",
+        "description": "Unknown",
+        "type": "billing"
+    },
+    "retailerDataAttributes": {
+        "pos": "N/A",
+        "venue": "Other",
+        "banking": "Teachers Mutual Bank Limited",
+        "accounting": "N/A",
+        "venueTypes": "",
+        "updatedById": "28fabcd4-c161-4a2b-a073-74d51e2f9292",
+        "tradingHours": {
+            "fri": {
+                "isOpen": true,
+                "openHour": 6,
+                "closeHour": 14,
+                "openMinute": 0,
+                "closeMinute": 0
+            },
+            "mon": {
+                "isOpen": true,
+                "openHour": 6,
+                "closeHour": 0,
+                "openMinute": 0,
+                "closeMinute": 25
+            },
+            "sat": {
+                "isOpen": true,
+                "openHour": 6,
+                "closeHour": 14,
+                "openMinute": 0,
+                "closeMinute": 0
+            },
+            "sun": {
+                "isOpen": true,
+                "openHour": 6,
+                "closeHour": 14,
+                "openMinute": 0,
+                "closeMinute": 0
+            },
+            "thu": {
+                "isOpen": true,
+                "openHour": 6,
+                "closeHour": 14,
+                "openMinute": 0,
+                "closeMinute": 0
+            },
+            "tue": {
+                "isOpen": true,
+                "openHour": 6,
+                "closeHour": 14,
+                "openMinute": 0,
+                "closeMinute": 0
+            },
+            "wed": {
+                "isOpen": true,
+                "openHour": 6,
+                "closeHour": 14,
+                "openMinute": 0,
+                "closeMinute": 0
+            },
+            "enabled": true
+        }
+    },
+    "retailerAddressLine": "494 Rose Ave., Apartment #8, Pleasanton, NSW, 2000, Go Right Then Left",
+    "billingAddressLine": "Unknown",
+    "retailerId": "5cc8f78c-9696-4d64-aa29-5c592524915f",
+    "retailer": {
+        "id": "5cc8f78c-9696-4d64-aa29-5c592524915f",
+        "name": "Agave Mexican Cantino",
+        "legalName": "Agave Mexican Cantino",
+        "tradingName": "Agave Mexican Cantina",
+        "email": "unli@margarita.com",
+        "phone": "5853953002",
+        "dataAttributes": {
+            "pos": "N/A",
+            "venue": "Other",
+            "banking": "Teachers Mutual Bank Limited",
+            "accounting": "N/A",
+            "venueTypes": "",
+            "updatedById": "28fabcd4-c161-4a2b-a073-74d51e2f9292",
+            "tradingHours": {
+                "fri": {
+                    "isOpen": true,
+                    "openHour": 6,
+                    "closeHour": 14,
+                    "openMinute": 0,
+                    "closeMinute": 0
+                },
+                "mon": {
+                    "isOpen": true,
+                    "openHour": 6,
+                    "closeHour": 0,
+                    "openMinute": 0,
+                    "closeMinute": 25
+                },
+                "sat": {
+                    "isOpen": true,
+                    "openHour": 6,
+                    "closeHour": 14,
+                    "openMinute": 0,
+                    "closeMinute": 0
+                },
+                "sun": {
+                    "isOpen": true,
+                    "openHour": 6,
+                    "closeHour": 14,
+                    "openMinute": 0,
+                    "closeMinute": 0
+                },
+                "thu": {
+                    "isOpen": true,
+                    "openHour": 6,
+                    "closeHour": 14,
+                    "openMinute": 0,
+                    "closeMinute": 0
+                },
+                "tue": {
+                    "isOpen": true,
+                    "openHour": 6,
+                    "closeHour": 14,
+                    "openMinute": 0,
+                    "closeMinute": 0
+                },
+                "wed": {
+                    "isOpen": true,
+                    "openHour": 6,
+                    "closeHour": 14,
+                    "openMinute": 0,
+                    "closeMinute": 0
+                },
+                "enabled": true
+            }
+        },
+        "liquorLicense": "",
+        "abn": "",
+        "paymentMethod": {},
+        "user": {},
+        "address": {
+            "formatted": "494 Rose Ave. Apartment #8 Pleasanton NSW 2000 Australia",
+            "id": "6c4752bc-02a8-4ee9-891c-2c177ae40617",
+            "name": "",
+            "number": "",
+            "type": "delivery",
+            "description": "Go Right Then Left",
+            "street1": "494 Rose Ave.",
+            "street2": "Apartment #8",
+            "suburb": "Pleasanton",
+            "state": "NSW",
+            "postcode": "2000",
+            "country": "",
+            "latitude": null,
+            "longitude": null,
+            "updatedById": null,
+            "userId": null,
+            "addressableType": "",
+            "addressableId": "5cc8f78c-9696-4d64-aa29-5c592524915f",
+            "createdAt": "2018-12-04T22:45:18.659Z",
+            "updatedAt": "2019-04-02T01:46:34.507Z",
+            "deletedAt": null,
+            "created_at": "2018-12-04T22:45:18.659Z",
+            "updated_at": "2019-04-02T01:46:34.507Z",
+            "deleted_at": null
+        },
+        "addressId": "6c4752bc-02a8-4ee9-891c-2c177ae40617",
+        "billingAddress": {
+            "number": "",
+            "type": "billing",
+            "description": "Unknown",
+            "street1": "",
+            "street2": "",
+            "suburb": "",
+            "state": "",
+            "postcode": "",
+            "country": ""
+        },
+        "billingAddressId": "044e2a19-3e11-44fe-b919-fcf401297121",
+        "sameDeliveryAndBillingAddress": false,
+        "settings": {},
+        "createdAt": "2018-12-04T22:45:18.650Z",
+        "updatedAt": "2019-04-09T04:58:56.521Z"
+    },
+    "supplierId": "9b9cf5b6-0d06-436e-83c1-52d25e642e40",
+    "supplier": {
+        "id": "9b9cf5b6-0d06-436e-83c1-52d25e642e40",
+        "address": {},
+        "name": "M.H. Luxe Holdings Pty. Ltd",
+        "abn": "83707648788888",
+        "slug": "mh-luxe-holdings-pty-ltd",
+        "email": "",
+        "tradingName": "Luxe Bakery",
+        "accountSettings": {
+            "invoiceSetting": {
+                "creation": true,
+                "delivery": true
+            },
+            "invoiceFrequency": {
+                "weekly": true,
+                "onPlace": true
+            },
+            "dayStart": "3",
+            "monthStart": "1",
+            "paymentMethod": {
+                "other": true,
+                "creditCard": true,
+                "directDebit": true
+            },
+            "paymentTerms": {
+                "days": true,
+                "endOfWeek": true,
+                "endOfMonth": true
+            },
+            "insights": {
+                "trending": true,
+                "mostOrdered": true
+            },
+            "liquorLicenseRequired": true,
+            "includeOrderUpdatesInReports": null,
+            "randomWeight": true,
+            "orderSchedule": false,
+            "flags": [
+                "order_projections",
+                "min_quantity",
+                "unit_size",
+                "lead_time",
+                "delivery_days",
+                "validate_order"
+            ],
+            "surcharges": {},
+            "weightType": "metric",
+            "orderPrefix": "",
+            "sendInvoice": true,
+            "orderExports": {
+                "ordersCsv": true,
+                "attacheXml": true,
+                "reckonReport": true,
+                "globalBakeXml": true,
+                "ordersPickPdf": true,
+                "ordersInvoicePdf": true,
+                "ordersDeliveryPdf": true,
+                "ordersLineItemsCsv": true,
+                "ordersProductionCsv": true,
+                "ordersDeliverySummaryPdf": true,
+                "ordersDeliveryManifestPdf": true,
+                "ordersLineItemsDetailsCsv": true,
+                "ordersProductionReportPdf": true,
+                "ordersProductionWithPropertiesCsv": true
+            },
+            "supportEmail": "test@google.com",
+            "deliveryDelay": 1,
+            "invoicePrefix": "",
+            "invoiceStatus": "O",
+            "ccFeeProductId": "1162eae7-0281-4f30-985c-91eed10fb3c9",
+            "ddFeeProductId": "1927e978-8d88-416b-abc2-3827ffad50cf",
+            "invoiceExports": {
+                "invoiceSummaryCsv": true,
+                "globalBakeInvoiceXml": true
+            },
+            "placementCheck": false,
+            "productExports": {
+                "pricesCsv": true,
+                "productsCsv": true
+            },
+            "includeWeekends": true,
+            "retailerExports": {
+                "retailersCsv": true,
+                "retailersUsersCsv": true,
+                "retailersWithPropertiesCsv": true
+            },
+            "supportHolidays": true,
+            "invoiceEmailDelay": "0",
+            "enableDeliveryDate": true,
+            "defaultDeliveryDelay": "1",
+            "classicStandingOrders": false,
+            "groupInvoicingEnabled": true,
+            "defaultSalesAccountCode": "4-100"
+        },
+        "brandImages": [
+            {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688091/durogj3qclfsuiwbee63.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_256,h_192,c_pad/v1547688091/durogj3qclfsuiwbee63.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_426,h_320,c_pad/v1547688091/durogj3qclfsuiwbee63.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_640,h_480,c_pad/v1547688091/durogj3qclfsuiwbee63.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_800,h_600,c_pad/v1547688091/durogj3qclfsuiwbee63.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_960,h_720,c_pad/v1547688091/durogj3qclfsuiwbee63.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_1024,h_768,c_pad/v1547688091/durogj3qclfsuiwbee63.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_1920,h_1440,c_pad/v1547688091/durogj3qclfsuiwbee63.jpg"
+            }
+        ],
+        "logo": {
+            "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+            "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+            "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+            "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+            "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+            "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+            "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+            "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+        },
+        "settings": {
+            "brand": {
+                "logo": {
+                    "url": "http://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                    "etag": "64cdac770098d3b1f26432ba6b3416b7",
+                    "tags": [],
+                    "type": "upload",
+                    "bytes": 16513,
+                    "width": 355,
+                    "format": "jpg",
+                    "height": 355,
+                    "version": 1547688019,
+                    "public_id": "vlmvhb5vfq04xq8fgvch",
+                    "signature": "ee72170a81aba7181d7357731b9747456bd48bca",
+                    "created_at": "2019-01-17T01:20:19Z",
+                    "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                    "placeholder": false,
+                    "resource_type": "image",
+                    "original_filename": "c1c3208f6484cbff9a3e006788cc285d"
+                },
+                "images": [
+                    {
+                        "url": "http://ordermentum-res.cloudinary.com/image/upload/v1547688091/durogj3qclfsuiwbee63.jpg",
+                        "etag": "77242b6ee0c6ea0e1fc93e3a932703b0",
+                        "tags": [],
+                        "type": "upload",
+                        "bytes": 14861,
+                        "width": 500,
+                        "format": "jpg",
+                        "height": 500,
+                        "version": 1547688091,
+                        "public_id": "durogj3qclfsuiwbee63",
+                        "signature": "a1894975629fa06374052517aace18b08914855c",
+                        "created_at": "2019-01-17T01:21:31Z",
+                        "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688091/durogj3qclfsuiwbee63.jpg",
+                        "placeholder": false,
+                        "resource_type": "image",
+                        "original_filename": "0ba7bddbc717c653d8eb1ab3450d1535"
+                    }
+                ]
+            },
+            "intercom": false
+        },
+        "properties": {
+            "demoSupplier": ""
+        },
+        "shortName": "LUXEBAKE",
+        "phone": "05478238",
+        "dataAttributes": {
+            "tier": "",
+            "sizeYearly": "",
+            "salesperson": "",
+            "industryType": "",
+            "accountManager": "",
+            "accountPlatform": "",
+            "primaryCategory": "coffee",
+            "secondaryCategories": []
+        },
+        "paymentMethodId": "e7e54d1a-e01a-49d8-8899-4f8841b2f159",
+        "billingStart": null,
+        "billingEnd": null,
+        "paymentMethod": {},
+        "paymentRecurrence": "FREQ=DAILY;BYHOUR=16;BYMINUTE=00",
+        "timezone": "Australia/Sydney",
+        "createdAt": "2014-03-25T09:19:09.000Z",
+        "updatedAt": "2019-04-15T23:27:24.833Z"
+    },
+    "invoiceSetting": "on_placement",
+    "invoiceFrequency": "on_place",
+    "paymentTerms": "Invoice",
+    "paymentDelay": 5,
+    "paymentMethodTypes": {
+        "value": [
+            "card",
+            "direct",
+            "other"
+        ],
+        "display": "Credit / Debit Card, Direct Debit, Other"
+    },
+    "paymentMethodId": "e7e54d1a-e01a-49d8-8899-4f8841b2f159",
+    "defaultPaymentMethodType": {
+        "value": "direct",
+        "display": "Direct Debit"
+    },
+    "paymentMethod": {
+        "id": "e7e54d1a-e01a-49d8-8899-4f8841b2f159",
+        "type": "direct",
+        "bsb": "012345",
+        "account": "11223344",
+        "bankConfigured": true,
+        "name": "Account Name",
+        "firstName": "",
+        "lastName": "",
+        "accountName": "Account Name",
+        "cardConfigured": false,
+        "cardName": "",
+        "cardLast4Digits": "",
+        "createdAt": "Wed Aug 01 2018 12:27:48 GMT+1000 (AEST)",
+        "updatedAt": "Thu Dec 20 2018 12:18:09 GMT+1100 (AEDT)",
+        "maskedNumber": "",
+        "displayName": "N/A",
+        "title": "Direct Debit",
+        "isCard": false,
+        "isDirect": true,
+        "cardType": ""
+    },
+    "paymentSchedule": "immediate",
+    "canCharge": true,
+    "cardOrDirect": true,
+    "freightGroupId": "253a7481-bfed-465c-a437-9e87625674ae",
+    "freightGroup": {
+        "id": "253a7481-bfed-465c-a437-9e87625674ae",
+        "name": "Test",
+        "default": false,
+        "type": "metro",
+        "cost": "10.0000",
+        "valueThreshold": "200.0000",
+        "quantityThreshold": "100.0000",
+        "active": true,
+        "supplierId": "9b9cf5b6-0d06-436e-83c1-52d25e642e40",
+        "userId": "fea972d3-1c74-4a8f-9d63-568aaa3360f3",
+        "createdAt": "2018-10-14T21:30:51.696Z",
+        "updatedAt": "2019-02-08T01:05:39.939Z",
+        "deletedAt": null,
+        "created_at": "2018-10-14T21:30:51.696Z",
+        "updated_at": "2019-02-08T01:05:39.939Z",
+        "deleted_at": null,
+        "supplier_id": "9b9cf5b6-0d06-436e-83c1-52d25e642e40",
+        "user_id": "fea972d3-1c74-4a8f-9d63-568aaa3360f3"
+    },
+    "visibilityGroupId": "65cef7bf-bf36-4a58-a1dd-0e2cc02d7f52",
+    "visibilityGroup": {
+        "id": "65cef7bf-bf36-4a58-a1dd-0e2cc02d7f52",
+        "name": "SEE ALL",
+        "supplierId": "9b9cf5b6-0d06-436e-83c1-52d25e642e40",
+        "userId": "ecd30d51-3049-419c-9986-62a7cbf0617a",
+        "single": false,
+        "default": false,
+        "createdAt": "2017-09-01T05:25:04.388Z",
+        "updatedAt": "2017-09-01T05:25:04.388Z",
+        "deletedAt": null,
+        "created_at": "2017-09-01T05:25:04.388Z",
+        "updated_at": "2017-09-01T05:25:04.388Z",
+        "deleted_at": null,
+        "supplier_id": "9b9cf5b6-0d06-436e-83c1-52d25e642e40",
+        "user_id": "ecd30d51-3049-419c-9986-62a7cbf0617a"
+    },
+    "priceGroupId": null,
+    "priceGroup": null,
+    "stopCredit": false,
+    "minimumOrderValue": 300,
+    "disabled": false,
+    "deliveryInstructions": "Please wear red and a jumper.",
+    "notes": null,
+    "externalCustomerId": null,
+    "properties": {},
+    "createdAt": "2018-12-04T22:45:04.311Z",
+    "updatedAt": "2019-04-21T03:27:09.876Z",
+    "orderedAt": "2019-04-18T05:46:59.106Z"
+}

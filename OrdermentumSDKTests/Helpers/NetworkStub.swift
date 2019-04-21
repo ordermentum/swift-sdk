@@ -12,6 +12,12 @@ import Hippolyte
 public enum StubDataFile: String {
     case AddonsSearch
     case AddonsSearchError = "jsonError"
+    case GetPurchasers
+    case GetPurchasersError = "GetPurchasers_jsonError"
+    case GetPurchaserForPaymentMethod
+    case GetPurchaserForPaymentMethodError = "GetPurchaserForPaymentMethod_jsonError"
+    case UpdatePaymentMethod
+    case UpdatePaymentMethodError = "Update_jsonError"
 }
 
 protocol NetworkStubs {
@@ -23,6 +29,8 @@ extension NetworkStubs {
             var stub = StubRequest(method: method, url: url)
             var response = StubResponse()
             let body = bodyJSONString.data(using: .utf8)!
+            print(body)
+            print(bodyJSONString)
             response.body = body
             stub.response = response
             Hippolyte.shared.add(stubbedRequest: stub)
@@ -50,4 +58,6 @@ extension NetworkStubs {
     }
 }
 
+
 extension AddOnsServiceTests : NetworkStubs {}
+extension PurchaserServiceTests : NetworkStubs {}

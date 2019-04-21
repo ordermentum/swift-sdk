@@ -34,6 +34,13 @@
 		BB31862C226597AE0028101E /* CreateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31862B226597AE0028101E /* CreateProfile.swift */; };
 		BB31862E2265A7A00028101E /* CreateMarketPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31862D2265A7A00028101E /* CreateMarketPlace.swift */; };
 		BB3186332266ED4E0028101E /* ReadFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3186322266ED4E0028101E /* ReadFile.swift */; };
+		BB659F8A22689D43009C3D46 /* RouterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB659F8922689D43009C3D46 /* RouterMethod.swift */; };
+		BB659F8F226C056A009C3D46 /* GetPurchaserForPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F8E226C056A009C3D46 /* GetPurchaserForPaymentMethod.json */; };
+		BB659F90226C056A009C3D46 /* GetPurchaserForPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F8E226C056A009C3D46 /* GetPurchaserForPaymentMethod.json */; };
+		BB659F92226C064B009C3D46 /* GetPurchasers.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F91226C064B009C3D46 /* GetPurchasers.json */; };
+		BB659F93226C064B009C3D46 /* GetPurchasers.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F91226C064B009C3D46 /* GetPurchasers.json */; };
+		BB659F95226C1BB5009C3D46 /* UpdatePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F94226C1BB4009C3D46 /* UpdatePaymentMethod.json */; };
+		BB659F96226C1BB5009C3D46 /* UpdatePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F94226C1BB4009C3D46 /* UpdatePaymentMethod.json */; };
 		CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */; };
 		CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */; };
 		CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */; };
@@ -177,6 +184,10 @@
 		BB31862B226597AE0028101E /* CreateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfile.swift; sourceTree = "<group>"; };
 		BB31862D2265A7A00028101E /* CreateMarketPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMarketPlace.swift; sourceTree = "<group>"; };
 		BB3186322266ED4E0028101E /* ReadFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFile.swift; sourceTree = "<group>"; };
+		BB659F8922689D43009C3D46 /* RouterMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMethod.swift; sourceTree = "<group>"; };
+		BB659F8E226C056A009C3D46 /* GetPurchaserForPaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetPurchaserForPaymentMethod.json; sourceTree = "<group>"; };
+		BB659F91226C064B009C3D46 /* GetPurchasers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetPurchasers.json; sourceTree = "<group>"; };
+		BB659F94226C1BB4009C3D46 /* UpdatePaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UpdatePaymentMethod.json; sourceTree = "<group>"; };
 		CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesService.swift; sourceTree = "<group>"; };
 		CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosurePeriodsRouter.swift; sourceTree = "<group>"; };
 		CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesRouter.swift; sourceTree = "<group>"; };
@@ -305,6 +316,9 @@
 		26AA6E4B2266D54100578DED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB659F94226C1BB4009C3D46 /* UpdatePaymentMethod.json */,
+				BB659F91226C064B009C3D46 /* GetPurchasers.json */,
+				BB659F8E226C056A009C3D46 /* GetPurchaserForPaymentMethod.json */,
 				26AA6E4D2266E2D000578DED /* AddonsSearch.json */,
 			);
 			path = Resources;
@@ -314,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				26AA6E492266B44D00578DED /* NetworkStub.swift */,
+				BB659F8922689D43009C3D46 /* RouterMethod.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -626,6 +641,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB659F92226C064B009C3D46 /* GetPurchasers.json in Resources */,
+				BB659F8F226C056A009C3D46 /* GetPurchaserForPaymentMethod.json in Resources */,
+				BB659F95226C1BB5009C3D46 /* UpdatePaymentMethod.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,7 +651,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB659F93226C064B009C3D46 /* GetPurchasers.json in Resources */,
 				26AA6E4E2266E2D000578DED /* AddonsSearch.json in Resources */,
+				BB659F96226C1BB5009C3D46 /* UpdatePaymentMethod.json in Resources */,
+				BB659F90226C056A009C3D46 /* GetPurchaserForPaymentMethod.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,7 +716,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-OrdermentumSDKTests/Pods-OrdermentumSDKTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Hippolyte/Hippolyte.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Hippolyte/Hippolyte.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -703,7 +723,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hippolyte.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hippolyte.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -835,6 +854,7 @@
 				BB318620226588280028101E /* NotifyServiceTests.swift in Sources */,
 				BB318621226588280028101E /* NPSServiceTests.swift in Sources */,
 				BB318623226588280028101E /* ValidationServiceTest.swift in Sources */,
+				BB659F8A22689D43009C3D46 /* RouterMethod.swift in Sources */,
 				CA2F35182255D2BD00D1118C /* AuthServiceTests.swift in Sources */,
 				BB318624226588280028101E /* ProfileServiceTest.swift in Sources */,
 				BB318622226588280028101E /* PurchaserServiceTests.swift in Sources */,
