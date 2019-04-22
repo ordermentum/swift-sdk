@@ -34,9 +34,9 @@ class FindSupplierServiceTests: XCTestCase {
         requestObject.recommended = true
         
         //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        FindSupplierService().sendSupplierEnquiry(requestObject) { (result) in
+        Client.instance.setTestingURL()
+        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        FindSupplierService().sendSupplierEnquiry(_ requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }

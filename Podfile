@@ -10,9 +10,6 @@ target 'OrdermentumSDK' do
   target 'OrdermentumSDKTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Hippolyte', '~> 0.6.0'
   end
-
-  pod 'Hippolyte', '~> 0.6.0'
 
 end
