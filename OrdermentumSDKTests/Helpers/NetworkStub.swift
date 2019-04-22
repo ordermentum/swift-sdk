@@ -12,8 +12,13 @@ import Hippolyte
 public enum StubDataFile: String {
     case AddonsSearch
     case AddonsSearchError = "jsonError"
-    case OrderSubmit
-    case StandingOrderSubmit
+    
+    //Orders
+    case submitOrder
+    case submitStandingOrder
+    case getDeliveryDates
+    case getOrders
+    case removeFavourite
 }
 
 protocol NetworkStubs {

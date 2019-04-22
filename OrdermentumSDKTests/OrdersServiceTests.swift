@@ -49,7 +49,7 @@ class OrderServiceTests: XCTestCase {
         
         //Stubbing
         if let route = try? OrdersRouter.submitOrder(requestObject).asURLRequest() {
-            self.startStub(route, stubData: .OrderSubmit )
+            self.startStub(route, stubData: .submitOrder )
         }
         
         //Call API
@@ -74,7 +74,7 @@ class OrderServiceTests: XCTestCase {
         var requestObject:CreateStandingOrder = CreateStandingOrder()
         requestObject.lineItems = lineItems
         requestObject.origin = ProcessInfo.processInfo.environment["CREATE_STANDING_ORDER_ORIGIN"] ?? ""
-        requestObject.retailerId = ProcessInfo.processInfo.environment["CREAT_STANDINGE_ORDER_RETAILER_ID"] ?? ""
+        requestObject.retailerId = ProcessInfo.processInfo.environment["CREATE_STANDING_ORDER_RETAILER_ID"] ?? ""
         requestObject.supplierId = ProcessInfo.processInfo.environment["CREATE_STANDING_ORDER_SUPPLIER_ID"] ?? ""
         requestObject.type = ProcessInfo.processInfo.environment["CREATE_STANDING_ORDER_TYPE"] ?? ""
         
@@ -84,7 +84,7 @@ class OrderServiceTests: XCTestCase {
         
         //Stubbing
         if let route = try? OrdersRouter.submitStandingOrder(requestObject).asURLRequest() {
-            self.startStub(route, stubData: .OrderSubmit )
+            self.startStub(route, stubData: .submitStandingOrder )
         }
         
         //Call API
