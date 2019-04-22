@@ -12,6 +12,8 @@ import Hippolyte
 public enum StubDataFile: String {
     case AddonsSearch
     case AddonsSearchError = "jsonError"
+    case GetNPS
+    case SendFeedback
 }
 
 protocol NetworkStubs {
@@ -53,3 +55,4 @@ extension NetworkStubs {
 
 extension AddOnsServiceTests : NetworkStubs {}
 extension NotifyServiceTests : NetworkStubs {}
+extension NPSServiceTests : NetworkStubs {}
