@@ -29,11 +29,37 @@ class NotificationServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
 
-        //Call API
+        //Build request body and params
+        let userId = ProcessInfo.processInfo.environment["USER_ID"] ?? ""
+        let supplierId = ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? ""
+        var updateObject:[String: Bool] = [:]
+        if let pushNotifications = ProcessInfo.processInfo.environment["PUSH_NOTIFICATIONS"] {
+            updateObject["pushNotifications"] = pushNotifications.toBool()
+        }
+        if let enableSMS = ProcessInfo.processInfo.environment["ENABLE_SMS"] {
+            updateObject["enableSMS"] = enableSMS.toBool()
+        }
+        if let enableEmail = ProcessInfo.processInfo.environment["ENABLE_EMAIL"] {
+            updateObject["enableEmail"] = enableEmail.toBool()
+        }
+        if let sendInvoice = ProcessInfo.processInfo.environment["SEND_INVOICE"] {
+            updateObject["sendInvoice"] = sendInvoice.toBool()
+        }
+        if let overdueOrders = ProcessInfo.processInfo.environment["OVERDUE_ORDERS"] {
+            updateObject["overdueOrders"] = overdueOrders.toBool()
+        }
+        
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        NotificationsService().updateNotificationSetting(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", updateObject: ["" : true]) { (result) in
+        //Stubbing
+        if let route = try? NotificationsRouter.updateNotificationSetting(userId, supplierId, updateObject).asURLRequest() {
+            self.startStub(route, stubData: .NotificationSettingsUpdate )
+        }
+        
+        //Call API
+        Client.instance.notifications.updateNotificationSetting(userId: userId, supplierId: supplierId, updateObject: updateObject) { (result) in
                 assert(result)
                 expectation.fulfill()
         }
