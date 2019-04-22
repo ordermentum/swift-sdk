@@ -13,6 +13,7 @@ public enum StubDataFile: String {
     case AddonsSearch
     case AddonsSearchError = "jsonError"
     case OrderSubmit
+    case StandingOrderSubmit
 }
 
 protocol NetworkStubs {

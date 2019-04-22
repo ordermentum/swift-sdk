@@ -25,14 +25,9 @@ class OrderServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Build lineItems array for CreateOrder object
-        var lineItems: [CreateOrderLineItem] = []
+        
         let lineItemsJSONString = ProcessInfo.processInfo.environment["CREATE_ORDER_LINE_ITEMS"] ?? ""
-        if !lineItemsJSONString.isEmpty {
-            let lineItemsJSONData = lineItemsJSONString.data(using: .utf8) ?? Data()
-            if let json = try? JSONSerialization.jsonObject(with: lineItemsJSONData), let array = json as? [CreateOrderLineItem] {
-                lineItems = array
-            }
-        }
+        let lineItems: [CreateOrderLineItem] = parseLineItems(from: lineItemsJSONString)
 
         //Build request body and params
         var requestObject:CreateOrder = CreateOrder()
@@ -59,6 +54,41 @@ class OrderServiceTests: XCTestCase {
         
         //Call API
         Client.instance.orders.submitOrder(requestObject) { (result, responseData) in
+            assert(result)
+            expectation.fulfill()
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testSubmitStandingOrder() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Build lineItems array for CreateOrder object
+        let lineItemsJSONString = ProcessInfo.processInfo.environment["CREATE_STANDING_ORDER_LINE_ITEMS"] ?? ""
+        let lineItems: [CreateOrderLineItem] = parseLineItems(from: lineItemsJSONString)
+        
+        //Build request body and params
+        var requestObject:CreateStandingOrder = CreateStandingOrder()
+        requestObject.lineItems = lineItems
+        requestObject.origin = ProcessInfo.processInfo.environment["CREATE_STANDING_ORDER_ORIGIN"] ?? ""
+        requestObject.retailerId = ProcessInfo.processInfo.environment["CREAT_STANDINGE_ORDER_RETAILER_ID"] ?? ""
+        requestObject.supplierId = ProcessInfo.processInfo.environment["CREATE_STANDING_ORDER_SUPPLIER_ID"] ?? ""
+        requestObject.type = ProcessInfo.processInfo.environment["CREATE_STANDING_ORDER_TYPE"] ?? ""
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? OrdersRouter.submitStandingOrder(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .OrderSubmit )
+        }
+        
+        //Call API
+        Client.instance.orders.submitStandingOrder(requestObject) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -97,5 +127,19 @@ class OrderServiceTests: XCTestCase {
 
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
+    }
+}
+
+extension OrderServiceTests {
+    func parseLineItems(from jsonString:String) -> [CreateOrderLineItem] {
+        var result: [CreateOrderLineItem] = []
+        if !jsonString.isEmpty {
+            let jsonData = jsonString.data(using: .utf8) ?? Data()
+            if let json = try? JSONSerialization.jsonObject(with: jsonData), let array = json as? [CreateOrderLineItem] {
+                result = array
+            }
+        }
+        
+        return result
     }
 }
