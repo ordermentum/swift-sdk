@@ -15,9 +15,20 @@ public enum StubDataFile: String {
     case GetPurchasers
     case GetPurchasersError = "GetPurchasers_jsonError"
     case GetPurchaserForPaymentMethod
-    case GetPurchaserForPaymentMethodError = "GetPurchaserForPaymentMethod_jsonError"
     case UpdatePaymentMethod
-    case UpdatePaymentMethodError = "Update_jsonError"
+    case GetProfile
+    case UpdateProfile
+    case GetMarketPlaces
+    case GetProductCategories
+    case GetProduct
+    case GetMostOrderedProducts
+    case GetTrendingProducts
+    case GetRecommendedProducts
+    case SearchProducts
+    case GetPaymentMethods
+    case GetSinglePaymentMethods
+    case CreateCardPaymentMethod
+    case DeletePaymentMethod
 }
 
 protocol NetworkStubs {
@@ -61,3 +72,7 @@ extension NetworkStubs {
 
 extension AddOnsServiceTests : NetworkStubs {}
 extension PurchaserServiceTests : NetworkStubs {}
+extension ProfileServiceTest : NetworkStubs {}
+extension MarketplaceServiceTests : NetworkStubs {}
+extension ProductsServiceTests : NetworkStubs {}
+extension PaymentsServiceTests : NetworkStubs {}

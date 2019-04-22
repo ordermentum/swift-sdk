@@ -21,4 +21,7 @@ extension GetMethod {
 
 extension AddOnsServiceTests : GetMethod {}
 extension PurchaserServiceTests : GetMethod {}
-
+extension ProfileServiceTest : GetMethod {}
+extension MarketplaceServiceTests : GetMethod {}
+extension ProductsServiceTests : GetMethod {}
+extension PaymentsServiceTests : GetMethod {}

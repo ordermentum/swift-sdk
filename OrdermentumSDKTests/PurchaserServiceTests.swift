@@ -76,12 +76,14 @@ class PurchaserServiceTests: XCTestCase {
     func testUpdatePaymentMethod() {
         Client.instance.baseURL = ClientURL.rootTestingURL
         let purchaserID:String = "414c664f-ccba-4385-9679-279cac329566"
-        let updatePaymentMethodRequest:UpdatePaymentMethodRequest =  UpdatePaymentMethodRequest()
-
+        var updatePaymentMethodRequest:UpdatePaymentMethodRequest =  UpdatePaymentMethodRequest()
+        updatePaymentMethodRequest.paymentMethodId = "e7e54d1a-e01a-49d8-8899-4f8841b2f159"
+        updatePaymentMethodRequest.defaultPaymentMethodType = "card"
+        
         let method = self.getRouterMethod(url: PurchaserRouter.updatePaymentMethod(purchaserID, updatePaymentMethodRequest))
         
         if let route = try? PurchaserRouter.updatePaymentMethod(purchaserID, updatePaymentMethodRequest).asURLRequest() {
-            self.startStub(route, method: HTTPMethod(rawValue: method)!, bodyJSONString: "{\"paymentMethodId\" : \"e7e54d1a-e01a-49d8-8899-4f8841b2f159\"}")
+            self.startStub(route, method: HTTPMethod(rawValue: method)!, stubData: .UpdatePaymentMethod)
         }
         
         //Build Expectation
@@ -93,6 +95,9 @@ class PurchaserServiceTests: XCTestCase {
                 expectation.fulfill()
             }
         }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
 
     }
     
