@@ -40,8 +40,6 @@ extension NetworkStubs {
             var stub = StubRequest(method: method, url: url)
             var response = StubResponse()
             let body = bodyJSONString.data(using: .utf8)!
-            print(body)
-            print(bodyJSONString)
             response.body = body
             stub.response = response
             Hippolyte.shared.add(stubbedRequest: stub)

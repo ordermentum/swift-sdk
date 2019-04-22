@@ -12,6 +12,7 @@ import Alamofire
 protocol GetMethod {
 }
 
+//Get the method from the route, returns String to Hippolyte HTTPMethod
 extension GetMethod {
     func getRouterMethod(url: URLRequestConvertible) -> String {
         let method = url.urlRequest?.httpMethod ?? ""
