@@ -1,16 +1,15 @@
 //
-//  OrdersServiceTests.swift
-//  ordermentum-swift-sdkTests
+//  ExperimentsServiceTests.swift
+//  OrdermentumSDKTests
 //
-//  Created by Brandon Stillitano on 9/4/19.
+//  Created by Mark Kenneth Bayona on 15/04/2019.
 //  Copyright © 2019 Ordermentum. All rights reserved.
 //
 
-import Foundation
 import XCTest
 @testable import OrdermentumSDK
 
-class OrderServiceTests: XCTestCase {
+class ExperimentsServiceTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -20,35 +19,39 @@ class OrderServiceTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testGetDeliveryDates() {
+    func testGetExperiments() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
-
+        
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        OrdersService().getDeliveryDates(retailerId: "", supplierId: "") { (result, responseData) in
+        Client.instance.experiments.getExperiments(slot: "", source: "", version: "", retailerId: "", isRetailer: false, userId: "", supplierIds: []) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
-
+        
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
-
-    func testGetOrders() {
+    
+    func testDismissExperiment() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
-
+        
+        //Build ExperimentsDismissRequest Request Object
+        var requestObject: ExperimentsDismissRequest = ExperimentsDismissRequest()
+        requestObject.userId = ProcessInfo.processInfo.environment["EPERIMENT_DISMISS_USER_ID"] ?? ""
+        requestObject.experimentId = ProcessInfo.processInfo.environment["EPERIMENT_DISMISS_ID"] ?? ""
+        
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        OrdersService().getOrders(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", sortBy: "-1") { (result, responseData) in
-            assert(responseData?.data != nil)
+        Client.instance.experiments.dismissExperiment(requestObject) { (result) in
+            assert(result)
             expectation.fulfill()
         }
-
+        
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
+
 }
