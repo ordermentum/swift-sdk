@@ -101,10 +101,21 @@ class OrderServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
 
-        //Call API
+        //Build request body and params
+        let retailerId = ProcessInfo.processInfo.environment["RETAILER_ID"] ?? ""
+        let supplierId = ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? ""
+        
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        OrdersService().getDeliveryDates(retailerId: "", supplierId: "") { (result, responseData) in
+        
+        //Stubbing
+        if let route = try? OrdersRouter.getDeliveryDates(retailerId, supplierId).asURLRequest() {
+            self.startStub(route, stubData: .getDeliveryDates )
+        }
+        
+        //Call API
+        Client.instance.orders.getDeliveryDates(retailerId: retailerId, supplierId: supplierId) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -117,14 +128,52 @@ class OrderServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
 
-        //Call API
+        //Build request body and params
+        let retailerId = ProcessInfo.processInfo.environment["RETAILER_ID"] ?? ""
+        let supplierId = ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? ""
+        let sortBy = ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "-1"
+        
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        OrdersService().getOrders(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", sortBy: "-1") { (result, responseData) in
+        
+        //Stubbing
+        if let route = try? OrdersRouter.getOrders(retailerId, supplierId, sortBy).asURLRequest() {
+            self.startStub(route, stubData: .getOrders )
+        }
+        
+        //Call API
+        OrdersService().getOrders(retailerId: retailerId, supplierId: supplierId, sortBy: sortBy) { (result, responseData) in
             assert(responseData?.data != nil)
             expectation.fulfill()
         }
 
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testRemoveFavourite() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Build request body and params
+        let orderId = ProcessInfo.processInfo.environment["ORDER_ID"] ?? ""
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? OrdersRouter.removeFavourite(orderId).asURLRequest() {
+            self.startStub(route, stubData: .removeFavourite )
+        }
+        
+        //Call API
+        Client.instance.orders.removeFavourite(orderId: orderId) { (result) in
+            assert(result)
+            expectation.fulfill()
+        }
+        
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
