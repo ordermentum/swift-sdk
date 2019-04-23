@@ -29,6 +29,7 @@ class MarketplaceServiceTests: XCTestCase {
         let pageSize:Int = self.getEnvironmentIntVar("PAGE_SIZE") ?? 0
         let pageNo:Int = self.getEnvironmentIntVar("PAGE_NO") ?? 0
         
+        //Start Stub
         if let route = try? MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo).asURLRequest() {
             let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, method: method, stubData: .GetMarketPlaces)
@@ -43,7 +44,7 @@ class MarketplaceServiceTests: XCTestCase {
                 expectation.fulfill()
             }
             else {
-               XCTFail("Expected JSON Response to succeed, but failed.")
+               XCTFail("Expected JSON Response to succeed, but failed")
             }
         }
         
