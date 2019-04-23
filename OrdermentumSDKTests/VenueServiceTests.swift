@@ -35,8 +35,8 @@ class VenueServiceTests: XCTestCase {
         requestObject.meta = Meta()
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//        Client.instance.setTestingURL()
+//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
         
         VenueService().getVenues(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject) in
             assert(result)
@@ -54,9 +54,9 @@ class VenueServiceTests: XCTestCase {
         requestObject.meta = Meta()
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
+//        Client.instance.setTestingURL()
+//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//
         VenueService().updateVenueProfile(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject) in
             assert(result)
             expectation.fulfill()
@@ -71,9 +71,9 @@ class VenueServiceTests: XCTestCase {
         requestObject.profilePercent = 1
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
+//        Client.instance.setTestingURL()
+//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//
         VenueService().getProfileCompletion(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, requestObject) in
             assert(result)
             expectation.fulfill()
@@ -115,13 +115,13 @@ class VenueServiceTests: XCTestCase {
         responseData.updatedAt = ProcessInfo.processInfo.environment["UPDATED_AT"] ?? ""
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
-        VenueService().sendVenueInvite(requestObject: requestObject) { (result, responseData) in
-            assert(result)
-            expectation.fulfill()
-        }
+//        Client.instance.setTestingURL()
+//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//
+//        VenueService().sendVenueInvite(requestObject: requestObject) { (result, responseData) in
+//            assert(result)
+//            expectation.fulfill()
+//        }
     }
 
     func testGetUsers() {
@@ -134,9 +134,9 @@ class VenueServiceTests: XCTestCase {
         responseData.meta = Meta()
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
+//        Client.instance.setTestingURL()
+//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//
         VenueService().getUsers(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, responseData) in
             assert(result)
             expectation.fulfill()
@@ -152,9 +152,9 @@ class VenueServiceTests: XCTestCase {
         responseObject.perms = []
 
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
+//        Client.instance.setTestingURL()
+//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//
         VenueService().removeUser(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: responseObject) { (result) in
             assert(result)
             expectation.fulfill()

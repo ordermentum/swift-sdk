@@ -25,7 +25,7 @@ public struct Marketplace {
     public var accountSettings: AccountSettings = AccountSettings()
     public var brandImages: [Image] = []
     public var logo: Image = Image()
-    //public var settings: MarketplaceSettings = MarketplaceSettings()
+    public var settings: MarketplaceSettings = MarketplaceSettings()
     public var properties: Properties = Properties()
     public var shortName: String = ""
     public var phone: String = ""
@@ -69,7 +69,7 @@ extension Marketplace: Decodable {
         brandImages = try container.decodeIfPresent([Image].self, forKey: .brandImages) ?? []
         logo = try container.decodeIfPresent(Image.self, forKey: .logo) ?? Image()
         settings = try container.decodeIfPresent(MarketplaceSettings.self, forKey: .settings) ?? MarketplaceSettings()
-//        properties = try container.decodeIfPresent(Properties.self, forKey: .properties) ?? Properties()
+        properties = try container.decodeIfPresent(Properties.self, forKey: .properties) ?? Properties()
         shortName = try container.decodeIfPresent(String.self, forKey: .shortName) ?? ""
         phone = try container.decodeIfPresent(String.self, forKey: .phone) ?? ""
         activeRetailerIds = try container.decodeIfPresent([String].self, forKey: .activeRetailerIds) ?? []
@@ -82,6 +82,18 @@ extension Marketplace: Decodable {
         updatedAt = try container.decodeIfPresent(String.self, forKey: .restart) ?? ""
     }
 }
+
+
+public struct Properties: Encodable {
+    public init() {}
+    
+    public var demoSupplier: String = ""
+}
+
+public struct MarketplaceSettings {
+    public var brand: Brand = Brand()
+}
+
 
 extension Properties: Decodable {
     public init(from decoder: Decoder) throws {

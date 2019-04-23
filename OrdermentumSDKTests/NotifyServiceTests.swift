@@ -32,10 +32,10 @@ class NotifyServiceTests: XCTestCase {
         let requestObject: NotifyBody = NotifyBody()
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+//        Client.instance.setTestingURL()
+//        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
         
-        NotifyService().registerDevice(requestObject: requestObject){ (result) in
+        NotifyService().registerDevice(requestObject){ (result) in
             assert(result)
             expectation.fulfill()
         }
