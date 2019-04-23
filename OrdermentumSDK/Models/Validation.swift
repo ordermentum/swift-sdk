@@ -28,6 +28,8 @@ public struct ValidationRequestBodyLineItem: Codable {
 
 /** Response **/
 public struct Validation {
+    public init() {}
+    
     public var cart: ValidationCart = ValidationCart()
     public var display: ValidationDisplay = ValidationDisplay()
     public var lineItems: [ValidationLineItem] = []
@@ -48,6 +50,8 @@ public struct Validation {
 }
 
 public struct ValidationCart {
+    public init() {}
+    
     public var errors: [ValidationError] = []
 }
 

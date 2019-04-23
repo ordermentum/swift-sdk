@@ -12,6 +12,23 @@ import Hippolyte
 public enum StubDataFile: String {
     case AddonsSearch
     case AddonsSearchError = "jsonError"
+    case GetPurchasers
+    case GetPurchasersError = "GetPurchasers_jsonError"
+    case GetPurchaserForPaymentMethod
+    case UpdatePaymentMethod
+    case GetProfile
+    case UpdateProfile
+    case GetMarketPlaces
+    case GetProductCategories
+    case GetProduct
+    case GetMostOrderedProducts
+    case GetTrendingProducts
+    case GetRecommendedProducts
+    case SearchProducts
+    case GetPaymentMethods
+    case GetSinglePaymentMethods
+    case CreateCardPaymentMethod
+    case DeletePaymentMethod
     case GetNPS
     case SendFeedback
 }
@@ -53,6 +70,12 @@ extension NetworkStubs {
     }
 }
 
+
 extension AddOnsServiceTests : NetworkStubs {}
+extension PurchaserServiceTests : NetworkStubs {}
+extension ProfileServiceTest : NetworkStubs {}
+extension MarketplaceServiceTests : NetworkStubs {}
+extension ProductsServiceTests : NetworkStubs {}
+extension PaymentsServiceTests : NetworkStubs {}
 extension NotifyServiceTests : NetworkStubs {}
 extension NPSServiceTests : NetworkStubs {}

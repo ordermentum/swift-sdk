@@ -13,4 +13,6 @@ target 'OrdermentumSDK' do
     pod 'Hippolyte', '~> 0.6.0'
   end
 
+  pod 'Hippolyte', '~> 0.6.0'
+
 end

@@ -1,0 +1,136 @@
+{
+    "id": "28fabcd4-c161-4a2b-a073-74d51e2f9292",
+    "firstName": "Super",
+    "lastName": "Mario",
+    "fullName": "Super Mario",
+    "name": {
+        "first": "Super",
+        "last": "Mario"
+    },
+    "dob": null,
+    "email": "supermario@agave.com",
+    "profileImage": "//www.gravatar.com/avatar/c5b74d7bcdcdfc8962ade536a596567f",
+    "phone": "6666666669",
+    "isAdmin": false,
+    "isSuperAdmin": false,
+    "notifications": {
+        "7a617a6a-0612-498a-b133-401ba58a9c09": {
+            "alerts": false,
+            "enableSMS": true,
+            "remittance": false,
+            "enableEmail": true,
+            "sendInvoice": true,
+            "placedOrders": false,
+            "overdueOrders": true,
+            "pushNotifications": false
+        },
+        "93552a1a-535f-4e1f-8ae2-6cbc444927de": {
+            "alerts": false,
+            "enableSMS": true,
+            "remittance": false,
+            "enableEmail": true,
+            "sendInvoice": true,
+            "placedOrders": false,
+            "overdueOrders": true,
+            "pushNotifications": true
+        },
+        "9b9cf5b6-0d06-436e-83c1-52d25e642e40": {
+            "alerts": true,
+            "enableSMS": true,
+            "remittance": true,
+            "enableEmail": true,
+            "sendInvoice": true,
+            "placedOrders": false,
+            "overdueOrders": true,
+            "pushNotifications": true
+        }
+    },
+    "entityNotifications": {
+        "7a617a6a-0612-498a-b133-401ba58a9c09": {
+            "alerts": false,
+            "enableSMS": true,
+            "remittance": false,
+            "enableEmail": true,
+            "sendInvoice": true,
+            "placedOrders": false,
+            "overdueOrders": true,
+            "pushNotifications": false
+        },
+        "93552a1a-535f-4e1f-8ae2-6cbc444927de": {
+            "alerts": false,
+            "enableSMS": true,
+            "remittance": false,
+            "enableEmail": true,
+            "sendInvoice": true,
+            "placedOrders": false,
+            "overdueOrders": true,
+            "pushNotifications": true
+        },
+        "9b9cf5b6-0d06-436e-83c1-52d25e642e40": {
+            "alerts": true,
+            "enableSMS": true,
+            "remittance": true,
+            "enableEmail": true,
+            "sendInvoice": true,
+            "placedOrders": false,
+            "overdueOrders": true,
+            "pushNotifications": true
+        }
+    },
+    "defaultNotifications": {
+        "overdueOrders": true,
+        "pushNotifications": false,
+        "remittance": true,
+        "placedOrders": false,
+        "alerts": true
+    },
+    "parentNotifications": {},
+    "settings": {
+        "accessNewRetailerUi": true
+    },
+    "createdAt": "2018-12-04T22:43:55.342Z",
+    "updatedAt": "2019-04-03T00:56:01.604Z",
+    "verifiedAt": "2019-03-08T00:43:15.564Z",
+    "adminPerms": {
+        "permissions": {
+            "5cc8f78c-9696-4d64-aa29-5c592524915f": [
+                "access",
+                "billing",
+                "invite",
+                "see-prices",
+                "set-permissions",
+                "update"
+            ],
+            "a5a1d528-38e1-445a-b3ad-9efdf8f4a113": [
+                "access",
+                "billing",
+                "invite",
+                "see-prices",
+                "set-permissions",
+                "update"
+            ],
+            "customers": [
+                "create"
+            ]
+        },
+        "isAdmin": false,
+        "isSuperAdmin": false
+    },
+    "userId": "28fabcd4-c161-4a2b-a073-74d51e2f9292",
+    "permissions": [],
+    "roles": {
+        "superAdmin": false,
+        "admin": false,
+        "suppliers": [],
+        "retailers": [
+            {
+                "id": "5cc8f78c-9696-4d64-aa29-5c592524915f",
+                "role": "owner"
+            },
+            {
+                "id": "a5a1d528-38e1-445a-b3ad-9efdf8f4a113",
+                "role": "owner"
+            }
+        ]
+    }
+}
