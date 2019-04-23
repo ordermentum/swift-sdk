@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+import Hippolyte
 @testable import OrdermentumSDK
 
 
@@ -20,51 +21,60 @@ class PaymentsServiceTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
     
     func testGetPaymentMethods() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerId: String = ""
+        
+        if let route = try? PaymentsRouter.getPaymentMethods(retailerId).asURLRequest() {
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .GetPaymentMethods)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
-        PaymentsService().getPaymentMethods(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, responseData) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.payments.getPaymentMethods(retailerId: retailerId) { (result, [PaymentMethod]?) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
         
-        //Wait until the expectation is fullfiled, with a timeout of 10 seconds.
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
     
     func testGetSinglePaymentMethod() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerId: String = ""
+        let paymentMethodId: String = ""
+
+        if let route = try? PaymentsRouter.getSinglePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .GetSinglePaymentMethods)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
-        PaymentsService().getSinglePaymentMethod(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", paymentMethodId: ProcessInfo.processInfo.environment["PAYMENT_METHOD_ID"] ?? "") { (result, responseData) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.payments.getSinglePaymentMethod(retailerId: retailerId, paymentMethodId: paymentMethodId) { (result, PaymentMethod) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
         
-        //Wait until the expectation is fullfiled, with a timeout of 10 seconds.
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
     
     func testCreateCardPaymentMethod(){
-        //Build Expectation
-        let expectation = XCTestExpectation(description: "Async Test")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerId: String = ""
+        let requestObject: CreateCardPaymentMethodRequest = CreateCardPaymentMethodRequest()
         
-        var requestObject: CreateCardPaymentMethodRequest = CreateCardPaymentMethodRequest()
+
         requestObject.number = ProcessInfo.processInfo.environment["CARD_NUMBER"] ?? ""
         requestObject.issuer = ProcessInfo.processInfo.environment["CARD_ISSUER"] ?? ""
         requestObject.isCard = true
@@ -78,33 +88,46 @@ class PaymentsServiceTests: XCTestCase {
         requestObject.defaultAll = true
         requestObject.userId = ProcessInfo.processInfo.environment["CARD_USER_ID"] ?? ""
 
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
-        PaymentsService().createCardPaymentMethod(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", requestObject: requestObject) { (result, resposeData) in
-            assert(result)
-            expectation.fulfill()
+        if let route = try? PaymentsRouter.createCardPaymentMethod(retailerId, requestObject).asURLRequest() {
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .CreateCardPaymentMethod)
         }
         
-        //Wait until the expectation is fullfiled, with a timeout of 10 seconds.
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        Client.instance.payments.createCardPaymentMethod(retailerId: retailerId, requestObject: requestObject) { (result, PaymentMethod) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
     
     func testDeletePaymentMethod() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerId: String = ""
+        let paymentMethodId: String = ""
+        
+        if let route = try? PaymentsRouter.deletePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .DeletePaymentMethod)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
-        PaymentsService().deletePaymentMethod(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", paymentMethodId: ProcessInfo.processInfo.environment["PAYMENT_METHOD_ID"] ?? "") { (result) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.payments.deletePaymentMethod(retailerId: retailerId, paymentMethodId: paymentMethodId) { (result) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
-        
-        //Wait until the expectation is fullfiled, with a timeout of 10 seconds.
+
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
 }
