@@ -35,20 +35,7 @@ protocol NetworkStubs {
 }
 
 extension NetworkStubs {
-    func startStub(_ route: URLRequest, method: HTTPMethod, bodyJSONString: String) {
-        if let url = route.url {
-            var stub = StubRequest(method: method, url: url)
-            var response = StubResponse()
-            let body = bodyJSONString.data(using: .utf8)!
-            print(body)
-            print(bodyJSONString)
-            response.body = body
-            stub.response = response
-            Hippolyte.shared.add(stubbedRequest: stub)
-            Hippolyte.shared.start()
-        }
-    }
-    
+
     func startStub(_ route: URLRequest, method: HTTPMethod, stubData: StubDataFile) {
         if let url = route.url {
             var stub = StubRequest(method: method, url: url)

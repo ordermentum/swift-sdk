@@ -38,6 +38,9 @@ class ProfileServiceTest: XCTestCase {
                 assert(result)
                 expectation.fulfill()
             }
+            else {
+                XCTFail("Expected JSON Response to succeed, but failed.")
+            }
         }
 
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
@@ -46,7 +49,7 @@ class ProfileServiceTest: XCTestCase {
     
     func testUpdateProfile() {
         Client.instance.baseURL = ClientURL.rootTestingURL
-        let userId:String = "28fabcd4-c161-4a2b-a073-74d51e2f9292"
+        let userId:String = ProcessInfo.processInfo.environment["USER_ID"] ?? ""
         var requestObject: UpdateUserRequest = UpdateUserRequest()
         requestObject.email = ProcessInfo.processInfo.environment["EMAIL"] ?? ""
         requestObject.firstName = ProcessInfo.processInfo.environment["FIRST_NAME"] ?? ""
@@ -65,6 +68,9 @@ class ProfileServiceTest: XCTestCase {
             if result {
                 assert(result)
                 expectation.fulfill()
+            }
+            else {
+                XCTFail("Expected JSON Response to succeed, but failed.")
             }
         }
 

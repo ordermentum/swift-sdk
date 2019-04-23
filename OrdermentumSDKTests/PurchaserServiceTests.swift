@@ -25,8 +25,8 @@ class PurchaserServiceTests: XCTestCase {
     
     func testGetPurchasers() {
         Client.instance.baseURL = ClientURL.rootTestingURL
-        let retailerID:String = ""
-        let supplierID:String = ""
+        let retailerID:String = ProcessInfo.processInfo.environment["RETAILER_ID"] ?? ""
+        let supplierID:String = ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? ""
         let method = self.getRouterMethod(url: PurchaserRouter.getPurchasers(retailerID, supplierID))
 
         if let route = try? PurchaserRouter.getPurchasers(retailerID, supplierID).asURLRequest() {
@@ -34,12 +34,15 @@ class PurchaserServiceTests: XCTestCase {
         }
         
         //Build Expectation
-        let expectation = XCTestExpectation(description: "Async Test")
+        let expectation = XCTestExpectation(description: "Stubs network call")
         
         Client.instance.purchasers.getPurchasers(retailerId: retailerID, supplierId: supplierID) { (result, responseData) in
             if result {
                 assert(result)
                 expectation.fulfill()
+            }
+            else {
+                XCTFail("Expected JSON Response to succeed, but failed.")
             }
         }
         
@@ -49,23 +52,25 @@ class PurchaserServiceTests: XCTestCase {
     
     func testGetPurchasersForPaymentMethod() {
         Client.instance.baseURL = ClientURL.rootTestingURL
-        let retailerID:String = ""
-        let supplierID:String = ""
-        let paymentMethodType = ""
+        let retailerID:String = ProcessInfo.processInfo.environment["RETAILER_ID"] ?? ""
+        let supplierID:String = ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? ""
+        let paymentMethodType = ProcessInfo.processInfo.environment["PAYMENT_METHOD_TYPE"] ?? ""
         let method = self.getRouterMethod(url: PurchaserRouter.getPurchasersForPaymentMethod(retailerID, supplierID))
         
         if let route = try? PurchaserRouter.getPurchasersForPaymentMethod(retailerID, supplierID).asURLRequest() {
-            
             self.startStub(route, method: HTTPMethod(rawValue: method)!, stubData: .GetPurchaserForPaymentMethod)
         }
         
         //Build Expectation
-        let expectation = XCTestExpectation(description: "Async Test")
+        let expectation = XCTestExpectation(description: "Stubs network call")
         
         Client.instance.purchasers.getPurchasersForPaymentMethod(retailerId: retailerID, paymentMethodType: paymentMethodType) { (result, responseData) in
             if result {
                 assert(result)
                 expectation.fulfill()
+            }
+            else {
+                XCTFail("Expected JSON Response to succeed, but failed.")
             }
         }
         
@@ -75,10 +80,10 @@ class PurchaserServiceTests: XCTestCase {
     
     func testUpdatePaymentMethod() {
         Client.instance.baseURL = ClientURL.rootTestingURL
-        let purchaserID:String = "414c664f-ccba-4385-9679-279cac329566"
+        let purchaserID:String = ProcessInfo.processInfo.environment["PURCHASER_ID"] ?? ""
         var updatePaymentMethodRequest:UpdatePaymentMethodRequest =  UpdatePaymentMethodRequest()
-        updatePaymentMethodRequest.paymentMethodId = "e7e54d1a-e01a-49d8-8899-4f8841b2f159"
-        updatePaymentMethodRequest.defaultPaymentMethodType = "card"
+        updatePaymentMethodRequest.paymentMethodId = ProcessInfo.processInfo.environment["PAYMENT_METHOD_ID"] ?? ""
+        updatePaymentMethodRequest.defaultPaymentMethodType = ProcessInfo.processInfo.environment["DEFAULT_PAYMENTMETHOD"] ?? ""
         
         let method = self.getRouterMethod(url: PurchaserRouter.updatePaymentMethod(purchaserID, updatePaymentMethodRequest))
         
@@ -87,12 +92,15 @@ class PurchaserServiceTests: XCTestCase {
         }
         
         //Build Expectation
-        let expectation = XCTestExpectation(description: "Async Test")
+        let expectation = XCTestExpectation(description: "Stubs network call")
         
         Client.instance.purchasers.updatePaymentMethod(purchaserId: purchaserID, requestObject: updatePaymentMethodRequest) { (result) in
             if result {
                 assert(result)
                 expectation.fulfill()
+            }
+            else {
+                XCTFail("Expected JSON Response to succeed, but failed.")
             }
         }
         
