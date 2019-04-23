@@ -30,7 +30,7 @@ class NPSServiceTests: XCTestCase {
         
         //Stubbing
         if let route = try? NPSRouter.getNPS.asURLRequest() {
-            self.startStub(route, stubData: .GetNPS )
+            self.startStub(route, stubData: .getNPS )
         }
         
         //Call API
@@ -61,7 +61,7 @@ class NPSServiceTests: XCTestCase {
         
         //Stubbing
         if let route = try? NPSRouter.sendFeedback(requestObject).asURLRequest() {
-            self.startStub(route, stubData: .SendFeedback )
+            self.startStub(route, stubData: .sendFeedback )
         }
         
         //Call API

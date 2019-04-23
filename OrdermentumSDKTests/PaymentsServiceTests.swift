@@ -26,7 +26,7 @@ class PaymentsServiceTests: XCTestCase {
         let retailerId: String = ""
         
         if let route = try? PaymentsRouter.getPaymentMethods(retailerId).asURLRequest() {
-            self.startStub(route, stubData: .GetPaymentMethods)
+            self.startStub(route, stubData: .getPaymentMethods)
         }
         
         //Build Expectation
@@ -49,7 +49,7 @@ class PaymentsServiceTests: XCTestCase {
         let paymentMethodId: String = ""
 
         if let route = try? PaymentsRouter.getSinglePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
-            self.startStub(route, stubData: .GetSinglePaymentMethods)
+            self.startStub(route, stubData: .getSinglePaymentMethods)
         }
         
         //Build Expectation
@@ -85,7 +85,7 @@ class PaymentsServiceTests: XCTestCase {
         requestObject.userId = ProcessInfo.processInfo.environment["CARD_USER_ID"] ?? ""
         
         if let route = try? PaymentsRouter.createCardPaymentMethod(retailerId, requestObject).asURLRequest() {
-            self.startStub(route, stubData: .CreateCardPaymentMethod)
+            self.startStub(route, stubData: .createCardPaymentMethod)
         }
         
         //Build Expectation
@@ -109,7 +109,7 @@ class PaymentsServiceTests: XCTestCase {
         let paymentMethodId: String = ""
         
         if let route = try? PaymentsRouter.deletePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
-            self.startStub(route, stubData: .DeletePaymentMethod)
+            self.startStub(route, stubData: .deletePaymentMethod)
         }
         
         //Build Expectation

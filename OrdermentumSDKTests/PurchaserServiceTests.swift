@@ -27,7 +27,7 @@ class PurchaserServiceTests: XCTestCase {
         let supplierID:String = ""
 
         if let route = try? PurchaserRouter.getPurchasers(retailerID, supplierID).asURLRequest() {
-            self.startStub(route, stubData: .GetPurchasers)
+            self.startStub(route, stubData: .getPurchasers)
         }
         
         //Build Expectation
@@ -52,7 +52,7 @@ class PurchaserServiceTests: XCTestCase {
         
         if let route = try? PurchaserRouter.getPurchasersForPaymentMethod(retailerID, supplierID).asURLRequest() {
             
-            self.startStub(route, stubData: .GetPurchaserForPaymentMethod)
+            self.startStub(route, stubData: .getPurchaserForPaymentMethod)
         }
         
         //Build Expectation
@@ -77,7 +77,7 @@ class PurchaserServiceTests: XCTestCase {
         updatePaymentMethodRequest.defaultPaymentMethodType = "card"
         
         if let route = try? PurchaserRouter.updatePaymentMethod(purchaserID, updatePaymentMethodRequest).asURLRequest() {
-            self.startStub(route, stubData: .UpdatePaymentMethod)
+            self.startStub(route, stubData: .updatePaymentMethod)
         }
         
         //Build Expectation

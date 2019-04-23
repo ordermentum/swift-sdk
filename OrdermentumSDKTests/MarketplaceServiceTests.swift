@@ -28,7 +28,7 @@ class MarketplaceServiceTests: XCTestCase {
         let pageNo:Int = 0
 
         if let route = try? MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo).asURLRequest() {
-            self.startStub(route, stubData: .GetMarketPlaces)
+            self.startStub(route, stubData: .getMarketPlaces)
         }
         
         //Build Expectation
