@@ -26,8 +26,7 @@ class ProfileServiceTest: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
 
         if let route = try? ProfileRouter.getProfile.asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .GetProfile)
+            self.startStub(route, stubData: .GetProfile)
         }
         
         //Build Expectation
@@ -46,7 +45,7 @@ class ProfileServiceTest: XCTestCase {
     
     func testUpdateProfile() {
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        let userId:String = ProcessInfo.processInfo.environment["USER_ID"] ?? ""
         
         var requestObject: UpdateUserRequest = UpdateUserRequest()
         requestObject.email = ProcessInfo.processInfo.environment["EMAIL"] ?? ""
@@ -55,8 +54,7 @@ class ProfileServiceTest: XCTestCase {
         requestObject.phone = ProcessInfo.processInfo.environment["PHONE"] ?? ""
     
         if let route = try? ProfileRouter.updateProfile(userId, requestObject).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .UpdateProfile)
+            self.startStub(route, stubData: .UpdateProfile)
         }
         
         //Build Expectation

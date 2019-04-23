@@ -15,8 +15,6 @@ extension Bool {
             return "true"
         case false:
             return "false"
-        default:
-            return "false"
         }
     }
 }

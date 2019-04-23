@@ -20,12 +20,8 @@
 		26AA6E4E2266E2D000578DED /* AddonsSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AA6E4D2266E2D000578DED /* AddonsSearch.json */; };
 		26AA6E582266F84500578DED /* VenueServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E4F2266F84400578DED /* VenueServiceTests.swift */; };
 		26AA6E592266F84500578DED /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E502266F84500578DED /* NotificationServiceTests.swift */; };
-		26AA6E5A2266F84500578DED /* NPSServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E512266F84500578DED /* NPSServiceTests.swift */; };
 		26AA6E5B2266F84500578DED /* ProfileServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E522266F84500578DED /* ProfileServiceTest.swift */; };
-		26AA6E5C2266F84500578DED /* PaymentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E532266F84500578DED /* PaymentsServiceTests.swift */; };
 		26AA6E5D2266F84500578DED /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E542266F84500578DED /* PurchaserServiceTests.swift */; };
-		26AA6E5E2266F84500578DED /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E552266F84500578DED /* ValidationServiceTest.swift */; };
-		26AA6E5F2266F84500578DED /* NotifyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E562266F84500578DED /* NotifyServiceTests.swift */; };
 		26AA6E602266F84500578DED /* ProductsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E572266F84500578DED /* ProductsServiceTests.swift */; };
 		26B2A079226D5A7200BC2755 /* orderSubmit.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A078226D5A7200BC2755 /* orderSubmit.json */; };
 		26B2A07B226D67BB00BC2755 /* standingOrderSubmit.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07A226D67BB00BC2755 /* standingOrderSubmit.json */; };
@@ -34,14 +30,9 @@
 		26B2A081226D6DDF00BC2755 /* removeFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A080226D6DDF00BC2755 /* removeFavourite.json */; };
 		2A6F52128EED75495252EE23 /* Pods_OrdermentumSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */; };
 		526155008E1402A0BB282A20 /* Pods_OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */; };
-		BB31861E226588280028101E /* ProductsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318615226588280028101E /* ProductsServiceTests.swift */; };
-		BB31861F226588280028101E /* VenueServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318616226588280028101E /* VenueServiceTests.swift */; };
 		BB318620226588280028101E /* NotifyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318617226588280028101E /* NotifyServiceTests.swift */; };
 		BB318621226588280028101E /* NPSServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318618226588280028101E /* NPSServiceTests.swift */; };
-		BB318622226588280028101E /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318619226588280028101E /* PurchaserServiceTests.swift */; };
 		BB318623226588280028101E /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861A226588280028101E /* ValidationServiceTest.swift */; };
-		BB318624226588280028101E /* ProfileServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861B226588280028101E /* ProfileServiceTest.swift */; };
-		BB318625226588280028101E /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861C226588280028101E /* NotificationServiceTests.swift */; };
 		BB318626226588280028101E /* PaymentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861D226588280028101E /* PaymentsServiceTests.swift */; };
 		BB659F8A22689D43009C3D46 /* RouterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB659F8922689D43009C3D46 /* RouterMethod.swift */; };
 		BB659F8F226C056A009C3D46 /* GetPurchaserForPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F8E226C056A009C3D46 /* GetPurchaserForPaymentMethod.json */; };
@@ -944,21 +935,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB318625226588280028101E /* NotificationServiceTests.swift in Sources */,
 				CA6BB822225DA60300A34A01 /* ProjectionsServiceTests.swift in Sources */,
-				BB31861F226588280028101E /* VenueServiceTests.swift in Sources */,
-				26AA6E5F2266F84500578DED /* NotifyServiceTests.swift in Sources */,
 				26A2799222645A75007A52EF /* DataAttributesServiceTests.swift in Sources */,
 				26AA6E4A2266B44D00578DED /* NetworkStub.swift in Sources */,
-				CA6BB822225DA60300A34A01 /* ProjectionsServiceTests.swift in Sources */,
 				26A2799622645F29007A52EF /* ExperimentsServiceTests.swift in Sources */,
 				26AA6E592266F84500578DED /* NotificationServiceTests.swift in Sources */,
 				26AA6E582266F84500578DED /* VenueServiceTests.swift in Sources */,
 				26A279982264613F007A52EF /* FlagsServiceTests.swift in Sources */,
-				26AA6E5E2266F84500578DED /* ValidationServiceTest.swift in Sources */,
 				26AA6E5D2266F84500578DED /* PurchaserServiceTests.swift in Sources */,
-				26AA6E5C2266F84500578DED /* PaymentsServiceTests.swift in Sources */,
-				26AA6E5A2266F84500578DED /* NPSServiceTests.swift in Sources */,
 				268EE201226439E3008E10B5 /* AddOnsServiceTests.swift in Sources */,
 				26A2799A22646214007A52EF /* MarketplaceServiceTests.swift in Sources */,
 				CA6BB820225D993700A34A01 /* FindSupplierServiceTests.swift in Sources */,
@@ -969,11 +953,7 @@
 				BB318623226588280028101E /* ValidationServiceTest.swift in Sources */,
 				BB659F8A22689D43009C3D46 /* RouterMethod.swift in Sources */,
 				CA2F35182255D2BD00D1118C /* AuthServiceTests.swift in Sources */,
-				BB318624226588280028101E /* ProfileServiceTest.swift in Sources */,
-				BB318622226588280028101E /* PurchaserServiceTests.swift in Sources */,
-				BB31861E226588280028101E /* ProductsServiceTests.swift in Sources */,
 				26A2799C2264627D007A52EF /* InvoiceServiceTests.swift in Sources */,
-				CA2F35182255D2BD00D1118C /* AuthServiceTests.swift in Sources */,
 				26A27990226458A9007A52EF /* CreditNotesServiceTests.swift in Sources */,
 				26AA6E5B2266F84500578DED /* ProfileServiceTest.swift in Sources */,
 				26A2799422645C88007A52EF /* DeviceServiceTests.swift in Sources */,

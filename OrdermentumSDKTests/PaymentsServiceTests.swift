@@ -27,8 +27,7 @@ class PaymentsServiceTests: XCTestCase {
         let retailerId: String = ""
         
         if let route = try? PaymentsRouter.getPaymentMethods(retailerId).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .GetPaymentMethods)
+            self.startStub(route, stubData: .GetPaymentMethods)
         }
         
         //Build Expectation
@@ -51,8 +50,7 @@ class PaymentsServiceTests: XCTestCase {
         let paymentMethodId: String = ""
 
         if let route = try? PaymentsRouter.getSinglePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .GetSinglePaymentMethods)
+            self.startStub(route, stubData: .GetSinglePaymentMethods)
         }
         
         //Build Expectation
@@ -72,9 +70,8 @@ class PaymentsServiceTests: XCTestCase {
     func testCreateCardPaymentMethod(){
         Client.instance.baseURL = ClientURL.rootTestingURL
         let retailerId: String = ""
-        let requestObject: CreateCardPaymentMethodRequest = CreateCardPaymentMethodRequest()
+        var requestObject: CreateCardPaymentMethodRequest = CreateCardPaymentMethodRequest()
         
-
         requestObject.number = ProcessInfo.processInfo.environment["CARD_NUMBER"] ?? ""
         requestObject.issuer = ProcessInfo.processInfo.environment["CARD_ISSUER"] ?? ""
         requestObject.isCard = true
@@ -89,8 +86,7 @@ class PaymentsServiceTests: XCTestCase {
         requestObject.userId = ProcessInfo.processInfo.environment["CARD_USER_ID"] ?? ""
 
         if let route = try? PaymentsRouter.createCardPaymentMethod(retailerId, requestObject).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .CreateCardPaymentMethod)
+            self.startStub(route, stubData: .CreateCardPaymentMethod)
         }
         
         //Build Expectation
@@ -113,8 +109,7 @@ class PaymentsServiceTests: XCTestCase {
         let paymentMethodId: String = ""
         
         if let route = try? PaymentsRouter.deletePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .DeletePaymentMethod)
+            self.startStub(route, stubData: .DeletePaymentMethod)
         }
         
         //Build Expectation
