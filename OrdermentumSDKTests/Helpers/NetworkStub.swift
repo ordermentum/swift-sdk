@@ -10,34 +10,34 @@ import Foundation
 import Hippolyte
 
 public enum StubDataFile: String {
-    case AddonsSearch
-    case AddonsSearchError = "jsonError"
-    case GetPurchasers
-    case GetPurchasersError = "GetPurchasers_jsonError"
-    case GetPurchaserForPaymentMethod
-    case UpdatePaymentMethod
-    case GetProfile
-    case UpdateProfile
-    case GetMarketPlaces
-    case GetProductCategories
-    case GetProduct
-    case GetMostOrderedProducts
-    case GetTrendingProducts
-    case GetRecommendedProducts
-    case SearchProducts
-    case GetPaymentMethods
-    case GetSinglePaymentMethods
-    case CreateCardPaymentMethod
-    case DeletePaymentMethod
-    case NotificationSettingsUpdate
+    case addonsSearch
+    case addonsSearchError = "jsonError"
+    case getPurchasers
+    case getPurchasersError = "GetPurchasers_jsonError"
+    case getPurchaserForPaymentMethod
+    case updatePaymentMethod
+    case getProfile
+    case updateProfile
+    case getMarketPlaces
+    case getProductCategories
+    case getProduct
+    case getMostOrderedProducts
+    case getTrendingProducts
+    case getRecommendedProducts
+    case searchProducts
+    case getPaymentMethods
+    case getSinglePaymentMethods
+    case createCardPaymentMethod
+    case deletePaymentMethod
+    case notificationSettingsUpdate
 }
 
 protocol NetworkStubs {
 }
 
 extension NetworkStubs {
-    func startStub(_ route: URLRequest, method: HTTPMethod, bodyJSONString: String) {
-        if let url = route.url {
+    func startStub(_ route: URLRequest, bodyJSONString: String) {
+        if let url = route.url, let methodString = route.httpMethod, let method = HTTPMethod(rawValue: methodString) {
             var stub = StubRequest(method: method, url: url)
             var response = StubResponse()
             let body = bodyJSONString.data(using: .utf8)!

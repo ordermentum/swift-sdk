@@ -55,7 +55,7 @@ class NotificationServiceTests: XCTestCase {
         
         //Stubbing
         if let route = try? NotificationsRouter.updateNotificationSetting(userId, supplierId, updateObject).asURLRequest() {
-            self.startStub(route, stubData: .NotificationSettingsUpdate )
+            self.startStub(route, stubData: .notificationSettingsUpdate )
         }
         
         //Call API
