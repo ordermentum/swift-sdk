@@ -46,15 +46,15 @@ class ProfileServiceTest: XCTestCase {
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
-    
+
     func testUpdateProfile() {
         Client.instance.baseURL = ClientURL.rootTestingURL
-        let userId:String = ProcessInfo.processInfo.environment["USER_ID"] ?? ""
+        let userId:String = self.getEnvironmentStrVar("USER_ID") ?? ""
         var requestObject: UpdateUserRequest = UpdateUserRequest()
-        requestObject.email = ProcessInfo.processInfo.environment["EMAIL"] ?? ""
-        requestObject.firstName = ProcessInfo.processInfo.environment["FIRST_NAME"] ?? ""
-        requestObject.lastName = ProcessInfo.processInfo.environment["LAST_NAME"] ?? ""
-        requestObject.phone = ProcessInfo.processInfo.environment["PHONE"] ?? ""
+        requestObject.email = self.getEnvironmentStrVar("EMAIL") ?? ""
+        requestObject.firstName = self.getEnvironmentStrVar("FIRST_NAME") ?? ""
+        requestObject.lastName = self.getEnvironmentStrVar("LAST_NAME") ?? ""
+        requestObject.phone = self.getEnvironmentStrVar("PHONE") ?? ""
     
         if let route = try? ProfileRouter.updateProfile(userId, requestObject).asURLRequest() {
             let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!

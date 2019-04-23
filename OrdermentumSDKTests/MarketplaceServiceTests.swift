@@ -25,10 +25,10 @@ class MarketplaceServiceTests: XCTestCase {
     func testGetMarketPlaces() {
         //Setup Request and Start Stub
         Client.instance.baseURL = ClientURL.rootTestingURL
-        let retailerId:String = ProcessInfo.processInfo.environment["RETAILER_ID"] ?? ""
-        let pageSize:Int = 0
-        let pageNo:Int = 0
-
+        let retailerId:String = self.getEnvironmentStrVar("RETAILER_ID") ?? ""
+        let pageSize:Int = self.getEnvironmentIntVar("PAGE_SIZE") ?? 0
+        let pageNo:Int = self.getEnvironmentIntVar("PAGE_NO") ?? 0
+        
         if let route = try? MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo).asURLRequest() {
             let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, method: method, stubData: .GetMarketPlaces)
@@ -51,3 +51,5 @@ class MarketplaceServiceTests: XCTestCase {
          wait(for: [expectation], timeout: 10.0)
     }
 }
+
+
