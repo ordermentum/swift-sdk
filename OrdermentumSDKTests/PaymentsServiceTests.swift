@@ -11,7 +11,6 @@ import XCTest
 import Hippolyte
 @testable import OrdermentumSDK
 
-
 class PaymentsServiceTests: XCTestCase {
 
     override func setUp() {
@@ -27,8 +26,7 @@ class PaymentsServiceTests: XCTestCase {
         let retailerId: String = ""
         
         if let route = try? PaymentsRouter.getPaymentMethods(retailerId).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .GetPaymentMethods)
+            self.startStub(route, stubData: .getPaymentMethods)
         }
         
         //Build Expectation
@@ -51,8 +49,7 @@ class PaymentsServiceTests: XCTestCase {
         let paymentMethodId: String = ""
 
         if let route = try? PaymentsRouter.getSinglePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .GetSinglePaymentMethods)
+            self.startStub(route, stubData: .getSinglePaymentMethods)
         }
         
         //Build Expectation
@@ -72,17 +69,30 @@ class PaymentsServiceTests: XCTestCase {
     func testCreateCardPaymentMethod(){
         Client.instance.baseURL = ClientURL.rootTestingURL
         let retailerId: String = ""
-        let requestObject: CreateCardPaymentMethodRequest = CreateCardPaymentMethodRequest()
+        var requestObject: CreateCardPaymentMethodRequest = CreateCardPaymentMethodRequest()
+
+        requestObject.number = ProcessInfo.processInfo.environment["CARD_NUMBER"] ?? ""
+        requestObject.issuer = ProcessInfo.processInfo.environment["CARD_ISSUER"] ?? ""
+        requestObject.isCard = true
+        requestObject.firstName = ProcessInfo.processInfo.environment["CARD_FIRST_NAME"] ?? ""
+        requestObject.lastName = ProcessInfo.processInfo.environment["CARD_LAST_NAME"] ?? ""
+        requestObject.fullName = ProcessInfo.processInfo.environment["CARD_FULL_NAME"] ?? ""
+        requestObject.expiryMonth = ProcessInfo.processInfo.environment["CARD_EXPIRY_MONTH"] ?? ""
+        requestObject.expiryYear = ProcessInfo.processInfo.environment["CARD_EXPIRY_YEAR"] ?? ""
+        requestObject.cvv = ProcessInfo.processInfo.environment["CARD_CVV"] ?? ""
+        requestObject.isDirect = true
+        requestObject.defaultAll = true
+        requestObject.userId = ProcessInfo.processInfo.environment["CARD_USER_ID"] ?? ""
         
         if let route = try? PaymentsRouter.createCardPaymentMethod(retailerId, requestObject).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .CreateCardPaymentMethod)
+            self.startStub(route, stubData: .createCardPaymentMethod)
         }
         
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        Client.instance.payments.createCardPaymentMethod(retailerId: retailerId, requestObject: requestObject) { (result, PaymentMethod) in
+        //Call API
+ 		Client.instance.payments.createCardPaymentMethod(retailerId: retailerId, requestObject: requestObject) { (result, PaymentMethod) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -99,8 +109,7 @@ class PaymentsServiceTests: XCTestCase {
         let paymentMethodId: String = ""
         
         if let route = try? PaymentsRouter.deletePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .DeletePaymentMethod)
+            self.startStub(route, stubData: .deletePaymentMethod)
         }
         
         //Build Expectation

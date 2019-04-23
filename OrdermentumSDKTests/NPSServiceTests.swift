@@ -20,21 +20,23 @@ class NPSServiceTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
     func testGetNPS() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Aysnc Test")
         
-        //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        NPSService().getNPS { (result, response) in
+        //Stubbing
+        if let route = try? NPSRouter.getNPS.asURLRequest() {
+            self.startStub(route, stubData: .getNPS )
+        }
+        
+        //Call API
+        Client.instance.nps.getNPS { (result, response) in
             assert(result)
+            XCTAssertNotNil(response)
             expectation.fulfill()
         }
         
@@ -46,15 +48,24 @@ class NPSServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Aysnc Test")
         
+        //Build request body and params
         var requestObject: NPSFeedback = NPSFeedback()
-        requestObject.score = 0
-        requestObject.comment = ""
+        if let scoreString = ProcessInfo.processInfo.environment["NPS_SCORE"], let score = Int(scoreString){
+            requestObject.score = score
+        }
+        requestObject.comment = ProcessInfo.processInfo.environment["NPS_COMMENT"] ?? ""
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? NPSRouter.sendFeedback(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .sendFeedback )
+        }
         
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
-        
-        NPSService().sendFeedback(requestObject: requestObject) { (result) in
+        Client.instance.nps.sendFeedback(requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }

@@ -23,15 +23,20 @@ class AddOnsServiceTests: XCTestCase {
     }
     
     func testSearchAddons() {
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        let entityType:String = ""
-        let entityId:[String] = []
-        if let route = try? AddOnsRouter.searchAddons(entityType, entityId).asURLRequest() {
-            self.startStub(route, method: .GET, stubData: .AddonsSearch )
-        }
-        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Build request body and params
+        let entityType:String = ""
+        let entityId:[String] = []
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? AddOnsRouter.searchAddons(entityType, entityId).asURLRequest() {
+            self.startStub(route, stubData: .addonsSearch )
+        }
         
         //Call API
         Client.instance.addons.searchAddons(entityType: entityType, entityId: entityId) { (result, responseData) in
