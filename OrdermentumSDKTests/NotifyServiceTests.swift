@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import XCTest
+import Hippolyte
 @testable import OrdermentumSDK
 
 class NotifyServiceTests: XCTestCase {
@@ -20,22 +20,24 @@ class NotifyServiceTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
     func testRegisterDevice() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
+        //Build Request body and params
         let requestObject: NotifyBody = NotifyBody()
         
-        //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        NotifyService().registerDevice(requestObject: requestObject){ (result) in
+        //Stubbing
+        if let route = try? NotifyRouter.registerDevice(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .addonsSearch )
+        }
+        
+        //Call API
+        Client.instance.notify.registerDevice(requestObject){ (result) in
             assert(result)
             expectation.fulfill()
         }

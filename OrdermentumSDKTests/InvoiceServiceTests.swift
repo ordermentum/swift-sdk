@@ -25,7 +25,7 @@ class InvoiceServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.invoices.getSuppliers(retailerId: "", supplierId: "", sortBy: "") { (result, responseData) in
+        Client.instance.invoices.getInvoices(retailerId: "", supplierId: "", sortBy: "") { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
