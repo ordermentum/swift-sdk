@@ -30,8 +30,8 @@ class NotificationServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
 
         //Call API
-        Client.instance.setTestingURL()
-        Client.instance.setToken(tokenString: ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? "")
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         NotificationsService().updateNotificationSetting(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", updateObject: ["" : true]) { (result) in
                 assert(result)
