@@ -9,7 +9,6 @@
 import Foundation
 import XCTest
 import Hippolyte
-
 @testable import OrdermentumSDK
 
 class MarketplaceServiceTests: XCTestCase {
@@ -29,8 +28,7 @@ class MarketplaceServiceTests: XCTestCase {
         let pageNo:Int = 0
 
         if let route = try? MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .GetMarketPlaces)
+            self.startStub(route, stubData: .GetMarketPlaces)
         }
         
         //Build Expectation

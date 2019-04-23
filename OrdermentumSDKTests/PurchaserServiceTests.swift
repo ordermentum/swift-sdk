@@ -9,9 +9,7 @@
 import Foundation
 import XCTest
 import Hippolyte
-
 @testable import OrdermentumSDK
-
 
 class PurchaserServiceTests: XCTestCase {
     
@@ -27,10 +25,9 @@ class PurchaserServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         let retailerID:String = ""
         let supplierID:String = ""
-        let method = self.getRouterMethod(url: PurchaserRouter.getPurchasers(retailerID, supplierID))
 
         if let route = try? PurchaserRouter.getPurchasers(retailerID, supplierID).asURLRequest() {
-            self.startStub(route, method: HTTPMethod(rawValue: method)!, stubData: .GetPurchasers)
+            self.startStub(route, stubData: .GetPurchasers)
         }
         
         //Build Expectation
@@ -52,11 +49,10 @@ class PurchaserServiceTests: XCTestCase {
         let retailerID:String = ""
         let supplierID:String = ""
         let paymentMethodType = ""
-        let method = self.getRouterMethod(url: PurchaserRouter.getPurchasersForPaymentMethod(retailerID, supplierID))
         
         if let route = try? PurchaserRouter.getPurchasersForPaymentMethod(retailerID, supplierID).asURLRequest() {
             
-            self.startStub(route, method: HTTPMethod(rawValue: method)!, stubData: .GetPurchaserForPaymentMethod)
+            self.startStub(route, stubData: .GetPurchaserForPaymentMethod)
         }
         
         //Build Expectation
@@ -80,10 +76,8 @@ class PurchaserServiceTests: XCTestCase {
         updatePaymentMethodRequest.paymentMethodId = "e7e54d1a-e01a-49d8-8899-4f8841b2f159"
         updatePaymentMethodRequest.defaultPaymentMethodType = "card"
         
-        let method = self.getRouterMethod(url: PurchaserRouter.updatePaymentMethod(purchaserID, updatePaymentMethodRequest))
-        
         if let route = try? PurchaserRouter.updatePaymentMethod(purchaserID, updatePaymentMethodRequest).asURLRequest() {
-            self.startStub(route, method: HTTPMethod(rawValue: method)!, stubData: .UpdatePaymentMethod)
+            self.startStub(route, stubData: .UpdatePaymentMethod)
         }
         
         //Build Expectation

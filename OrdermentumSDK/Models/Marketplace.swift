@@ -25,7 +25,7 @@ public struct Marketplace {
     public var accountSettings: AccountSettings = AccountSettings()
     public var brandImages: [Image] = []
     public var logo: Image = Image()
-    //public var settings: MarketplaceSettings = MarketplaceSettings()
+    public var settings: MarketplaceSettings = MarketplaceSettings()
     public var properties: Properties = Properties()
     public var shortName: String = ""
     public var phone: String = ""
@@ -39,6 +39,15 @@ public struct Marketplace {
     public var updatedAt: String = ""
 }
 
+public struct Properties: Encodable {
+    public init() {}
+    
+    public var demoSupplier: String = ""
+}
+
+public struct MarketplaceSettings {
+    public var brand: Brand = Brand()
+}
 
 extension MarketplaceResponse: Decodable {
     public init(from decoder: Decoder) throws {
