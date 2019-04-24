@@ -83,7 +83,6 @@
 		CA4CF2E7225ADC1B006F18C8 /* NotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E6225ADC1B006F18C8 /* NotificationsRouter.swift */; };
 		CA4CF2E9225AE089006F18C8 /* NotifyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E8225AE089006F18C8 /* NotifyRouter.swift */; };
 		CA6BB820225D993700A34A01 /* FindSupplierServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */; };
-		CA6BB822225DA60300A34A01 /* ProjectionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6BB821225DA60300A34A01 /* ProjectionsServiceTests.swift */; };
 		CA72972A225D966F00224410 /* BoolUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA729729225D966F00224410 /* BoolUtils.swift */; };
 		CA929F3122555DA400E957AC /* OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA929F2722555DA400E957AC /* OrdermentumSDK.framework */; };
 		CA929F3822555DA400E957AC /* OrdermentumSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = CA929F2A22555DA400E957AC /* OrdermentumSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -800,15 +799,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OrdermentumSDKTests/Pods-OrdermentumSDKTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Hippolyte/Hippolyte.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Hippolyte/Hippolyte.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hippolyte.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hippolyte.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -922,7 +921,6 @@
 			files = (
 				26A2799222645A75007A52EF /* DataAttributesServiceTests.swift in Sources */,
 				26AA6E4A2266B44D00578DED /* NetworkStub.swift in Sources */,
-				CA6BB822225DA60300A34A01 /* ProjectionsServiceTests.swift in Sources */,
 				26A2799622645F29007A52EF /* ExperimentsServiceTests.swift in Sources */,
 				26AA6E592266F84500578DED /* NotificationServiceTests.swift in Sources */,
 				26AA6E582266F84500578DED /* VenueServiceTests.swift in Sources */,

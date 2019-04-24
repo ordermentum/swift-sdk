@@ -9,7 +9,6 @@
 import Foundation
 import XCTest
 import Hippolyte
-import Alamofire
 @testable import OrdermentumSDK
 
 class ValidationServiceTest: XCTestCase {
