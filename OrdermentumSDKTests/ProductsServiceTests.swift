@@ -9,7 +9,6 @@
 import Foundation
 import XCTest
 import Hippolyte
-
 @testable import OrdermentumSDK
 
 class ProductsServiceTests: XCTestCase {
@@ -30,7 +29,7 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = 0
         
         if let route = try? ProductsRouter.getProductCategories(retailerId, supplierId, pageSize, pageNo).asURLRequest() {
-            self.startStub(route, stubData: .GetProductCategories)
+            self.startStub(route, stubData: .getProductCategories)
         }
         
         //Build Expectation
@@ -57,7 +56,7 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = 0
         
         if let route = try? ProductsRouter.getProducts(categoryId, retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
-            self.startStub(route, stubData: .GetProduct)
+            self.startStub(route, stubData: .getProduct)
         }
 
         //Build Expectation
@@ -83,7 +82,7 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = 0
         
         if let route = try? ProductsRouter.getMostOrderedProducts(retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
-            self.startStub(route, stubData: .GetMostOrderedProducts)
+            self.startStub(route, stubData: .getMostOrderedProducts)
         }
         
         //Build Expectation
@@ -109,7 +108,7 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = 0
         
         if let route = try? ProductsRouter.getTrendingProducts(retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
-            self.startStub(route, stubData: .GetTrendingProducts)
+            self.startStub(route, stubData: .getTrendingProducts)
         }
         
         //Build Expectation
@@ -134,7 +133,7 @@ class ProductsServiceTests: XCTestCase {
         let excludedProductId: [String] = []
         
         if let route = try? ProductsRouter.getRecommendedProducts(retailerId, supplierId, pageSize, excludedProductId).asURLRequest() {
-            self.startStub(route, stubData: .GetRecommendedProducts)
+            self.startStub(route, stubData: .getRecommendedProducts)
         }
         
         //Build Expectation
@@ -159,7 +158,7 @@ class ProductsServiceTests: XCTestCase {
         let pageSize: Int = 0
 
         if let route = try? ProductsRouter.searchProducts(search, supplierId, visible, pageSize).asURLRequest() {
-            self.startStub(route, stubData: .SearchProducts)
+            self.startStub(route, stubData: .searchProducts)
         }
         
         //Build Expectation

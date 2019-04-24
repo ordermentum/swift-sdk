@@ -35,7 +35,7 @@ class AddOnsServiceTests: XCTestCase {
         
         //Stubbing
         if let route = try? AddOnsRouter.searchAddons(entityType, entityId).asURLRequest() {
-            self.startStub(route, stubData: .AddonsSearch )
+            self.startStub(route, stubData: .addonsSearch )
         }
         
         //Call API

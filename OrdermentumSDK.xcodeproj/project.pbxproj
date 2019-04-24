@@ -17,56 +17,57 @@
 		26A2799A22646214007A52EF /* MarketplaceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799922646214007A52EF /* MarketplaceServiceTests.swift */; };
 		26A2799C2264627D007A52EF /* InvoiceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799B2264627D007A52EF /* InvoiceServiceTests.swift */; };
 		26AA6E4A2266B44D00578DED /* NetworkStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E492266B44D00578DED /* NetworkStub.swift */; };
-		26AA6E4E2266E2D000578DED /* AddonsSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AA6E4D2266E2D000578DED /* AddonsSearch.json */; };
+		26AA6E4E2266E2D000578DED /* addonsSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AA6E4D2266E2D000578DED /* addonsSearch.json */; };
 		26AA6E582266F84500578DED /* VenueServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E4F2266F84400578DED /* VenueServiceTests.swift */; };
 		26AA6E592266F84500578DED /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E502266F84500578DED /* NotificationServiceTests.swift */; };
 		26AA6E5B2266F84500578DED /* ProfileServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E522266F84500578DED /* ProfileServiceTest.swift */; };
-		26AA6E5D2266F84500578DED /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E542266F84500578DED /* PurchaserServiceTests.swift */; };
 		26AA6E602266F84500578DED /* ProductsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E572266F84500578DED /* ProductsServiceTests.swift */; };
+		26B2A075226D47A600BC2755 /* sendFeedback.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A074226D47A600BC2755 /* sendFeedback.json */; };
+		26B2A077226D495600BC2755 /* getNPS.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A076226D495600BC2755 /* getNPS.json */; };
 		26B2A079226D5A7200BC2755 /* orderSubmit.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A078226D5A7200BC2755 /* orderSubmit.json */; };
 		26B2A07B226D67BB00BC2755 /* standingOrderSubmit.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07A226D67BB00BC2755 /* standingOrderSubmit.json */; };
 		26B2A07D226D69F000BC2755 /* getDeliveryDates.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07C226D69F000BC2755 /* getDeliveryDates.json */; };
 		26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07E226D6C6700BC2755 /* getOrders.json */; };
 		26B2A081226D6DDF00BC2755 /* removeFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A080226D6DDF00BC2755 /* removeFavourite.json */; };
+		26CE388D226FE76B00524345 /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E542266F84500578DED /* PurchaserServiceTests.swift */; };
 		2A6F52128EED75495252EE23 /* Pods_OrdermentumSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */; };
 		526155008E1402A0BB282A20 /* Pods_OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */; };
 		BB318620226588280028101E /* NotifyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318617226588280028101E /* NotifyServiceTests.swift */; };
 		BB318621226588280028101E /* NPSServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318618226588280028101E /* NPSServiceTests.swift */; };
 		BB318623226588280028101E /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861A226588280028101E /* ValidationServiceTest.swift */; };
 		BB318626226588280028101E /* PaymentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861D226588280028101E /* PaymentsServiceTests.swift */; };
-		BB659F8A22689D43009C3D46 /* RouterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB659F8922689D43009C3D46 /* RouterMethod.swift */; };
-		BB659F8F226C056A009C3D46 /* GetPurchaserForPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F8E226C056A009C3D46 /* GetPurchaserForPaymentMethod.json */; };
-		BB659F90226C056A009C3D46 /* GetPurchaserForPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F8E226C056A009C3D46 /* GetPurchaserForPaymentMethod.json */; };
-		BB659F92226C064B009C3D46 /* GetPurchasers.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F91226C064B009C3D46 /* GetPurchasers.json */; };
-		BB659F93226C064B009C3D46 /* GetPurchasers.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F91226C064B009C3D46 /* GetPurchasers.json */; };
-		BB659F95226C1BB5009C3D46 /* UpdatePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F94226C1BB4009C3D46 /* UpdatePaymentMethod.json */; };
-		BB659F96226C1BB5009C3D46 /* UpdatePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F94226C1BB4009C3D46 /* UpdatePaymentMethod.json */; };
-		BB659F98226D2D06009C3D46 /* GetProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F97226D2D06009C3D46 /* GetProfile.json */; };
-		BB659F99226D2D06009C3D46 /* GetProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F97226D2D06009C3D46 /* GetProfile.json */; };
-		BB659F9B226D307B009C3D46 /* UpdateProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F9A226D307B009C3D46 /* UpdateProfile.json */; };
-		BB659F9C226D307B009C3D46 /* UpdateProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F9A226D307B009C3D46 /* UpdateProfile.json */; };
-		BB659F9E226D36A1009C3D46 /* GetMarketPlaces.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F9D226D36A1009C3D46 /* GetMarketPlaces.json */; };
-		BB659F9F226D36A1009C3D46 /* GetMarketPlaces.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F9D226D36A1009C3D46 /* GetMarketPlaces.json */; };
-		BB659FA1226D3E56009C3D46 /* GetProductCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA0226D3E56009C3D46 /* GetProductCategories.json */; };
-		BB659FA2226D3E56009C3D46 /* GetProductCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA0226D3E56009C3D46 /* GetProductCategories.json */; };
-		BB659FA4226D4366009C3D46 /* GetProduct.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA3226D4366009C3D46 /* GetProduct.json */; };
-		BB659FA5226D4366009C3D46 /* GetProduct.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA3226D4366009C3D46 /* GetProduct.json */; };
-		BB659FA7226D4517009C3D46 /* GetMostOrderedProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA6226D4516009C3D46 /* GetMostOrderedProducts.json */; };
-		BB659FA8226D4517009C3D46 /* GetMostOrderedProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA6226D4516009C3D46 /* GetMostOrderedProducts.json */; };
-		BB659FAA226D464F009C3D46 /* GetTrendingProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA9226D464E009C3D46 /* GetTrendingProducts.json */; };
-		BB659FAB226D464F009C3D46 /* GetTrendingProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA9226D464E009C3D46 /* GetTrendingProducts.json */; };
-		BB659FAD226D4829009C3D46 /* GetRecommendedProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FAC226D4829009C3D46 /* GetRecommendedProducts.json */; };
-		BB659FAE226D4829009C3D46 /* GetRecommendedProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FAC226D4829009C3D46 /* GetRecommendedProducts.json */; };
-		BB659FB0226D4938009C3D46 /* SearchProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FAF226D4937009C3D46 /* SearchProducts.json */; };
-		BB659FB1226D4938009C3D46 /* SearchProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FAF226D4937009C3D46 /* SearchProducts.json */; };
-		BB659FB3226D4A9F009C3D46 /* GetPaymentMethods.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB2226D4A9F009C3D46 /* GetPaymentMethods.json */; };
-		BB659FB4226D4A9F009C3D46 /* GetPaymentMethods.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB2226D4A9F009C3D46 /* GetPaymentMethods.json */; };
-		BB659FB6226D4BF8009C3D46 /* GetSinglePaymentMethods.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB5226D4BF8009C3D46 /* GetSinglePaymentMethods.json */; };
-		BB659FB7226D4BF8009C3D46 /* GetSinglePaymentMethods.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB5226D4BF8009C3D46 /* GetSinglePaymentMethods.json */; };
-		BB659FB9226D5032009C3D46 /* CreateCardPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB8226D5032009C3D46 /* CreateCardPaymentMethod.json */; };
-		BB659FBA226D5032009C3D46 /* CreateCardPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB8226D5032009C3D46 /* CreateCardPaymentMethod.json */; };
-		BB659FBC226D541C009C3D46 /* DeletePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FBB226D541C009C3D46 /* DeletePaymentMethod.json */; };
-		BB659FBD226D541C009C3D46 /* DeletePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FBB226D541C009C3D46 /* DeletePaymentMethod.json */; };
+		BB659F8F226C056A009C3D46 /* getPurchaserForPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F8E226C056A009C3D46 /* getPurchaserForPaymentMethod.json */; };
+		BB659F90226C056A009C3D46 /* getPurchaserForPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F8E226C056A009C3D46 /* getPurchaserForPaymentMethod.json */; };
+		BB659F92226C064B009C3D46 /* getPurchasers.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F91226C064B009C3D46 /* getPurchasers.json */; };
+		BB659F93226C064B009C3D46 /* getPurchasers.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F91226C064B009C3D46 /* getPurchasers.json */; };
+		BB659F95226C1BB5009C3D46 /* updatePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F94226C1BB4009C3D46 /* updatePaymentMethod.json */; };
+		BB659F96226C1BB5009C3D46 /* updatePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F94226C1BB4009C3D46 /* updatePaymentMethod.json */; };
+		BB659F98226D2D06009C3D46 /* getProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F97226D2D06009C3D46 /* getProfile.json */; };
+		BB659F99226D2D06009C3D46 /* getProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F97226D2D06009C3D46 /* getProfile.json */; };
+		BB659F9B226D307B009C3D46 /* updateProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F9A226D307B009C3D46 /* updateProfile.json */; };
+		BB659F9C226D307B009C3D46 /* updateProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F9A226D307B009C3D46 /* updateProfile.json */; };
+		BB659F9E226D36A1009C3D46 /* getMarketPlaces.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F9D226D36A1009C3D46 /* getMarketPlaces.json */; };
+		BB659F9F226D36A1009C3D46 /* getMarketPlaces.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F9D226D36A1009C3D46 /* getMarketPlaces.json */; };
+		BB659FA1226D3E56009C3D46 /* getProductCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA0226D3E56009C3D46 /* getProductCategories.json */; };
+		BB659FA2226D3E56009C3D46 /* getProductCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA0226D3E56009C3D46 /* getProductCategories.json */; };
+		BB659FA4226D4366009C3D46 /* getProduct.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA3226D4366009C3D46 /* getProduct.json */; };
+		BB659FA5226D4366009C3D46 /* getProduct.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA3226D4366009C3D46 /* getProduct.json */; };
+		BB659FA7226D4517009C3D46 /* getMostOrderedProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA6226D4516009C3D46 /* getMostOrderedProducts.json */; };
+		BB659FA8226D4517009C3D46 /* getMostOrderedProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA6226D4516009C3D46 /* getMostOrderedProducts.json */; };
+		BB659FAA226D464F009C3D46 /* getTrendingProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA9226D464E009C3D46 /* getTrendingProducts.json */; };
+		BB659FAB226D464F009C3D46 /* getTrendingProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FA9226D464E009C3D46 /* getTrendingProducts.json */; };
+		BB659FAD226D4829009C3D46 /* getRecommendedProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FAC226D4829009C3D46 /* getRecommendedProducts.json */; };
+		BB659FAE226D4829009C3D46 /* getRecommendedProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FAC226D4829009C3D46 /* getRecommendedProducts.json */; };
+		BB659FB0226D4938009C3D46 /* searchProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FAF226D4937009C3D46 /* searchProducts.json */; };
+		BB659FB1226D4938009C3D46 /* searchProducts.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FAF226D4937009C3D46 /* searchProducts.json */; };
+		BB659FB3226D4A9F009C3D46 /* getPaymentMethods.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB2226D4A9F009C3D46 /* getPaymentMethods.json */; };
+		BB659FB4226D4A9F009C3D46 /* getPaymentMethods.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB2226D4A9F009C3D46 /* getPaymentMethods.json */; };
+		BB659FB6226D4BF8009C3D46 /* getSinglePaymentMethods.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB5226D4BF8009C3D46 /* getSinglePaymentMethods.json */; };
+		BB659FB7226D4BF8009C3D46 /* getSinglePaymentMethods.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB5226D4BF8009C3D46 /* getSinglePaymentMethods.json */; };
+		BB659FB9226D5032009C3D46 /* createCardPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB8226D5032009C3D46 /* createCardPaymentMethod.json */; };
+		BB659FBA226D5032009C3D46 /* createCardPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FB8226D5032009C3D46 /* createCardPaymentMethod.json */; };
+		BB659FBC226D541C009C3D46 /* deletePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */; };
+		BB659FBD226D541C009C3D46 /* deletePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */; };
 		CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */; };
 		CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */; };
 		CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */; };
@@ -87,7 +88,6 @@
 		CA4CF2E7225ADC1B006F18C8 /* NotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E6225ADC1B006F18C8 /* NotificationsRouter.swift */; };
 		CA4CF2E9225AE089006F18C8 /* NotifyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E8225AE089006F18C8 /* NotifyRouter.swift */; };
 		CA6BB820225D993700A34A01 /* FindSupplierServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */; };
-		CA6BB822225DA60300A34A01 /* ProjectionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6BB821225DA60300A34A01 /* ProjectionsServiceTests.swift */; };
 		CA72972A225D966F00224410 /* BoolUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA729729225D966F00224410 /* BoolUtils.swift */; };
 		CA929F3122555DA400E957AC /* OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA929F2722555DA400E957AC /* OrdermentumSDK.framework */; };
 		CA929F3822555DA400E957AC /* OrdermentumSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = CA929F2A22555DA400E957AC /* OrdermentumSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -188,7 +188,7 @@
 		26A2799922646214007A52EF /* MarketplaceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceServiceTests.swift; sourceTree = "<group>"; };
 		26A2799B2264627D007A52EF /* InvoiceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceServiceTests.swift; sourceTree = "<group>"; };
 		26AA6E492266B44D00578DED /* NetworkStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStub.swift; sourceTree = "<group>"; };
-		26AA6E4D2266E2D000578DED /* AddonsSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AddonsSearch.json; sourceTree = "<group>"; };
+		26AA6E4D2266E2D000578DED /* addonsSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = addonsSearch.json; sourceTree = "<group>"; };
 		26AA6E4F2266F84400578DED /* VenueServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueServiceTests.swift; sourceTree = "<group>"; };
 		26AA6E502266F84500578DED /* NotificationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
 		26AA6E512266F84500578DED /* NPSServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPSServiceTests.swift; sourceTree = "<group>"; };
@@ -198,6 +198,8 @@
 		26AA6E552266F84500578DED /* ValidationServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationServiceTest.swift; sourceTree = "<group>"; };
 		26AA6E562266F84500578DED /* NotifyServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyServiceTests.swift; sourceTree = "<group>"; };
 		26AA6E572266F84500578DED /* ProductsServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsServiceTests.swift; sourceTree = "<group>"; };
+		26B2A074226D47A600BC2755 /* sendFeedback.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sendFeedback.json; sourceTree = "<group>"; };
+		26B2A076226D495600BC2755 /* getNPS.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getNPS.json; sourceTree = "<group>"; };
 		26B2A078226D5A7200BC2755 /* orderSubmit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = orderSubmit.json; sourceTree = "<group>"; };
 		26B2A07A226D67BB00BC2755 /* standingOrderSubmit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = standingOrderSubmit.json; sourceTree = "<group>"; };
 		26B2A07C226D69F000BC2755 /* getDeliveryDates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getDeliveryDates.json; sourceTree = "<group>"; };
@@ -219,23 +221,22 @@
 		BB31861B226588280028101E /* ProfileServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileServiceTest.swift; sourceTree = "<group>"; };
 		BB31861C226588280028101E /* NotificationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
 		BB31861D226588280028101E /* PaymentsServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsServiceTests.swift; sourceTree = "<group>"; };
-		BB659F8922689D43009C3D46 /* RouterMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMethod.swift; sourceTree = "<group>"; };
-		BB659F8E226C056A009C3D46 /* GetPurchaserForPaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetPurchaserForPaymentMethod.json; sourceTree = "<group>"; };
-		BB659F91226C064B009C3D46 /* GetPurchasers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetPurchasers.json; sourceTree = "<group>"; };
-		BB659F94226C1BB4009C3D46 /* UpdatePaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UpdatePaymentMethod.json; sourceTree = "<group>"; };
-		BB659F97226D2D06009C3D46 /* GetProfile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetProfile.json; sourceTree = "<group>"; };
-		BB659F9A226D307B009C3D46 /* UpdateProfile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UpdateProfile.json; sourceTree = "<group>"; };
-		BB659F9D226D36A1009C3D46 /* GetMarketPlaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetMarketPlaces.json; sourceTree = "<group>"; };
-		BB659FA0226D3E56009C3D46 /* GetProductCategories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetProductCategories.json; sourceTree = "<group>"; };
-		BB659FA3226D4366009C3D46 /* GetProduct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetProduct.json; sourceTree = "<group>"; };
-		BB659FA6226D4516009C3D46 /* GetMostOrderedProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetMostOrderedProducts.json; sourceTree = "<group>"; };
-		BB659FA9226D464E009C3D46 /* GetTrendingProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetTrendingProducts.json; sourceTree = "<group>"; };
-		BB659FAC226D4829009C3D46 /* GetRecommendedProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetRecommendedProducts.json; sourceTree = "<group>"; };
-		BB659FAF226D4937009C3D46 /* SearchProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SearchProducts.json; sourceTree = "<group>"; };
-		BB659FB2226D4A9F009C3D46 /* GetPaymentMethods.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetPaymentMethods.json; sourceTree = "<group>"; };
-		BB659FB5226D4BF8009C3D46 /* GetSinglePaymentMethods.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetSinglePaymentMethods.json; sourceTree = "<group>"; };
-		BB659FB8226D5032009C3D46 /* CreateCardPaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CreateCardPaymentMethod.json; sourceTree = "<group>"; };
-		BB659FBB226D541C009C3D46 /* DeletePaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DeletePaymentMethod.json; sourceTree = "<group>"; };
+		BB659F8E226C056A009C3D46 /* getPurchaserForPaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getPurchaserForPaymentMethod.json; sourceTree = "<group>"; };
+		BB659F91226C064B009C3D46 /* getPurchasers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getPurchasers.json; sourceTree = "<group>"; };
+		BB659F94226C1BB4009C3D46 /* updatePaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = updatePaymentMethod.json; sourceTree = "<group>"; };
+		BB659F97226D2D06009C3D46 /* getProfile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getProfile.json; sourceTree = "<group>"; };
+		BB659F9A226D307B009C3D46 /* updateProfile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = updateProfile.json; sourceTree = "<group>"; };
+		BB659F9D226D36A1009C3D46 /* getMarketPlaces.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getMarketPlaces.json; sourceTree = "<group>"; };
+		BB659FA0226D3E56009C3D46 /* getProductCategories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getProductCategories.json; sourceTree = "<group>"; };
+		BB659FA3226D4366009C3D46 /* getProduct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getProduct.json; sourceTree = "<group>"; };
+		BB659FA6226D4516009C3D46 /* getMostOrderedProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getMostOrderedProducts.json; sourceTree = "<group>"; };
+		BB659FA9226D464E009C3D46 /* getTrendingProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getTrendingProducts.json; sourceTree = "<group>"; };
+		BB659FAC226D4829009C3D46 /* getRecommendedProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getRecommendedProducts.json; sourceTree = "<group>"; };
+		BB659FAF226D4937009C3D46 /* searchProducts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchProducts.json; sourceTree = "<group>"; };
+		BB659FB2226D4A9F009C3D46 /* getPaymentMethods.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getPaymentMethods.json; sourceTree = "<group>"; };
+		BB659FB5226D4BF8009C3D46 /* getSinglePaymentMethods.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getSinglePaymentMethods.json; sourceTree = "<group>"; };
+		BB659FB8226D5032009C3D46 /* createCardPaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createCardPaymentMethod.json; sourceTree = "<group>"; };
+		BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deletePaymentMethod.json; sourceTree = "<group>"; };
 		CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesService.swift; sourceTree = "<group>"; };
 		CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosurePeriodsRouter.swift; sourceTree = "<group>"; };
 		CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesRouter.swift; sourceTree = "<group>"; };
@@ -364,23 +365,25 @@
 		26AA6E4B2266D54100578DED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BB659FBB226D541C009C3D46 /* DeletePaymentMethod.json */,
-				BB659FB8226D5032009C3D46 /* CreateCardPaymentMethod.json */,
-				BB659FB5226D4BF8009C3D46 /* GetSinglePaymentMethods.json */,
-				BB659FB2226D4A9F009C3D46 /* GetPaymentMethods.json */,
-				BB659FAF226D4937009C3D46 /* SearchProducts.json */,
-				BB659FAC226D4829009C3D46 /* GetRecommendedProducts.json */,
-				BB659FA9226D464E009C3D46 /* GetTrendingProducts.json */,
-				BB659FA6226D4516009C3D46 /* GetMostOrderedProducts.json */,
-				BB659FA3226D4366009C3D46 /* GetProduct.json */,
-				BB659FA0226D3E56009C3D46 /* GetProductCategories.json */,
-				BB659F9D226D36A1009C3D46 /* GetMarketPlaces.json */,
-				BB659F9A226D307B009C3D46 /* UpdateProfile.json */,
-				BB659F97226D2D06009C3D46 /* GetProfile.json */,
-				BB659F94226C1BB4009C3D46 /* UpdatePaymentMethod.json */,
-				BB659F91226C064B009C3D46 /* GetPurchasers.json */,
-				BB659F8E226C056A009C3D46 /* GetPurchaserForPaymentMethod.json */,
-				26AA6E4D2266E2D000578DED /* AddonsSearch.json */,
+				BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */,
+				BB659FB8226D5032009C3D46 /* createCardPaymentMethod.json */,
+				BB659FB5226D4BF8009C3D46 /* getSinglePaymentMethods.json */,
+				BB659FB2226D4A9F009C3D46 /* getPaymentMethods.json */,
+				BB659FAF226D4937009C3D46 /* searchProducts.json */,
+				BB659FAC226D4829009C3D46 /* getRecommendedProducts.json */,
+				BB659FA9226D464E009C3D46 /* getTrendingProducts.json */,
+				BB659FA6226D4516009C3D46 /* getMostOrderedProducts.json */,
+				BB659FA3226D4366009C3D46 /* getProduct.json */,
+				BB659FA0226D3E56009C3D46 /* getProductCategories.json */,
+				BB659F9D226D36A1009C3D46 /* getMarketPlaces.json */,
+				BB659F9A226D307B009C3D46 /* updateProfile.json */,
+				BB659F97226D2D06009C3D46 /* getProfile.json */,
+				BB659F94226C1BB4009C3D46 /* updatePaymentMethod.json */,
+				BB659F91226C064B009C3D46 /* getPurchasers.json */,
+				BB659F8E226C056A009C3D46 /* getPurchaserForPaymentMethod.json */,
+				26AA6E4D2266E2D000578DED /* addonsSearch.json */,
+				26B2A074226D47A600BC2755 /* sendFeedback.json */,
+				26B2A076226D495600BC2755 /* getNPS.json */,
 				26B2A078226D5A7200BC2755 /* orderSubmit.json */,
 				26B2A07A226D67BB00BC2755 /* standingOrderSubmit.json */,
 				26B2A07C226D69F000BC2755 /* getDeliveryDates.json */,
@@ -394,7 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				26AA6E492266B44D00578DED /* NetworkStub.swift */,
-				BB659F8922689D43009C3D46 /* RouterMethod.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -711,22 +713,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB659FAD226D4829009C3D46 /* GetRecommendedProducts.json in Resources */,
-				BB659FA4226D4366009C3D46 /* GetProduct.json in Resources */,
-				BB659FBC226D541C009C3D46 /* DeletePaymentMethod.json in Resources */,
-				BB659F9E226D36A1009C3D46 /* GetMarketPlaces.json in Resources */,
-				BB659FA7226D4517009C3D46 /* GetMostOrderedProducts.json in Resources */,
-				BB659FB9226D5032009C3D46 /* CreateCardPaymentMethod.json in Resources */,
-				BB659F98226D2D06009C3D46 /* GetProfile.json in Resources */,
-				BB659FB0226D4938009C3D46 /* SearchProducts.json in Resources */,
-				BB659FB6226D4BF8009C3D46 /* GetSinglePaymentMethods.json in Resources */,
-				BB659FA1226D3E56009C3D46 /* GetProductCategories.json in Resources */,
-				BB659F92226C064B009C3D46 /* GetPurchasers.json in Resources */,
-				BB659FB3226D4A9F009C3D46 /* GetPaymentMethods.json in Resources */,
-				BB659F8F226C056A009C3D46 /* GetPurchaserForPaymentMethod.json in Resources */,
-				BB659FAA226D464F009C3D46 /* GetTrendingProducts.json in Resources */,
-				BB659F95226C1BB5009C3D46 /* UpdatePaymentMethod.json in Resources */,
-				BB659F9B226D307B009C3D46 /* UpdateProfile.json in Resources */,
+				BB659FAD226D4829009C3D46 /* getRecommendedProducts.json in Resources */,
+				BB659FA4226D4366009C3D46 /* getProduct.json in Resources */,
+				BB659FBC226D541C009C3D46 /* deletePaymentMethod.json in Resources */,
+				BB659F9E226D36A1009C3D46 /* getMarketPlaces.json in Resources */,
+				BB659FA7226D4517009C3D46 /* getMostOrderedProducts.json in Resources */,
+				BB659FB9226D5032009C3D46 /* createCardPaymentMethod.json in Resources */,
+				BB659F98226D2D06009C3D46 /* getProfile.json in Resources */,
+				BB659FB0226D4938009C3D46 /* searchProducts.json in Resources */,
+				BB659FB6226D4BF8009C3D46 /* getSinglePaymentMethods.json in Resources */,
+				BB659FA1226D3E56009C3D46 /* getProductCategories.json in Resources */,
+				BB659F92226C064B009C3D46 /* getPurchasers.json in Resources */,
+				BB659FB3226D4A9F009C3D46 /* getPaymentMethods.json in Resources */,
+				BB659F8F226C056A009C3D46 /* getPurchaserForPaymentMethod.json in Resources */,
+				BB659FAA226D464F009C3D46 /* getTrendingProducts.json in Resources */,
+				BB659F95226C1BB5009C3D46 /* updatePaymentMethod.json in Resources */,
+				BB659F9B226D307B009C3D46 /* updateProfile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,28 +736,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB659FB4226D4A9F009C3D46 /* GetPaymentMethods.json in Resources */,
-				BB659FBA226D5032009C3D46 /* CreateCardPaymentMethod.json in Resources */,
-				BB659FBD226D541C009C3D46 /* DeletePaymentMethod.json in Resources */,
-				BB659FA2226D3E56009C3D46 /* GetProductCategories.json in Resources */,
-				BB659FB7226D4BF8009C3D46 /* GetSinglePaymentMethods.json in Resources */,
-				BB659FA8226D4517009C3D46 /* GetMostOrderedProducts.json in Resources */,
-				BB659FAE226D4829009C3D46 /* GetRecommendedProducts.json in Resources */,
-				BB659F93226C064B009C3D46 /* GetPurchasers.json in Resources */,
+				BB659FB4226D4A9F009C3D46 /* getPaymentMethods.json in Resources */,
+				BB659FBA226D5032009C3D46 /* createCardPaymentMethod.json in Resources */,
+				BB659FBD226D541C009C3D46 /* deletePaymentMethod.json in Resources */,
+				BB659FA2226D3E56009C3D46 /* getProductCategories.json in Resources */,
+				BB659FB7226D4BF8009C3D46 /* getSinglePaymentMethods.json in Resources */,
+				BB659FA8226D4517009C3D46 /* getMostOrderedProducts.json in Resources */,
+				BB659FAE226D4829009C3D46 /* getRecommendedProducts.json in Resources */,
+				BB659F93226C064B009C3D46 /* getPurchasers.json in Resources */,
 				26B2A07B226D67BB00BC2755 /* standingOrderSubmit.json in Resources */,
 				26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */,
 				26B2A079226D5A7200BC2755 /* orderSubmit.json in Resources */,
 				26B2A081226D6DDF00BC2755 /* removeFavourite.json in Resources */,
 				26B2A07D226D69F000BC2755 /* getDeliveryDates.json in Resources */,
-				26AA6E4E2266E2D000578DED /* AddonsSearch.json in Resources */,
-				BB659F9C226D307B009C3D46 /* UpdateProfile.json in Resources */,
-				BB659F99226D2D06009C3D46 /* GetProfile.json in Resources */,
-				BB659F96226C1BB5009C3D46 /* UpdatePaymentMethod.json in Resources */,
-				BB659FAB226D464F009C3D46 /* GetTrendingProducts.json in Resources */,
-				BB659FB1226D4938009C3D46 /* SearchProducts.json in Resources */,
-				BB659F90226C056A009C3D46 /* GetPurchaserForPaymentMethod.json in Resources */,
-				BB659FA5226D4366009C3D46 /* GetProduct.json in Resources */,
-				BB659F9F226D36A1009C3D46 /* GetMarketPlaces.json in Resources */,
+				26AA6E4E2266E2D000578DED /* addonsSearch.json in Resources */,
+				BB659F9C226D307B009C3D46 /* updateProfile.json in Resources */,
+				BB659F99226D2D06009C3D46 /* getProfile.json in Resources */,
+				BB659F96226C1BB5009C3D46 /* updatePaymentMethod.json in Resources */,
+				BB659FAB226D464F009C3D46 /* getTrendingProducts.json in Resources */,
+				BB659FB1226D4938009C3D46 /* searchProducts.json in Resources */,
+				BB659F90226C056A009C3D46 /* getPurchaserForPaymentMethod.json in Resources */,
+				BB659FA5226D4366009C3D46 /* getProduct.json in Resources */,
+				BB659F9F226D36A1009C3D46 /* getMarketPlaces.json in Resources */,
+				26B2A075226D47A600BC2755 /* sendFeedback.json in Resources */,
+				26B2A077226D495600BC2755 /* getNPS.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,15 +819,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OrdermentumSDKTests/Pods-OrdermentumSDKTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Hippolyte/Hippolyte.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Hippolyte/Hippolyte.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hippolyte.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hippolyte.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -935,14 +939,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA6BB822225DA60300A34A01 /* ProjectionsServiceTests.swift in Sources */,
+				26CE388D226FE76B00524345 /* PurchaserServiceTests.swift in Sources */,
 				26A2799222645A75007A52EF /* DataAttributesServiceTests.swift in Sources */,
 				26AA6E4A2266B44D00578DED /* NetworkStub.swift in Sources */,
 				26A2799622645F29007A52EF /* ExperimentsServiceTests.swift in Sources */,
 				26AA6E592266F84500578DED /* NotificationServiceTests.swift in Sources */,
 				26AA6E582266F84500578DED /* VenueServiceTests.swift in Sources */,
 				26A279982264613F007A52EF /* FlagsServiceTests.swift in Sources */,
-				26AA6E5D2266F84500578DED /* PurchaserServiceTests.swift in Sources */,
 				268EE201226439E3008E10B5 /* AddOnsServiceTests.swift in Sources */,
 				26A2799A22646214007A52EF /* MarketplaceServiceTests.swift in Sources */,
 				CA6BB820225D993700A34A01 /* FindSupplierServiceTests.swift in Sources */,
@@ -951,7 +954,6 @@
 				BB318620226588280028101E /* NotifyServiceTests.swift in Sources */,
 				BB318621226588280028101E /* NPSServiceTests.swift in Sources */,
 				BB318623226588280028101E /* ValidationServiceTest.swift in Sources */,
-				BB659F8A22689D43009C3D46 /* RouterMethod.swift in Sources */,
 				CA2F35182255D2BD00D1118C /* AuthServiceTests.swift in Sources */,
 				26A2799C2264627D007A52EF /* InvoiceServiceTests.swift in Sources */,
 				26A27990226458A9007A52EF /* CreditNotesServiceTests.swift in Sources */,

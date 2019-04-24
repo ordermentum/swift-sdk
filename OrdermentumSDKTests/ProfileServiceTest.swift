@@ -9,7 +9,6 @@
 import Foundation
 import XCTest
 import Hippolyte
-
 @testable import OrdermentumSDK
 
 class ProfileServiceTest: XCTestCase {
@@ -26,7 +25,7 @@ class ProfileServiceTest: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
 
         if let route = try? ProfileRouter.getProfile.asURLRequest() {
-            self.startStub(route, stubData: .GetProfile)
+            self.startStub(route, stubData: .getProfile)
         }
         
         //Build Expectation
@@ -45,8 +44,7 @@ class ProfileServiceTest: XCTestCase {
     
     func testUpdateProfile() {
         Client.instance.baseURL = ClientURL.rootTestingURL
-        let userId:String = ProcessInfo.processInfo.environment["USER_ID"] ?? ""
-        
+        let userId:String = "28fabcd4-c161-4a2b-a073-74d51e2f9292"
         var requestObject: UpdateUserRequest = UpdateUserRequest()
         requestObject.email = ProcessInfo.processInfo.environment["EMAIL"] ?? ""
         requestObject.firstName = ProcessInfo.processInfo.environment["FIRST_NAME"] ?? ""
@@ -54,7 +52,7 @@ class ProfileServiceTest: XCTestCase {
         requestObject.phone = ProcessInfo.processInfo.environment["PHONE"] ?? ""
     
         if let route = try? ProfileRouter.updateProfile(userId, requestObject).asURLRequest() {
-            self.startStub(route, stubData: .UpdateProfile)
+            self.startStub(route, stubData: .updateProfile)
         }
         
         //Build Expectation
