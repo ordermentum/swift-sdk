@@ -37,7 +37,7 @@ class VenueServiceTests: XCTestCase {
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-
+        
         VenueService().getVenues(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject) in
             assert(result)
             expectation.fulfill()
@@ -56,7 +56,7 @@ class VenueServiceTests: XCTestCase {
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-
+        
         VenueService().updateVenueProfile(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject) in
             assert(result)
             expectation.fulfill()
@@ -73,7 +73,7 @@ class VenueServiceTests: XCTestCase {
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-
+        
         VenueService().getProfileCompletion(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, requestObject) in
             assert(result)
             expectation.fulfill()
@@ -136,7 +136,7 @@ class VenueServiceTests: XCTestCase {
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-
+        
         VenueService().getUsers(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, responseData) in
             assert(result)
             expectation.fulfill()
@@ -154,7 +154,7 @@ class VenueServiceTests: XCTestCase {
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-
+        
         VenueService().removeUser(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: responseObject) { (result) in
             assert(result)
             expectation.fulfill()
