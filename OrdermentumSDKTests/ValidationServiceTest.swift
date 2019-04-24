@@ -36,14 +36,12 @@ class ValidationServiceTest: XCTestCase {
         requestObject.supplierId = ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? ""
         requestObject.type = ProcessInfo.processInfo.environment["TYPE"] ?? ""
         requestObject.lineItems = []
-
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-
+        
         ValidationService().validateItems(requestObject) { (result, responseData) in
-            print("RESULT: ", result)
             assert(result)
             expectation.fulfill()
         }

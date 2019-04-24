@@ -32,7 +32,7 @@ class NotificationServiceTests: XCTestCase {
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-
+        
         NotificationsService().updateNotificationSetting(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", updateObject: ["" : true]) { (result) in
                 assert(result)
                 expectation.fulfill()
