@@ -38,6 +38,12 @@ public enum StubDataFile: String {
     case getDeliveryDates
     case getOrders
     case removeFavourite
+    case getFavourites
+    case getClassicStandingOrders
+    case updateOrderFirstTime
+    case updateOrder
+    case createFavourite
+    case scheduleOrder
 }
 
 protocol NetworkStubs {
