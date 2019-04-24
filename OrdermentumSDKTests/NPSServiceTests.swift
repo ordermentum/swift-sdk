@@ -55,6 +55,7 @@ class NPSServiceTests: XCTestCase {
         }
         requestObject.comment = ProcessInfo.processInfo.environment["NPS_COMMENT"] ?? ""
         
+
         //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
@@ -69,7 +70,7 @@ class NPSServiceTests: XCTestCase {
             assert(result)
             expectation.fulfill()
         }
-        
+
         //Wait until the expectation is fullfiled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
