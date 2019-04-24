@@ -37,7 +37,7 @@ class NotifyServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.notify.registerDevice(requestObject){ (result) in
+        NotifyService().registerDevice(requestObject){ (result) in
             assert(result)
             expectation.fulfill()
         }

@@ -23,7 +23,7 @@ class NPSServiceTests: XCTestCase {
     func testGetNPS() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Aysnc Test")
-        
+    
         //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
@@ -55,6 +55,7 @@ class NPSServiceTests: XCTestCase {
         }
         requestObject.comment = ProcessInfo.processInfo.environment["NPS_COMMENT"] ?? ""
         
+
         //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
