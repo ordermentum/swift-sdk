@@ -92,18 +92,6 @@ extension Marketplace: Decodable {
     }
 }
 
-
-public struct Properties: Encodable {
-    public init() {}
-    
-    public var demoSupplier: String = ""
-}
-
-public struct MarketplaceSettings {
-    public var brand: Brand = Brand()
-}
-
-
 extension Properties: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
