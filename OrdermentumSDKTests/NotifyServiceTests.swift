@@ -8,7 +8,6 @@
 
 import XCTest
 import Hippolyte
-
 @testable import OrdermentumSDK
 
 class NotifyServiceTests: XCTestCase {

@@ -11,7 +11,6 @@ import XCTest
 import Hippolyte
 @testable import OrdermentumSDK
 
-
 class PaymentsServiceTests: XCTestCase {
 
     override func setUp() {
@@ -71,7 +70,7 @@ class PaymentsServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         let retailerId: String = ""
         var requestObject: CreateCardPaymentMethodRequest = CreateCardPaymentMethodRequest()
-        
+
         requestObject.number = ProcessInfo.processInfo.environment["CARD_NUMBER"] ?? ""
         requestObject.issuer = ProcessInfo.processInfo.environment["CARD_ISSUER"] ?? ""
         requestObject.isCard = true
@@ -84,7 +83,7 @@ class PaymentsServiceTests: XCTestCase {
         requestObject.isDirect = true
         requestObject.defaultAll = true
         requestObject.userId = ProcessInfo.processInfo.environment["CARD_USER_ID"] ?? ""
-
+        
         if let route = try? PaymentsRouter.createCardPaymentMethod(retailerId, requestObject).asURLRequest() {
             self.startStub(route, stubData: .createCardPaymentMethod)
         }
@@ -92,7 +91,8 @@ class PaymentsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        Client.instance.payments.createCardPaymentMethod(retailerId: retailerId, requestObject: requestObject) { (result, PaymentMethod) in
+        //Call API
+ 		Client.instance.payments.createCardPaymentMethod(retailerId: retailerId, requestObject: requestObject) { (result, PaymentMethod) in
             if result {
                 assert(result)
                 expectation.fulfill()

@@ -9,9 +9,7 @@
 import Foundation
 import XCTest
 import Hippolyte
-
 @testable import OrdermentumSDK
-
 
 class PurchaserServiceTests: XCTestCase {
     

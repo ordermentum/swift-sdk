@@ -29,6 +29,8 @@ public enum StubDataFile: String {
     case getSinglePaymentMethods
     case createCardPaymentMethod
     case deletePaymentMethod
+    case getNPS
+    case sendFeedback
     case notificationSettingsUpdate
 }
 
@@ -77,4 +79,5 @@ extension MarketplaceServiceTests : NetworkStubs {}
 extension ProductsServiceTests : NetworkStubs {}
 extension PaymentsServiceTests : NetworkStubs {}
 extension NotifyServiceTests : NetworkStubs {}
+extension NPSServiceTests : NetworkStubs {}
 extension NotificationServiceTests: NetworkStubs {}
