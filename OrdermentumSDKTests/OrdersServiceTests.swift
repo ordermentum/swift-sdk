@@ -144,7 +144,7 @@ class OrderServiceTests: XCTestCase {
         }
         
         //Call API
-        OrdersService().getOrders(retailerId: retailerId, supplierId: supplierId, sortBy: sortBy) { (result, responseData) in
+        Client.instance.orders.getOrders(retailerId: retailerId, supplierId: supplierId, sortBy: sortBy) { (result, responseData) in
             assert(responseData?.data != nil)
             expectation.fulfill()
         }
