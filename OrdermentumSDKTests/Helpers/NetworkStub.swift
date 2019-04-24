@@ -40,6 +40,7 @@ public enum StubDataFile: String {
     case removeFavourite
     case getFavourites
     case getClassicStandingOrders
+    case getClassicStandingOrders_Empty
     case updateOrderFirstTime
     case updateOrder
     case createFavourite

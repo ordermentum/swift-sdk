@@ -225,7 +225,7 @@ class OrderServiceTests: XCTestCase {
         
         //Stubbing
         if let route = try? OrdersRouter.getClassicStandingOrders(retailerId, supplierId, enabled, sortBy).asURLRequest() {
-            self.startStub(route, stubData: .getClassicStandingOrders )
+            self.startStub(route, stubData: .getClassicStandingOrders_Empty )
         }
         
         //Call API

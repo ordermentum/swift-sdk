@@ -16,6 +16,7 @@
 		26A279982264613F007A52EF /* FlagsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A279972264613F007A52EF /* FlagsServiceTests.swift */; };
 		26A2799A22646214007A52EF /* MarketplaceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799922646214007A52EF /* MarketplaceServiceTests.swift */; };
 		26A2799C2264627D007A52EF /* InvoiceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799B2264627D007A52EF /* InvoiceServiceTests.swift */; };
+		26A7DFD922703E2D0056C632 /* getClassicStandingOrders_Empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 26A7DFD822703E2D0056C632 /* getClassicStandingOrders_Empty.json */; };
 		26AA6E4A2266B44D00578DED /* NetworkStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E492266B44D00578DED /* NetworkStub.swift */; };
 		26AA6E4E2266E2D000578DED /* addonsSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AA6E4D2266E2D000578DED /* addonsSearch.json */; };
 		26AA6E582266F84500578DED /* VenueServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E4F2266F84400578DED /* VenueServiceTests.swift */; };
@@ -193,6 +194,7 @@
 		26A279972264613F007A52EF /* FlagsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsServiceTests.swift; sourceTree = "<group>"; };
 		26A2799922646214007A52EF /* MarketplaceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceServiceTests.swift; sourceTree = "<group>"; };
 		26A2799B2264627D007A52EF /* InvoiceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceServiceTests.swift; sourceTree = "<group>"; };
+		26A7DFD822703E2D0056C632 /* getClassicStandingOrders_Empty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getClassicStandingOrders_Empty.json; sourceTree = "<group>"; };
 		26AA6E492266B44D00578DED /* NetworkStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStub.swift; sourceTree = "<group>"; };
 		26AA6E4D2266E2D000578DED /* addonsSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = addonsSearch.json; sourceTree = "<group>"; };
 		26AA6E4F2266F84400578DED /* VenueServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueServiceTests.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				26B2A080226D6DDF00BC2755 /* removeFavourite.json */,
 				26CE388E226FF20C00524345 /* getFavourites.json */,
 				26CE3891226FF94F00524345 /* getClassicStandingOrders.json */,
+				26A7DFD822703E2D0056C632 /* getClassicStandingOrders_Empty.json */,
 				26CE3893226FFE2600524345 /* updateOrderFirstTime.json */,
 				26CE3895226FFFB000524345 /* updateOrder.json */,
 				26CE38972270033600524345 /* createFavourite.json */,
@@ -789,6 +792,7 @@
 				BB659FB1226D4938009C3D46 /* searchProducts.json in Resources */,
 				BB659F90226C056A009C3D46 /* getPurchaserForPaymentMethod.json in Resources */,
 				BB659FA5226D4366009C3D46 /* getProduct.json in Resources */,
+				26A7DFD922703E2D0056C632 /* getClassicStandingOrders_Empty.json in Resources */,
 				BB659F9F226D36A1009C3D46 /* getMarketPlaces.json in Resources */,
 				26B2A075226D47A600BC2755 /* sendFeedback.json in Resources */,
 				26B2A077226D495600BC2755 /* getNPS.json in Resources */,
