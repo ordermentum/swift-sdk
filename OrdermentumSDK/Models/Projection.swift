@@ -26,6 +26,8 @@ public struct Delivery {
 }
 
 public struct SingleProjection {
+    public init() {}
+    
     public var orderId: String = ""
     public var supplierId: String = ""
     public var timeZone: String = ""

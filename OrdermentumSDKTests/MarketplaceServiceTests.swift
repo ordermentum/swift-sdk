@@ -6,7 +6,9 @@
 //  Copyright © 2019 Ordermentum. All rights reserved.
 //
 
+import Foundation
 import XCTest
+import Hippolyte
 @testable import OrdermentumSDK
 
 class MarketplaceServiceTests: XCTestCase {
@@ -19,15 +21,24 @@ class MarketplaceServiceTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testGetClosurePeriods() {
+    func testGetMarketPlaces() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerId:String = ""
+        let pageSize:Int = 0
+        let pageNo:Int = 0
+
+        if let route = try? MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo).asURLRequest() {
+            self.startStub(route, stubData: .getMarketPlaces)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.marketplaces.getMarketplaces(retailerId: "", pageSize:0, pageNo:0) { (result, responseData) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.marketplaces.getMarketplaces(retailerId: retailerId, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
         
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.

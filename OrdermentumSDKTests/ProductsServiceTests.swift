@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+import Hippolyte
 @testable import OrdermentumSDK
 
 class ProductsServiceTests: XCTestCase {
@@ -21,116 +22,156 @@ class ProductsServiceTests: XCTestCase {
     }
 
     func testGetProductCategories() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerId: String = ""
+        let supplierId: String = ""
+        let pageSize: Int = 0
+        let pageNo: Int = 0
+        
+        if let route = try? ProductsRouter.getProductCategories(retailerId, supplierId, pageSize, pageNo).asURLRequest() {
+            self.startStub(route, stubData: .getProductCategories)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        var requestObject: CategoryResponse = CategoryResponse()
-        requestObject.meta = Meta()
-        requestObject.links = Links()
-        requestObject.data = []
-        
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
-        ProductsService().getProductCategories(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", pageSize: 10, pageNo: 1) { (result, requestObject) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.products.getProductCategories(retailerId: retailerId, supplierId: supplierId, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
+
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testGetProduct() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let categoryId: String = ""
+        let retailerId: String = ""
+        let supplierId: String = ""
+        let visible : Bool = true
+        let pageSize: Int = 0
+        let pageNo: Int = 0
+        
+        if let route = try? ProductsRouter.getProducts(categoryId, retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
+            self.startStub(route, stubData: .getProduct)
+        }
+
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        var requestObject: ProductResponse = ProductResponse()
-        requestObject.meta = Meta()
-        requestObject.links = Links()
-        requestObject.data = []
-        
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
-        ProductsService().getProducts(categoryId: ProcessInfo.processInfo.environment["CATEGORY_ID"] ?? "", retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", visible: true, pageSize: 10, pageNo: 1) { (result, requestObject) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.products.getProducts(categoryId: categoryId, retailerId: retailerId, supplierId: supplierId, visible: visible, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testGetMostOrderedProducts() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerId: String = ""
+        let supplierId: String = ""
+        let visible : Bool = true
+        let pageSize: Int = 0
+        let pageNo: Int = 0
+        
+        if let route = try? ProductsRouter.getMostOrderedProducts(retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
+            self.startStub(route, stubData: .getMostOrderedProducts)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        var requestObject: ProductResponse = ProductResponse()
-        requestObject.meta = Meta()
-        requestObject.links = Links()
-        requestObject.data = []
-        
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
-        ProductsService().getMostOrderedProducts(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", visible: true, pageSize: 10, pageNo: 1) { (result, requestObject) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.products.getMostOrderedProducts(retailerId: retailerId, supplierId: supplierId, visible: visible, pageSize: pageSize, pageNo: pageNo) { (result, responseDat) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testGetTrendingProducts() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerId: String = ""
+        let supplierId: String = ""
+        let visible : Bool = true
+        let pageSize: Int = 0
+        let pageNo: Int = 0
+        
+        if let route = try? ProductsRouter.getTrendingProducts(retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
+            self.startStub(route, stubData: .getTrendingProducts)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        var requestObject: ProductResponse = ProductResponse()
-        requestObject.meta = Meta()
-        requestObject.links = Links()
-        requestObject.data = []
-        
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
-        ProductsService().getTrendingProducts(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", visible: true, pageSize: 10, pageNo: 1) { (result, requestObject) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.products.getTrendingProducts(retailerId: retailerId, supplierId: supplierId, visible: visible, pageSize: pageSize, pageNo: pageNo) { (result, responseDat) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testGetRecommendedProducts() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let retailerId: String = ""
+        let supplierId: String = ""
+        let pageSize: Int = 0
+        let excludedProductId: [String] = []
+        
+        if let route = try? ProductsRouter.getRecommendedProducts(retailerId, supplierId, pageSize, excludedProductId).asURLRequest() {
+            self.startStub(route, stubData: .getRecommendedProducts)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        var requestObject: ProductResponse = ProductResponse()
-        requestObject.meta = Meta()
-        requestObject.links = Links()
-        requestObject.data = []
-        
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
-        ProductsService().getRecommendedProducts(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", pageSize: 10, excludedProductIdsArray: []) { (result, requestObject) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.products.getRecommendedProducts(retailerId: retailerId, supplierId: supplierId, pageSize: pageSize, excludedProductIdsArray: excludedProductId) { (result, responseData) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testSearchProducts() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let search: String = ""
+        let supplierId: String = ""
+        let visible: Bool = true
+        let pageSize: Int = 0
+
+        if let route = try? ProductsRouter.searchProducts(search, supplierId, visible, pageSize).asURLRequest() {
+            self.startStub(route, stubData: .searchProducts)
+        }
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        var requestObject: ProductResponse = ProductResponse()
-        requestObject.meta = Meta()
-        requestObject.links = Links()
-        requestObject.data = []
-        
-        //Call API
-        Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
-        ProductsService().searchProducts(search: ProcessInfo.processInfo.environment["SEARCH_STRING"] ?? "", supplierId: ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? "", visible: true, pageSize: 10) { (result, requestObject) in
-            assert(result)
-            expectation.fulfill()
+        Client.instance.products.searchProducts(search: search, supplierId: supplierId, visible: visible, pageSize: pageSize) { (result, responseData) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+            }
         }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
 }

@@ -8,7 +8,6 @@
 
 import XCTest
 import Hippolyte
-
 @testable import OrdermentumSDK
 
 class NotifyServiceTests: XCTestCase {
@@ -38,7 +37,7 @@ class NotifyServiceTests: XCTestCase {
         
         //Stubbing
         if let route = try? NotifyRouter.registerDevice(requestObject).asURLRequest() {
-            self.startStub(route, stubData: .AddonsSearch )
+            self.startStub(route, stubData: .addonsSearch )
         }
         
         //Call API
