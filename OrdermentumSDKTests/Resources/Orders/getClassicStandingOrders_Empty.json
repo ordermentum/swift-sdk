@@ -1,11 +1,13 @@
 {
-    "baseUrl": "https://app-testing.ordermentum.com/v1/orders",
+    "baseUrl": "https://app-testing.ordermentum.com/v1/purchaser_schedules",
     "data": [],
     "query": {
         "retailerId": "5cc8f78c-9696-4d64-aa29-5c592524915f",
-        "supplierId": "7a617a6a-0612-498a-b133-401ba58a9c09",
+        "supplierId": "93552a1a-535f-4e1f-8ae2-6cbc444927de",
         "standingOrdersEnabled": "true",
-        "sortBy": "1"
+        "sortBy": {
+            "name": "true"
+        }
     },
     "totalResults": 0,
     "pageSize": 25,
@@ -17,16 +19,16 @@
         "pageNo": 1
     },
     "links": {
-        "self": "https://app-testing.ordermentum.com/v1/orders?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=7a617a6a-0612-498a-b133-401ba58a9c09&standingOrdersEnabled=true&sortBy=1&pageNo=1",
-        "first": "https://app-testing.ordermentum.com/v1/orders?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=7a617a6a-0612-498a-b133-401ba58a9c09&standingOrdersEnabled=true&sortBy=1&pageNo=1",
+        "self": "https://app-testing.ordermentum.com/v1/purchaser_schedules?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=93552a1a-535f-4e1f-8ae2-6cbc444927de&standingOrdersEnabled=true&sortBy%5Bname%5D=true&pageNo=1",
+        "first": "https://app-testing.ordermentum.com/v1/purchaser_schedules?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=93552a1a-535f-4e1f-8ae2-6cbc444927de&standingOrdersEnabled=true&sortBy%5Bname%5D=true&pageNo=1",
         "prev": null,
-        "next": "https://app-testing.ordermentum.com/v1/orders?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=7a617a6a-0612-498a-b133-401ba58a9c09&standingOrdersEnabled=true&sortBy=1&pageNo=0",
+        "next": "https://app-testing.ordermentum.com/v1/purchaser_schedules?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=93552a1a-535f-4e1f-8ae2-6cbc444927de&standingOrdersEnabled=true&sortBy%5Bname%5D=true&pageNo=0",
         "last": null
     },
     "previous": null,
     "totalPages": 0,
-    "next": "https://app-testing.ordermentum.com/v1/orders?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=7a617a6a-0612-498a-b133-401ba58a9c09&standingOrdersEnabled=true&sortBy=1&pageNo=0",
-    "first": "https://app-testing.ordermentum.com/v1/orders?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=7a617a6a-0612-498a-b133-401ba58a9c09&standingOrdersEnabled=true&sortBy=1&pageNo=1",
+    "next": "https://app-testing.ordermentum.com/v1/purchaser_schedules?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=93552a1a-535f-4e1f-8ae2-6cbc444927de&standingOrdersEnabled=true&sortBy%5Bname%5D=true&pageNo=0",
+    "first": "https://app-testing.ordermentum.com/v1/purchaser_schedules?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=93552a1a-535f-4e1f-8ae2-6cbc444927de&standingOrdersEnabled=true&sortBy%5Bname%5D=true&pageNo=1",
     "last": null,
-    "current": "https://app-testing.ordermentum.com/v1/orders?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=7a617a6a-0612-498a-b133-401ba58a9c09&standingOrdersEnabled=true&sortBy=1&pageNo=1"
+    "current": "https://app-testing.ordermentum.com/v1/purchaser_schedules?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=93552a1a-535f-4e1f-8ae2-6cbc444927de&standingOrdersEnabled=true&sortBy%5Bname%5D=true&pageNo=1"
 }
