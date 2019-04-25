@@ -37,3 +37,4 @@ extension ProductsServiceTests : GetMethod {}
 
 extension MarketplaceServiceTests : GetEnvironmentVar {}
 extension ProfileServiceTest : GetEnvironmentVar {}
+extension ProductsServiceTests : GetEnvironmentVar {}

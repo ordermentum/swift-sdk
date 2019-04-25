@@ -96,9 +96,9 @@ extension StubNetwork {
 
 
 extension AddOnsServiceTests : NetworkStubs {}
-extension ProductsServiceTests : NetworkStubs {}
 extension NotifyServiceTests : NetworkStubs {}
 extension NPSServiceTests : NetworkStubs {}
 
 extension ProfileServiceTest : StubNetwork {}
 extension MarketplaceServiceTests : StubNetwork {}
+extension ProductsServiceTests : StubNetwork {}

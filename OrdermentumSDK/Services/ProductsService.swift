@@ -75,7 +75,7 @@ public class ProductsService {
     public func getRecommendedProducts(retailerId: String, supplierId: String, pageSize: Int, excludedProductIdsArray: [String], completion: @escaping (Bool, ProductResponse?) -> ()) {
         //Build Route
         let route = ProductsRouter.getRecommendedProducts(retailerId, supplierId, pageSize, excludedProductIdsArray) as URLRequestConvertible
-        
+
         //Call API
         Service<ProductResponse>().request(route: route) { (result, responseObject) in
             completion(result, responseObject)
