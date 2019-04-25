@@ -37,7 +37,7 @@ class NotifyServiceTests: XCTestCase {
         
         //Stubbing
         if let route = try? NotifyRouter.registerDevice(requestObject).asURLRequest() {
-            self.startStub(route, stubData: .addonsSearch )
+            self.startStub(route, stubData: .registerDevice )
         }
         
         //Call API
