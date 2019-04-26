@@ -1,0 +1,74 @@
+{
+    "id": "422c6f88-69e5-43af-830d-71f399aa3b03",
+    "firstName": "Super",
+    "lastName": "Smash",
+    "fullName": "Super Smash",
+    "name": {
+        "first": "Super",
+        "last": "Smash"
+    },
+    "dob": null,
+    "email": "supersmash@agave.com",
+    "profileImage": "//www.gravatar.com/avatar/8e7a957705b42dc89801d68e915eb0be",
+    "phone": "",
+    "isAdmin": false,
+    "isSuperAdmin": false,
+    "notifications": {
+        "7a617a6a-0612-498a-b133-401ba58a9c09": {
+            "enableEmail": false,
+            "sendInvoice": false,
+            "placedOrders": false,
+            "pushNotifications": false,
+            "overdueOrders": false,
+            "enableSMS": false,
+            "alerts": false,
+            "remittance": false
+        },
+        "9b9cf5b6-0d06-436e-83c1-52d25e642e40": {
+            "alerts": true,
+            "enableSMS": true,
+            "remittance": true,
+            "enableEmail": true,
+            "sendInvoice": true,
+            "placedOrders": false,
+            "overdueOrders": true,
+            "pushNotifications": true
+        }
+    },
+    "entityNotifications": {
+        "7a617a6a-0612-498a-b133-401ba58a9c09": {
+            "enableEmail": false,
+            "sendInvoice": false,
+            "placedOrders": false,
+            "pushNotifications": false,
+            "overdueOrders": false,
+            "enableSMS": false,
+            "alerts": false,
+            "remittance": false
+        },
+        "9b9cf5b6-0d06-436e-83c1-52d25e642e40": {
+            "alerts": true,
+            "enableSMS": true,
+            "remittance": true,
+            "enableEmail": true,
+            "sendInvoice": true,
+            "placedOrders": false,
+            "overdueOrders": true,
+            "pushNotifications": true
+        }
+    },
+    "defaultNotifications": {
+        "overdueOrders": true,
+        "pushNotifications": false,
+        "remittance": true,
+        "placedOrders": false,
+        "alerts": true
+    },
+    "parentNotifications": {},
+    "settings": {
+        "accessNewRetailerUi": true
+    },
+    "createdAt": "2019-01-10T01:53:39.640Z",
+    "updatedAt": "2019-04-23T06:58:39.254Z",
+    "verifiedAt": "2019-03-08T00:43:15.564Z"
+}
