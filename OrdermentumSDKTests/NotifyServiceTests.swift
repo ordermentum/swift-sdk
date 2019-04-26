@@ -25,15 +25,19 @@ class NotifyServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Build Request body and params
-        let requestObject: NotifyBody = NotifyBody()
-        
+        var requestObject: NotifyBody = NotifyBody()
+        requestObject.userId = ProcessInfo.processInfo.environment["USER_ID"] ?? ""
+        requestObject.deviceId = ProcessInfo.processInfo.environment["DEVICE_ID"] ?? ""
+        requestObject.deviceToken = ProcessInfo.processInfo.environment["DEVICE_TOKEN"] ?? ""
+        requestObject.deviceType = ProcessInfo.processInfo.environment["DEVICE_TYPE"] ?? ""
+
         //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         //Stubbing
         if let route = try? NotifyRouter.registerDevice(requestObject).asURLRequest() {
-            self.startStub(route, stubData: .addonsSearch )
+            self.startStub(route, stubData: .registerDevice )
         }
         
         //Call API

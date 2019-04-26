@@ -23,6 +23,8 @@
 		26AA6E592266F84500578DED /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E502266F84500578DED /* NotificationServiceTests.swift */; };
 		26AA6E5B2266F84500578DED /* ProfileServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E522266F84500578DED /* ProfileServiceTest.swift */; };
 		26AA6E602266F84500578DED /* ProductsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E572266F84500578DED /* ProductsServiceTests.swift */; };
+		26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AD4023227162A200CAEBC2 /* registerDevice.json */; };
+		26B2A073226D355600BC2755 /* notificationSettingsUpdate.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */; };
 		26B2A075226D47A600BC2755 /* sendFeedback.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A074226D47A600BC2755 /* sendFeedback.json */; };
 		26B2A077226D495600BC2755 /* getNPS.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A076226D495600BC2755 /* getNPS.json */; };
 		26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A078226D5A7200BC2755 /* submitOrder.json */; };
@@ -206,6 +208,8 @@
 		26AA6E552266F84500578DED /* ValidationServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationServiceTest.swift; sourceTree = "<group>"; };
 		26AA6E562266F84500578DED /* NotifyServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyServiceTests.swift; sourceTree = "<group>"; };
 		26AA6E572266F84500578DED /* ProductsServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsServiceTests.swift; sourceTree = "<group>"; };
+		26AD4023227162A200CAEBC2 /* registerDevice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = registerDevice.json; sourceTree = "<group>"; };
+		26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = notificationSettingsUpdate.json; sourceTree = "<group>"; };
 		26B2A074226D47A600BC2755 /* sendFeedback.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sendFeedback.json; sourceTree = "<group>"; };
 		26B2A076226D495600BC2755 /* getNPS.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getNPS.json; sourceTree = "<group>"; };
 		26B2A078226D5A7200BC2755 /* submitOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = submitOrder.json; sourceTree = "<group>"; };
@@ -399,6 +403,8 @@
 				26AA6E4D2266E2D000578DED /* addonsSearch.json */,
 				26B2A074226D47A600BC2755 /* sendFeedback.json */,
 				26B2A076226D495600BC2755 /* getNPS.json */,
+				26AD4023227162A200CAEBC2 /* registerDevice.json */,
+				26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -781,9 +787,11 @@
 				26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */,
 				26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */,
 				26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */,
+				26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */,
 				26CE3894226FFE2600524345 /* updateOrderFirstTime.json in Resources */,
 				26B2A081226D6DDF00BC2755 /* removeFavourite.json in Resources */,
 				26B2A07D226D69F000BC2755 /* getDeliveryDates.json in Resources */,
+				26B2A073226D355600BC2755 /* notificationSettingsUpdate.json in Resources */,
 				26AA6E4E2266E2D000578DED /* addonsSearch.json in Resources */,
 				BB659F9C226D307B009C3D46 /* updateProfile.json in Resources */,
 				BB659F99226D2D06009C3D46 /* getProfile.json in Resources */,

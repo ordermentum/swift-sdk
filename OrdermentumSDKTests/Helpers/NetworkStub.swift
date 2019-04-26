@@ -31,7 +31,9 @@ public enum StubDataFile: String {
     case deletePaymentMethod
     case getNPS
     case sendFeedback
-
+    case registerDevice
+    case notificationSettingsUpdate
+  
     //Orders
     case submitOrder
     case submitStandingOrder
@@ -51,8 +53,8 @@ protocol NetworkStubs {
 }
 
 extension NetworkStubs {
-    func startStub(_ route: URLRequest, method: HTTPMethod, bodyJSONString: String) {
-        if let url = route.url {
+    func startStub(_ route: URLRequest, bodyJSONString: String) {
+        if let url = route.url, let methodString = route.httpMethod, let method = HTTPMethod(rawValue: methodString) {
             var stub = StubRequest(method: method, url: url)
             var response = StubResponse()
             let body = bodyJSONString.data(using: .utf8)!
@@ -93,4 +95,5 @@ extension ProductsServiceTests : NetworkStubs {}
 extension PaymentsServiceTests : NetworkStubs {}
 extension NotifyServiceTests : NetworkStubs {}
 extension NPSServiceTests : NetworkStubs {}
+extension NotificationServiceTests: NetworkStubs {}
 extension OrderServiceTests : NetworkStubs {}
