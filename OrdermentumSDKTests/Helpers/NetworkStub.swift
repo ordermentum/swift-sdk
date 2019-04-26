@@ -102,3 +102,4 @@ extension NPSServiceTests : NetworkStubs {}
 extension ProfileServiceTest : StubNetwork {}
 extension MarketplaceServiceTests : StubNetwork {}
 extension ProductsServiceTests : StubNetwork {}
+extension PaymentsServiceTests : StubNetwork {}
