@@ -31,6 +31,22 @@ public enum StubDataFile: String {
     case deletePaymentMethod
     case getNPS
     case sendFeedback
+    case registerDevice
+    case notificationSettingsUpdate
+  
+    //Orders
+    case submitOrder
+    case submitStandingOrder
+    case getDeliveryDates
+    case getOrders
+    case removeFavourite
+    case getFavourites
+    case getClassicStandingOrders
+    case getClassicStandingOrders_Empty
+    case updateOrderFirstTime
+    case updateOrder
+    case createFavourite
+    case scheduleOrder
 }
 
 protocol StubNetwork {
@@ -99,7 +115,18 @@ extension AddOnsServiceTests: NetworkStubs {}
 extension NotifyServiceTests: NetworkStubs {}
 extension NPSServiceTests: NetworkStubs {}
 
+
 extension ProfileServiceTest: StubNetwork {}
 extension MarketplaceServiceTests: StubNetwork {}
 extension ProductsServiceTests: StubNetwork {}
 extension PaymentsServiceTests: StubNetwork {}
+extension AddOnsServiceTests : NetworkStubs {}
+extension PurchaserServiceTests : NetworkStubs {}
+extension ProfileServiceTest : NetworkStubs {}
+extension MarketplaceServiceTests : NetworkStubs {}
+extension ProductsServiceTests : NetworkStubs {}
+extension PaymentsServiceTests : NetworkStubs {}
+extension NotifyServiceTests : NetworkStubs {}
+extension NPSServiceTests : NetworkStubs {}
+extension NotificationServiceTests: NetworkStubs {}
+
