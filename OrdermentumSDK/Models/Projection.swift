@@ -59,6 +59,7 @@ public struct SingleProjection {
     public var isCancelled: Bool = false
     public var isEditable: Bool = false
     public var isReinstatable: Bool = false
+    public var isRetailerEditable: Bool = false
     public var isLocked: Bool = false
     public var color: String = ""
 }
@@ -150,6 +151,7 @@ extension SingleProjection: Decodable {
         isCancelled = try container.decodeIfPresent(Bool.self, forKey: .isCancelled) ?? false
         isCancellable = try container.decodeIfPresent(Bool.self, forKey: .isCancellable) ?? false
         isLocked = try container.decodeIfPresent(Bool.self, forKey: .isLocked) ?? false
+        isRetailerEditable = try container.decodeIfPresent(Bool.self, forKey: .isRetailerEditable) ?? false
         color = try container.decodeIfPresent(String.self, forKey: .color) ?? ""
     }
 }
