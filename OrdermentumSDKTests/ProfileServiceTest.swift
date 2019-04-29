@@ -25,7 +25,8 @@ class ProfileServiceTest: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
 
         if let route = try? ProfileRouter.getProfile.asURLRequest() {
-            self.startStub(route, stubData: .getProfile)
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .getProfile)
         }
         
         //Build Expectation
@@ -36,6 +37,9 @@ class ProfileServiceTest: XCTestCase {
                 assert(result)
                 expectation.fulfill()
             }
+            else {
+                XCTFail("Expected JSON Response to succeed, but failed")
+            }
         }
 
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
@@ -44,25 +48,29 @@ class ProfileServiceTest: XCTestCase {
     
     func testUpdateProfile() {
         Client.instance.baseURL = ClientURL.rootTestingURL
-        let userId:String = "28fabcd4-c161-4a2b-a073-74d51e2f9292"
+        let userId:String = self.getEnvironmentVar("USER_ID") ?? ""
         var requestObject: UpdateUserRequest = UpdateUserRequest()
-        requestObject.email = ProcessInfo.processInfo.environment["EMAIL"] ?? ""
-        requestObject.firstName = ProcessInfo.processInfo.environment["FIRST_NAME"] ?? ""
-        requestObject.lastName = ProcessInfo.processInfo.environment["LAST_NAME"] ?? ""
-        requestObject.phone = ProcessInfo.processInfo.environment["PHONE"] ?? ""
+        requestObject.email = self.getEnvironmentVar("EMAIL") ?? ""
+        requestObject.firstName = self.getEnvironmentVar("FIRST_NAME") ?? ""
+        requestObject.lastName = self.getEnvironmentVar("LAST_NAME") ?? ""
+        requestObject.phone = self.getEnvironmentVar("PHONE") ?? ""
     
         if let route = try? ProfileRouter.updateProfile(userId, requestObject).asURLRequest() {
-            self.startStub(route, stubData: .updateProfile)
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .updateProfile)
         }
         
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
-        
+
         Client.instance.profiles.updateProfile(userId: userId, requestObject: requestObject) { (result) in
-            if result {
-                assert(result)
-                expectation.fulfill()
-            }
+                if result {
+                    assert(result)
+                    expectation.fulfill()
+                }
+                else {
+                    XCTFail("Expected JSON Response to succeed, but failed.")
+                }
         }
 
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
