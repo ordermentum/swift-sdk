@@ -78,7 +78,7 @@ extension Marketplace: Decodable {
         brandImages = try container.decodeIfPresent([Image].self, forKey: .brandImages) ?? []
         logo = try container.decodeIfPresent(Image.self, forKey: .logo) ?? Image()
         settings = try container.decodeIfPresent(MarketplaceSettings.self, forKey: .settings) ?? MarketplaceSettings()
-//        properties = try container.decodeIfPresent(MarketplaceProperties.self, forKey: .properties) ?? Properties()
+        properties = try container.decodeIfPresent(MarketplaceProperties.self, forKey: .properties) ?? MarketplaceProperties()
         shortName = try container.decodeIfPresent(String.self, forKey: .shortName) ?? ""
         phone = try container.decodeIfPresent(String.self, forKey: .phone) ?? ""
         activeRetailerIds = try container.decodeIfPresent([String].self, forKey: .activeRetailerIds) ?? []

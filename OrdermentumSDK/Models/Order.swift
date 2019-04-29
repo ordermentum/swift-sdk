@@ -87,7 +87,6 @@ public struct Order: Encodable {
     public var paymentStatus: String = ""
     public var placedByName: String = ""
     public var processingError: String = ""
-    public var properties: Properties = Properties()
     public var randomWeight: Bool = false
     public var retailerAlias: String = ""
     public var retailerEditable: Bool = false
@@ -123,7 +122,6 @@ public struct LineItem: Encodable {
     public var price: String = ""
     public var product: Product = Product()
     public var productId: String = ""
-    public var properties: Properties = Properties()
     public var quantity: Int = 0
     public var ratePrice: String = ""
     public var subtotal: String = ""
@@ -350,7 +348,6 @@ extension Order: Decodable {
         paymentStatus = try container.decodeIfPresent(String.self, forKey: .paymentStatus) ?? ""
         placedByName = try container.decodeIfPresent(String.self, forKey: .placedByName) ?? ""
         processingError = try container.decodeIfPresent(String.self, forKey: .processingError) ?? ""
-        properties = try container.decodeIfPresent(Properties.self, forKey: .properties) ?? Properties()
         randomWeight = try container.decodeIfPresent(Bool.self, forKey: .randomWeight) ?? false
         retailerAlias = try container.decodeIfPresent(String.self, forKey: .retailerAlias) ?? ""
         retailerEditable = try container.decodeIfPresent(Bool.self, forKey: .retailerEditable) ?? false
@@ -390,7 +387,6 @@ extension LineItem: Decodable {
         price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
         product = try container.decodeIfPresent(Product.self, forKey: .product) ?? Product()
         productId = try container.decodeIfPresent(String.self, forKey: .productId) ?? ""
-        properties = try container.decodeIfPresent(Properties.self, forKey: .properties) ??  Properties()
         quantity = try container.decodeIfPresent(Int.self, forKey: .quantity) ?? 0
         ratePrice = try container.decodeIfPresent(String.self, forKey: .ratePrice) ?? ""
         subtotal = try container.decodeIfPresent(String.self, forKey: .subtotal) ?? ""
