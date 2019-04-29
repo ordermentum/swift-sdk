@@ -47,6 +47,12 @@ public enum StubDataFile: String {
     case updateOrder
     case createFavourite
     case scheduleOrder
+    
+    //Invoices
+    case getInvoices
+    case exportInvoice
+    case downloadInvoice
+    case applyPayment
 }
 
 protocol StubNetwork {
@@ -124,3 +130,4 @@ extension MarketplaceServiceTests: NetworkStubs {}
 extension ProductsServiceTests: NetworkStubs {}
 extension PaymentsServiceTests: NetworkStubs {}
 extension NotificationServiceTests: NetworkStubs {}
+extension InvoiceServiceTests: NetworkStubs {}
