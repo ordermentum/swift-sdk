@@ -115,18 +115,12 @@ extension AddOnsServiceTests: NetworkStubs {}
 extension NotifyServiceTests: NetworkStubs {}
 extension NPSServiceTests: NetworkStubs {}
 
-
 extension ProfileServiceTest: StubNetwork {}
 extension MarketplaceServiceTests: StubNetwork {}
 extension ProductsServiceTests: StubNetwork {}
 extension PaymentsServiceTests: StubNetwork {}
-extension AddOnsServiceTests : NetworkStubs {}
-extension PurchaserServiceTests : NetworkStubs {}
-extension ProfileServiceTest : NetworkStubs {}
-extension MarketplaceServiceTests : NetworkStubs {}
-extension ProductsServiceTests : NetworkStubs {}
-extension PaymentsServiceTests : NetworkStubs {}
-extension NotifyServiceTests : NetworkStubs {}
-extension NPSServiceTests : NetworkStubs {}
+extension ProfileServiceTest: NetworkStubs {}
+extension MarketplaceServiceTests: NetworkStubs {}
+extension ProductsServiceTests: NetworkStubs {}
+extension PaymentsServiceTests: NetworkStubs {}
 extension NotificationServiceTests: NetworkStubs {}
-
