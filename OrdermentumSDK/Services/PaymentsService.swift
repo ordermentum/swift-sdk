@@ -48,7 +48,6 @@ public class PaymentsService {
     public func createCardPaymentMethod(retailerId: String, requestObject: CreateCardPaymentMethodRequest, completion: @escaping (Bool, PaymentMethod?) -> ()) {
         //Build Route
         let route = PaymentsRouter.createCardPaymentMethod(retailerId, requestObject) as URLRequestConvertible
-        
         //Call API
         Service<PaymentMethod>().request(route: route) { (result, responseObject) in
             completion(result, responseObject)
