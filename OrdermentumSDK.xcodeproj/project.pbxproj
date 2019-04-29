@@ -64,6 +64,7 @@
 		BB659FBD226D541C009C3D46 /* deletePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */; };
 		BB659FC5226FF7DE009C3D46 /* RouterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB659FC4226FF7DE009C3D46 /* RouterMethod.swift */; };
 		BB659FC622717A84009C3D46 /* PaymentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E532266F84500578DED /* PaymentsServiceTests.swift */; };
+		BB92918922769EEF00B82918 /* getFlags.json in Resources */ = {isa = PBXBuildFile; fileRef = BB92918822769EEF00B82918 /* getFlags.json */; };
 		CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */; };
 		CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */; };
 		CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */; };
@@ -222,6 +223,7 @@
 		BB659FB8226D5032009C3D46 /* createCardPaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createCardPaymentMethod.json; sourceTree = "<group>"; };
 		BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deletePaymentMethod.json; sourceTree = "<group>"; };
 		BB659FC4226FF7DE009C3D46 /* RouterMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMethod.swift; sourceTree = "<group>"; };
+		BB92918822769EEF00B82918 /* getFlags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getFlags.json; sourceTree = "<group>"; };
 		CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesService.swift; sourceTree = "<group>"; };
 		CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosurePeriodsRouter.swift; sourceTree = "<group>"; };
 		CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesRouter.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 		26AA6E4B2266D54100578DED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB92918822769EEF00B82918 /* getFlags.json */,
 				BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */,
 				BB659FB8226D5032009C3D46 /* createCardPaymentMethod.json */,
 				BB659FB5226D4BF8009C3D46 /* getSinglePaymentMethods.json */,
@@ -718,14 +721,8 @@
 				BB659FA8226D4517009C3D46 /* getMostOrderedProducts.json in Resources */,
 				BB659FAE226D4829009C3D46 /* getRecommendedProducts.json in Resources */,
 				BB659F93226C064B009C3D46 /* getPurchasers.json in Resources */,
-				26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */,
-				26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */,
-				26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */,
-				26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */,
+				BB92918922769EEF00B82918 /* getFlags.json in Resources */,
 				26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */,
-				26CE3894226FFE2600524345 /* updateOrderFirstTime.json in Resources */,
-				26B2A081226D6DDF00BC2755 /* removeFavourite.json in Resources */,
-				26B2A07D226D69F000BC2755 /* getDeliveryDates.json in Resources */,
 				26B2A073226D355600BC2755 /* notificationSettingsUpdate.json in Resources */,
 				26AA6E4E2266E2D000578DED /* addonsSearch.json in Resources */,
 				BB659F9C226D307B009C3D46 /* updateProfile.json in Resources */,
