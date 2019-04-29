@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		268EE201226439E3008E10B5 /* AddOnsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268EE200226439E3008E10B5 /* AddOnsServiceTests.swift */; };
-		269289302276B1DF0018AC6A /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E552266F84500578DED /* ValidationServiceTest.swift */; };
-		269289312276B2030018AC6A /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E542266F84500578DED /* PurchaserServiceTests.swift */; };
+		269289332276BE820018AC6A /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E552266F84500578DED /* ValidationServiceTest.swift */; };
+		269289342276BFD80018AC6A /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E542266F84500578DED /* PurchaserServiceTests.swift */; };
 		26A2798E226457DE007A52EF /* ClosureDatesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2798D226457DE007A52EF /* ClosureDatesServiceTests.swift */; };
 		26A27990226458A9007A52EF /* CreditNotesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2798F226458A9007A52EF /* CreditNotesServiceTests.swift */; };
 		26A2799222645A75007A52EF /* DataAttributesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799122645A75007A52EF /* DataAttributesServiceTests.swift */; };
@@ -350,7 +350,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2692892F2276B08F0018AC6A /* Recovered References */ = {
+		269289322276BE140018AC6A /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				BB31861A226588280028101E /* ValidationServiceTest.swift */,
@@ -427,7 +427,7 @@
 				CA929F2822555DA400E957AC /* Products */,
 				41D78D65B6A7C68FC7D24C9A /* Pods */,
 				4A5AC22735A3E572BD78B63E /* Frameworks */,
-				2692892F2276B08F0018AC6A /* Recovered References */,
+				269289322276BE140018AC6A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -922,8 +922,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269289312276B2030018AC6A /* PurchaserServiceTests.swift in Sources */,
-				269289302276B1DF0018AC6A /* ValidationServiceTest.swift in Sources */,
+				269289342276BFD80018AC6A /* PurchaserServiceTests.swift in Sources */,
+				269289332276BE820018AC6A /* ValidationServiceTest.swift in Sources */,
 				26A2799222645A75007A52EF /* DataAttributesServiceTests.swift in Sources */,
 				26AA6E4A2266B44D00578DED /* NetworkStub.swift in Sources */,
 				26A2799622645F29007A52EF /* ExperimentsServiceTests.swift in Sources */,
