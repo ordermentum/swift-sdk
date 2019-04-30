@@ -73,6 +73,7 @@ public struct Order: Encodable {
     public var invoiceReference: String = ""
     public var isOutstanding: Bool = false
     public var isRetailerEditable: Bool = false
+    public var isUpdated: Bool = false
     public var label: String = ""
     public var lineItems: [LineItem] = []
     public var locked: Bool = false
@@ -335,6 +336,7 @@ extension Order: Decodable {
         invoiceReference = try container.decodeIfPresent(String.self, forKey: .invoiceReference) ?? ""
         isOutstanding = try container.decodeIfPresent(Bool.self, forKey: .isOutstanding) ?? false
         isRetailerEditable = try container.decodeIfPresent(Bool.self, forKey: .isRetailerEditable) ?? false
+        isUpdated = try container.decodeIfPresent(Bool.self, forKey: .isUpdated) ?? false
         label = try container.decodeIfPresent(String.self, forKey: .label) ?? ""
         lineItems = try container.decodeIfPresent([LineItem].self, forKey: .lineItems) ?? []
         locked = try container.decodeIfPresent(Bool.self, forKey: .locked) ?? false
