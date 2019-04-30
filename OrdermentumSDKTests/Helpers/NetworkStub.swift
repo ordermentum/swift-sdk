@@ -96,4 +96,4 @@ extension ProductsServiceTests: NetworkStubs {}
 extension PaymentsServiceTests: NetworkStubs {}
 extension PurchaserServiceTests: NetworkStubs {}
 extension NotificationServiceTests: NetworkStubs {}
-extension OrderServiceTests : NetworkStubs {}
+extension OrderServiceTests: NetworkStubs {}
