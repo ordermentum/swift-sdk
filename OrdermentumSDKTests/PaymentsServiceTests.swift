@@ -28,7 +28,7 @@ class PaymentsServiceTests: XCTestCase {
         
         if let route = try? PaymentsRouter.getPaymentMethods(retailerId).asURLRequest() {
             let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .getPaymentMethods)
+            self.startStub(route, stubData: .getPaymentMethods)
         }
         
         //Build Expectation
@@ -56,7 +56,7 @@ class PaymentsServiceTests: XCTestCase {
 
         if let route = try? PaymentsRouter.getSinglePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
             let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .getSinglePaymentMethods)
+            self.startStub(route, stubData: .getSinglePaymentMethods)
         }
         
         //Build Expectation
@@ -96,7 +96,7 @@ class PaymentsServiceTests: XCTestCase {
         
         if let route = try? PaymentsRouter.createCardPaymentMethod(retailerId, requestObject).asURLRequest() {
             let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .createCardPaymentMethod)
+            self.startStub(route, stubData: .createCardPaymentMethod)
         }
         
         
@@ -147,7 +147,7 @@ class PaymentsServiceTests: XCTestCase {
         
         if let route = try? PaymentsRouter.deletePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
             let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
-            self.startStub(route, method: method, stubData: .deletePaymentMethod)
+            self.startStub(route, stubData: .deletePaymentMethod)
         }
         
         //Build Expectation

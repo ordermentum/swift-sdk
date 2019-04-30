@@ -237,6 +237,7 @@ enum CodingKeys: String, CodingKey {
     case isOpen
     case isOutstanding
     case isReinstatable
+    case isRetailerEditable
     case isSuperAdmin
     case label
     case lastFinishedAt
