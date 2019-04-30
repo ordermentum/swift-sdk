@@ -46,7 +46,6 @@ public struct Invoice: Encodable {
     public var paymentTransactionId: String = ""
     public var processing: Bool = false
     public var processingError: String = ""
-    public var properties: Properties = Properties()
     public var purchaserId: String = ""
     public var purchaser_id: String = ""
     public var reference: String = ""
@@ -179,7 +178,6 @@ extension Invoice: Decodable {
         paymentTransactionId = try container.decodeIfPresent(String.self, forKey: .paymentTransactionId) ?? ""
         processing = try container.decodeIfPresent(Bool.self, forKey: .processing) ?? false
         processingError = try container.decodeIfPresent(String.self, forKey: .processingError) ?? ""
-        properties = try container.decodeIfPresent(Properties.self, forKey: .properties) ?? Properties()
         purchaserId = try container.decodeIfPresent(String.self, forKey: .purchaserId) ?? ""
         purchaser_id = try container.decodeIfPresent(String.self, forKey: .purchaser_id) ?? ""
         reference = try container.decodeIfPresent(String.self, forKey: .reference) ?? ""
