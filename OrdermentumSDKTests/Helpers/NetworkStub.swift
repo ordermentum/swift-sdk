@@ -111,10 +111,6 @@ extension StubNetwork {
     }
 }
 
-
-extension AddOnsServiceTests: NetworkStubs {}
-extension NotifyServiceTests: NetworkStubs {}
-extension NPSServiceTests: NetworkStubs {}
 extension ProfileServiceTest: NetworkStubs {}
 extension MarketplaceServiceTests: NetworkStubs {}
 extension ProductsServiceTests: NetworkStubs {}
