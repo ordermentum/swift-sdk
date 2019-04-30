@@ -38,7 +38,6 @@ class FlagsServiceTests: XCTestCase {
         let userId: String = self.getEnvironmentVar("USER_ID") ?? ""
         
         if let route = try? FlagsRouter.getFlags(flags, supplierId, retailerId, userId).asURLRequest() {
-            print(route)
             let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, method: method, stubData: .getFlags)
         }

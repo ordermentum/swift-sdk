@@ -38,7 +38,7 @@ class PaymentsServiceTests: XCTestCase {
             if result {
                 assert(result)
                 expectation.fulfill()
-                XCTAssertFalse((responseData?.isEmpty)!)
+                XCTAssertFalse((responseData?.isEmpty ?? true))
             }
             else {
                 XCTFail("Expected JSON Response to succeed, but failed")
