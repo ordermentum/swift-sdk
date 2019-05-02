@@ -1,0 +1,12 @@
+{
+    "popular-products": true,
+    "find-supplier": false,
+    "user-invite": true,
+    "projections-v2": true,
+    "home-popular-products": true,
+    "retailer-signup": false,
+    "review": false,
+    "add-ons": true,
+    "add-venue": false,
+    "dashboard_profile": true
+}

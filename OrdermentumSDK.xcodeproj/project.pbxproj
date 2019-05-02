@@ -31,13 +31,9 @@
 		26B2A077226D495600BC2755 /* getNPS.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A076226D495600BC2755 /* getNPS.json */; };
 		26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A078226D5A7200BC2755 /* submitOrder.json */; };
 		26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07A226D67BB00BC2755 /* submitStandingOrder.json */; };
-		26B2A07D226D69F000BC2755 /* getDeliveryDates.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07C226D69F000BC2755 /* getDeliveryDates.json */; };
 		26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07E226D6C6700BC2755 /* getOrders.json */; };
-		26B2A081226D6DDF00BC2755 /* removeFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A080226D6DDF00BC2755 /* removeFavourite.json */; };
-		26CE388D226FE76B00524345 /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E542266F84500578DED /* PurchaserServiceTests.swift */; };
 		26CE388F226FF20C00524345 /* getFavourites.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE388E226FF20C00524345 /* getFavourites.json */; };
 		26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3891226FF94F00524345 /* getClassicStandingOrders.json */; };
-		26CE3894226FFE2600524345 /* updateOrderFirstTime.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3893226FFE2600524345 /* updateOrderFirstTime.json */; };
 		26CE3896226FFFB000524345 /* updateOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3895226FFFB000524345 /* updateOrder.json */; };
 		26CE38982270033600524345 /* createFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE38972270033600524345 /* createFavourite.json */; };
 		26CE389A2270054D00524345 /* scheduleOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE38992270054D00524345 /* scheduleOrder.json */; };
@@ -45,10 +41,6 @@
 		526155008E1402A0BB282A20 /* Pods_OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */; };
 		BB318620226588280028101E /* NotifyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318617226588280028101E /* NotifyServiceTests.swift */; };
 		BB318621226588280028101E /* NPSServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318618226588280028101E /* NPSServiceTests.swift */; };
-		BB318622226588280028101E /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318619226588280028101E /* PurchaserServiceTests.swift */; };
-		BB318623226588280028101E /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861A226588280028101E /* ValidationServiceTest.swift */; };
-		BB318626226588280028101E /* PaymentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31861D226588280028101E /* PaymentsServiceTests.swift */; };
-		BB659F8A22689D43009C3D46 /* RouterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB659F8922689D43009C3D46 /* RouterMethod.swift */; };
 		BB659F8F226C056A009C3D46 /* getPurchaserForPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F8E226C056A009C3D46 /* getPurchaserForPaymentMethod.json */; };
 		BB659F90226C056A009C3D46 /* getPurchaserForPaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F8E226C056A009C3D46 /* getPurchaserForPaymentMethod.json */; };
 		BB659F92226C064B009C3D46 /* getPurchasers.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659F91226C064B009C3D46 /* getPurchasers.json */; };
@@ -83,6 +75,7 @@
 		BB659FBD226D541C009C3D46 /* deletePaymentMethod.json in Resources */ = {isa = PBXBuildFile; fileRef = BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */; };
 		BB659FC5226FF7DE009C3D46 /* RouterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB659FC4226FF7DE009C3D46 /* RouterMethod.swift */; };
 		BB659FC622717A84009C3D46 /* PaymentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E532266F84500578DED /* PaymentsServiceTests.swift */; };
+		BB92918922769EEF00B82918 /* getFlags.json in Resources */ = {isa = PBXBuildFile; fileRef = BB92918822769EEF00B82918 /* getFlags.json */; };
 		CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */; };
 		CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */; };
 		CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */; };
@@ -236,12 +229,7 @@
 		897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrdermentumSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB318617226588280028101E /* NotifyServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyServiceTests.swift; sourceTree = "<group>"; };
 		BB318618226588280028101E /* NPSServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPSServiceTests.swift; sourceTree = "<group>"; };
-		BB318619226588280028101E /* PurchaserServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaserServiceTests.swift; sourceTree = "<group>"; };
 		BB31861A226588280028101E /* ValidationServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationServiceTest.swift; sourceTree = "<group>"; };
-		BB31861B226588280028101E /* ProfileServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileServiceTest.swift; sourceTree = "<group>"; };
-		BB31861C226588280028101E /* NotificationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
-		BB31861D226588280028101E /* PaymentsServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsServiceTests.swift; sourceTree = "<group>"; };
-		BB659F8922689D43009C3D46 /* RouterMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMethod.swift; sourceTree = "<group>"; };
 		BB659F8E226C056A009C3D46 /* getPurchaserForPaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getPurchaserForPaymentMethod.json; sourceTree = "<group>"; };
 		BB659F91226C064B009C3D46 /* getPurchasers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getPurchasers.json; sourceTree = "<group>"; };
 		BB659F94226C1BB4009C3D46 /* updatePaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = updatePaymentMethod.json; sourceTree = "<group>"; };
@@ -259,6 +247,7 @@
 		BB659FB8226D5032009C3D46 /* createCardPaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = createCardPaymentMethod.json; sourceTree = "<group>"; };
 		BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deletePaymentMethod.json; sourceTree = "<group>"; };
 		BB659FC4226FF7DE009C3D46 /* RouterMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterMethod.swift; sourceTree = "<group>"; };
+		BB92918822769EEF00B82918 /* getFlags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getFlags.json; sourceTree = "<group>"; };
 		CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesService.swift; sourceTree = "<group>"; };
 		CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosurePeriodsRouter.swift; sourceTree = "<group>"; };
 		CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesRouter.swift; sourceTree = "<group>"; };
@@ -396,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				26CE3890226FF92600524345 /* Orders */,
+				BB92918822769EEF00B82918 /* getFlags.json */,
 				BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */,
 				BB659FB8226D5032009C3D46 /* createCardPaymentMethod.json */,
 				BB659FB5226D4BF8009C3D46 /* getSinglePaymentMethods.json */,
@@ -788,6 +778,11 @@
 				BB659FA8226D4517009C3D46 /* getMostOrderedProducts.json in Resources */,
 				BB659FAE226D4829009C3D46 /* getRecommendedProducts.json in Resources */,
 				BB659F93226C064B009C3D46 /* getPurchasers.json in Resources */,
+				26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */,
+				26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */,
+				26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */,
+				26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */,
+				BB92918922769EEF00B82918 /* getFlags.json in Resources */,
 				26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */,
 				26B2A073226D355600BC2755 /* notificationSettingsUpdate.json in Resources */,
 				26AA6E4E2266E2D000578DED /* addonsSearch.json in Resources */,
@@ -1154,6 +1149,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/OrdermentumSDK/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1182,6 +1178,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/OrdermentumSDK/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

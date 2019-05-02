@@ -33,6 +33,7 @@ public enum StubDataFile: String {
     case sendFeedback
     case registerDevice
     case notificationSettingsUpdate
+    case getFlags
   
     //Orders
     case submitOrder
@@ -96,4 +97,6 @@ extension ProductsServiceTests: NetworkStubs {}
 extension PaymentsServiceTests: NetworkStubs {}
 extension PurchaserServiceTests: NetworkStubs {}
 extension NotificationServiceTests: NetworkStubs {}
+
+extension FlagsServiceTests: NetworkStubs {}
 extension OrderServiceTests: NetworkStubs {}

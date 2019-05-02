@@ -6,7 +6,10 @@
 //  Copyright © 2019 Ordermentum. All rights reserved.
 //
 
+import Foundation
 import XCTest
+import Hippolyte
+
 @testable import OrdermentumSDK
 
 class FlagsServiceTests: XCTestCase {
@@ -20,18 +23,48 @@ class FlagsServiceTests: XCTestCase {
     }
 
     func testGetFlags() {
-        //Build Expectation
-        let expectation = XCTestExpectation(description: "Async Test")
-        
-        //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.flags.getFlags(flagsArray: [], supplierIdArray: [], retailerId: "", userId: "") { (result, responseData) in
-            assert(result)
-            expectation.fulfill()
+        let flagsStr: String = self.getEnvironmentVar("FLAGS") ?? ""
+        let flags: [String] = flagsStr.split(separator: ",").map({ (substring) in
+            return String(substring)
+        })
+        
+        let supplierIdStr: String = self.getEnvironmentVar("SUPPLIERID_ARR") ?? ""
+        let supplierId: [String] = supplierIdStr.split(separator: ",").map({ (substring) in
+            return String(substring)
+        })
+        
+        let retailerId: String = self.getEnvironmentVar("RETAILER_ID") ?? ""
+        let userId: String = self.getEnvironmentVar("USER_ID") ?? ""
+        
+        if let route = try? FlagsRouter.getFlags(flags, supplierId, retailerId, userId).asURLRequest() {
+            self.startStub(route, stubData: .getFlags)
+        }
+        
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Stubs network call")
+        
+        Client.instance.flags.getFlags(flagsArray: flags, supplierIdArray: supplierId, retailerId: retailerId, userId: userId) { (result, responseData) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+                XCTAssertTrue(responseData?.findSupplier ?? true)
+                XCTAssertTrue(responseData?.review ?? true)
+                XCTAssertTrue(responseData?.dashboardProfile ?? true)
+                XCTAssertTrue(responseData?.userInvite ?? true)
+                XCTAssertTrue(responseData?.popularProducts ?? true)
+                XCTAssertTrue(responseData?.addons ?? true)
+                XCTAssertTrue(responseData?.homePopularProducts ?? true)
+                XCTAssertTrue(responseData?.retailerSignup ?? true)
+                XCTAssertTrue(responseData?.addVenue ?? true)
+                XCTAssertTrue(responseData?.projectionsV2 ?? true)
+            }
+            else {
+                XCTFail("Expected JSON Response to succeed, but failed")
+            }
         }
         
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
-
 }
