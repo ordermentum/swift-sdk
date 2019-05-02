@@ -15,9 +15,6 @@ protocol GetMethod {
 protocol GetEnvironmentVar {
 }
 
-protocol GetEnvironmentVarGeneric {
-}
-
 //Get the method from the route, returns String to Hippolyte HTTPMethod
 extension GetMethod {
     func getRouterMethod(url: URLRequestConvertible) -> String {
@@ -38,10 +35,10 @@ extension ProfileServiceTest: GetMethod {}
 extension MarketplaceServiceTests: GetMethod {}
 extension ProductsServiceTests: GetMethod {}
 extension PaymentsServiceTests: GetMethod {}
+extension FlagsServiceTests: GetMethod {}
 
 extension MarketplaceServiceTests: GetEnvironmentVar {}
 extension ProfileServiceTest: GetEnvironmentVar {}
 extension ProductsServiceTests: GetEnvironmentVar {}
 extension PaymentsServiceTests: GetEnvironmentVar {}
-
-extension ProductsServiceTests: GetEnvironmentVarGeneric {}
+extension FlagsServiceTests: GetEnvironmentVar {}
