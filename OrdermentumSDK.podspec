@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.source       = { git: "https://github.com/ordermentum/swift-sdk.git", tag: "0.0.2" }
 
-  s.source_files  = "OrdermentumSDK"
+  s.source_files  = "OrdermentumSDK/**/*.swift"
 
   s.framework  = "OrdermentumSDK"
 
