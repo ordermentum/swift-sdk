@@ -14,10 +14,8 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "10.0"
 
   s.source       = { git: "https://github.com/ordermentum/swift-sdk.git", tag: "0.0.2" }
-
   s.source_files  = "OrdermentumSDK/**/*.swift"
 
-  s.framework  = "OrdermentumSDK"
 
   s.dependency "Alamofire", "~> 5.0.0-beta.3"
   s.dependency "Hippolyte", "~> 0.6.0"
