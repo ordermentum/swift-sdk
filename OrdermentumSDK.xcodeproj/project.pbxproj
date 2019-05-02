@@ -32,6 +32,9 @@
 		26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A078226D5A7200BC2755 /* submitOrder.json */; };
 		26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07A226D67BB00BC2755 /* submitStandingOrder.json */; };
 		26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07E226D6C6700BC2755 /* getOrders.json */; };
+		26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07C226D69F000BC2755 /* getDeliveryDates.json */; };
+		26BFFA8A227AC86900D232B2 /* removeFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A080226D6DDF00BC2755 /* removeFavourite.json */; };
+		26BFFA8B227AC87400D232B2 /* updateOrderFirstTime.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3893226FFE2600524345 /* updateOrderFirstTime.json */; };
 		26CE388F226FF20C00524345 /* getFavourites.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE388E226FF20C00524345 /* getFavourites.json */; };
 		26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3891226FF94F00524345 /* getClassicStandingOrders.json */; };
 		26CE3896226FFFB000524345 /* updateOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3895226FFFB000524345 /* updateOrder.json */; };
@@ -772,18 +775,21 @@
 				26CE38982270033600524345 /* createFavourite.json in Resources */,
 				26CE388F226FF20C00524345 /* getFavourites.json in Resources */,
 				BB659FA2226D3E56009C3D46 /* getProductCategories.json in Resources */,
+				26BFFA8A227AC86900D232B2 /* removeFavourite.json in Resources */,
 				BB659FB7226D4BF8009C3D46 /* getSinglePaymentMethods.json in Resources */,
 				26CE389A2270054D00524345 /* scheduleOrder.json in Resources */,
 				26CE3896226FFFB000524345 /* updateOrder.json in Resources */,
 				BB659FA8226D4517009C3D46 /* getMostOrderedProducts.json in Resources */,
 				BB659FAE226D4829009C3D46 /* getRecommendedProducts.json in Resources */,
 				BB659F93226C064B009C3D46 /* getPurchasers.json in Resources */,
+				26BFFA8B227AC87400D232B2 /* updateOrderFirstTime.json in Resources */,
 				26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */,
 				26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */,
 				26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */,
 				26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */,
 				BB92918922769EEF00B82918 /* getFlags.json in Resources */,
 				26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */,
+				26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */,
 				26B2A073226D355600BC2755 /* notificationSettingsUpdate.json in Resources */,
 				26AA6E4E2266E2D000578DED /* addonsSearch.json in Resources */,
 				BB659F9C226D307B009C3D46 /* updateProfile.json in Resources */,
