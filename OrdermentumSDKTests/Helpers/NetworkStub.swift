@@ -98,8 +98,4 @@ extension PaymentsServiceTests: NetworkStubs {}
 extension PurchaserServiceTests: NetworkStubs {}
 extension NotificationServiceTests: NetworkStubs {}
 
-extension ProfileServiceTest: StubNetwork {}
-extension MarketplaceServiceTests: StubNetwork {}
-extension ProductsServiceTests: StubNetwork {}
-extension PaymentsServiceTests: StubNetwork {}
-extension FlagsServiceTests: StubNetwork {}
+extension FlagsServiceTests: NetworkStubs {}
