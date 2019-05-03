@@ -119,16 +119,19 @@ public struct ExportRequest: Codable {
     public var supplierId: String = ""
     public var type: String = ""
     public var socketId: String = ""
+    public init() {}
 }
 
 public struct ExportRequestData: Codable {
     public var includedIds: [String] = []
     public var all: Bool = false
     public var searchQuery: String = ""
+    public init() {}
 }
 
 public struct InvoicePaymentRequest: Codable {
     public var paymentMethodId: String = ""
+    public init() {}
 }
 
 extension InvoiceResponse: Decodable {
