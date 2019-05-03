@@ -18,6 +18,7 @@
 		26A279982264613F007A52EF /* FlagsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A279972264613F007A52EF /* FlagsServiceTests.swift */; };
 		26A2799A22646214007A52EF /* MarketplaceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799922646214007A52EF /* MarketplaceServiceTests.swift */; };
 		26A2799C2264627D007A52EF /* InvoiceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799B2264627D007A52EF /* InvoiceServiceTests.swift */; };
+		26A7DFD922703E2D0056C632 /* getClassicStandingOrders_Empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 26A7DFD822703E2D0056C632 /* getClassicStandingOrders_Empty.json */; };
 		26AA6E4A2266B44D00578DED /* NetworkStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E492266B44D00578DED /* NetworkStub.swift */; };
 		26AA6E4E2266E2D000578DED /* addonsSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AA6E4D2266E2D000578DED /* addonsSearch.json */; };
 		26AA6E582266F84500578DED /* VenueServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E4F2266F84400578DED /* VenueServiceTests.swift */; };
@@ -28,6 +29,17 @@
 		26B2A073226D355600BC2755 /* notificationSettingsUpdate.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */; };
 		26B2A075226D47A600BC2755 /* sendFeedback.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A074226D47A600BC2755 /* sendFeedback.json */; };
 		26B2A077226D495600BC2755 /* getNPS.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A076226D495600BC2755 /* getNPS.json */; };
+		26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A078226D5A7200BC2755 /* submitOrder.json */; };
+		26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07A226D67BB00BC2755 /* submitStandingOrder.json */; };
+		26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07E226D6C6700BC2755 /* getOrders.json */; };
+		26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07C226D69F000BC2755 /* getDeliveryDates.json */; };
+		26BFFA8A227AC86900D232B2 /* removeFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A080226D6DDF00BC2755 /* removeFavourite.json */; };
+		26BFFA8B227AC87400D232B2 /* updateOrderFirstTime.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3893226FFE2600524345 /* updateOrderFirstTime.json */; };
+		26CE388F226FF20C00524345 /* getFavourites.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE388E226FF20C00524345 /* getFavourites.json */; };
+		26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3891226FF94F00524345 /* getClassicStandingOrders.json */; };
+		26CE3896226FFFB000524345 /* updateOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3895226FFFB000524345 /* updateOrder.json */; };
+		26CE38982270033600524345 /* createFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE38972270033600524345 /* createFavourite.json */; };
+		26CE389A2270054D00524345 /* scheduleOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE38992270054D00524345 /* scheduleOrder.json */; };
 		2A6F52128EED75495252EE23 /* Pods_OrdermentumSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */; };
 		526155008E1402A0BB282A20 /* Pods_OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */; };
 		BB318620226588280028101E /* NotifyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB318617226588280028101E /* NotifyServiceTests.swift */; };
@@ -186,6 +198,7 @@
 		26A279972264613F007A52EF /* FlagsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsServiceTests.swift; sourceTree = "<group>"; };
 		26A2799922646214007A52EF /* MarketplaceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceServiceTests.swift; sourceTree = "<group>"; };
 		26A2799B2264627D007A52EF /* InvoiceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceServiceTests.swift; sourceTree = "<group>"; };
+		26A7DFD822703E2D0056C632 /* getClassicStandingOrders_Empty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getClassicStandingOrders_Empty.json; sourceTree = "<group>"; };
 		26AA6E492266B44D00578DED /* NetworkStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStub.swift; sourceTree = "<group>"; };
 		26AA6E4D2266E2D000578DED /* addonsSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = addonsSearch.json; sourceTree = "<group>"; };
 		26AA6E4F2266F84400578DED /* VenueServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueServiceTests.swift; sourceTree = "<group>"; };
@@ -199,6 +212,17 @@
 		26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = notificationSettingsUpdate.json; sourceTree = "<group>"; };
 		26B2A074226D47A600BC2755 /* sendFeedback.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sendFeedback.json; sourceTree = "<group>"; };
 		26B2A076226D495600BC2755 /* getNPS.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getNPS.json; sourceTree = "<group>"; };
+		26B2A078226D5A7200BC2755 /* submitOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = submitOrder.json; sourceTree = "<group>"; };
+		26B2A07A226D67BB00BC2755 /* submitStandingOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = submitStandingOrder.json; sourceTree = "<group>"; };
+		26B2A07C226D69F000BC2755 /* getDeliveryDates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getDeliveryDates.json; sourceTree = "<group>"; };
+		26B2A07E226D6C6700BC2755 /* getOrders.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getOrders.json; sourceTree = "<group>"; };
+		26B2A080226D6DDF00BC2755 /* removeFavourite.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = removeFavourite.json; sourceTree = "<group>"; };
+		26CE388E226FF20C00524345 /* getFavourites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getFavourites.json; sourceTree = "<group>"; };
+		26CE3891226FF94F00524345 /* getClassicStandingOrders.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getClassicStandingOrders.json; sourceTree = "<group>"; };
+		26CE3893226FFE2600524345 /* updateOrderFirstTime.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = updateOrderFirstTime.json; sourceTree = "<group>"; };
+		26CE3895226FFFB000524345 /* updateOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = updateOrder.json; sourceTree = "<group>"; };
+		26CE38972270033600524345 /* createFavourite.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = createFavourite.json; sourceTree = "<group>"; };
+		26CE38992270054D00524345 /* scheduleOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scheduleOrder.json; sourceTree = "<group>"; };
 		33B4FAFC0DAF94F90E526BB5 /* Pods-ordermentum-swift-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.debug.xcconfig"; sourceTree = "<group>"; };
 		3840BE69998B16C88F4D68A3 /* Pods-ordermentum-swift-sdkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdkTests/Pods-ordermentum-swift-sdkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		437682ED2DE8EC4E4AF30490 /* Pods-OrdermentumSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDK/Pods-OrdermentumSDK.release.xcconfig"; sourceTree = "<group>"; };
@@ -363,6 +387,7 @@
 		26AA6E4B2266D54100578DED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				26CE3890226FF92600524345 /* Orders */,
 				BB92918822769EEF00B82918 /* getFlags.json */,
 				BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */,
 				BB659FB8226D5032009C3D46 /* createCardPaymentMethod.json */,
@@ -396,6 +421,25 @@
 				BB659FC4226FF7DE009C3D46 /* RouterMethod.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		26CE3890226FF92600524345 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				26B2A078226D5A7200BC2755 /* submitOrder.json */,
+				26B2A07A226D67BB00BC2755 /* submitStandingOrder.json */,
+				26B2A07C226D69F000BC2755 /* getDeliveryDates.json */,
+				26B2A07E226D6C6700BC2755 /* getOrders.json */,
+				26B2A080226D6DDF00BC2755 /* removeFavourite.json */,
+				26CE388E226FF20C00524345 /* getFavourites.json */,
+				26CE3891226FF94F00524345 /* getClassicStandingOrders.json */,
+				26A7DFD822703E2D0056C632 /* getClassicStandingOrders_Empty.json */,
+				26CE3893226FFE2600524345 /* updateOrderFirstTime.json */,
+				26CE3895226FFFB000524345 /* updateOrder.json */,
+				26CE38972270033600524345 /* createFavourite.json */,
+				26CE38992270054D00524345 /* scheduleOrder.json */,
+			);
+			path = Orders;
 			sourceTree = "<group>";
 		};
 		41D78D65B6A7C68FC7D24C9A /* Pods */ = {
@@ -728,17 +772,24 @@
 				BB659FB4226D4A9F009C3D46 /* getPaymentMethods.json in Resources */,
 				BB659FBA226D5032009C3D46 /* createCardPaymentMethod.json in Resources */,
 				BB659FBD226D541C009C3D46 /* deletePaymentMethod.json in Resources */,
+				26CE38982270033600524345 /* createFavourite.json in Resources */,
+				26CE388F226FF20C00524345 /* getFavourites.json in Resources */,
 				BB659FA2226D3E56009C3D46 /* getProductCategories.json in Resources */,
+				26BFFA8A227AC86900D232B2 /* removeFavourite.json in Resources */,
 				BB659FB7226D4BF8009C3D46 /* getSinglePaymentMethods.json in Resources */,
+				26CE389A2270054D00524345 /* scheduleOrder.json in Resources */,
+				26CE3896226FFFB000524345 /* updateOrder.json in Resources */,
 				BB659FA8226D4517009C3D46 /* getMostOrderedProducts.json in Resources */,
 				BB659FAE226D4829009C3D46 /* getRecommendedProducts.json in Resources */,
 				BB659F93226C064B009C3D46 /* getPurchasers.json in Resources */,
+				26BFFA8B227AC87400D232B2 /* updateOrderFirstTime.json in Resources */,
 				26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */,
 				26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */,
 				26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */,
 				26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */,
 				BB92918922769EEF00B82918 /* getFlags.json in Resources */,
 				26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */,
+				26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */,
 				26B2A073226D355600BC2755 /* notificationSettingsUpdate.json in Resources */,
 				26AA6E4E2266E2D000578DED /* addonsSearch.json in Resources */,
 				BB659F9C226D307B009C3D46 /* updateProfile.json in Resources */,
@@ -748,6 +799,7 @@
 				BB659FB1226D4938009C3D46 /* searchProducts.json in Resources */,
 				BB659F90226C056A009C3D46 /* getPurchaserForPaymentMethod.json in Resources */,
 				BB659FA5226D4366009C3D46 /* getProduct.json in Resources */,
+				26A7DFD922703E2D0056C632 /* getClassicStandingOrders_Empty.json in Resources */,
 				BB659F9F226D36A1009C3D46 /* getMarketPlaces.json in Resources */,
 				26B2A075226D47A600BC2755 /* sendFeedback.json in Resources */,
 				26B2A077226D495600BC2755 /* getNPS.json in Resources */,

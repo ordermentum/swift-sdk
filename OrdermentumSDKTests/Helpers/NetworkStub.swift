@@ -99,3 +99,4 @@ extension PurchaserServiceTests: NetworkStubs {}
 extension NotificationServiceTests: NetworkStubs {}
 
 extension FlagsServiceTests: NetworkStubs {}
+extension OrderServiceTests: NetworkStubs {}
