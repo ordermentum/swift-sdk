@@ -1,0 +1,242 @@
+{
+    "meta": {
+        "totalResults": 1,
+        "totalPages": 1,
+        "pageSize": 25,
+        "pageNo": 1
+    },
+    "links": {
+        "self": "https://app-testing.ordermentum.com/v1/purchaser_schedules?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=93552a1a-535f-4e1f-8ae2-6cbc444927de&standingOrdersEnabled=true&pageNo=1",
+        "first": "https://app-testing.ordermentum.com/v1/purchaser_schedules?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=93552a1a-535f-4e1f-8ae2-6cbc444927de&standingOrdersEnabled=true&pageNo=1",
+        "prev": null,
+        "next": null,
+        "last": "https://app-testing.ordermentum.com/v1/purchaser_schedules?retailerId=5cc8f78c-9696-4d64-aa29-5c592524915f&supplierId=93552a1a-535f-4e1f-8ae2-6cbc444927de&standingOrdersEnabled=true&pageNo=1"
+    },
+    "data": [
+        {
+            "id": "0677fc09-3a9b-45c5-bcd4-8ca6543a8c88",
+            "name": "0 0 0 0 0",
+            "alias": "ADD",
+            "remindedAt": null,
+            "placedAt": "2019-01-11T03:27:56.860Z",
+            "place": true,
+            "purchaserId": "aeac1681-d0d7-437b-8b1c-3ba14e4b3e2d",
+            "userId": "a8056e31-1111-4533-a17c-05f83a089916",
+            "orderId": "79a2cd4e-feb1-4c74-8bdb-9d7d7d5b6b5e",
+            "supplierId": "93552a1a-535f-4e1f-8ae2-6cbc444927de",
+            "schedule": {
+                "id": "9712b62e-5cf8-4648-9e7d-f4d438023eb2",
+                "name": "0 0 0 0 0",
+                "alias": "ADD",
+                "cutOffTime": "14:33",
+                "editableUntil": 1,
+                "includeWeekends": true,
+                "recurrence": "FREQ=DAILY;INTERVAL=1;BYHOUR=14;BYMINUTE=33;TZID=Australia/Sydney",
+                "frequency": "daily",
+                "deliveryDelay": 1,
+                "supplierId": "93552a1a-535f-4e1f-8ae2-6cbc444927de",
+                "userId": "a8056e31-1111-4533-a17c-05f83a089916",
+                "createdAt": "2019-01-11T03:23:42.440Z",
+                "updatedAt": "2019-01-12T03:27:52.389Z",
+                "recurrenceInfo": {
+                    "freq": "daily",
+                    "byhour": "14",
+                    "byminute": "33",
+                    "interval": null,
+                    "timezone": "Australia/Sydney"
+                },
+                "escalationTime": "",
+                "firstReminder": "",
+                "enabled": true,
+                "lastFinishedAt": "2019-01-12T03:27:52.389Z",
+                "supplierName": "",
+                "standingOrders": true,
+                "supplier": {
+                    "name": ""
+                },
+                "lastStartedAt": "2019-01-12T03:27:52.357Z",
+                "default": false,
+                "cutOffPassed": false,
+                "nextRun": [
+                    "2019-04-25T04:33:51.153Z",
+                    "2019-04-26T04:33:51.000Z",
+                    "2019-04-27T04:33:51.000Z",
+                    "2019-04-28T04:33:51.000Z",
+                    "2019-04-29T04:33:51.000Z"
+                ],
+                "nextSequence": [
+                    {
+                        "date": "2019-04-25T04:28:51.153Z",
+                        "sequence": 3,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-04-26T04:28:51.000Z",
+                        "sequence": 4,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-04-27T04:28:51.000Z",
+                        "sequence": 5,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-04-28T04:28:51.000Z",
+                        "sequence": 6,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-04-29T04:28:51.000Z",
+                        "sequence": 7,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-04-30T04:28:51.000Z",
+                        "sequence": 8,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-01T04:28:51.000Z",
+                        "sequence": 9,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-02T04:28:51.000Z",
+                        "sequence": 10,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-03T04:28:51.000Z",
+                        "sequence": 11,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-04T04:28:51.000Z",
+                        "sequence": 12,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-05T04:28:51.000Z",
+                        "sequence": 13,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-06T04:28:51.000Z",
+                        "sequence": 14,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-07T04:28:51.000Z",
+                        "sequence": 15,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-08T04:28:51.000Z",
+                        "sequence": 16,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-09T04:28:51.000Z",
+                        "sequence": 17,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-10T04:28:51.000Z",
+                        "sequence": 18,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-11T04:28:51.000Z",
+                        "sequence": 19,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-12T04:28:51.000Z",
+                        "sequence": 20,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-13T04:28:51.000Z",
+                        "sequence": 21,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-14T04:28:51.000Z",
+                        "sequence": 22,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-15T04:28:51.000Z",
+                        "sequence": 23,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-16T04:28:51.000Z",
+                        "sequence": 24,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-17T04:28:51.000Z",
+                        "sequence": 25,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-18T04:28:51.000Z",
+                        "sequence": 26,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-19T04:28:51.000Z",
+                        "sequence": 27,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-20T04:28:51.000Z",
+                        "sequence": 28,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-21T04:28:51.000Z",
+                        "sequence": 29,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-22T04:28:51.000Z",
+                        "sequence": 30,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-23T04:28:51.000Z",
+                        "sequence": 31,
+                        "status": "pending"
+                    },
+                    {
+                        "date": "2019-05-24T04:28:51.000Z",
+                        "sequence": 32,
+                        "status": "pending"
+                    }
+                ],
+                "timezone": "Australia/Sydney"
+            },
+            "createdAt": "2019-01-11T03:23:47.531Z",
+            "updatedAt": "2019-04-08T05:15:22.618Z",
+            "activityEnded": false,
+            "nextRunAt": "2019-04-09T04:28:22.000Z",
+            "nextFinishAt": "2019-04-25T04:33:00.000Z",
+            "scheduleId": "9712b62e-5cf8-4648-9e7d-f4d438023eb2",
+            "nextRunDate": "2019-04-25T04:33:00.000Z",
+            "cancelled": [
+                "2019-01-12T03:28:00.000Z",
+                "2019-01-14T03:28:00.000Z"
+            ],
+            "updatedBy": {
+                "firstName": "–",
+                "lastName": "–"
+            },
+            "nextRunCancelled": false,
+            "scheduleEnabled": true,
+            "startDate": "2019-04-10T04:28:00.000Z",
+            "endDate": null
+        }
+    ]
+}
