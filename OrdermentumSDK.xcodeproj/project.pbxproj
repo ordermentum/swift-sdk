@@ -10,6 +10,9 @@
 		268EE201226439E3008E10B5 /* AddOnsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268EE200226439E3008E10B5 /* AddOnsServiceTests.swift */; };
 		269289332276BE820018AC6A /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E552266F84500578DED /* ValidationServiceTest.swift */; };
 		269289342276BFD80018AC6A /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E542266F84500578DED /* PurchaserServiceTests.swift */; };
+		269289372276C7FB0018AC6A /* getInvoices.json in Resources */ = {isa = PBXBuildFile; fileRef = 269289362276C7FB0018AC6A /* getInvoices.json */; };
+		269289392276D0F80018AC6A /* exportInvoice.json in Resources */ = {isa = PBXBuildFile; fileRef = 269289382276D0F80018AC6A /* exportInvoice.json */; };
+		2692893B2276D13F0018AC6A /* downloadInvoice.json in Resources */ = {isa = PBXBuildFile; fileRef = 2692893A2276D13F0018AC6A /* downloadInvoice.json */; };
 		26A2798E226457DE007A52EF /* ClosureDatesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2798D226457DE007A52EF /* ClosureDatesServiceTests.swift */; };
 		26A27990226458A9007A52EF /* CreditNotesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2798F226458A9007A52EF /* CreditNotesServiceTests.swift */; };
 		26A2799222645A75007A52EF /* DataAttributesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799122645A75007A52EF /* DataAttributesServiceTests.swift */; };
@@ -190,6 +193,9 @@
 /* Begin PBXFileReference section */
 		249F582D16A080253A3CC3DE /* Pods-OrdermentumSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDK/Pods-OrdermentumSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		268EE200226439E3008E10B5 /* AddOnsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnsServiceTests.swift; sourceTree = "<group>"; };
+		269289362276C7FB0018AC6A /* getInvoices.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getInvoices.json; sourceTree = "<group>"; };
+		269289382276D0F80018AC6A /* exportInvoice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exportInvoice.json; sourceTree = "<group>"; };
+		2692893A2276D13F0018AC6A /* downloadInvoice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = downloadInvoice.json; sourceTree = "<group>"; };
 		26A2798D226457DE007A52EF /* ClosureDatesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesServiceTests.swift; sourceTree = "<group>"; };
 		26A2798F226458A9007A52EF /* CreditNotesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesServiceTests.swift; sourceTree = "<group>"; };
 		26A2799122645A75007A52EF /* DataAttributesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAttributesServiceTests.swift; sourceTree = "<group>"; };
@@ -384,10 +390,21 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		269289352276C7CD0018AC6A /* Invoice */ = {
+			isa = PBXGroup;
+			children = (
+				269289362276C7FB0018AC6A /* getInvoices.json */,
+				269289382276D0F80018AC6A /* exportInvoice.json */,
+				2692893A2276D13F0018AC6A /* downloadInvoice.json */,
+			);
+			path = Invoice;
+			sourceTree = "<group>";
+		};
 		26AA6E4B2266D54100578DED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				26CE3890226FF92600524345 /* Orders */,
+				269289352276C7CD0018AC6A /* Invoice */,
 				BB92918822769EEF00B82918 /* getFlags.json */,
 				BB659FBB226D541C009C3D46 /* deletePaymentMethod.json */,
 				BB659FB8226D5032009C3D46 /* createCardPaymentMethod.json */,
@@ -769,6 +786,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269289372276C7FB0018AC6A /* getInvoices.json in Resources */,
 				BB659FB4226D4A9F009C3D46 /* getPaymentMethods.json in Resources */,
 				BB659FBA226D5032009C3D46 /* createCardPaymentMethod.json in Resources */,
 				BB659FBD226D541C009C3D46 /* deletePaymentMethod.json in Resources */,
@@ -780,7 +798,9 @@
 				26CE389A2270054D00524345 /* scheduleOrder.json in Resources */,
 				26CE3896226FFFB000524345 /* updateOrder.json in Resources */,
 				BB659FA8226D4517009C3D46 /* getMostOrderedProducts.json in Resources */,
+				269289392276D0F80018AC6A /* exportInvoice.json in Resources */,
 				BB659FAE226D4829009C3D46 /* getRecommendedProducts.json in Resources */,
+				2692893B2276D13F0018AC6A /* downloadInvoice.json in Resources */,
 				BB659F93226C064B009C3D46 /* getPurchasers.json in Resources */,
 				26BFFA8B227AC87400D232B2 /* updateOrderFirstTime.json in Resources */,
 				26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */,
