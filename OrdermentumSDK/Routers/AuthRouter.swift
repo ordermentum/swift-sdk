@@ -15,7 +15,7 @@ public enum AuthRouter: URLRequestConvertible {
     case requestPasswordReset(ForgotPasswordRequest)
     case changePassword(String, ChangePasswordRequest)
     case resetPassword(String)
-    case registerUser(SignUpUser)
+    case registerUser(SignUpRequest)
     
     //Methods
     var method: HTTPMethod {
