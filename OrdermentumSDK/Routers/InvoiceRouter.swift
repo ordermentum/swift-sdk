@@ -12,6 +12,7 @@ import Alamofire
 public enum InvoiceRouter: URLRequestConvertible {
     //Routes
     case getInvoices(String, String, String)
+    case getInvoice(String)
     case exportInvoice(ExportRequest)
     case downloadInvoice(String)
     case applyPayment(String, InvoicePaymentRequest)
@@ -20,6 +21,8 @@ public enum InvoiceRouter: URLRequestConvertible {
     var method: HTTPMethod {
         switch self {
         case .getInvoices:
+            return .get
+        case .getInvoice:
             return .get
         case .exportInvoice:
             return .post
@@ -35,6 +38,8 @@ public enum InvoiceRouter: URLRequestConvertible {
         switch self {
         case .getInvoices:
             return "invoices"
+        case .getInvoice(let invoiceId):
+            return "invoices/\(invoiceId)"
         case .exportInvoice:
             return "exports"
         case .downloadInvoice(let invoiceId):
