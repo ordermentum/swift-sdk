@@ -19,13 +19,26 @@ class InvoiceServiceTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testGetSuppliers() {
+    func testGetInvoices() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
+        //Build Request body and params
+        let retailerId = ProcessInfo.processInfo.environment["RETAILER_ID"] ?? ""
+        let supplierId = ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? ""
+        let sortBy = ProcessInfo.processInfo.environment["SORT"] ?? "-1"
+        
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.invoices.getInvoices(retailerId: "", supplierId: "", sortBy: "") { (result, responseData) in
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? InvoiceRouter.getInvoices(retailerId, supplierId, sortBy).asURLRequest() {
+            self.startStub(route, stubData: .getInvoices )
+        }
+        
+        //Call API
+        Client.instance.invoices.getInvoices(retailerId: retailerId, supplierId: supplierId, sortBy: sortBy) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -61,8 +74,16 @@ class InvoiceServiceTests: XCTestCase {
         requestObject.type = ProcessInfo.processInfo.environment["EXPORT_TYPE"] ?? ""
         requestObject.socketId = ProcessInfo.processInfo.environment["EXPORT_SOCKET_ID"] ?? ""
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? InvoiceRouter.exportInvoice (requestObject).asURLRequest() {
+            self.startStub(route, stubData: .exportInvoice )
+        }
+        
+        //Call API
         Client.instance.invoices.exportInvoice(requestObject) { (result, responseData) in
             assert(result)
             expectation.fulfill()
@@ -76,9 +97,21 @@ class InvoiceServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
+        //Build Request body and params
+        let invoiceId = ProcessInfo.processInfo.environment["INVOICE_ID"] ?? ""
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? InvoiceRouter.downloadInvoice(invoiceId).asURLRequest() {
+            self.startStub(route, stubData: .downloadInvoice )
+        }
+        
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.invoices.downloadInvoice(invoiceId: "") { (result, responseData) in
+        Client.instance.invoices.downloadInvoice(invoiceId: invoiceId) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -92,12 +125,22 @@ class InvoiceServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Build InvoicePaymentRequest Request Object
+        let invoiceId = ProcessInfo.processInfo.environment["INVOICE_ID"] ?? ""
         var requestObject: InvoicePaymentRequest = InvoicePaymentRequest()
         requestObject.paymentMethodId = ProcessInfo.processInfo.environment["INVOICE_PAYMENT_METHOD_ID"] ?? ""
         
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? InvoiceRouter.applyPayment(invoiceId,requestObject).asURLRequest() {
+            self.startStub(route, stubData: .applyPayment )
+        }
+        
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.invoices.applyPayment(invoiceId: "", requestObject: requestObject) { (result) in
+        Client.instance.invoices.applyPayment(invoiceId: invoiceId, requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
