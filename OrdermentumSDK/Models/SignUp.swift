@@ -13,7 +13,7 @@ public struct SignUpResponse {
     public var token: String = ""
 }
 
-public struct SignUpRequest {
+public struct SignUpRequest: Codable {
     public init() {}
     
     public var email: String = ""
