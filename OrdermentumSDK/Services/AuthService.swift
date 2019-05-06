@@ -71,7 +71,7 @@ public class AuthService {
      * Registers a user account on the Ordermentum retailer platform.
      * Returns a SignUpResponse
      */
-    public func registerUser(requestObject: SignUpRequest, completion: @escaping (Bool, SignUpResponse) -> ()) {
+    public func registerUser(requestObject: SignUpRequest, completion: @escaping (Bool, SignUpResponse?) -> ()) {
         //Build Route
         let route = AuthRouter.registerUser(requestObject) as URLRequestConvertible
         
