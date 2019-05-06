@@ -45,7 +45,7 @@ public enum AuthRouter: URLRequestConvertible {
         case .resetPassword:
             return "user/password"
         case .registerUser:
-            return ."users/signup"
+            return "users/signup"
         }
     }
     
