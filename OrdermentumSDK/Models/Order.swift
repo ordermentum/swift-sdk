@@ -231,13 +231,13 @@ public struct CreateFavouriteRequest: Codable {
         lineItems = []
         
         //Add Line Items
-        for cartProductObject in order.lineItems {
+        for item in order.lineItems {
             //Create Line item
             var createFavouriteLineItem: CreateFavouriteRequestLineItem = CreateFavouriteRequestLineItem()
-            createFavouriteLineItem.name = cartProductObject.product.name
-            createFavouriteLineItem.price = Float(cartProductObject.product.formattedPrice) ?? 0
-            createFavouriteLineItem.productId = cartProductObject.product.id
-            createFavouriteLineItem.quantity = cartProductObject.quantity
+            createFavouriteLineItem.name = item.product.name
+            createFavouriteLineItem.price = Float(item.product.formattedPrice) ?? 0
+            createFavouriteLineItem.productId = item.product.id
+            createFavouriteLineItem.quantity = item.quantity
             lineItems.append(createFavouriteLineItem)
         }
         
