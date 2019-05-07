@@ -35,6 +35,7 @@
 		26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A078226D5A7200BC2755 /* submitOrder.json */; };
 		26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07A226D67BB00BC2755 /* submitStandingOrder.json */; };
 		26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07E226D6C6700BC2755 /* getOrders.json */; };
+		26B5763A22813FAD008205DC /* applyPayment.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B5763922813FAD008205DC /* applyPayment.json */; };
 		26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07C226D69F000BC2755 /* getDeliveryDates.json */; };
 		26BFFA8A227AC86900D232B2 /* removeFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A080226D6DDF00BC2755 /* removeFavourite.json */; };
 		26BFFA8B227AC87400D232B2 /* updateOrderFirstTime.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3893226FFE2600524345 /* updateOrderFirstTime.json */; };
@@ -223,6 +224,7 @@
 		26B2A07C226D69F000BC2755 /* getDeliveryDates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getDeliveryDates.json; sourceTree = "<group>"; };
 		26B2A07E226D6C6700BC2755 /* getOrders.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getOrders.json; sourceTree = "<group>"; };
 		26B2A080226D6DDF00BC2755 /* removeFavourite.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = removeFavourite.json; sourceTree = "<group>"; };
+		26B5763922813FAD008205DC /* applyPayment.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applyPayment.json; sourceTree = "<group>"; };
 		26CE388E226FF20C00524345 /* getFavourites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getFavourites.json; sourceTree = "<group>"; };
 		26CE3891226FF94F00524345 /* getClassicStandingOrders.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getClassicStandingOrders.json; sourceTree = "<group>"; };
 		26CE3893226FFE2600524345 /* updateOrderFirstTime.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = updateOrderFirstTime.json; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				269289362276C7FB0018AC6A /* getInvoices.json */,
 				269289382276D0F80018AC6A /* exportInvoice.json */,
 				2692893A2276D13F0018AC6A /* downloadInvoice.json */,
+				26B5763922813FAD008205DC /* applyPayment.json */,
 			);
 			path = Invoice;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */,
 				26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */,
 				26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */,
+				26B5763A22813FAD008205DC /* applyPayment.json in Resources */,
 				BB92918922769EEF00B82918 /* getFlags.json in Resources */,
 				26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */,
 				26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */,
