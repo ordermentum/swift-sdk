@@ -221,31 +221,6 @@ public struct CreateFavouriteRequest: Codable {
     public var status: String = ""
     public var supplierId: String = ""
     public var type: String = ""
-    
-    /**
-     * Creates an instance of CreateFavouriteRequest from a given order object, supplierId and retailerId
-     * Returns a CreateFavouriteRequest
-     */
-    public init(order:Order, retailerID: String, supplierID: String) {
-        //Initialize Array of Line Items
-        lineItems = []
-        
-        //Add Line Items
-        for item in order.lineItems {
-            //Create Line item
-            var createFavouriteLineItem: CreateFavouriteRequestLineItem = CreateFavouriteRequestLineItem()
-            createFavouriteLineItem.name = item.product.name
-            createFavouriteLineItem.price = Float(item.product.formattedPrice) ?? 0
-            createFavouriteLineItem.productId = item.product.id
-            createFavouriteLineItem.quantity = item.quantity
-            lineItems.append(createFavouriteLineItem)
-        }
-        
-        //Set Favourite Object
-        retailerId = retailerID
-        supplierId = supplierID
-        type = "template"
-    }
 }
 
 public struct CreateFavouriteRequestLineItem: Codable {
@@ -545,6 +520,10 @@ extension LineItem: Equatable {
 }
 
 extension Order {
+    /**
+     * Creates an instance of CreateFavouriteRequest from a given order object, supplierId and retailerId
+     * Returns a CreateFavouriteRequest
+     */
     public func toCreateFavouriteRequest(retailerId: String, supplierId: String) -> CreateFavouriteRequest {
         //Initialize Create Favourite Request
         var requestObject: CreateFavouriteRequest = CreateFavouriteRequest()
