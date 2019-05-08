@@ -16,6 +16,7 @@ public enum AuthRouter: URLRequestConvertible {
     case changePassword(String, ChangePasswordRequest)
     case resetPassword(String)
     case registerUser(SignUpRequest)
+    case resendVerifyEmail(ResendVerifyEmailRequest)
     case verifyEmail(String)
     
     //Methods
@@ -30,6 +31,8 @@ public enum AuthRouter: URLRequestConvertible {
         case .resetPassword:
             return .put
         case .registerUser:
+            return .post
+        case .resendVerifyEmail:
             return .post
         case .verifyEmail:
             return .post
@@ -49,6 +52,8 @@ public enum AuthRouter: URLRequestConvertible {
             return "user/password"
         case .registerUser:
             return "users/signup"
+        case .resendVerifyEmail:
+            return "users/send-verify"
         case .verifyEmail:
             return "users/verify"
         }
@@ -76,6 +81,8 @@ public enum AuthRouter: URLRequestConvertible {
         case .changePassword(_, let requestObject):
             return requestObject
         case .registerUser(let requestObject):
+            return requestObject
+        case .resendVerifyEmail(let requestObject):
             return requestObject
         default:
             return nil

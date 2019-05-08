@@ -92,18 +92,19 @@ class AuthServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Build Request Object
-        let resetToken = ProcessInfo.processInfo.environment["RESET_TOKEN"] ?? ""
+        var requestObject: ResendVerifyEmailRequest = ResendVerifyEmailRequest()
+        requestObject.email = ProcessInfo.processInfo.environment["VERIFY_EMAIL"] ?? ""
         
         //Request Setup
         Client.instance.baseURL = ClientURL.rootURL
         
         //Stubbing
-        if let route = try? AuthRouter.verifyEmail(resetToken).asURLRequest() {
-            self.startStub(route, stubData: .verifyEmail )
+        if let route = try? AuthRouter.resendVerifyEmail(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .resendVerifyEmail )
         }
         
         //Call API
-        Client.instance.auth.verifyEmail(resetToken) { (result) in
+        Client.instance.auth.resendVerifyEmail(requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
@@ -111,5 +112,4 @@ class AuthServiceTests: XCTestCase {
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
-
 }
