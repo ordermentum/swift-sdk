@@ -81,7 +81,6 @@ public class AuthService {
         }
     }
     
-    
     /**
      * Verify an account using a token
      * Returns a response to check for success or fail
@@ -95,5 +94,4 @@ public class AuthService {
             completion(result)
         }
     }
-
 }
