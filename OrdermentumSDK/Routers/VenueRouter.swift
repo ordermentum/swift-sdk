@@ -14,6 +14,7 @@ public enum VenueRouter: URLRequestConvertible {
     case getVenues([String], Int, Int)
     case updateVenueProfile(String, VenueProfile)
     case getProfileCompletion(String)
+    case getVenueInvites(String)
     case sendVenueInvite(AddUser)
     case getUsers(String)
     case removeUser(String, RemoveUser)
@@ -26,6 +27,8 @@ public enum VenueRouter: URLRequestConvertible {
         case .updateVenueProfile:
             return .patch
         case .getProfileCompletion:
+            return .get
+        case .getVenueInvites:
             return .get
         case .sendVenueInvite:
             return .post
@@ -45,6 +48,8 @@ public enum VenueRouter: URLRequestConvertible {
             return "retailers/\(retailerId)"
         case .getProfileCompletion(let retailerId):
             return "retailers/\(retailerId)/profile"
+        case .getVenueInvites:
+            return "invites"
         case .sendVenueInvite:
             return "invites"
         case .getUsers:
@@ -61,6 +66,10 @@ public enum VenueRouter: URLRequestConvertible {
             return ["id[]": idArray, "pageSize": pageSize, "pageNo": pageNo]
         case .getUsers(let retailerId):
             return ["retailerId": retailerId]
+        case .getVenueInvites(let recipientEmail):
+            var formattedEmailString: String = recipientEmail.addingPercentEncoding(withAllowedCharacters: .urlUserAllowed) ?? ""
+            formattedEmailString = formattedEmailString.replacingOccurrences(of: "+", with: "%2B")
+            return ["recipientEmail":recipientEmail, "status":"approved"]
         default:
             return [:]
         }
