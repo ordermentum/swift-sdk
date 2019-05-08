@@ -80,4 +80,18 @@ public class AuthService {
             completion(result, responseObject)
         }
     }
+    
+    /**
+     * Sends an email verification to the supplied email address.
+     * Returns a SignUpResponse
+     */
+    public func resendVerifyEmail(_ requestObject: ResendVerifyEmailRequest, completion: @escaping (Bool) -> ()) {
+        //Build Route
+        let route = AuthRouter.resendVerifyEmail(requestObject) as URLRequestConvertible
+        
+        //Call API
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
+            completion(result)
+        }
+    }
 }

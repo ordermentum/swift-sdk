@@ -34,6 +34,7 @@ public enum StubDataFile: String {
     case registerDevice
     case notificationSettingsUpdate
     case getFlags
+    case resendVerifyEmail
   
     //Orders
     case submitOrder
@@ -107,3 +108,4 @@ extension NotificationServiceTests: NetworkStubs {}
 extension FlagsServiceTests: NetworkStubs {}
 extension OrderServiceTests: NetworkStubs {}
 extension InvoiceServiceTests: NetworkStubs {}
+extension AuthServiceTests: NetworkStubs {}

@@ -43,3 +43,9 @@ public struct ChangePasswordRequest: Codable {
     public var password: String = ""
     public var verifyPassword: String = ""
 }
+
+public struct ResendVerifyEmailRequest: Codable {
+    public init() {}
+    
+    public var email: String = ""
+}
