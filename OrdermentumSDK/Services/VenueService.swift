@@ -55,6 +55,20 @@ public class VenueService {
     }
     
     /**
+     * Fetches venue invites to a user using given email
+     * Returns a VenueInviteResponse
+     */
+    public func checkVenueInvites(_ recipientEmail: String, completion: @escaping (Bool, VenueInviteResponse?) -> ()) {
+        //Build Route
+        let route = VenueRouter.getVenueInvites(recipientEmail) as URLRequestConvertible
+        
+        //Call API
+        Service<VenueInviteResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
+        }
+    }
+    
+    /**
      * Send an invite to a user for a particular venue
      * Returns an AddUserResponse
      */

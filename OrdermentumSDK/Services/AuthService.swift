@@ -82,6 +82,20 @@ public class AuthService {
     }
     
     /**
+     * Verify an account using a token
+     * Returns a response to check for success or fail
+     */
+    public func verifyEmail(_ passwordResetToken: String, completion: @escaping (Bool) -> ()) {
+        //Build Route
+        let route = AuthRouter.verifyEmail(passwordResetToken) as URLRequestConvertible
+        
+        //Call API
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
+            completion(result)
+        }
+    }
+
+    /**
      * Sends an email verification to the supplied email address.
      * Returns a SignUpResponse
      */
