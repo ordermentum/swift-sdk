@@ -13,6 +13,7 @@
 		269289372276C7FB0018AC6A /* getInvoices.json in Resources */ = {isa = PBXBuildFile; fileRef = 269289362276C7FB0018AC6A /* getInvoices.json */; };
 		269289392276D0F80018AC6A /* exportInvoice.json in Resources */ = {isa = PBXBuildFile; fileRef = 269289382276D0F80018AC6A /* exportInvoice.json */; };
 		2692893B2276D13F0018AC6A /* downloadInvoice.json in Resources */ = {isa = PBXBuildFile; fileRef = 2692893A2276D13F0018AC6A /* downloadInvoice.json */; };
+		26984112228280B1003A4B95 /* getVenueInvites.json in Resources */ = {isa = PBXBuildFile; fileRef = 26984111228280B1003A4B95 /* getVenueInvites.json */; };
 		26984114228297A4003A4B95 /* verifyEmail.json in Resources */ = {isa = PBXBuildFile; fileRef = 26984113228297A4003A4B95 /* verifyEmail.json */; };
 		26A2798E226457DE007A52EF /* ClosureDatesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2798D226457DE007A52EF /* ClosureDatesServiceTests.swift */; };
 		26A27990226458A9007A52EF /* CreditNotesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2798F226458A9007A52EF /* CreditNotesServiceTests.swift */; };
@@ -198,6 +199,7 @@
 		269289362276C7FB0018AC6A /* getInvoices.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getInvoices.json; sourceTree = "<group>"; };
 		269289382276D0F80018AC6A /* exportInvoice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exportInvoice.json; sourceTree = "<group>"; };
 		2692893A2276D13F0018AC6A /* downloadInvoice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = downloadInvoice.json; sourceTree = "<group>"; };
+		26984111228280B1003A4B95 /* getVenueInvites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getVenueInvites.json; sourceTree = "<group>"; };
 		26984113228297A4003A4B95 /* verifyEmail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = verifyEmail.json; sourceTree = "<group>"; };
 		26A2798D226457DE007A52EF /* ClosureDatesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesServiceTests.swift; sourceTree = "<group>"; };
 		26A2798F226458A9007A52EF /* CreditNotesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesServiceTests.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				26B2A076226D495600BC2755 /* getNPS.json */,
 				26AD4023227162A200CAEBC2 /* registerDevice.json */,
 				26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */,
+				26984111228280B1003A4B95 /* getVenueInvites.json */,
 				26984113228297A4003A4B95 /* verifyEmail.json */,
 			);
 			path = Resources;
@@ -831,6 +834,7 @@
 				BB659F9F226D36A1009C3D46 /* getMarketPlaces.json in Resources */,
 				26B2A075226D47A600BC2755 /* sendFeedback.json in Resources */,
 				26B2A077226D495600BC2755 /* getNPS.json in Resources */,
+				26984112228280B1003A4B95 /* getVenueInvites.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

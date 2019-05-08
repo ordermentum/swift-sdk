@@ -1,0 +1,33 @@
+[
+    {
+        "id": "4452f4fd-7c53-4c8f-8522-faec797593d0",
+        "senderEntityName": "Jonas's Bakery and Shoe Shop",
+        "senderType": "supplier",
+        "senderId": "1522f238-6f05-489b-bd22-79e04ceb9a0b",
+        "recipientFirstName": "Test",
+        "recipientLastName": "Agave",
+        "recipientFullName": "Test Agave",
+        "recipientEmail": "supersmash@agave.com",
+        "recipientPhone": "-",
+        "recipientEntityName": "Tito's Tapsilog",
+        "referenceId": "9092175a-07b2-4ba9-8d99-281bbc866e7b",
+        "status": "Invitation sent",
+        "permissions": [
+            "access",
+            "billing",
+            "invite",
+            "see-prices",
+            "set-permissions",
+            "update"
+        ],
+        "isApproved": true,
+        "approvedByName": "Jonas Flaminiano",
+        "createdAt": "2019-05-08T03:07:14.674Z",
+        "createdByName": "Jonas Flaminiano",
+        "updatedAt": "2019-05-08T03:07:14.733Z",
+        "userContactDetails": {
+            "phone": "",
+            "email": "jonas.bns@email.com"
+        }
+    }
+]
