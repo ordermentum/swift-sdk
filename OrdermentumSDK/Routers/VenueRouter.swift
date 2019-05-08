@@ -67,8 +67,6 @@ public enum VenueRouter: URLRequestConvertible {
         case .getUsers(let retailerId):
             return ["retailerId": retailerId]
         case .getVenueInvites(let recipientEmail):
-            var formattedEmailString: String = recipientEmail.addingPercentEncoding(withAllowedCharacters: .urlUserAllowed) ?? ""
-            formattedEmailString = formattedEmailString.replacingOccurrences(of: "+", with: "%2B")
             return ["recipientEmail":recipientEmail, "status":"approved"]
         default:
             return [:]
