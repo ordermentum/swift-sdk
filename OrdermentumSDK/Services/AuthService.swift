@@ -97,7 +97,7 @@ public class AuthService {
 
     /**
      * Sends an email verification to the supplied email address.
-     * Returns a SignUpResponse
+     * Returns if Success or Fail
      */
     public func resendVerifyEmail(_ requestObject: ResendVerifyEmailRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
