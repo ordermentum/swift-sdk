@@ -13,6 +13,8 @@ public struct AddOnsResponse {
 }
 
 public struct AddOn {
+    public init() {}
+    
     public var connectUrl: String = ""
     public var disconnectUrl: String = ""
     public var entityName: String = ""

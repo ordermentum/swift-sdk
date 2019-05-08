@@ -88,6 +88,20 @@ public class AuthService {
     public func resendVerifyEmail(_ requestObject: ResendVerifyEmailRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
         let route = AuthRouter.resendVerifyEmail(requestObject) as URLRequestConvertible
+      
+        //Call API
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
+            completion(result)
+        }
+    }
+
+    /**
+     * Verify an account using a token
+     * Returns a response to check for success or fail
+     */
+    public func verifyEmail(_ passwordResetToken: String, completion: @escaping (Bool) -> ()) {
+        //Build Route
+        let route = AuthRouter.verifyEmail(passwordResetToken) as URLRequestConvertible
         
         //Call API
         Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
