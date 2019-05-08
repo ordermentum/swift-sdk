@@ -13,6 +13,8 @@
 		269289372276C7FB0018AC6A /* getInvoices.json in Resources */ = {isa = PBXBuildFile; fileRef = 269289362276C7FB0018AC6A /* getInvoices.json */; };
 		269289392276D0F80018AC6A /* exportInvoice.json in Resources */ = {isa = PBXBuildFile; fileRef = 269289382276D0F80018AC6A /* exportInvoice.json */; };
 		2692893B2276D13F0018AC6A /* downloadInvoice.json in Resources */ = {isa = PBXBuildFile; fileRef = 2692893A2276D13F0018AC6A /* downloadInvoice.json */; };
+		26984112228280B1003A4B95 /* getVenueInvites.json in Resources */ = {isa = PBXBuildFile; fileRef = 26984111228280B1003A4B95 /* getVenueInvites.json */; };
+		26984114228297A4003A4B95 /* verifyEmail.json in Resources */ = {isa = PBXBuildFile; fileRef = 26984113228297A4003A4B95 /* verifyEmail.json */; };
 		26A2798E226457DE007A52EF /* ClosureDatesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2798D226457DE007A52EF /* ClosureDatesServiceTests.swift */; };
 		26A27990226458A9007A52EF /* CreditNotesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2798F226458A9007A52EF /* CreditNotesServiceTests.swift */; };
 		26A2799222645A75007A52EF /* DataAttributesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2799122645A75007A52EF /* DataAttributesServiceTests.swift */; };
@@ -35,6 +37,7 @@
 		26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A078226D5A7200BC2755 /* submitOrder.json */; };
 		26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07A226D67BB00BC2755 /* submitStandingOrder.json */; };
 		26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07E226D6C6700BC2755 /* getOrders.json */; };
+		26B5763A22813FAD008205DC /* applyPayment.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B5763922813FAD008205DC /* applyPayment.json */; };
 		26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07C226D69F000BC2755 /* getDeliveryDates.json */; };
 		26BFFA8A227AC86900D232B2 /* removeFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A080226D6DDF00BC2755 /* removeFavourite.json */; };
 		26BFFA8B227AC87400D232B2 /* updateOrderFirstTime.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3893226FFE2600524345 /* updateOrderFirstTime.json */; };
@@ -196,6 +199,8 @@
 		269289362276C7FB0018AC6A /* getInvoices.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getInvoices.json; sourceTree = "<group>"; };
 		269289382276D0F80018AC6A /* exportInvoice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exportInvoice.json; sourceTree = "<group>"; };
 		2692893A2276D13F0018AC6A /* downloadInvoice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = downloadInvoice.json; sourceTree = "<group>"; };
+		26984111228280B1003A4B95 /* getVenueInvites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getVenueInvites.json; sourceTree = "<group>"; };
+		26984113228297A4003A4B95 /* verifyEmail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = verifyEmail.json; sourceTree = "<group>"; };
 		26A2798D226457DE007A52EF /* ClosureDatesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesServiceTests.swift; sourceTree = "<group>"; };
 		26A2798F226458A9007A52EF /* CreditNotesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditNotesServiceTests.swift; sourceTree = "<group>"; };
 		26A2799122645A75007A52EF /* DataAttributesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAttributesServiceTests.swift; sourceTree = "<group>"; };
@@ -223,6 +228,7 @@
 		26B2A07C226D69F000BC2755 /* getDeliveryDates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getDeliveryDates.json; sourceTree = "<group>"; };
 		26B2A07E226D6C6700BC2755 /* getOrders.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getOrders.json; sourceTree = "<group>"; };
 		26B2A080226D6DDF00BC2755 /* removeFavourite.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = removeFavourite.json; sourceTree = "<group>"; };
+		26B5763922813FAD008205DC /* applyPayment.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applyPayment.json; sourceTree = "<group>"; };
 		26CE388E226FF20C00524345 /* getFavourites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getFavourites.json; sourceTree = "<group>"; };
 		26CE3891226FF94F00524345 /* getClassicStandingOrders.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getClassicStandingOrders.json; sourceTree = "<group>"; };
 		26CE3893226FFE2600524345 /* updateOrderFirstTime.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = updateOrderFirstTime.json; sourceTree = "<group>"; };
@@ -396,6 +402,7 @@
 				269289362276C7FB0018AC6A /* getInvoices.json */,
 				269289382276D0F80018AC6A /* exportInvoice.json */,
 				2692893A2276D13F0018AC6A /* downloadInvoice.json */,
+				26B5763922813FAD008205DC /* applyPayment.json */,
 			);
 			path = Invoice;
 			sourceTree = "<group>";
@@ -427,6 +434,8 @@
 				26B2A076226D495600BC2755 /* getNPS.json */,
 				26AD4023227162A200CAEBC2 /* registerDevice.json */,
 				26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */,
+				26984111228280B1003A4B95 /* getVenueInvites.json */,
+				26984113228297A4003A4B95 /* verifyEmail.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -795,6 +804,7 @@
 				BB659FA2226D3E56009C3D46 /* getProductCategories.json in Resources */,
 				26BFFA8A227AC86900D232B2 /* removeFavourite.json in Resources */,
 				BB659FB7226D4BF8009C3D46 /* getSinglePaymentMethods.json in Resources */,
+				26984114228297A4003A4B95 /* verifyEmail.json in Resources */,
 				26CE389A2270054D00524345 /* scheduleOrder.json in Resources */,
 				26CE3896226FFFB000524345 /* updateOrder.json in Resources */,
 				BB659FA8226D4517009C3D46 /* getMostOrderedProducts.json in Resources */,
@@ -807,6 +817,7 @@
 				26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */,
 				26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */,
 				26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */,
+				26B5763A22813FAD008205DC /* applyPayment.json in Resources */,
 				BB92918922769EEF00B82918 /* getFlags.json in Resources */,
 				26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */,
 				26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */,
@@ -823,6 +834,7 @@
 				BB659F9F226D36A1009C3D46 /* getMarketPlaces.json in Resources */,
 				26B2A075226D47A600BC2755 /* sendFeedback.json in Resources */,
 				26B2A077226D495600BC2755 /* getNPS.json in Resources */,
+				26984112228280B1003A4B95 /* getVenueInvites.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

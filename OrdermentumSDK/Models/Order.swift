@@ -518,3 +518,32 @@ extension LineItem: Equatable {
         return lhs.product.id == rhs.product.id
     }
 }
+
+extension Order {
+    /**
+     * Creates an instance of CreateFavouriteRequest from a given order object, supplierId and retailerId
+     * Returns a CreateFavouriteRequest
+     */
+    public func toCreateFavouriteRequest(retailerId: String, supplierId: String) -> CreateFavouriteRequest {
+        //Initialize Create Favourite Request
+        var requestObject: CreateFavouriteRequest = CreateFavouriteRequest()
+        
+        //Add Line Items
+        for lineItem in self.lineItems {
+            //Create Line item
+            var createFavouriteLineItem: CreateFavouriteRequestLineItem = CreateFavouriteRequestLineItem()
+            createFavouriteLineItem.name = lineItem.product.name
+            createFavouriteLineItem.price = Float(lineItem.product.formattedPrice) ?? 0
+            createFavouriteLineItem.productId = lineItem.product.id
+            createFavouriteLineItem.quantity = lineItem.quantity
+            requestObject.lineItems.append(createFavouriteLineItem)
+        }
+        
+        //Set Favourite Object
+        requestObject.retailerId = retailerId
+        requestObject.supplierId = supplierId
+        requestObject.type = "template"
+        
+        return requestObject
+    }
+}

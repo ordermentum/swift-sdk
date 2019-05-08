@@ -13,6 +13,16 @@ public struct SignUpResponse {
     public var token: String = ""
 }
 
+public struct SignUpRequest: Codable {
+    public init() {}
+    
+    public var email: String = ""
+    public var password: String = ""
+    public var firstName: String = ""
+    public var lastName: String = ""
+    public var phone: String = ""
+}
+
 public struct SignUpUser {
     public init() {}
     

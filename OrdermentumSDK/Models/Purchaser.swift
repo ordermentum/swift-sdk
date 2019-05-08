@@ -50,7 +50,7 @@ public struct Purchaser {
     public var priceGroupId: String = ""
     public var priceGroup: PriceGroup = PriceGroup()
     public var stopCredit: Bool = false
-    public var minimumOrderValue: Int = 0
+    public var minimumOrderValue: Float = 0
     public var disabled: Bool = false
     public var deliveryInstructions: String = ""
     public var notes: String = ""
@@ -256,7 +256,7 @@ extension Purchaser: Decodable {
         priceGroupId = try container.decodeIfPresent(String.self, forKey: .priceGroupId) ?? ""
         priceGroup = try container.decodeIfPresent(PriceGroup.self, forKey: .priceGroup) ?? PriceGroup()
         stopCredit = try container.decodeIfPresent(Bool.self, forKey: .stopCredit) ?? false
-        minimumOrderValue = try container.decodeIfPresent(Int.self, forKey: .minimumOrderValue) ?? 0
+        minimumOrderValue = try container.safeFloatDecode(forKey: .minimumOrderValue) ?? 0
         disabled = try container.decodeIfPresent(Bool.self, forKey: .disabled) ?? false
         deliveryInstructions = try container.decodeIfPresent(String.self, forKey: .deliveryInstructions) ?? ""
         notes = try container.decodeIfPresent(String.self, forKey: .notes) ?? ""

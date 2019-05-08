@@ -66,4 +66,32 @@ public class AuthService {
             completion(result)
         }
     }
+    
+    /**
+     * Registers a user account on the Ordermentum retailer platform.
+     * Returns a SignUpResponse
+     */
+    public func registerUser(requestObject: SignUpRequest, completion: @escaping (Bool, SignUpResponse?) -> ()) {
+        //Build Route
+        let route = AuthRouter.registerUser(requestObject) as URLRequestConvertible
+        
+        //Call API
+        Service<SignUpResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
+        }
+    }
+    
+    /**
+     * Verify an account using a token
+     * Returns a response to check for success or fail
+     */
+    public func verifyEmail(_ passwordResetToken: String, completion: @escaping (Bool) -> ()) {
+        //Build Route
+        let route = AuthRouter.verifyEmail(passwordResetToken) as URLRequestConvertible
+        
+        //Call API
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
+            completion(result)
+        }
+    }
 }
