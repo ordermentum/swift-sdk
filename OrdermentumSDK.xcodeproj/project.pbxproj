@@ -32,6 +32,7 @@
 		26AA6E5B2266F84500578DED /* ProfileServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E522266F84500578DED /* ProfileServiceTest.swift */; };
 		26AA6E602266F84500578DED /* ProductsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E572266F84500578DED /* ProductsServiceTests.swift */; };
 		26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AD4023227162A200CAEBC2 /* registerDevice.json */; };
+		26ADA8172283B57100ED6D2E /* createVenue.json in Resources */ = {isa = PBXBuildFile; fileRef = 26ADA8162283B57100ED6D2E /* createVenue.json */; };
 		26B2A073226D355600BC2755 /* notificationSettingsUpdate.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */; };
 		26B2A075226D47A600BC2755 /* sendFeedback.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A074226D47A600BC2755 /* sendFeedback.json */; };
 		26B2A077226D495600BC2755 /* getNPS.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A076226D495600BC2755 /* getNPS.json */; };
@@ -222,6 +223,7 @@
 		26AA6E552266F84500578DED /* ValidationServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationServiceTest.swift; sourceTree = "<group>"; };
 		26AA6E572266F84500578DED /* ProductsServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsServiceTests.swift; sourceTree = "<group>"; };
 		26AD4023227162A200CAEBC2 /* registerDevice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = registerDevice.json; sourceTree = "<group>"; };
+		26ADA8162283B57100ED6D2E /* createVenue.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = createVenue.json; sourceTree = "<group>"; };
 		26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = notificationSettingsUpdate.json; sourceTree = "<group>"; };
 		26B2A074226D47A600BC2755 /* sendFeedback.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sendFeedback.json; sourceTree = "<group>"; };
 		26B2A076226D495600BC2755 /* getNPS.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getNPS.json; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 		26AA6E4B2266D54100578DED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				26ADA8152283B53300ED6D2E /* Venue */,
 				26CE3890226FF92600524345 /* Orders */,
 				269289352276C7CD0018AC6A /* Invoice */,
 				BB92918822769EEF00B82918 /* getFlags.json */,
@@ -437,7 +440,6 @@
 				26AD4023227162A200CAEBC2 /* registerDevice.json */,
 				26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */,
 				2698410D228272FB003A4B95 /* resendVerifyEmail.json */,
-				26984111228280B1003A4B95 /* getVenueInvites.json */,
 				26984113228297A4003A4B95 /* verifyEmail.json */,
 			);
 			path = Resources;
@@ -450,6 +452,15 @@
 				BB659FC4226FF7DE009C3D46 /* RouterMethod.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		26ADA8152283B53300ED6D2E /* Venue */ = {
+			isa = PBXGroup;
+			children = (
+				26984111228280B1003A4B95 /* getVenueInvites.json */,
+				26ADA8162283B57100ED6D2E /* createVenue.json */,
+			);
+			path = Venue;
 			sourceTree = "<group>";
 		};
 		26CE3890226FF92600524345 /* Orders */ = {
@@ -817,6 +828,7 @@
 				BB659F93226C064B009C3D46 /* getPurchasers.json in Resources */,
 				26BFFA8B227AC87400D232B2 /* updateOrderFirstTime.json in Resources */,
 				26B2A07B226D67BB00BC2755 /* submitStandingOrder.json in Resources */,
+				26ADA8172283B57100ED6D2E /* createVenue.json in Resources */,
 				26B2A07F226D6C6700BC2755 /* getOrders.json in Resources */,
 				26B2A079226D5A7200BC2755 /* submitOrder.json in Resources */,
 				26CE3892226FF94F00524345 /* getClassicStandingOrders.json in Resources */,

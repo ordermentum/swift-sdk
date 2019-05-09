@@ -12,6 +12,7 @@ import Alamofire
 public enum VenueRouter: URLRequestConvertible {
     //Routes
     case getVenues([String], Int, Int)
+    case createVenue(CreateVenueRequest)
     case updateVenueProfile(String, VenueProfile)
     case getProfileCompletion(String)
     case getVenueInvites(String)
@@ -24,6 +25,8 @@ public enum VenueRouter: URLRequestConvertible {
         switch self {
         case .getVenues:
             return .get
+        case .createVenue:
+            return .post
         case .updateVenueProfile:
             return .patch
         case .getProfileCompletion:
@@ -44,6 +47,8 @@ public enum VenueRouter: URLRequestConvertible {
         switch self {
         case .getVenues:
             return "retailers"
+        case .createVenue:
+            return "venues/signup"
         case .updateVenueProfile(let retailerId, _):
             return "retailers/\(retailerId)"
         case .getProfileCompletion(let retailerId):
@@ -76,6 +81,8 @@ public enum VenueRouter: URLRequestConvertible {
     //Body
     var body: Codable? {
         switch self {
+        case .createVenue(let requestObject):
+            return requestObject
         case .updateVenueProfile(_, let requestObject):
             return requestObject
         case .sendVenueInvite(let requestObject):

@@ -38,6 +38,28 @@ public struct Venue {
     public var updatedAt: String = ""
 }
 
+public struct CreateVenueRequest: Codable {
+    public init() {}
+    
+    public var legalName = ""
+    public var tradingName = ""
+    public var userId = ""
+    public var ownerId = ""
+    public var phone = ""
+    public var email = ""
+    public var address = ""
+    public var abn = ""
+    public var contactFirstName = ""
+    public var contactLastName = ""
+    public var contactEmail = ""
+}
+
+public struct CreateVenueResponse: Decodable {
+    public init() {}
+    
+    public var retailer: Venue = Venue()
+}
+
 public struct VenueAccountSettings: Encodable {
     public init() {}
     

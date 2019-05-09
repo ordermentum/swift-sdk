@@ -27,6 +27,20 @@ public class VenueService {
     }
     
     /**
+     * Create a new venue
+     * Returns a Venue object
+     */
+    public func createVenues(_ requestObject: CreateVenueRequest, completion: @escaping (Bool, Venue?) -> ()) {
+        //Build Route
+        let route = VenueRouter.createVenue(requestObject) as URLRequestConvertible
+        
+        //Call API
+        Service<CreateVenueResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject?.retailer)
+        }
+    }
+    
+    /**
      * Takes a VenueProfile object and updates the selected retailer.
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */
