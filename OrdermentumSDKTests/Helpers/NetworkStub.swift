@@ -34,9 +34,9 @@ public enum StubDataFile: String {
     case registerDevice
     case notificationSettingsUpdate
     case getFlags
-    case resendVerifyEmail
     case getVenueInvites
     case verifyEmail
+    case resendVerifyEmail
   
     //Orders
     case submitOrder
@@ -57,6 +57,10 @@ public enum StubDataFile: String {
     case exportInvoice
     case downloadInvoice
     case applyPayment
+    
+    //Venues
+    case getVenueInvites
+    case createVenue
 }
 
 protocol NetworkStubs {

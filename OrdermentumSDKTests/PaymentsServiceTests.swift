@@ -27,7 +27,6 @@ class PaymentsServiceTests: XCTestCase {
         let retailerId: String = self.getEnvironmentVar("RETAILER_ID") ?? ""
         
         if let route = try? PaymentsRouter.getPaymentMethods(retailerId).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .getPaymentMethods)
         }
         
@@ -55,7 +54,6 @@ class PaymentsServiceTests: XCTestCase {
         let paymentMethodId: String = self.getEnvironmentVar("PAYMENTMETHOD_ID") ?? ""
 
         if let route = try? PaymentsRouter.getSinglePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .getSinglePaymentMethods)
         }
         
@@ -95,7 +93,6 @@ class PaymentsServiceTests: XCTestCase {
         requestObject.userId = self.getEnvironmentVar("CARD_URSERID") ?? ""
         
         if let route = try? PaymentsRouter.createCardPaymentMethod(retailerId, requestObject).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .createCardPaymentMethod)
         }
         
@@ -146,7 +143,6 @@ class PaymentsServiceTests: XCTestCase {
         let paymentMethodId: String = self.getEnvironmentVar("PAYMENTMETHOD_ID") ?? ""
         
         if let route = try? PaymentsRouter.deletePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .deletePaymentMethod)
         }
         
