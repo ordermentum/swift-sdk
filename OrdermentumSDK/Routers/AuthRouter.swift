@@ -16,8 +16,8 @@ public enum AuthRouter: URLRequestConvertible {
     case changePassword(String, ChangePasswordRequest)
     case resetPassword(String)
     case registerUser(SignUpRequest)
-    case resendVerifyEmail(ResendVerifyEmailRequest)
     case verifyEmail(String)
+    case resendVerifyEmail(ResendVerifyEmailRequest)
     
     //Methods
     var method: HTTPMethod {
@@ -32,9 +32,9 @@ public enum AuthRouter: URLRequestConvertible {
             return .put
         case .registerUser:
             return .post
-        case .resendVerifyEmail:
-            return .post
         case .verifyEmail:
+            return .post
+        case .resendVerifyEmail:
             return .post
         }
     }
@@ -52,10 +52,10 @@ public enum AuthRouter: URLRequestConvertible {
             return "user/password"
         case .registerUser:
             return "users/signup"
-        case .resendVerifyEmail:
-            return "users/send-verify"
         case .verifyEmail:
             return "users/verify"
+        case .resendVerifyEmail:
+            return "users/send-verify"
         }
     }
     

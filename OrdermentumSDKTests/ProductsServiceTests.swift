@@ -30,7 +30,6 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 10
         
         if let route = try? ProductsRouter.getProductCategories(retailerId, supplierId, pageSize, pageNo).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .getProductCategories)
         }
         
@@ -62,7 +61,6 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 10
         
         if let route = try? ProductsRouter.getProducts(categoryId, retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .getProduct)
         }
 
@@ -93,8 +91,6 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 0
         
         if let route = try? ProductsRouter.getMostOrderedProducts(retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
-            print(route)
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .getMostOrderedProducts)
         }
         
@@ -125,7 +121,6 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 0
         
         if let route = try? ProductsRouter.getTrendingProducts(retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .getTrendingProducts)
         }
         
@@ -159,8 +154,6 @@ class ProductsServiceTests: XCTestCase {
         })
 
         if let route = try? ProductsRouter.getRecommendedProducts(retailerId, supplierId, pageSize, excludedProductId).asURLRequest() {
-
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .getRecommendedProducts)
         }
         
@@ -190,8 +183,6 @@ class ProductsServiceTests: XCTestCase {
         let pageSize: Int = Int(self.getEnvironmentVar("PAGE_SIZE")!) ?? 0
 
         if let route = try? ProductsRouter.searchProducts(search, supplierId, visible, pageSize).asURLRequest() {
-            print(route)
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .searchProducts)
         }
         

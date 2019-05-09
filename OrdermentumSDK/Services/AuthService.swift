@@ -82,13 +82,13 @@ public class AuthService {
     }
     
     /**
-     * Sends an email verification to the supplied email address.
-     * Returns a SignUpResponse
+     * Verify an account using a token
+     * Returns a response to check for success or fail
      */
-    public func resendVerifyEmail(_ requestObject: ResendVerifyEmailRequest, completion: @escaping (Bool) -> ()) {
+    public func verifyEmail(_ passwordResetToken: String, completion: @escaping (Bool) -> ()) {
         //Build Route
-        let route = AuthRouter.resendVerifyEmail(requestObject) as URLRequestConvertible
-      
+        let route = AuthRouter.verifyEmail(passwordResetToken) as URLRequestConvertible
+        
         //Call API
         Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
             completion(result)
@@ -96,12 +96,12 @@ public class AuthService {
     }
 
     /**
-     * Verify an account using a token
-     * Returns a response to check for success or fail
+     * Sends an email verification to the supplied email address.
+     * Returns if Success or Fail
      */
-    public func verifyEmail(_ passwordResetToken: String, completion: @escaping (Bool) -> ()) {
+    public func resendVerifyEmail(_ requestObject: ResendVerifyEmailRequest, completion: @escaping (Bool) -> ()) {
         //Build Route
-        let route = AuthRouter.verifyEmail(passwordResetToken) as URLRequestConvertible
+        let route = AuthRouter.resendVerifyEmail(requestObject) as URLRequestConvertible
         
         //Call API
         Service<EmptyDecodable>().request(route: route) { (result, responseObject) in

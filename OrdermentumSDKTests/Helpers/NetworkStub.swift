@@ -34,8 +34,9 @@ public enum StubDataFile: String {
     case registerDevice
     case notificationSettingsUpdate
     case getFlags
-    case resendVerifyEmail
+    case getVenueInvites
     case verifyEmail
+    case resendVerifyEmail
   
     //Orders
     case submitOrder
