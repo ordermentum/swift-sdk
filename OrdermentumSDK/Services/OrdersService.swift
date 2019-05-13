@@ -69,6 +69,20 @@ public class OrdersService {
     }
     
     /**
+     * Fetch an array of orders belonging to a retailer/supplier relationship sorted by delivery date
+     * Returns an array of Orders
+     */
+    public func getOrdersByDeliveryDate(retailerId: String, supplierId: String, sortBy: String, completion: @escaping (Bool, OrderResponse?) -> ()) {
+        //Build Route
+        let route = OrdersRouter.getOrdersByDeliveryDate(retailerId, supplierId, sortBy) as URLRequestConvertible
+        
+        //Call API
+        Service<OrderResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
+        }
+    }
+    
+    /**
      * Remove a favourite order from a logged in user
      * Returns a ResponseBody which can be used to check for a 200 Response code
      */
