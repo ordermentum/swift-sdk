@@ -27,6 +27,20 @@ public class VenueService {
     }
     
     /**
+     * Create a new venue
+     * Returns a Venue object
+     */
+    public func createVenues(_ requestObject: CreateVenueRequest, completion: @escaping (Bool, Venue?) -> ()) {
+        //Build Route
+        let route = VenueRouter.createVenue(requestObject) as URLRequestConvertible
+        
+        //Call API
+        Service<CreateVenueResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject?.retailer)
+        }
+    }
+    
+    /**
      * Takes a VenueProfile object and updates the selected retailer.
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */
@@ -55,6 +69,20 @@ public class VenueService {
     }
     
     /**
+     * Fetches venue invites to a user using given email
+     * Returns a VenueInviteResponse
+     */
+    public func checkVenueInvites(_ recipientEmail: String, completion: @escaping (Bool, VenueInviteResponse?) -> ()) {
+        //Build Route
+        let route = VenueRouter.getVenueInvites(recipientEmail) as URLRequestConvertible
+        
+        //Call API
+        Service<VenueInviteResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
+        }
+    }
+    
+    /**
      * Send an invite to a user for a particular venue
      * Returns an AddUserResponse
      */
@@ -65,6 +93,20 @@ public class VenueService {
         //Call API
         Service<AddUserResponse>().request(route: route) { (result, responseObject) in
             completion(result, responseObject)
+        }
+    }
+    
+    /**
+     * Accepts all venue invites of the user
+     * Returns success or fail
+     */
+    public func acceptAllInvites(_ completion: @escaping (Bool) -> ()) {
+        //Build Route
+        let route = VenueRouter.acceptAllInvites as URLRequestConvertible
+        
+        //Call API
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
+            completion(result)
         }
     }
     
@@ -93,6 +135,20 @@ public class VenueService {
         //Call API
         Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
             completion(result)
+        }
+    }
+    
+    /**
+     * Search for venues given a search string
+     * Returns a VenueUsersResponse
+     */
+    public func searchVenues(searchQuery: String, completion: @escaping (Bool, VenueSearchResponse?) -> ()) {
+        //Build Route
+        let route = VenueRouter.searchVenue(searchQuery) as URLRequestConvertible
+        
+        //Call API
+        Service<VenueSearchResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
         }
     }
 }

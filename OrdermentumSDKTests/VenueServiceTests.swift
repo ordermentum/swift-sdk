@@ -38,10 +38,74 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        VenueService().getVenues(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject) in
+        Client.instance.venues.getVenues(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject) in
             assert(result)
             expectation.fulfill()
         }
+    }
+    
+    func testCreateVenue() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Build request body and params
+        var requestObject: CreateVenueRequest = CreateVenueRequest()
+        requestObject.legalName = ProcessInfo.processInfo.environment["CREATE_VENUE_LEGALNAME"] ?? ""
+        requestObject.tradingName = ProcessInfo.processInfo.environment["CREATE_VENUE_TRADINGNAME"] ?? ""
+        requestObject.userId = ProcessInfo.processInfo.environment["CREATE_VENUE_USERID"] ?? ""
+        requestObject.ownerId = ProcessInfo.processInfo.environment["CREATE_VENUE_OWNERID"] ?? ""
+        requestObject.phone = ProcessInfo.processInfo.environment["CREATE_VENUE_PHONE"] ?? ""
+        requestObject.email = ProcessInfo.processInfo.environment["CREATE_VENUE_EMAIL"] ?? ""
+        requestObject.address = ProcessInfo.processInfo.environment["CREATE_VENUE_ADDRESS"] ?? ""
+        requestObject.abn = ProcessInfo.processInfo.environment["CREATE_VENUE_ABN"] ?? ""
+        requestObject.contactFirstName = ProcessInfo.processInfo.environment["CREATE_VENUE_CONTACT_FIRSTNAME"] ?? ""
+        requestObject.contactLastName = ProcessInfo.processInfo.environment["CREATE_VENUE_CONTACT_LASTNAME"] ?? ""
+        requestObject.contactEmail = ProcessInfo.processInfo.environment["CREATE_VENUE_CONTACT_EMAIL"] ?? ""
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? VenueRouter.createVenue(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .createVenue )
+        }
+        
+        //Call API
+        Client.instance.venues.createVenues(requestObject, completion: { (result, responseData) in
+            assert(result)
+            expectation.fulfill()
+        })
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testSearchVenue() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Build request body and params
+        let searchQuery = ProcessInfo.processInfo.environment["VENUE_SEARCH_QUERY"] ?? ""
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? VenueRouter.searchVenue(searchQuery).asURLRequest() {
+            self.startStub(route, stubData: .searchVenues )
+        }
+        
+        //Call API
+        Client.instance.venues.searchVenues(searchQuery: searchQuery) { (success, responseData) in
+            assert(success)
+            XCTAssertNotNil(responseData)
+            expectation.fulfill()
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testUpdateVenueProfile() {
@@ -57,7 +121,7 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        VenueService().updateVenueProfile(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject) in
+        Client.instance.venues.updateVenueProfile(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject) in
             assert(result)
             expectation.fulfill()
         }
@@ -74,10 +138,36 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        VenueService().getProfileCompletion(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, requestObject) in
+        Client.instance.venues.getProfileCompletion(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, requestObject) in
             assert(result)
             expectation.fulfill()
         }
+    }
+    
+    func testGetVenueInvites() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Build request body and params
+        let recipientEmail = ProcessInfo.processInfo.environment["RECIPIENT_EMAIL"] ?? ""
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? VenueRouter.getVenueInvites(recipientEmail).asURLRequest() {
+            self.startStub(route, stubData: .getVenueInvites )
+        }
+        
+        //Call API
+        Client.instance.venues.checkVenueInvites(recipientEmail) { (success, response) in
+            assert(success)
+            expectation.fulfill()
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testSendVenueInvite() {
@@ -118,10 +208,33 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        VenueService().sendVenueInvite(requestObject) { (result, responseData) in
+        Client.instance.venues.sendVenueInvite(requestObject) { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
+    }
+    
+    func testAcceptAllInvites() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? VenueRouter.acceptAllInvites.asURLRequest() {
+            self.startStub(route, stubData: .acceptAllInvites )
+        }
+        
+        //Call API
+        Client.instance.venues.acceptAllInvites { (success) in
+            assert(success)
+            expectation.fulfill()
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
     }
 
     func testGetUsers() {
@@ -137,7 +250,7 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        VenueService().getUsers(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, responseData) in
+        Client.instance.venues.getUsers(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, responseData) in
             assert(result)
             expectation.fulfill()
         }
@@ -155,7 +268,7 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        VenueService().removeUser(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: responseObject) { (result) in
+        Client.instance.venues.removeUser(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: responseObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
