@@ -213,6 +213,29 @@ class VenueServiceTests: XCTestCase {
             expectation.fulfill()
         }
     }
+    
+    func testAcceptAllInvites() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? VenueRouter.acceptAllInvites.asURLRequest() {
+            self.startStub(route, stubData: .acceptAllInvites )
+        }
+        
+        //Call API
+        Client.instance.venues.acceptAllInvites { (success) in
+            assert(success)
+            expectation.fulfill()
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+    }
 
     func testGetUsers() {
         //Build Expectation

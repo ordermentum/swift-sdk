@@ -61,6 +61,7 @@ public enum StubDataFile: String {
     case getVenueInvites
     case createVenue
     case searchVenues
+    case acceptAllInvites
 }
 
 protocol NetworkStubs {
