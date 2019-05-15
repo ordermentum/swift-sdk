@@ -126,6 +126,9 @@ extension StubNetwork {
     }
 }
 
+
+
+
 extension ProfileServiceTest : StubNetwork {}
 extension MarketplaceServiceTests : StubNetwork {}
 extension ProductsServiceTests : StubNetwork {}
