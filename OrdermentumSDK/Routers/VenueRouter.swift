@@ -12,20 +12,27 @@ import Alamofire
 public enum VenueRouter: URLRequestConvertible {
     //Routes
     case getVenues([String], Int, Int)
+    case createVenue(CreateVenueRequest)
     case updateVenueProfile(String, VenueProfile)
     case getProfileCompletion(String)
+    case getVenueInvites(String)
     case sendVenueInvite(AddUser)
     case getUsers(String)
     case removeUser(String, RemoveUser)
+    case searchVenue(String)
     
     //Methods
     var method: HTTPMethod {
         switch self {
         case .getVenues:
             return .get
+        case .createVenue:
+            return .post
         case .updateVenueProfile:
             return .patch
         case .getProfileCompletion:
+            return .get
+        case .getVenueInvites:
             return .get
         case .sendVenueInvite:
             return .post
@@ -33,6 +40,8 @@ public enum VenueRouter: URLRequestConvertible {
             return .get
         case .removeUser:
             return .put
+        case .searchVenue:
+            return .get
         }
     }
     
@@ -41,16 +50,22 @@ public enum VenueRouter: URLRequestConvertible {
         switch self {
         case .getVenues:
             return "retailers"
+        case .createVenue:
+            return "venues/signup"
         case .updateVenueProfile(let retailerId, _):
             return "retailers/\(retailerId)"
         case .getProfileCompletion(let retailerId):
             return "retailers/\(retailerId)/profile"
+        case .getVenueInvites:
+            return "invites"
         case .sendVenueInvite:
             return "invites"
         case .getUsers:
             return "users"
         case .removeUser(let userId, _):
             return "entities/\(userId)/permissions"
+        case .searchVenue:
+            return "venues/directory"
         }
     }
     
@@ -61,6 +76,10 @@ public enum VenueRouter: URLRequestConvertible {
             return ["id[]": idArray, "pageSize": pageSize, "pageNo": pageNo]
         case .getUsers(let retailerId):
             return ["retailerId": retailerId]
+        case .getVenueInvites(let recipientEmail):
+            return ["recipientEmail":recipientEmail, "status":"approved"]
+        case .searchVenue(let searchQuery):
+            return ["search": searchQuery]
         default:
             return [:]
         }
@@ -69,6 +88,8 @@ public enum VenueRouter: URLRequestConvertible {
     //Body
     var body: Codable? {
         switch self {
+        case .createVenue(let requestObject):
+            return requestObject
         case .updateVenueProfile(_, let requestObject):
             return requestObject
         case .sendVenueInvite(let requestObject):

@@ -27,6 +27,20 @@ public class InvoiceService {
     }
     
     /**
+     * Get the invoice referenced by the invoiceID
+     * Returns an Invoice
+     */
+    public func getInvoice(invoiceId: String, completion: @escaping (Bool, Invoice?) -> ()) {
+        //Build Route
+        let route = InvoiceRouter.getInvoice(invoiceId) as URLRequestConvertible
+        
+        //Call API
+        Service<Invoice>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
+        }
+    }
+    
+    /**
      * Sends a request to export an invoice
      * Returns an ExportResponse
      */

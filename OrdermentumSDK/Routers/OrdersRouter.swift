@@ -15,6 +15,7 @@ public enum OrdersRouter: URLRequestConvertible {
     case submitStandingOrder(CreateStandingOrder)
     case getDeliveryDates(String, String)
     case getOrders(String, String, String)
+    case getOrdersByDeliveryDate(String, String, String)
     case removeFavourite(String)
     case getFavourites(String, String, String, String, Int)
     case getClassicStandingOrders(String, String, Bool, String)
@@ -33,6 +34,8 @@ public enum OrdersRouter: URLRequestConvertible {
         case .getDeliveryDates:
             return .get
         case .getOrders:
+            return .get
+        case .getOrdersByDeliveryDate:
             return .get
         case .removeFavourite:
             return .delete
@@ -62,6 +65,8 @@ public enum OrdersRouter: URLRequestConvertible {
             return "orders/delivery-dates"
         case .getOrders:
             return "orders"
+        case .getOrdersByDeliveryDate:
+            return "orders"
         case .removeFavourite(let orderId):
             return "orders/\(orderId)"
         case .getFavourites:
@@ -86,6 +91,8 @@ public enum OrdersRouter: URLRequestConvertible {
             return ["retailerId": retailerId, "supplierId": supplierId]
         case .getOrders(let retailerId, let supplierId, let sortBy):
             return ["retailerId": retailerId, "supplierId": supplierId, "sortBy[createdAt]": sortBy]
+        case .getOrdersByDeliveryDate(let retailerId, let supplierId, let sortBy):
+            return ["retailerId": retailerId, "supplierId": supplierId, "sortBy[deliveryDate]": sortBy]
         case .getFavourites(let retailerId, let supplierId, let type, let sortBy, let pageNo):
             return ["retailerId": retailerId, "supplierId": supplierId, "type": type, "sortBy[name]": sortBy, "pageNo": pageNo]
         case .getClassicStandingOrders(let retailerId, let supplierId, let enabled, let sortBy):

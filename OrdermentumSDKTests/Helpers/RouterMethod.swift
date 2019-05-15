@@ -30,11 +30,16 @@ extension GetEnvironmentVar {
     }
 }
 
-extension AddOnsServiceTests : GetMethod {}
-extension ProfileServiceTest : GetMethod {}
-extension MarketplaceServiceTests : GetMethod {}
-extension ProductsServiceTests : GetMethod {}
+extension AddOnsServiceTests: GetMethod {}
+extension ProfileServiceTest: GetMethod {}
+extension MarketplaceServiceTests: GetMethod {}
+extension ProductsServiceTests: GetMethod {}
+extension PaymentsServiceTests: GetMethod {}
+extension FlagsServiceTests: GetMethod {}
 
-extension MarketplaceServiceTests : GetEnvironmentVar {}
-extension ProfileServiceTest : GetEnvironmentVar {}
-extension ProductsServiceTests : GetEnvironmentVar {}
+extension MarketplaceServiceTests: GetEnvironmentVar {}
+extension ProfileServiceTest: GetEnvironmentVar {}
+extension ProductsServiceTests: GetEnvironmentVar {}
+extension PaymentsServiceTests: GetEnvironmentVar {}
+extension FlagsServiceTests: GetEnvironmentVar {}
+
