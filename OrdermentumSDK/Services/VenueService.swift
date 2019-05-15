@@ -123,4 +123,18 @@ public class VenueService {
             completion(result)
         }
     }
+    
+    /**
+     * Search for venues given a search string
+     * Returns a VenueUsersResponse
+     */
+    public func searchVenues(searchQuery: String, completion: @escaping (Bool, VenueSearchResponse?) -> ()) {
+        //Build Route
+        let route = VenueRouter.searchVenue(searchQuery) as URLRequestConvertible
+        
+        //Call API
+        Service<VenueSearchResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
+        }
+    }
 }
