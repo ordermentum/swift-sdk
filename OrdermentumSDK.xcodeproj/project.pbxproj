@@ -41,6 +41,7 @@
 		26B5763A22813FAD008205DC /* applyPayment.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B5763922813FAD008205DC /* applyPayment.json */; };
 		26BABA0A228B94FB00757F99 /* getVenueInvites.json in Resources */ = {isa = PBXBuildFile; fileRef = 26BABA09228B94FB00757F99 /* getVenueInvites.json */; };
 		26BABA0C228BAFFD00757F99 /* acceptAllInvites.json in Resources */ = {isa = PBXBuildFile; fileRef = 26BABA0B228BAFFD00757F99 /* acceptAllInvites.json */; };
+		26BABA0E228BDE2300757F99 /* joinVenue.json in Resources */ = {isa = PBXBuildFile; fileRef = 26BABA0D228BDE2300757F99 /* joinVenue.json */; };
 		26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A07C226D69F000BC2755 /* getDeliveryDates.json */; };
 		26BFFA8A227AC86900D232B2 /* removeFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26B2A080226D6DDF00BC2755 /* removeFavourite.json */; };
 		26BFFA8B227AC87400D232B2 /* updateOrderFirstTime.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE3893226FFE2600524345 /* updateOrderFirstTime.json */; };
@@ -236,6 +237,7 @@
 		26B5763922813FAD008205DC /* applyPayment.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applyPayment.json; sourceTree = "<group>"; };
 		26BABA09228B94FB00757F99 /* getVenueInvites.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getVenueInvites.json; sourceTree = "<group>"; };
 		26BABA0B228BAFFD00757F99 /* acceptAllInvites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = acceptAllInvites.json; sourceTree = "<group>"; };
+		26BABA0D228BDE2300757F99 /* joinVenue.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = joinVenue.json; sourceTree = "<group>"; };
 		26CE388E226FF20C00524345 /* getFavourites.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getFavourites.json; sourceTree = "<group>"; };
 		26CE3891226FF94F00524345 /* getClassicStandingOrders.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getClassicStandingOrders.json; sourceTree = "<group>"; };
 		26CE3893226FFE2600524345 /* updateOrderFirstTime.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = updateOrderFirstTime.json; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 				26ADA8162283B57100ED6D2E /* createVenue.json */,
 				26D21DCA228B8D8000547BA9 /* searchVenues.json */,
 				26BABA0B228BAFFD00757F99 /* acceptAllInvites.json */,
+				26BABA0D228BDE2300757F99 /* joinVenue.json */,
 			);
 			path = Venue;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				26BFFA8A227AC86900D232B2 /* removeFavourite.json in Resources */,
 				BB659FB7226D4BF8009C3D46 /* getSinglePaymentMethods.json in Resources */,
 				26984114228297A4003A4B95 /* verifyEmail.json in Resources */,
+				26BABA0E228BDE2300757F99 /* joinVenue.json in Resources */,
 				26CE389A2270054D00524345 /* scheduleOrder.json in Resources */,
 				26BABA0A228B94FB00757F99 /* getVenueInvites.json in Resources */,
 				26CE3896226FFFB000524345 /* updateOrder.json in Resources */,

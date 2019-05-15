@@ -111,6 +111,20 @@ public class VenueService {
     }
     
     /**
+     * Requests to join a venue as a user
+     * Returns success or fail
+     */
+    public func joinVenue(_ requestObject: JoinVenueRequest, completion: @escaping (Bool) -> ()) {
+        //Build Route
+        let route = VenueRouter.joinVenue(requestObject) as URLRequestConvertible
+        
+        //Call API
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
+            completion(result)
+        }
+    }
+    
+    /**
      * Fetch the list of users that belong to a particular venue
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */

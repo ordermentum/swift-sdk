@@ -236,6 +236,34 @@ class VenueServiceTests: XCTestCase {
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
+    
+    func testJoinVenue() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Build request body and params
+        var requestBody = JoinVenueRequest()
+        requestBody.recipientEntityId = ProcessInfo.processInfo.environment["RECIPIENT_VENUE_ID"] ?? ""
+        requestBody.userId = ProcessInfo.processInfo.environment["USER_ID"] ?? ""
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? VenueRouter.joinVenue(requestBody).asURLRequest() {
+            self.startStub(route, stubData: .joinVenue )
+        }
+        
+        //Call API
+        Client.instance.venues.joinVenue(requestBody) { (success) in
+            assert(success)
+            expectation.fulfill()
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+    }
 
     func testGetUsers() {
         //Build Expectation
