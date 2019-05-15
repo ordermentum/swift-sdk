@@ -42,3 +42,4 @@ extension ProfileServiceTest: GetEnvironmentVar {}
 extension ProductsServiceTests: GetEnvironmentVar {}
 extension PaymentsServiceTests: GetEnvironmentVar {}
 extension FlagsServiceTests: GetEnvironmentVar {}
+

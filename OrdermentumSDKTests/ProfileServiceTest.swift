@@ -25,7 +25,8 @@ class ProfileServiceTest: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
 
         if let route = try? ProfileRouter.getProfile.asURLRequest() {
-            self.startStub(route, stubData: .getProfile)
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .getProfile)
         }
         
         //Build Expectation
@@ -55,7 +56,8 @@ class ProfileServiceTest: XCTestCase {
         requestObject.phone = self.getEnvironmentVar("PHONE") ?? ""
     
         if let route = try? ProfileRouter.updateProfile(userId, requestObject).asURLRequest() {
-            self.startStub(route, stubData: .updateProfile)
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .updateProfile)
         }
         
         //Build Expectation

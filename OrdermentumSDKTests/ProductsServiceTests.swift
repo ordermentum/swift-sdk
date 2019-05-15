@@ -30,7 +30,8 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 10
         
         if let route = try? ProductsRouter.getProductCategories(retailerId, supplierId, pageSize, pageNo).asURLRequest() {
-            self.startStub(route, stubData: .getProductCategories)
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .getProductCategories)
         }
         
         //Build Expectation
@@ -61,7 +62,8 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 10
         
         if let route = try? ProductsRouter.getProducts(categoryId, retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
-            self.startStub(route, stubData: .getProduct)
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .getProduct)
         }
 
         //Build Expectation
@@ -91,7 +93,9 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 0
         
         if let route = try? ProductsRouter.getMostOrderedProducts(retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
-            self.startStub(route, stubData: .getMostOrderedProducts)
+            print(route)
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .getMostOrderedProducts)
         }
         
         //Build Expectation
@@ -121,7 +125,8 @@ class ProductsServiceTests: XCTestCase {
         let pageNo: Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 0
         
         if let route = try? ProductsRouter.getTrendingProducts(retailerId, supplierId, visible, pageSize, pageNo).asURLRequest() {
-            self.startStub(route, stubData: .getTrendingProducts)
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .getTrendingProducts)
         }
         
         //Build Expectation
@@ -154,7 +159,9 @@ class ProductsServiceTests: XCTestCase {
         })
 
         if let route = try? ProductsRouter.getRecommendedProducts(retailerId, supplierId, pageSize, excludedProductId).asURLRequest() {
-            self.startStub(route, stubData: .getRecommendedProducts)
+
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .getRecommendedProducts)
         }
         
         //Build Expectation
@@ -183,7 +190,9 @@ class ProductsServiceTests: XCTestCase {
         let pageSize: Int = Int(self.getEnvironmentVar("PAGE_SIZE")!) ?? 0
 
         if let route = try? ProductsRouter.searchProducts(search, supplierId, visible, pageSize).asURLRequest() {
-            self.startStub(route, stubData: .searchProducts)
+            print(route)
+            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
+            self.startStub(route, method: method, stubData: .searchProducts)
         }
         
         //Build Expectation

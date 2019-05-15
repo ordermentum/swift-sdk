@@ -64,6 +64,9 @@ public enum StubDataFile: String {
     case acceptAllInvites
 }
 
+protocol StubNetwork {
+}
+
 protocol NetworkStubs {
 }
 
@@ -101,19 +104,47 @@ extension NetworkStubs {
     }
 }
 
-extension AddOnsServiceTests: NetworkStubs {}
-extension NotifyServiceTests: NetworkStubs {}
-extension NPSServiceTests: NetworkStubs {}
 
+extension StubNetwork {
+    func startStub(_ route: URLRequest, method: HTTPMethod, stubData: StubDataFile) {
+        if let url = route.url {
+            var stub = StubRequest(method: method, url: url)
+            var response = StubResponse()
+            
+            if let fileUrl = Bundle(identifier: "io.ordermentum.OrdermentumSDKTests")!.url(forResource: stubData.rawValue, withExtension: "json") {
+                do {
+                    let data = try Data(contentsOf: fileUrl)
+                    response.body = data
+                } catch {
+                    print("error:\(error)")
+                }
+            }
+            stub.response = response
+            Hippolyte.shared.add(stubbedRequest: stub)
+            Hippolyte.shared.start()
+        }
+    }
+}
+
+
+
+
+extension ProfileServiceTest : StubNetwork {}
+extension MarketplaceServiceTests : StubNetwork {}
+extension ProductsServiceTests : StubNetwork {}
+
+extension AddOnsServiceTests : NetworkStubs {}
+extension NotifyServiceTests : NetworkStubs {}
+extension NPSServiceTests : NetworkStubs {}
 extension ProfileServiceTest: NetworkStubs {}
 extension MarketplaceServiceTests: NetworkStubs {}
 extension ProductsServiceTests: NetworkStubs {}
 extension PaymentsServiceTests: NetworkStubs {}
 extension PurchaserServiceTests: NetworkStubs {}
 extension NotificationServiceTests: NetworkStubs {}
-
 extension FlagsServiceTests: NetworkStubs {}
 extension OrderServiceTests: NetworkStubs {}
 extension InvoiceServiceTests: NetworkStubs {}
 extension VenueServiceTests: NetworkStubs {}
 extension AuthServiceTests: NetworkStubs {}
+
