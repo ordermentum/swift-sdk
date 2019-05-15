@@ -19,6 +19,7 @@ public enum VenueRouter: URLRequestConvertible {
     case sendVenueInvite(AddUser)
     case getUsers(String)
     case removeUser(String, RemoveUser)
+    case searchVenue(String)
     
     //Methods
     var method: HTTPMethod {
@@ -39,6 +40,8 @@ public enum VenueRouter: URLRequestConvertible {
             return .get
         case .removeUser:
             return .put
+        case .searchVenue:
+            return .get
         }
     }
     
@@ -61,6 +64,8 @@ public enum VenueRouter: URLRequestConvertible {
             return "users"
         case .removeUser(let userId, _):
             return "entities/\(userId)/permissions"
+        case .searchVenue:
+            return "venues/directory"
         }
     }
     
@@ -73,6 +78,8 @@ public enum VenueRouter: URLRequestConvertible {
             return ["retailerId": retailerId]
         case .getVenueInvites(let recipientEmail):
             return ["recipientEmail":recipientEmail, "status":"approved"]
+        case .searchVenue(let searchQuery):
+            return ["search": searchQuery]
         default:
             return [:]
         }

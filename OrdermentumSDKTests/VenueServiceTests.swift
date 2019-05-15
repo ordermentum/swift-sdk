@@ -81,6 +81,33 @@ class VenueServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
+    func testSearchVenue() {
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Async Test")
+        
+        //Build request body and params
+        let searchQuery = ProcessInfo.processInfo.environment["VENUE_SEARCH_QUERY"] ?? ""
+        
+        //Request setup
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? VenueRouter.searchVenue(searchQuery).asURLRequest() {
+            self.startStub(route, stubData: .searchVenues )
+        }
+        
+        //Call API
+        Client.instance.venues.searchVenues(searchQuery: searchQuery) { (success, responseData) in
+            assert(success)
+            XCTAssertNotNil(responseData)
+            expectation.fulfill()
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
     func testUpdateVenueProfile() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
