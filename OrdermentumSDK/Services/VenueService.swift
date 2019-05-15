@@ -97,6 +97,20 @@ public class VenueService {
     }
     
     /**
+     * Accepts all venue invites of the user
+     * Returns success or fail
+     */
+    public func acceptAllInvites(_ completion: @escaping (Bool) -> ()) {
+        //Build Route
+        let route = VenueRouter.acceptAllInvites as URLRequestConvertible
+        
+        //Call API
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
+            completion(result)
+        }
+    }
+    
+    /**
      * Fetch the list of users that belong to a particular venue
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */

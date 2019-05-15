@@ -17,6 +17,7 @@ public enum VenueRouter: URLRequestConvertible {
     case getProfileCompletion(String)
     case getVenueInvites(String)
     case sendVenueInvite(AddUser)
+    case acceptAllInvites
     case getUsers(String)
     case removeUser(String, RemoveUser)
     case searchVenue(String)
@@ -35,6 +36,8 @@ public enum VenueRouter: URLRequestConvertible {
         case .getVenueInvites:
             return .get
         case .sendVenueInvite:
+            return .post
+        case .acceptAllInvites:
             return .post
         case .getUsers:
             return .get
@@ -60,6 +63,8 @@ public enum VenueRouter: URLRequestConvertible {
             return "invites"
         case .sendVenueInvite:
             return "invites"
+        case .acceptAllInvites:
+            return "invites/accept-all"
         case .getUsers:
             return "users"
         case .removeUser(let userId, _):
