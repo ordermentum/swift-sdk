@@ -60,6 +60,13 @@ public struct CreateVenueResponse: Decodable {
     public var retailer: Venue = Venue()
 }
 
+public struct JoinVenueRequest: Codable {
+    public init() {}
+    
+    public var recipientEntityId: String = ""
+    public var userId: String = ""
+}
+
 public struct VenueAccountSettings: Encodable {
     public init() {}
     

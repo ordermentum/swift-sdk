@@ -21,6 +21,7 @@ public enum VenueRouter: URLRequestConvertible {
     case getUsers(String)
     case removeUser(String, RemoveUser)
     case searchVenue(String)
+    case joinVenue(JoinVenueRequest)
     
     //Methods
     var method: HTTPMethod {
@@ -45,6 +46,8 @@ public enum VenueRouter: URLRequestConvertible {
             return .put
         case .searchVenue:
             return .get
+        case .joinVenue:
+            return .post
         }
     }
     
@@ -71,6 +74,8 @@ public enum VenueRouter: URLRequestConvertible {
             return "entities/\(userId)/permissions"
         case .searchVenue:
             return "venues/directory"
+        case .joinVenue:
+            return "venues/join"
         }
     }
     
@@ -100,6 +105,8 @@ public enum VenueRouter: URLRequestConvertible {
         case .sendVenueInvite(let requestObject):
             return requestObject
         case .removeUser(_, let requestObject):
+            return requestObject
+        case .joinVenue(let requestObject):
             return requestObject
         default:
             return nil
