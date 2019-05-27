@@ -73,6 +73,7 @@ enum CodingKeys: String, CodingKey {
     case alias
     case approvedByName
     case attacheXml
+    case availableDeliveries
     case bankConfigured
     case banking
     case batchCode
@@ -205,6 +206,8 @@ enum CodingKeys: String, CodingKey {
     case globalBakeXml
     case groupPayments
     case gst
+    case hasAvailableDeliveries
+    case hasScheduledOrder
     case height
     case id
     case images

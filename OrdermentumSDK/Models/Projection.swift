@@ -15,14 +15,22 @@ public struct ProjectionsResponse {
 }
 
 public struct Projection {
-    public var date: String = ""
-    public var deliveries: [Delivery] = []
-    public var projections: [SingleProjection] = []
+    public init() {}
+    
+    var availableDeliveries: [Delivery] = []
+    var date: String = ""
+    var deliveries: [Delivery] = []
+    var hasAvailableDeliveries: Bool = false
+    var projections: [SingleProjection] = []
 }
 
 public struct Delivery {
-    public var runAt: String = ""
-    public var purchaserScheduleId: String = ""
+    public init() {}
+    
+    var runAt: String = ""
+    var purchaserScheduleId: String = ""
+    var scheduleName: String = ""
+    var hasScheduledOrder: Bool = false
 }
 
 public struct SingleProjection {
@@ -96,8 +104,10 @@ extension Projection: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
+        availableDeliveries = try container.decodeIfPresent([Delivery].self, forKey: .availableDeliveries) ?? []
         date = try container.decodeIfPresent(String.self, forKey: .date) ?? ""
         deliveries = try container.decodeIfPresent([Delivery].self, forKey: .deliveries) ?? []
+        hasAvailableDeliveries = try container.decodeIfPresent(Bool.self, forKey: .hasAvailableDeliveries) ?? false
         projections = try container.decodeIfPresent([SingleProjection].self, forKey: .projections) ?? []
     }
 }
@@ -110,6 +120,8 @@ extension Delivery: Decodable {
         //Decode Data
         runAt = try container.decodeIfPresent(String.self, forKey: .runAt) ?? ""
         purchaserScheduleId = try container.decodeIfPresent(String.self, forKey: .purchaserScheduleId) ?? ""
+        scheduleName = try container.decodeIfPresent(String.self, forKey: .scheduleName) ?? ""
+        hasScheduledOrder = try container.decodeIfPresent(Bool.self, forKey: .hasScheduledOrder) ?? false
     }
 }
 
