@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263FD6ED22A09BD3001B7EBB /* getCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 263FD6EC22A09BD3001B7EBB /* getCategory.json */; };
 		268EE201226439E3008E10B5 /* AddOnsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268EE200226439E3008E10B5 /* AddOnsServiceTests.swift */; };
 		269289332276BE820018AC6A /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E552266F84500578DED /* ValidationServiceTest.swift */; };
 		269289342276BFD80018AC6A /* PurchaserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6E542266F84500578DED /* PurchaserServiceTests.swift */; };
@@ -201,6 +202,7 @@
 
 /* Begin PBXFileReference section */
 		249F582D16A080253A3CC3DE /* Pods-OrdermentumSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDK/Pods-OrdermentumSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		263FD6EC22A09BD3001B7EBB /* getCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getCategory.json; sourceTree = "<group>"; };
 		268EE200226439E3008E10B5 /* AddOnsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnsServiceTests.swift; sourceTree = "<group>"; };
 		269289362276C7FB0018AC6A /* getInvoices.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getInvoices.json; sourceTree = "<group>"; };
 		269289382276D0F80018AC6A /* exportInvoice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exportInvoice.json; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				26B2A076226D495600BC2755 /* getNPS.json */,
 				26AD4023227162A200CAEBC2 /* registerDevice.json */,
 				26B2A072226D355600BC2755 /* notificationSettingsUpdate.json */,
+				263FD6EC22A09BD3001B7EBB /* getCategory.json */,
 				26984113228297A4003A4B95 /* verifyEmail.json */,
 				2698410D228272FB003A4B95 /* resendVerifyEmail.json */,
 			);
@@ -857,6 +860,7 @@
 				26B5763A22813FAD008205DC /* applyPayment.json in Resources */,
 				BB92918922769EEF00B82918 /* getFlags.json in Resources */,
 				26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */,
+				263FD6ED22A09BD3001B7EBB /* getCategory.json in Resources */,
 				2698410E228272FB003A4B95 /* resendVerifyEmail.json in Resources */,
 				26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */,
 				26B2A073226D355600BC2755 /* notificationSettingsUpdate.json in Resources */,
