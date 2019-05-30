@@ -1,0 +1,252 @@
+{
+    "meta": {
+        "totalResults": 25,
+        "totalPages": 3,
+        "pageSize": 10,
+        "pageNo": 1
+    },
+    "links": {
+        "self": "https://app-testing.ordermentum.com/v1/categories?pageNo=1&pageSize=10&retailerId=20429f61-9a93-4ce0-bf66-85973520f411&visibilityGroupId=65cef7bf-bf36-4a58-a1dd-0e2cc02d7f52",
+        "first": "https://app-testing.ordermentum.com/v1/categories?pageNo=1&pageSize=10&retailerId=20429f61-9a93-4ce0-bf66-85973520f411&visibilityGroupId=65cef7bf-bf36-4a58-a1dd-0e2cc02d7f52",
+        "prev": null,
+        "next": "https://app-testing.ordermentum.com/v1/categories?pageNo=2&pageSize=10&retailerId=20429f61-9a93-4ce0-bf66-85973520f411&visibilityGroupId=65cef7bf-bf36-4a58-a1dd-0e2cc02d7f52",
+        "last": "https://app-testing.ordermentum.com/v1/categories?pageNo=3&pageSize=10&retailerId=20429f61-9a93-4ce0-bf66-85973520f411&visibilityGroupId=65cef7bf-bf36-4a58-a1dd-0e2cc02d7f52"
+    },
+    "data": [
+        {
+            "id": "b155f172-9811-4abb-a59c-253cfdf92dfb",
+            "name": "Validation",
+            "description": null,
+            "createdAt": "2018-08-07T00:11:22.598Z",
+            "updatedAt": "2018-08-07T00:11:22.598Z",
+            "deletedAt": null,
+            "image": {
+                "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "images": {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "sortOrder": 0
+        },
+        {
+            "id": "db4dfd20-7384-4685-be46-8b151b6123fd",
+            "name": "Apple Products",
+            "description": null,
+            "createdAt": "2018-09-20T04:22:59.882Z",
+            "updatedAt": "2019-01-17T01:15:10.183Z",
+            "deletedAt": null,
+            "image": {
+                "url": "http://ordermentum-res.cloudinary.com/image/upload/v1547687726/rinimhu6bljkbewf48rz.jpg",
+                "etag": "06d7f10a1fb52bde0712ecd78c23f135",
+                "tags": [],
+                "type": "upload",
+                "bytes": 13484,
+                "width": 800,
+                "format": "jpg",
+                "height": 550,
+                "version": 1547687726,
+                "public_id": "rinimhu6bljkbewf48rz",
+                "signature": "70aab4c4abc2ba4d78a42da370e1bbdf44b1c3e1",
+                "created_at": "2019-01-17T01:15:26Z",
+                "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547687726/rinimhu6bljkbewf48rz.jpg",
+                "placeholder": false,
+                "resource_type": "image",
+                "original_filename": "858bb32016febecea9a82e9d1e7170eb"
+            },
+            "images": {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547687726/rinimhu6bljkbewf48rz.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547687726/rinimhu6bljkbewf48rz.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547687726/rinimhu6bljkbewf48rz.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547687726/rinimhu6bljkbewf48rz.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547687726/rinimhu6bljkbewf48rz.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547687726/rinimhu6bljkbewf48rz.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547687726/rinimhu6bljkbewf48rz.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547687726/rinimhu6bljkbewf48rz.jpg"
+            },
+            "sortOrder": 1
+        },
+        {
+            "id": "a058307f-f53b-4c82-bac0-ee8a5faf38c3",
+            "name": "Brand Image",
+            "description": null,
+            "createdAt": "2019-01-17T01:22:27.631Z",
+            "updatedAt": "2019-01-17T01:22:27.631Z",
+            "deletedAt": null,
+            "image": {
+                "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "images": {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "sortOrder": 2
+        },
+        {
+            "id": "451187d7-4d49-4aa1-940b-36a0aad6050c",
+            "name": "Random Weight",
+            "description": null,
+            "createdAt": "2018-08-07T00:12:32.088Z",
+            "updatedAt": "2018-08-07T04:18:36.714Z",
+            "deletedAt": null,
+            "image": {
+                "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "images": {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "sortOrder": 3
+        },
+        {
+            "id": "dd2758bb-9973-4c2f-88cc-dc4c3d33f439",
+            "name": "Surcharge",
+            "description": null,
+            "createdAt": "2018-09-17T01:54:50.031Z",
+            "updatedAt": "2018-09-17T01:54:50.031Z",
+            "deletedAt": null,
+            "image": {
+                "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "images": {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "sortOrder": 4
+        },
+        {
+            "id": "727721e0-5950-4a8a-bbd4-6e0a7bb53a9c",
+            "name": "Lead Time",
+            "description": null,
+            "createdAt": "2018-09-04T03:42:10.649Z",
+            "updatedAt": "2018-09-04T03:42:10.649Z",
+            "deletedAt": null,
+            "image": {
+                "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "images": {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "sortOrder": 5
+        },
+        {
+            "id": "55a720fd-eb1a-97e5-50bb-a7779b9cf5b6",
+            "name": "Unsorted",
+            "description": null,
+            "createdAt": "2015-07-16T03:11:57.000Z",
+            "updatedAt": "2016-05-31T00:24:20.000Z",
+            "deletedAt": null,
+            "image": {
+                "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "images": {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "sortOrder": 6
+        },
+        {
+            "id": "0217b083-215f-4f4c-8252-a00fc2a23662",
+            "name": "Barista Equipment",
+            "description": null,
+            "createdAt": "2018-08-07T00:11:53.310Z",
+            "updatedAt": "2018-08-07T00:11:53.310Z",
+            "deletedAt": null,
+            "image": {
+                "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "images": {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "sortOrder": 7
+        },
+        {
+            "id": "81e921ed-efdf-4304-b52f-225bf77a6165",
+            "name": "Coffee",
+            "description": null,
+            "createdAt": "2018-08-29T05:05:59.094Z",
+            "updatedAt": "2018-08-29T05:05:59.094Z",
+            "deletedAt": null,
+            "image": {
+                "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "images": {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "sortOrder": 8
+        },
+        {
+            "id": "522b7f64-959f-466f-8938-9d4ac5186693",
+            "name": "Crockery & Glassware",
+            "description": null,
+            "createdAt": "2018-08-07T00:11:43.746Z",
+            "updatedAt": "2018-08-07T00:11:43.746Z",
+            "deletedAt": null,
+            "image": {
+                "secure_url": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "images": {
+                "original": "https://ordermentum-res.cloudinary.com/image/upload/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "logo": "https://ordermentum-res.cloudinary.com/image/upload/w_40,h_40,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "icon": "https://ordermentum-res.cloudinary.com/image/upload/w_60,h_60,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "print": "https://ordermentum-res.cloudinary.com/image/upload/w_650,h_80,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "mini": "https://ordermentum-res.cloudinary.com/image/upload/w_150,h_150,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "small": "https://ordermentum-res.cloudinary.com/image/upload/w_200,h_200,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "medium": "https://ordermentum-res.cloudinary.com/image/upload/w_400,h_400,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg",
+                "large": "https://ordermentum-res.cloudinary.com/image/upload/w_600,h_600,c_pad/v1547688019/vlmvhb5vfq04xq8fgvch.jpg"
+            },
+            "sortOrder": 9
+        }
+    ]
+}

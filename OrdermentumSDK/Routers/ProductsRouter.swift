@@ -12,6 +12,7 @@ import Alamofire
 public enum ProductsRouter: URLRequestConvertible {
     //Routes
     case getProductCategories(String, String, Int, Int)
+    case getCategory(String, String, String)
     case getProducts(String, String, String, Bool, Int, Int)
     case getMostOrderedProducts(String, String, Bool, Int, Int)
     case getTrendingProducts(String, String, Bool, Int, Int)
@@ -22,6 +23,8 @@ public enum ProductsRouter: URLRequestConvertible {
     var method: HTTPMethod {
         switch self {
         case .getProductCategories:
+            return .get
+        case .getCategory:
             return .get
         case .getProducts:
             return .get
@@ -41,6 +44,8 @@ public enum ProductsRouter: URLRequestConvertible {
         switch self {
         case .getProductCategories:
             return "categories"
+        case .getCategory(let categoryId, _, _):
+            return "categories/\(categoryId)"
         case .getProducts:
             return "products"
         case .getMostOrderedProducts:
@@ -59,6 +64,8 @@ public enum ProductsRouter: URLRequestConvertible {
         switch self {
         case .getProductCategories(let retailerId, let supplierId, let pageSize, let pageNo):
             return ["retailerId": retailerId, "supplierId": supplierId, "pageSize": pageSize, "pageNo": pageNo]
+        case .getCategory(_, let supplierId, let retailerId):
+            return ["retailerId": retailerId, "supplierId": supplierId]
         case .getProducts(let categoryId, let retailerId, let supplierId, let visible, let pageSize, let pageNo):
             return ["categoryId": categoryId, "retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize, "pageNo": pageNo]
         case .getMostOrderedProducts(let retailerId, let supplierId, let visible, let pageSize, let pageNo):

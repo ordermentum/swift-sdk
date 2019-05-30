@@ -27,6 +27,20 @@ public class ProductsService {
     }
     
     /**
+     * Fetch a single category for a particular categoryId and supplier-retailer relationship
+     * Returns a Category object
+     */
+    public func getCategory(categoryId: String, retailerId: String, supplierId: String, completion: @escaping (Bool, CategoryResponse?) -> ()) {
+        //Build Route
+        let route = ProductsRouter.getCategory(categoryId, retailerId, supplierId ) as URLRequestConvertible
+        
+        //Call API
+        Service<CategoryResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
+        }
+    }
+    
+    /**
      * Fetch the products belonging to a particular category
      * Returns a Product object
      */

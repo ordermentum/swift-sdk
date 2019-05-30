@@ -51,6 +51,34 @@ class ProductsServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
+    func testGetCategory() {
+        Client.instance.baseURL = ClientURL.rootTestingURL
+        let categoryId: String = self.getEnvironmentVar("CATEGORY_ID") ?? ""
+        let retailerId: String = self.getEnvironmentVar("RETAILER_ID") ?? ""
+        let supplierId: String = self.getEnvironmentVar("SUPPLIER_ID") ?? ""
+        
+        if let route = try? ProductsRouter.getCategory(categoryId, retailerId, supplierId).asURLRequest() {
+            self.startStub(route, stubData: .getCategory)
+        }
+        
+        //Build Expectation
+        let expectation = XCTestExpectation(description: "Stubs network call")
+        
+        Client.instance.products.getCategory(categoryId: categoryId, retailerId: retailerId, supplierId: supplierId) { (result, responseData) in
+            if result {
+                assert(result)
+                expectation.fulfill()
+                XCTAssertFalse((responseData?.data.isEmpty)!)
+            }
+            else {
+                XCTFail("Expected JSON Response to succeed, but failed")
+            }
+        }
+        
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
     func testGetProduct() {
         Client.instance.baseURL = ClientURL.rootTestingURL
         let categoryId: String = self.getEnvironmentVar("CATEGORY_ID") ?? ""
@@ -178,18 +206,19 @@ class ProductsServiceTests: XCTestCase {
     func testSearchProducts() {
         Client.instance.baseURL = ClientURL.rootTestingURL
         let search: String = self.getEnvironmentVar("SEARCH") ?? ""
+        let retailerId: String = self.getEnvironmentVar("RETAILER_ID") ?? ""
         let supplierId: String = self.getEnvironmentVar("SUPPLIER_ID") ?? ""
         let visible: Bool = Bool(self.getEnvironmentVar("VISIBLE")!) ?? true
         let pageSize: Int = Int(self.getEnvironmentVar("PAGE_SIZE")!) ?? 0
 
-        if let route = try? ProductsRouter.searchProducts(search, supplierId, visible, pageSize).asURLRequest() {
+        if let route = try? ProductsRouter.searchProducts(search, retailerId, supplierId, visible, pageSize).asURLRequest() {
             self.startStub(route, stubData: .searchProducts)
         }
         
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.products.searchProducts(search: search, supplierId: supplierId, visible: visible, pageSize: pageSize) { (result, responseData) in
+        Client.instance.products.searchProducts(search: search, retailerId: retailerId , supplierId: supplierId, visible: visible, pageSize: pageSize) { (result, responseData) in
             if result {
                 assert(result)
                 expectation.fulfill()
