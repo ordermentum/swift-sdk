@@ -16,7 +16,7 @@ public enum ProductsRouter: URLRequestConvertible {
     case getMostOrderedProducts(String, String, Bool, Int, Int)
     case getTrendingProducts(String, String, Bool, Int, Int)
     case getRecommendedProducts(String, String, Int, [String])
-    case searchProducts(String, String, Bool, Int)
+    case searchProducts(String, String, String, Bool, Int)
 
     //Methods
     var method: HTTPMethod {
@@ -67,8 +67,8 @@ public enum ProductsRouter: URLRequestConvertible {
             return ["retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize, "pageNo": pageNo]
         case .getRecommendedProducts(let retailerId, let supplierId, let pageSize, let productsArray):
             return ["retailerId": retailerId, "supplierId": supplierId, "pageSize": pageSize, "id__not": productsArray]
-        case .searchProducts(let search, let supplierId, let visible, let pageSize):
-            return ["search": search, "supplierId": supplierId, "visible": visible, "pageSize": pageSize]
+        case .searchProducts(let search, let retailerId, let supplierId, let visible, let pageSize):
+            return ["search": search, "retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize]
         }
     }
     

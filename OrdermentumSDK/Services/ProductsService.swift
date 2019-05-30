@@ -86,9 +86,9 @@ public class ProductsService {
      * Search for products
      * Returns a list of ProductResponse
      */
-    public func searchProducts(search: String, supplierId: String, visible: Bool, pageSize: Int, completion: @escaping (Bool, ProductResponse?) -> ()) {
+    public func searchProducts(search: String, retailerId: String, supplierId: String, visible: Bool, pageSize: Int, completion: @escaping (Bool, ProductResponse?) -> ()) {
         //Build Route
-        let route = ProductsRouter.searchProducts(search, supplierId, visible, pageSize) as URLRequestConvertible
+        let route = ProductsRouter.searchProducts(search, retailerId, supplierId, visible, pageSize) as URLRequestConvertible
         
         //Call API
         Service<ProductResponse>().request(route: route) { (result, responseObject) in
