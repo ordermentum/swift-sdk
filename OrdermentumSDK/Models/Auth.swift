@@ -28,6 +28,12 @@ public struct ForgotPasswordRequest: Codable {
     public var email: String = ""
 }
 
+public struct ResetPasswordRequest: Codable {
+    public init() {}
+
+    public var password: String = ""
+}
+
 public struct ChangePassword: Codable {
     public init() {}
     
