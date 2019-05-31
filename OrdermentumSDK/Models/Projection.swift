@@ -18,7 +18,7 @@ public struct Projection {
     public init() {}
     
     var availableDeliveries: [Delivery] = []
-    var date: String = ""
+    public var date: String = ""
     var deliveries: [Delivery] = []
     var hasAvailableDeliveries: Bool = false
     var projections: [SingleProjection] = []
@@ -28,7 +28,7 @@ public struct Delivery {
     public init() {}
     
     var runAt: String = ""
-    var purchaserScheduleId: String = ""
+    public var purchaserScheduleId: String = ""
     var scheduleName: String = ""
     var hasScheduledOrder: Bool = false
 }
