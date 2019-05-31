@@ -487,6 +487,7 @@ enum CodingKeys: String, CodingKey {
     case visibilityGroup
     case visibilityGroupId
     case visible
+    case warnings
     case wed
     case weekly
     case weight

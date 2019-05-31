@@ -52,10 +52,11 @@ public struct Validation {
 public struct ValidationCart {
     public init() {}
     
-    public var errors: [ValidationError] = []
+    public var errors: [ValidationMessage] = []
+    public var warnings: [ValidationMessage] = []
 }
 
-public struct ValidationError {
+public struct ValidationMessage {
     public var message: String = ""
     public var type: String = ""
 }
@@ -69,7 +70,8 @@ public struct ValidationDisplay {
 
 public struct ValidationLineItem {
     public var productId: String = ""
-    public var errors: [ValidationError] = []
+    public var errors: [ValidationMessage] = []
+    public var warnings: [ValidationMessage] = []
     public var display: ValidationLineItemDisplay = ValidationLineItemDisplay()
     public var locked: Bool = false
 }
@@ -115,11 +117,12 @@ extension ValidationCart: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        errors = try container.decodeIfPresent([ValidationError].self, forKey: .errors) ?? []
+        errors = try container.decodeIfPresent([ValidationMessage].self, forKey: .errors) ?? []
+        warnings = try container.decodeIfPresent([ValidationMessage].self, forKey: .warnings) ?? []
     }
 }
 
-extension ValidationError: Decodable {
+extension ValidationMessage: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -150,7 +153,8 @@ extension ValidationLineItem: Decodable {
         
         //Decode Data
         productId = try container.decodeIfPresent(String.self, forKey: .productId) ?? ""
-        errors = try container.decodeIfPresent([ValidationError].self, forKey: .errors) ?? []
+        errors = try container.decodeIfPresent([ValidationMessage].self, forKey: .errors) ?? []
+        warnings = try container.decodeIfPresent([ValidationMessage].self, forKey: .warnings) ?? []
         display = try container.decodeIfPresent(ValidationLineItemDisplay.self, forKey: .display) ?? ValidationLineItemDisplay()
         locked = try container.decodeIfPresent(Bool.self, forKey: .locked) ?? false
     }
