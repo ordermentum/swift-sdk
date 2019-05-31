@@ -15,6 +15,8 @@ public struct ProductResponse {
 }
 
 public struct Product: Encodable {
+    public init() {}
+    
     public var id: String = ""
     public var name: String = ""
     public var price: String = ""
