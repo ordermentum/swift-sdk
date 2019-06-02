@@ -9,6 +9,14 @@
 import Foundation
 import Alamofire
 
+public enum OMProfileCompletionCodes {
+    case NETWORK_ERROR
+    case INVALID_SERVER_RESPONSE
+    case ERROR_PROCESSING_JSON
+    case SUCCESS
+    case ERROR
+}
+
 public class ProfileService {
     public init() {}
     
