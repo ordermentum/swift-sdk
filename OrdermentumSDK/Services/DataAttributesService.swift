@@ -16,7 +16,7 @@ public class DataAttributesService {
      * Get the data attributes currently available on the Ordermentum Service
      * Returns a DataAttributesResponse object
      */
-    public func getDataAttributes(purchaserId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, DataAttributesResponse?) -> ()) {
+    public func getDataAttributes(completion: @escaping (Bool, DataAttributesResponse?) -> ()) {
         //Build Route
         let route = DataAttributesRouter.getDataAttributes as URLRequestConvertible
         
