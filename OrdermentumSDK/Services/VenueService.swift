@@ -165,4 +165,18 @@ public class VenueService {
             completion(result, responseObject)
         }
     }
+    
+    /**
+     * Fetch the pending venues of the currently logged in user
+     * Returns a VenueInvite
+     */
+    public func getPendingVenues(completion: @escaping (Bool, VenueInviteResponse?) -> ()) {
+        //Build Route
+        let route = VenueRouter.pendingRequest as URLRequestConvertible
+        
+        //Call API
+        Service<VenueInviteResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
+        }
+    }
 }
