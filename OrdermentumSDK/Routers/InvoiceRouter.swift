@@ -11,7 +11,7 @@ import Alamofire
 
 public enum InvoiceRouter: URLRequestConvertible {
     //Routes
-    case getInvoices(String, String, String)
+    case getInvoices(String, String, String, String)
     case getInvoice(String)
     case exportInvoice(ExportRequest)
     case downloadInvoice(String)
@@ -52,8 +52,8 @@ public enum InvoiceRouter: URLRequestConvertible {
     //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .getInvoices(let supplierId, let retailerId, let sortBy):
-            return ["supplierId": supplierId, "retailerId": retailerId, "sortBy[createdAt]": sortBy]
+        case .getInvoices(let supplierId, let retailerId, let sortBy, let pageNo):
+            return ["supplierId": supplierId, "retailerId": retailerId, "sortBy[createdAt]": sortBy, "pageNo": pageNo]
         default:
             return [:]
         }
