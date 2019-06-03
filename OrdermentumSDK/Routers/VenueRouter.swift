@@ -80,7 +80,7 @@ public enum VenueRouter: URLRequestConvertible {
         case .joinVenue:
             return "venues/join"
         case .getPendingVenues:
-            return "pending-requests"
+            return "venues/pending-requests"
         }
     }
     
