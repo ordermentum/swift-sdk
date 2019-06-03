@@ -21,7 +21,7 @@ public struct Projection {
     public var date: String = ""
     var deliveries: [Delivery] = []
     var hasAvailableDeliveries: Bool = false
-    var projections: [SingleProjection] = []
+    public var projections: [SingleProjection] = []
 }
 
 public struct Delivery {
