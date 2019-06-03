@@ -134,6 +134,12 @@ public struct InvoicePaymentRequest: Codable {
     public init() {}
 }
 
+extension Invoice {
+    public func hasCreditNotesApplied() -> Bool {
+        return !self.creditNoteIds.isEmpty
+    }
+}
+
 extension InvoiceResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
