@@ -21,7 +21,10 @@ public struct ValidationRequestBody: Codable {
 
 public struct ValidationRequestBodyLineItem: Codable {
     public init() {}
-    
+    public init(productId: String, quantity: Int) {
+        self.productId = productId
+        self.quantity = quantity
+    }
     public var productId: String = ""
     public var quantity: Int = 0
 }
@@ -59,6 +62,7 @@ public struct ValidationCart {
 public struct ValidationMessage {
     public var message: String = ""
     public var type: String = ""
+    public init() {}
 }
 
 public struct ValidationDisplay {

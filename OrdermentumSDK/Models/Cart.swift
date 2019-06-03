@@ -19,7 +19,10 @@ public struct Cart {
 
 public struct CartProduct {
     public init() {}
-    
+    public init(product: Product, quantity: Int) {
+        self.product = product
+        self.quantity = quantity
+    }
     public var product: Product = Product()
     public var quantity: Int = 0
 }
@@ -41,7 +44,10 @@ public struct CartOrder {
 
 public struct CartLineItem {
     public init() {}
-    
+    public init(productId: String?, quantity: Int?) {
+        self.productId = productId
+        self.quantity = quantity
+    }
     public var productId: String?
     public var quantity: Int?
 }
