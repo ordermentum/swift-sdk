@@ -172,7 +172,7 @@ public class VenueService {
      */
     public func getPendingVenues(completion: @escaping (Bool, VenueInviteResponse?) -> ()) {
         //Build Route
-        let route = VenueRouter.pendingRequest as URLRequestConvertible
+        let route = VenueRouter.getPendingVenues as URLRequestConvertible
         
         //Call API
         Service<VenueInviteResponse>().request(route: route) { (result, responseObject) in
