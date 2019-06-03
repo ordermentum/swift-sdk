@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Cart {
-    public init() {}
+    public init(deliveryDate: String?, lineItems: [CartLineItem]?, retailerId: String?, supplierId: String?) {}
     
     public var deliveryDate: String?
     public var lineItems: [CartLineItem]?

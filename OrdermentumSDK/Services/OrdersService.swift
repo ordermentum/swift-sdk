@@ -174,13 +174,13 @@ public class OrdersService {
      * Add an order to a users favourite orders
      * Returns an Order
      */
-    public func scheduleOrder(purchaserScheduleId: String, requestObject: CreatePurchaserSchedule, completion: @escaping (Bool) -> ()) {
+    public func scheduleOrder(purchaserScheduleId: String, requestObject: CreatePurchaserSchedule, completion: @escaping (Bool, ClassicStandingOrder?) -> ()) {
         //Build Route
         let route = OrdersRouter.scheduleOrder(purchaserScheduleId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<ClassicStandingOrder>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
         }
     }
 }

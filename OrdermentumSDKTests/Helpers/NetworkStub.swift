@@ -20,6 +20,7 @@ public enum StubDataFile: String {
     case updateProfile
     case getMarketPlaces
     case getProductCategories
+    case getCategory
     case getProduct
     case getMostOrderedProducts
     case getTrendingProducts

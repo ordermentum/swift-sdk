@@ -44,9 +44,9 @@ public class VenueService {
      * Takes a VenueProfile object and updates the selected retailer.
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */
-    public func updateVenueProfile(retailerIdsArray: [String], pageSize: Int, pageNo: Int, completion: @escaping (Bool, VenueResponse?) -> ()) {
+    public func updateVenueProfile(retailerId: String, venueProfile: VenueProfile , completion: @escaping (Bool, VenueResponse?) -> ()) {
         //Build Route
-        let route = VenueRouter.getVenues(retailerIdsArray, pageSize, pageNo) as URLRequestConvertible
+        let route = VenueRouter.updateVenueProfile(retailerId, venueProfile) as URLRequestConvertible
         
         //Call API
         Service<VenueResponse>().request(route: route) { (result, responseObject) in
@@ -162,6 +162,20 @@ public class VenueService {
         
         //Call API
         Service<VenueSearchResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
+        }
+    }
+    
+    /**
+     * Fetch the pending venues of the currently logged in user
+     * Returns a VenueInvite
+     */
+    public func getPendingVenues(completion: @escaping (Bool, VenueInviteResponse?) -> ()) {
+        //Build Route
+        let route = VenueRouter.getPendingVenues as URLRequestConvertible
+        
+        //Call API
+        Service<VenueInviteResponse>().request(route: route) { (result, responseObject) in
             completion(result, responseObject)
         }
     }

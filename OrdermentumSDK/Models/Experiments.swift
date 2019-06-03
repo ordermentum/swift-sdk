@@ -65,3 +65,9 @@ extension ExperimentsData: Equatable {
         return lhs.id == rhs.id
     }
 }
+
+extension ExperimentsData: AnalyticsTrackable {
+    public var trackableProperties: [String: String]? {
+        return ["name": name]
+    }
+}

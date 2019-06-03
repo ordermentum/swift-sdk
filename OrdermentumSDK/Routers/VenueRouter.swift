@@ -22,6 +22,7 @@ public enum VenueRouter: URLRequestConvertible {
     case removeUser(String, RemoveUser)
     case searchVenue(String)
     case joinVenue(JoinVenueRequest)
+    case getPendingVenues
     
     //Methods
     var method: HTTPMethod {
@@ -48,6 +49,8 @@ public enum VenueRouter: URLRequestConvertible {
             return .get
         case .joinVenue:
             return .post
+        case .getPendingVenues:
+            return .get
         }
     }
     
@@ -76,6 +79,8 @@ public enum VenueRouter: URLRequestConvertible {
             return "venues/directory"
         case .joinVenue:
             return "venues/join"
+        case .getPendingVenues:
+            return "pending-requests"
         }
     }
     
