@@ -256,7 +256,6 @@
 		897340994F32E315148E2584 /* OrdermentumSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrdermentumSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB318617226588280028101E /* NotifyServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyServiceTests.swift; sourceTree = "<group>"; };
 		BB318618226588280028101E /* NPSServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPSServiceTests.swift; sourceTree = "<group>"; };
-		BB31861A226588280028101E /* ValidationServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationServiceTest.swift; sourceTree = "<group>"; };
 		BB659F8E226C056A009C3D46 /* getPurchaserForPaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getPurchaserForPaymentMethod.json; sourceTree = "<group>"; };
 		BB659F91226C064B009C3D46 /* getPurchasers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getPurchasers.json; sourceTree = "<group>"; };
 		BB659F94226C1BB4009C3D46 /* updatePaymentMethod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = updatePaymentMethod.json; sourceTree = "<group>"; };
@@ -400,14 +399,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		269289322276BE140018AC6A /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				BB31861A226588280028101E /* ValidationServiceTest.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		269289352276C7CD0018AC6A /* Invoice */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,7 +524,6 @@
 				CA929F2822555DA400E957AC /* Products */,
 				41D78D65B6A7C68FC7D24C9A /* Pods */,
 				4A5AC22735A3E572BD78B63E /* Frameworks */,
-				269289322276BE140018AC6A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
