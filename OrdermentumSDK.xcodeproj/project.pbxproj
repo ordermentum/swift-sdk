@@ -159,6 +159,9 @@
 		CA929F9222555FA900E957AC /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F6A22555FA900E957AC /* Brand.swift */; };
 		CA929F952255618300E957AC /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F942255618300E957AC /* AuthRouter.swift */; };
 		CA929F97225561A400E957AC /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F96225561A400E957AC /* Client.swift */; };
+		CAA598AE22A628E0006DC414 /* RecommendedSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA598AD22A628E0006DC414 /* RecommendedSupplier.swift */; };
+		CAA598B022A6296F006DC414 /* RecommendedSuppliersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA598AF22A6296F006DC414 /* RecommendedSuppliersService.swift */; };
+		CAA598B222A629DE006DC414 /* RecommendedSuppliersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA598B122A629DE006DC414 /* RecommendedSuppliersRouter.swift */; };
 		CAC39CC02255632300D3099A /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CBF2255632300D3099A /* CodableUtils.swift */; };
 		CAC39CC22255639D00D3099A /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC12255639D00D3099A /* StringUtils.swift */; };
 		CAC39CC5225577C300D3099A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC4225577C300D3099A /* AuthService.swift */; };
@@ -349,6 +352,9 @@
 		CA929F6A22555FA900E957AC /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		CA929F942255618300E957AC /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		CA929F96225561A400E957AC /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		CAA598AD22A628E0006DC414 /* RecommendedSupplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedSupplier.swift; sourceTree = "<group>"; };
+		CAA598AF22A6296F006DC414 /* RecommendedSuppliersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedSuppliersService.swift; sourceTree = "<group>"; };
+		CAA598B122A629DE006DC414 /* RecommendedSuppliersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedSuppliersRouter.swift; sourceTree = "<group>"; };
 		CAC39CBF2255632300D3099A /* CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUtils.swift; sourceTree = "<group>"; };
 		CAC39CC12255639D00D3099A /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		CAC39CC4225577C300D3099A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -548,6 +554,7 @@
 			children = (
 				CA929F96225561A400E957AC /* Client.swift */,
 				CAC39CD02255A55C00D3099A /* Service.swift */,
+				26EF6CC4229F79370050D1E3 /* Protocols */,
 				CA929F4222555EFE00E957AC /* Models */,
 				CA929F93225560B100E957AC /* Routers */,
 				CAC39CC3225572F500D3099A /* Services */,
@@ -593,7 +600,6 @@
 		CA929F4222555EFE00E957AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				26EF6CC4229F79370050D1E3 /* Protocols */,
 				CA929F5722555FA700E957AC /* AccountSettings.swift */,
 				CA929F5C22555FA800E957AC /* AddOns.swift */,
 				CA929F5022555FA700E957AC /* Address.swift */,
@@ -607,6 +613,7 @@
 				CA929F4E22555FA600E957AC /* CreditNotesReponse.swift */,
 				CA929F5622555FA700E957AC /* DataAttributes.swift */,
 				CA2F351B2256CE2E00D1118C /* Device.swift */,
+				CAC39CD22255A99400D3099A /* EmptyDecodable.swift */,
 				CA929F6422555FA800E957AC /* Error.swift */,
 				CA929F6222555FA800E957AC /* Experiments.swift */,
 				CA929F6622555FA900E957AC /* Exports.swift */,
@@ -627,6 +634,7 @@
 				CA929F5822555FA700E957AC /* Profile.swift */,
 				CA929F4A22555FA600E957AC /* Projection.swift */,
 				CA929F4F22555FA600E957AC /* Purchaser.swift */,
+				CAA598AD22A628E0006DC414 /* RecommendedSupplier.swift */,
 				CA929F5322555FA700E957AC /* SignUp.swift */,
 				CA929F4422555FA500E957AC /* Supplier.swift */,
 				CA929F4D22555FA600E957AC /* TrackingKeys.swift */,
@@ -636,7 +644,6 @@
 				CA929F4622555FA500E957AC /* VenueInvite.swift */,
 				CA929F4922555FA600E957AC /* VenueProfile.swift */,
 				CA929F5422555FA700E957AC /* VenueSearch.swift */,
-				CAC39CD22255A99400D3099A /* EmptyDecodable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -664,6 +671,7 @@
 				CAF2468B225B083B00EDAF68 /* ProfileRouter.swift */,
 				CAF2468D225B158000EDAF68 /* ProjectionsRouter.swift */,
 				CAF2468F225B189C00EDAF68 /* PurchaserRouter.swift */,
+				CAA598B122A629DE006DC414 /* RecommendedSuppliersRouter.swift */,
 				CAF24691225B1A6F00EDAF68 /* ValidationRouter.swift */,
 				CAF24693225B1B2000EDAF68 /* VenueRouter.swift */,
 			);
@@ -704,6 +712,7 @@
 				CAF246A7225C162B00EDAF68 /* ProfileService.swift */,
 				CAF246A9225C185F00EDAF68 /* ProjectionsService.swift */,
 				CAF246AB225C24D700EDAF68 /* PurchaserService.swift */,
+				CAA598AF22A6296F006DC414 /* RecommendedSuppliersService.swift */,
 				CAF246AD225C26C600EDAF68 /* ValidationService.swift */,
 				CAF246AF225C27B000EDAF68 /* VenueService.swift */,
 			);
@@ -979,7 +988,9 @@
 				CA929F8522555FA900E957AC /* TradingHours.swift in Sources */,
 				CAF24690225B189C00EDAF68 /* PurchaserRouter.swift in Sources */,
 				CA929F9122555FA900E957AC /* FindSupplier.swift in Sources */,
+				CAA598B022A6296F006DC414 /* RecommendedSuppliersService.swift in Sources */,
 				CA2F35162255CFA500D1118C /* DataAttributesRouter.swift in Sources */,
+				CAA598AE22A628E0006DC414 /* RecommendedSupplier.swift in Sources */,
 				CAC39CC5225577C300D3099A /* AuthService.swift in Sources */,
 				CA929F7922555FA900E957AC /* Image.swift in Sources */,
 				CA929F7522555FA900E957AC /* TrackingKeys.swift in Sources */,
@@ -1005,6 +1016,7 @@
 				CA929F8622555FA900E957AC /* Auth.swift in Sources */,
 				CAF246AE225C26C600EDAF68 /* ValidationService.swift in Sources */,
 				CA2F35282256E5E800D1118C /* FlagsRouter.swift in Sources */,
+				CAA598B222A629DE006DC414 /* RecommendedSuppliersRouter.swift in Sources */,
 				CA929F7822555FA900E957AC /* Address.swift in Sources */,
 				CA929F8B22555FA900E957AC /* Order.swift in Sources */,
 				CA929F7F22555FA900E957AC /* AccountSettings.swift in Sources */,
