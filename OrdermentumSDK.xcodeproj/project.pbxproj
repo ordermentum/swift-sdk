@@ -52,6 +52,8 @@
 		26CE38982270033600524345 /* createFavourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE38972270033600524345 /* createFavourite.json */; };
 		26CE389A2270054D00524345 /* scheduleOrder.json in Resources */ = {isa = PBXBuildFile; fileRef = 26CE38992270054D00524345 /* scheduleOrder.json */; };
 		26D21DCB228B8D8000547BA9 /* searchVenues.json in Resources */ = {isa = PBXBuildFile; fileRef = 26D21DCA228B8D8000547BA9 /* searchVenues.json */; };
+		26D281BF22A5FB4300D06E4E /* AppVersionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D281BE22A5FB4300D06E4E /* AppVersionService.swift */; };
+		26D281C122A5FE7700D06E4E /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D281C022A5FE7700D06E4E /* AppVersion.swift */; };
 		26EF6CC6229F79660050D1E3 /* AnalyticsTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF6CC5229F79660050D1E3 /* AnalyticsTrackable.swift */; };
 		2A6F52128EED75495252EE23 /* Pods_OrdermentumSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897340994F32E315148E2584 /* Pods_OrdermentumSDKTests.framework */; };
 		526155008E1402A0BB282A20 /* Pods_OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D929BE6894EA3418140EF81 /* Pods_OrdermentumSDK.framework */; };
@@ -248,6 +250,8 @@
 		26CE38972270033600524345 /* createFavourite.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = createFavourite.json; sourceTree = "<group>"; };
 		26CE38992270054D00524345 /* scheduleOrder.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scheduleOrder.json; sourceTree = "<group>"; };
 		26D21DCA228B8D8000547BA9 /* searchVenues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchVenues.json; sourceTree = "<group>"; };
+		26D281BE22A5FB4300D06E4E /* AppVersionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionService.swift; sourceTree = "<group>"; };
+		26D281C022A5FE7700D06E4E /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		26EF6CC5229F79660050D1E3 /* AnalyticsTrackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTrackable.swift; sourceTree = "<group>"; };
 		33B4FAFC0DAF94F90E526BB5 /* Pods-ordermentum-swift-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.debug.xcconfig"; sourceTree = "<group>"; };
 		3840BE69998B16C88F4D68A3 /* Pods-ordermentum-swift-sdkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdkTests/Pods-ordermentum-swift-sdkTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -593,6 +597,7 @@
 				CA929F5722555FA700E957AC /* AccountSettings.swift */,
 				CA929F5C22555FA800E957AC /* AddOns.swift */,
 				CA929F5022555FA700E957AC /* Address.swift */,
+				26D281C022A5FE7700D06E4E /* AppVersion.swift */,
 				CA929F5E22555FA800E957AC /* Auth.swift */,
 				CA929F6A22555FA900E957AC /* Brand.swift */,
 				CA929F4322555FA500E957AC /* Cart.swift */,
@@ -679,6 +684,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC39CC822559AAF00D3099A /* AddOnsService.swift */,
+				26D281BE22A5FB4300D06E4E /* AppVersionService.swift */,
 				CAC39CC4225577C300D3099A /* AuthService.swift */,
 				CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */,
 				CA2F35112255B21500D1118C /* CreditNotesService.swift */,
@@ -959,6 +965,7 @@
 				CA929F7422555FA900E957AC /* Category.swift in Sources */,
 				CAF2468E225B158000EDAF68 /* ProjectionsRouter.swift in Sources */,
 				CAF2468A225B031200EDAF68 /* ProductsRouter.swift in Sources */,
+				26D281C122A5FE7700D06E4E /* AppVersion.swift in Sources */,
 				CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */,
 				CA929F6B22555FA900E957AC /* Cart.swift in Sources */,
 				CAF24686225AE8E400EDAF68 /* OrdersRouter.swift in Sources */,
@@ -1001,6 +1008,7 @@
 				CA929F7822555FA900E957AC /* Address.swift in Sources */,
 				CA929F8B22555FA900E957AC /* Order.swift in Sources */,
 				CA929F7F22555FA900E957AC /* AccountSettings.swift in Sources */,
+				26D281BF22A5FB4300D06E4E /* AppVersionService.swift in Sources */,
 				CA2F35262256DDE700D1118C /* FindSupplierService.swift in Sources */,
 				CA929F8E22555FA900E957AC /* Exports.swift in Sources */,
 				CA929F7122555FA900E957AC /* VenueProfile.swift in Sources */,
