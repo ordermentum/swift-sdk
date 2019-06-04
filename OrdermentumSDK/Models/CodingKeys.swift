@@ -209,6 +209,7 @@ enum CodingKeys: String, CodingKey {
     case groupPayments
     case gst
     case hasAvailableDeliveries
+    case hasScheduledOrder
     case height
     case id
     case images

@@ -8,53 +8,63 @@
 
 import Foundation
 
-struct RecommendedSupplierResponse {
-    var data: [RecommendedSupplierCategory] = []
+public struct RecommendedSupplierResponse {
+    public init() {}
+    
+    public var data: [RecommendedSupplierCategory] = []
 }
 
-struct RecommendedSupplierTopResponse {
-    var data: [RecommendedSupplier] = []
+public struct RecommendedSupplierTopResponse {
+    public init() {}
+    
+    public var data: [RecommendedSupplier] = []
 }
 
-struct RecommendedSupplierCategory {
-    var category: String = ""
-    var suppliers: [RecommendedSupplier] = []
+public struct RecommendedSupplierCategory {
+    public init() {}
+    
+    public var category: String = ""
+    public var suppliers: [RecommendedSupplier] = []
 }
 
-struct RecommendedSupplier {
-    var dataAttributes: RecommendedSupplierDataAttributes = RecommendedSupplierDataAttributes()
-    var logo: Image = Image()
-    var phone: String = ""
-    var sortOrder: Int = 0
-    var supplierId: String = ""
-    var tradingName: String = ""
+public struct RecommendedSupplier {
+    public init() {}
+    
+    public var dataAttributes: RecommendedSupplierDataAttributes = RecommendedSupplierDataAttributes()
+    public var logo: Image = Image()
+    public var phone: String = ""
+    public var sortOrder: Int = 0
+    public var supplierId: String = ""
+    public var tradingName: String = ""
 }
 
-struct RecommendedSupplierDataAttributes {
-    var categories: [String] = []
-    var serviceAreas: String = ""
-    var supplierQuote: String = ""
-    var primaryCategory: String = ""
-    var primaryProducts: String = ""
-    var promotedCategories: [String] = []
+public struct RecommendedSupplierDataAttributes {
+    public init() {}
+    
+    public var categories: [String] = []
+    public var serviceAreas: String = ""
+    public var supplierQuote: String = ""
+    public var primaryCategory: String = ""
+    public var primaryProducts: String = ""
+    public var promotedCategories: [String] = []
 }
 
 extension RecommendedSupplierResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         data = try container.decodeIfPresent([RecommendedSupplierCategory].self, forKey: .data) ?? []
     }
 }
 
 extension RecommendedSupplierTopResponse: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         data = try container.decodeIfPresent([RecommendedSupplier].self, forKey: .data) ?? []
     }
 }
 
 extension RecommendedSupplierCategory: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         category = try container.decodeIfPresent(String.self, forKey: .category) ?? ""
         suppliers = try container.decodeIfPresent([RecommendedSupplier].self, forKey: .suppliers) ?? []
@@ -62,7 +72,7 @@ extension RecommendedSupplierCategory: Decodable {
 }
 
 extension RecommendedSupplier: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         dataAttributes = try container.decodeIfPresent(RecommendedSupplierDataAttributes.self, forKey: .dataAttributes) ?? RecommendedSupplierDataAttributes()
         logo = try container.decodeIfPresent(Image.self, forKey: .logo) ?? Image()
@@ -74,7 +84,7 @@ extension RecommendedSupplier: Decodable {
 }
 
 extension RecommendedSupplierDataAttributes: Decodable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         categories = try container.decodeIfPresent([String].self, forKey: .categories) ?? []
         serviceAreas = try container.decodeIfPresent(String.self, forKey: .serviceAreas) ?? ""
