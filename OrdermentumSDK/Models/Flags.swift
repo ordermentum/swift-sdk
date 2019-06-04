@@ -19,6 +19,7 @@ public struct Flags {
     public var retailerSignup: Bool = false
     public var addVenue: Bool = false
     public var projectionsV2: Bool = false
+    public var recommendedSuppliers: Bool = false
 }
 
 extension Flags: Decodable {
@@ -35,5 +36,6 @@ extension Flags: Decodable {
         retailerSignup = try container.decodeIfPresent(Bool.self, forKey: .retailerSignup) ?? false
         addVenue = try container.decodeIfPresent(Bool.self, forKey: .addVenue) ?? false
         projectionsV2 = try container.decodeIfPresent(Bool.self, forKey: .projectionsV2) ?? false
+        recommendedSuppliers = try container.decodeIfPresent(Bool.self, forKey: .recommendedSuppliers) ?? false
     }
 }

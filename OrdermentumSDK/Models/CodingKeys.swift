@@ -49,24 +49,25 @@ enum CodingKeys: String, CodingKey {
     case retailerSignup = "retailer-signup"
     case addVenue = "add-venue"
     case projectionsV2 = "projections-v2"
+    case recommendedSuppliers = "recommended-suppliers"
     
     //Generic
     case abn
     case accessNewRetailerUi
     case account
     case accountId
-    case accounting
     case accountName
     case accountSettings
+    case accounting
     case active
     case activeRetailerIds
     case activityEnded
+    case addTax
     case address
-    case addressableId
-    case addressableType
     case addressId
     case address_id
-    case addTax
+    case addressableId
+    case addressableType
     case admin
     case adminPerms
     case alerts
@@ -89,12 +90,12 @@ enum CodingKeys: String, CodingKey {
     case bsb
     case byhour
     case byminute
-    case cancelled
-    case cancelledAt
-    case cancelledByName
     case canCharge
     case canMarkAsPaid
     case canMarkAsUnpaid
+    case cancelled
+    case cancelledAt
+    case cancelledByName
     case cardConfigured
     case cardLast4Digits
     case cardName
@@ -104,6 +105,7 @@ enum CodingKeys: String, CodingKey {
     case cartInfoCount
     case cartWarningCount
     case categories
+    case category
     case chargable
     case chargedAt
     case chargedBy
@@ -136,14 +138,14 @@ enum CodingKeys: String, CodingKey {
     case creditCard
     case creditNoteIds
     case customers
-    case cutoff
     case cutOffPassed
     case cutOffTime
+    case cutoff
     case daily
     case dataAttributes
     case date
-    case days
     case dayStart
+    case days
     case defaultDeliveryDelay
     case defaultNotifications
     case defaultPaymentMethodType
@@ -172,10 +174,10 @@ enum CodingKeys: String, CodingKey {
     case editable
     case editableUntil
     case email
-    case enabled
     case enableDeliveryDate
     case enableEmail
     case enableSMS
+    case enabled
     case endDate
     case endOfMonth
     case endOfWeek
@@ -207,7 +209,6 @@ enum CodingKeys: String, CodingKey {
     case groupPayments
     case gst
     case hasAvailableDeliveries
-    case hasScheduledOrder
     case height
     case id
     case images
@@ -252,8 +253,8 @@ enum CodingKeys: String, CodingKey {
     case legalName
     case lineItemErrorCount
     case lineItemInfosCount
-    case lineItems
     case lineItemWarningCount
+    case lineItems
     case link
     case liquorLicense
     case liquorLicenseRequired
@@ -263,11 +264,11 @@ enum CodingKeys: String, CodingKey {
     case looseCount
     case maskedNumber
     case message
-    case minimumOrderValue
     case minQuantity
+    case minimumOrderValue
     case mon
-    case monthly
     case monthStart
+    case monthly
     case mostOrdered
     case name
     case nextFinishAt
@@ -282,14 +283,15 @@ enum CodingKeys: String, CodingKey {
     case onPlace
     case openHour
     case openMinute
-    case orderedAt
     case orderExports
     case orderId
-    case ordermentum
     case orderNumber
     case orderPrefix
-    case orders
     case orderSchedule
+    case orderStatus
+    case orderedAt
+    case ordermentum
+    case orders
     case ordersCsv
     case ordersDeliveryManifestPdf
     case ordersDeliveryPdf
@@ -300,7 +302,6 @@ enum CodingKeys: String, CodingKey {
     case ordersPickPdf
     case ordersProductionCsv
     case ordersProductionReportPdf
-    case orderStatus
     case origin
     case other
     case overdueOrders
@@ -337,6 +338,8 @@ enum CodingKeys: String, CodingKey {
     case priceGroup
     case priceGroupId
     case priceInc
+    case primaryCategory
+    case primaryProducts
     case processing
     case processingError
     case product
@@ -348,6 +351,7 @@ enum CodingKeys: String, CodingKey {
     case profileImage
     case profilePercent
     case projections
+    case promotedCategories
     case properties
     case public_id
     case purchaserId
@@ -388,9 +392,9 @@ enum CodingKeys: String, CodingKey {
     case retailerLegalName
     case retailerName
     case retailerPhone
-    case retailers
     case retailerTradingName
     case retailer_id
+    case retailers
     case role
     case roles
     case runAt
@@ -402,13 +406,14 @@ enum CodingKeys: String, CodingKey {
     case scheduleId
     case scheduleName
     case schedules
+    case sendInvoice
     case senderEntityName
     case senderId
     case senderType
-    case sendInvoice
     case sentLateNotificationAt
     case sentOverdueNotificationAt
     case sequence
+    case serviceAreas
     case settings
     case settlementReference
     case sharedSecret
@@ -436,16 +441,18 @@ enum CodingKeys: String, CodingKey {
     case supplier
     case supplierId
     case supplierName
-    case suppliers
+    case supplierQuote
     case supplier_id
+    case suppliers
     case survey_scheduled_at
     case syncError
     case tax
     case taxable
     case thu
-    case timezone
     case timeZone
+    case timezone
     case title
+    case token
     case total
     case totalCost
     case totalDue
@@ -459,13 +466,13 @@ enum CodingKeys: String, CodingKey {
     case tradingHours
     case tradingName
     case trending
-    case token
     case tue
     case type
     case unit
     case unitPrice
     case unitSize
     case uom
+    case updateUrl
     case updatedAt
     case updatedBy
     case updatedById
@@ -473,7 +480,6 @@ enum CodingKeys: String, CodingKey {
     case updatedUserId
     case updated_at
     case updated_by_id
-    case updateUrl
     case url
     case user
     case userId

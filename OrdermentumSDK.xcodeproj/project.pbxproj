@@ -157,6 +157,7 @@
 		CA929F9222555FA900E957AC /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F6A22555FA900E957AC /* Brand.swift */; };
 		CA929F952255618300E957AC /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F942255618300E957AC /* AuthRouter.swift */; };
 		CA929F97225561A400E957AC /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F96225561A400E957AC /* Client.swift */; };
+		CAA598AE22A628E0006DC414 /* RecommendedSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA598AD22A628E0006DC414 /* RecommendedSupplier.swift */; };
 		CAC39CC02255632300D3099A /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CBF2255632300D3099A /* CodableUtils.swift */; };
 		CAC39CC22255639D00D3099A /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC12255639D00D3099A /* StringUtils.swift */; };
 		CAC39CC5225577C300D3099A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC4225577C300D3099A /* AuthService.swift */; };
@@ -345,6 +346,7 @@
 		CA929F6A22555FA900E957AC /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		CA929F942255618300E957AC /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		CA929F96225561A400E957AC /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		CAA598AD22A628E0006DC414 /* RecommendedSupplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedSupplier.swift; sourceTree = "<group>"; };
 		CAC39CBF2255632300D3099A /* CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUtils.swift; sourceTree = "<group>"; };
 		CAC39CC12255639D00D3099A /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		CAC39CC4225577C300D3099A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 			children = (
 				CA929F96225561A400E957AC /* Client.swift */,
 				CAC39CD02255A55C00D3099A /* Service.swift */,
+				26EF6CC4229F79370050D1E3 /* Protocols */,
 				CA929F4222555EFE00E957AC /* Models */,
 				CA929F93225560B100E957AC /* Routers */,
 				CAC39CC3225572F500D3099A /* Services */,
@@ -589,7 +592,6 @@
 		CA929F4222555EFE00E957AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				26EF6CC4229F79370050D1E3 /* Protocols */,
 				CA929F5722555FA700E957AC /* AccountSettings.swift */,
 				CA929F5C22555FA800E957AC /* AddOns.swift */,
 				CA929F5022555FA700E957AC /* Address.swift */,
@@ -602,6 +604,7 @@
 				CA929F4E22555FA600E957AC /* CreditNotesReponse.swift */,
 				CA929F5622555FA700E957AC /* DataAttributes.swift */,
 				CA2F351B2256CE2E00D1118C /* Device.swift */,
+				CAC39CD22255A99400D3099A /* EmptyDecodable.swift */,
 				CA929F6422555FA800E957AC /* Error.swift */,
 				CA929F6222555FA800E957AC /* Experiments.swift */,
 				CA929F6622555FA900E957AC /* Exports.swift */,
@@ -615,6 +618,7 @@
 				CA929F6522555FA800E957AC /* NPS.swift */,
 				CA929F6322555FA800E957AC /* Order.swift */,
 				CA929F4B22555FA600E957AC /* PaginatedAPIResponse.swift */,
+				CAA598AD22A628E0006DC414 /* RecommendedSupplier.swift */,
 				CA929F5A22555FA800E957AC /* Pagination.swift */,
 				CA929F4822555FA600E957AC /* Payment.swift */,
 				CA929F5F22555FA800E957AC /* PaymentMethod.swift */,
@@ -631,7 +635,6 @@
 				CA929F4622555FA500E957AC /* VenueInvite.swift */,
 				CA929F4922555FA600E957AC /* VenueProfile.swift */,
 				CA929F5422555FA700E957AC /* VenueSearch.swift */,
-				CAC39CD22255A99400D3099A /* EmptyDecodable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -973,6 +976,7 @@
 				CAF24690225B189C00EDAF68 /* PurchaserRouter.swift in Sources */,
 				CA929F9122555FA900E957AC /* FindSupplier.swift in Sources */,
 				CA2F35162255CFA500D1118C /* DataAttributesRouter.swift in Sources */,
+				CAA598AE22A628E0006DC414 /* RecommendedSupplier.swift in Sources */,
 				CAC39CC5225577C300D3099A /* AuthService.swift in Sources */,
 				CA929F7922555FA900E957AC /* Image.swift in Sources */,
 				CA929F7522555FA900E957AC /* TrackingKeys.swift in Sources */,

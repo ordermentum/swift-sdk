@@ -8,5 +8,6 @@
     "review": false,
     "add-ons": true,
     "add-venue": false,
-    "dashboard_profile": true
+    "dashboard_profile": true,
+    "recommended-suppliers": true
 }
