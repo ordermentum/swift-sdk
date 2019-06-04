@@ -38,6 +38,7 @@ public struct FindSupplierReferralRequest: Codable {
 }
 
 public struct FindSupplierData {
+    public init() {}
     public var id: String = ""
     public var logo: Image = Image()
     public var name: String = ""

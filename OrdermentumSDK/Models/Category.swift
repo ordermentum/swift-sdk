@@ -15,6 +15,7 @@ public struct CategoryResponse {
 }
 
 public struct Category: Encodable {
+    public init() {}
     public var id: String = ""
     public var name: String = ""
     public var description: String = ""
@@ -57,5 +58,11 @@ extension Category: Decodable {
 extension Category: Equatable {
     public static func == (lhs: Category, rhs: Category) -> Bool {
         return lhs.id == rhs.id
+    }
+}
+
+extension Category: AnalyticsTrackable {
+    public var trackableProperties: [String: String]? {
+        return ["name": name]
     }
 }

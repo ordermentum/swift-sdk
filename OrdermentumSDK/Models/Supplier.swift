@@ -44,6 +44,7 @@ public struct Supplier: Encodable {
     public var updated_at: String = ""
     public var user_id: String = ""
     public var address_id: String = ""
+    public var logo: Image = Image()
 }
 
 extension Supplier: Decodable {
@@ -85,5 +86,6 @@ extension Supplier: Decodable {
         updated_at = try container.decodeIfPresent(String.self, forKey: .updated_at) ?? ""
         user_id = try container.decodeIfPresent(String.self, forKey: .user_id) ?? ""
         address_id = try container.decodeIfPresent(String.self, forKey: .address_id) ?? ""
+        logo = try container.decodeIfPresent(Image.self, forKey: .logo) ?? Image()
     }
 }

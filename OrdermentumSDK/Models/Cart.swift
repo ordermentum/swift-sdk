@@ -19,7 +19,10 @@ public struct Cart {
 
 public struct CartProduct {
     public init() {}
-    
+    public init(product: Product, quantity: Int) {
+        self.product = product
+        self.quantity = quantity
+    }
     public var product: Product = Product()
     public var quantity: Int = 0
 }
@@ -41,7 +44,10 @@ public struct CartOrder {
 
 public struct CartLineItem {
     public init() {}
-    
+    public init(productId: String?, quantity: Int?) {
+        self.productId = productId
+        self.quantity = quantity
+    }
     public var productId: String?
     public var quantity: Int?
 }
@@ -89,8 +95,12 @@ extension CartLineItem: Encodable {
     }
 }
 
-extension CartProduct: Equatable {
+extension CartProduct: Equatable, AnalyticsTrackable {
     public static func == (lhs: CartProduct, rhs: CartProduct) -> Bool {
         return lhs.product.id == rhs.product.id
+    }
+    
+    public var trackableProperties: [String: String]? {
+        return ["name": product.name]
     }
 }
