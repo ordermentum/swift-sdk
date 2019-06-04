@@ -95,8 +95,12 @@ extension CartLineItem: Encodable {
     }
 }
 
-extension CartProduct: Equatable {
+extension CartProduct: Equatable, AnalyticsTrackable {
     public static func == (lhs: CartProduct, rhs: CartProduct) -> Bool {
         return lhs.product.id == rhs.product.id
+    }
+    
+    public var trackableProperties: [String: String]? {
+        return ["name": product.name]
     }
 }
