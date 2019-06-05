@@ -23,6 +23,7 @@ public struct FindSupplierRequest: Codable {
     public var source: String = ""
     public var existing: Bool = false
     public var recommended: Bool = false
+    public var isTrading: Bool = false
 }
 
 public struct FindSupplierReferralRequest: Codable {
