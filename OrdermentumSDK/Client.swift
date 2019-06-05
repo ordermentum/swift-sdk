@@ -39,6 +39,7 @@ public class Client {
     public var profiles: ProfileService = ProfileService()
     public var projections: ProjectionsService = ProjectionsService()
     public var purchasers: PurchaserService = PurchaserService()
+    public var recommendedSuppliers: RecommendedSuppliersService = RecommendedSuppliersService()
     public var validation: ValidationService = ValidationService()
     public var venues: VenueService = VenueService()
     
