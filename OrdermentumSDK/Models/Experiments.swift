@@ -13,12 +13,11 @@ public struct ExperimentsResponse {
 }
 
 public struct ExperimentsData {
-    public init() {}
-    
     public var id: String = ""
     public var slot: String = ""
     public var name: String = ""
     public var meta: [String: String] = [:]
+    
     public init() {}
 }
 
