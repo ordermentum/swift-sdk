@@ -27,7 +27,6 @@ public class Client {
     public var devices: DeviceService = DeviceService()
     public var experiments: ExperimentsService = ExperimentsService()
     public var findSuppliers: FindSupplierService = FindSupplierService()
-    public var flags: FlagsService = FlagsService()
     public var invoices: InvoiceService = InvoiceService()
     public var marketplaces: MarketplaceService = MarketplaceService()
     public var notifications: NotificationsService = NotificationsService()
