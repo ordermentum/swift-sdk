@@ -445,6 +445,7 @@ enum CodingKeys: String, CodingKey {
     case supplierQuote
     case supplier_id
     case suppliers
+    case surcharge
     case survey_scheduled_at
     case syncError
     case tax

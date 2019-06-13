@@ -50,6 +50,7 @@ public struct Validation {
     public var totalPaid: Float = 0.00
     public var totalDue: Float = 0.00
     public var totalFreightIncGST: Float = 0.00
+    public var surcharge: Float = 0.00
 }
 
 public struct ValidationCart {
@@ -87,6 +88,7 @@ public struct ValidationLineItemDisplay {
     public var subtotal: Float = 0.00
     public var tax: Float = 0.00
     public var total: Float = 0.00
+    public var surcharge: Float = 0.00
 }
 
 extension Validation: Decodable {
@@ -112,6 +114,7 @@ extension Validation: Decodable {
         totalPaid = try container.safeFloatDecode(forKey: .totalPaid) ?? 0.00
         totalDue = try container.safeFloatDecode(forKey: .totalDue) ?? 0.00
         totalFreightIncGST = try container.safeFloatDecode(forKey: .totalFreightIncGST) ?? 0.00
+        surcharge = try container.safeFloatDecode(forKey: .surcharge) ?? 0.00
     }
 }
 
@@ -176,5 +179,6 @@ extension ValidationLineItemDisplay: Decodable {
         subtotal = try container.safeFloatDecode(forKey: .subtotal) ?? 0
         tax = try container.safeFloatDecode(forKey: .tax) ?? 0
         total = try container.safeFloatDecode(forKey: .total) ?? 0
+        surcharge = try container.safeFloatDecode(forKey: .surcharge) ?? 0
     }
 }
