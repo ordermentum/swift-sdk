@@ -162,6 +162,7 @@
 		CAA598AE22A628E0006DC414 /* RecommendedSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA598AD22A628E0006DC414 /* RecommendedSupplier.swift */; };
 		CAA598B022A6296F006DC414 /* RecommendedSuppliersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA598AF22A6296F006DC414 /* RecommendedSuppliersService.swift */; };
 		CAA598B222A629DE006DC414 /* RecommendedSuppliersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA598B122A629DE006DC414 /* RecommendedSuppliersRouter.swift */; };
+		CAA84A5022B1D9630092A801 /* FlagsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA84A4F22B1D9630092A801 /* FlagsClient.swift */; };
 		CAC39CC02255632300D3099A /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CBF2255632300D3099A /* CodableUtils.swift */; };
 		CAC39CC22255639D00D3099A /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC12255639D00D3099A /* StringUtils.swift */; };
 		CAC39CC5225577C300D3099A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CC4225577C300D3099A /* AuthService.swift */; };
@@ -355,6 +356,7 @@
 		CAA598AD22A628E0006DC414 /* RecommendedSupplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedSupplier.swift; sourceTree = "<group>"; };
 		CAA598AF22A6296F006DC414 /* RecommendedSuppliersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedSuppliersService.swift; sourceTree = "<group>"; };
 		CAA598B122A629DE006DC414 /* RecommendedSuppliersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedSuppliersRouter.swift; sourceTree = "<group>"; };
+		CAA84A4F22B1D9630092A801 /* FlagsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsClient.swift; sourceTree = "<group>"; };
 		CAC39CBF2255632300D3099A /* CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUtils.swift; sourceTree = "<group>"; };
 		CAC39CC12255639D00D3099A /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		CAC39CC4225577C300D3099A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -553,6 +555,7 @@
 			isa = PBXGroup;
 			children = (
 				CA929F96225561A400E957AC /* Client.swift */,
+				CAA84A4F22B1D9630092A801 /* FlagsClient.swift */,
 				CAC39CD02255A55C00D3099A /* Service.swift */,
 				26EF6CC4229F79370050D1E3 /* Protocols */,
 				CA929F4222555EFE00E957AC /* Models */,
@@ -1008,6 +1011,7 @@
 				CAF24684225AE7D900EDAF68 /* NPSRouter.swift in Sources */,
 				CA2F35122255B21500D1118C /* CreditNotesService.swift in Sources */,
 				CAF246A4225C128700EDAF68 /* PaymentsService.swift in Sources */,
+				CAA84A5022B1D9630092A801 /* FlagsClient.swift in Sources */,
 				CA929F8F22555FA900E957AC /* Flags.swift in Sources */,
 				CAF24698225B24CC00EDAF68 /* InvoiceService.swift in Sources */,
 				CA929F6F22555FA900E957AC /* CodingKeys.swift in Sources */,
