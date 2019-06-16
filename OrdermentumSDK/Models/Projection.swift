@@ -33,6 +33,13 @@ public struct Delivery {
     public var hasScheduledOrder: Bool = false
 }
 
+public struct CardDisplay {
+    public init() {}
+    public var statusLabel: String = ""
+    public var actionLabel: String = ""
+    public var dateLabel: String = ""
+}
+
 public struct SingleProjection {
     public init() {}
     
@@ -70,6 +77,7 @@ public struct SingleProjection {
     public var isRetailerEditable: Bool = false
     public var isLocked: Bool = false
     public var color: String = ""
+    public var cardDisplay: CardDisplay = CardDisplay()
 }
 
 public struct ProjectionDeleteRequest: Codable {
@@ -122,6 +130,18 @@ extension Delivery: Decodable {
         purchaserScheduleId = try container.decodeIfPresent(String.self, forKey: .purchaserScheduleId) ?? ""
         scheduleName = try container.decodeIfPresent(String.self, forKey: .scheduleName) ?? ""
         hasScheduledOrder = try container.decodeIfPresent(Bool.self, forKey: .hasScheduledOrder) ?? false
+    }
+}
+
+extension CardDisplay: Decodable {
+    public init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        //Decode Data
+        statusLabel = try container.decodeIfPresent(String.self, forKey: .statusLabel) ?? ""
+        actionLabel = try container.decodeIfPresent(String.self, forKey: .actionLabel) ?? ""
+        dateLabel = try container.decodeIfPresent(String.self, forKey: .dateLabel) ?? ""
     }
 }
 

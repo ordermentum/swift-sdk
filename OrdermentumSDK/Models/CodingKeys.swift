@@ -59,6 +59,7 @@ enum CodingKeys: String, CodingKey {
     case accountName
     case accountSettings
     case accounting
+    case actionLabel
     case active
     case activeRetailerIds
     case activityEnded
@@ -97,6 +98,7 @@ enum CodingKeys: String, CodingKey {
     case cancelledAt
     case cancelledByName
     case cardConfigured
+    case cardDisplay
     case cardLast4Digits
     case cardName
     case cardType
@@ -144,6 +146,7 @@ enum CodingKeys: String, CodingKey {
     case daily
     case dataAttributes
     case date
+    case dateLabel
     case dayStart
     case days
     case defaultDeliveryDelay
@@ -430,6 +433,7 @@ enum CodingKeys: String, CodingKey {
     case startDate
     case state
     case status
+    case statusLabel
     case stopCredit
     case street1
     case street2
