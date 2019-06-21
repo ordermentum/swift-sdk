@@ -53,7 +53,7 @@ extension Supplier: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        live = try container.decodeIfPresent(Bool.self, forKey: .live) ?? false
+        live = try container.safeBoolDecode(forKey: .live) ?? false
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         slug = try container.decodeIfPresent(String.self, forKey: .slug) ?? ""
@@ -62,7 +62,7 @@ extension Supplier: Decodable {
         accountSettings = try container.decodeIfPresent(VenueAccountSettings.self, forKey: .accountSettings) ?? VenueAccountSettings()
         settings = try container.decodeIfPresent(Settings.self, forKey: .settings) ?? Settings()
         shortName = try container.decodeIfPresent(String.self, forKey: .shortName) ?? ""
-        active = try container.decodeIfPresent(Bool.self, forKey: .active) ?? false
+        active = try container.safeBoolDecode(forKey: .active) ?? false
         phone = try container.decodeIfPresent(String.self, forKey: .phone) ?? ""
         abn = try container.decodeIfPresent(String.self, forKey: .abn) ?? ""
         email = try container.decodeIfPresent(String.self, forKey: .email) ?? ""

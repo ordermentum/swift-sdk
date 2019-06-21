@@ -31,7 +31,7 @@ extension ErrorResponse: Decodable {
         }
         
         do {
-            code = try container.decodeIfPresent(Int.self, forKey: .code) ?? -1
+            code = try container.safeIntDecode(forKey: .code) ?? -1
         } catch {
             code = -1
         }

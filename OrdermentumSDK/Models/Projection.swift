@@ -115,7 +115,7 @@ extension Projection: Decodable {
         availableDeliveries = try container.decodeIfPresent([Delivery].self, forKey: .availableDeliveries) ?? []
         date = try container.decodeIfPresent(String.self, forKey: .date) ?? ""
         deliveries = try container.decodeIfPresent([Delivery].self, forKey: .deliveries) ?? []
-        hasAvailableDeliveries = try container.decodeIfPresent(Bool.self, forKey: .hasAvailableDeliveries) ?? false
+        hasAvailableDeliveries = try container.safeBoolDecode(forKey: .hasAvailableDeliveries) ?? false
         projections = try container.decodeIfPresent([SingleProjection].self, forKey: .projections) ?? []
     }
 }
@@ -129,7 +129,7 @@ extension Delivery: Decodable {
         runAt = try container.decodeIfPresent(String.self, forKey: .runAt) ?? ""
         purchaserScheduleId = try container.decodeIfPresent(String.self, forKey: .purchaserScheduleId) ?? ""
         scheduleName = try container.decodeIfPresent(String.self, forKey: .scheduleName) ?? ""
-        hasScheduledOrder = try container.decodeIfPresent(Bool.self, forKey: .hasScheduledOrder) ?? false
+        hasScheduledOrder = try container.safeBoolDecode(forKey: .hasScheduledOrder) ?? false
     }
 }
 
@@ -161,7 +161,7 @@ extension SingleProjection: Decodable {
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
         number = try container.decodeIfPresent(String.self, forKey: .number) ?? ""
         productCount = try container.safeIntDecode(forKey: .productCount) ?? 0
-        total = try container.decodeIfPresent(Float.self, forKey: .total) ?? 0
+        total = try container.safeFloatDecode(forKey: .total) ?? 0
         cutoff = try container.decodeIfPresent(String.self, forKey: .cutoff) ?? ""
         runAt = try container.decodeIfPresent(String.self, forKey: .runAt) ?? ""
         placedById = try container.decodeIfPresent(String.self, forKey: .placedById) ?? ""
@@ -172,18 +172,18 @@ extension SingleProjection: Decodable {
         cancelledByName = try container.decodeIfPresent(String.self, forKey: .cancelledByName) ?? ""
         cancelledAt = try container.decodeIfPresent(String.self, forKey: .cancelledAt) ?? ""
         deliveryAt = try container.decodeIfPresent(String.self, forKey: .deliveryAt) ?? ""
-        isEditable = try container.decodeIfPresent(Bool.self, forKey: .isEditable) ?? false
+        isEditable = try container.safeBoolDecode(forKey: .isEditable) ?? false
         completeAt = try container.decodeIfPresent(String.self, forKey: .completeAt) ?? ""
-        retailerEditable = try container.decodeIfPresent(Bool.self, forKey: .retailerEditable) ?? false
+        retailerEditable = try container.safeBoolDecode(forKey: .retailerEditable) ?? false
         runStatus = try container.decodeIfPresent(String.self, forKey: .runStatus) ?? ""
-        sequence = try container.decodeIfPresent(Float.self, forKey: .sequence) ?? 0
+        sequence = try container.safeFloatDecode(forKey: .sequence) ?? 0
         state = try container.decodeIfPresent(String.self, forKey: .state) ?? ""
         label = try container.decodeIfPresent(String.self, forKey: .label) ?? ""
-        isReinstatable = try container.decodeIfPresent(Bool.self, forKey: .isReinstatable) ?? false
-        isCancelled = try container.decodeIfPresent(Bool.self, forKey: .isCancelled) ?? false
-        isCancellable = try container.decodeIfPresent(Bool.self, forKey: .isCancellable) ?? false
-        isLocked = try container.decodeIfPresent(Bool.self, forKey: .isLocked) ?? false
-        isRetailerEditable = try container.decodeIfPresent(Bool.self, forKey: .isRetailerEditable) ?? false
+        isReinstatable = try container.safeBoolDecode(forKey: .isReinstatable) ?? false
+        isCancelled = try container.safeBoolDecode(forKey: .isCancelled) ?? false
+        isCancellable = try container.safeBoolDecode(forKey: .isCancellable) ?? false
+        isLocked = try container.safeBoolDecode(forKey: .isLocked) ?? false
+        isRetailerEditable = try container.safeBoolDecode(forKey: .isRetailerEditable) ?? false
         color = try container.decodeIfPresent(String.self, forKey: .color) ?? ""
     }
 }

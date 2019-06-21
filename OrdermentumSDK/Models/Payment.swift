@@ -26,9 +26,9 @@ extension PaymentTerms: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        days = try container.decodeIfPresent(Bool.self, forKey: .days) ?? false
-        endOfWeek = try container.decodeIfPresent(Bool.self, forKey: .endOfWeek) ?? false
-        endOfMonth = try container.decodeIfPresent(Bool.self, forKey: .endOfMonth) ?? false
+        days = try container.safeBoolDecode(forKey: .days) ?? false
+        endOfWeek = try container.safeBoolDecode(forKey: .endOfWeek) ?? false
+        endOfMonth = try container.safeBoolDecode(forKey: .endOfMonth) ?? false
     }
 }
 
@@ -38,8 +38,8 @@ extension PaymentMethods: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        other = try container.decodeIfPresent(Bool.self, forKey: .other) ?? false
-        creditCard = try container.decodeIfPresent(Bool.self, forKey: .creditCard) ?? false
-        directDebit = try container.decodeIfPresent(Bool.self, forKey: .directDebit) ?? false
+        other = try container.safeBoolDecode(forKey: .other) ?? false
+        creditCard = try container.safeBoolDecode(forKey: .creditCard) ?? false
+        directDebit = try container.safeBoolDecode(forKey: .directDebit) ?? false
     }
 }

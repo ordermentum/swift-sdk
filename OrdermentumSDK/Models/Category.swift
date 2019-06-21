@@ -51,7 +51,7 @@ extension Category: Decodable {
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
         deletedAt = try container.decodeIfPresent(String.self, forKey: .deletedAt) ?? ""
         images = try container.decodeIfPresent(Image.self, forKey: .images) ?? Image()
-        sortOrder = try container.decodeIfPresent(Int.self, forKey: .sortOrder) ?? 0
+        sortOrder = try container.safeIntDecode(forKey: .sortOrder) ?? 0
     }
 }
 

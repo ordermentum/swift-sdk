@@ -230,7 +230,7 @@ extension Venue: Decodable {
         addressId = try container.decodeIfPresent(String.self, forKey: .addressId) ?? ""
         billingAddress = try container.decodeIfPresent(Address.self, forKey: .billingAddress) ?? Address()
         billingAddressId = try container.decodeIfPresent(String.self, forKey: .billingAddressId) ?? ""
-        sameDeliveryAndBillingAddress = try container.decodeIfPresent(Bool.self, forKey: .sameDeliveryAndBillingAddress) ?? false
+        sameDeliveryAndBillingAddress = try container.safeBoolDecode(forKey: .sameDeliveryAndBillingAddress) ?? false
         settings = try container.decodeIfPresent(VenueSettings.self, forKey: .settings) ?? VenueSettings()
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
@@ -250,7 +250,7 @@ extension VenueAccountSettings: Decodable {
         invoicePrefix = try container.decodeIfPresent(String.self, forKey: .invoicePrefix) ?? ""
         productExports = try container.decodeIfPresent(ProductExports.self, forKey: .productExports) ?? ProductExports()
         retailerExports = try container.decodeIfPresent(RetailerExports.self, forKey: .retailerExports) ?? RetailerExports()
-        enableDeliveryDate = try container.decodeIfPresent(Bool.self, forKey: .enableDeliveryDate) ?? false
+        enableDeliveryDate = try container.safeBoolDecode(forKey: .enableDeliveryDate) ?? false
         defaultDeliveryDelay = try container.safeIntDecode(forKey: .defaultDeliveryDelay) ?? 0
     }
 }
@@ -273,8 +273,8 @@ extension VenueAddress: Decodable {
         state = try container.decodeIfPresent(String.self, forKey: .state) ?? ""
         postcode = try container.decodeIfPresent(String.self, forKey: .postcode) ?? ""
         country = try container.decodeIfPresent(String.self, forKey: .country) ?? ""
-        latitude = try container.decodeIfPresent(Float.self, forKey: .latitude) ?? 0
-        longitude = try container.decodeIfPresent(Float.self, forKey: .longitude) ?? 0
+        latitude = try container.safeFloatDecode(forKey: .latitude) ?? 0
+        longitude = try container.safeFloatDecode(forKey: .longitude) ?? 0
         addressableType = try container.decodeIfPresent(String.self, forKey: .addressableType) ?? ""
         addressableId = try container.decodeIfPresent(String.self, forKey: .addressableId) ?? ""
         created_at = try container.decodeIfPresent(String.self, forKey: .created_at) ?? ""
@@ -301,10 +301,10 @@ extension VenueImage: Decodable {
         
         //Decode Data
         url = try container.decodeIfPresent(String.self, forKey: .url) ?? ""
-        width = try container.decodeIfPresent(Int.self, forKey: .width) ?? 0
+        width = try container.safeIntDecode(forKey: .width) ?? 0
         format = try container.decodeIfPresent(String.self, forKey: .format) ?? ""
-        height = try container.decodeIfPresent(Int.self, forKey: .height) ?? 0
-        version = try container.decodeIfPresent(Int.self, forKey: .version) ?? 0
+        height = try container.safeIntDecode(forKey: .height) ?? 0
+        version = try container.safeIntDecode(forKey: .version) ?? 0
         public_id = try container.decodeIfPresent(String.self, forKey: .public_id) ?? ""
         signature = try container.decodeIfPresent(String.self, forKey: .signature) ?? ""
         secure_url = try container.decodeIfPresent(String.self, forKey: .secure_url) ?? ""
@@ -375,7 +375,7 @@ extension AddUserResponse: Decodable {
         referenceId = try container.decodeIfPresent(String.self, forKey: .referenceId) ?? ""
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? ""
         permissions = try container.decodeIfPresent([String].self, forKey: .permissions) ?? []
-        isApproved = try container.decodeIfPresent(Bool.self, forKey: .isApproved) ?? false
+        isApproved = try container.safeBoolDecode(forKey: .isApproved) ?? false
         approvedByName = try container.decodeIfPresent(String.self, forKey: .approvedByName) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         createdByName = try container.decodeIfPresent(String.self, forKey: .createdByName) ?? ""

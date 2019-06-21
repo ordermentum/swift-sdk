@@ -81,14 +81,14 @@ extension Product: Decodable {
         unit = try container.decodeIfPresent(String.self, forKey: .unit) ?? ""
         unitSize = try container.safeIntDecode(forKey: .unitSize) ?? 0
         minQuantity = try container.safeIntDecode(forKey: .minQuantity) ?? 0
-        randomWeight = try container.decodeIfPresent(Bool.self, forKey: .randomWeight) ?? false
+        randomWeight = try container.safeBoolDecode(forKey: .randomWeight) ?? false
         productCategories = try container.decodeIfPresent([Category].self, forKey: .productCategories) ?? []
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
         supplierId = try container.decodeIfPresent(String.self, forKey: .supplierId) ?? ""
         images = try container.decodeIfPresent(Image.self, forKey: .images) ?? Image()
         sortOrder = try container.safeIntDecode(forKey: .sortOrder) ?? 0
-        addTax = try container.decodeIfPresent(Bool.self, forKey: .addTax) ?? false
-        visible = try container.decodeIfPresent(Bool.self, forKey: .visible) ?? false
+        addTax = try container.safeBoolDecode(forKey: .addTax) ?? false
+        visible = try container.safeBoolDecode(forKey: .visible) ?? false
         batchCode = try container.decodeIfPresent(String.self, forKey: .batchCode) ?? ""
         leadTime = try container.safeIntDecode(forKey: .leadTime) ?? 0
         deliveryDays = try container.decodeIfPresent([String].self, forKey: .deliveryDays) ?? []
