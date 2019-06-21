@@ -65,6 +65,7 @@ public struct Invoice: Encodable {
     public var totalDue: Float = 0
     public var totalFreight: Float = 0
     public var totalGST: Float = 0
+    public var surcharge: Float = 0
     public var updatedAt: String = ""
     public var updatedById: String = ""
     public var updated_at: String = ""
@@ -92,6 +93,7 @@ public struct InvoiceDisplay: Encodable {
     public var totalCost: String = ""
     public var totalFreight: String = ""
     public var totalGST: String = ""
+    public var surcharge: String = ""
     public var totalFreightTax: String = ""
     public var totalDue: String = ""
     public var date: String = ""
@@ -206,6 +208,7 @@ extension Invoice: Decodable {
         totalDue = try container.safeFloatDecode(forKey: .totalDue) ?? 0
         totalFreight = try container.safeFloatDecode(forKey: .totalFreight) ?? 0
         totalGST = try container.safeFloatDecode(forKey: .totalGST) ?? 0
+        surcharge = try container.safeFloatDecode(forKey: .surcharge) ?? 0
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
         updatedById = try container.decodeIfPresent(String.self, forKey: .updatedById) ?? ""
         updated_at = try container.decodeIfPresent(String.self, forKey: .updated_at) ?? ""
@@ -251,6 +254,7 @@ extension InvoiceDisplay: Decodable {
         totalCost = try container.decodeIfPresent(String.self, forKey: .totalCost) ?? ""
         totalFreight = try container.decodeIfPresent(String.self, forKey: .totalFreight) ?? ""
         totalGST = try container.decodeIfPresent(String.self, forKey: .totalGST) ?? ""
+        surcharge = try container.decodeIfPresent(String.self, forKey: .surcharge) ?? ""
         totalFreightTax = try container.decodeIfPresent(String.self, forKey: .totalFreightTax) ?? ""
         totalDue = try container.decodeIfPresent(String.self, forKey: .totalDue) ?? ""
         date = try container.decodeIfPresent(String.self, forKey: .date) ?? ""
