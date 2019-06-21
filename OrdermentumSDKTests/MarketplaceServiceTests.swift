@@ -30,7 +30,6 @@ class MarketplaceServiceTests: XCTestCase {
         
         //Start Stub
         if let route = try? MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo).asURLRequest() {
-            let method = HTTPMethod(rawValue: self.getRouterMethod(url: route))!
             self.startStub(route, stubData: .getMarketPlaces)
         }
         
