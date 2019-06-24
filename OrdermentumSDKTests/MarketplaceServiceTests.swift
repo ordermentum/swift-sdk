@@ -39,6 +39,7 @@ class MarketplaceServiceTests: XCTestCase {
         Client.instance.marketplaces.getMarketplaces(retailerId: retailerId, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
             if result {
                 assert(result)
+                XCTAssertNotNil(responseData)
                 expectation.fulfill()
             }
             else {
