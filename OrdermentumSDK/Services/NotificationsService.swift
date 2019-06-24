@@ -25,4 +25,18 @@ public class NotificationsService {
             completion(result)
         }
     }
+    
+    /**
+     * Update all notification settings for all suppliers across all venues
+     * Returns a ResponseBody
+     */
+    public func updateNotificationSetting(userId: String, supplierId: String, updateObject: [String: Bool], completion: @escaping (Bool) -> ()) {
+        //Build Route
+        let route = NotificationsRouter.updateNotificationSetting(userId, supplierId, updateObject) as URLRequestConvertible
+        
+        //Call API
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
+            completion(result)
+        }
+    }
 }

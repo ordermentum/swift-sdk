@@ -12,11 +12,14 @@ import Alamofire
 public enum NotificationsRouter: URLRequestConvertible {
     //Routes
     case updateNotificationSetting(String, String, [String: Bool])
+    case updateAllNotificationSettings(String, SupplierNotifications)
     
     //Methods
     var method: HTTPMethod {
         switch self {
         case .updateNotificationSetting:
+            return .post
+        case .updateAllNotificationSettings:
             return .post
         }
     }
@@ -26,6 +29,8 @@ public enum NotificationsRouter: URLRequestConvertible {
         switch self {
         case .updateNotificationSetting(let userId, let supplierId, _):
             return "users/\(userId)/notifications/\(supplierId)"
+        case .updateAllNotificationSettings(let userId, _):
+            return "users/\(userId)/notifications"
         }
     }
     
@@ -41,6 +46,8 @@ public enum NotificationsRouter: URLRequestConvertible {
     var body: Codable? {
         switch self {
         case .updateNotificationSetting(_, _, let requestObject):
+            return requestObject
+        case .updateAllNotificationSettings(_, let requestObject):
             return requestObject
         default:
             return nil
