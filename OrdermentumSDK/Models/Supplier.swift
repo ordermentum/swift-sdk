@@ -91,7 +91,7 @@ extension Supplier: Decodable {
 }
 
 extension Supplier: Equatable {
-    static func == (lhs: Supplier, rhs: Supplier) -> Bool {
+    public static func == (lhs: Supplier, rhs: Supplier) -> Bool {
         return lhs.id == rhs.id
     }
 }
