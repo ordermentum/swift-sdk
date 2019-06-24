@@ -89,3 +89,9 @@ extension Supplier: Decodable {
         logo = try container.decodeIfPresent(Image.self, forKey: .logo) ?? Image()
     }
 }
+
+extension Supplier: Equatable {
+    public static func == (lhs: Supplier, rhs: Supplier) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
