@@ -30,6 +30,8 @@ public struct AddOn {
 }
 
 public struct IntegrationData {
+    public init() {}
+    
     public var accountId: String = ""
     public var expenseAccountCode: String = ""
     public var lastInvoiceSyncedAt: String = ""
@@ -52,6 +54,8 @@ public struct AddOnsDiscover {
 }
 
 public struct AddOnsDiscoverLinks {
+    public init() {}
+    
     public var connect: String = ""
 }
 

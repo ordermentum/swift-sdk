@@ -9,6 +9,8 @@
 import Foundation
 
 public struct Flags {
+    public init() {}
+    
     public var findSupplier: Bool = false
     public var review: Bool = false
     public var dashboardProfile: Bool = false

@@ -94,3 +94,13 @@ extension RecommendedSupplierDataAttributes: Decodable {
         promotedCategories = try container.decodeIfPresent([String].self, forKey: .promotedCategories) ?? []
     }
 }
+
+extension RecommendedSupplier: AnalyticsTrackable {
+    var trackableProperties: [String: String]? {
+        var propertiesDictionary: [String: String] = [:]
+        propertiesDictionary["tradingName"] = tradingName
+        propertiesDictionary["supplierId"] = supplierId
+        
+        return propertiesDictionary
+    }
+}

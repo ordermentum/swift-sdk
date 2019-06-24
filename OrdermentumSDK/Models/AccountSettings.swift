@@ -9,6 +9,8 @@
 import Foundation
 
 public struct AccountSettings {
+    public init() {}
+    
     public var invoiceSetting: InvoiceSetting = InvoiceSetting()
     public var invoiceFrequency: InvoiceFrequency = InvoiceFrequency()
     public var dayStart: String = ""
