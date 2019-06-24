@@ -22,7 +22,7 @@ extension Insights: Decodable {
         
         //Trending
         do {
-            trending = try container.safeBoolDecode(forKey: .trending) ?? false
+            trending = try container.decodeIfPresent(Bool.self, forKey: .trending) ?? false
         } catch {
             let stringBool = try container.decodeIfPresent(String.self, forKey: .trending) ?? "false"
             trending = stringBool.toBool()
@@ -30,7 +30,7 @@ extension Insights: Decodable {
         
         //Most Ordered
         do {
-            mostOrdered = try container.safeBoolDecode(forKey: .mostOrdered) ?? false
+            mostOrdered = try container.decodeIfPresent(Bool.self, forKey: .mostOrdered) ?? false
         } catch {
             let stringBool = try container.decodeIfPresent(String.self, forKey: .mostOrdered) ?? "false"
             mostOrdered = stringBool.toBool()

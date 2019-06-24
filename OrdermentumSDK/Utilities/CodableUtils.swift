@@ -17,7 +17,7 @@ extension KeyedDecodingContainer {
             }
             return Int(string)
         } catch {
-            return try safeIntDecode(forKey: key)
+            return try decodeIfPresent(Int.self, forKey: key)
         }
     }
     
@@ -28,13 +28,13 @@ extension KeyedDecodingContainer {
             }
             return Float(string)
         } catch {
-            return try safeFloatDecode(forKey: key)
+            return try decodeIfPresent(Float.self, forKey: key)
         }
     }
     
     func safeStringIntDecode(forKey key: K) throws -> String? {
         do {
-            guard let int = try safeIntDecode(forKey: key) else {
+            guard let int = try decodeIfPresent(Int.self, forKey: key) else {
                 return nil
             }
             return String(describing: int)
@@ -45,7 +45,7 @@ extension KeyedDecodingContainer {
     
     func safeStringFloatDecode(forKey key: K) throws -> String? {
         do {
-            guard let float = try safeFloatDecode(forKey: key) else {
+            guard let float = try decodeIfPresent(Float.self, forKey: key) else {
                 return nil
             }
             return String(describing: float)
@@ -71,7 +71,7 @@ extension KeyedDecodingContainer {
             }
             return false
         } catch {
-            return try safeBoolDecode(forKey: key)
+            return try decodeIfPresent(Bool.self, forKey: key)
         }
     }
 }

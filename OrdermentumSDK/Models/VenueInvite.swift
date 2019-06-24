@@ -57,7 +57,7 @@ extension VenueInvite: Decodable {
         referenceId = try container.decodeIfPresent(String.self, forKey: .referenceId) ?? ""
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? ""
         permissions = try container.decodeIfPresent([String].self, forKey: .permissions) ?? []
-        isApproved = try container.safeBoolDecode(forKey: .isApproved) ?? false
+        isApproved = try container.decodeIfPresent(Bool.self, forKey: .isApproved) ?? false
         approvedByName = try container.decodeIfPresent(String.self, forKey: .approvedByName) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         createdByName = try container.decodeIfPresent(String.self, forKey: .createdByName) ?? ""

@@ -177,26 +177,26 @@ extension Invoice: Decodable {
         invoiceSendAt = try container.decodeIfPresent(String.self, forKey: .invoiceSendAt) ?? ""
         invoiceSentAt = try container.decodeIfPresent(String.self, forKey: .invoiceSentAt) ?? ""
         invoiceSyncedAt = try container.decodeIfPresent(String.self, forKey: .invoiceSyncedAt) ?? ""
-        locked = try container.safeBoolDecode(forKey: .locked) ?? false
+        locked = try container.decodeIfPresent(Bool.self, forKey: .locked) ?? false
         number = try container.decodeIfPresent(String.self, forKey: .number) ?? ""
         orders = try container.decodeIfPresent([Order].self, forKey: .orders) ?? []
         paidAt = try container.decodeIfPresent(String.self, forKey: .paidAt) ?? ""
         paidSupplierAt = try container.decodeIfPresent(String.self, forKey: .paidSupplierAt) ?? ""
-        payable = try container.safeBoolDecode(forKey: .payable) ?? false
+        payable = try container.decodeIfPresent(Bool.self, forKey: .payable) ?? false
         paymentMethod = try container.decodeIfPresent(String.self, forKey: .paymentMethod) ?? ""
         paymentMethodId = try container.decodeIfPresent(String.self, forKey: .paymentMethodId) ?? ""
         paymentStatus = try container.decodeIfPresent(String.self, forKey: .paymentStatus) ?? ""
         paymentTransactionId = try container.decodeIfPresent(String.self, forKey: .paymentTransactionId) ?? ""
-        processing = try container.safeBoolDecode(forKey: .processing) ?? false
+        processing = try container.decodeIfPresent(Bool.self, forKey: .processing) ?? false
         processingError = try container.decodeIfPresent(String.self, forKey: .processingError) ?? ""
         purchaserId = try container.decodeIfPresent(String.self, forKey: .purchaserId) ?? ""
         purchaser_id = try container.decodeIfPresent(String.self, forKey: .purchaser_id) ?? ""
         reference = try container.decodeIfPresent(String.self, forKey: .reference) ?? ""
-        retailerChargeable = try container.safeBoolDecode(forKey: .retailerChargeable) ?? false
+        retailerChargeable = try container.decodeIfPresent(Bool.self, forKey: .retailerChargeable) ?? false
         retailerId = try container.decodeIfPresent(String.self, forKey: .retailerId) ?? ""
         retailer_id = try container.decodeIfPresent(String.self, forKey: .retailer_id) ?? ""
-        sentLateNotificationAt = try container.safeBoolDecode(forKey: .sentLateNotificationAt) ?? false
-        sentOverdueNotificationAt = try container.safeBoolDecode(forKey: .sentOverdueNotificationAt) ?? false
+        sentLateNotificationAt = try container.decodeIfPresent(Bool.self, forKey: .sentLateNotificationAt) ?? false
+        sentOverdueNotificationAt = try container.decodeIfPresent(Bool.self, forKey: .sentOverdueNotificationAt) ?? false
         settlementReference = try container.decodeIfPresent(String.self, forKey: .settlementReference) ?? ""
         submittedAt = try container.decodeIfPresent(String.self, forKey: .submittedAt) ?? ""
         subtotal = try container.safeFloatDecode(forKey: .subtotal) ?? 0
@@ -224,11 +224,11 @@ extension InvoiceFrequency: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        daily = try container.safeBoolDecode(forKey: .daily) ?? false
-        weekly = try container.safeBoolDecode(forKey: .weekly) ?? false
-        monthly = try container.safeBoolDecode(forKey: .monthly) ?? false
-        onPlace = try container.safeBoolDecode(forKey: .onPlace) ?? false
-        fortnightly = try container.safeBoolDecode(forKey: .fortnightly) ?? false
+        daily = try container.decodeIfPresent(Bool.self, forKey: .daily) ?? false
+        weekly = try container.decodeIfPresent(Bool.self, forKey: .weekly) ?? false
+        monthly = try container.decodeIfPresent(Bool.self, forKey: .monthly) ?? false
+        onPlace = try container.decodeIfPresent(Bool.self, forKey: .onPlace) ?? false
+        fortnightly = try container.decodeIfPresent(Bool.self, forKey: .fortnightly) ?? false
     }
 }
 
@@ -238,8 +238,8 @@ extension InvoiceSetting: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        creation = try container.safeBoolDecode(forKey: .creation) ?? false
-        delivery = try container.safeBoolDecode(forKey: .delivery) ?? false
+        creation = try container.decodeIfPresent(Bool.self, forKey: .creation) ?? false
+        delivery = try container.decodeIfPresent(Bool.self, forKey: .delivery) ?? false
     }
 }
 
@@ -276,7 +276,7 @@ extension ExportResponse: Decodable {
         fileType = try container.decodeIfPresent(String.self, forKey: .fileType) ?? ""
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         link = try container.decodeIfPresent(String.self, forKey: .link) ?? ""
-        restart = try container.safeBoolDecode(forKey: .restart) ?? false
+        restart = try container.decodeIfPresent(Bool.self, forKey: .restart) ?? false
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? ""
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
     }

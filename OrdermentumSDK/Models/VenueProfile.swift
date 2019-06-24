@@ -30,6 +30,6 @@ extension Completion: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        profilePercent = try container.safeIntDecode(forKey: .profilePercent) ?? 0
+        profilePercent = try container.decodeIfPresent(Int.self, forKey: .profilePercent) ?? 0
     }
 }

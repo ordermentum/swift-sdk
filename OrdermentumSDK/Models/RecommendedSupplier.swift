@@ -77,7 +77,7 @@ extension RecommendedSupplier: Decodable {
         dataAttributes = try container.decodeIfPresent(RecommendedSupplierDataAttributes.self, forKey: .dataAttributes) ?? RecommendedSupplierDataAttributes()
         logo = try container.decodeIfPresent(Image.self, forKey: .logo) ?? Image()
         phone = try container.decodeIfPresent(String.self, forKey: .phone) ?? ""
-        sortOrder = try container.safeIntDecode(forKey: .sortOrder) ?? 0
+        sortOrder = try container.decodeIfPresent(Int.self, forKey: .sortOrder) ?? 0
         supplierId = try container.decodeIfPresent(String.self, forKey: .supplierId) ?? ""
         tradingName = try container.decodeIfPresent(String.self, forKey: .tradingName) ?? ""
     }

@@ -45,8 +45,8 @@ extension RetailerExports: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        retailersCsv = try container.safeBoolDecode(forKey: .retailersCsv) ?? false
-        retailersUsers = try container.safeBoolDecode(forKey: .retailersUsers) ?? false
+        retailersCsv = try container.decodeIfPresent(Bool.self, forKey: .retailersCsv) ?? false
+        retailersUsers = try container.decodeIfPresent(Bool.self, forKey: .retailersUsers) ?? false
     }
 }
 
@@ -56,19 +56,19 @@ extension OrderExports: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        ordersCsv = try container.safeBoolDecode(forKey: .ordersCsv) ?? false
-        attacheXml = try container.safeBoolDecode(forKey: .attacheXml) ?? false
-        reckonReport = try container.safeBoolDecode(forKey: .reckonReport) ?? false
-        globalBakeXml = try container.safeBoolDecode(forKey: .globalBakeXml) ?? false
-        ordersPickPdf = try container.safeBoolDecode(forKey: .ordersPickPdf) ?? false
-        ordersInvoicePdf = try container.safeBoolDecode(forKey: .ordersInvoicePdf) ?? false
-        ordersDeliveryPdf = try container.safeBoolDecode(forKey: .ordersDeliveryPdf) ?? false
-        ordersLineItemsCsv = try container.safeBoolDecode(forKey: .ordersLineItemsCsv) ?? false
-        ordersProductionCsv = try container.safeBoolDecode(forKey: .ordersProductionCsv) ?? false
-        ordersDeliverySummaryPdf = try container.safeBoolDecode(forKey: .ordersDeliverySummaryPdf) ?? false
-        ordersDeliveryManifestPdf = try container.safeBoolDecode(forKey: .ordersDeliveryManifestPdf) ?? false
-        ordersLineItemsDetailsCsv = try container.safeBoolDecode(forKey: .ordersLineItemsDetailsCsv) ?? false
-        ordersProductionReportPdf = try container.safeBoolDecode(forKey: .ordersProductionReportPdf) ?? false
+        ordersCsv = try container.decodeIfPresent(Bool.self, forKey: .ordersCsv) ?? false
+        attacheXml = try container.decodeIfPresent(Bool.self, forKey: .attacheXml) ?? false
+        reckonReport = try container.decodeIfPresent(Bool.self, forKey: .reckonReport) ?? false
+        globalBakeXml = try container.decodeIfPresent(Bool.self, forKey: .globalBakeXml) ?? false
+        ordersPickPdf = try container.decodeIfPresent(Bool.self, forKey: .ordersPickPdf) ?? false
+        ordersInvoicePdf = try container.decodeIfPresent(Bool.self, forKey: .ordersInvoicePdf) ?? false
+        ordersDeliveryPdf = try container.decodeIfPresent(Bool.self, forKey: .ordersDeliveryPdf) ?? false
+        ordersLineItemsCsv = try container.decodeIfPresent(Bool.self, forKey: .ordersLineItemsCsv) ?? false
+        ordersProductionCsv = try container.decodeIfPresent(Bool.self, forKey: .ordersProductionCsv) ?? false
+        ordersDeliverySummaryPdf = try container.decodeIfPresent(Bool.self, forKey: .ordersDeliverySummaryPdf) ?? false
+        ordersDeliveryManifestPdf = try container.decodeIfPresent(Bool.self, forKey: .ordersDeliveryManifestPdf) ?? false
+        ordersLineItemsDetailsCsv = try container.decodeIfPresent(Bool.self, forKey: .ordersLineItemsDetailsCsv) ?? false
+        ordersProductionReportPdf = try container.decodeIfPresent(Bool.self, forKey: .ordersProductionReportPdf) ?? false
     }
 }
 
@@ -78,6 +78,6 @@ extension ProductExports: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        productsCsv = try container.safeBoolDecode(forKey: .productsCsv) ?? false
+        productsCsv = try container.decodeIfPresent(Bool.self, forKey: .productsCsv) ?? false
     }
 }

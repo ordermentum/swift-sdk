@@ -100,12 +100,12 @@ extension Validation: Decodable {
         cart = try container.decodeIfPresent(ValidationCart.self, forKey: .cart) ?? ValidationCart()
         display = try container.decodeIfPresent(ValidationDisplay.self, forKey: .display) ?? ValidationDisplay()
         lineItems = try container.decodeIfPresent([ValidationLineItem].self, forKey: .lineItems) ?? []
-        cartErrorCount = try container.safeIntDecode(forKey: .cartErrorCount) ?? 0
-        cartWarningCount = try container.safeIntDecode(forKey: .cartWarningCount) ?? 0
-        cartInfoCount = try container.safeIntDecode(forKey: .cartInfoCount) ?? 0
-        lineItemErrorCount = try container.safeIntDecode(forKey: .lineItemErrorCount) ?? 0
-        lineItemWarningCount = try container.safeIntDecode(forKey: .lineItemWarningCount) ?? 0
-        lineItemInfosCount = try container.safeIntDecode(forKey: .lineItemInfosCount) ?? 0
+        cartErrorCount = try container.decodeIfPresent(Int.self, forKey: .cartErrorCount) ?? 0
+        cartWarningCount = try container.decodeIfPresent(Int.self, forKey: .cartWarningCount) ?? 0
+        cartInfoCount = try container.decodeIfPresent(Int.self, forKey: .cartInfoCount) ?? 0
+        lineItemErrorCount = try container.decodeIfPresent(Int.self, forKey: .lineItemErrorCount) ?? 0
+        lineItemWarningCount = try container.decodeIfPresent(Int.self, forKey: .lineItemWarningCount) ?? 0
+        lineItemInfosCount = try container.decodeIfPresent(Int.self, forKey: .lineItemInfosCount) ?? 0
         totalCost = try container.safeFloatDecode(forKey: .totalCost) ?? 0.00
         totalFreight = try container.safeFloatDecode(forKey: .totalFreight) ?? 0.00
         subtotal = try container.safeFloatDecode(forKey: .subtotal) ?? 0.00
@@ -163,7 +163,7 @@ extension ValidationLineItem: Decodable {
         errors = try container.decodeIfPresent([ValidationMessage].self, forKey: .errors) ?? []
         warnings = try container.decodeIfPresent([ValidationMessage].self, forKey: .warnings) ?? []
         display = try container.decodeIfPresent(ValidationLineItemDisplay.self, forKey: .display) ?? ValidationLineItemDisplay()
-        locked = try container.safeBoolDecode(forKey: .locked) ?? false
+        locked = try container.decodeIfPresent(Bool.self, forKey: .locked) ?? false
     }
 }
 

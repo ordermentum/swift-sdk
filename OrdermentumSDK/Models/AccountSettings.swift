@@ -52,25 +52,25 @@ extension AccountSettings: Decodable {
         paymentMethod = try container.decodeIfPresent(PaymentMethods.self, forKey: .paymentMethod) ?? PaymentMethods()
         paymentTerms = try container.decodeIfPresent(PaymentTerms.self, forKey: .paymentTerms) ?? PaymentTerms()
         insights = try container.decodeIfPresent(Insights.self, forKey: .insights) ?? Insights()
-        liquorLicenseRequired = try container.safeBoolDecode(forKey: .liquorLicenseRequired) ?? false
-        includeOrderUpdatesInReports = try container.safeBoolDecode(forKey: .includeOrderUpdatesInReports) ?? false
-        randomWeight = try container.safeBoolDecode(forKey: .randomWeight) ?? false
+        liquorLicenseRequired = try container.decodeIfPresent(Bool.self, forKey: .liquorLicenseRequired) ?? false
+        includeOrderUpdatesInReports = try container.decodeIfPresent(Bool.self, forKey: .includeOrderUpdatesInReports) ?? false
+        randomWeight = try container.decodeIfPresent(Bool.self, forKey: .randomWeight) ?? false
 //        orderSchedule = try container.decodeIfPresent(String.self, forKey: .orderSchedule) ?? ""
         flags = try container.decodeIfPresent([String].self, forKey: .flags) ?? []
         weightType = try container.decodeIfPresent(String.self, forKey: .weightType) ?? ""
         orderPrefix = try container.decodeIfPresent(String.self, forKey: .orderPrefix) ?? ""
-        sendInvoice = try container.safeBoolDecode(forKey: .sendInvoice) ?? false
+        sendInvoice = try container.decodeIfPresent(Bool.self, forKey: .sendInvoice) ?? false
         orderExports = try container.decodeIfPresent(OrderExports.self, forKey: .orderExports) ?? OrderExports()
-        deliveryDelay = try container.safeIntDecode(forKey: .deliveryDelay) ?? 0
-        groupPayments = try container.safeBoolDecode(forKey: .groupPayments) ?? false
+        deliveryDelay = try container.decodeIfPresent(Int.self, forKey: .deliveryDelay) ?? 0
+        groupPayments = try container.decodeIfPresent(Bool.self, forKey: .groupPayments) ?? false
         invoiceStatus = try container.decodeIfPresent(String.self, forKey: .invoiceStatus) ?? ""
         productExports = try container.decodeIfPresent(ProductExports.self, forKey: .productExports) ?? ProductExports()
-        includeWeekends = try container.safeBoolDecode(forKey: .includeWeekends) ?? false
+        includeWeekends = try container.decodeIfPresent(Bool.self, forKey: .includeWeekends) ?? false
         retailerExports = try container.decodeIfPresent(RetailerExports.self, forKey: .retailerExports) ?? RetailerExports()
         invoiceEmailDelay = try container.decodeIfPresent(String.self, forKey: .invoiceEmailDelay) ?? ""
-        enableDeliveryDate = try container.safeBoolDecode(forKey: .enableDeliveryDate) ?? false
+        enableDeliveryDate = try container.decodeIfPresent(Bool.self, forKey: .enableDeliveryDate) ?? false
         defaultDeliveryDelay = try container.safeIntDecode(forKey: .defaultDeliveryDelay) ?? 0
-        classicStandingOrders = try container.safeBoolDecode(forKey: .classicStandingOrders) ?? false
+        classicStandingOrders = try container.decodeIfPresent(Bool.self, forKey: .classicStandingOrders) ?? false
         defaultSalesAccountCode = try container.decodeIfPresent(String.self, forKey: .defaultSalesAccountCode) ?? ""
     }
 }

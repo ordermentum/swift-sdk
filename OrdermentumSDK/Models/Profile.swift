@@ -151,7 +151,7 @@ extension Settings {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        accessNewRetailerUi = try container.safeBoolDecode(forKey: .accessNewRetailerUi) ?? false
+        accessNewRetailerUi = try container.decodeIfPresent(Bool.self, forKey: .accessNewRetailerUi) ?? false
     }
 }
 
@@ -161,8 +161,8 @@ extension Roles {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        superAdmin = try container.safeBoolDecode(forKey: .superAdmin) ?? false
-        admin = try container.safeBoolDecode(forKey: .admin) ?? false
+        superAdmin = try container.decodeIfPresent(Bool.self, forKey: .superAdmin) ?? false
+        admin = try container.decodeIfPresent(Bool.self, forKey: .admin) ?? false
         retailers = try container.decodeIfPresent([RetailerRole].self, forKey: .retailers) ?? []
     }
 }
@@ -195,9 +195,9 @@ extension Notifications {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        enableSMS = try container.safeBoolDecode(forKey: .enableSMS) ?? false
-        enableEmail = try container.safeBoolDecode(forKey: .enableEmail) ?? false
-        pushNotifications = try container.safeBoolDecode(forKey: .pushNotifications) ?? false
+        enableSMS = try container.decodeIfPresent(Bool.self, forKey: .enableSMS) ?? false
+        enableEmail = try container.decodeIfPresent(Bool.self, forKey: .enableEmail) ?? false
+        pushNotifications = try container.decodeIfPresent(Bool.self, forKey: .pushNotifications) ?? false
         id = try container.decodeIfPresent(SupplierNotifications.self, forKey: .id) ?? SupplierNotifications()
     }
 }
@@ -208,14 +208,14 @@ extension SupplierNotifications {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        alerts = try container.safeBoolDecode(forKey: .alerts) ?? false
-        enableSMS = try container.safeBoolDecode(forKey: .enableSMS) ?? false
-        remittance = try container.safeBoolDecode(forKey: .remittance) ?? false
-        enableEmail = try container.safeBoolDecode(forKey: .enableEmail) ?? false
-        sendInvoice = try container.safeBoolDecode(forKey: .sendInvoice) ?? false
-        placedOrders = try container.safeBoolDecode(forKey: .placedOrders) ?? false
-        overdueOrders = try container.safeBoolDecode(forKey: .overdueOrders) ?? false
-        pushNotifications = try container.safeBoolDecode(forKey: .pushNotifications) ?? false
+        alerts = try container.decodeIfPresent(Bool.self, forKey: .alerts) ?? false
+        enableSMS = try container.decodeIfPresent(Bool.self, forKey: .enableSMS) ?? false
+        remittance = try container.decodeIfPresent(Bool.self, forKey: .remittance) ?? false
+        enableEmail = try container.decodeIfPresent(Bool.self, forKey: .enableEmail) ?? false
+        sendInvoice = try container.decodeIfPresent(Bool.self, forKey: .sendInvoice) ?? false
+        placedOrders = try container.decodeIfPresent(Bool.self, forKey: .placedOrders) ?? false
+        overdueOrders = try container.decodeIfPresent(Bool.self, forKey: .overdueOrders) ?? false
+        pushNotifications = try container.decodeIfPresent(Bool.self, forKey: .pushNotifications) ?? false
     }
 }
 
@@ -237,8 +237,8 @@ extension AdminPerms {
         
         //Decode Data
         permissions = try container.decodeIfPresent(Permissions.self, forKey: .permissions) ?? Permissions()
-        isAdmin = try container.safeBoolDecode(forKey: .isAdmin) ?? false
-        isSuperAdmin = try container.safeBoolDecode(forKey: .isSuperAdmin) ?? false
+        isAdmin = try container.decodeIfPresent(Bool.self, forKey: .isAdmin) ?? false
+        isSuperAdmin = try container.decodeIfPresent(Bool.self, forKey: .isSuperAdmin) ?? false
     }
 }
 

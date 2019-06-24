@@ -42,7 +42,7 @@ public struct Marketplace {
 public struct MarketplaceProperties: Encodable {
     public init() {}
     
-    public var demoSupplier: Bool = false
+    public var demoSupplier: String = ""
 }
 
 public struct MarketplaceSettings {
@@ -98,7 +98,7 @@ extension MarketplaceProperties: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        demoSupplier = try container.safeBoolDecode(forKey: .demoSupplier) ?? false
+        demoSupplier = try container.decodeIfPresent(String.self, forKey: .demoSupplier) ?? ""
     }
 }
 

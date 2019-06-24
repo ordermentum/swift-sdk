@@ -33,6 +33,6 @@ extension NPSResponse: Decodable {
         email = try container.decodeIfPresent(String.self, forKey: .email) ?? ""
         survey_scheduled_at = try container.decodeIfPresent(String.self, forKey: .survey_scheduled_at) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
-        show = try container.safeBoolDecode(forKey: .show) ?? false
+        show = try container.decodeIfPresent(Bool.self, forKey: .show) ?? false
     }
 }

@@ -78,9 +78,9 @@ extension PaymentMethod: Decodable {
         //Decode Data
         account = try container.decodeIfPresent(String.self, forKey: .account) ?? ""
         accountName = try container.decodeIfPresent(String.self, forKey: .accountName) ?? ""
-        bankConfigured = try container.safeBoolDecode(forKey: .bankConfigured) ?? false
+        bankConfigured = try container.decodeIfPresent(Bool.self, forKey: .bankConfigured) ?? false
         bsb = try container.decodeIfPresent(String.self, forKey: .bsb) ?? ""
-        cardConfigured = try container.safeBoolDecode(forKey: .cardConfigured) ?? false
+        cardConfigured = try container.decodeIfPresent(Bool.self, forKey: .cardConfigured) ?? false
         cardLast4Digits = try container.decodeIfPresent(String.self, forKey: .cardLast4Digits) ?? ""
         cardName = try container.decodeIfPresent(String.self, forKey: .cardName) ?? ""
         cardType = try container.decodeIfPresent(String.self, forKey: .cardType) ?? ""
@@ -88,8 +88,8 @@ extension PaymentMethod: Decodable {
         displayName = try container.decodeIfPresent(String.self, forKey: .displayName) ?? ""
         firstName = try container.decodeIfPresent(String.self, forKey: .firstName) ?? ""
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
-        isCard = try container.safeBoolDecode(forKey: .isCard) ?? false
-        isDirect = try container.safeBoolDecode(forKey: .isDirect) ?? false
+        isCard = try container.decodeIfPresent(Bool.self, forKey: .isCard) ?? false
+        isDirect = try container.decodeIfPresent(Bool.self, forKey: .isDirect) ?? false
         lastName = try container.decodeIfPresent(String.self, forKey: .lastName) ?? ""
         maskedNumber = try container.decodeIfPresent(String.self, forKey: .maskedNumber) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
