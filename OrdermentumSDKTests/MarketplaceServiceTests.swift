@@ -23,7 +23,7 @@ class MarketplaceServiceTests: XCTestCase {
 
     func testGetMarketPlaces() {
         //Setup Request and Start Stub
-        Client.instance.baseURL = ClientURL.rootTestingURL
+        Client.instance.baseURL = ClientURL.rootURL
         let retailerId:String = self.getEnvironmentVar("RETAILER_ID") ?? ""
         let pageSize:Int = Int(self.getEnvironmentVar("PAGE_SIZE")!) ?? 0
         let pageNo:Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 0
@@ -39,6 +39,7 @@ class MarketplaceServiceTests: XCTestCase {
         Client.instance.marketplaces.getMarketplaces(retailerId: retailerId, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
             if result {
                 assert(result)
+                XCTAssertNotNil(responseData)
                 expectation.fulfill()
             }
             else {
