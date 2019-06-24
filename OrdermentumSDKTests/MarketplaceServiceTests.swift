@@ -23,7 +23,7 @@ class MarketplaceServiceTests: XCTestCase {
 
     func testGetMarketPlaces() {
         //Setup Request and Start Stub
-        Client.instance.baseURL = ClientURL.rootURL
+        Client.instance.baseURL = ClientURL.rootTestingURL
         let retailerId:String = self.getEnvironmentVar("RETAILER_ID") ?? ""
         let pageSize:Int = Int(self.getEnvironmentVar("PAGE_SIZE")!) ?? 0
         let pageNo:Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 0
