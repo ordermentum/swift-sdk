@@ -24,7 +24,10 @@ extension KeyedDecodingContainer {
     func safeFloatDecode(forKey key: K) throws -> Float? {
         do {
             guard let string = try decodeIfPresent(String.self, forKey: key) else {
-                return nil
+                guard let int = try decodeIfPresent(Int.self, forKey: key) else {
+                    return nil
+                }
+                return Float(int)
             }
             return Float(string)
         } catch {
