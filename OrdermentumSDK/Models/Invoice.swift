@@ -22,7 +22,7 @@ public struct Invoice: Encodable {
     public var charged_by_user_id: String = ""
     public var createdAt: String = ""
     public var created_at: String = ""
-    public var credit: Float = 0
+    public var credit: String = ""
     public var creditNoteIds: [String] = []
     public var date: String = ""
     public var deletedAt: String = ""
@@ -59,13 +59,13 @@ public struct Invoice: Encodable {
     public var subtotal: Float = 0
     public var supplierId: String = ""
     public var supplier_id: String = ""
-    public var surcharge: Float = 0
     public var syncError: String = ""
     public var total: Float = 0
     public var totalCost: Float = 0
     public var totalDue: Float = 0
     public var totalFreight: Float = 0
     public var totalGST: Float = 0
+    public var surcharge: Float = 0
     public var updatedAt: String = ""
     public var updatedById: String = ""
     public var updated_at: String = ""
@@ -165,7 +165,7 @@ extension Invoice: Decodable {
         charged_by_user_id = try container.decodeIfPresent(String.self, forKey: .charged_by_user_id) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         created_at = try container.decodeIfPresent(String.self, forKey: .created_at) ?? ""
-        credit = try container.safeFloatDecode(forKey: .credit) ?? 0
+        credit = try container.safeStringFloatDecode(forKey: .credit) ?? ""
         creditNoteIds = try container.decodeIfPresent([String].self, forKey: .creditNoteIds) ?? []
         date = try container.decodeIfPresent(String.self, forKey: .date) ?? ""
         deletedAt = try container.decodeIfPresent(String.self, forKey: .deletedAt) ?? ""
