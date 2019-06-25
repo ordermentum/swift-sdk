@@ -43,9 +43,9 @@ public enum PurchaserRouter: URLRequestConvertible {
     var parameters: [String: Any] {
         switch self {
         case .getPurchasers(let retailerId, let supplierId):
-            return ["retailerId": retailerId, "supplierId": supplierId]
+            return ["retailerId": retailerId, "supplierId": supplierId, "disabled": false]
         case .getPurchasersForPaymentMethod(let retailerId, let paymentMethodType):
-            return ["retailerId": retailerId, "paymentMethodType": paymentMethodType]
+            return ["retailerId": retailerId, "paymentMethodType": paymentMethodType, "disabled": false]
         default:
             return [:]
         }
