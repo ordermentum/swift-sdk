@@ -28,16 +28,16 @@ extension Flags: Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        findSupplier = try container.decodeIfPresent(Bool.self, forKey: .findSupplier) ?? false
-        review = try container.decodeIfPresent(Bool.self, forKey: .review) ?? false
-        dashboardProfile = try container.decodeIfPresent(Bool.self, forKey: .dashboardProfile) ?? false
-        userInvite = try container.decodeIfPresent(Bool.self, forKey: .userInvite) ?? false
-        popularProducts = try container.decodeIfPresent(Bool.self, forKey: .popularProducts) ?? false
-        addons = try container.decodeIfPresent(Bool.self, forKey: .addons) ?? false
-        homePopularProducts = try container.decodeIfPresent(Bool.self, forKey: .homePopularProducts) ?? false
-        retailerSignup = try container.decodeIfPresent(Bool.self, forKey: .retailerSignup) ?? false
-        addVenue = try container.decodeIfPresent(Bool.self, forKey: .addVenue) ?? false
-        projectionsV2 = try container.decodeIfPresent(Bool.self, forKey: .projectionsV2) ?? false
-        recommendedSuppliers = try container.decodeIfPresent(Bool.self, forKey: .recommendedSuppliers) ?? false
+        findSupplier = try container.safeBoolDecode(forKey: .findSupplier) ?? false
+        review = try container.safeBoolDecode(forKey: .review) ?? false
+        dashboardProfile = try container.safeBoolDecode(forKey: .dashboardProfile) ?? false
+        userInvite = try container.safeBoolDecode(forKey: .userInvite) ?? false
+        popularProducts = try container.safeBoolDecode(forKey: .popularProducts) ?? false
+        addons = try container.safeBoolDecode(forKey: .addons) ?? false
+        homePopularProducts = try container.safeBoolDecode(forKey: .homePopularProducts) ?? false
+        retailerSignup = try container.safeBoolDecode(forKey: .retailerSignup) ?? false
+        addVenue = try container.safeBoolDecode(forKey: .addVenue) ?? false
+        projectionsV2 = try container.safeBoolDecode(forKey: .projectionsV2) ?? false
+        recommendedSuppliers = try container.safeBoolDecode(forKey: .recommendedSuppliers) ?? false
     }
 }

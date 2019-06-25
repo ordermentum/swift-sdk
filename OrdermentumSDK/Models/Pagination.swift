@@ -29,10 +29,10 @@ extension Meta: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
-        totalResults = try container.decodeIfPresent(Int.self, forKey: .totalResults) ?? 0
-        totalPages = try container.decodeIfPresent(Int.self, forKey: .totalPages) ?? 0
-        pageSize = try container.decodeIfPresent(Int.self, forKey: .pageSize) ?? 0
-        pageNo = try container.decodeIfPresent(Int.self, forKey: .pageNo) ?? 0
+        totalResults = try container.safeIntDecode(forKey: .totalResults) ?? 0
+        totalPages = try container.safeIntDecode(forKey: .totalPages) ?? 0
+        pageSize = try container.safeIntDecode(forKey: .pageSize) ?? 0
+        pageNo = try container.safeIntDecode(forKey: .pageNo) ?? 0
     }
 }
 
