@@ -185,6 +185,7 @@ extension SingleProjection: Decodable {
         isLocked = try container.decodeIfPresent(Bool.self, forKey: .isLocked) ?? false
         isRetailerEditable = try container.decodeIfPresent(Bool.self, forKey: .isRetailerEditable) ?? false
         color = try container.decodeIfPresent(String.self, forKey: .color) ?? ""
+        cardDisplay = try container.decodeIfPresent(CardDisplay.self, forKey: .cardDisplay) ?? CardDisplay()
     }
 }
 
