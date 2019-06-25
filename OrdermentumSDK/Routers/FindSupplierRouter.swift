@@ -11,7 +11,7 @@ import Alamofire
 
 public enum FindSupplierRouter: URLRequestConvertible {
     //Routes
-    case getSuppliers(String, Int)
+    case getSuppliers(String, Int, String)
     case sendSupplierEnquiry(FindSupplierRequest)
     case sendSupplierReferral(FindSupplierReferralRequest)
     
@@ -42,8 +42,8 @@ public enum FindSupplierRouter: URLRequestConvertible {
     //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .getSuppliers(let searchString, let pageSize):
-            return ["search": searchString, "pageSize": pageSize]
+        case .getSuppliers(let searchString, let pageSize, let retailerId):
+            return ["search": searchString, "pageSize": pageSize, "retailerId": retailerId]
         default:
             return [:]
         }

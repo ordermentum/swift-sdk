@@ -16,9 +16,9 @@ public class FindSupplierService {
      * Get suppliers available based on search string
      * Returns a FindSupplierResponse
      */
-    public func getSuppliers(searchString: String, pageSize: Int, completion: @escaping (Bool, FindSupplierResponse?) -> ()) {
+    public func getSuppliers(searchString: String, pageSize: Int, retailerId: String, completion: @escaping (Bool, FindSupplierResponse?) -> ()) {
         //Build Route
-        let route = FindSupplierRouter.getSuppliers(searchString, pageSize) as URLRequestConvertible
+        let route = FindSupplierRouter.getSuppliers(searchString, pageSize, retailerId) as URLRequestConvertible
         
         //Call API
         Service<FindSupplierResponse>().request(route: route) { (result, responseObject) in
