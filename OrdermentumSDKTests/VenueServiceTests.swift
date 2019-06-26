@@ -163,6 +163,7 @@ class VenueServiceTests: XCTestCase {
         //Call API
         Client.instance.venues.checkVenueInvites(recipientEmail) { (success, response) in
             assert(success)
+            XCTAssertNotNil(response)
             expectation.fulfill()
         }
         
