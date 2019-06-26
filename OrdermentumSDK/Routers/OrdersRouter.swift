@@ -75,7 +75,7 @@ public enum OrdersRouter: URLRequestConvertible {
             return "purchaser-schedules"
         case .updateOrderFirstTime:
             return "orders/purchaser-schedule"
-        case .updateOrder(let orderId):
+        case .updateOrder(let orderId, _):
             return "orders/\(orderId)"
         case .createFavouriteOrder:
             return "orders"
