@@ -54,7 +54,7 @@ public class Client {
         let timeoutSeconds: Int = 10
         
         //Build Request
-        var request = URLRequest(url: url.appendingPathComponent(path))
+        var request = URLRequest(url: url.appendingPathComponent(path)) 
         request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
@@ -67,7 +67,9 @@ public class Client {
         //Set Conditional Body
         switch method {
         case .get:
-            return try URLEncoding.default.encode(request, with: parameters)
+            return try URLEncoding(destination: .queryString,
+                                   arrayEncoding: .brackets,
+                                   boolEncoding: .literal).encode(request, with: parameters)
         default:
             return try JSONEncoding.default.encode(request, with: body?.toParameters())
         }
