@@ -11,7 +11,7 @@ import Alamofire
 
 public enum AddOnsRouter: URLRequestConvertible {
     //Routes
-    case searchAddons(String, [String])
+    case searchAddons(String, String)
     case discoverAddons(String, String)
     case readAddon(String, String)
     case updateAddon(String, String, AddOnUpdateObject)
@@ -52,6 +52,10 @@ public enum AddOnsRouter: URLRequestConvertible {
     //Parameters
     var parameters: [String: Any] {
         switch self {
+        case .searchAddons(let entityType, let entityId):
+            return ["entityType": entityType, "entityId": entityId]
+        case .discoverAddons(let entityType, let entityId):
+            return ["entityType": entityType, "entityId": entityId]
         case .readAddon(_, let accountId):
             return ["accountId": accountId]
         default:

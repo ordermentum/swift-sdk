@@ -16,7 +16,7 @@ public class AddOnsService {
      * Get already connected add-ons
      * Returns a AddOnsResponse
      */
-    public func searchAddons(entityType: String, entityId: [String], completion: @escaping (Bool, [AddOn]?) -> ()) {
+    public func searchAddons(entityType: String, entityId: String, completion: @escaping (Bool, [AddOn]?) -> ()) {
         //Build Route
         let route = AddOnsRouter.searchAddons(entityType, entityId) as URLRequestConvertible
         
