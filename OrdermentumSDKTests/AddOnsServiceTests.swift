@@ -28,7 +28,7 @@ class AddOnsServiceTests: XCTestCase {
         
         //Build request body and params
         let entityType:String = ""
-        let entityId:[String] = []
+        let entityId:String = ""
         
         //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
