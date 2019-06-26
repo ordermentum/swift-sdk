@@ -65,7 +65,7 @@ public class Client {
         
         //Set Conditional Body
         switch method {
-        case .get:
+        case .get, .delete:
             return try URLEncoding(destination: .queryString,
                                    arrayEncoding: .brackets,
                                    boolEncoding: .literal).encode(request, with: parameters)
