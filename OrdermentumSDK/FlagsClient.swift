@@ -19,6 +19,7 @@ public class FlagsClient {
     public static let instance = FlagsClient()
     
     //Services
+    public var experiments: ExperimentsService = ExperimentsService()
     public var flags: FlagsService = FlagsService()
     
     // MARK: Convenience Methods

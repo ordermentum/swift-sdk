@@ -25,7 +25,6 @@ public class Client {
     public var creditNotes: CreditNotesService = CreditNotesService()
     public var dataAttributes: DataAttributesService = DataAttributesService()
     public var devices: DeviceService = DeviceService()
-    public var experiments: ExperimentsService = ExperimentsService()
     public var findSuppliers: FindSupplierService = FindSupplierService()
     public var invoices: InvoiceService = InvoiceService()
     public var marketplaces: MarketplaceService = MarketplaceService()

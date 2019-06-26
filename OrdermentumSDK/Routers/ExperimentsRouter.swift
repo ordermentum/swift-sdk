@@ -56,6 +56,6 @@ public enum ExperimentsRouter: URLRequestConvertible {
     
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
+        return try FlagsClient.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }
