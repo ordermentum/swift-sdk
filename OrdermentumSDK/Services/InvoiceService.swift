@@ -18,7 +18,7 @@ public class InvoiceService {
      */
     public func getInvoices(retailerId: String, supplierId: String, sortBy: String, pageNo: String, completion: @escaping (Bool, InvoiceResponse?) -> ()) {
         //Build Route
-        let route = InvoiceRouter.getInvoices(retailerId, supplierId, sortBy, pageNo) as URLRequestConvertible
+        let route = InvoiceRouter.getInvoices(supplierId, retailerId, sortBy, pageNo) as URLRequestConvertible
         
         //Call API
         Service<InvoiceResponse>().request(route: route) { (result, responseObject) in
