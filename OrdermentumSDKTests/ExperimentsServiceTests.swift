@@ -20,13 +20,33 @@ class ExperimentsServiceTests: XCTestCase {
     }
 
     func testGetExperiments() {
+        
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
+        //Build Request body and params
+        let slot = ProcessInfo.processInfo.environment["EXPERIMENT_SLOT"] ?? ""
+        let source = ProcessInfo.processInfo.environment["EXPERIMENT_SOURCE"] ?? ""
+        let version = ProcessInfo.processInfo.environment["EXPERIMENT_VERSION"] ?? ""
+        let retailerId = ProcessInfo.processInfo.environment["EXPERIMENT_RETAILERID"] ?? ""
+        let isRetailer = false
+        let userId = ProcessInfo.processInfo.environment["EXPERIMENT_USERID"] ?? ""
+        let supplierIds: [String] = []
+        
+        //Request setup
         FlagsClient.instance.baseURL = FlagsClientURL.rootFlagsTestingURL
-        FlagsClient.instance.experiments.getExperiments(slot: "", source: "", version: "", retailerId: "", isRetailer: false, userId: "", supplierIds: []) { (result, responseData) in
+        FlagsClient.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? ExperimentsRouter.getExperiments(slot, source, version, retailerId, isRetailer, userId, supplierIds).asURLRequest() {
+            self.startStub(route, stubData: .getExperiments )
+        }
+        
+        //Call API
+        
+        FlagsClient.instance.experiments.getExperiments(slot: slot, source: source, version: version, retailerId: retailerId, isRetailer: false, userId: userId, supplierIds: []) { (result, responseData) in
             assert(result)
+            XCTAssertNotNil(responseData)
             expectation.fulfill()
         }
         
