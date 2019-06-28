@@ -56,6 +56,7 @@ public class Client {
         var request = URLRequest(url: url.appendingPathComponent(path)) 
         request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
         
         //Set Token
