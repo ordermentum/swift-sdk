@@ -127,6 +127,7 @@ class VenueServiceTests: XCTestCase {
         
         Client.instance.venues.updateVenueProfile(retailerId: retailerId, venueProfile: updateVenuProfileRequestObject) { (result, requestObject) in
             assert(result)
+            XCTAssertNotNil(requestObject)
             expectation.fulfill()
         }
     }
