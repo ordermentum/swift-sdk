@@ -105,7 +105,7 @@ class AddOnsServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.addons.disconnectAddon(addonId: "", accountId: "", requestObject: requestObject) { (result) in
+        Client.instance.addons.disconnectAddon(addonId: "", requestObject: requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }

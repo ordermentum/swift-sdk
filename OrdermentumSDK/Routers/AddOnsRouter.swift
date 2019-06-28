@@ -14,8 +14,8 @@ public enum AddOnsRouter: URLRequestConvertible {
     case searchAddons(String, String)
     case discoverAddons(String, String)
     case readAddon(String, String)
-    case updateAddon(String, String, AddOnUpdateObject)
-    case disconnectAddon(String, String, AddOnDisconnectObject)
+    case updateAddon(String, AddOnUpdateObject)
+    case disconnectAddon(String, AddOnDisconnectObject)
     
     //Methods
     var method: HTTPMethod {
@@ -29,7 +29,7 @@ public enum AddOnsRouter: URLRequestConvertible {
         case .updateAddon:
             return .put
         case .disconnectAddon:
-            return .put
+            return .delete
         }
     }
     
@@ -42,10 +42,10 @@ public enum AddOnsRouter: URLRequestConvertible {
             return "addons/discover"
         case .readAddon(let addonId, _):
             return "addons/\(addonId)"
-        case .updateAddon(let addonId, let accountId, _):
-            return "addons/\(addonId)/account-id/\(accountId)"
-        case .disconnectAddon(let addonId, let accountId, _):
-            return "addons/\(addonId)/account-id/\(accountId)/disconnect"
+        case .updateAddon(let addonId, _):
+            return "addons/\(addonId)"
+        case .disconnectAddon(let addonId, _):
+            return "addons/\(addonId)"
         }
     }
     
@@ -66,9 +66,9 @@ public enum AddOnsRouter: URLRequestConvertible {
     //Body
     var body: Codable? {
         switch self {
-        case .updateAddon(_, _, let requestObject):
+        case .updateAddon(_, let requestObject):
             return requestObject
-        case .disconnectAddon(_, _, let requestObject):
+        case .disconnectAddon(_, let requestObject):
             return requestObject
         default:
             return nil

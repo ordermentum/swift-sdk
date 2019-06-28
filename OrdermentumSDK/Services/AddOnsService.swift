@@ -25,7 +25,7 @@ public class AddOnsService {
             completion(result, responseObject)
         }
     }
-
+    
     /**
      * Get non-connected add-ons
      * Returns a AddOnsDiscoverResponse
@@ -39,7 +39,7 @@ public class AddOnsService {
             completion(result, responseObject)
         }
     }
-
+    
     /**
      * Get details of an already connected add-on
      * Returns an AddOn Object
@@ -58,9 +58,9 @@ public class AddOnsService {
      * Update an add-on
      * Returns an AddOn Object
      */
-    public func updateAddon(addonId: String, accountId: String, requestObject: AddOnUpdateObject, completion: @escaping (Bool, AddOn?) -> ()) {
+    public func updateAddon(addonId: String, requestObject: AddOnUpdateObject, completion: @escaping (Bool, AddOn?) -> ()) {
         //Build Route
-        let route = AddOnsRouter.updateAddon(addonId, accountId, requestObject) as URLRequestConvertible
+        let route = AddOnsRouter.updateAddon(addonId, requestObject) as URLRequestConvertible
         
         //Call API
         Service<AddOn>().request(route: route) { (result, responseObject) in
@@ -72,9 +72,9 @@ public class AddOnsService {
      * Disconnect an add-on
      * Returns a ResponseBody which can be used to check for a 200 response
      */
-    public func disconnectAddon(addonId: String, accountId: String, requestObject: AddOnDisconnectObject, completion: @escaping (Bool) -> ()) {
+    public func disconnectAddon(addonId: String, requestObject: AddOnDisconnectObject, completion: @escaping (Bool) -> ()) {
         //Build Route
-        let route = AddOnsRouter.disconnectAddon(addonId, accountId, requestObject) as URLRequestConvertible
+        let route = AddOnsRouter.disconnectAddon(addonId, requestObject) as URLRequestConvertible
         
         //Call API
         Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
