@@ -44,12 +44,12 @@ public class VenueService {
      * Takes a VenueProfile object and updates the selected retailer.
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */
-    public func updateVenueProfile(retailerId: String, venueProfile: VenueProfile , completion: @escaping (Bool, VenueResponse?) -> ()) {
+    public func updateVenueProfile(retailerId: String, venueProfile: VenueProfile , completion: @escaping (Bool, VenueProfile?) -> ()) {
         //Build Route
         let route = VenueRouter.updateVenueProfile(retailerId, venueProfile) as URLRequestConvertible
         
         //Call API
-        Service<VenueResponse>().request(route: route) { (result, responseObject) in
+        Service<VenueProfile>().request(route: route) { (result, responseObject) in
             completion(result, responseObject)
         }
     }

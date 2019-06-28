@@ -108,23 +108,27 @@ class VenueServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
-    func skipped_testUpdateVenueProfile() {
+    func testUpdateVenueProfile() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        var requestObject: VenueResponse = VenueResponse()
-        requestObject.data = []
-        requestObject.links = Links()
-        requestObject.meta = Meta()
+        //Build request body and params
+        let retailerId = ProcessInfo.processInfo.environment["RETAILER_ID"] ?? ""
+        let updateVenuProfileRequestObject = VenueProfile()
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-//        Client.instance.venues.updateVenueProfile(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject) in
-//            assert(result)
-//            expectation.fulfill()
-//        }
+        //Stubbing
+        if let route = try? VenueRouter.updateVenueProfile(retailerId, updateVenuProfileRequestObject).asURLRequest() {
+            self.startStub(route, stubData: .updateVenueProfile )
+        }
+        
+        Client.instance.venues.updateVenueProfile(retailerId: retailerId, venueProfile: updateVenuProfileRequestObject) { (result, requestObject) in
+            assert(result)
+            expectation.fulfill()
+        }
     }
     
     func testGetProfileCompletion() {
