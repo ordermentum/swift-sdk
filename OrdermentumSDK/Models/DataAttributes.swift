@@ -57,6 +57,7 @@ extension DataAttributes: Decodable {
         
         //Decode bankingData
         pos = try container.decodeIfPresent(String.self, forKey: .pos) ?? ""
+        venue = try container.decodeIfPresent(String.self, forKey: .venue) ?? ""
         banking = try container.decodeIfPresent(String.self, forKey: .banking) ?? ""
         accounting = try container.decodeIfPresent(String.self, forKey: .accounting) ?? ""
         venueTypes = try container.decodeIfPresent(String.self, forKey: .venueTypes) ?? ""
