@@ -11,16 +11,22 @@ import Alamofire
 
 public enum PurchaserRouter: URLRequestConvertible {
     //Routes
+    case acceptTermsAndConditions(String, String)
     case getPurchasers(String, String)
     case getPurchasersForPaymentMethod(String, String)
+    case getTermsAndConditions(String, String)
     case updatePaymentMethod(String, UpdatePaymentMethodRequest)
     
     //Methods
     var method: HTTPMethod {
         switch self {
+        case .acceptTermsAndConditions:
+            return .post
         case .getPurchasers:
             return .get
         case .getPurchasersForPaymentMethod:
+            return .get
+        case .getTermsAndConditions:
             return .get
         case .updatePaymentMethod:
             return .put
@@ -30,10 +36,14 @@ public enum PurchaserRouter: URLRequestConvertible {
     //Paths
     var path: String {
         switch self {
+        case .acceptTermsAndConditions(let supplierId, let retailerId):
+            return "purchasers/supplier/\(supplierId)/retailer/\(retailerId)/accept-terms-and-conditions"
         case .getPurchasers:
             return "purchasers"
         case .getPurchasersForPaymentMethod:
             return "purchasers"
+        case .getTermsAndConditions(let supplierId, let retailerId):
+            return "purchasers/supplier/\(supplierId)/retailer/\(retailerId)/terms-and-conditions"
         case .updatePaymentMethod(let purchaserId, _):
             return "purchasers/\(purchaserId)/payment-method"
         }

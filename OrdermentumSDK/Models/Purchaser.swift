@@ -16,6 +16,7 @@ public struct PurchaserResponse {
 
 public struct Purchaser {
     public var id: String = ""
+    public var hasTerms: Bool = false
     public var reference: String = ""
     public var name: String = ""
     public var retailerName: String = ""
@@ -60,6 +61,18 @@ public struct Purchaser {
     public var createdAt: String = ""
     public var updatedAt: String = ""
     public var orderedAt: String = ""
+}
+
+public struct PurchaserTerms {
+    public init() {}
+    
+    public var id: String = ""
+    public var supplierId: String = ""
+    public var content: String = ""
+    public var createdAt: String = ""
+    public var updatedAt: String = ""
+    public var deletedAt: String = ""
+    public var supplier_id: String = ""
 }
 
 public struct PaymentMethodTypes {
@@ -222,6 +235,7 @@ extension Purchaser: Decodable {
         
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        hasTerms = try container.safeBoolDecode(forKey: .hasTerms) ?? false
         reference = try container.decodeIfPresent(String.self, forKey: .reference) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         retailerName = try container.decodeIfPresent(String.self, forKey: .retailerName) ?? ""
@@ -266,6 +280,22 @@ extension Purchaser: Decodable {
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
         orderedAt = try container.decodeIfPresent(String.self, forKey: .orderedAt) ?? ""
+    }
+}
+
+extension PurchaserTerms: Decodable {
+    public init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        //Decode Data
+        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        supplierId = try container.decodeIfPresent(String.self, forKey: .supplierId) ?? ""
+        content = try container.decodeIfPresent(String.self, forKey: .content) ?? ""
+        createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
+        updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
+        deletedAt = try container.decodeIfPresent(String.self, forKey: .deletedAt) ?? ""
+        supplier_id = try container.decodeIfPresent(String.self, forKey: .supplier_id) ?? ""
     }
 }
 
