@@ -58,13 +58,13 @@ public class PurchaserService {
      * Retrieve the terms and conditions belonging to a purchaser relationship
      * Returns a PurchaserTerms object
      */
-    public func getTermsAndConditions(supplierId: String, retailerId: String, completion: @escaping (Bool, PurchaserTerms?) -> ()) {
+    public func getTermsAndConditions(supplierId: String, retailerId: String, completion: @escaping (Bool, PurchaserTerms?, ErrorResponse?) -> ()) {
         //Build Route
         let route = PurchaserRouter.getTermsAndConditions(supplierId, retailerId) as URLRequestConvertible
         
         //Call API
-        Service<PurchaserTerms>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<PurchaserTerms, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -72,13 +72,13 @@ public class PurchaserService {
      * Accept the terms and conditions of a purchaser relationship
      * Returns a ResponseBody
      */
-    public func acceptTermsAndConditions(supplierId: String, retailerId: String, completion: @escaping (Bool) -> ()) {
+    public func acceptTermsAndConditions(supplierId: String, retailerId: String, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = PurchaserRouter.acceptTermsAndConditions(supplierId, retailerId) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
 }
