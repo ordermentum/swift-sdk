@@ -11,14 +11,14 @@ import Alamofire
 
 public class AppVersionService {
     public init() {}
-    public func checkVersion(completion: @escaping (Bool, AppVersion? ) -> ()) {
+    public func checkVersion(completion: @escaping (Bool, AppVersion? , ErrorResponse?) -> ()) {
         //Build Route
         do{
             let route = try Client.instance.urlRequest(path: "https://static.ordermentum.com/ios/manifest.json", method: .get, parameters: [:], body: nil) as URLRequestConvertible
             
             //Call API
-            Service<AppVersion>().request(route: route) { (result, responseObject) in
-                completion(result, responseObject)
+            Service<AppVersion>().request(route: route) { (result, responseObject, errorObject) in
+                completion(result, responseObject, errorObject)
             }
         }
         catch

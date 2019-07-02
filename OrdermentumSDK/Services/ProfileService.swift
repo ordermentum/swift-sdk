@@ -24,13 +24,13 @@ public class ProfileService {
      * Fetch the currently logged in users profile
      * Returns a UserProfile
      */
-    public func getProfile(completion: @escaping (Bool, UserProfile?) -> ()) {
+    public func getProfile(completion: @escaping (Bool, UserProfile?, ErrorResponse?) -> ()) {
         //Build Route
         let route = ProfileRouter.getProfile as URLRequestConvertible
         
         //Call API
-        Service<UserProfile>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<UserProfile>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -38,13 +38,13 @@ public class ProfileService {
      * Takes a Profile.UpdateUserRequest object and updates the logged in user.
      * Returns a response body which can be used to check for a 200 status which indicates a success.
      */
-    public func updateProfile(userId: String, requestObject: UpdateUserRequest, completion: @escaping (Bool) -> ()) {
+    public func updateProfile(userId: String, requestObject: UpdateUserRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = ProfileRouter.updateProfile(userId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
 }

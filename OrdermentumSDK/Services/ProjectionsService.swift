@@ -18,13 +18,13 @@ public class ProjectionsService {
      * timezone must be set using long form timezones, example: "Australia/Sydney"
      * Returns ProjectionResponse
      */
-    public func getProjections(purchaserId: String, startDate: String, timezone: String, completion: @escaping (Bool, ProjectionsResponse?) -> ()) {
+    public func getProjections(purchaserId: String, startDate: String, timezone: String, completion: @escaping (Bool, ProjectionsResponse?, ErrorResponse?) -> ()) {
         //Build Route
         let route = ProjectionsRouter.getProjections(purchaserId, startDate, timezone) as URLRequestConvertible
         
         //Call API
-        Service<ProjectionsResponse>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<ProjectionsResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -32,13 +32,13 @@ public class ProjectionsService {
      * Fetch a single order belonging to a Projection object
      * Returns an Order
      */
-    public func getOrder(orderId: String, completion: @escaping (Bool, Order?) -> ()) {
+    public func getOrder(orderId: String, completion: @escaping (Bool, Order?, ErrorResponse?) -> ()) {
         //Build Route
         let route = ProjectionsRouter.getOrder(orderId) as URLRequestConvertible
         
         //Call API
-        Service<Order>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<Order>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -46,13 +46,13 @@ public class ProjectionsService {
      * Cancel a single order
      * Returns a ResponseBody which can be used to check for a 200 response code
      */
-    public func cancelOrder(purchaserScheduleId:String, date: String, completion: @escaping (Bool) -> ()) {
+    public func cancelOrder(purchaserScheduleId:String, date: String, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = ProjectionsRouter.cancelOrder(purchaserScheduleId, date) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
     
@@ -60,13 +60,13 @@ public class ProjectionsService {
      * Cancel all orders belonging to a given PurchaserScheduleId
      * Returns a ResponseBody which can be used to check for a 200 response code
      */
-    public func deleteOrder(purchaserScheduleId: String, requestObject: ProjectionDeleteRequest, completion: @escaping (Bool) -> ()) {
+    public func deleteOrder(purchaserScheduleId: String, requestObject: ProjectionDeleteRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = ProjectionsRouter.deleteOrder(purchaserScheduleId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
     
@@ -74,13 +74,13 @@ public class ProjectionsService {
      * Reinstates a cancelled order
      * Returns a ResponseBody which can be used to check for a 200 response code
      */
-    public func reinstateOrder(purchaserScheduleId: String, requestObject: ProjectionReinstateRequest, completion: @escaping (Bool) -> ()) {
+    public func reinstateOrder(purchaserScheduleId: String, requestObject: ProjectionReinstateRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = ProjectionsRouter.reinstateOrder(purchaserScheduleId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
 }

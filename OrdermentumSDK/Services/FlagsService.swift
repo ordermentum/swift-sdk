@@ -16,13 +16,13 @@ public class FlagsService {
      * Get the flags belonging to a retailer/supplier relationship
      * Returns a Flags object
      */
-    public func getFlags(flagsArray: [String], supplierIdArray: [String], retailerId: String, userId: String, completion: @escaping (Bool, Flags?) -> ()) {
+    public func getFlags(flagsArray: [String], supplierIdArray: [String], retailerId: String, userId: String, completion: @escaping (Bool, Flags?, ErrorResponse?) -> ()) {
         //Build Route
         let route = FlagsRouter.getFlags(flagsArray, supplierIdArray, retailerId, userId) as URLRequestConvertible
         
         //Call API
-        Service<Flags>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<Flags>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
 }

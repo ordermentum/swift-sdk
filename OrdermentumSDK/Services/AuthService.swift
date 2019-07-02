@@ -16,12 +16,12 @@ public class AuthService {
      * Login to the Ordermentum service.
      * Returns a Login object
      */
-    public func login(_ requestObject: LoginRequest, completion: @escaping (Bool, Login?) -> ()) {
+    public func login(_ requestObject: LoginRequest, completion: @escaping (Bool, Login?, ErrorResponse?) -> ()) {
         //Build Route
         let route = AuthRouter.login(requestObject) as URLRequestConvertible
         //Call API
-        Service<Login>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<Login>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -29,13 +29,13 @@ public class AuthService {
      * Request a password reset email be sent to the specified user.
      * Returns a response body which can be used to check for a 200 status which indicates a success.
      */
-    public func requestPasswordReset(_ requestObject: ForgotPasswordRequest, completion: @escaping (Bool) -> ()) {
+    public func requestPasswordReset(_ requestObject: ForgotPasswordRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = AuthRouter.requestPasswordReset(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
     
@@ -43,13 +43,13 @@ public class AuthService {
      * Change the password for the logged in user.
      * Returns 'success' as true (bool value) when successful and a 'message' (string) when failure occurs
      */
-    public func changePassword(userId: String, requestObject: ChangePasswordRequest, completion: @escaping (Bool, ChangePassword?) -> ()) {
+    public func changePassword(userId: String, requestObject: ChangePasswordRequest, completion: @escaping (Bool, ChangePassword?, ErrorResponse?) -> ()) {
         //Build Route
         let route = AuthRouter.changePassword(userId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<ChangePassword>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<ChangePassword>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -57,13 +57,13 @@ public class AuthService {
      * Reset the password of a user using a password reset token
      * Returns a ResponseBody which can be used to check for a 200 response code
      */
-    public func resetPassword(resetToken: String, requestObject: ResetPasswordRequest, completion: @escaping (Bool) -> ()) {
+    public func resetPassword(resetToken: String, requestObject: ResetPasswordRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = AuthRouter.resetPassword(resetToken, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
     
@@ -71,13 +71,13 @@ public class AuthService {
      * Registers a user account on the Ordermentum retailer platform.
      * Returns a SignUpResponse
      */
-    public func registerUser(requestObject: SignUpRequest, completion: @escaping (Bool, SignUpResponse?) -> ()) {
+    public func registerUser(requestObject: SignUpRequest, completion: @escaping (Bool, SignUpResponse?, ErrorResponse?) -> ()) {
         //Build Route
         let route = AuthRouter.registerUser(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<SignUpResponse>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<SignUpResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -85,13 +85,13 @@ public class AuthService {
      * Verify an account using a token
      * Returns a response to check for success or fail
      */
-    public func verifyEmail(_ passwordResetToken: String, completion: @escaping (Bool) -> ()) {
+    public func verifyEmail(_ passwordResetToken: String, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = AuthRouter.verifyEmail(passwordResetToken) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
 
@@ -99,13 +99,13 @@ public class AuthService {
      * Sends an email verification to the supplied email address.
      * Returns if Success or Fail
      */
-    public func resendVerifyEmail(_ requestObject: ResendVerifyEmailRequest, completion: @escaping (Bool) -> ()) {
+    public func resendVerifyEmail(_ requestObject: ResendVerifyEmailRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = AuthRouter.resendVerifyEmail(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
 }

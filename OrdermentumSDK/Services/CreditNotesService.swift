@@ -16,13 +16,13 @@ public class CreditNotesService {
      * Get the credit notes belonging to a purchaser
      * Returns a CreditNotesResponse
      */
-    public func getCreditNotes(purchaserId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, CreditNotesResponse?) -> ()) {
+    public func getCreditNotes(purchaserId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, CreditNotesResponse?, ErrorResponse?) -> ()) {
         //Build Route
         let route = CreditNotesRouter.getCreditNotes(purchaserId, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<CreditNotesResponse>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<CreditNotesResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
 }

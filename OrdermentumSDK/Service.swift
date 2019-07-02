@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class Service<D: Decodable> {
-    func request(route: URLRequestConvertible, completion: @escaping (Bool, D?) -> ()) {
+    func request(route: URLRequestConvertible, completion: @escaping (Bool, D?, ErrorResponse?) -> ()) {
         AF.request(route)
             .validate()
             .responseJSON { response in
@@ -18,19 +18,29 @@ class Service<D: Decodable> {
                 case .success:
                     do {
                         guard let responseData = response.data else {
-                            completion(true, nil)
+                            completion(true, nil, nil)
                             return
                         }
                         print(responseData.utf8String())
                         let responseObject = try JSONDecoder().decode(D.self, from: responseData)
-                        completion(true, responseObject)
+                        completion(true, responseObject, nil)
                     } catch {
-                        completion(true, nil)
+                        completion(true, nil, nil)
                     }
                     break
                     
                 case .failure:
-                    completion(false, nil)
+                    do {
+                        guard let responseData = response.data else {
+                            completion(false, nil, nil)
+                            return
+                        }
+                        print(responseData.utf8String())
+                        let errorObject = try JSONDecoder().decode(ErrorResponse.self, from: responseData)
+                        completion(true, nil, errorObject)
+                    } catch {
+                        completion(true, nil, nil)
+                    }
                     break
                 }
         }

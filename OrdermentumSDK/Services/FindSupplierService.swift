@@ -16,13 +16,13 @@ public class FindSupplierService {
      * Get suppliers available based on search string
      * Returns a FindSupplierResponse
      */
-    public func getSuppliers(searchString: String, pageSize: Int, retailerId: String, completion: @escaping (Bool, FindSupplierResponse?) -> ()) {
+    public func getSuppliers(searchString: String, pageSize: Int, retailerId: String, completion: @escaping (Bool, FindSupplierResponse?, ErrorResponse?) -> ()) {
         //Build Route
         let route = FindSupplierRouter.getSuppliers(searchString, pageSize, retailerId) as URLRequestConvertible
         
         //Call API
-        Service<FindSupplierResponse>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<FindSupplierResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -30,13 +30,13 @@ public class FindSupplierService {
      * Send an enquiry requesting that a retailer be joined with a supplier
      * Returns a response body which can be used to check for a 200 response
      */
-    public func sendSupplierEnquiry(_ requestObject: FindSupplierRequest, completion: @escaping (Bool) -> ()) {
+    public func sendSupplierEnquiry(_ requestObject: FindSupplierRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = FindSupplierRouter.sendSupplierEnquiry(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
     
@@ -44,13 +44,13 @@ public class FindSupplierService {
      * Send an enquiry requesting that a supplier be added to the Ordermentum network
      * Returns a response body which can be used to check for a 200 response
      */
-    public func sendSupplierReferral(_ requestObject: FindSupplierReferralRequest, completion: @escaping (Bool) -> ()) {
+    public func sendSupplierReferral(_ requestObject: FindSupplierReferralRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = FindSupplierRouter.sendSupplierReferral(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
 }
