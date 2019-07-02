@@ -53,11 +53,12 @@ public class Client {
         let timeoutSeconds: Int = 10
         
         //Build Request
-        var request = URLRequest(url: url.appendingPathComponent(path)) 
+        var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
+        request.httpBody = body?.toJSONData()
         
         //Set Token
         if !token.isEmpty {
@@ -65,14 +66,9 @@ public class Client {
         }
         
         //Set Conditional Body
-        switch method {
-        case .get, .delete:
-            return try URLEncoding(destination: .queryString,
-                                   arrayEncoding: .brackets,
-                                   boolEncoding: .literal).encode(request, with: parameters)
-        default:
-            return try JSONEncoding.default.encode(request, with: body?.toParameters())
-        }
+        return try URLEncoding(destination: .queryString,
+                               arrayEncoding: .brackets,
+                               boolEncoding: .literal).encode(request, with: parameters)
     }
 }
 
