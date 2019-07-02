@@ -128,6 +128,7 @@ enum CodingKeys: String, CodingKey {
     case contactEmail
     case contactFirstName
     case contactLastName
+    case content
     case corporateEntity
     case cost
     case country
@@ -213,6 +214,7 @@ enum CodingKeys: String, CodingKey {
     case gst
     case hasAvailableDeliveries
     case hasScheduledOrder
+    case hasTerms
     case height
     case id
     case images
