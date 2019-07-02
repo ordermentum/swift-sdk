@@ -21,7 +21,7 @@ public class RecommendedSuppliersService {
         let route = RecommendedSuppliersRouter.getRecommendedSuppliers(retailerId) as URLRequestConvertible
         
         //Call API
-        Service<RecommendedSupplierResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<RecommendedSupplierResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class RecommendedSuppliersService {
         let route = RecommendedSuppliersRouter.getTopRecommendedSuppliers(retailerId) as URLRequestConvertible
         
         //Call API
-        Service<RecommendedSupplierTopResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<RecommendedSupplierTopResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }

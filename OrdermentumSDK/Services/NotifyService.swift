@@ -21,7 +21,7 @@ public class NotifyService {
         let route = NotifyRouter.registerDevice(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<FindSupplierResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<FindSupplierResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

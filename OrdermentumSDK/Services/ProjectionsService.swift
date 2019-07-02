@@ -23,7 +23,7 @@ public class ProjectionsService {
         let route = ProjectionsRouter.getProjections(purchaserId, startDate, timezone) as URLRequestConvertible
         
         //Call API
-        Service<ProjectionsResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ProjectionsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -37,7 +37,7 @@ public class ProjectionsService {
         let route = ProjectionsRouter.getOrder(orderId) as URLRequestConvertible
         
         //Call API
-        Service<Order>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Order, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -51,7 +51,7 @@ public class ProjectionsService {
         let route = ProjectionsRouter.cancelOrder(purchaserScheduleId, date) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -65,7 +65,7 @@ public class ProjectionsService {
         let route = ProjectionsRouter.deleteOrder(purchaserScheduleId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -79,7 +79,7 @@ public class ProjectionsService {
         let route = ProjectionsRouter.reinstateOrder(purchaserScheduleId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

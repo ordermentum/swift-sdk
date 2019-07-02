@@ -17,7 +17,7 @@ public class AppVersionService {
             let route = try Client.instance.urlRequest(path: "https://static.ordermentum.com/ios/manifest.json", method: .get, parameters: [:], body: nil) as URLRequestConvertible
             
             //Call API
-            Service<AppVersion>().request(route: route) { (result, responseObject, errorObject) in
+            Service<AppVersion, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
                 completion(result, responseObject, errorObject)
             }
         }

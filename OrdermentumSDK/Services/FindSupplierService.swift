@@ -21,7 +21,7 @@ public class FindSupplierService {
         let route = FindSupplierRouter.getSuppliers(searchString, pageSize, retailerId) as URLRequestConvertible
         
         //Call API
-        Service<FindSupplierResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<FindSupplierResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class FindSupplierService {
         let route = FindSupplierRouter.sendSupplierEnquiry(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -49,7 +49,7 @@ public class FindSupplierService {
         let route = FindSupplierRouter.sendSupplierReferral(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

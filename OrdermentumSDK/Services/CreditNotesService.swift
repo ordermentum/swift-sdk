@@ -21,7 +21,7 @@ public class CreditNotesService {
         let route = CreditNotesRouter.getCreditNotes(purchaserId, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<CreditNotesResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<CreditNotesResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }

@@ -22,7 +22,7 @@ public class ValidationService {
         let route = ValidationRouter.validateItems(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<Validation>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Validation, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }

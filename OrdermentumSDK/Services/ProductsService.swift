@@ -21,7 +21,7 @@ public class ProductsService {
         let route = ProductsRouter.getProductCategories(retailerId, supplierId, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<CategoryResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<CategoryResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class ProductsService {
         let route = ProductsRouter.getCategory(categoryId, retailerId, supplierId ) as URLRequestConvertible
         
         //Call API
-        Service<CategoryResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<CategoryResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -49,7 +49,7 @@ public class ProductsService {
         let route = ProductsRouter.getProducts(categoryId, retailerId, supplierId, visible, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<ProductResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -63,7 +63,7 @@ public class ProductsService {
         let route = ProductsRouter.getMostOrderedProducts(retailerId, supplierId, visible, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<ProductResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -77,7 +77,7 @@ public class ProductsService {
         let route = ProductsRouter.getTrendingProducts(retailerId, supplierId, visible, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<ProductResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -91,7 +91,7 @@ public class ProductsService {
         let route = ProductsRouter.getRecommendedProducts(retailerId, supplierId, pageSize, excludedProductIdsArray) as URLRequestConvertible
 
         //Call API
-        Service<ProductResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -105,7 +105,7 @@ public class ProductsService {
         let route = ProductsRouter.searchProducts(search, retailerId, supplierId, visible, pageSize) as URLRequestConvertible
         
         //Call API
-        Service<ProductResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }

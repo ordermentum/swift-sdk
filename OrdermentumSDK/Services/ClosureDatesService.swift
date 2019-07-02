@@ -21,7 +21,7 @@ public class ClosureDatesService {
         let route = ClosurePeriodsRouter.getClosurePeriods(retailerId, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<ClosurePeriodsResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ClosurePeriodsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class ClosureDatesService {
         let route = ClosurePeriodsRouter.createClosurePeriod(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<ClosurePeriodsResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ClosurePeriodsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -49,7 +49,7 @@ public class ClosureDatesService {
         let route = ClosurePeriodsRouter.updateClosurePeriod(closurePeriodId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -63,7 +63,7 @@ public class ClosureDatesService {
         let route = ClosurePeriodsRouter.deleteClosurePeriod(closurePeriodId) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

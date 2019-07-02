@@ -29,7 +29,7 @@ public class ProfileService {
         let route = ProfileRouter.getProfile as URLRequestConvertible
         
         //Call API
-        Service<UserProfile>().request(route: route) { (result, responseObject, errorObject) in
+        Service<UserProfile, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -43,7 +43,7 @@ public class ProfileService {
         let route = ProfileRouter.updateProfile(userId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

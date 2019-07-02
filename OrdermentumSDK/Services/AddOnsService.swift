@@ -21,7 +21,7 @@ public class AddOnsService {
         let route = AddOnsRouter.searchAddons(entityType, entityId) as URLRequestConvertible
         
         //Call API
-        Service<[AddOn]>().request(route: route) { (result, responseObject, errorObject) in
+        Service<[AddOn], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class AddOnsService {
         let route = AddOnsRouter.discoverAddons(entityType, entityId) as URLRequestConvertible
         
         //Call API
-        Service<[AddOnsDiscover]>().request(route: route) { (result, responseObject, errorObject) in
+        Service<[AddOnsDiscover], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -49,7 +49,7 @@ public class AddOnsService {
         let route = AddOnsRouter.readAddon(addonId, accountId) as URLRequestConvertible
         
         //Call API
-        Service<AddOn>().request(route: route) { (result, responseObject, errorObject) in
+        Service<AddOn, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -63,7 +63,7 @@ public class AddOnsService {
         let route = AddOnsRouter.updateAddon(addonId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<AddOn>().request(route: route) { (result, responseObject, errorObject) in
+        Service<AddOn, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -77,7 +77,7 @@ public class AddOnsService {
         let route = AddOnsRouter.disconnectAddon(addonId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

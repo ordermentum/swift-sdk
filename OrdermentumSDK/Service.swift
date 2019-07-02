@@ -9,8 +9,8 @@
 import Foundation
 import Alamofire
 
-class Service<D: Decodable> {
-    func request(route: URLRequestConvertible, completion: @escaping (Bool, D?, ErrorResponse?) -> ()) {
+class Service<D: Decodable, E: Decodable> {
+    func request(route: URLRequestConvertible, completion: @escaping (Bool, D?, E?) -> ()) {
         AF.request(route)
             .validate()
             .responseJSON { response in
@@ -36,7 +36,7 @@ class Service<D: Decodable> {
                             return
                         }
                         print(responseData.utf8String())
-                        let errorObject = try JSONDecoder().decode(ErrorResponse.self, from: responseData)
+                        let errorObject = try JSONDecoder().decode(E.self, from: responseData)
                         completion(true, nil, errorObject)
                     } catch {
                         completion(true, nil, nil)

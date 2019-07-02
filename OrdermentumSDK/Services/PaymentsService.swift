@@ -21,7 +21,7 @@ public class PaymentsService {
         let route = PaymentsRouter.getPaymentMethods(retailerId) as URLRequestConvertible
         
         //Call API
-        Service<[PaymentMethod]>().request(route: route) { (result, responseObject, errorObject) in
+        Service<[PaymentMethod], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class PaymentsService {
         let route = PaymentsRouter.getSinglePaymentMethod(retailerId, paymentMethodId) as URLRequestConvertible
         
         //Call API
-        Service<PaymentMethod>().request(route: route) { (result, responseObject, errorObject) in
+        Service<PaymentMethod, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -49,7 +49,7 @@ public class PaymentsService {
         //Build Route
         let route = PaymentsRouter.createCardPaymentMethod(retailerId, requestObject) as URLRequestConvertible
         //Call API
-        Service<PaymentMethod>().request(route: route) { (result, responseObject, errorObject) in
+        Service<PaymentMethod, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -64,7 +64,7 @@ public class PaymentsService {
         let route = PaymentsRouter.createDebitPaymentMethod(retailerId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<PaymentMethod>().request(route: route) { (result, responseObject, errorObject) in
+        Service<PaymentMethod, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -78,7 +78,7 @@ public class PaymentsService {
         let route = PaymentsRouter.deletePaymentMethod(retailerId, paymentMethodId) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

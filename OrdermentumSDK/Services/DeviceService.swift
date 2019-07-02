@@ -21,7 +21,7 @@ public class DeviceService {
         let route = DeviceRouter.registerDevice(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<DataAttributesResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<DataAttributesResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class DeviceService {
         let route = DeviceRouter.unregisterDevice(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -49,7 +49,7 @@ public class DeviceService {
         let route = DataAttributesRouter.updateVenueOperations(retailerId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

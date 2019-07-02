@@ -21,7 +21,7 @@ public class MarketplaceService {
         let route = MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<MarketplaceResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<MarketplaceResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }

@@ -22,7 +22,7 @@ public class NPSService {
         let route = NPSRouter.getNPS as URLRequestConvertible
         
         //Call API
-        Service<NPSResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<NPSResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -36,7 +36,7 @@ public class NPSService {
         let route = NPSRouter.sendFeedback(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

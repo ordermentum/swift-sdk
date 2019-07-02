@@ -21,7 +21,7 @@ public class PurchaserService {
         let route = PurchaserRouter.getPurchasers(retailerId, supplierId) as URLRequestConvertible
         
         //Call API
-        Service<PurchaserResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<PurchaserResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class PurchaserService {
         let route = PurchaserRouter.getPurchasersForPaymentMethod(retailerId, paymentMethodType) as URLRequestConvertible
         
         //Call API
-        Service<PurchaserResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<PurchaserResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -49,7 +49,7 @@ public class PurchaserService {
         let route = PurchaserRouter.updatePaymentMethod(purchaserId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

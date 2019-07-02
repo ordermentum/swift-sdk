@@ -21,7 +21,7 @@ public class NotificationsService {
         let route = NotificationsRouter.updateNotificationSetting(userId, supplierId, updateObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class NotificationsService {
         let route = NotificationsRouter.updateAllNotificationSettings(userId, updateObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

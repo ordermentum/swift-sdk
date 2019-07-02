@@ -21,7 +21,7 @@ public class ExperimentsService {
         let route = ExperimentsRouter.getExperiments(slot, source, version, retailerId, isRetailer, userId, supplierIds) as URLRequestConvertible
         
         //Call API
-        Service<ExperimentsResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ExperimentsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class ExperimentsService {
         let route = ExperimentsRouter.dismissExperiment(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<ExperimentsResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ExperimentsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

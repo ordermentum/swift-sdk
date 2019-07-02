@@ -21,7 +21,7 @@ public class VenueService {
         let route = VenueRouter.getVenues(retailerIdsArray, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<VenueResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<VenueResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class VenueService {
         let route = VenueRouter.createVenue(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<CreateVenueResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<CreateVenueResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject?.retailer, errorObject)
         }
     }
@@ -49,7 +49,7 @@ public class VenueService {
         let route = VenueRouter.updateVenueProfile(retailerId, venueProfile) as URLRequestConvertible
         
         //Call API
-        Service<VenueProfile>().request(route: route) { (result, responseObject, errorObject) in
+        Service<VenueProfile, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -63,7 +63,7 @@ public class VenueService {
         let route = VenueRouter.getProfileCompletion(retailerId) as URLRequestConvertible
         
         //Call API
-        Service<Completion>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Completion, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -77,7 +77,7 @@ public class VenueService {
         let route = VenueRouter.getVenueInvites(recipientEmail) as URLRequestConvertible
         
         //Call API
-        Service<[VenueInvite]>().request(route: route) { (result, responseObject, errorObject) in
+        Service<[VenueInvite], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -91,7 +91,7 @@ public class VenueService {
         let route = VenueRouter.sendVenueInvite(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<AddUserResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<AddUserResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -105,7 +105,7 @@ public class VenueService {
         let route = VenueRouter.acceptAllInvites as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -119,7 +119,7 @@ public class VenueService {
         let route = VenueRouter.joinVenue(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -133,7 +133,7 @@ public class VenueService {
         let route = VenueRouter.getUsers(retailerId) as URLRequestConvertible
         
         //Call API
-        Service<VenueUsersResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<VenueUsersResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -147,7 +147,7 @@ public class VenueService {
         let route = VenueRouter.removeUser(userId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -161,7 +161,7 @@ public class VenueService {
         let route = VenueRouter.searchVenue(searchQuery) as URLRequestConvertible
         
         //Call API
-        Service<VenueSearchResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<VenueSearchResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -175,7 +175,7 @@ public class VenueService {
         let route = VenueRouter.getPendingVenues as URLRequestConvertible
         
         //Call API
-        Service<VenueInviteResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<VenueInviteResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }

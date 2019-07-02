@@ -21,7 +21,7 @@ public class FlagsService {
         let route = FlagsRouter.getFlags(flagsArray, supplierIdArray, retailerId, userId) as URLRequestConvertible
         
         //Call API
-        Service<Flags>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Flags, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }

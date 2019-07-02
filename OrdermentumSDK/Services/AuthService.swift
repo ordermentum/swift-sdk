@@ -20,7 +20,7 @@ public class AuthService {
         //Build Route
         let route = AuthRouter.login(requestObject) as URLRequestConvertible
         //Call API
-        Service<Login>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Login, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -34,7 +34,7 @@ public class AuthService {
         let route = AuthRouter.requestPasswordReset(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -48,7 +48,7 @@ public class AuthService {
         let route = AuthRouter.changePassword(userId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<ChangePassword>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ChangePassword, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -62,7 +62,7 @@ public class AuthService {
         let route = AuthRouter.resetPassword(resetToken, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -76,7 +76,7 @@ public class AuthService {
         let route = AuthRouter.registerUser(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<SignUpResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<SignUpResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -90,7 +90,7 @@ public class AuthService {
         let route = AuthRouter.verifyEmail(passwordResetToken) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -104,7 +104,7 @@ public class AuthService {
         let route = AuthRouter.resendVerifyEmail(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

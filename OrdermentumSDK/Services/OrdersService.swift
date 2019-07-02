@@ -21,7 +21,7 @@ public class OrdersService {
         let route = OrdersRouter.submitOrder(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<Order>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Order, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class OrdersService {
         let route = OrdersRouter.submitStandingOrder(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<Order>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Order, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -49,7 +49,7 @@ public class OrdersService {
         let route = OrdersRouter.getDeliveryDates(retailerId, supplierId) as URLRequestConvertible
         
         //Call API
-        Service<[String]>().request(route: route) { (result, responseObject, errorObject) in
+        Service<[String], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -63,7 +63,7 @@ public class OrdersService {
         let route = OrdersRouter.getOrders(retailerId, supplierId, sortBy) as URLRequestConvertible
         
         //Call API
-        Service<OrderResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<OrderResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -77,7 +77,7 @@ public class OrdersService {
         let route = OrdersRouter.getOrdersByDeliveryDate(retailerId, supplierId, sortBy) as URLRequestConvertible
         
         //Call API
-        Service<OrderResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<OrderResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -91,7 +91,7 @@ public class OrdersService {
         let route = OrdersRouter.removeFavourite(orderId) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -106,7 +106,7 @@ public class OrdersService {
         let route = OrdersRouter.getFavourites(retailerId, supplierId, type, sortBy, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<OrderResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<OrderResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -122,7 +122,7 @@ public class OrdersService {
         let route = OrdersRouter.getClassicStandingOrders(retailerId, supplierId, enabled, sortBy) as URLRequestConvertible
         
         //Call API
-        Service<ClassicStandingOrderResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ClassicStandingOrderResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -136,7 +136,7 @@ public class OrdersService {
         let route = OrdersRouter.updateOrderFirstTime(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -151,7 +151,7 @@ public class OrdersService {
         let route = OrdersRouter.updateOrder(orderId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -165,7 +165,7 @@ public class OrdersService {
         let route = OrdersRouter.createFavouriteOrder(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<Order>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Order, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -179,7 +179,7 @@ public class OrdersService {
         let route = OrdersRouter.scheduleOrder(purchaserScheduleId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<ClassicStandingOrder>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ClassicStandingOrder, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }

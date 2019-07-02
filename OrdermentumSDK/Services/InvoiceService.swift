@@ -21,7 +21,7 @@ public class InvoiceService {
         let route = InvoiceRouter.getInvoices(supplierId, retailerId, sortBy, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<InvoiceResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<InvoiceResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -35,7 +35,7 @@ public class InvoiceService {
         let route = InvoiceRouter.getInvoice(invoiceId) as URLRequestConvertible
         
         //Call API
-        Service<Invoice>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Invoice, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -49,7 +49,7 @@ public class InvoiceService {
         let route = InvoiceRouter.exportInvoice(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<ExportResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ExportResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -63,7 +63,7 @@ public class InvoiceService {
         let route = InvoiceRouter.downloadInvoice(invoiceId) as URLRequestConvertible
         
         //Call API
-        Service<ExportResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ExportResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -77,7 +77,7 @@ public class InvoiceService {
         let route = InvoiceRouter.applyPayment(invoiceId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
