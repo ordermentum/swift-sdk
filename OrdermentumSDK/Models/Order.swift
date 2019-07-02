@@ -248,7 +248,7 @@ public struct CreatePurchaserSchedule: Codable {
     public var orderId: String = ""
     public var place: Bool = true
     public var retailerId: String = ""
-    public var startDate: String = ""
+    public var startDate: String?
     public var supplierId: String = ""
 }
 
