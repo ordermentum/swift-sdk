@@ -16,7 +16,6 @@ public struct PurchaserResponse {
 
 public struct Purchaser {
     public var id: String = ""
-    public var hasTerms: Bool = false
     public var reference: String = ""
     public var name: String = ""
     public var retailerName: String = ""
@@ -162,6 +161,7 @@ public struct PurchaserSettings {
 
 public struct PurchaserProperties {
     public var demoSupplier: Bool = false
+    public var hasTerms: Bool = false
 }
 
 public struct PriceGroup {
@@ -235,7 +235,6 @@ extension Purchaser: Decodable {
         
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
-        hasTerms = try container.safeBoolDecode(forKey: .hasTerms) ?? false
         reference = try container.decodeIfPresent(String.self, forKey: .reference) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         retailerName = try container.decodeIfPresent(String.self, forKey: .retailerName) ?? ""
@@ -439,6 +438,7 @@ extension PurchaserProperties: Decodable {
         
         //Decode Data
         demoSupplier = try container.safeBoolDecode(forKey: .demoSupplier) ?? false
+        hasTerms = try container.safeBoolDecode(forKey: .hasTerms) ?? false
     }
 }
 
