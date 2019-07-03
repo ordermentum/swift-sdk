@@ -216,6 +216,13 @@ public struct FreightGroup {
     public var user_id: String = ""
 }
 
+public struct CreatePurchaserRequest: Codable {
+    public init() {}
+    
+    public var supplierId: String = ""
+    public var retailerId: String = ""
+}
+
 extension PurchaserResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
