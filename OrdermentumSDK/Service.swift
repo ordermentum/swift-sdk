@@ -21,7 +21,6 @@ class Service<D: Decodable> {
                             completion(true, nil)
                             return
                         }
-                        print(responseData.utf8String())
                         let responseObject = try JSONDecoder().decode(D.self, from: responseData)
                         completion(true, responseObject)
                     } catch {
