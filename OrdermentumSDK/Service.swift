@@ -29,7 +29,12 @@ class Service<D: Decodable> {
                     break
                     
                 case .failure:
-                    completion(false, nil)
+                    //This catches successful requests that return an empty body. Alamofire has a known limitation where it will fail when .validate() is added to a request with an "Accept" header.
+                    if (200 ... 299).contains(response.response?.statusCode ?? 0) {
+                        completion(true, nil)
+                    } else {
+                        completion(false, nil)
+                    }
                     break
                 }
         }
