@@ -54,6 +54,7 @@ public struct CreateCardPaymentMethodRequest: Codable {
     public var defaultPayment: Bool = false
     public var defaultAll: Bool = false
     public var userId: String = ""
+    public var user_id: String = ""
 }
 
 public struct CreateDirectDebitPaymentMethodRequest: Codable {
@@ -70,6 +71,7 @@ public struct CreateDirectDebitPaymentMethodRequest: Codable {
     public var defaultAll: Bool = false
     public var terms: Bool = true
     public var userId: String = ""
+    public var user_id: String = ""
 }
 
 extension PaymentMethod: Decodable {
