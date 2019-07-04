@@ -51,6 +51,7 @@ public struct CreateCardPaymentMethodRequest: Codable {
     public var expiryYear: String = ""
     public var cvv: String = ""
     public var isDirect: Bool = false
+    public var defaultPayment: Bool = false
     public var defaultAll: Bool = false
     public var userId: String = ""
 }
@@ -65,6 +66,7 @@ public struct CreateDirectDebitPaymentMethodRequest: Codable {
     public var type: String = ""
     public var country: String = ""
     public var currency: String = ""
+    public var defaultPayment: Bool = false
     public var defaultAll: Bool = false
     public var terms: Bool = true
     public var userId: String = ""
