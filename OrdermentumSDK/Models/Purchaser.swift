@@ -162,6 +162,8 @@ public struct PurchaserSettings {
 public struct PurchaserProperties {
     public var demoSupplier: Bool = false
     public var hasTerms: Bool = false
+    public var setupComplete: Bool = false
+    public var marketplacePurchaser: Bool = false
 }
 
 public struct PriceGroup {
@@ -446,7 +448,10 @@ extension PurchaserProperties: Decodable {
         //Decode Data
         demoSupplier = try container.safeBoolDecode(forKey: .demoSupplier) ?? false
         hasTerms = try container.safeBoolDecode(forKey: .hasTerms) ?? false
+        setupComplete = try container.safeBoolDecode(forKey: .setupComplete) ?? false
+        marketplacePurchaser = try container.safeBoolDecode(forKey: .marketplacePurchaser) ?? false
     }
+    
 }
 
 extension PriceGroup: Decodable {
