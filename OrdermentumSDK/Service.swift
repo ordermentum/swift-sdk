@@ -21,7 +21,6 @@ class Service<D: Decodable, E: Decodable> {
                             completion(true, nil, nil)
                             return
                         }
-                        print(responseData.utf8String())
                         let responseObject = try JSONDecoder().decode(D.self, from: responseData)
                         completion(true, responseObject, nil)
                     } catch {
@@ -30,19 +29,24 @@ class Service<D: Decodable, E: Decodable> {
                     break
                     
                 case .failure:
-                    do {
-                        guard let responseData = response.data else {
-                            completion(false, nil, nil)
-                            return
-                        }
-                        print(responseData.utf8String())
-                        let errorObject = try JSONDecoder().decode(E.self, from: responseData)
-                        completion(true, nil, errorObject)
-                    } catch {
+                    //This catches successful requests that return an empty body. Alamofire has a known limitation where it will fail when .validate() is added to a request with an "Accept" header.
+                    if (200 ... 299).contains(response.response?.statusCode ?? 0) {
                         completion(true, nil, nil)
+                    } else {
+                        do {
+                            guard let responseData = response.data else {
+                                completion(false, nil, nil)
+                                return
+                            }
+                            print(responseData.utf8String())
+                            let errorObject = try JSONDecoder().decode(E.self, from: responseData)
+                            completion(true, nil, errorObject)
+                        } catch {
+                            completion(true, nil, nil)
                     }
                     break
                 }
+            }
         }
     }
 }

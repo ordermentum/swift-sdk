@@ -36,6 +36,8 @@ public struct RecommendedSupplier {
     public var sortOrder: Int = 0
     public var supplierId: String = ""
     public var tradingName: String = ""
+    public var autoConnect: Bool = false
+    public var marketplaceSupplier: Bool = false
 }
 
 public struct RecommendedSupplierDataAttributes {
@@ -74,8 +76,10 @@ extension RecommendedSupplierCategory: Decodable {
 extension RecommendedSupplier: Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        autoConnect = try container.safeBoolDecode(forKey: .autoConnect) ?? false
         dataAttributes = try container.decodeIfPresent(RecommendedSupplierDataAttributes.self, forKey: .dataAttributes) ?? RecommendedSupplierDataAttributes()
         logo = try container.decodeIfPresent(Image.self, forKey: .logo) ?? Image()
+        marketplaceSupplier = try container.safeBoolDecode(forKey: .marketplaceSupplier) ?? false
         phone = try container.decodeIfPresent(String.self, forKey: .phone) ?? ""
         sortOrder = try container.safeIntDecode(forKey: .sortOrder) ?? 0
         supplierId = try container.decodeIfPresent(String.self, forKey: .supplierId) ?? ""

@@ -75,6 +75,7 @@ enum CodingKeys: String, CodingKey {
     case alias
     case approvedByName
     case attacheXml
+    case autoConnect
     case availableDeliveries
     case bankConfigured
     case banking
@@ -268,6 +269,7 @@ enum CodingKeys: String, CodingKey {
     case locked
     case longitude
     case looseCount
+    case marketplaceSupplier
     case maskedNumber
     case message
     case minQuantity
