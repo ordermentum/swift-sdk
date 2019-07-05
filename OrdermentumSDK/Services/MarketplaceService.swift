@@ -16,13 +16,13 @@ public class MarketplaceService {
      * Fetch the marketplaces for a selected retailer
      * Returns a Marketplace object
      */
-    public func getMarketplaces(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, MarketplaceResponse?) -> ()) {
+    public func getMarketplaces(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, MarketplaceResponse?, ErrorResponse?) -> ()) {
         //Build Route
         let route = MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<MarketplaceResponse>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<MarketplaceResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
 }

@@ -16,13 +16,13 @@ public class PaymentsService {
      * Fetch the payment methods belonging to a retailer
      * Returns an array of PaymentMethod
      */
-    public func getPaymentMethods(retailerId: String, completion: @escaping (Bool, [PaymentMethod]?) -> ()) {
+    public func getPaymentMethods(retailerId: String, completion: @escaping (Bool, [PaymentMethod]?, ErrorResponse?) -> ()) {
         //Build Route
         let route = PaymentsRouter.getPaymentMethods(retailerId) as URLRequestConvertible
         
         //Call API
-        Service<[PaymentMethod]>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<[PaymentMethod], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -30,13 +30,13 @@ public class PaymentsService {
      * Fetch a single payment method belonging to a retailer
      * Returns a PaymentMethod
      */
-    public func getSinglePaymentMethod(retailerId: String, paymentMethodId: String, completion: @escaping (Bool, PaymentMethod?) -> ()) {
+    public func getSinglePaymentMethod(retailerId: String, paymentMethodId: String, completion: @escaping (Bool, PaymentMethod?, ErrorResponse?) -> ()) {
         //Build Route
         let route = PaymentsRouter.getSinglePaymentMethod(retailerId, paymentMethodId) as URLRequestConvertible
         
         //Call API
-        Service<PaymentMethod>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<PaymentMethod, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -45,12 +45,12 @@ public class PaymentsService {
      * Takes a CreateCardPaymentMethodRequest object
      * Returns a PaymentMethod
      */
-    public func createCardPaymentMethod(retailerId: String, requestObject: CreateCardPaymentMethodRequest, completion: @escaping (Bool, PaymentMethod?) -> ()) {
+    public func createCardPaymentMethod(retailerId: String, requestObject: CreateCardPaymentMethodRequest, completion: @escaping (Bool, PaymentMethod?, ErrorResponse?) -> ()) {
         //Build Route
         let route = PaymentsRouter.createCardPaymentMethod(retailerId, requestObject) as URLRequestConvertible
         //Call API
-        Service<PaymentMethod>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<PaymentMethod, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -59,13 +59,13 @@ public class PaymentsService {
      * Takes a CreateDirectDebitPaymentMethodRequest object
      * Returns a PaymentMethod
      */
-    public func createDebitPaymentMethod(retailerId: String, requestObject: CreateDirectDebitPaymentMethodRequest, completion: @escaping (Bool, PaymentMethod?) -> ()) {
+    public func createDebitPaymentMethod(retailerId: String, requestObject: CreateDirectDebitPaymentMethodRequest, completion: @escaping (Bool, PaymentMethod?, ErrorResponse?) -> ()) {
         //Build Route
         let route = PaymentsRouter.createDebitPaymentMethod(retailerId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<PaymentMethod>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<PaymentMethod, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -73,13 +73,13 @@ public class PaymentsService {
      * Delete a payment method
      * Returns a ResponseBody
      */
-    public func deletePaymentMethod(retailerId: String, paymentMethodId: String, completion: @escaping (Bool) -> ()) {
+    public func deletePaymentMethod(retailerId: String, paymentMethodId: String, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = PaymentsRouter.deletePaymentMethod(retailerId, paymentMethodId) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
 }

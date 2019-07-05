@@ -16,13 +16,13 @@ public class RecommendedSuppliersService {
      * Fetch the recommended suppliers as an array of categories for a retailer
      * Returns a RecommendedSuppliersResponse Object
      */
-    public func getRecommendedSuppliers(retailerId: String, completion: @escaping (Bool, RecommendedSupplierResponse?) -> ()) {
+    public func getRecommendedSuppliers(retailerId: String, completion: @escaping (Bool, RecommendedSupplierResponse?, ErrorResponse?) -> ()) {
         //Build Route
         let route = RecommendedSuppliersRouter.getRecommendedSuppliers(retailerId) as URLRequestConvertible
         
         //Call API
-        Service<RecommendedSupplierResponse>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<RecommendedSupplierResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -30,13 +30,13 @@ public class RecommendedSuppliersService {
      * Fetch the top recommended suppliers as an array of recommended suppliers for a retailer
      * Returns a RecommendedSupplierTopResponse Object
      */
-    public func getTopRecommendedSuppliers(retailerId: String, completion: @escaping (Bool, RecommendedSupplierTopResponse?) -> ()) {
+    public func getTopRecommendedSuppliers(retailerId: String, completion: @escaping (Bool, RecommendedSupplierTopResponse?, ErrorResponse?) -> ()) {
         //Build Route
         let route = RecommendedSuppliersRouter.getTopRecommendedSuppliers(retailerId) as URLRequestConvertible
         
         //Call API
-        Service<RecommendedSupplierTopResponse>().request(route: route) { (result, responseObject) in
-            completion(result, responseObject)
+        Service<RecommendedSupplierTopResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
 }

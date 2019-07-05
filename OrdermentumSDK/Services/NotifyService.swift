@@ -16,13 +16,13 @@ public class NotifyService {
      * Send device details for a user to the Ordermentum service
      * Returns a ResponseBody which can be used to check for a 200 response
      */
-    public func registerDevice(_ requestObject: NotifyBody, completion: @escaping (Bool) -> ()) {
+    public func registerDevice(_ requestObject: NotifyBody, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
         let route = NotifyRouter.registerDevice(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<FindSupplierResponse>().request(route: route) { (result, responseObject) in
-            completion(result)
+        Service<FindSupplierResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
         }
     }
 }
