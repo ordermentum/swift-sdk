@@ -16,13 +16,13 @@ public class PurchaserService {
      * Create a purchaser relationship between a retailer and supplier
      * Returns a ResponseBody
      */
-    public func createPurchaserRelationship(requestObject: CreatePurchaserRequest, completion: @escaping (Bool) -> ()) {
+    public func createPurchaserRelationship(requestObject: CreatePurchaserRequest, completion: @escaping (Bool, Purchaser?) -> ()) {
         //Build Route
         let route = PurchaserRouter.createPurchaserRelationship(requestObject) as URLRequestConvertible
         
         //Call API
         Service<Purchaser>().request(route: route) { (result, responseObject) in
-            completion(result)
+            completion(result, responseObject)
         }
     }
     
