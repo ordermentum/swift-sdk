@@ -16,13 +16,13 @@ public class PurchaserService {
      * Create a purchaser relationship between a retailer and supplier
      * Returns a ResponseBody
      */
-    public func createPurchaserRelationship(requestObject: CreatePurchaserRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func createPurchaserRelationship(requestObject: CreatePurchaserRequest, completion: @escaping (Bool, Purchaser?, ErrorResponse?) -> ()) {
         //Build Route
         let route = PurchaserRouter.createPurchaserRelationship(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
-            completion(result, errorObject)
+        Service<Purchaser, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
@@ -36,6 +36,20 @@ public class PurchaserService {
         
         //Call API
         Service<PurchaserResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
+     * Fetch a single purchaser record using its id
+     * Returns a Purchaser
+     */
+    public func getPurchaser(purchaserId: String, completion: @escaping (Bool, Purchaser?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = PurchaserRouter.getPurchaser(purchaserId) as URLRequestConvertible
+        
+        //Call API
+        Service<Purchaser, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }

@@ -269,6 +269,7 @@ enum CodingKeys: String, CodingKey {
     case locked
     case longitude
     case looseCount
+    case marketplacePurchaser
     case marketplaceSupplier
     case maskedNumber
     case message
@@ -424,6 +425,7 @@ enum CodingKeys: String, CodingKey {
     case serviceAreas
     case settings
     case settlementReference
+    case setupComplete
     case sharedSecret
     case shortName
     case show
