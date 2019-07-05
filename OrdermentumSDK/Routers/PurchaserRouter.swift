@@ -13,6 +13,7 @@ public enum PurchaserRouter: URLRequestConvertible {
     //Routes
     case acceptTermsAndConditions(String, String)
     case createPurchaserRelationship(CreatePurchaserRequest)
+    case getPurchaser(String)
     case getPurchasers(String, String)
     case getPurchasersForPaymentMethod(String, String)
     case getTermsAndConditions(String, String)
@@ -25,6 +26,8 @@ public enum PurchaserRouter: URLRequestConvertible {
             return .post
         case .createPurchaserRelationship:
             return .post
+        case .getPurchaser:
+            return .get
         case .getPurchasers:
             return .get
         case .getPurchasersForPaymentMethod:
@@ -43,6 +46,8 @@ public enum PurchaserRouter: URLRequestConvertible {
             return "purchasers/supplier/\(supplierId)/retailer/\(retailerId)/accept-terms-and-conditions"
         case .createPurchaserRelationship:
             return "purchasers/signup"
+        case .getPurchaser(let purchaserId):
+            return "purchasers/\(purchaserId)"
         case .getPurchasers:
             return "purchasers"
         case .getPurchasersForPaymentMethod:

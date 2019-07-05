@@ -21,7 +21,7 @@ public class PurchaserService {
         let route = PurchaserRouter.createPurchaserRelationship(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable>().request(route: route) { (result, responseObject) in
+        Service<Purchaser>().request(route: route) { (result, responseObject) in
             completion(result)
         }
     }
@@ -36,6 +36,20 @@ public class PurchaserService {
         
         //Call API
         Service<PurchaserResponse>().request(route: route) { (result, responseObject) in
+            completion(result, responseObject)
+        }
+    }
+    
+    /**
+     * Fetch a single purchaser record using its id
+     * Returns a Purchaser
+     */
+    public func getPurchaser(purchaserId: String, completion: @escaping (Bool, Purchaser?) -> ()) {
+        //Build Route
+        let route = PurchaserRouter.getPurchaser(purchaserId) as URLRequestConvertible
+        
+        //Call API
+        Service<Purchaser>().request(route: route) { (result, responseObject) in
             completion(result, responseObject)
         }
     }
