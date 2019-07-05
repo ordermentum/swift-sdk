@@ -9,12 +9,16 @@
 import Foundation
 
 public struct PurchaserResponse {
+    public init() {}
+    
     public var meta: Meta = Meta()
     public var links: Links = Links()
     public var data: [Purchaser] = []
 }
 
 public struct Purchaser {
+    public init() {}
+    
     public var id: String = ""
     public var reference: String = ""
     public var name: String = ""
@@ -75,21 +79,29 @@ public struct PurchaserTerms {
 }
 
 public struct PaymentMethodTypes {
+    public init() {}
+    
     public var value: [String] = []
     public var display: String = ""
 }
 
 public struct PaymentMethodType: Encodable {
+    public init() {}
+    
     public var display: String = ""
     public var value: String = ""
 }
 
 public struct Schedule {
+    public init() {}
+    
     public var id: String = ""
     public var name: String = ""
 }
 
 public struct RetailerAddress {
+    public init() {}
+    
     public var number: String = ""
     public var street1: String = ""
     public var street2: String = ""
@@ -102,6 +114,8 @@ public struct RetailerAddress {
 }
 
 public struct Retailer {
+    public init() {}
+    
     public var id: String = ""
     public var name: String = ""
     public var legalName: String = ""
@@ -124,6 +138,8 @@ public struct Retailer {
 }
 
 public struct RetailerDataAttributes {
+    public init() {}
+    
     public var pos: String = ""
     public var venue: String = ""
     public var banking: String = ""
@@ -132,11 +148,15 @@ public struct RetailerDataAttributes {
 }
 
 public struct PurchaserPaymentMethod {
+    public init() {}
+    
     public var bankConfigured: Bool = false
     public var cardConfigured: Bool = false
 }
 
 public struct PurchaserSettings {
+    public init() {}
+    
     public var brand: Brand = Brand()
     public var flags: [String] = []
     public var dayStart: String = ""
@@ -160,6 +180,8 @@ public struct PurchaserSettings {
 }
 
 public struct PurchaserProperties {
+    public init() {}
+    
     public var demoSupplier: Bool = false
     public var hasTerms: Bool = false
     public var setupComplete: Bool = false
@@ -167,6 +189,8 @@ public struct PurchaserProperties {
 }
 
 public struct PriceGroup {
+    public init() {}
+    
     public var id: String = ""
     public var name: String = ""
     public var supplierId: String = ""
@@ -183,6 +207,8 @@ public struct PriceGroup {
 }
 
 public struct VisibilityGroup {
+    public init() {}
+    
     public var id: String = ""
     public var name: String = ""
     public var supplierId: String = ""
@@ -199,6 +225,8 @@ public struct VisibilityGroup {
 }
 
 public struct FreightGroup {
+    public init() {}
+    
     public var id: String = ""
     public var name: String = ""
     public var type: String = ""
