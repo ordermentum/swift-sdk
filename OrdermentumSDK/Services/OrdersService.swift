@@ -16,12 +16,12 @@ public class OrdersService {
      * Create an order for a retailer
      * Returns an Order
      */
-    public func submitOrder(_ requestObject: CreateOrder, completion: @escaping (Bool, Order?, ErrorResponse?) -> ()) {
+    public func submitOrder(_ requestObject: CreateOrder, completion: @escaping (Bool, Order?, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.submitOrder(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<Order, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Order, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -30,12 +30,12 @@ public class OrdersService {
      * Create an order for a retailer
      * Returns an Order
      */
-    public func submitStandingOrder(_ requestObject: CreateStandingOrder, completion: @escaping (Bool, Order?, ErrorResponse?) -> ()) {
+    public func submitStandingOrder(_ requestObject: CreateStandingOrder, completion: @escaping (Bool, Order?, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.submitStandingOrder(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<Order, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Order, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -44,12 +44,12 @@ public class OrdersService {
      * Fetch the delivery dates for a particular retailer/supplier relationship
      * Returns an array of Strings
      */
-    public func getDeliveryDates(retailerId: String, supplierId: String, completion: @escaping (Bool, [String]?, ErrorResponse?) -> ()) {
+    public func getDeliveryDates(retailerId: String, supplierId: String, completion: @escaping (Bool, [String]?, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.getDeliveryDates(retailerId, supplierId) as URLRequestConvertible
         
         //Call API
-        Service<[String], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<[String], Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -58,12 +58,12 @@ public class OrdersService {
      * Fetch an array of orders belonging to a retailer/supplier relationship
      * Returns an array of Orders
      */
-    public func getOrders(retailerId: String, supplierId: String, sortBy: String, completion: @escaping (Bool, OrderResponse?, ErrorResponse?) -> ()) {
+    public func getOrders(retailerId: String, supplierId: String, sortBy: String, completion: @escaping (Bool, OrderResponse?, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.getOrders(retailerId, supplierId, sortBy) as URLRequestConvertible
         
         //Call API
-        Service<OrderResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<OrderResponse, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -72,12 +72,12 @@ public class OrdersService {
      * Fetch an array of orders belonging to a retailer/supplier relationship sorted by delivery date
      * Returns an array of Orders
      */
-    public func getOrdersByDeliveryDate(retailerId: String, supplierId: String, sortBy: String, completion: @escaping (Bool, OrderResponse?, ErrorResponse?) -> ()) {
+    public func getOrdersByDeliveryDate(retailerId: String, supplierId: String, sortBy: String, completion: @escaping (Bool, OrderResponse?, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.getOrdersByDeliveryDate(retailerId, supplierId, sortBy) as URLRequestConvertible
         
         //Call API
-        Service<OrderResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<OrderResponse, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -86,12 +86,12 @@ public class OrdersService {
      * Remove a favourite order from a logged in user
      * Returns a ResponseBody which can be used to check for a 200 Response code
      */
-    public func removeFavourite(orderId: String, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func removeFavourite(orderId: String, completion: @escaping (Bool, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.removeFavourite(orderId) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -101,12 +101,12 @@ public class OrdersService {
      * To retrieve a users favourites 'template' should be passed in as the 'type' parameter
      * Returns an array of Orders
      */
-    public func getFavourites(retailerId: String, supplierId: String, type: String, sortBy: String, pageNo: Int, completion: @escaping (Bool, OrderResponse?, ErrorResponse?) -> ()) {
+    public func getFavourites(retailerId: String, supplierId: String, type: String, sortBy: String, pageNo: Int, completion: @escaping (Bool, OrderResponse?, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.getFavourites(retailerId, supplierId, type, sortBy, pageNo) as URLRequestConvertible
         
         //Call API
-        Service<OrderResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<OrderResponse, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -117,12 +117,12 @@ public class OrdersService {
      * Ideally, but optionally, sortBy should have its value set to 'nextRunAt'
      * Returns an ClassicStandingOrderResponse
      */
-    public func getClassicStandingOrders(retailerId: String, supplierId: String, enabled: Bool, sortBy: String, completion: @escaping (Bool, ClassicStandingOrderResponse?, ErrorResponse?) -> ()) {
+    public func getClassicStandingOrders(retailerId: String, supplierId: String, enabled: Bool, sortBy: String, completion: @escaping (Bool, ClassicStandingOrderResponse?, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.getClassicStandingOrders(retailerId, supplierId, enabled, sortBy) as URLRequestConvertible
         
         //Call API
-        Service<ClassicStandingOrderResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ClassicStandingOrderResponse, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -131,12 +131,12 @@ public class OrdersService {
      * Update an order for the first time
      * Returns a ResponseBody
      */
-    public func updateOrderFirstTime(_ requestObject: UpdateScheduleRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func updateOrderFirstTime(_ requestObject: UpdateScheduleRequest, completion: @escaping (Bool, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.updateOrderFirstTime(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -146,12 +146,12 @@ public class OrdersService {
      * Check if an order has been edited by checking if the type equals scheduled-edited
      * Returns a ResponseBody
      */
-    public func updateOrder(orderId: String, requestObject: UpdateOrderRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func updateOrder(orderId: String, requestObject: UpdateOrderRequest, completion: @escaping (Bool, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.updateOrder(orderId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -160,12 +160,12 @@ public class OrdersService {
      * Add an order to a users favourite orders
      * Returns an Order
      */
-    public func createFavourite(_ requestObject: CreateFavouriteRequest, completion: @escaping (Bool, Order?, ErrorResponse?) -> ()) {
+    public func createFavourite(_ requestObject: CreateFavouriteRequest, completion: @escaping (Bool, Order?, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.createFavouriteOrder(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<Order, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Order, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
@@ -174,12 +174,12 @@ public class OrdersService {
      * Add an order to a users favourite orders
      * Returns an Order
      */
-    public func scheduleOrder(purchaserScheduleId: String, requestObject: CreatePurchaserSchedule, completion: @escaping (Bool, ClassicStandingOrder?, ErrorResponse?) -> ()) {
+    public func scheduleOrder(purchaserScheduleId: String, requestObject: CreatePurchaserSchedule, completion: @escaping (Bool, ClassicStandingOrder?, Validation?) -> ()) {
         //Build Route
         let route = OrdersRouter.scheduleOrder(purchaserScheduleId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<ClassicStandingOrder, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<ClassicStandingOrder, Validation>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
