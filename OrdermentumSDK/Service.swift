@@ -38,11 +38,10 @@ class Service<D: Decodable, E: Decodable> {
                                 completion(false, nil, nil)
                                 return
                             }
-                            print(responseData.utf8String())
                             let errorObject = try JSONDecoder().decode(E.self, from: responseData)
-                            completion(true, nil, errorObject)
+                            completion(false, nil, errorObject)
                         } catch {
-                            completion(true, nil, nil)
+                            completion(false, nil, nil)
                     }
                     break
                 }
