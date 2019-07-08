@@ -24,7 +24,16 @@ class Service<D: Decodable, E: Decodable> {
                         let responseObject = try JSONDecoder().decode(D.self, from: responseData)
                         completion(true, responseObject, nil)
                     } catch {
-                        completion(true, nil, nil)
+                        do {
+                            guard let responseData = response.data else {
+                                completion(false, nil, nil)
+                                return
+                            }
+                            let errorObject = try JSONDecoder().decode(E.self, from: responseData)
+                            completion(false, nil, errorObject)
+                        } catch {
+                            completion(false, nil, nil)
+                        }
                     }
                     break
                     
@@ -42,10 +51,10 @@ class Service<D: Decodable, E: Decodable> {
                             completion(false, nil, errorObject)
                         } catch {
                             completion(false, nil, nil)
+                        }
                     }
                     break
                 }
-            }
         }
     }
 }
