@@ -31,6 +31,7 @@ public struct Delivery {
     public var purchaserScheduleId: String = ""
     public var scheduleName: String = ""
     public var hasScheduledOrder: Bool = false
+    public var startDate: String = ""
 }
 
 public struct CardDisplay {
@@ -130,6 +131,7 @@ extension Delivery: Decodable {
         purchaserScheduleId = try container.decodeIfPresent(String.self, forKey: .purchaserScheduleId) ?? ""
         scheduleName = try container.decodeIfPresent(String.self, forKey: .scheduleName) ?? ""
         hasScheduledOrder = try container.safeBoolDecode(forKey: .hasScheduledOrder) ?? false
+        startDate = try container.decodeIfPresent(String.self, forKey: .startDate) ?? ""
     }
 }
 
