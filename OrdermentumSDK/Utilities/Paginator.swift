@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-typealias PaginatorCompletion = (Paginator) -> Void
+public typealias PaginatorCompletion = (Paginator) -> Void
 
-protocol PaginatorDelegate: class {
+public protocol PaginatorDelegate: class {
     func paginatorFetch(_ sender: Paginator)
 }
 
-class Paginator: NSObject {
+public class Paginator: NSObject {
     //Data
     public var pageNo: Int = 0
     public var maxPages: Int = 0
@@ -24,7 +24,7 @@ class Paginator: NSObject {
     //Delegate
     public weak var delegate: PaginatorDelegate?
     
-    func nextPage(completion: PaginatorCompletion?) {
+    public func nextPage(completion: PaginatorCompletion?) {
         //Check Page Number
         if hasRun {
             guard pageNo < maxPages else {
@@ -38,7 +38,7 @@ class Paginator: NSObject {
         delegate?.paginatorFetch(self)
     }
     
-    func reset() {
+    public func reset() {
         hasRun = false
         pageNo = 0
         maxPages = 0
