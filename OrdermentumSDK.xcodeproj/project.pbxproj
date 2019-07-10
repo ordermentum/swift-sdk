@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -127,7 +127,6 @@
 		CA929F7022555FA900E957AC /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4822555FA600E957AC /* Payment.swift */; };
 		CA929F7122555FA900E957AC /* VenueProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4922555FA600E957AC /* VenueProfile.swift */; };
 		CA929F7222555FA900E957AC /* Projection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4A22555FA600E957AC /* Projection.swift */; };
-		CA929F7322555FA900E957AC /* PaginatedAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4B22555FA600E957AC /* PaginatedAPIResponse.swift */; };
 		CA929F7422555FA900E957AC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4C22555FA600E957AC /* Category.swift */; };
 		CA929F7522555FA900E957AC /* TrackingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4D22555FA600E957AC /* TrackingKeys.swift */; };
 		CA929F7622555FA900E957AC /* CreditNotesReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4E22555FA600E957AC /* CreditNotesReponse.swift */; };
@@ -142,7 +141,6 @@
 		CA929F7F22555FA900E957AC /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F5722555FA700E957AC /* AccountSettings.swift */; };
 		CA929F8022555FA900E957AC /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F5822555FA700E957AC /* Profile.swift */; };
 		CA929F8122555FA900E957AC /* ClosurePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F5922555FA700E957AC /* ClosurePeriod.swift */; };
-		CA929F8222555FA900E957AC /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F5A22555FA800E957AC /* Pagination.swift */; };
 		CA929F8322555FA900E957AC /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F5B22555FA800E957AC /* Marketplace.swift */; };
 		CA929F8422555FA900E957AC /* AddOns.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F5C22555FA800E957AC /* AddOns.swift */; };
 		CA929F8522555FA900E957AC /* TradingHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F5D22555FA800E957AC /* TradingHours.swift */; };
@@ -172,6 +170,7 @@
 		CAC39CCB22559AC000D3099A /* AddOnsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CCA22559AC000D3099A /* AddOnsRouter.swift */; };
 		CAC39CD12255A55C00D3099A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CD02255A55C00D3099A /* Service.swift */; };
 		CAC39CD32255A99400D3099A /* EmptyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC39CD22255A99400D3099A /* EmptyDecodable.swift */; };
+		CAD522CC22D5A857004033EF /* Paginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD522CB22D5A857004033EF /* Paginator.swift */; };
 		CAF24684225AE7D900EDAF68 /* NPSRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24683225AE7D900EDAF68 /* NPSRouter.swift */; };
 		CAF24686225AE8E400EDAF68 /* OrdersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24685225AE8E400EDAF68 /* OrdersRouter.swift */; };
 		CAF24688225AFE4A00EDAF68 /* PaymentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF24687225AFE4A00EDAF68 /* PaymentsRouter.swift */; };
@@ -323,7 +322,6 @@
 		CA929F4822555FA600E957AC /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		CA929F4922555FA600E957AC /* VenueProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueProfile.swift; sourceTree = "<group>"; };
 		CA929F4A22555FA600E957AC /* Projection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projection.swift; sourceTree = "<group>"; };
-		CA929F4B22555FA600E957AC /* PaginatedAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedAPIResponse.swift; sourceTree = "<group>"; };
 		CA929F4C22555FA600E957AC /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CA929F4D22555FA600E957AC /* TrackingKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingKeys.swift; sourceTree = "<group>"; };
 		CA929F4E22555FA600E957AC /* CreditNotesReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditNotesReponse.swift; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 		CA929F5722555FA700E957AC /* AccountSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
 		CA929F5822555FA700E957AC /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		CA929F5922555FA700E957AC /* ClosurePeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosurePeriod.swift; sourceTree = "<group>"; };
-		CA929F5A22555FA800E957AC /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		CA929F5B22555FA800E957AC /* Marketplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
 		CA929F5C22555FA800E957AC /* AddOns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOns.swift; sourceTree = "<group>"; };
 		CA929F5D22555FA800E957AC /* TradingHours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradingHours.swift; sourceTree = "<group>"; };
@@ -368,6 +365,7 @@
 		CAC39CCA22559AC000D3099A /* AddOnsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnsRouter.swift; sourceTree = "<group>"; };
 		CAC39CD02255A55C00D3099A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		CAC39CD22255A99400D3099A /* EmptyDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDecodable.swift; sourceTree = "<group>"; };
+		CAD522CB22D5A857004033EF /* Paginator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paginator.swift; sourceTree = "<group>"; };
 		CAF24683225AE7D900EDAF68 /* NPSRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPSRouter.swift; sourceTree = "<group>"; };
 		CAF24685225AE8E400EDAF68 /* OrdersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersRouter.swift; sourceTree = "<group>"; };
 		CAF24687225AFE4A00EDAF68 /* PaymentsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsRouter.swift; sourceTree = "<group>"; };
@@ -635,8 +633,6 @@
 				CA929F5222555FA700E957AC /* Notify.swift */,
 				CA929F6522555FA800E957AC /* NPS.swift */,
 				CA929F6322555FA800E957AC /* Order.swift */,
-				CA929F4B22555FA600E957AC /* PaginatedAPIResponse.swift */,
-				CA929F5A22555FA800E957AC /* Pagination.swift */,
 				CA929F4822555FA600E957AC /* Payment.swift */,
 				CA929F5F22555FA800E957AC /* PaymentMethod.swift */,
 				CA929F6122555FA800E957AC /* Product.swift */,
@@ -691,6 +687,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC39CBF2255632300D3099A /* CodableUtils.swift */,
+				CAD522CB22D5A857004033EF /* Paginator.swift */,
 				CA729729225D966F00224410 /* BoolUtils.swift */,
 				CAC39CC12255639D00D3099A /* StringUtils.swift */,
 			);
@@ -974,6 +971,7 @@
 				CA929F7E22555FA900E957AC /* DataAttributes.swift in Sources */,
 				CA929F7A22555FA900E957AC /* Notify.swift in Sources */,
 				CA2F35202256D1CB00D1118C /* ExperimentsRouter.swift in Sources */,
+				CAD522CC22D5A857004033EF /* Paginator.swift in Sources */,
 				CA929F7222555FA900E957AC /* Projection.swift in Sources */,
 				CA929F7422555FA900E957AC /* Category.swift in Sources */,
 				CAF2468E225B158000EDAF68 /* ProjectionsRouter.swift in Sources */,
@@ -1052,14 +1050,12 @@
 				CAF246AC225C24D700EDAF68 /* PurchaserService.swift in Sources */,
 				CA929F8C22555FA900E957AC /* Error.swift in Sources */,
 				CAF2469A225B25F000EDAF68 /* MarketplaceService.swift in Sources */,
-				CA929F7322555FA900E957AC /* PaginatedAPIResponse.swift in Sources */,
 				CA929F8022555FA900E957AC /* Profile.swift in Sources */,
 				CA2F35102255B16A00D1118C /* CreditNotesRouter.swift in Sources */,
 				CA929F8922555FA900E957AC /* Product.swift in Sources */,
 				CAC39CD12255A55C00D3099A /* Service.swift in Sources */,
 				CA929F9022555FA900E957AC /* Insights.swift in Sources */,
 				CA2F351C2256CE2E00D1118C /* Device.swift in Sources */,
-				CA929F8222555FA900E957AC /* Pagination.swift in Sources */,
 				CA929F7622555FA900E957AC /* CreditNotesReponse.swift in Sources */,
 				CA929F8D22555FA900E957AC /* NPS.swift in Sources */,
 				CA4CF2E3225AC24D006F18C8 /* InvoiceRouter.swift in Sources */,
