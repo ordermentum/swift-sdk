@@ -11,7 +11,7 @@ import Alamofire
 
 public enum ExperimentsRouter: URLRequestConvertible {
     //Routes
-    case getExperiments(String, String, String, String, Bool, String, [String])
+    case getExperiments(String, String, String, String, Bool, String, String, [String])
     case dismissExperiment(ExperimentsDismissRequest)
     
     //Methods
@@ -37,8 +37,8 @@ public enum ExperimentsRouter: URLRequestConvertible {
     //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .getExperiments(let slot, let source, let version, let retailerId, let isRetailer, let userId, let supplierId):
-            return ["slot": slot, "source": source, "version": version, "retailerId": retailerId, "isRetailer": isRetailer, "userId": userId, "supplierId[]": supplierId]
+        case .getExperiments(let slot, let source, let version, let retailerId, let isRetailer, let userId, let purchaserId, let supplierId):
+            return ["slot": slot, "source": source, "version": version, "retailerId": retailerId, "isRetailer": isRetailer, "userId": userId, "purchaserId": purchaserId, "supplierId[]": supplierId]
         default:
             return [:]
         }
