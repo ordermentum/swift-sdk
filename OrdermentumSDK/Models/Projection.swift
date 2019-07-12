@@ -39,6 +39,7 @@ public struct CardDisplay {
     public var statusLabel: String = ""
     public var actionLabel: String = ""
     public var dateLabel: String = ""
+    public var date: String = ""
 }
 
 public struct SingleProjection {
@@ -144,6 +145,7 @@ extension CardDisplay: Decodable {
         statusLabel = try container.decodeIfPresent(String.self, forKey: .statusLabel) ?? ""
         actionLabel = try container.decodeIfPresent(String.self, forKey: .actionLabel) ?? ""
         dateLabel = try container.decodeIfPresent(String.self, forKey: .dateLabel) ?? ""
+        date = try container.decodeIfPresent(String.self, forKey: .date) ?? ""
     }
 }
 
