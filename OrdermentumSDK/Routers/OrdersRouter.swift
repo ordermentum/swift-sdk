@@ -14,7 +14,7 @@ public enum OrdersRouter: URLRequestConvertible {
     case submitOrder(CreateOrder)
     case submitStandingOrder(CreateStandingOrder)
     case getDeliveryDates(String, String)
-    case getOrders(String, String, String)
+    case getOrders(String, String, String, String, Int)
     case getOrdersByDeliveryDate(String, String, String)
     case removeFavourite(String)
     case getFavourites(String, String, String, String, Int)
@@ -89,8 +89,8 @@ public enum OrdersRouter: URLRequestConvertible {
         switch self {
         case .getDeliveryDates(let retailerId, let supplierId):
             return ["retailerId": retailerId, "supplierId": supplierId]
-        case .getOrders(let retailerId, let supplierId, let sortBy):
-            return ["retailerId": retailerId, "supplierId": supplierId, "sortBy[createdAt]": sortBy]
+        case .getOrders(let retailerId, let supplierId, let sortBy, let sortOrder, let pageNo):
+            return ["retailerId": retailerId, "supplierId": supplierId, "sortBy[\(sortBy)]": sortOrder, "pageNo": pageNo]
         case .getOrdersByDeliveryDate(let retailerId, let supplierId, let sortBy):
             return ["retailerId": retailerId, "supplierId": supplierId, "sortBy[deliveryDate]": sortBy]
         case .getFavourites(let retailerId, let supplierId, let type, let sortBy, let pageNo):
