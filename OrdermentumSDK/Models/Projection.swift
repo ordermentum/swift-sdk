@@ -210,6 +210,10 @@ extension SingleProjection: Equatable {
 }
 
 extension SingleProjection {
+    public var placedBySystem: Bool {
+        return self.type == "auto"
+    }
+
     public var isStandingOrder: Bool {
         return !self.scheduleId.isEmpty
     }
@@ -222,4 +226,3 @@ extension SingleProjection {
         }
     }
 }
-
