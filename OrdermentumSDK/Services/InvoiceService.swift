@@ -16,9 +16,9 @@ public class InvoiceService {
      * Get the invoices belonging to a retailer/supplier relationship
      * Returns a InvoiceResponse
      */
-    public func getInvoices(retailerId: String, supplierId: String, sortBy: String, pageNo: String, completion: @escaping (Bool, InvoiceResponse?, ErrorResponse?) -> ()) {
+    public func getInvoices(retailerId: String, supplierId: String, sortBy: String, sortOrder: String, pageNo: Int, completion: @escaping (Bool, InvoiceResponse?, ErrorResponse?) -> ()) {
         //Build Route
-        let route = InvoiceRouter.getInvoices(supplierId, retailerId, sortBy, pageNo) as URLRequestConvertible
+        let route = InvoiceRouter.getInvoices(retailerId, supplierId, sortBy, sortOrder, pageNo) as URLRequestConvertible
         
         //Call API
         Service<InvoiceResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
