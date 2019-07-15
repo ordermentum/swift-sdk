@@ -211,7 +211,7 @@ extension SingleProjection: Equatable {
 
 extension SingleProjection {
     public var placedBySystem: Bool {
-        return self.type == "placed"
+        return self.type == "auto"
     }
 
     public var isStandingOrder: Bool {
