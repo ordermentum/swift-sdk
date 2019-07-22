@@ -39,7 +39,7 @@ public struct Product: Encodable {
     public var addTax: Bool = false
     public var visible: Bool = false
     public var batchCode: String = ""
-    public var leadTime: Int = 0
+    public var leadTime: Float = 0
     public var deliveryDays: [String] = []
 }
 
@@ -90,7 +90,7 @@ extension Product: Decodable {
         addTax = try container.safeBoolDecode(forKey: .addTax) ?? false
         visible = try container.safeBoolDecode(forKey: .visible) ?? false
         batchCode = try container.decodeIfPresent(String.self, forKey: .batchCode) ?? ""
-        leadTime = try container.safeIntDecode(forKey: .leadTime) ?? 0
+        leadTime = try container.safeFloatDecode(forKey: .leadTime) ?? 0
         deliveryDays = try container.decodeIfPresent([String].self, forKey: .deliveryDays) ?? []
     }
 }
