@@ -1,6 +1,6 @@
 //
 //  TrackingKeys.swift
-//  Ordermentum
+//  OrdermentumSDK
 //
 //  Created by Brandon Stillitano on 18/3/19.
 //  Copyright © 2019 Ordermentum Pty Ltd. All rights reserved.
