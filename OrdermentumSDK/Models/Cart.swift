@@ -1,6 +1,6 @@
 //
 //  Cart.swift
-//  Ordermentum
+//  OrdermentumSDK
 //
 //  Created by Brandon Stillitano on 20/3/19.
 //  Copyright © 2019 Ordermentum Pty Ltd. All rights reserved.

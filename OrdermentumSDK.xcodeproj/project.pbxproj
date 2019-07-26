@@ -115,6 +115,7 @@
 		CA4CF2E5225ADAF6006F18C8 /* MarketplaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E4225ADAF6006F18C8 /* MarketplaceRouter.swift */; };
 		CA4CF2E7225ADC1B006F18C8 /* NotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E6225ADC1B006F18C8 /* NotificationsRouter.swift */; };
 		CA4CF2E9225AE089006F18C8 /* NotifyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E8225AE089006F18C8 /* NotifyRouter.swift */; };
+		CA5B63E622EA8BBE0057A93F /* AppVersionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5B63E522EA8BBE0057A93F /* AppVersionRouter.swift */; };
 		CA6BB820225D993700A34A01 /* FindSupplierServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */; };
 		CA72972A225D966F00224410 /* BoolUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA729729225D966F00224410 /* BoolUtils.swift */; };
 		CA929F3122555DA400E957AC /* OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA929F2722555DA400E957AC /* OrdermentumSDK.framework */; };
@@ -308,6 +309,7 @@
 		CA4CF2E4225ADAF6006F18C8 /* MarketplaceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceRouter.swift; sourceTree = "<group>"; };
 		CA4CF2E6225ADC1B006F18C8 /* NotificationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRouter.swift; sourceTree = "<group>"; };
 		CA4CF2E8225AE089006F18C8 /* NotifyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyRouter.swift; sourceTree = "<group>"; };
+		CA5B63E522EA8BBE0057A93F /* AppVersionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionRouter.swift; sourceTree = "<group>"; };
 		CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSupplierServiceTests.swift; sourceTree = "<group>"; };
 		CA6BB821225DA60300A34A01 /* ProjectionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionsServiceTests.swift; sourceTree = "<group>"; };
 		CA729729225D966F00224410 /* BoolUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolUtils.swift; sourceTree = "<group>"; };
@@ -663,6 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC39CCA22559AC000D3099A /* AddOnsRouter.swift */,
+				CA5B63E522EA8BBE0057A93F /* AppVersionRouter.swift */,
 				CA929F942255618300E957AC /* AuthRouter.swift */,
 				CA2F350D2255ACCF00D1118C /* ClosurePeriodsRouter.swift */,
 				CA2F350F2255B16A00D1118C /* CreditNotesRouter.swift */,
@@ -996,6 +999,7 @@
 				CA929F8522555FA900E957AC /* TradingHours.swift in Sources */,
 				CAF24690225B189C00EDAF68 /* PurchaserRouter.swift in Sources */,
 				CA929F9122555FA900E957AC /* FindSupplier.swift in Sources */,
+				CA5B63E622EA8BBE0057A93F /* AppVersionRouter.swift in Sources */,
 				CAA598B022A6296F006DC414 /* RecommendedSuppliersService.swift in Sources */,
 				CAD522D022D5BCA2004033EF /* Meta.swift in Sources */,
 				CA2F35162255CFA500D1118C /* DataAttributesRouter.swift in Sources */,

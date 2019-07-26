@@ -20,6 +20,7 @@ public class Client {
     
     //Services
     public var addons: AddOnsService = AddOnsService()
+    public var appVersion: AppVersionService = AppVersionService()
     public var auth: AuthService = AuthService()
     public var closureDates: ClosureDatesService = ClosureDatesService()
     public var creditNotes: CreditNotesService = CreditNotesService()
@@ -77,4 +78,5 @@ public enum ClientURL {
     public static let rootWebURL = "https://app.ordermentum.com/"
     public static let rootTestingURL = "https://app-testing.ordermentum.com/v1/"
     public static let rootTestingWebURL = "https://app-testing.ordermentum.com/"
+    public static let rootStaticURL = "https://static.ordermentum.com/"
 }
