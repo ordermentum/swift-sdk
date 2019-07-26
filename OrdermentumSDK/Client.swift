@@ -20,7 +20,6 @@ public class Client {
     
     //Services
     public var addons: AddOnsService = AddOnsService()
-    public var appVersion: AppVersionService = AppVersionService()
     public var auth: AuthService = AuthService()
     public var closureDates: ClosureDatesService = ClosureDatesService()
     public var creditNotes: CreditNotesService = CreditNotesService()
