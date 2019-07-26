@@ -11,13 +11,21 @@ import Foundation
 public struct AppVersion: Decodable {
     
     public var minimumAppVersion: String?
+    public var latestAppVersion: String?
+    public var forceLatest: Bool?
+    
     enum CodingKeys: String, CodingKey {
         case minimumAppVersion = "minimum-version"
+        case latestAppVersion = "latest-version"
+        case forceLatest = "force-latest"
     }
     
-    public init(minimumAppVersion: String?) {
+    public init(minimumAppVersion: String?, latestAppVersion: String?, forceLatest: Bool?) {
         self.minimumAppVersion = minimumAppVersion
+        self.latestAppVersion = latestAppVersion
+        self.forceLatest = forceLatest
     }
+    
     public static func == (lhs: AppVersion, rhs: AppVersion) -> Bool {
         guard let version1 = lhs.minimumAppVersion, let version2 = rhs.minimumAppVersion else {
             return false
@@ -52,5 +60,4 @@ public struct AppVersion: Decodable {
         }
         return version1.compare(version2, options: .numeric) == .orderedDescending || version1.compare(version2, options: .numeric) == .orderedSame
     }
-    
 }
