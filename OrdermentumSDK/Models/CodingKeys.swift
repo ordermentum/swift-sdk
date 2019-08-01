@@ -50,6 +50,8 @@ enum CodingKeys: String, CodingKey {
     case addVenue = "add-venue"
     case projectionsV2 = "projections-v2"
     case recommendedSuppliers = "recommended-suppliers"
+    case paymentUpsellDialogCheckout = "payment-upsell-dialog-checkout"
+    case paymentUpsellDialogInvoice = "payment-upsell-dialog-invoice"
     
     //Generic
     case abn

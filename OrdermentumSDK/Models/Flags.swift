@@ -22,6 +22,8 @@ public struct Flags {
     public var addVenue: Bool = false
     public var projectionsV2: Bool = false
     public var recommendedSuppliers: Bool = false
+    public var paymentUpsellDialogCheckout: Bool = false
+    public var paymentUpsellDialogInvoice: Bool = false
 }
 
 extension Flags: Decodable {
@@ -39,5 +41,7 @@ extension Flags: Decodable {
         addVenue = try container.safeBoolDecode(forKey: .addVenue) ?? false
         projectionsV2 = try container.safeBoolDecode(forKey: .projectionsV2) ?? false
         recommendedSuppliers = try container.safeBoolDecode(forKey: .recommendedSuppliers) ?? false
+        paymentUpsellDialogCheckout = try container.safeBoolDecode(forKey: .paymentUpsellDialogCheckout) ?? false
+        paymentUpsellDialogInvoice = try container.safeBoolDecode(forKey: .paymentUpsellDialogInvoice) ?? false
     }
 }
