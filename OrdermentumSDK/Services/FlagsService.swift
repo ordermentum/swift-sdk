@@ -13,12 +13,26 @@ public class FlagsService {
     public init() {}
     
     /**
-     * Get the flags belonging to a retailer/supplier relationship
+     * Get the flags belonging to a multip retailer/supplier relationships
      * Returns a Flags object
      */
     public func getFlags(flagsArray: [String], supplierIdArray: [String], retailerId: String, userId: String, completion: @escaping (Bool, Flags?, ErrorResponse?) -> ()) {
         //Build Route
         let route = FlagsRouter.getFlags(flagsArray, supplierIdArray, retailerId, userId) as URLRequestConvertible
+        
+        //Call API
+        Service<Flags, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
+     * Get the flags belonging to a single retailer/supplier relationship
+     * Returns a Flags object
+     */
+    public func getMarketplaceFlags(flagsArray: [String], supplierId: String, retailerId: String, userId: String, completion: @escaping (Bool, Flags?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = FlagsRouter.getMarketplaceFlags(flagsArray, supplierId, retailerId, userId) as URLRequestConvertible
         
         //Call API
         Service<Flags, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in

@@ -12,11 +12,14 @@ import Alamofire
 public enum FlagsRouter: URLRequestConvertible {
     //Routes
     case getFlags([String], [String], String, String)
+    case getMarketplaceFlags([String], String, String, String)
     
     //Methods
     var method: HTTPMethod {
         switch self {
         case .getFlags:
+            return .get
+        case .getMarketplaceFlags:
             return .get
         }
     }
@@ -26,6 +29,8 @@ public enum FlagsRouter: URLRequestConvertible {
         switch self {
         case .getFlags:
             return "flags/check"
+        case .getMarketplaceFlags:
+            return "flags/check"
         }
     }
     
@@ -33,7 +38,9 @@ public enum FlagsRouter: URLRequestConvertible {
     var parameters: [String: Any] {
         switch self {
         case .getFlags(let flagsArray, let supplierIdArray, let retailerId, let userId):
-            return ["flags[]": flagsArray, "supplierId[]": supplierIdArray, "context[retailerId]": retailerId, "context[userId]": userId]
+            return ["flags": flagsArray, "supplierId": supplierIdArray, "context[retailerId]": retailerId, "context[userId]": userId]
+        case .getMarketplaceFlags(let flagsArray, let supplierId, let retailerId, let userId):
+            return ["flags": flagsArray, "context[supplierId]": supplierId, "context[retailerId]": retailerId, "context[userId]": userId]
         default:
             return [:]
         }
