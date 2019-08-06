@@ -50,7 +50,7 @@ public class Client {
     public func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?) throws ->  URLRequest {
         //Setup Data
         let url = try baseURL.asURL()
-        let timeoutSeconds: Int = 10
+        let timeoutSeconds: Int = 120
         
         //Build Request
         var request = URLRequest(url: url.appendingPathComponent(path))
