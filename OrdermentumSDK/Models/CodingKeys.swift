@@ -513,4 +513,7 @@ enum CodingKeys: String, CodingKey {
     case weight
     case weightType
     case width
+    case hasAgreed
+    case agreementRequired
+    case lastAgreed
 }
