@@ -75,7 +75,9 @@ public struct PurchaserTerms {
     public var createdAt: String = ""
     public var updatedAt: String = ""
     public var deletedAt: String = ""
-    public var supplier_id: String = ""
+    public var agreementRequired: Bool = false
+    public var hasAgreed: Bool = false
+    public var lastAgreed: String = ""
 }
 
 public struct PaymentMethodTypes {
