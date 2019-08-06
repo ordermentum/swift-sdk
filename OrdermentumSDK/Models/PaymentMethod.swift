@@ -44,9 +44,7 @@ public struct CreateCardPaymentMethodRequest: Codable {
     public var number: String = ""
     public var issuer: String = ""
     public var isCard: Bool = false
-    public var firstName: String = ""
-    public var lastName: String = ""
-    public var fullName: String = ""
+    public var name: String = ""
     public var expiryMonth: String = ""
     public var expiryYear: String = ""
     public var cvv: String = ""
