@@ -333,7 +333,9 @@ extension PurchaserTerms: Decodable {
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
         deletedAt = try container.decodeIfPresent(String.self, forKey: .deletedAt) ?? ""
-        supplier_id = try container.decodeIfPresent(String.self, forKey: .supplier_id) ?? ""
+        lastAgreed = try container.decodeIfPresent(String.self, forKey: .deletedAt) ?? ""
+        hasAgreed = try container.safeBoolDecode(forKey: .hasAgreed) ?? false
+        agreementRequired = try container.safeBoolDecode(forKey: .agreementRequired) ?? false
     }
 }
 
