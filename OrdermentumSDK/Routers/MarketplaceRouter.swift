@@ -12,11 +12,14 @@ import Alamofire
 public enum MarketplaceRouter: URLRequestConvertible {
     //Routes
     case getMarketplaces(String, Int, Int)
-    
+    case getSupplier(String)
+
     //Methods
     var method: HTTPMethod {
         switch self {
         case .getMarketplaces:
+            return .get
+        case .getSupplier:
             return .get
         }
     }
@@ -26,6 +29,8 @@ public enum MarketplaceRouter: URLRequestConvertible {
         switch self {
         case .getMarketplaces:
             return "marketplaces"
+        case .getSupplier(let supplierId):
+            return "suppliers/\(supplierId)"
         }
     }
     
