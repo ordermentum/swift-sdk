@@ -71,8 +71,18 @@ public enum InvoiceRouter: URLRequestConvertible {
         }
     }
     
+    //Timeout
+    var timeout: Int {
+        switch self {
+        case .applyPayment:
+            return 120
+        default:
+            return 10
+        }
+    }
+    
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
+        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body, timeout: timeout)
     }
 }
