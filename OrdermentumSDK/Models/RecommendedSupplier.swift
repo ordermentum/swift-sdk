@@ -30,6 +30,7 @@ public struct RecommendedSupplierCategory {
 public struct RecommendedSupplier {
     public init() {}
     
+    public var id: String = ""
     public var dataAttributes: RecommendedSupplierDataAttributes = RecommendedSupplierDataAttributes()
     public var logo: Image = Image()
     public var phone: String = ""
@@ -76,6 +77,7 @@ extension RecommendedSupplierCategory: Decodable {
 extension RecommendedSupplier: Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         autoConnect = try container.safeBoolDecode(forKey: .autoConnect) ?? false
         dataAttributes = try container.decodeIfPresent(RecommendedSupplierDataAttributes.self, forKey: .dataAttributes) ?? RecommendedSupplierDataAttributes()
         logo = try container.decodeIfPresent(Image.self, forKey: .logo) ?? Image()
