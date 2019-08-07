@@ -47,10 +47,10 @@ public class Client {
         return String(format: "Bearer \(token)")
     }
     
-    public func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?) throws ->  URLRequest {
+    public func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?, timeout: Int = 10) throws ->  URLRequest {
         //Setup Data
         let url = try baseURL.asURL()
-        let timeoutSeconds: Int = 120
+        let timeoutSeconds: Int = timeout
         
         //Build Request
         var request = URLRequest(url: url.appendingPathComponent(path))
