@@ -39,5 +39,19 @@ public class MarketplaceService {
             completion(result, responseObject, errorObject)
         }
     }
+    
+    /**
+     * Fetch a single recommended supplier
+     * Returns a RecommendedSupplier object
+     */
+    public func getRecommendedSupplier(supplierId: String, completion: @escaping (Bool, RecommendedSupplier?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = MarketplaceRouter.getRecommendedSupplier(supplierId) as URLRequestConvertible
+        
+        //Call API
+        Service<RecommendedSupplier, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
 }
 

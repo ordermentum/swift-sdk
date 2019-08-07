@@ -13,6 +13,7 @@ public enum MarketplaceRouter: URLRequestConvertible {
     //Routes
     case getMarketplaces(String, Int, Int)
     case getSupplier(String)
+    case getRecommendedSupplier(String)
 
     //Methods
     var method: HTTPMethod {
@@ -20,6 +21,8 @@ public enum MarketplaceRouter: URLRequestConvertible {
         case .getMarketplaces:
             return .get
         case .getSupplier:
+            return .get
+        case .getRecommendedSupplier:
             return .get
         }
     }
@@ -31,6 +34,8 @@ public enum MarketplaceRouter: URLRequestConvertible {
             return "marketplaces"
         case .getSupplier(let supplierId):
             return "suppliers/\(supplierId)"
+        case .getRecommendedSupplier(let supplierId):
+            return "suppliers/directory/\(supplierId)"
         }
     }
     
