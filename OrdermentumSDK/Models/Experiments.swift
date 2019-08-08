@@ -14,7 +14,6 @@ public struct ExperimentsResponse {
 
 public struct ExperimentsData {
     public var id: String = ""
-    public var slot: String = ""
     public var name: String = ""
     public var meta: [String: String] = [:]
     
@@ -45,7 +44,6 @@ extension ExperimentsData: Decodable {
         
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
-        slot = try container.decodeIfPresent(String.self, forKey: .slot) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         meta = try container.decodeIfPresent([String: String].self, forKey: .meta) ?? [:]
     }
