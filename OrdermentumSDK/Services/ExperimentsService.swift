@@ -13,6 +13,20 @@ public class ExperimentsService {
     public init() {}
     
     /**
+     * Get a single experiment by id
+     * Returns an ExperimentsData object
+     */
+    public func getExperiment(id: String, completion: @escaping (Bool, ExperimentsData?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = ExperimentsRouter.getExperiment(id) as URLRequestConvertible
+        
+        //Call API
+        Service<ExperimentsData, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
      * Get the experiments belonging to a user
      * Returns a ExperimentsResponse
      */

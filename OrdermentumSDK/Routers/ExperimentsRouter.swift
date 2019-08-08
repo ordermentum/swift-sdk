@@ -11,12 +11,15 @@ import Alamofire
 
 public enum ExperimentsRouter: URLRequestConvertible {
     //Routes
+    case getExperiment(String)
     case getExperiments(String, String, String, String, Bool, String, String, [String], String)
     case dismissExperiment(ExperimentsDismissRequest)
     
     //Methods
     var method: HTTPMethod {
         switch self {
+        case .getExperiment:
+            return .get
         case .getExperiments:
             return .get
         case .dismissExperiment:
@@ -27,6 +30,8 @@ public enum ExperimentsRouter: URLRequestConvertible {
     //Paths
     var path: String {
         switch self {
+        case .getExperiment(let experimentId):
+            return "experiments/\(experimentId)"
         case .getExperiments:
             return "experiments/discover"
         case .dismissExperiment:
