@@ -49,6 +49,10 @@ public struct MarketplaceSettings {
     public var brand: Brand = Brand()
 }
 
+public struct PendingSupplier: Codable {
+    public var supplier: Supplier = Supplier()
+}
+
 extension MarketplaceResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
