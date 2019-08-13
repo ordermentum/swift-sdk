@@ -14,7 +14,7 @@ public enum MarketplaceRouter: URLRequestConvertible {
     case getMarketplaces(String, Int, Int)
     case getSupplier(String)
     case getRecommendedSupplier(String)
-    case getPendingSupplier(String)
+    case getPendingSuppliers(String)
 
     //Methods
     var method: HTTPMethod {
@@ -25,7 +25,7 @@ public enum MarketplaceRouter: URLRequestConvertible {
             return .get
         case .getRecommendedSupplier:
             return .get
-        case .getPendingSupplier:
+        case .getPendingSuppliers:
             return .get
         }
     }
@@ -39,7 +39,7 @@ public enum MarketplaceRouter: URLRequestConvertible {
             return "suppliers/\(supplierId)"
         case .getRecommendedSupplier(let supplierId):
             return "suppliers/directory/\(supplierId)"
-        case .getPendingSupplier:
+        case .getPendingSuppliers:
             return "connection-requests"
         }
     }
@@ -49,7 +49,7 @@ public enum MarketplaceRouter: URLRequestConvertible {
         switch self {
         case .getMarketplaces(let retailerId, let pageSize, let pageNo):
             return ["retailerId": retailerId, "pageSize": pageSize, "pageNo": pageNo]
-        case .getPendingSupplier(let retailerId):
+        case .getPendingSuppliers(let retailerId):
             return ["retailerId": retailerId]
         default:
             return [:]

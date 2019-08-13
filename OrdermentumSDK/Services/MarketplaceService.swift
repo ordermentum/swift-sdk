@@ -54,9 +54,9 @@ public class MarketplaceService {
         }
     }
 
-    public func getPendingSupplier(retailerId: String, completion: @escaping (Bool, [PendingSupplier]?, ErrorResponse?) -> ()) {
+    public func getPendingSuppliers(retailerId: String, completion: @escaping (Bool, [PendingSupplier]?, ErrorResponse?) -> ()) {
         //Build Route
-        let route = MarketplaceRouter.getPendingSupplier(retailerId) as URLRequestConvertible
+        let route = MarketplaceRouter.getPendingSuppliers(retailerId) as URLRequestConvertible
 
         //Call API
         Service<[PendingSupplier], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
