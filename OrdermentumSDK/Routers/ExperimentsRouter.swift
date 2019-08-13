@@ -42,8 +42,8 @@ public enum ExperimentsRouter: URLRequestConvertible {
     //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .getExperiments(let slot, let source, let version, let retailerId, let isRetailer, let userId, let purchaserId, let supplierId, let device):
-            return ["slot": slot, "source": source, "version": version, "retailerId": retailerId, "isRetailer": isRetailer, "userId": userId, "purchaserId": purchaserId, "supplierId[]": supplierId, "device": device]
+        case .getExperiments(let slot, let source, let version, let retailerId, let isRetailer, let userId, let purchaserId, let supplierId, let model):
+            return ["slot": slot, "source": source, "version": version, "retailerId": retailerId, "isRetailer": isRetailer, "userId": userId, "purchaserId": purchaserId, "supplierId": supplierId, "model": model]
         default:
             return [:]
         }

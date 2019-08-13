@@ -30,9 +30,9 @@ public class ExperimentsService {
      * Get the experiments belonging to a user
      * Returns a ExperimentsResponse
      */
-    public func getExperiments(slot: String, source: String, version: String, retailerId: String, isRetailer: Bool, userId: String, purchaserId: String, supplierIds: [String], device: String, completion: @escaping (Bool, ExperimentsResponse?, ErrorResponse?) -> ()) {
+    public func getExperiments(slot: String, source: String, version: String, retailerId: String, isRetailer: Bool, userId: String, purchaserId: String, supplierIds: [String], model: String, completion: @escaping (Bool, ExperimentsResponse?, ErrorResponse?) -> ()) {
         //Build Route
-        let route = ExperimentsRouter.getExperiments(slot, source, version, retailerId, isRetailer, userId, purchaserId, supplierIds, device) as URLRequestConvertible
+        let route = ExperimentsRouter.getExperiments(slot, source, version, retailerId, isRetailer, userId, purchaserId, supplierIds, model) as URLRequestConvertible
         
         //Call API
         Service<ExperimentsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
