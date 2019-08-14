@@ -34,7 +34,7 @@ public struct PaymentMethod {
 public struct UpdatePaymentMethodRequest: Codable {
     public init() {}
     
-    public var paymentMethodId: String = ""
+    public var paymentMethodId: String? = nil
     public var defaultPaymentMethodType: String = ""
 }
 
@@ -70,6 +70,14 @@ public struct CreateDirectDebitPaymentMethodRequest: Codable {
     public var terms: Bool = true
     public var userId: String = ""
     public var user_id: String = ""
+}
+
+extension UpdatePaymentMethodRequest {
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(paymentMethodId, forKey: .paymentMethodId)
+        try container.encode(defaultPaymentMethodType, forKey: .defaultPaymentMethodType)
+    }
 }
 
 extension PaymentMethod: Decodable {
