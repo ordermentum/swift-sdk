@@ -57,13 +57,13 @@ public class AuthService {
      * Reset the password of a user using a password reset token
      * Returns a ResponseBody which can be used to check for a 200 response code
      */
-    public func resetPassword(resetToken: String, requestObject: ResetPasswordRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func resetPassword(resetToken: String, requestObject: ResetPasswordRequest, completion: @escaping (Bool, ResetPasswordResponse?, ErrorResponse?) -> ()) {
         //Build Route
         let route = AuthRouter.resetPassword(resetToken, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
-            completion(result, errorObject)
+        Service<ResetPasswordResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
     
