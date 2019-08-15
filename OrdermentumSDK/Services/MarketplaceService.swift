@@ -54,6 +54,10 @@ public class MarketplaceService {
         }
     }
 
+    /**
+     * Fetch a list of pending supplier requests from a retailer
+     * Returns an array of PendingSupplier objects
+     */
     public func getPendingSuppliers(retailerId: String, completion: @escaping (Bool, [PendingSupplier]?, ErrorResponse?) -> ()) {
         //Build Route
         let route = MarketplaceRouter.getPendingSuppliers(retailerId) as URLRequestConvertible
