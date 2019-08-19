@@ -46,10 +46,14 @@ public struct MarketplaceProperties: Encodable {
 }
 
 public struct MarketplaceSettings {
+    public init() {}
+    
     public var brand: Brand = Brand()
 }
 
 public struct PendingSupplier: Codable {
+    public init() {}
+    
     public var supplier: Supplier = Supplier()
 }
 
