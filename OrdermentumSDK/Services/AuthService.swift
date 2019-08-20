@@ -55,7 +55,7 @@ public class AuthService {
     
     /**
      * Reset the password of a user using a password reset token
-     * Returns a ResponseBody which can be used to check for a 200 response code
+     * Returns a ResetPasswordResponse
      */
     public func resetPassword(resetToken: String, requestObject: ResetPasswordRequest, completion: @escaping (Bool, ResetPasswordResponse?, ErrorResponse?) -> ()) {
         //Build Route
