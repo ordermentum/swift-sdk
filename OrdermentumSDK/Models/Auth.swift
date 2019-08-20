@@ -34,6 +34,10 @@ public struct ResetPasswordRequest: Codable {
     public var password: String = ""
 }
 
+public struct ResetPasswordResponse: Codable {
+    public var token: String = ""
+}
+
 public struct ChangePassword: Codable {
     public init() {}
     
