@@ -39,6 +39,7 @@ public struct Validation {
     public var cartErrorCount: Int = 0
     public var cartWarningCount: Int = 0
     public var cartInfoCount: Int = 0
+    public var discount: Float = 0.00
     public var lineItemErrorCount: Int = 0
     public var lineItemWarningCount: Int = 0
     public var lineItemInfosCount: Int = 0
@@ -67,6 +68,7 @@ public struct ValidationMessage {
 }
 
 public struct ValidationDisplay {
+    public var totalDiscount: String = ""
     public var totalFreight: String = ""
     public var totalCost: String = ""
     public var totalGST: String = ""
@@ -146,6 +148,7 @@ extension ValidationDisplay: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
+        totalDiscount = try container.decodeIfPresent(String.self, forKey: .totalDiscount) ?? ""
         totalFreight = try container.decodeIfPresent(String.self, forKey: .totalFreight) ?? ""
         totalCost = try container.decodeIfPresent(String.self, forKey: .totalCost) ?? ""
         totalGST = try container.decodeIfPresent(String.self, forKey: .totalGST) ?? ""

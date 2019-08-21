@@ -470,6 +470,7 @@ enum CodingKeys: String, CodingKey {
     case token
     case total
     case totalCost
+    case totalDiscount
     case totalDue
     case totalFreight
     case totalFreightIncGST
