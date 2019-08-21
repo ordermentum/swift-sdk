@@ -38,7 +38,7 @@ public enum FlagsRouter: URLRequestConvertible {
     var parameters: [String: Any] {
         switch self {
         case .getFlags(let flagsArray, let supplierIdArray, let retailerId, let userId):
-            return ["flags": flagsArray, "supplierId": supplierIdArray, "context[retailerId]": retailerId, "context[userId]": userId]
+            return ["flags": flagsArray, "context[supplierId]": supplierIdArray, "context[retailerId]": retailerId, "context[userId]": userId]
         case .getMarketplaceFlags(let flagsArray, let supplierId, let retailerId, let userId):
             return ["flags": flagsArray, "context[supplierId]": supplierId, "context[retailerId]": retailerId, "context[userId]": userId]
         default:
