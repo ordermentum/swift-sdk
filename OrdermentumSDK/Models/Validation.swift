@@ -39,7 +39,6 @@ public struct Validation {
     public var cartErrorCount: Int = 0
     public var cartWarningCount: Int = 0
     public var cartInfoCount: Int = 0
-    public var discount: Float = 0.00
     public var lineItemErrorCount: Int = 0
     public var lineItemWarningCount: Int = 0
     public var lineItemInfosCount: Int = 0
