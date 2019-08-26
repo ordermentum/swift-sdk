@@ -18,7 +18,7 @@ public struct ValidationRequestBody: Codable {
     public var retailerId: String = ""
     public var supplierId: String = ""
     public var type: String = ""
-    public var retailer: String = "retailer"
+    public var origin: String = "retailer"
 }
 
 public struct ValidationRequestBodyLineItem: Codable {
