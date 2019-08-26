@@ -80,6 +80,7 @@ public struct ValidationLineItem {
     public var productId: String = ""
     public var errors: [ValidationMessage] = []
     public var warnings: [ValidationMessage] = []
+    public var infos: [ValidationMessage] = []
     public var display: ValidationLineItemDisplay = ValidationLineItemDisplay()
     public var locked: Bool = false
 }
@@ -166,6 +167,7 @@ extension ValidationLineItem: Decodable {
         productId = try container.decodeIfPresent(String.self, forKey: .productId) ?? ""
         errors = try container.decodeIfPresent([ValidationMessage].self, forKey: .errors) ?? []
         warnings = try container.decodeIfPresent([ValidationMessage].self, forKey: .warnings) ?? []
+        infos = try container.decodeIfPresent([ValidationMessage].self, forKey: .infos) ?? []
         display = try container.decodeIfPresent(ValidationLineItemDisplay.self, forKey: .display) ?? ValidationLineItemDisplay()
         locked = try container.safeBoolDecode(forKey: .locked) ?? false
     }

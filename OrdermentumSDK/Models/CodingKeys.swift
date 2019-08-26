@@ -224,6 +224,7 @@ enum CodingKeys: String, CodingKey {
     case images
     case includeOrderUpdatesInReports
     case includeWeekends
+    case infos
     case insights
     case integrationData
     case interval
