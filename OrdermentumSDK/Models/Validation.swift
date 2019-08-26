@@ -12,6 +12,7 @@ import Foundation
 public struct ValidationRequestBody: Codable {
     public init() {}
     
+    public var orderId: String? = nil
     public var deliveryDate: String = ""
     public var lineItems: [ValidationRequestBodyLineItem] = []
     public var retailerId: String = ""
