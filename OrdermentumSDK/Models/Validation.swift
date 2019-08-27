@@ -63,9 +63,11 @@ public struct ValidationCart {
 }
 
 public struct ValidationMessage {
+    public init() {}
+    
     public var message: String = ""
     public var type: String = ""
-    public init() {}
+    public var id: String = ""
 }
 
 public struct ValidationDisplay {
@@ -141,6 +143,7 @@ extension ValidationMessage: Decodable {
         //Decode Data
         message = try container.decodeIfPresent(String.self, forKey: .message) ?? ""
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
+        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
     }
 }
 
@@ -186,5 +189,18 @@ extension ValidationLineItemDisplay: Decodable {
         tax = try container.safeFloatDecode(forKey: .tax) ?? 0
         total = try container.safeFloatDecode(forKey: .total) ?? 0
         surcharge = try container.safeFloatDecode(forKey: .surcharge) ?? 0
+    }
+}
+
+extension ValidationLineItem {
+    var shouldBeLocked: Bool {
+        //Check Errors
+        for error: ValidationMessage in errors {
+            if error.id == "LEAD_TIME" {
+                return true
+            }
+        }
+        
+        return false
     }
 }
