@@ -47,7 +47,7 @@ public struct CreateVenueRequest: Codable {
     public var ownerId = ""
     public var phone = ""
     public var email = ""
-    public var address = ""
+    public var address = Address()
     public var abn = ""
     public var contactFirstName = ""
     public var contactLastName = ""
