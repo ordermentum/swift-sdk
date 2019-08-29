@@ -13,7 +13,7 @@ public enum ProductsRouter: URLRequestConvertible {
     //Routes
     case getProductCategories(String, String, Int, Int)
     case getCategory(String, String, String)
-    case getProduct(String)
+    case getProduct(String, String, String)
     case getProducts(String, String, String, Bool, Int, Int)
     case getMostOrderedProducts(String, String, Bool, Int, Int)
     case getTrendingProducts(String, String, Bool, Int, Int)
@@ -71,8 +71,8 @@ public enum ProductsRouter: URLRequestConvertible {
             return ["retailerId": retailerId, "supplierId": supplierId, "pageSize": pageSize, "pageNo": pageNo]
         case .getCategory(_, let supplierId, let retailerId):
             return ["retailerId": retailerId, "supplierId": supplierId]
-        case .getProduct:
-            return [:]
+        case .getProduct(_, let retailerId, let supplierId):
+            return ["retailerId": retailerId, "supplierId": supplierId]
         case .getProducts(let categoryId, let retailerId, let supplierId, let visible, let pageSize, let pageNo):
             return ["categoryId": categoryId, "retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize, "pageNo": pageNo]
         case .getMostOrderedProducts(let retailerId, let supplierId, let visible, let pageSize, let pageNo):
