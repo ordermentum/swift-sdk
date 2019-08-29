@@ -41,7 +41,7 @@ public class ProductsService {
     }
     
     /**
-     * Fetch the products belonging to a particular category
+     * Fetch a single product by ID
      * Returns a Product object
      */
     public func getProducts(categoryId: String, retailerId: String, supplierId: String, visible: Bool, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> ()) {
@@ -50,6 +50,20 @@ public class ProductsService {
         
         //Call API
         Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
+     * Fetch the products belonging to a particular category
+     * Returns a ProductResponse object
+     */
+    public func getProduct(productId: String, completion: @escaping (Bool, Product?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = ProductsRouter.getProduct(productId) as URLRequestConvertible
+        
+        //Call API
+        Service<Product, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
