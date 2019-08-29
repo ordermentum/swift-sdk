@@ -49,7 +49,7 @@ public enum ProductsRouter: URLRequestConvertible {
             return "categories"
         case .getCategory(let categoryId, _, _):
             return "categories/\(categoryId)"
-        case .getProduct(let productId):
+        case .getProduct(let productId, _, _):
             return "products/\(productId)"
         case .getProducts:
             return "products"
