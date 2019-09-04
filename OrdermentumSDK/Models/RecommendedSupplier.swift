@@ -106,7 +106,6 @@ extension RecommendedSupplier: AnalyticsTrackable {
         var propertiesDictionary: [String: String] = [:]
         propertiesDictionary["tradingName"] = tradingName
         propertiesDictionary["supplierId"] = supplierId
-        
         return propertiesDictionary
     }
 }

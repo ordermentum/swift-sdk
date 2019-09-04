@@ -63,6 +63,9 @@ extension Category: Equatable {
 
 extension Category: AnalyticsTrackable {
     public var trackableProperties: [String: String]? {
-        return ["name": name]
+        var properties: [String: String] = [:]
+        properties["categoryId"] = id
+        properties["categoryName"] = name
+        return properties
     }
 }

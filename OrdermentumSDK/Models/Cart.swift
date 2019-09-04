@@ -101,6 +101,9 @@ extension CartProduct: Equatable, AnalyticsTrackable {
     }
     
     public var trackableProperties: [String: String]? {
-        return ["name": product.name]
+        var properties: [String: String] = [:]
+        properties["productId"] = product.id
+        properties["productName"] = product.name
+        return properties
     }
 }

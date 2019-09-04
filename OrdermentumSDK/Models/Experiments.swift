@@ -68,9 +68,9 @@ extension ExperimentsData: Equatable {
 
 extension ExperimentsData: AnalyticsTrackable {
     public var trackableProperties: [String: String]? {
-        var trackableProperties: [String: String] = [:]
-        trackableProperties["id"] = id
-        trackableProperties["name"] = name
-        return trackableProperties
+        var properties: [String: String] = [:]
+        properties["experimentId"] = id
+        properties["experimentName"] = name
+        return properties
     }
 }

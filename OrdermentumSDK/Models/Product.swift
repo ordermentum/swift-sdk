@@ -116,5 +116,4 @@ extension Product: AnalyticsTrackable {
                 "id": id,
                 "supplierId": supplierId]
     }
-    
 }
