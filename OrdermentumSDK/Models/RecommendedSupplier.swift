@@ -33,6 +33,7 @@ public struct RecommendedSupplier {
     public var id: String = ""
     public var dataAttributes: RecommendedSupplierDataAttributes = RecommendedSupplierDataAttributes()
     public var logo: Image = Image()
+    public var address: Address = Address()
     public var phone: String = ""
     public var sortOrder: Int = 0
     public var supplierId: String = ""
@@ -82,6 +83,7 @@ extension RecommendedSupplier: Decodable {
         dataAttributes = try container.decodeIfPresent(RecommendedSupplierDataAttributes.self, forKey: .dataAttributes) ?? RecommendedSupplierDataAttributes()
         logo = try container.decodeIfPresent(Image.self, forKey: .logo) ?? Image()
         marketplaceSupplier = try container.safeBoolDecode(forKey: .marketplaceSupplier) ?? false
+        address = try container.decodeIfPresent(Address.self, forKey: .address) ?? Address()
         phone = try container.decodeIfPresent(String.self, forKey: .phone) ?? ""
         sortOrder = try container.safeIntDecode(forKey: .sortOrder) ?? 0
         supplierId = try container.decodeIfPresent(String.self, forKey: .supplierId) ?? ""
