@@ -16,12 +16,12 @@ public class FindSupplierService {
      * Get suppliers available based on search string
      * Returns a FindSupplierResponse
      */
-    public func getSuppliers(searchString: String, pageSize: Int, retailerId: String, completion: @escaping (Bool, [RecommendedSupplier]?, ErrorResponse?) -> ()) {
+    public func getSuppliers(searchString: String, pageSize: Int, retailerId: String, completion: @escaping (Bool, FindSupplierResponse?, ErrorResponse?) -> ()) {
         //Build Route
         let route = FindSupplierRouter.getSuppliers(searchString, pageSize, retailerId) as URLRequestConvertible
         
         //Call API
-        Service<[RecommendedSupplier], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<FindSupplierResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
