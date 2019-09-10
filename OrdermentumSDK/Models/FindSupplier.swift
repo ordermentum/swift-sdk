@@ -11,7 +11,7 @@ import Foundation
 public struct FindSupplierResponse {
     public var meta: Meta = Meta()
     public var links: Links = Links()
-    public var data: [FindSupplierData] = []
+    public var data: [RecommendedSupplier] = []
 }
 
 public struct FindSupplierRequest: Codable {
