@@ -41,6 +41,7 @@ public struct Product: Encodable {
     public var batchCode: String = ""
     public var leadTime: Float = 0
     public var deliveryDays: [String] = []
+    public var outOfStock: Bool = false
 }
 
 public struct Display: Encodable {
@@ -92,6 +93,7 @@ extension Product: Decodable {
         batchCode = try container.decodeIfPresent(String.self, forKey: .batchCode) ?? ""
         leadTime = try container.safeFloatDecode(forKey: .leadTime) ?? 0
         deliveryDays = try container.decodeIfPresent([String].self, forKey: .deliveryDays) ?? []
+        outOfStock = try container.safeBoolDecode(forKey: .outOfStock) ?? false
     }
 }
 

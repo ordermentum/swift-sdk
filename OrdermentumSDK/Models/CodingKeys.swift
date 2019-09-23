@@ -317,6 +317,7 @@ enum CodingKeys: String, CodingKey {
     case ordersProductionReportPdf
     case origin
     case other
+    case outOfStock
     case overdueOrders
     case packCount
     case paidAt
