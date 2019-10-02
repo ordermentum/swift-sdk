@@ -51,6 +51,7 @@ enum CodingKeys: String, CodingKey {
     case projectionsV2 = "projections-v2"
     case recommendedSuppliers = "recommended-suppliers"
     case paymentUpsellDialogCheckout = "payment-upsell-dialog-checkout"
+    case paymentUpsellDialogCheckoutGiftCard = "payment-upsell-dialog-checkout-giftcard"
     case paymentUpsellDialogInvoice = "payment-upsell-dialog-invoice"
     case pendingSuppliers = "pending-suppliers"
     
