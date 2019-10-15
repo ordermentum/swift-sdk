@@ -44,7 +44,7 @@ extension Flags: Decodable {
         projectionsV2 = try container.safeBoolDecode(forKey: .projectionsV2) ?? false
         recommendedSuppliers = try container.safeBoolDecode(forKey: .recommendedSuppliers) ?? false
         paymentUpsellDialogCheckout = try container.safeBoolDecode(forKey: .paymentUpsellDialogCheckout) ?? false
-        paymentUpsellDialogCheckout = try container.safeBoolDecode(forKey: .paymentUpsellDialogCheckoutGiftCard) ?? false
+        paymentUpsellDialogCheckoutGiftCard = try container.safeBoolDecode(forKey: .paymentUpsellDialogCheckoutGiftCard) ?? false
         paymentUpsellDialogInvoice = try container.safeBoolDecode(forKey: .paymentUpsellDialogInvoice) ?? false
         pendingSuppliers = try container.safeBoolDecode(forKey: .pendingSuppliers) ?? false
     }
