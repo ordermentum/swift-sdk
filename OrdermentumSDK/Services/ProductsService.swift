@@ -16,9 +16,9 @@ public class ProductsService {
      * Fetch the category directory for a supplier that a retailer is not connected to.
      * Returns a CategoryResponse object
      */
-    public func getCategoryDirectory(retailerId: String, supplierId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, CategoryResponse?, ErrorResponse?) -> ()) {
+    public func getCategoryDirectory(supplierId: String, completion: @escaping (Bool, CategoryResponse?, ErrorResponse?) -> ()) {
         //Build Route
-        let route = ProductsRouter.getProductCategories(retailerId, supplierId, pageSize, pageNo) as URLRequestConvertible
+        let route = ProductsRouter.getCategoryDirectory(supplierId) as URLRequestConvertible
         
         //Call API
         Service<CategoryResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
@@ -30,9 +30,9 @@ public class ProductsService {
      * Fetch the product directory for a supplier that a retailer is not connected to.
      * Returns a ProductResponse object
      */
-    public func getProductDirectory(retailerId: String, supplierId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> ()) {
+    public func getProductDirectory(supplierId: String, categoryId: String, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> ()) {
         //Build Route
-        let route = ProductsRouter.getProductCategories(retailerId, supplierId, pageSize, pageNo) as URLRequestConvertible
+        let route = ProductsRouter.getProductDirectory(supplierId, categoryId) as URLRequestConvertible
         
         //Call API
         Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
