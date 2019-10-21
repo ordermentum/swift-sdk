@@ -13,6 +13,34 @@ public class ProductsService {
     public init() {}
     
     /**
+     * Fetch the category directory for a supplier that a retailer is not connected to.
+     * Returns a CategoryResponse object
+     */
+    public func getCategoryDirectory(retailerId: String, supplierId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, CategoryResponse?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = ProductsRouter.getProductCategories(retailerId, supplierId, pageSize, pageNo) as URLRequestConvertible
+        
+        //Call API
+        Service<CategoryResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
+     * Fetch the product directory for a supplier that a retailer is not connected to.
+     * Returns a ProductResponse object
+     */
+    public func getProductDirectory(retailerId: String, supplierId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = ProductsRouter.getProductCategories(retailerId, supplierId, pageSize, pageNo) as URLRequestConvertible
+        
+        //Call API
+        Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
      * Fetch the product categories for a particular supplier-retailer relationship
      * Returns a Category object
      */

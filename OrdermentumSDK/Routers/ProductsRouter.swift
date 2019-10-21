@@ -11,6 +11,8 @@ import Alamofire
 
 public enum ProductsRouter: URLRequestConvertible {
     //Routes
+    case getCategoryDirectory(String)
+    case getProductDirectory(String, String)
     case getProductCategories(String, String, Int, Int)
     case getCategory(String, String, String)
     case getProduct(String, String, String)
@@ -23,6 +25,10 @@ public enum ProductsRouter: URLRequestConvertible {
     //Methods
     var method: HTTPMethod {
         switch self {
+        case .getCategoryDirectory:
+            return .get
+        case .getProductDirectory:
+            return .get
         case .getProductCategories:
             return .get
         case .getCategory:
@@ -45,6 +51,10 @@ public enum ProductsRouter: URLRequestConvertible {
     //Paths
     var path: String {
         switch self {
+        case .getCategoryDirectory(let supplierId):
+            return "directory/\(supplierId)/categories"
+        case .getProductDirectory(let supplierId, _):
+            return "directory/\(supplierId)/products"
         case .getProductCategories:
             return "categories"
         case .getCategory(let categoryId, _, _):
@@ -67,6 +77,8 @@ public enum ProductsRouter: URLRequestConvertible {
     //Parameters
     var parameters: [String: Any] {
         switch self {
+        case .getProductDirectory(_, let categoryId):
+            return ["categoryId": categoryId]
         case .getProductCategories(let retailerId, let supplierId, let pageSize, let pageNo):
             return ["retailerId": retailerId, "supplierId": supplierId, "pageSize": pageSize, "pageNo": pageNo]
         case .getCategory(_, let supplierId, let retailerId):
@@ -83,6 +95,8 @@ public enum ProductsRouter: URLRequestConvertible {
             return ["retailerId": retailerId, "supplierId": supplierId, "pageSize": pageSize, "id__not": productsArray]
         case .searchProducts(let search, let retailerId, let supplierId, let visible, let pageSize):
             return ["search": search, "retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize]
+        default:
+            return [:]
         }
     }
     
