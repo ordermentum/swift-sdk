@@ -13,17 +13,20 @@ public struct AppVersion: Decodable {
     public var minimumAppVersion: String?
     public var latestAppVersion: String?
     public var forceLatest: Bool?
+    public var upsellDelay: Int?
     
     enum CodingKeys: String, CodingKey {
         case minimumAppVersion = "minimum-version"
         case latestAppVersion = "latest-version"
         case forceLatest = "force-latest"
+        case upsellDelay = "upsell-delay"
     }
     
-    public init(minimumAppVersion: String?, latestAppVersion: String?, forceLatest: Bool?) {
+    public init(minimumAppVersion: String?, latestAppVersion: String?, forceLatest: Bool?, upsellDelay: Int?) {
         self.minimumAppVersion = minimumAppVersion
         self.latestAppVersion = latestAppVersion
         self.forceLatest = forceLatest
+        self.upsellDelay = upsellDelay
     }
     
     public static func == (lhs: AppVersion, rhs: AppVersion) -> Bool {
