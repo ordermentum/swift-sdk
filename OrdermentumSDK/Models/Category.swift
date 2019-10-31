@@ -66,6 +66,7 @@ extension Category: AnalyticsTrackable {
         var properties: [String: String] = [:]
         properties["categoryId"] = id
         properties["categoryName"] = name
+//        properties["pricesShown"] = true.toString()
         return properties
     }
 }
