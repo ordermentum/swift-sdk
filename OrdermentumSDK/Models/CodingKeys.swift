@@ -347,6 +347,7 @@ enum CodingKeys: String, CodingKey {
     case placedByName
     case placedOrders
     case plan
+    case poa
     case pos
     case postcode
     case price
