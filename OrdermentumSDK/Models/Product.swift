@@ -42,6 +42,7 @@ public struct Product: Encodable {
     public var leadTime: Float = 0
     public var deliveryDays: [String] = []
     public var outOfStock: Bool = false
+    public var poa: Bool = false
 }
 
 public struct Display: Encodable {
@@ -94,6 +95,7 @@ extension Product: Decodable {
         leadTime = try container.safeFloatDecode(forKey: .leadTime) ?? 0
         deliveryDays = try container.decodeIfPresent([String].self, forKey: .deliveryDays) ?? []
         outOfStock = try container.safeBoolDecode(forKey: .outOfStock) ?? false
+        poa = try container.safeBoolDecode(forKey: .poa) ?? false
     }
 }
 
@@ -111,7 +113,6 @@ extension Display: Decodable {
 extension Product: AnalyticsTrackable {
     public var trackableProperties: [String: String]? {
         return ["productName": self.name,
-                "productId": self.id,
-                "supplierId": supplierId]
+                "productId": self.id]
     }
 }
