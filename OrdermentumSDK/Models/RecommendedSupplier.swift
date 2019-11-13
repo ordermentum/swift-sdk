@@ -106,8 +106,8 @@ extension RecommendedSupplierDataAttributes: Decodable {
 extension RecommendedSupplier: AnalyticsTrackable {
     public var trackableProperties: [String: String]? {
         var properties: [String: String] = [:]
-        properties["supplierName"] = tradingName
-        properties["supplierId"] = supplierId
+        properties["directorySupplierName"] = tradingName
+        properties["directorySupplierId"] = supplierId
         properties["marketplace"] = marketplaceSupplier.toString()
 //        properties["categoriesShown"] = true.toString()
         
