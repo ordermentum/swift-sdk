@@ -119,6 +119,8 @@
 		CA5B63E822EA92CE0057A93F /* StaticClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5B63E722EA92CE0057A93F /* StaticClient.swift */; };
 		CA6BB820225D993700A34A01 /* FindSupplierServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */; };
 		CA72972A225D966F00224410 /* BoolUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA729729225D966F00224410 /* BoolUtils.swift */; };
+		CA8B4A88237E18F20066307D /* AdminRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B4A87237E18F20066307D /* AdminRouter.swift */; };
+		CA8B4A8A237E19DF0066307D /* AdminService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B4A89237E19DF0066307D /* AdminService.swift */; };
 		CA929F3122555DA400E957AC /* OrdermentumSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA929F2722555DA400E957AC /* OrdermentumSDK.framework */; };
 		CA929F3822555DA400E957AC /* OrdermentumSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = CA929F2A22555DA400E957AC /* OrdermentumSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA929F6B22555FA900E957AC /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA929F4322555FA500E957AC /* Cart.swift */; };
@@ -315,6 +317,8 @@
 		CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSupplierServiceTests.swift; sourceTree = "<group>"; };
 		CA6BB821225DA60300A34A01 /* ProjectionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionsServiceTests.swift; sourceTree = "<group>"; };
 		CA729729225D966F00224410 /* BoolUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolUtils.swift; sourceTree = "<group>"; };
+		CA8B4A87237E18F20066307D /* AdminRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRouter.swift; sourceTree = "<group>"; };
+		CA8B4A89237E19DF0066307D /* AdminService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminService.swift; sourceTree = "<group>"; };
 		CA929F2722555DA400E957AC /* OrdermentumSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrdermentumSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA929F2A22555DA400E957AC /* OrdermentumSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrdermentumSDK.h; sourceTree = "<group>"; };
 		CA929F2B22555DA400E957AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -667,6 +671,7 @@
 		CA929F93225560B100E957AC /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				CA8B4A87237E18F20066307D /* AdminRouter.swift */,
 				CAC39CCA22559AC000D3099A /* AddOnsRouter.swift */,
 				CA5B63E522EA8BBE0057A93F /* AppVersionRouter.swift */,
 				CA929F942255618300E957AC /* AuthRouter.swift */,
@@ -709,6 +714,7 @@
 		CAC39CC3225572F500D3099A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CA8B4A89237E19DF0066307D /* AdminService.swift */,
 				CAC39CC822559AAF00D3099A /* AddOnsService.swift */,
 				26D281BE22A5FB4300D06E4E /* AppVersionService.swift */,
 				CAC39CC4225577C300D3099A /* AuthService.swift */,
@@ -1003,6 +1009,7 @@
 				CA929F8522555FA900E957AC /* TradingHours.swift in Sources */,
 				CAF24690225B189C00EDAF68 /* PurchaserRouter.swift in Sources */,
 				CA929F9122555FA900E957AC /* FindSupplier.swift in Sources */,
+				CA8B4A8A237E19DF0066307D /* AdminService.swift in Sources */,
 				CA5B63E622EA8BBE0057A93F /* AppVersionRouter.swift in Sources */,
 				CAA598B022A6296F006DC414 /* RecommendedSuppliersService.swift in Sources */,
 				CAD522D022D5BCA2004033EF /* Meta.swift in Sources */,
@@ -1047,6 +1054,7 @@
 				CA929F7D22555FA900E957AC /* Invoice.swift in Sources */,
 				CA929F6E22555FA900E957AC /* VenueInvite.swift in Sources */,
 				CA929F8322555FA900E957AC /* Marketplace.swift in Sources */,
+				CA8B4A88237E18F20066307D /* AdminRouter.swift in Sources */,
 				CA929F8422555FA900E957AC /* AddOns.swift in Sources */,
 				CA929F7022555FA900E957AC /* Payment.swift in Sources */,
 				CAF2468C225B083B00EDAF68 /* ProfileRouter.swift in Sources */,

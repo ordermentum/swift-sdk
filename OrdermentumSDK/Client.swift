@@ -19,6 +19,7 @@ public class Client {
     public static let instance = Client()
     
     //Services
+    public var admin: AdminService = AdminService()
     public var addons: AddOnsService = AddOnsService()
     public var auth: AuthService = AuthService()
     public var closureDates: ClosureDatesService = ClosureDatesService()
