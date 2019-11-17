@@ -11,6 +11,7 @@ import Foundation
 public struct Address: Encodable {
     public init() {}
     
+    public var formatted: String = ""
     public var number: String = ""
     public var description: String = ""
     public var street1: String = ""
@@ -27,6 +28,7 @@ extension Address: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         //Decode Data
+        formatted = try container.decodeIfPresent(String.self, forKey: .formatted) ?? ""
         number = try container.decodeIfPresent(String.self, forKey: .number) ?? ""
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
         street1 = try container.decodeIfPresent(String.self, forKey: .street1) ?? ""
