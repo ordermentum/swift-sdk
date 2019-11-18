@@ -15,8 +15,8 @@ public struct VenueResponse {
 }
 
 public struct Venue {
-    public init() {}
-    
+    public init() { }
+
     public var id: String = ""
     public var name: String = ""
     public var legalName: String = ""
@@ -39,8 +39,8 @@ public struct Venue {
 }
 
 public struct CreateVenueRequest: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var legalName = ""
     public var tradingName = ""
     public var userId = ""
@@ -55,21 +55,21 @@ public struct CreateVenueRequest: Codable {
 }
 
 public struct CreateVenueResponse: Decodable {
-    public init() {}
-    
+    public init() { }
+
     public var retailer: Venue = Venue()
 }
 
 public struct JoinVenueRequest: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var recipientEntityId: String = ""
     public var userId: String = ""
 }
 
 public struct VenueAccountSettings: Encodable {
-    public init() {}
-    
+    public init() { }
+
     public var flags: [String] = []
     public var insights: Insights = Insights()
     public var orderPrefix: String = ""
@@ -82,8 +82,8 @@ public struct VenueAccountSettings: Encodable {
 }
 
 public struct VenueAddress {
-    public init() {}
-    
+    public init() { }
+
     public var formatted: String = ""
     public var id: String = ""
     public var name: String = ""
@@ -123,15 +123,15 @@ public struct VenueImage {
 }
 
 public struct VenueSettings {
-    public init() {}
-    
+    public init() { }
+
     public var flags: [String] = []
     public var brand: VenueBrand = VenueBrand()
 }
 
 public struct User {
-    public init() {}
-    
+    public init() { }
+
     public var id: String = ""
     public var email: String = ""
     public var dob: String = ""
@@ -149,23 +149,23 @@ public struct User {
 }
 
 public struct VenueUsersResponse {
-    public init() {}
-    
+    public init() { }
+
     public var meta: Meta = Meta()
     public var links: Links = Links()
     public var data: [User] = []
 }
 
 public struct RemoveUser: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var entityId: String = ""
     public var perms: [String] = []
 }
 
 public struct AddUser: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var senderId: String = ""
     public var senderType: String = ""
     public var senderEntityName: String = ""
@@ -201,7 +201,7 @@ extension VenueResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         meta = try container.decodeIfPresent(Meta.self, forKey: .meta) ?? Meta()
         links = try container.decodeIfPresent(Links.self, forKey: .links) ?? Links()
@@ -213,7 +213,7 @@ extension Venue: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
@@ -241,7 +241,7 @@ extension VenueAccountSettings: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         flags = try container.decodeIfPresent([String].self, forKey: .flags) ?? []
         insights = try container.decodeIfPresent(Insights.self, forKey: .insights) ?? Insights()
@@ -259,7 +259,7 @@ extension VenueAddress: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         formatted = try container.decodeIfPresent(String.self, forKey: .formatted) ?? ""
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
@@ -287,7 +287,7 @@ extension VenueBrand: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         images = try container.decodeIfPresent([VenueImage].self, forKey: .images) ?? []
         logo = try container.decodeIfPresent(VenueImage.self, forKey: .logo) ?? VenueImage()
@@ -298,7 +298,7 @@ extension VenueImage: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         url = try container.decodeIfPresent(String.self, forKey: .url) ?? ""
         width = try container.safeIntDecode(forKey: .width) ?? 0
@@ -316,7 +316,7 @@ extension VenueSettings: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         flags = try container.decodeIfPresent([String].self, forKey: .flags) ?? []
         brand = try container.decodeIfPresent(VenueBrand.self, forKey: .brand) ?? VenueBrand()
@@ -327,7 +327,7 @@ extension VenueUsersResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         meta = try container.decodeIfPresent(Meta.self, forKey: .meta) ?? Meta()
         links = try container.decodeIfPresent(Links.self, forKey: .links) ?? Links()
@@ -339,7 +339,7 @@ extension User: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         email = try container.decodeIfPresent(String.self, forKey: .email) ?? ""
@@ -362,7 +362,7 @@ extension AddUserResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         senderEntityName = try container.decodeIfPresent(String.self, forKey: .senderEntityName) ?? ""
@@ -389,11 +389,13 @@ extension Venue: Equatable {
     }
 }
 
-extension User {
+extension User: Equatable {
     public static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id
     }
-        
+}
+
+extension User {
     public var fullName: String {
         return self.firstName + " " + self.lastName
     }
