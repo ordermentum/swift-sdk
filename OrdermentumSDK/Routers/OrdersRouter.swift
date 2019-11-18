@@ -15,6 +15,7 @@ public enum OrdersRouter: URLRequestConvertible {
     case submitStandingOrder(CreateStandingOrder)
     case getDeliveryDates(String, String)
     case getOrders(String, String, String, String, Int)
+    case getVenueOrders(String, String, String, Int)
     case getOrdersByDeliveryDate(String, String, String)
     case removeFavourite(String)
     case getFavourites(String, String, String, String, Int)
@@ -23,7 +24,7 @@ public enum OrdersRouter: URLRequestConvertible {
     case updateOrder(String, UpdateOrderRequest)
     case createFavouriteOrder(CreateFavouriteRequest)
     case scheduleOrder(String, CreatePurchaserSchedule)
-    
+
     //Methods
     var method: HTTPMethod {
         switch self {
@@ -34,6 +35,8 @@ public enum OrdersRouter: URLRequestConvertible {
         case .getDeliveryDates:
             return .get
         case .getOrders:
+            return .get
+        case .getVenueOrders:
             return .get
         case .getOrdersByDeliveryDate:
             return .get
@@ -53,7 +56,7 @@ public enum OrdersRouter: URLRequestConvertible {
             return .put
         }
     }
-    
+
     //Paths
     var path: String {
         switch self {
@@ -64,6 +67,8 @@ public enum OrdersRouter: URLRequestConvertible {
         case .getDeliveryDates:
             return "orders/delivery-dates"
         case .getOrders:
+            return "orders"
+        case .getVenueOrders:
             return "orders"
         case .getOrdersByDeliveryDate:
             return "orders"
@@ -83,7 +88,7 @@ public enum OrdersRouter: URLRequestConvertible {
             return "purchaser-schedules/\(scheduleId)"
         }
     }
-    
+
     //Parameters
     var parameters: [String: Any] {
         switch self {
@@ -91,6 +96,8 @@ public enum OrdersRouter: URLRequestConvertible {
             return ["retailerId": retailerId, "supplierId": supplierId]
         case .getOrders(let retailerId, let supplierId, let sortBy, let sortOrder, let pageNo):
             return ["retailerId": retailerId, "supplierId": supplierId, "sortBy[\(sortBy)]": sortOrder, "pageNo": pageNo]
+        case .getVenueOrders(let retailerId, let sortBy, let sortOrder, let pageNo):
+            return ["retailerId": retailerId, "sortBy[\(sortBy)]": sortOrder, "pageNo": pageNo]
         case .getOrdersByDeliveryDate(let retailerId, let supplierId, let sortBy):
             return ["retailerId": retailerId, "supplierId": supplierId, "sortBy[deliveryDate]": sortBy]
         case .getFavourites(let retailerId, let supplierId, let type, let sortBy, let pageNo):
@@ -101,7 +108,7 @@ public enum OrdersRouter: URLRequestConvertible {
             return [:]
         }
     }
-    
+
     //Body
     var body: Codable? {
         switch self {
@@ -121,7 +128,7 @@ public enum OrdersRouter: URLRequestConvertible {
             return nil
         }
     }
-    
+
     //Timeout
     var timeout: Int {
         switch self {
@@ -131,7 +138,7 @@ public enum OrdersRouter: URLRequestConvertible {
             return 10
         }
     }
-    
+
     //Builder
     public func asURLRequest() throws -> URLRequest {
         return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body, timeout: timeout)

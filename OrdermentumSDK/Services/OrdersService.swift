@@ -55,6 +55,20 @@ public class OrdersService {
     }
     
     /**
+     * Fetch an array of orders belonging to a retailer
+     * Returns an array of Orders
+     */
+    public func getOrders(retailerId: String, sortBy: String, sortOrder: String, pageNo: Int, completion: @escaping (Bool, OrderResponse?, Validation?) -> ()) {
+        //Build Route
+        let route = OrdersRouter.getVenueOrders(retailerId, sortBy, sortOrder, pageNo) as URLRequestConvertible
+        
+        //Call API
+        Service<OrderResponse, Validation>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
      * Fetch an array of orders belonging to a retailer/supplier relationship
      * Returns an array of Orders
      */
