@@ -390,8 +390,11 @@ extension Venue: Equatable {
 }
 
 extension User {
+    public static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.id == rhs.id
+    }
+        
     public var fullName: String {
         return self.firstName + " " + self.lastName
     }
 }
-
