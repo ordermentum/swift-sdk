@@ -29,6 +29,7 @@ public struct DataAttributes: Encodable {
     public var accounting: String = ""
     public var venueTypes: String = ""
     public var tradingHours: TradingHours = TradingHours()
+    public var promotedCategories: [String] = []
 }
 
 public struct VenueOperationsUpdate: Codable {
@@ -62,6 +63,7 @@ extension DataAttributes: Decodable {
         accounting = try container.decodeIfPresent(String.self, forKey: .accounting) ?? ""
         venueTypes = try container.decodeIfPresent(String.self, forKey: .venueTypes) ?? ""
         tradingHours = try container.decodeIfPresent(TradingHours.self, forKey: .tradingHours) ?? TradingHours()
+        promotedCategories = try container.decodeIfPresent([String].self, forKey: .promotedCategories) ?? []
     }
 }
 
