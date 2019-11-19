@@ -45,7 +45,7 @@ public enum AdminRouter: URLRequestConvertible {
         case .searchVenues(let searchQuery, let pageSize, let pageNo):
             return ["search": searchQuery, "pageSize": pageSize, "pageNo": pageNo]
         case .searchVenuesByLocation(let latitude, let longitude, let radius, let pageSize):
-            return ["location[latitude]": "\(longitude)", "location[longitude]": "\(latitude)]", "radius": "\(radius)km", "pageSize": pageSize]
+            return ["location[latitude]": "\(latitude)", "location[longitude]": "\(longitude)]", "radius": "\(radius)km", "pageSize": pageSize]
         default:
             return [:]
         }
