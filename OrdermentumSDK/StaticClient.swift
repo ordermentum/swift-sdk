@@ -19,6 +19,7 @@ public class StaticClient {
     
     //Services
     public var appVersion: AppVersionService = AppVersionService()
+    public var admin: AdminService = AdminService()
     
     public func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?) throws ->  URLRequest {
         //Setup Data
