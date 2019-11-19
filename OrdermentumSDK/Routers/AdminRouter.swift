@@ -13,7 +13,7 @@ public enum AdminRouter: URLRequestConvertible {
     //Routes
     case impersonateUser(String)
     case searchVenues(String, Int, Int)
-    case searchVenuesByLocation(Float, Float, Int)
+    case searchVenuesByLocation(Float, Float, Int, Int)
 
     //Methods
     var method: HTTPMethod {
@@ -44,8 +44,8 @@ public enum AdminRouter: URLRequestConvertible {
         switch self {
         case .searchVenues(let searchQuery, let pageSize, let pageNo):
             return ["search": searchQuery, "pageSize": pageSize, "pageNo": pageNo]
-        case .searchVenuesByLocation(let latitude, let longitude, let radius):
-            return ["location": "[\(longitude), \(latitude)]", "radius": "\(radius)km"]
+        case .searchVenuesByLocation(let latitude, let longitude, let radius, let pageSize):
+            return ["location[latitude]": "\(longitude)", "location[longitude]": "\(latitude)]", "radius": "\(radius)km", "pageSize": pageSize]
         default:
             return [:]
         }

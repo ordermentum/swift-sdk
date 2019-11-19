@@ -13,7 +13,6 @@ public class AdminService {
     public init() { }
 
     /**
-     * MUST BE CALLED FROM `StaticClient`
      * Get a deeplink to the iOS/Android application that will log you in as the specified user.
      * Returns an ImpersonateResponse object
      */
@@ -47,9 +46,9 @@ public class AdminService {
     * This is different to VenueService.searchVenues() in that it returns actual Venue objects.
     * Returns a VenueResponse object
     */
-    public func searchVenues(latitude: Float, longitude: Float, radius: Int, completion: @escaping (Bool, VenueResponse?, ErrorResponse?) -> ()) {
+    public func searchVenues(latitude: Float, longitude: Float, radius: Int, pageSize: Int, completion: @escaping (Bool, VenueResponse?, ErrorResponse?) -> ()) {
         //Build Route
-        let route = AdminRouter.searchVenuesByLocation(latitude, longitude, radius) as URLRequestConvertible
+        let route = AdminRouter.searchVenuesByLocation(latitude, longitude, radius, pageSize) as URLRequestConvertible
 
         //Call API
         Service<VenueResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
