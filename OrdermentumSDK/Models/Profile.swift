@@ -113,6 +113,7 @@ public struct UpdateUserRequest: Codable {
     public var firstName: String = ""
     public var lastName: String = ""
     public var phone: String = ""
+    public var dob: String = ""
 }
 
 extension UserProfile {
