@@ -11,12 +11,15 @@ import Alamofire
 
 public enum AdminRouter: URLRequestConvertible {
     //Routes
+    case impersonateUser(String)
     case searchVenues(String, Int, Int)
     case searchVenuesByLocation(Float, Float, Int)
 
     //Methods
     var method: HTTPMethod {
         switch self {
+        case .impersonateUser:
+            return .get
         case .searchVenues:
             return .get
         case .searchVenuesByLocation:
@@ -27,6 +30,8 @@ public enum AdminRouter: URLRequestConvertible {
     //Paths
     var path: String {
         switch self {
+        case .impersonateUser(let userId):
+            return "ops/impersonate/\(userId)/app"
         case .searchVenues:
             return "retailers"
         case .searchVenuesByLocation:

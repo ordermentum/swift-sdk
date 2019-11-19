@@ -451,6 +451,7 @@ enum CodingKeys: String, CodingKey {
     case stopCredit
     case street1
     case street2
+    case success
     case submittedAt
     case subtext
     case subtotal
