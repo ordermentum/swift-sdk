@@ -79,6 +79,7 @@ enum CodingKeys: String, CodingKey {
     case alerts
     case alias
     case approvedByName
+    case archived
     case attacheXml
     case autoConnect
     case availableDeliveries
