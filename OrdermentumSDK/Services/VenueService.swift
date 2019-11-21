@@ -16,7 +16,7 @@ public class VenueService {
      * Fetch a single venue by id
      * Returns a Venue object
      */
-    public func getVenues(retailerId: String, completion: @escaping (Bool, Venue?, ErrorResponse?) -> ()) {
+    public func getVenue(retailerId: String, completion: @escaping (Bool, Venue?, ErrorResponse?) -> ()) {
         //Build Route
         let route = VenueRouter.getVenue(retailerId) as URLRequestConvertible
         
