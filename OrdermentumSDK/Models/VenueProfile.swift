@@ -14,7 +14,10 @@ public struct VenueProfile: Codable {
     public var abn: String = ""
     public var address: Address = Address()
     public var billingAddress: Address = Address()
+    public var email: String = ""
     public var legalName: String = ""
+    public var liquorLicense: String = ""
+    public var phone: String = ""
     public var tradingName: String = ""
 }
 
