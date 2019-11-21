@@ -13,8 +13,22 @@ public class VenueService {
     public init() {}
     
     /**
-     * Fetch the venues of the currently logged in user
+     * Fetch a single venue by id
      * Returns a Venue object
+     */
+    public func getVenues(retailerId: String, completion: @escaping (Bool, Venue?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = VenueRouter.getVenue(retailerId) as URLRequestConvertible
+        
+        //Call API
+        Service<Venue, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
+     * Fetch the venues of the currently logged in user
+     * Returns a VenueResponse object
      */
     public func getVenues(retailerIdsArray: [String], pageSize: Int, pageNo: Int, completion: @escaping (Bool, VenueResponse?, ErrorResponse?) -> ()) {
         //Build Route

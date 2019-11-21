@@ -11,6 +11,7 @@ import Alamofire
 
 public enum VenueRouter: URLRequestConvertible {
     //Routes
+    case getVenue(String)
     case getVenues([String], Int, Int)
     case createVenue(CreateVenueRequest)
     case updateVenueProfile(String, VenueProfile)
@@ -23,10 +24,12 @@ public enum VenueRouter: URLRequestConvertible {
     case searchVenue(String)
     case joinVenue(JoinVenueRequest)
     case getPendingVenues
-    
+
     //Methods
     var method: HTTPMethod {
         switch self {
+        case .getVenue:
+            return .get
         case .getVenues:
             return .get
         case .createVenue:
@@ -53,10 +56,12 @@ public enum VenueRouter: URLRequestConvertible {
             return .get
         }
     }
-    
+
     //Paths
     var path: String {
         switch self {
+        case .getVenue(let retailerId):
+            return "retailers/\(retailerId)"
         case .getVenues:
             return "retailers"
         case .createVenue:
@@ -83,7 +88,7 @@ public enum VenueRouter: URLRequestConvertible {
             return "venues/pending-requests"
         }
     }
-    
+
     //Parameters
     var parameters: [String: Any] {
         switch self {
@@ -92,14 +97,14 @@ public enum VenueRouter: URLRequestConvertible {
         case .getUsers(let retailerId):
             return ["retailerId": retailerId]
         case .getVenueInvites(let recipientEmail):
-            return ["recipientEmail":recipientEmail, "status":"approved"]
+            return ["recipientEmail": recipientEmail, "status": "approved"]
         case .searchVenue(let searchQuery):
             return ["search": searchQuery]
         default:
             return [:]
         }
     }
-    
+
     //Body
     var body: Codable? {
         switch self {
@@ -117,7 +122,7 @@ public enum VenueRouter: URLRequestConvertible {
             return nil
         }
     }
-    
+
     //Builder
     public func asURLRequest() throws -> URLRequest {
         return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
