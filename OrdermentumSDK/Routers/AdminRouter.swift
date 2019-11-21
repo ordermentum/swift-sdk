@@ -14,6 +14,7 @@ public enum AdminRouter: URLRequestConvertible {
     case impersonateUser(String)
     case searchVenues(String, Int, Int)
     case searchVenuesByLocation(Float, Float, Int, Int)
+    case getVenueInvites(String)
 
     //Methods
     var method: HTTPMethod {
@@ -24,6 +25,8 @@ public enum AdminRouter: URLRequestConvertible {
             return .get
         case .searchVenuesByLocation:
             return .get
+        case .getVenueInvites:
+         return .get
         }
     }
 
@@ -36,6 +39,8 @@ public enum AdminRouter: URLRequestConvertible {
             return "retailers"
         case .searchVenuesByLocation:
             return "retailers"
+        case .getVenueInvites:
+            return "invites"
         }
     }
 
@@ -46,6 +51,8 @@ public enum AdminRouter: URLRequestConvertible {
             return ["search": searchQuery, "pageSize": pageSize, "pageNo": pageNo]
         case .searchVenuesByLocation(let latitude, let longitude, let radius, let pageSize):
             return ["location[latitude]": "\(latitude)", "location[longitude]": "\(longitude)", "radius": "\(radius)km", "pageSize": pageSize]
+        case .getVenueInvites(let entityId):
+            return ["recipientEntityId": entityId]
         default:
             return [:]
         }
