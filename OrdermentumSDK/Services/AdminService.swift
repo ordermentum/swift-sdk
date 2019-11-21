@@ -55,4 +55,19 @@ public class AdminService {
             completion(result, responseObject, errorObject)
         }
     }
+
+    /**
+    * Search the directory of pending venue invites by retailerId
+    * This is different to VenueService.getVenueInvites() in that it returns all invites for a venue as opposed to a user
+    * Returns a VenueResponse object
+    */
+    public func getVenueInvites(retailerId: String, completion: @escaping (Bool, [VenueInvite]?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = AdminRouter.getVenueInvites(retailerId) as URLRequestConvertible
+
+        //Call API
+        Service<[VenueInvite], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
 }
