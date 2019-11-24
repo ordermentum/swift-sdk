@@ -60,6 +60,7 @@ public struct ValidationCart {
     
     public var errors: [ValidationMessage] = []
     public var warnings: [ValidationMessage] = []
+    public var infos: [ValidationMessage] = []
 }
 
 public struct ValidationMessage {
@@ -132,6 +133,7 @@ extension ValidationCart: Decodable {
         //Decode Data
         errors = try container.decodeIfPresent([ValidationMessage].self, forKey: .errors) ?? []
         warnings = try container.decodeIfPresent([ValidationMessage].self, forKey: .warnings) ?? []
+        infos = try container.decodeIfPresent([ValidationMessage].self, forKey: .infos) ?? []
     }
 }
 
