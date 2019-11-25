@@ -43,6 +43,7 @@ public struct Product: Encodable {
     public var deliveryDays: [String] = []
     public var outOfStock: Bool = false
     public var poa: Bool = false
+    public var paymentOptions: [PaymentOption] = []
 }
 
 public struct Display: Encodable {
