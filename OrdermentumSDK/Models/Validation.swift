@@ -44,6 +44,7 @@ public struct Validation {
     public var lineItemErrorCount: Int = 0
     public var lineItemWarningCount: Int = 0
     public var lineItemInfosCount: Int = 0
+    public var paymentOptions: [PaymentOption] = []
     public var totalCost: Float = 0.00
     public var totalFreight: Float = 0.00
     public var subtotal: Float = 0.00
@@ -113,6 +114,7 @@ extension Validation: Decodable {
         lineItemErrorCount = try container.safeIntDecode(forKey: .lineItemErrorCount) ?? 0
         lineItemWarningCount = try container.safeIntDecode(forKey: .lineItemWarningCount) ?? 0
         lineItemInfosCount = try container.safeIntDecode(forKey: .lineItemInfosCount) ?? 0
+        paymentOptions = try container.decodeIfPresent([PaymentOption].self, forKey: .paymentOptions) ?? []
         totalCost = try container.safeFloatDecode(forKey: .totalCost) ?? 0.00
         totalFreight = try container.safeFloatDecode(forKey: .totalFreight) ?? 0.00
         subtotal = try container.safeFloatDecode(forKey: .subtotal) ?? 0.00
