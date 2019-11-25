@@ -97,6 +97,7 @@ extension Product: Decodable {
         deliveryDays = try container.decodeIfPresent([String].self, forKey: .deliveryDays) ?? []
         outOfStock = try container.safeBoolDecode(forKey: .outOfStock) ?? false
         poa = try container.safeBoolDecode(forKey: .poa) ?? false
+        paymentOptions = try container.decodeIfPresent([PaymentOption].self, forKey: .paymentOptions) ?? []
     }
 }
 
