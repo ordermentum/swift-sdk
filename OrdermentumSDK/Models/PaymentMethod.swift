@@ -9,6 +9,8 @@
 import Foundation
 
 public struct PaymentMethod {
+    public init() {}
+    
     public var account: String = ""
     public var accountName: String = ""
     public var bankConfigured: Bool = false
