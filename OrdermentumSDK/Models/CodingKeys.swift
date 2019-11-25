@@ -202,6 +202,7 @@ enum CodingKeys: String, CodingKey {
     case externalCustomerId
     case externalId
     case fileType
+    case financeAvailable
     case firstName
     case firstReminder
     case flags

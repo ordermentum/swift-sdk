@@ -39,6 +39,7 @@ public struct AccountSettings {
     public var defaultDeliveryDelay: Int = 0
     public var classicStandingOrders: Bool = false
     public var defaultSalesAccountCode: String = ""
+    public var financeAvailable: Bool = false
 }
 
 extension AccountSettings: Decodable {
@@ -74,5 +75,6 @@ extension AccountSettings: Decodable {
         defaultDeliveryDelay = try container.safeIntDecode(forKey: .defaultDeliveryDelay) ?? 0
         classicStandingOrders = try container.safeBoolDecode(forKey: .classicStandingOrders) ?? false
         defaultSalesAccountCode = try container.decodeIfPresent(String.self, forKey: .defaultSalesAccountCode) ?? ""
+        financeAvailable = try container.safeBoolDecode(forKey: .financeAvailable) ?? false
     }
 }

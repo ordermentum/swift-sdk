@@ -197,4 +197,12 @@ public class OrdersService {
             completion(result, responseObject, errorObject)
         }
     }
+    
+    /**
+     * Get the URL that a user should be redirected to when placing an order on finance
+     * Returns a String
+     */
+    public func getInstalmentsURL(orderId: String) -> String {
+        return String("\(Client.instance.baseURL)orders/\(orderId)/instalment")
+    }
 }
