@@ -24,6 +24,7 @@ public enum OrdersRouter: URLRequestConvertible {
     case updateOrder(String, UpdateOrderRequest)
     case createFavouriteOrder(CreateFavouriteRequest)
     case scheduleOrder(String, CreatePurchaserSchedule)
+    case getInstalmentsURL(String)
 
     //Methods
     var method: HTTPMethod {
@@ -54,6 +55,8 @@ public enum OrdersRouter: URLRequestConvertible {
             return .post
         case .scheduleOrder:
             return .put
+        case .getInstalmentsURL:
+            return .get
         }
     }
 
@@ -86,6 +89,8 @@ public enum OrdersRouter: URLRequestConvertible {
             return "orders"
         case .scheduleOrder(let scheduleId, _):
             return "purchaser-schedules/\(scheduleId)"
+        case .getInstalmentsURL(let orderId):
+            return "orders/\(orderId)/instalment"
         }
     }
 

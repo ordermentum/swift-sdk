@@ -281,6 +281,13 @@ public struct UpdateOrderRequestLineItem: Codable {
     public var quantity: Int = 0
 }
 
+public struct InstalmentsResponse: Encodable {
+    public init() {}
+    
+    public var success: Bool = false
+    public var link: String = ""
+}
+
 extension OrderResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
@@ -504,6 +511,17 @@ extension UpdatedBy: Decodable {
         firstName = try container.decodeIfPresent(String.self, forKey: .firstName) ?? ""
         lastName = try container.decodeIfPresent(String.self, forKey: .lastName) ?? ""
         fullName = try container.decodeIfPresent(String.self, forKey: .fullName) ?? ""
+    }
+}
+
+extension InstalmentsResponse: Decodable {
+    public init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        //Decode Data
+        success = try container.safeBoolDecode(forKey: .success) ?? false
+        link = try container.decodeIfPresent(String.self, forKey: .link) ?? ""
     }
 }
 

@@ -202,7 +202,14 @@ public class OrdersService {
      * Get the URL that a user should be redirected to when placing an order on finance
      * Returns a String
      */
-    public func getInstalmentsURL(orderId: String) -> String {
-        return String("\(Client.instance.baseURL)orders/\(orderId)/instalment")
+    public func getInstalmentsURL(orderId: String, completion: @escaping (Bool, InstalmentsResponse?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = OrdersRouter.getInstalmentsURL(orderId) as URLRequestConvertible
+        
+        //Call API
+        Service<InstalmentsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
     }
+    
 }
