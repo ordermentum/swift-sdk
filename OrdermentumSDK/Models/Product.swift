@@ -114,10 +114,7 @@ extension Display: Decodable {
 
 extension Product: AnalyticsTrackable {
     public var trackableProperties: [String: String]? {
-        let name = self.name
-        let id = self.id
-        
-        return ["name": name,
-                "id": id]
+        return ["productName": self.name,
+                "productId": self.id]
     }
 }
