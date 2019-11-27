@@ -285,7 +285,7 @@ public struct InstalmentsResponse: Encodable {
     public init() {}
     
     public var success: Bool = false
-    public var link: String = ""
+    public var url: String = ""
 }
 
 extension OrderResponse: Decodable {
@@ -521,7 +521,7 @@ extension InstalmentsResponse: Decodable {
         
         //Decode Data
         success = try container.safeBoolDecode(forKey: .success) ?? false
-        link = try container.decodeIfPresent(String.self, forKey: .link) ?? ""
+        url = try container.decodeIfPresent(String.self, forKey: .url) ?? ""
     }
 }
 
