@@ -131,6 +131,7 @@ enum CodingKeys: String, CodingKey {
     case completeAt
     case completedAt
     case connect
+    case connectionEmail
     case connectUrl
     case contactEmail
     case contactFirstName
@@ -277,6 +278,7 @@ enum CodingKeys: String, CodingKey {
     case locked
     case longitude
     case looseCount
+    case marketplace
     case marketplacePurchaser
     case marketplaceSupplier
     case maskedNumber
@@ -374,6 +376,7 @@ enum CodingKeys: String, CodingKey {
     case promotedCategories
     case properties
     case public_id
+    case publicDirectory
     case purchaserId
     case purchaserName
     case purchaserScheduleId
@@ -419,6 +422,7 @@ enum CodingKeys: String, CodingKey {
     case roles
     case runAt
     case runStatus
+    case salePercentage
     case sameDeliveryAndBillingAddress
     case sat
     case schedule
