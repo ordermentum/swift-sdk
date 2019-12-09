@@ -281,3 +281,11 @@ extension ExportResponse: Decodable {
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
     }
 }
+
+extension Invoice: AnalyticsTrackable {
+    public var trackableProperties: [String : String]? {
+        return ["invoiceNumber": number,
+                "invoiceTotal": String(total),
+                "invoiceTotalDue": String(totalDue)]
+    }
+}
