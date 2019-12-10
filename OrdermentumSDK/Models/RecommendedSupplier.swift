@@ -40,6 +40,7 @@ public struct RecommendedSupplier {
     public var tradingName: String = ""
     public var autoConnect: Bool = false
     public var marketplaceSupplier: Bool = false
+    public var accountSettings: RecommendedSupplierAccountSettings = RecommendedSupplierAccountSettings()
 }
 
 public struct RecommendedSupplierDataAttributes {
@@ -51,6 +52,16 @@ public struct RecommendedSupplierDataAttributes {
     public var primaryCategory: String = ""
     public var primaryProducts: String = ""
     public var promotedCategories: [String] = []
+}
+
+public struct RecommendedSupplierAccountSettings {
+    public init() {}
+    
+    public var marketplace: Bool = false
+    public var autoConnect: Bool = false
+    public var salePercentage: Float = 0
+    public var connectionEmail: String = ""
+    public var publicDirectory: Bool = false
 }
 
 extension RecommendedSupplierResponse: Decodable {
@@ -88,6 +99,7 @@ extension RecommendedSupplier: Decodable {
         sortOrder = try container.safeIntDecode(forKey: .sortOrder) ?? 0
         supplierId = try container.decodeIfPresent(String.self, forKey: .supplierId) ?? ""
         tradingName = try container.decodeIfPresent(String.self, forKey: .tradingName) ?? ""
+        accountSettings = try container.decodeIfPresent(RecommendedSupplierAccountSettings.self, forKey: .accountSettings) ?? RecommendedSupplierAccountSettings()
     }
 }
 
@@ -103,13 +115,24 @@ extension RecommendedSupplierDataAttributes: Decodable {
     }
 }
 
+extension RecommendedSupplierAccountSettings: Decodable {
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        marketplace = try container.safeBoolDecode(forKey: .marketplace) ?? false
+        autoConnect = try container.safeBoolDecode(forKey: .autoConnect) ?? false
+        salePercentage = try container.safeFloatDecode(forKey: .salePercentage) ?? 0
+        connectionEmail = try container.decodeIfPresent(String.self, forKey: .connectionEmail) ?? ""
+        publicDirectory = try container.safeBoolDecode(forKey: .publicDirectory) ?? false
+    }
+}
+
 extension RecommendedSupplier: AnalyticsTrackable {
     public var trackableProperties: [String: String]? {
         var properties: [String: String] = [:]
         properties["directorySupplierName"] = tradingName
         properties["directorySupplierId"] = supplierId
         properties["marketplace"] = marketplaceSupplier.toString()
-//        properties["categoriesShown"] = true.toString()
+        properties["categoriesShown"] = accountSettings.publicDirectory.toString()
         
         return properties
     }
