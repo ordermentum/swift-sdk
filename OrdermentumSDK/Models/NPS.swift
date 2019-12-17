@@ -13,6 +13,7 @@ public struct NPSFeedback: Codable {
     
     public var score: Int = 0
     public var comment: String = ""
+    public var source: String = ""
 }
 
 public struct NPSResponse {
