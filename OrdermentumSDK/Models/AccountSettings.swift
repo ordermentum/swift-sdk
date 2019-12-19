@@ -74,7 +74,7 @@ extension AccountSettings: Decodable {
         enableDeliveryDate = try container.safeBoolDecode(forKey: .enableDeliveryDate) ?? false
         defaultDeliveryDelay = try container.safeIntDecode(forKey: .defaultDeliveryDelay) ?? 0
         classicStandingOrders = try container.safeBoolDecode(forKey: .classicStandingOrders) ?? false
-        defaultSalesAccountCode = try container.decodeIfPresent(String.self, forKey: .defaultSalesAccountCode) ?? ""
+        defaultSalesAccountCode = try container.safeStringIntDecode(forKey: .defaultSalesAccountCode) ?? ""
         financeAvailable = try container.safeBoolDecode(forKey: .financeAvailable) ?? false
     }
 }
