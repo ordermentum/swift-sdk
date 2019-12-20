@@ -469,7 +469,7 @@ extension PurchaserSettings: Decodable {
         includeWeekends = try container.safeBoolDecode(forKey: .includeWeekends) ?? false
         invoiceFrequency = try container.decodeIfPresent(InvoiceFrequency.self, forKey: .invoiceFrequency) ?? InvoiceFrequency()
         defaultDeliveryDelay = try container.decodeIfPresent(String.self, forKey: .defaultDeliveryDelay) ?? ""
-        defaultSalesAccountCode = try container.decodeIfPresent(String.self, forKey: .defaultSalesAccountCode) ?? ""
+        defaultSalesAccountCode = try container.safeStringIntDecode(forKey: .defaultSalesAccountCode) ?? ""
         includeOrderUpdatesInReports = try container.safeBoolDecode(forKey: .includeOrderUpdatesInReports) ?? false
     }
 }
