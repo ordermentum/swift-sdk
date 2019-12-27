@@ -76,7 +76,7 @@ public class Client {
 public enum ClientURL {
     public static let rootURL = "https://app.ordermentum.com/v1/"
     public static let rootWebURL = "https://app.ordermentum.com/"
-    public static let rootTestingURL = "https://app-testing.ordermentum.com/v1/"
-    public static let rootTestingWebURL = "https://app-testing.ordermentum.com/"
+    public static let rootTestingURL = "https://app.ordermentum-sandbox.com/v1/"
+    public static let rootTestingWebURL = "https://app.ordermentum-sandbox.com/"
     public static let rootStaticURL = "https://static.ordermentum.com/"
 }
