@@ -16,6 +16,7 @@ public struct ExperimentsData {
     public var id: String = ""
     public var name: String = ""
     public var meta: [String: String] = [:]
+    public var slot: String = ""
     
     public init() {}
 }
@@ -46,6 +47,7 @@ extension ExperimentsData: Decodable {
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         meta = try container.decodeIfPresent([String: String].self, forKey: .meta) ?? [:]
+        slot = try container.decodeIfPresent(String.self, forKey: .slot) ?? ""
     }
 }
 
@@ -71,6 +73,7 @@ extension ExperimentsData: AnalyticsTrackable {
         var properties: [String: String] = [:]
         properties["experimentId"] = id
         properties["experimentName"] = name
+        properties["experimentSlot"] = slot
         return properties
     }
 }
