@@ -57,6 +57,6 @@ public class FlagsClient {
 public enum FlagsClientURL {
     public static let rootFlagsURL = "https://flags.ordermentum.com/v1/"
     public static let rootFlagsWebURL = "https://flags.ordermentum.com/"
-    public static let rootFlagsTestingURL = "https://flags-testing.ordermentum.com/v1/"
-    public static let rootFlagsTestingWebURL = "https://flags-testing.ordermentum.com/"
+    public static let rootFlagsTestingURL = "https://flags.ordermentum-sandbox.com/v1/"
+    public static let rootFlagsTestingWebURL = "https://flags.ordermentum-sandbox.com/"
 }
