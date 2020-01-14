@@ -9,27 +9,27 @@
 import Foundation
 
 public struct RecommendedSupplierResponse {
-    public init() {}
-    
+    public init() { }
+
     public var data: [RecommendedSupplierCategory] = []
 }
 
 public struct RecommendedSupplierTopResponse {
-    public init() {}
-    
+    public init() { }
+
     public var data: [RecommendedSupplier] = []
 }
 
 public struct RecommendedSupplierCategory {
-    public init() {}
-    
+    public init() { }
+
     public var category: String = ""
     public var suppliers: [RecommendedSupplier] = []
 }
 
 public struct RecommendedSupplier {
-    public init() {}
-    
+    public init() { }
+
     public var id: String = ""
     public var dataAttributes: RecommendedSupplierDataAttributes = RecommendedSupplierDataAttributes()
     public var logo: Image = Image()
@@ -44,8 +44,8 @@ public struct RecommendedSupplier {
 }
 
 public struct RecommendedSupplierDataAttributes {
-    public init() {}
-    
+    public init() { }
+
     public var categories: [String] = []
     public var serviceAreas: String = ""
     public var supplierQuote: String = ""
@@ -55,8 +55,8 @@ public struct RecommendedSupplierDataAttributes {
 }
 
 public struct RecommendedSupplierAccountSettings {
-    public init() {}
-    
+    public init() { }
+
     public var marketplace: Bool = false
     public var autoConnect: Bool = false
     public var salePercentage: Float = 0
@@ -133,7 +133,7 @@ extension RecommendedSupplier: AnalyticsTrackable {
         properties["directorySupplierId"] = supplierId
         properties["marketplace"] = marketplaceSupplier.toString()
         properties["categoriesShown"] = accountSettings.publicDirectory.toString()
-        
+
         return properties
     }
 }
