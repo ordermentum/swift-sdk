@@ -13,6 +13,7 @@ public class FlagsClient {
     //Data
     public var baseURL: String = ""
     public var token: String = ""
+    public var headers: [String: String] = [:]
     
     //Private Init to Stop Re-Initialisation
     private init() {}
@@ -24,7 +25,6 @@ public class FlagsClient {
     
     // MARK: Convenience Methods
     public func getHeaderToken() -> String {
-        print(String(format: "Bearer \(token)"))
         return String(format: "Bearer \(token)")
     }
     
@@ -38,6 +38,11 @@ public class FlagsClient {
         request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
+        
+        //Set Headers
+        for header in headers {
+            request.setValue(header.value, forHTTPHeaderField: header.key)
+        }
         
         //Set Token
         if !token.isEmpty {

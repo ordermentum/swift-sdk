@@ -203,6 +203,7 @@
 		CAF246AE225C26C600EDAF68 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246AD225C26C600EDAF68 /* ValidationService.swift */; };
 		CAF246B0225C27B000EDAF68 /* VenueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246AF225C27B000EDAF68 /* VenueService.swift */; };
 		CAF246B2225C299300EDAF68 /* OrdersServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF246B1225C299300EDAF68 /* OrdersServiceTests.swift */; };
+		CAF7562423CEBBDB0015566B /* PlatformHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF7562323CEBBDB0015566B /* PlatformHeaders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -406,6 +407,7 @@
 		CAF246AD225C26C600EDAF68 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		CAF246AF225C27B000EDAF68 /* VenueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueService.swift; sourceTree = "<group>"; };
 		CAF246B1225C299300EDAF68 /* OrdersServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersServiceTests.swift; sourceTree = "<group>"; };
+		CAF7562323CEBBDB0015566B /* PlatformHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformHeaders.swift; sourceTree = "<group>"; };
 		F10DCAFE816FD2195B5952D6 /* Pods-OrdermentumSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDKTests/Pods-OrdermentumSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F6676FC6C8EFEC37AE3D4FD5 /* Pods-ordermentum-swift-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ordermentum-swift-sdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ordermentum-swift-sdk/Pods-ordermentum-swift-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -670,6 +672,7 @@
 				CA929F4622555FA500E957AC /* VenueInvite.swift */,
 				CA929F4922555FA600E957AC /* VenueProfile.swift */,
 				CA929F5422555FA700E957AC /* VenueSearch.swift */,
+				CAF7562323CEBBDB0015566B /* PlatformHeaders.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1064,6 +1067,7 @@
 				CA929F8322555FA900E957AC /* Marketplace.swift in Sources */,
 				CA8B4A88237E18F20066307D /* AdminRouter.swift in Sources */,
 				CA929F8422555FA900E957AC /* AddOns.swift in Sources */,
+				CAF7562423CEBBDB0015566B /* PlatformHeaders.swift in Sources */,
 				CA929F7022555FA900E957AC /* Payment.swift in Sources */,
 				CAF2468C225B083B00EDAF68 /* ProfileRouter.swift in Sources */,
 				CAC39CC922559AAF00D3099A /* AddOnsService.swift in Sources */,
