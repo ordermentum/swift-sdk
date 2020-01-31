@@ -62,6 +62,7 @@ public struct RecommendedSupplierAccountSettings {
     public var salePercentage: Float = 0
     public var connectionEmail: String = ""
     public var publicDirectory: Bool = false
+    public var showDirectoryPrice: Bool = false
 }
 
 extension RecommendedSupplierResponse: Decodable {
@@ -123,6 +124,7 @@ extension RecommendedSupplierAccountSettings: Decodable {
         salePercentage = try container.safeFloatDecode(forKey: .salePercentage) ?? 0
         connectionEmail = try container.decodeIfPresent(String.self, forKey: .connectionEmail) ?? ""
         publicDirectory = try container.safeBoolDecode(forKey: .publicDirectory) ?? false
+        showDirectoryPrice = try container.safeBoolDecode(forKey: .showDirectoryPrice) ?? false
     }
 }
 
