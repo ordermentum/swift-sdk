@@ -38,7 +38,7 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        Client.instance.venues.getVenues(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject) in
+        Client.instance.venues.getVenues(retailerIdsArray: [], pageSize: 10, pageNo: 1) { (result, requestObject, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -56,7 +56,7 @@ class VenueServiceTests: XCTestCase {
         requestObject.ownerId = ProcessInfo.processInfo.environment["CREATE_VENUE_OWNERID"] ?? ""
         requestObject.phone = ProcessInfo.processInfo.environment["CREATE_VENUE_PHONE"] ?? ""
         requestObject.email = ProcessInfo.processInfo.environment["CREATE_VENUE_EMAIL"] ?? ""
-        requestObject.address = ProcessInfo.processInfo.environment["CREATE_VENUE_ADDRESS"] ?? ""
+        requestObject.address = Address()
         requestObject.abn = ProcessInfo.processInfo.environment["CREATE_VENUE_ABN"] ?? ""
         requestObject.contactFirstName = ProcessInfo.processInfo.environment["CREATE_VENUE_CONTACT_FIRSTNAME"] ?? ""
         requestObject.contactLastName = ProcessInfo.processInfo.environment["CREATE_VENUE_CONTACT_LASTNAME"] ?? ""
@@ -72,7 +72,7 @@ class VenueServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.venues.createVenues(requestObject, completion: { (result, responseData) in
+        Client.instance.venues.createVenues(requestObject, completion: { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         })
@@ -98,7 +98,7 @@ class VenueServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.venues.searchVenues(searchQuery: searchQuery) { (success, responseData) in
+        Client.instance.venues.searchVenues(searchQuery: searchQuery) { (success, responseData, err) in
             assert(success)
             XCTAssertNotNil(responseData)
             expectation.fulfill()
@@ -125,7 +125,7 @@ class VenueServiceTests: XCTestCase {
             self.startStub(route, stubData: .updateVenueProfile )
         }
         
-        Client.instance.venues.updateVenueProfile(retailerId: retailerId, venueProfile: updateVenuProfileRequestObject) { (result, requestObject) in
+        Client.instance.venues.updateVenueProfile(retailerId: retailerId, venueProfile: updateVenuProfileRequestObject) { (result, requestObject, err) in
             assert(result)
             XCTAssertNotNil(requestObject)
             expectation.fulfill()
@@ -143,7 +143,7 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        Client.instance.venues.getProfileCompletion(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, requestObject) in
+        Client.instance.venues.getProfileCompletion(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, requestObject, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -166,7 +166,7 @@ class VenueServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.venues.checkVenueInvites(recipientEmail) { (success, response) in
+        Client.instance.venues.checkVenueInvites(recipientEmail) { (success, response, err) in
             assert(success)
             XCTAssertNotNil(response)
             expectation.fulfill()
@@ -214,7 +214,7 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        Client.instance.venues.sendVenueInvite(requestObject) { (result, responseData) in
+        Client.instance.venues.sendVenueInvite(requestObject) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -234,7 +234,7 @@ class VenueServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.venues.acceptAllInvites { (success) in
+        Client.instance.venues.acceptAllInvites { (success, err) in
             assert(success)
             expectation.fulfill()
         }
@@ -262,7 +262,7 @@ class VenueServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.venues.joinVenue(requestBody) { (success) in
+        Client.instance.venues.joinVenue(requestBody) { (success, err) in
             assert(success)
             expectation.fulfill()
         }
@@ -284,7 +284,7 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        Client.instance.venues.getUsers(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, responseData) in
+        Client.instance.venues.getUsers(retailerId: ProcessInfo.processInfo.environment["RETAILER_ID"] ?? "") { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -302,7 +302,7 @@ class VenueServiceTests: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        Client.instance.venues.removeUser(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: responseObject) { (result) in
+        Client.instance.venues.removeUser(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: responseObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }

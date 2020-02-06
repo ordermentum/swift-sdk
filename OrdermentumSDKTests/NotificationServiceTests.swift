@@ -59,7 +59,7 @@ class NotificationServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.notifications.updateNotificationSetting(userId: userId, supplierId: supplierId, updateObject: updateObject) { (result) in
+        Client.instance.notifications.updateNotificationSetting(userId: userId, supplierId: supplierId, updateObject: updateObject) { (result, err) in
                 assert(result)
                 expectation.fulfill()
         }

@@ -34,7 +34,7 @@ class DeviceServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.devices.registerDevice(requestObject) { (result) in
+        Client.instance.devices.registerDevice(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -58,7 +58,7 @@ class DeviceServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.devices.unregisterDevice(requestObject) { (result) in
+        Client.instance.devices.unregisterDevice(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -80,7 +80,7 @@ class DeviceServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.devices.updateVenueOperations(retailerId: "", requestObject: requestObject) { (result) in
+        Client.instance.devices.updateVenueOperations(retailerId: "", requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }

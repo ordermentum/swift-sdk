@@ -12,17 +12,14 @@ import XCTest
 
 class AuthServiceTests: XCTestCase {
     
+    var authService = Client.instance.auth
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testLogin() {
@@ -36,7 +33,13 @@ class AuthServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootURL
-        Client.instance.auth.login(loginRequest) { (result, loginObject) in
+        
+        //Stubbing
+        if let route = try? AuthRouter.login(loginRequest).asURLRequest() {
+            self.startStub(route, stubData: .login )
+        }
+        
+        authService.login(loginRequest) { (result, loginObject, err) in
             XCTAssertNotNil(loginObject?.access_token)
             expectation.fulfill()
         }
@@ -55,7 +58,13 @@ class AuthServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootURL
-        Client.instance.auth.requestPasswordReset(requestObject) { (result) in
+        
+        //Stubbing
+        if let route = try? AuthRouter.requestPasswordReset(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .empty )
+        }
+        
+        authService.requestPasswordReset(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -78,7 +87,13 @@ class AuthServiceTests: XCTestCase {
         //Call API
         Client.instance.baseURL = ClientURL.rootURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        Client.instance.auth.changePassword(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: requestObject) { (result, responseData) in
+        
+        //Stubbing
+        if let route = try? AuthRouter.changePassword(ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject).asURLRequest() {
+            self.startStub(route, stubData: .changePassword )
+        }
+        
+        authService.changePassword(userId: ProcessInfo.processInfo.environment["USER_ID"] ?? "", requestObject: requestObject) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -103,7 +118,7 @@ class AuthServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.auth.verifyEmail(resetToken) { (result) in
+        authService.verifyEmail(resetToken) { (result, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -129,7 +144,7 @@ class AuthServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.auth.resendVerifyEmail(requestObject) { (result) in
+        authService.resendVerifyEmail(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }

@@ -39,13 +39,13 @@ class ExperimentsServiceTests: XCTestCase {
         FlagsClient.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         //Stubbing
-        if let route = try? ExperimentsRouter.getExperiments(slot, source, version, retailerId, isRetailer, userId, purchaserId, supplierIds).asURLRequest() {
+        if let route = try? ExperimentsRouter.getExperiments(slot, source, version, retailerId, isRetailer, userId, purchaserId, supplierIds, "").asURLRequest() {
             self.startStub(route, stubData: .getExperiments )
         }
         
         //Call API
         
-        FlagsClient.instance.experiments.getExperiments(slot: slot, source: source, version: version, retailerId: retailerId, isRetailer: false, userId: userId, purchaserId: purchaserId, supplierIds: []) { (result, responseData) in
+        FlagsClient.instance.experiments.getExperiments(slot: slot, source: source, version: version, retailerId: retailerId, isRetailer: false, userId: userId, purchaserId: purchaserId, supplierIds: [], model: "") { (result, responseData, err) in
             assert(result)
             XCTAssertNotNil(responseData)
             expectation.fulfill()
@@ -66,7 +66,7 @@ class ExperimentsServiceTests: XCTestCase {
         
         //Call API
         FlagsClient.instance.baseURL = FlagsClientURL.rootFlagsTestingURL
-        FlagsClient.instance.experiments.dismissExperiment(requestObject) { (result) in
+        FlagsClient.instance.experiments.dismissExperiment(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }

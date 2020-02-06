@@ -84,7 +84,7 @@ class InvoiceServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.invoices.exportInvoice(requestObject) { (result, responseData) in
+        Client.instance.invoices.exportInvoice(requestObject) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -111,7 +111,7 @@ class InvoiceServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.invoices.downloadInvoice(invoiceId: invoiceId) { (result, responseData) in
+        Client.instance.invoices.downloadInvoice(invoiceId: invoiceId) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -140,7 +140,7 @@ class InvoiceServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.invoices.applyPayment(invoiceId: invoiceId, requestObject: requestObject) { (result) in
+        Client.instance.invoices.applyPayment(invoiceId: invoiceId, requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }

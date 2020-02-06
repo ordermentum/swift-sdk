@@ -36,7 +36,7 @@ class ProductsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.products.getProductCategories(retailerId: retailerId, supplierId: supplierId, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
+        Client.instance.products.getProductCategories(retailerId: retailerId, supplierId: supplierId, pageSize: pageSize, pageNo: pageNo) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -64,7 +64,7 @@ class ProductsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.products.getCategory(categoryId: categoryId, retailerId: retailerId, supplierId: supplierId) { (result, responseData) in
+        Client.instance.products.getCategory(categoryId: categoryId, retailerId: retailerId, supplierId: supplierId) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -95,7 +95,7 @@ class ProductsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.products.getProducts(categoryId: categoryId, retailerId: retailerId, supplierId: supplierId, visible: visible, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
+        Client.instance.products.getProducts(categoryId: categoryId, retailerId: retailerId, supplierId: supplierId, visible: visible, pageSize: pageSize, pageNo: pageNo) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -125,7 +125,7 @@ class ProductsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.products.getMostOrderedProducts(retailerId: retailerId, supplierId: supplierId, visible: visible, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
+        Client.instance.products.getMostOrderedProducts(retailerId: retailerId, supplierId: supplierId, visible: visible, pageSize: pageSize, pageNo: pageNo) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -155,7 +155,7 @@ class ProductsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.products.getTrendingProducts(retailerId: retailerId, supplierId: supplierId, visible: visible, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
+        Client.instance.products.getTrendingProducts(retailerId: retailerId, supplierId: supplierId, visible: visible, pageSize: pageSize, pageNo: pageNo) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -188,7 +188,7 @@ class ProductsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.products.getRecommendedProducts(retailerId: retailerId, supplierId: supplierId, pageSize: pageSize, excludedProductIdsArray: excludedProductId) { (result, responseData) in
+        Client.instance.products.getRecommendedProducts(retailerId: retailerId, supplierId: supplierId, pageSize: pageSize, excludedProductIdsArray: excludedProductId) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -218,7 +218,7 @@ class ProductsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.products.searchProducts(search: search, retailerId: retailerId , supplierId: supplierId, visible: visible, pageSize: pageSize) { (result, responseData) in
+        Client.instance.products.searchProducts(search: search, retailerId: retailerId , supplierId: supplierId, visible: visible, pageSize: pageSize) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()

@@ -25,7 +25,7 @@ class CreditNotesServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.creditNotes.getCreditNotes(purchaserId: "", pageSize:0, pageNo:0) { (result, responseData) in
+        Client.instance.creditNotes.getCreditNotes(purchaserId: "", pageSize:0, pageNo:0) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }

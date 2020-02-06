@@ -44,7 +44,7 @@ class FlagsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        FlagsClient.instance.flags.getFlags(flagsArray: flags, supplierIdArray: supplierId, retailerId: retailerId, userId: userId) { (result, responseData) in
+        FlagsClient.instance.flags.getFlags(flagsArray: flags, supplierIdArray: supplierId, retailerId: retailerId, userId: userId) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()

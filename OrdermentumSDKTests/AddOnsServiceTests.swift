@@ -39,7 +39,7 @@ class AddOnsServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.addons.searchAddons(entityType: entityType, entityId: entityId) { (result, responseData) in
+        Client.instance.addons.searchAddons(entityType: entityType, entityId: entityId) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -53,7 +53,7 @@ class AddOnsServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.addons.discoverAddons(entityType: "", entityId:"") { (result, responseData) in
+        Client.instance.addons.discoverAddons(entityType: "", entityId:"") { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -67,7 +67,7 @@ class AddOnsServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.addons.readAddon(addonId: "", accountId:"") { (result, responseData) in
+        Client.instance.addons.readAddon(addonId: "", accountId:"") { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -86,7 +86,7 @@ class AddOnsServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.addons.updateAddon(addonId: "", accountId: "", requestObject: requestObject) { (result, responseData) in
+        Client.instance.addons.updateAddon(addonId: "", requestObject: requestObject) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -105,7 +105,7 @@ class AddOnsServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.addons.disconnectAddon(addonId: "", requestObject: requestObject) { (result) in
+        Client.instance.addons.disconnectAddon(addonId: "", requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }

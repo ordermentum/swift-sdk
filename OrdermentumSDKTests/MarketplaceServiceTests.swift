@@ -36,7 +36,7 @@ class MarketplaceServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.marketplaces.getMarketplaces(retailerId: retailerId, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
+        Client.instance.marketplaces.getMarketplaces(retailerId: retailerId, pageSize: pageSize, pageNo: pageNo) { (result, responseData, err) in
             if result {
                 assert(result)
                 XCTAssertNotNil(responseData)

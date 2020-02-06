@@ -33,7 +33,7 @@ class PurchaserServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        Client.instance.purchasers.getPurchasers(retailerId: retailerID, supplierId: supplierID) { (result, responseData) in
+        Client.instance.purchasers.getPurchasers(retailerId: retailerID, supplierId: supplierID) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -58,7 +58,7 @@ class PurchaserServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        Client.instance.purchasers.getPurchasersForPaymentMethod(retailerId: retailerID, paymentMethodType: paymentMethodType) { (result, responseData) in
+        Client.instance.purchasers.getPurchasersForPaymentMethod(retailerId: retailerID, paymentMethodType: paymentMethodType) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -83,7 +83,7 @@ class PurchaserServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        Client.instance.purchasers.updatePaymentMethod(purchaserId: purchaserID, requestObject: updatePaymentMethodRequest) { (result) in
+        Client.instance.purchasers.updatePaymentMethod(purchaserId: purchaserID, requestObject: updatePaymentMethodRequest) { (result, err) in
             if result {
                 assert(result)
                 expectation.fulfill()

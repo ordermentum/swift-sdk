@@ -59,7 +59,7 @@ class DataAttributesServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.dataAttributes.updateVenueHours(retailerId: "", requestObject: requestObject) { (result) in
+        Client.instance.dataAttributes.updateVenueHours(retailerId: "", requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -81,7 +81,7 @@ class DataAttributesServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.dataAttributes.updateVenueOperations(retailerId: "", requestObject: requestObject) { (result) in
+        Client.instance.dataAttributes.updateVenueOperations(retailerId: "", requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }

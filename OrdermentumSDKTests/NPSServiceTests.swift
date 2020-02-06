@@ -34,7 +34,7 @@ class NPSServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.nps.getNPS { (result, response) in
+        Client.instance.nps.getNPS { (result, response, err) in
             assert(result)
             XCTAssertNotNil(response)
             expectation.fulfill()
@@ -65,7 +65,7 @@ class NPSServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.nps.sendFeedback(requestObject) { (result) in
+        Client.instance.nps.sendFeedback(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }

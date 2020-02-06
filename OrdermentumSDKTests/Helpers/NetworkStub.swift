@@ -10,6 +10,7 @@ import Foundation
 import Hippolyte
 
 public enum StubDataFile: String {
+    case empty
     case addonsSearch
     case addonsSearchError = "jsonError"
     case getPurchasers
@@ -38,6 +39,10 @@ public enum StubDataFile: String {
     case verifyEmail
     case resendVerifyEmail
     case getExperiments
+    
+    //Auth
+    case changePassword
+    case login
   
     //Orders
     case submitOrder

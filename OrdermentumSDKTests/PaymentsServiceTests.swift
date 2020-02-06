@@ -33,7 +33,7 @@ class PaymentsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.payments.getPaymentMethods(retailerId: retailerId) { (result, responseData) in
+        Client.instance.payments.getPaymentMethods(retailerId: retailerId) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -60,7 +60,7 @@ class PaymentsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.payments.getSinglePaymentMethod(retailerId: retailerId, paymentMethodId: paymentMethodId) { (result, responseData) in
+        Client.instance.payments.getSinglePaymentMethod(retailerId: retailerId, paymentMethodId: paymentMethodId) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -82,9 +82,10 @@ class PaymentsServiceTests: XCTestCase {
         requestObject.number = self.getEnvironmentVar("CARD_NUMBER") ?? ""
         requestObject.issuer = self.getEnvironmentVar("CARD_ISSUER") ?? ""
         requestObject.isCard = Bool(self.getEnvironmentVar("ISCARD")!) ?? true
-        requestObject.firstName = self.getEnvironmentVar("FIRST_NAME") ?? "TEST NAME"
-        requestObject.lastName = self.getEnvironmentVar("LAST_NAME") ?? ""
-        requestObject.fullName = self.getEnvironmentVar("FULL_NAME") ?? ""
+        requestObject.name = self.getEnvironmentVar("FULL_NAME") ?? ""
+//        requestObject.firstName = self.getEnvironmentVar("FIRST_NAME") ?? "TEST NAME"
+//        requestObject.lastName = self.getEnvironmentVar("LAST_NAME") ?? ""
+//        requestObject.fullName = self.getEnvironmentVar("FULL_NAME") ?? ""
         requestObject.expiryMonth = self.getEnvironmentVar("EXPIRY_MONTH") ?? ""
         requestObject.expiryYear = self.getEnvironmentVar("EXPIRY_YEAR") ?? ""
         requestObject.cvv = self.getEnvironmentVar("CVV") ?? ""
@@ -101,7 +102,7 @@ class PaymentsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Stubs network call")
         
         //Call API
- 		Client.instance.payments.createCardPaymentMethod(retailerId: retailerId, requestObject: requestObject) { (result, responseData) in
+ 		Client.instance.payments.createCardPaymentMethod(retailerId: retailerId, requestObject: requestObject) { (result, responseData, err) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -149,7 +150,7 @@ class PaymentsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
         
-        Client.instance.payments.deletePaymentMethod(retailerId: retailerId, paymentMethodId: paymentMethodId) { (result) in
+        Client.instance.payments.deletePaymentMethod(retailerId: retailerId, paymentMethodId: paymentMethodId) { (result, err) in
             if result {
                 assert(result)
                 expectation.fulfill()

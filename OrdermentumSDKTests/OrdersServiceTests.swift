@@ -53,7 +53,7 @@ class OrderServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.orders.submitOrder(requestObject) { (result, responseData) in
+        Client.instance.orders.submitOrder(requestObject) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -89,7 +89,7 @@ class OrderServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.orders.submitStandingOrder(requestObject) { (result, responseData) in
+        Client.instance.orders.submitStandingOrder(requestObject) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -116,7 +116,7 @@ class OrderServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.orders.getDeliveryDates(retailerId: retailerId, supplierId: supplierId) { (result, responseData) in
+        Client.instance.orders.getDeliveryDates(retailerId: retailerId, supplierId: supplierId) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -139,12 +139,12 @@ class OrderServiceTests: XCTestCase {
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         //Stubbing
-        if let route = try? OrdersRouter.getOrders(retailerId, supplierId, sortBy).asURLRequest() {
+        if let route = try? OrdersRouter.getOrders(retailerId, supplierId, sortBy, "-1", 1).asURLRequest() {
             self.startStub(route, stubData: .getOrders )
         }
         
         //Call API
-        Client.instance.orders.getOrders(retailerId: retailerId, supplierId: supplierId, sortBy: sortBy) { (result, responseData) in
+        Client.instance.orders.getOrders(retailerId: retailerId, supplierId: supplierId, sortBy: sortBy, sortOrder: "1", pageNo: 1) { (result, responseData, err) in
             assert(responseData?.data != nil)
             expectation.fulfill()
         }
@@ -170,7 +170,7 @@ class OrderServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.orders.removeFavourite(orderId: orderId) { (result) in
+        Client.instance.orders.removeFavourite(orderId: orderId) { (result, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -200,7 +200,7 @@ class OrderServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.orders.getFavourites(retailerId: retailerId, supplierId: supplierId, type: type, sortBy: sortBy, pageNo: page) { (result, responseData) in
+        Client.instance.orders.getFavourites(retailerId: retailerId, supplierId: supplierId, type: type, sortBy: sortBy, pageNo: page) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -229,7 +229,7 @@ class OrderServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.orders.getClassicStandingOrders(retailerId: retailerId, supplierId: supplierId, enabled: enabled, sortBy: sortBy) { (result, responseData) in
+        Client.instance.orders.getClassicStandingOrders(retailerId: retailerId, supplierId: supplierId, enabled: enabled, sortBy: sortBy) { (result, responseData, err) in
             assert(responseData?.data != nil)
             expectation.fulfill()
         }
@@ -268,7 +268,7 @@ class OrderServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.orders.updateOrderFirstTime(requestObject) { (result) in
+        Client.instance.orders.updateOrderFirstTime(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -304,7 +304,7 @@ class OrderServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.orders.updateOrder(orderId: orderId, requestObject: requestObject) { (result) in
+        Client.instance.orders.updateOrder(orderId: orderId, requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -344,7 +344,7 @@ class OrderServiceTests: XCTestCase {
         }
         
         //Call API
-        Client.instance.orders.createFavourite(requestObject) { (result, responseData)  in
+        Client.instance.orders.createFavourite(requestObject) { (result, responseData, err)  in
             assert(result)
             expectation.fulfill()
         }

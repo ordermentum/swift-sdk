@@ -25,7 +25,7 @@ class ClosureDatesServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.closureDates.getClosurePeriods("", 0, 0) { (result, responseData) in
+        Client.instance.closureDates.getClosurePeriods("", 0, 0) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -48,7 +48,7 @@ class ClosureDatesServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.closureDates.createClosurePeriod(requestObject) { (result, responseData) in
+        Client.instance.closureDates.createClosurePeriod(requestObject) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -72,7 +72,7 @@ class ClosureDatesServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.closureDates.updateClosurePeriod(closurePeriodId: "", requestObject: requestObject) { (result) in
+        Client.instance.closureDates.updateClosurePeriod(closurePeriodId: "", requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -87,7 +87,7 @@ class ClosureDatesServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.closureDates.deleteClosurePeriod(closurePeriodId: "") { (result) in
+        Client.instance.closureDates.deleteClosurePeriod(closurePeriodId: "") { (result, err) in
             assert(result)
             expectation.fulfill()
         }

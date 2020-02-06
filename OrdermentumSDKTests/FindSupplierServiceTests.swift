@@ -36,7 +36,7 @@ class FindSupplierServiceTests: XCTestCase {
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        FindSupplierService().sendSupplierEnquiry(requestObject) { (result) in
+        FindSupplierService().sendSupplierEnquiry(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }
