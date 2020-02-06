@@ -445,6 +445,7 @@ enum CodingKeys: String, CodingKey {
     case sharedSecret
     case shortName
     case show
+    case showDirectoryPrice
     case signature
     case single
     case SKU
