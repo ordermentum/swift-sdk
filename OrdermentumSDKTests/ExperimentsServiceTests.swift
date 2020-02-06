@@ -40,7 +40,7 @@ class ExperimentsServiceTests: XCTestCase {
         
         //Stubbing
         if let route = try? ExperimentsRouter.getExperiments(slot, source, version, retailerId, isRetailer, userId, purchaserId, supplierIds, "").asURLRequest() {
-            self.startStub(route, stubData: .getExperiments )
+            self.startStub(route, stubData: .experimentsResponse )
         }
         
         //Call API
@@ -64,8 +64,16 @@ class ExperimentsServiceTests: XCTestCase {
         requestObject.userId = ProcessInfo.processInfo.environment["EPERIMENT_DISMISS_USER_ID"] ?? ""
         requestObject.experimentId = ProcessInfo.processInfo.environment["EPERIMENT_DISMISS_ID"] ?? ""
         
-        //Call API
+        //Request setup
         FlagsClient.instance.baseURL = FlagsClientURL.rootFlagsTestingURL
+        FlagsClient.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
+        
+        //Stubbing
+        if let route = try? ExperimentsRouter.dismissExperiment(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .experimentsResponse )
+        }
+        
+        //Call API
         FlagsClient.instance.experiments.dismissExperiment(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()

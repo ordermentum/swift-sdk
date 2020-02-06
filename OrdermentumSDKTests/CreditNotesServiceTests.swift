@@ -23,8 +23,15 @@ class CreditNotesServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? CreditNotesRouter.getCreditNotes("", 0, 0).asURLRequest() {
+            self.startStub(route, stubData: .creditNotesResponse )
+        }
+        
+        //Call API
         Client.instance.creditNotes.getCreditNotes(purchaserId: "", pageSize:0, pageNo:0) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()

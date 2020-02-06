@@ -37,11 +37,17 @@ class ValidationServiceTest: XCTestCase {
         requestObject.type = ProcessInfo.processInfo.environment["TYPE"] ?? ""
         requestObject.lineItems = []
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        ValidationService().validateItems(requestObject) { (result, responseData, err) in
+        //Stubbing
+        if let route = try? ValidationRouter.validateItems(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .acceptAllInvites )
+        }
+        
+        //Call API
+        Client.instance.validation.validateItems(requestObject) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }

@@ -57,8 +57,15 @@ class DataAttributesServiceTests: XCTestCase {
         requestObject.accounting = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_ACCOUNTING"] ?? ""
         requestObject.venueTypes = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_VENUE_TYPES"] ?? ""
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? DataAttributesRouter.updateVenueHours("", requestObject).asURLRequest() {
+            self.startStub(route, stubData: .empty )
+        }
+        
+        //Call API
         Client.instance.dataAttributes.updateVenueHours(retailerId: "", requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
@@ -79,8 +86,15 @@ class DataAttributesServiceTests: XCTestCase {
         requestObject.banking = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_BANKING"] ?? ""
         requestObject.accounting = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_ACCOUNTING"] ?? ""
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? DataAttributesRouter.updateVenueOperations("", requestObject).asURLRequest() {
+            self.startStub(route, stubData: .empty )
+        }
+        
+        //Call API
         Client.instance.dataAttributes.updateVenueOperations(retailerId: "", requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()

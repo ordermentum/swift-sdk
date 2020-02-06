@@ -11,6 +11,7 @@ import Hippolyte
 
 public enum StubDataFile: String {
     case empty
+    case addOn
     case addonsSearch
     case addonsSearchError = "jsonError"
     case getPurchasers
@@ -38,7 +39,13 @@ public enum StubDataFile: String {
     case getFlags
     case verifyEmail
     case resendVerifyEmail
-    case getExperiments
+    case experimentsResponse
+    case closurePeriodsResponse
+    case creditNotesResponse
+    case dataAttributesResponse
+    case profileCompletion
+    case venueUserResponse
+    case venuesResponse
     
     //Auth
     case changePassword
@@ -125,3 +132,9 @@ extension OrderServiceTests: NetworkStubs {}
 extension InvoiceServiceTests: NetworkStubs {}
 extension VenueServiceTests: NetworkStubs {}
 extension AuthServiceTests: NetworkStubs {}
+extension ClosureDatesServiceTests: NetworkStubs {}
+extension CreditNotesServiceTests: NetworkStubs {}
+extension DataAttributesServiceTests: NetworkStubs {}
+extension DeviceServiceTests: NetworkStubs {}
+extension FindSupplierServiceTests: NetworkStubs {}
+extension ValidationServiceTest: NetworkStubs {}

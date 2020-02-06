@@ -51,9 +51,20 @@ class AddOnsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
+        //Build request body and params
+        let entityType:String = ""
+        let entityId:String = ""
+        
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.addons.discoverAddons(entityType: "", entityId:"") { (result, responseData, err) in
+        
+        //Stubbing
+        if let route = try? AddOnsRouter.discoverAddons(entityType, entityId).asURLRequest() {
+            self.startStub(route, stubData: .addonsSearch )
+        }
+        
+        //Call API
+        Client.instance.addons.discoverAddons(entityType: entityType, entityId:entityId) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -65,8 +76,19 @@ class AddOnsServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
+        //Build request body and params
+        let entityType:String = ""
+        let entityId:String = ""
+        
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? AddOnsRouter.readAddon(entityType, entityId).asURLRequest() {
+            self.startStub(route, stubData: .addOn )
+        }
+        
+        //Call API
         Client.instance.addons.readAddon(addonId: "", accountId:"") { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
@@ -80,13 +102,21 @@ class AddOnsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Build Update Request Object
+        let addOnId = ""
         var requestObject: AddOnUpdateObject = AddOnUpdateObject()
         requestObject.accountId = ProcessInfo.processInfo.environment["ACCOUNT_ID"] ?? ""
         requestObject.expenseAccountCode = ProcessInfo.processInfo.environment["EXPENSE_ACCOUNT_CODE"] ?? ""
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.addons.updateAddon(addonId: "", requestObject: requestObject) { (result, responseData, err) in
+        
+        //Stubbing
+        if let route = try? AddOnsRouter.updateAddon(addOnId, requestObject).asURLRequest() {
+            self.startStub(route, stubData: .addOn )
+        }
+        
+        //Call API
+        Client.instance.addons.updateAddon(addonId: addOnId, requestObject: requestObject) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
         }
@@ -100,12 +130,20 @@ class AddOnsServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Async Test")
         
         //Build Disconnnect Request Object
+        let addOnId = ""
         var requestObject: AddOnDisconnectObject = AddOnDisconnectObject()
         requestObject.accountId = ProcessInfo.processInfo.environment["ACCOUNT_ID"] ?? ""
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.addons.disconnectAddon(addonId: "", requestObject: requestObject) { (result, err) in
+        
+        //Stubbing
+        if let route = try? AddOnsRouter.disconnectAddon(addOnId, requestObject).asURLRequest() {
+            self.startStub(route, stubData: .empty )
+        }
+        
+        //Call API
+        Client.instance.addons.disconnectAddon(addonId: addOnId, requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }

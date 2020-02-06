@@ -1,0 +1,41 @@
+{
+"meta": {
+    "totalResults": 10,
+    "totalPages": 1,
+    "pageSize": 25,
+    "pageNo": 1
+},
+"links": {
+    "self": "",
+    "first": "",
+    "prev": null,
+    "next": null,
+    "last": ""
+},
+"data": [
+    {
+        "id": "",
+        "number": "",
+        "userId": "",
+        "comments": "",
+        "retailerId": "",
+        "purchaserId": "",
+        "purchaserName": "",
+        "supplierId": "",
+        "supplierName": "",
+        "updatedUserId": "",
+        "invoiceIds": {},
+        "lineItems": {},
+        "subtotal": "",
+        "tax": "",
+        "total": "",
+        "status": "",
+        "date": "",
+        "cancelledAt": "",
+        "deletedAt": "",
+        "completedAt": "",
+        "createdAt": "",
+        "updatedAt": ""
+    }]
+}
+

@@ -1,0 +1,25 @@
+{
+"meta": {
+    "totalResults": 10,
+    "totalPages": 1,
+    "pageSize": 25,
+    "pageNo": 1
+},
+"links": {
+    "self": "",
+    "first": "",
+    "prev": null,
+    "next": null,
+    "last": ""
+},
+"data": [
+    {
+        "id": "",
+        "name": "",
+        "userId": "",
+        "retailerId": "",
+        "startDate": "",
+        "endDate": ""
+    }]
+}
+

@@ -33,10 +33,17 @@ class FindSupplierServiceTests: XCTestCase {
         requestObject.source = "iOS Test Suite"
         requestObject.recommended = true
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        FindSupplierService().sendSupplierEnquiry(requestObject) { (result, err) in
+        
+        //Stubbing
+        if let route = try? FindSupplierRouter.sendSupplierEnquiry(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .empty )
+        }
+        
+        //Call API
+        Client.instance.findSuppliers.sendSupplierEnquiry(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
         }

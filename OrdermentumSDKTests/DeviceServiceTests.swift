@@ -32,8 +32,15 @@ class DeviceServiceTests: XCTestCase {
         requestObject.device_os_version = ProcessInfo.processInfo.environment["DEVICE_OS_VERSION"] ?? ""
         requestObject.device_hw_version = ProcessInfo.processInfo.environment["DEVICE_HW_VERSION"] ?? ""
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? DeviceRouter.registerDevice(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .dataAttributesResponse )
+        }
+        
+        //Call API
         Client.instance.devices.registerDevice(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
@@ -56,8 +63,15 @@ class DeviceServiceTests: XCTestCase {
         requestObject.device_os_version = ProcessInfo.processInfo.environment["DEVICE_OS_VERSION"] ?? ""
         requestObject.device_hw_version = ProcessInfo.processInfo.environment["DEVICE_HW_VERSION"] ?? ""
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? DeviceRouter.unregisterDevice(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .empty )
+        }
+        
+        //Call API
         Client.instance.devices.unregisterDevice(requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
@@ -78,8 +92,15 @@ class DeviceServiceTests: XCTestCase {
         requestObject.banking = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_BANKING"] ?? ""
         requestObject.accounting = ProcessInfo.processInfo.environment["DATA_ATTRIBUTE_ACCOUNTING"] ?? ""
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? DataAttributesRouter.updateVenueOperations("", requestObject).asURLRequest() {
+            self.startStub(route, stubData: .empty )
+        }
+        
+        //Call API
         Client.instance.devices.updateVenueOperations(retailerId: "", requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()

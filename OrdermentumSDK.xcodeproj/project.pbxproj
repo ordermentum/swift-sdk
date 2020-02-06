@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		260A07AD22C31F3C00D4694A /* getExperiments.json in Resources */ = {isa = PBXBuildFile; fileRef = 260A07AC22C31F3C00D4694A /* getExperiments.json */; };
+		260A07AD22C31F3C00D4694A /* experimentsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 260A07AC22C31F3C00D4694A /* experimentsResponse.json */; };
+		260A89D223EC0988003F7157 /* addOn.json in Resources */ = {isa = PBXBuildFile; fileRef = 260A89D123EC0988003F7157 /* addOn.json */; };
+		260A89D423EC0D9C003F7157 /* closurePeriodsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 260A89D323EC0D9C003F7157 /* closurePeriodsResponse.json */; };
+		260A89D623EC1120003F7157 /* creditNotesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 260A89D523EC1120003F7157 /* creditNotesResponse.json */; };
+		260A89D823EC16D4003F7157 /* dataAttributesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 260A89D723EC16D3003F7157 /* dataAttributesResponse.json */; };
+		260A89DC23EC1F87003F7157 /* validation.json in Resources */ = {isa = PBXBuildFile; fileRef = 260A89DB23EC1F87003F7157 /* validation.json */; };
+		260A89DE23ECCC50003F7157 /* profileCompletion.json in Resources */ = {isa = PBXBuildFile; fileRef = 260A89DD23ECCC50003F7157 /* profileCompletion.json */; };
+		260A89E023ECCD68003F7157 /* venueUserResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 260A89DF23ECCD68003F7157 /* venueUserResponse.json */; };
+		260A89E223ECD11C003F7157 /* venuesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 260A89E123ECD11C003F7157 /* venuesResponse.json */; };
 		263FD6ED22A09BD3001B7EBB /* getCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 263FD6EC22A09BD3001B7EBB /* getCategory.json */; };
 		2656A84F23EA50D200793FEF /* changePassword.json in Resources */ = {isa = PBXBuildFile; fileRef = 2656A84E23EA50D200793FEF /* changePassword.json */; };
 		2656A85123EA54C600793FEF /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 2656A85023EA54C600793FEF /* login.json */; };
@@ -221,7 +229,15 @@
 
 /* Begin PBXFileReference section */
 		249F582D16A080253A3CC3DE /* Pods-OrdermentumSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDK/Pods-OrdermentumSDK.debug.xcconfig"; sourceTree = "<group>"; };
-		260A07AC22C31F3C00D4694A /* getExperiments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getExperiments.json; sourceTree = "<group>"; };
+		260A07AC22C31F3C00D4694A /* experimentsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = experimentsResponse.json; sourceTree = "<group>"; };
+		260A89D123EC0988003F7157 /* addOn.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = addOn.json; sourceTree = "<group>"; };
+		260A89D323EC0D9C003F7157 /* closurePeriodsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = closurePeriodsResponse.json; sourceTree = "<group>"; };
+		260A89D523EC1120003F7157 /* creditNotesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = creditNotesResponse.json; sourceTree = "<group>"; };
+		260A89D723EC16D3003F7157 /* dataAttributesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dataAttributesResponse.json; sourceTree = "<group>"; };
+		260A89DB23EC1F87003F7157 /* validation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = validation.json; sourceTree = "<group>"; };
+		260A89DD23ECCC50003F7157 /* profileCompletion.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profileCompletion.json; sourceTree = "<group>"; };
+		260A89DF23ECCD68003F7157 /* venueUserResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = venueUserResponse.json; sourceTree = "<group>"; };
+		260A89E123ECD11C003F7157 /* venuesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = venuesResponse.json; sourceTree = "<group>"; };
 		263FD6EC22A09BD3001B7EBB /* getCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getCategory.json; sourceTree = "<group>"; };
 		2656A84E23EA50D200793FEF /* changePassword.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = changePassword.json; sourceTree = "<group>"; };
 		2656A85023EA54C600793FEF /* login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
@@ -491,8 +507,14 @@
 				263FD6EC22A09BD3001B7EBB /* getCategory.json */,
 				26984113228297A4003A4B95 /* verifyEmail.json */,
 				2698410D228272FB003A4B95 /* resendVerifyEmail.json */,
-				260A07AC22C31F3C00D4694A /* getExperiments.json */,
+				260A07AC22C31F3C00D4694A /* experimentsResponse.json */,
 				2656A85223EA5F8B00793FEF /* empty.json */,
+				260A89D123EC0988003F7157 /* addOn.json */,
+				260A89D323EC0D9C003F7157 /* closurePeriodsResponse.json */,
+				260A89D523EC1120003F7157 /* creditNotesResponse.json */,
+				260A89D723EC16D3003F7157 /* dataAttributesResponse.json */,
+				260A89DB23EC1F87003F7157 /* validation.json */,
+				260A89DD23ECCC50003F7157 /* profileCompletion.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -513,8 +535,10 @@
 				26ADA8162283B57100ED6D2E /* createVenue.json */,
 				26D21DCA228B8D8000547BA9 /* searchVenues.json */,
 				26BABA0B228BAFFD00757F99 /* acceptAllInvites.json */,
+				260A89DF23ECCD68003F7157 /* venueUserResponse.json */,
 				26BABA0D228BDE2300757F99 /* joinVenue.json */,
 				2676E24922C5A80100F9CA39 /* updateVenueProfile.json */,
+				260A89E123ECD11C003F7157 /* venuesResponse.json */,
 			);
 			path = Venue;
 			sourceTree = "<group>";
@@ -901,7 +925,8 @@
 				26984114228297A4003A4B95 /* verifyEmail.json in Resources */,
 				26BABA0E228BDE2300757F99 /* joinVenue.json in Resources */,
 				26CE389A2270054D00524345 /* scheduleOrder.json in Resources */,
-				260A07AD22C31F3C00D4694A /* getExperiments.json in Resources */,
+				260A07AD22C31F3C00D4694A /* experimentsResponse.json in Resources */,
+				260A89D823EC16D4003F7157 /* dataAttributesResponse.json in Resources */,
 				26BABA0A228B94FB00757F99 /* getVenueInvites.json in Resources */,
 				2656A85323EA5F8B00793FEF /* empty.json in Resources */,
 				26CE3896226FFFB000524345 /* updateOrder.json in Resources */,
@@ -920,6 +945,7 @@
 				26B5763A22813FAD008205DC /* applyPayment.json in Resources */,
 				BB92918922769EEF00B82918 /* getFlags.json in Resources */,
 				26AD4024227162A200CAEBC2 /* registerDevice.json in Resources */,
+				260A89DC23EC1F87003F7157 /* validation.json in Resources */,
 				263FD6ED22A09BD3001B7EBB /* getCategory.json in Resources */,
 				2698410E228272FB003A4B95 /* resendVerifyEmail.json in Resources */,
 				26BFFA89227AC86000D232B2 /* getDeliveryDates.json in Resources */,
@@ -927,11 +953,17 @@
 				26AA6E4E2266E2D000578DED /* addonsSearch.json in Resources */,
 				BB659F9C226D307B009C3D46 /* updateProfile.json in Resources */,
 				26BABA0C228BAFFD00757F99 /* acceptAllInvites.json in Resources */,
+				260A89D223EC0988003F7157 /* addOn.json in Resources */,
 				BB659F99226D2D06009C3D46 /* getProfile.json in Resources */,
+				260A89E223ECD11C003F7157 /* venuesResponse.json in Resources */,
 				BB659F96226C1BB5009C3D46 /* updatePaymentMethod.json in Resources */,
+				260A89D623EC1120003F7157 /* creditNotesResponse.json in Resources */,
 				26D21DCB228B8D8000547BA9 /* searchVenues.json in Resources */,
+				260A89E023ECCD68003F7157 /* venueUserResponse.json in Resources */,
+				260A89D423EC0D9C003F7157 /* closurePeriodsResponse.json in Resources */,
 				BB659FAB226D464F009C3D46 /* getTrendingProducts.json in Resources */,
 				BB659FB1226D4938009C3D46 /* searchProducts.json in Resources */,
+				260A89DE23ECCC50003F7157 /* profileCompletion.json in Resources */,
 				BB659F90226C056A009C3D46 /* getPurchaserForPaymentMethod.json in Resources */,
 				BB659FA5226D4366009C3D46 /* getProduct.json in Resources */,
 				26A7DFD922703E2D0056C632 /* getClassicStandingOrders_Empty.json in Resources */,

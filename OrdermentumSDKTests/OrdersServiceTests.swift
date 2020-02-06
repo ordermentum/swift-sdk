@@ -133,18 +133,20 @@ class OrderServiceTests: XCTestCase {
         let retailerId = ProcessInfo.processInfo.environment["RETAILER_ID"] ?? ""
         let supplierId = ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? ""
         let sortBy = ProcessInfo.processInfo.environment["SORT"] ?? "-1"
+        let sortOrder = "1"
+        let page = 1
         
         //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
         //Stubbing
-        if let route = try? OrdersRouter.getOrders(retailerId, supplierId, sortBy, "-1", 1).asURLRequest() {
+        if let route = try? OrdersRouter.getOrders(retailerId, supplierId, sortBy, sortOrder, page).asURLRequest() {
             self.startStub(route, stubData: .getOrders )
         }
         
         //Call API
-        Client.instance.orders.getOrders(retailerId: retailerId, supplierId: supplierId, sortBy: sortBy, sortOrder: "1", pageNo: 1) { (result, responseData, err) in
+        Client.instance.orders.getOrders(retailerId: retailerId, supplierId: supplierId, sortBy: sortBy, sortOrder: sortOrder, pageNo: page) { (result, responseData, err) in
             assert(responseData?.data != nil)
             expectation.fulfill()
         }

@@ -23,8 +23,15 @@ class ClosureDatesServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? ClosurePeriodsRouter.getClosurePeriods("", 0, 0).asURLRequest() {
+            self.startStub(route, stubData: .closurePeriodsResponse )
+        }
+        
+        //Call API
         Client.instance.closureDates.getClosurePeriods("", 0, 0) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
@@ -46,8 +53,15 @@ class ClosureDatesServiceTests: XCTestCase {
         requestObject.startDate = ProcessInfo.processInfo.environment["CLOSURE_PERIOD_START_DATE"] ?? ""
         requestObject.endDate = ProcessInfo.processInfo.environment["CLOSURE_PERIOD_END_DATE"] ?? ""
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? ClosurePeriodsRouter.createClosurePeriod(requestObject).asURLRequest() {
+            self.startStub(route, stubData: .closurePeriodsResponse )
+        }
+        
+        //Call API
         Client.instance.closureDates.createClosurePeriod(requestObject) { (result, responseData, err) in
             assert(result)
             expectation.fulfill()
@@ -70,8 +84,15 @@ class ClosureDatesServiceTests: XCTestCase {
         requestObject.startDate = ProcessInfo.processInfo.environment["CLOSURE_PERIOD_START_DATE"] ?? ""
         requestObject.endDate = ProcessInfo.processInfo.environment["CLOSURE_PERIOD_END_DATE"] ?? ""
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? ClosurePeriodsRouter.updateClosurePeriod("", requestObject).asURLRequest() {
+            self.startStub(route, stubData: .empty )
+        }
+        
+        //Call API
         Client.instance.closureDates.updateClosurePeriod(closurePeriodId: "", requestObject: requestObject) { (result, err) in
             assert(result)
             expectation.fulfill()
@@ -85,8 +106,15 @@ class ClosureDatesServiceTests: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
         
-        //Call API
+        //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
+        
+        //Stubbing
+        if let route = try? ClosurePeriodsRouter.deleteClosurePeriod("").asURLRequest() {
+            self.startStub(route, stubData: .empty )
+        }
+        
+        //Call API
         Client.instance.closureDates.deleteClosurePeriod(closurePeriodId: "") { (result, err) in
             assert(result)
             expectation.fulfill()

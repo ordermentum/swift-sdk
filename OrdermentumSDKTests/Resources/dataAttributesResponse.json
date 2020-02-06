@@ -1,0 +1,62 @@
+
+
+{
+    "data" : {
+        "pos": [],
+        "banking": [],
+        "accounting": [],
+        "venueTypes": [],
+        "tradingHours": {
+            "enabled": false,
+            "mon": {
+                "isOpen": false,
+                "closeHour": 17,
+                "closeMinute": 0,
+                "openHour": 9,
+                "openMinute": 0
+            },
+            "tue": {
+                "isOpen": false,
+                "closeHour": 17,
+                "closeMinute": 0,
+                "openHour": 9,
+                "openMinute": 0
+            },
+            "wed": {
+                "isOpen": false,
+                "closeHour": 17,
+                "closeMinute": 0,
+                "openHour": 9,
+                "openMinute": 0
+            },
+            "thu": {
+                "isOpen": false,
+                "closeHour": 17,
+                "closeMinute": 0,
+                "openHour": 9,
+                "openMinute": 0
+            },
+            "fri": {
+                "isOpen": false,
+                "closeHour": 17,
+                "closeMinute": 0,
+                "openHour": 9,
+                "openMinute": 0
+            },
+            "sat": {
+                "isOpen": false,
+                "closeHour": 17,
+                "closeMinute": 0,
+                "openHour": 9,
+                "openMinute": 0
+            },
+            "sun": {
+                "isOpen": false,
+                "closeHour": 17,
+                "closeMinute": 0,
+                "openHour": 9,
+                "openMinute": 0
+            }
+        }
+    }
+}
