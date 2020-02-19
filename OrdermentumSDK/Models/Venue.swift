@@ -28,7 +28,7 @@ public struct Venue {
     public var abn: String = ""
     public var suppliers: [Supplier] = []
     public var user: User = User()
-    public var address: VenueAddress = VenueAddress()
+    public var address: Address = Address()
     public var addressId: String = ""
     public var billingAddress: Address = Address()
     public var billingAddressId: String = ""
@@ -79,30 +79,6 @@ public struct VenueAccountSettings: Encodable {
     public var retailerExports: RetailerExports = RetailerExports()
     public var enableDeliveryDate: Bool = false
     public var defaultDeliveryDelay: Int = 0
-}
-
-public struct VenueAddress {
-    public init() { }
-
-    public var formatted: String = ""
-    public var id: String = ""
-    public var name: String = ""
-    public var number: String = ""
-    public var type: String = ""
-    public var description: String = ""
-    public var street1: String = ""
-    public var street2: String = ""
-    public var suburb: String = ""
-    public var state: String = ""
-    public var postcode: String = ""
-    public var country: String = ""
-    public var latitude: Float = 0.0
-    public var longitude: Float = 0.0
-    public var addressableType: String = ""
-    public var addressableId: String = ""
-    public var created_at: String = ""
-    public var updated_at: String = ""
-    public var deleted_at: String = ""
 }
 
 public struct VenueBrand {
@@ -226,7 +202,7 @@ extension Venue: Decodable {
         abn = try container.decodeIfPresent(String.self, forKey: .abn) ?? ""
         suppliers = try container.decodeIfPresent([Supplier].self, forKey: .suppliers) ?? []
         user = try container.decodeIfPresent(User.self, forKey: .user) ?? User()
-        address = try container.decodeIfPresent(VenueAddress.self, forKey: .address) ?? VenueAddress()
+        address = try container.decodeIfPresent(Address.self, forKey: .address) ?? Address()
         addressId = try container.decodeIfPresent(String.self, forKey: .addressId) ?? ""
         billingAddress = try container.decodeIfPresent(Address.self, forKey: .billingAddress) ?? Address()
         billingAddressId = try container.decodeIfPresent(String.self, forKey: .billingAddressId) ?? ""
@@ -252,34 +228,6 @@ extension VenueAccountSettings: Decodable {
         retailerExports = try container.decodeIfPresent(RetailerExports.self, forKey: .retailerExports) ?? RetailerExports()
         enableDeliveryDate = try container.safeBoolDecode(forKey: .enableDeliveryDate) ?? false
         defaultDeliveryDelay = try container.safeIntDecode(forKey: .defaultDeliveryDelay) ?? 0
-    }
-}
-
-extension VenueAddress: Decodable {
-    public init(from decoder: Decoder) throws {
-        //Create Container
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        //Decode Data
-        formatted = try container.decodeIfPresent(String.self, forKey: .formatted) ?? ""
-        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
-        name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
-        number = try container.decodeIfPresent(String.self, forKey: .number) ?? ""
-        type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
-        description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
-        street1 = try container.decodeIfPresent(String.self, forKey: .street1) ?? ""
-        street2 = try container.decodeIfPresent(String.self, forKey: .street2) ?? ""
-        suburb = try container.decodeIfPresent(String.self, forKey: .suburb) ?? ""
-        state = try container.decodeIfPresent(String.self, forKey: .state) ?? ""
-        postcode = try container.decodeIfPresent(String.self, forKey: .postcode) ?? ""
-        country = try container.decodeIfPresent(String.self, forKey: .country) ?? ""
-        latitude = try container.safeFloatDecode(forKey: .latitude) ?? 0
-        longitude = try container.safeFloatDecode(forKey: .longitude) ?? 0
-        addressableType = try container.decodeIfPresent(String.self, forKey: .addressableType) ?? ""
-        addressableId = try container.decodeIfPresent(String.self, forKey: .addressableId) ?? ""
-        created_at = try container.decodeIfPresent(String.self, forKey: .created_at) ?? ""
-        updated_at = try container.decodeIfPresent(String.self, forKey: .updated_at) ?? ""
-        deleted_at = try container.decodeIfPresent(String.self, forKey: .deleted_at) ?? ""
     }
 }
 

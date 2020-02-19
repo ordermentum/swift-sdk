@@ -18,7 +18,7 @@ public struct VenueSearch {
     public var id: String = ""
     public var legalName: String = ""
     public var tradingName: String = ""
-    public var address: VenueAddress = VenueAddress()
+    public var address: Address = Address()
 }
 
 extension VenueSearchResponse: Decodable {
@@ -40,6 +40,6 @@ extension VenueSearch: Decodable {
         id  = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         legalName  = try container.decodeIfPresent(String.self, forKey: .legalName) ?? ""
         tradingName  = try container.decodeIfPresent(String.self, forKey: .tradingName) ?? ""
-        address  = try container.decodeIfPresent(VenueAddress.self, forKey: .address) ?? VenueAddress()
+        address = try container.decodeIfPresent(Address.self, forKey: .address) ?? Address()
     }
 }

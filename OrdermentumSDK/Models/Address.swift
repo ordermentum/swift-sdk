@@ -9,10 +9,13 @@
 import Foundation
 
 public struct Address: Encodable {
-    public init() {}
-    
+    public init() { }
+
     public var formatted: String = ""
+    public var id: String = ""
+    public var name: String = ""
     public var number: String = ""
+    public var type: String = ""
     public var description: String = ""
     public var street1: String = ""
     public var street2: String = ""
@@ -20,16 +23,26 @@ public struct Address: Encodable {
     public var state: String = ""
     public var postcode: String = ""
     public var country: String = ""
+    public var latitude: Float = 0.0
+    public var longitude: Float = 0.0
+    public var addressableType: String = ""
+    public var addressableId: String = ""
+    public var created_at: String = ""
+    public var updated_at: String = ""
+    public var deleted_at: String = ""
 }
 
 extension Address: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         formatted = try container.decodeIfPresent(String.self, forKey: .formatted) ?? ""
+        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         number = try container.decodeIfPresent(String.self, forKey: .number) ?? ""
+        type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
         description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
         street1 = try container.decodeIfPresent(String.self, forKey: .street1) ?? ""
         street2 = try container.decodeIfPresent(String.self, forKey: .street2) ?? ""
@@ -37,5 +50,12 @@ extension Address: Decodable {
         state = try container.decodeIfPresent(String.self, forKey: .state) ?? ""
         postcode = try container.decodeIfPresent(String.self, forKey: .postcode) ?? ""
         country = try container.decodeIfPresent(String.self, forKey: .country) ?? ""
+        latitude = try container.safeFloatDecode(forKey: .latitude) ?? 0
+        longitude = try container.safeFloatDecode(forKey: .longitude) ?? 0
+        addressableType = try container.decodeIfPresent(String.self, forKey: .addressableType) ?? ""
+        addressableId = try container.decodeIfPresent(String.self, forKey: .addressableId) ?? ""
+        created_at = try container.decodeIfPresent(String.self, forKey: .created_at) ?? ""
+        updated_at = try container.decodeIfPresent(String.self, forKey: .updated_at) ?? ""
+        deleted_at = try container.decodeIfPresent(String.self, forKey: .deleted_at) ?? ""
     }
 }
