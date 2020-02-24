@@ -193,4 +193,18 @@ public class VenueService {
             completion(result, responseObject, errorObject)
         }
     }
+    
+    /**
+     * Update a batch of user positions within a venue
+     * Returns success or fail
+     */
+    public func updateUserPositions(retailerId: String, requestObject: [String: [String]], completion: @escaping (Bool, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = VenueRouter.updateUserPositions(retailerId, requestObject) as URLRequestConvertible
+        
+        //Call API
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, errorObject)
+        }
+    }
 }
