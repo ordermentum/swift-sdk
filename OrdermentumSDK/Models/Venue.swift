@@ -304,7 +304,7 @@ extension User: Decodable {
         created_at = try container.decodeIfPresent(String.self, forKey: .created_at) ?? ""
         updated_at = try container.decodeIfPresent(String.self, forKey: .updated_at) ?? ""
         deleted_at = try container.decodeIfPresent(String.self, forKey: .deleted_at) ?? ""
-        positions = try container.decodeIfPresent([String : [String]].self, forKey: .positions)
+        positions = try container.decodeIfPresent([String : [String]].self, forKey: .positions) ?? [:]
     }
 }
 
