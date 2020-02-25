@@ -355,6 +355,7 @@ enum CodingKeys: String, CodingKey {
     case plan
     case poa
     case pos
+    case positions
     case postcode
     case price
     case priceFromTotal
