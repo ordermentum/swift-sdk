@@ -114,6 +114,10 @@ public struct ExportResponse {
     public var type: String = ""
 }
 
+public struct ExportDownloadResponse {
+    public var link: String = ""
+}
+
 public struct ExportRequest: Codable {
     public var data: ExportRequestData = ExportRequestData()
     public var name: String = ""
@@ -279,6 +283,16 @@ extension ExportResponse: Decodable {
         restart = try container.safeBoolDecode(forKey: .restart) ?? false
         status = try container.decodeIfPresent(String.self, forKey: .status) ?? ""
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
+    }
+}
+
+extension ExportDownloadResponse: Decodable {
+    public init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        //Decode Data
+        link = try container.decodeIfPresent(String.self, forKey: .link) ?? ""
     }
 }
 
