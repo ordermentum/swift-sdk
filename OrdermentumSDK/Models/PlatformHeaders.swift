@@ -14,5 +14,5 @@ public struct PlatformHeaders: Encodable {
     public var operatingSystem: String = ""
     public var deviceModel: String = ""
     public var deviceType: String = ""
-    public var version: String = ""
+    public var appVersion: String = ""
 }
