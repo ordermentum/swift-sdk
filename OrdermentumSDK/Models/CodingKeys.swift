@@ -56,6 +56,7 @@ enum CodingKeys: String, CodingKey {
     case pendingSuppliers = "pending-suppliers"
     case retailerHome = "retailer-home"
     case retailerSignupCardModal = "retailer-signup-card-modal"
+    case notificationCentre = "notification-centre"
     
     //Generic
     case abn
