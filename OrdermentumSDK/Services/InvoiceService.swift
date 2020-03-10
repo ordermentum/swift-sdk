@@ -58,12 +58,26 @@ public class InvoiceService {
      * Download an invoice PDF file
      * Returns an ExportResponse
      */
-    public func downloadInvoice(invoiceId: String, completion: @escaping (Bool, ExportResponse?, ErrorResponse?) -> ()) {
+    public func getInvoiceExport(invoiceId: String, completion: @escaping (Bool, ExportResponse?, ErrorResponse?) -> ()) {
         //Build Route
-        let route = InvoiceRouter.downloadInvoice(invoiceId) as URLRequestConvertible
+        let route = InvoiceRouter.getInvoiceExport(invoiceId) as URLRequestConvertible
         
         //Call API
         Service<ExportResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
+     * Get the linki to download an invoice PDF file
+     * Returns an ExportResponse
+     */
+    public func getExportDownload(invoiceId: String, completion: @escaping (Bool, ExportDownloadResponse?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = InvoiceRouter.getExportDownload(invoiceId) as URLRequestConvertible
+        
+        //Call API
+        Service<ExportDownloadResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
