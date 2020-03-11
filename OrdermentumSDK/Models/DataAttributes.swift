@@ -39,6 +39,7 @@ public struct VenueOperationsUpdate: Codable {
     public var banking: String = ""
     public var accounting: String = ""
     public var venue: String = ""
+    public var venueTypes: String = ""
 }
 
 extension DataAttributesResponse: Decodable {
