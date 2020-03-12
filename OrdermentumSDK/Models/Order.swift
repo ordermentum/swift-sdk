@@ -28,7 +28,7 @@ public struct CreateOrderLineItem: Codable {
     public init() {}
     
     public var name: String = ""
-    public var price: string = ""
+    public var price: String = ""
     public var productId: String = ""
     public var quantity: Int = 0
 }
