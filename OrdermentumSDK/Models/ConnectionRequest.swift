@@ -22,6 +22,7 @@ public struct ConnectionRequest {
     public var updatedAt: String = ""
     public var deletedAt: String = ""
     public var updatedById: String = ""
+    public var supplier: Supplier = Supplier()
 }
 
 extension ConnectionRequest: Decodable {
@@ -43,5 +44,6 @@ extension ConnectionRequest: Decodable {
         updatedAt = try container.decodeIfPresent(String.self, forKey: .invoiceIds) ?? ""
         deletedAt = try container.decodeIfPresent(String.self, forKey: .lineItems) ?? ""
         updatedById = try container.decodeIfPresent(String.self, forKey: .subtotal) ?? ""
+        supplier = try container.decodeIfPresent(Supplier.self, forKey: .supplier) ?? Supplier()
     }
 }

@@ -467,9 +467,9 @@ enum CodingKeys: String, CodingKey {
     case subtext
     case subtotal
     case suburb
+    case supplier
     case sun
     case superAdmin
-    case supplier
     case supplierId
     case supplierName
     case supplierQuote
