@@ -13,6 +13,7 @@ public enum RecommendedSuppliersRouter: URLRequestConvertible {
     //Routes
     case getRecommendedSuppliers(String)
     case getTopRecommendedSuppliers(String)
+    case getConnectionRequests(String, String, String?)
     
     //Methods
     var method: HTTPMethod {
@@ -20,6 +21,8 @@ public enum RecommendedSuppliersRouter: URLRequestConvertible {
         case .getRecommendedSuppliers:
             return .get
         case .getTopRecommendedSuppliers:
+            return .get
+        case .getConnectionRequests:
             return .get
         }
     }
@@ -31,6 +34,8 @@ public enum RecommendedSuppliersRouter: URLRequestConvertible {
             return "recommended-suppliers"
         case .getTopRecommendedSuppliers:
             return "top-recommended-suppliers"
+        case .getConnectionRequests:
+            return "connection-requests/search"
         }
     }
     
@@ -41,6 +46,11 @@ public enum RecommendedSuppliersRouter: URLRequestConvertible {
             return ["retailerId": retailerId]
         case .getTopRecommendedSuppliers(let retailerId):
             return ["retailerId": retailerId]
+        case .getConnectionRequests(let retailerId, let supplierId, let status):
+            guard let parsedStatus: String = status else {
+                return ["retailerId": retailerId, "supplierId": supplierId]
+            }
+            return ["retailerId": retailerId, "supplierId": supplierId, "parsedStatus": parsedStatus]
         default:
             return [:]
         }
@@ -52,6 +62,8 @@ public enum RecommendedSuppliersRouter: URLRequestConvertible {
         case .getRecommendedSuppliers:
             return nil
         case .getTopRecommendedSuppliers:
+            return nil
+        case .getConnectionRequests:
             return nil
         default:
             return nil

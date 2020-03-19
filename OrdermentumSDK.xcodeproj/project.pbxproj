@@ -112,6 +112,7 @@
 		CA2F35262256DDE700D1118C /* FindSupplierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35252256DDE700D1118C /* FindSupplierService.swift */; };
 		CA2F35282256E5E800D1118C /* FlagsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F35272256E5E800D1118C /* FlagsRouter.swift */; };
 		CA354C4A238B5EE000B19B03 /* PaymentOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA354C49238B5EE000B19B03 /* PaymentOption.swift */; };
+		CA39319F24231C1200547A74 /* ConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA39319E24231C1200547A74 /* ConnectionRequest.swift */; };
 		CA4CF2E3225AC24D006F18C8 /* InvoiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E2225AC24D006F18C8 /* InvoiceRouter.swift */; };
 		CA4CF2E5225ADAF6006F18C8 /* MarketplaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E4225ADAF6006F18C8 /* MarketplaceRouter.swift */; };
 		CA4CF2E7225ADC1B006F18C8 /* NotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E6225ADC1B006F18C8 /* NotificationsRouter.swift */; };
@@ -312,6 +313,7 @@
 		CA2F35252256DDE700D1118C /* FindSupplierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSupplierService.swift; sourceTree = "<group>"; };
 		CA2F35272256E5E800D1118C /* FlagsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsRouter.swift; sourceTree = "<group>"; };
 		CA354C49238B5EE000B19B03 /* PaymentOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOption.swift; sourceTree = "<group>"; };
+		CA39319E24231C1200547A74 /* ConnectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRequest.swift; sourceTree = "<group>"; };
 		CA4CF2E2225AC24D006F18C8 /* InvoiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceRouter.swift; sourceTree = "<group>"; };
 		CA4CF2E4225ADAF6006F18C8 /* MarketplaceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceRouter.swift; sourceTree = "<group>"; };
 		CA4CF2E6225ADC1B006F18C8 /* NotificationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRouter.swift; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 				CA929F4C22555FA600E957AC /* Category.swift */,
 				CA929F5922555FA700E957AC /* ClosurePeriod.swift */,
 				CA929F4722555FA600E957AC /* CodingKeys.swift */,
+				CA39319E24231C1200547A74 /* ConnectionRequest.swift */,
 				CA929F4E22555FA600E957AC /* CreditNotesReponse.swift */,
 				CA929F5622555FA700E957AC /* DataAttributes.swift */,
 				CA2F351B2256CE2E00D1118C /* Device.swift */,
@@ -1013,6 +1016,7 @@
 				CAF24692225B1A6F00EDAF68 /* ValidationRouter.swift in Sources */,
 				CA929F6D22555FA900E957AC /* Venue.swift in Sources */,
 				CAF2469E225B6F1E00EDAF68 /* NotifyService.swift in Sources */,
+				CA39319F24231C1200547A74 /* ConnectionRequest.swift in Sources */,
 				CA354C4A238B5EE000B19B03 /* PaymentOption.swift in Sources */,
 				CAC39CC22255639D00D3099A /* StringUtils.swift in Sources */,
 				CA929F97225561A400E957AC /* Client.swift in Sources */,

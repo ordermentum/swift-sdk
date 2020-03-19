@@ -39,4 +39,18 @@ public class RecommendedSuppliersService {
             completion(result, responseObject, errorObject)
         }
     }
+    
+    /**
+    * Fetch a list of pending supplier requests from a retailer
+    * Returns an array of ConncetionReqeusts objects
+    */
+    public func getConnectionRequests(retailerId: String, supplierId: String, searchTerm: String?, completion: @escaping (Bool, [ConnectionRequest]?, ErrorResponse?) -> ()) {
+        //Build Route
+        let route = RecommendedSuppliersRouter.getConnectionRequests(retailerId, supplierId, searchTerm) as URLRequestConvertible
+        
+        //Call API
+        Service<[ConnectionRequest], ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
 }
