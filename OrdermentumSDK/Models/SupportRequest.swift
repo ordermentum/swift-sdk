@@ -11,26 +11,26 @@ import Foundation
 public struct SupportRequest: Codable {
     public init() { }
     
-    var request: SupportRequestBody = SupportRequestBody()
+    public var request: SupportRequestBody = SupportRequestBody()
 }
 
 public struct SupportRequestBody: Codable {
     public init() { }
     
-    var requester: SupportRequester = SupportRequester()
-    var subject: String = ""
-    var comment: SupportComment = SupportComment()
+    public var requester: SupportRequester = SupportRequester()
+    public var subject: String = ""
+    public var comment: SupportComment = SupportComment()
 }
 
 public struct SupportRequester: Codable {
     public init() { }
     
-    var name: String = ""
-    var email: String = ""
+    public var name: String = ""
+    public var email: String = ""
 }
 
 public struct SupportComment: Codable {
     public init() { }
     
-    var body: String = ""
+    public var body: String = ""
 }

@@ -11,20 +11,20 @@ import Foundation
 public struct SupportTicket: Codable {
     public init() { }
     
-    var ticket: SupportTicketBody = SupportTicketBody()
+    public var ticket: SupportTicketBody = SupportTicketBody()
 }
 
 public struct SupportTicketBody: Codable {
     public init() { }
     
-    var subject: String = ""
-    var comment: SupportTicketComment = SupportTicketComment()
-    var priority: String = ""
-    var tags: [String] = []
+    public var subject: String = ""
+    public var comment: SupportTicketComment = SupportTicketComment()
+    public var priority: String = ""
+    public var tags: [String] = []
 }
 
 public struct SupportTicketComment: Codable {
     public init() { }
     
-    var body: String = ""
+    public var body: String = ""
 }
