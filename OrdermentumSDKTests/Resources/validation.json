@@ -17,28 +17,6 @@
     "totalPaid": 0,
     "totalDue": 0,
     "totalFreightIncGST": 0,
-    "surcharge": 0,
-    "": 0,
-    "": 0,
-    
-    public var cart: ValidationCart = ValidationCart()
-    public var display: ValidationDisplay = ValidationDisplay()
-    public var lineItems: [ValidationLineItem] = []
-    public var cartErrorCount: Int = 0
-    public var cartWarningCount: Int = 0
-    public var cartInfoCount: Int = 0
-    public var lineItemErrorCount: Int = 0
-    public var lineItemWarningCount: Int = 0
-    public var lineItemInfosCount: Int = 0
-    public var paymentOptions: [PaymentOption] = []
-    public var totalCost: Float = 0.00
-    public var totalFreight: Float = 0.00
-    public var subtotal: Float = 0.00
-    public var totalGST: Float = 0.00
-    public var total: Float = 0.00
-    public var totalPaid: Float = 0.00
-    public var totalDue: Float = 0.00
-    public var totalFreightIncGST: Float = 0.00
-    public var surcharge: Float = 0.00
+    "surcharge": 0
 }
 
