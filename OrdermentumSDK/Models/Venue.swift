@@ -17,7 +17,7 @@ public struct VenueResponse {
 public struct Venue {
     public init() { }
 
-    public var id: String? = nil
+    public var id: String = ""
     public var name: String = ""
     public var legalName: String = ""
     public var tradingName: String = ""
