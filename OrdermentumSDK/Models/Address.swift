@@ -12,7 +12,7 @@ public struct Address: Encodable {
     public init() { }
 
     public var formatted: String = ""
-    public var id: String = ""
+    public var id: String? = nil
     public var name: String = ""
     public var number: String = ""
     public var type: String = ""
@@ -26,10 +26,6 @@ public struct Address: Encodable {
     public var latitude: Float = 0.0
     public var longitude: Float = 0.0
     public var addressableType: String = ""
-    public var addressableId: String = ""
-    public var created_at: String = ""
-    public var updated_at: String = ""
-    public var deleted_at: String = ""
 }
 
 extension Address: Decodable {
@@ -39,7 +35,7 @@ extension Address: Decodable {
 
         //Decode Data
         formatted = try container.decodeIfPresent(String.self, forKey: .formatted) ?? ""
-        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        id = try container.decodeIfPresent(String.self, forKey: .id) ?? nil
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         number = try container.decodeIfPresent(String.self, forKey: .number) ?? ""
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
@@ -53,9 +49,5 @@ extension Address: Decodable {
         latitude = try container.safeFloatDecode(forKey: .latitude) ?? 0
         longitude = try container.safeFloatDecode(forKey: .longitude) ?? 0
         addressableType = try container.decodeIfPresent(String.self, forKey: .addressableType) ?? ""
-        addressableId = try container.decodeIfPresent(String.self, forKey: .addressableId) ?? ""
-        created_at = try container.decodeIfPresent(String.self, forKey: .created_at) ?? ""
-        updated_at = try container.decodeIfPresent(String.self, forKey: .updated_at) ?? ""
-        deleted_at = try container.decodeIfPresent(String.self, forKey: .deleted_at) ?? ""
     }
 }

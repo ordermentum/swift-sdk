@@ -17,7 +17,7 @@ public struct VenueResponse {
 public struct Venue {
     public init() { }
 
-    public var id: String = ""
+    public var id: String? = nil
     public var name: String = ""
     public var legalName: String = ""
     public var tradingName: String = ""
@@ -41,17 +41,16 @@ public struct Venue {
 public struct CreateVenueRequest: Codable {
     public init() { }
 
-    public var legalName = ""
-    public var tradingName = ""
-    public var userId = ""
-    public var ownerId = ""
-    public var phone = ""
-    public var email = ""
-    public var address = Address()
-    public var abn = ""
-    public var contactFirstName = ""
-    public var contactLastName = ""
-    public var contactEmail = ""
+    public var legalName: String? = nil
+    public var tradingName: String? = nil
+    public var ownerId: String? = nil
+    public var phone: String? = nil
+    public var email: String? = nil
+    public var address: Address? = nil
+    public var abn: String? = nil
+    public var contactFirstName: String? = nil
+    public var contactLastName: String? = nil
+    public var contactEmail: String? = nil
 }
 
 public struct CreateVenueResponse: Decodable {
