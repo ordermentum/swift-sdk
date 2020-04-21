@@ -11,7 +11,7 @@ target 'OrdermentumSDK' do
     inherit! :search_paths
     # Pods for testing
     pod 'Alamofire', '~> 5.0.2'
-    pod 'Hippolyte', '~> 0.8.0'
+    pod 'Hippolyte', '~> 1.2.0'
   end
 
 end
