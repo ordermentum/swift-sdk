@@ -24,6 +24,7 @@ public struct FindSupplierRequest: Codable {
     public var existing: Bool = false
     public var recommended: Bool = false
     public var isTrading: Bool = false
+    public var isFromLink: Bool = false
 }
 
 public struct FindSupplierReferralRequest: Codable {
