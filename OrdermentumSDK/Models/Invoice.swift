@@ -46,7 +46,6 @@ public struct Invoice: Encodable {
     public var paymentTransactionId: String = ""
     public var processing: Bool = false
     public var processingError: String = ""
-    public var purchaser: Purchaser = Purchaser()
     public var purchaserId: String = ""
     public var purchaser_id: String = ""
     public var reference: String = ""
@@ -77,7 +76,7 @@ public struct Invoice: Encodable {
     public var user_id: String = ""
 }
 
-public struct InvoiceFrequency {
+public struct InvoiceFrequency: Encodable {
     public var daily: Bool = false
     public var weekly: Bool = false
     public var monthly: Bool = false
@@ -85,7 +84,7 @@ public struct InvoiceFrequency {
     public var fortnightly: Bool = false
 }
 
-public struct InvoiceSetting {
+public struct InvoiceSetting: Encodable {
     public var creation: Bool = false
     public var delivery: Bool = false
 }
@@ -196,7 +195,6 @@ extension Invoice: Decodable {
         paymentTransactionId = try container.decodeIfPresent(String.self, forKey: .paymentTransactionId) ?? ""
         processing = try container.safeBoolDecode(forKey: .processing) ?? false
         processingError = try container.decodeIfPresent(String.self, forKey: .processingError) ?? ""
-        purchaser = try container.decodeIfPresent(Purchaser.self, forKey: .purchaser) ?? Purchaser()
         purchaserId = try container.decodeIfPresent(String.self, forKey: .purchaserId) ?? ""
         purchaser_id = try container.decodeIfPresent(String.self, forKey: .purchaser_id) ?? ""
         reference = try container.decodeIfPresent(String.self, forKey: .reference) ?? ""

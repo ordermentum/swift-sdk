@@ -116,7 +116,7 @@ public struct RetailerAddress {
     public var type: String = ""
 }
 
-public struct Retailer {
+public struct Retailer: Encodable {
     public init() {}
     
     public var id: String = ""
@@ -157,7 +157,7 @@ public struct PurchaserPaymentMethod {
     public var cardConfigured: Bool = false
 }
 
-public struct PurchaserSettings {
+public struct PurchaserSettings: Encodable {
     public init() {}
     
     public var brand: Brand = Brand()

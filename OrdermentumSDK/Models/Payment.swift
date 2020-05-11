@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct PaymentTerms {
+public struct PaymentTerms: Encodable {
     public var days: Bool = false
     public var endOfWeek: Bool = false
     public var endOfMonth: Bool = false
 }
 
-public struct PaymentMethods {
+public struct PaymentMethods: Encodable {
     public var other: Bool = false
     public var creditCard: Bool = false
     public var directDebit: Bool = false

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Brand {
+public struct Brand: Encodable {
     public var logo: Image = Image()
     public var images: [Image] = []
 }

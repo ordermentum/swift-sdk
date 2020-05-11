@@ -104,7 +104,7 @@ public struct VenueSettings {
     public var brand: VenueBrand = VenueBrand()
 }
 
-public struct User {
+public struct User: Encodable {
     public init() { }
 
     public var id: String = ""
