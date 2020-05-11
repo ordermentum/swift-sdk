@@ -46,9 +46,11 @@ public struct Invoice: Encodable {
     public var paymentTransactionId: String = ""
     public var processing: Bool = false
     public var processingError: String = ""
+    public var purchaser: Purchaser = Purchaser()
     public var purchaserId: String = ""
     public var purchaser_id: String = ""
     public var reference: String = ""
+    public var retailer: Retailer = Retailer()
     public var retailerChargeable: Bool = false
     public var retailerId: String = ""
     public var retailer_id: String = ""
@@ -57,6 +59,7 @@ public struct Invoice: Encodable {
     public var settlementReference: String = ""
     public var submittedAt: String = ""
     public var subtotal: Float = 0.00
+    public var supplier: Supplier = Supplier()
     public var supplierId: String = ""
     public var supplier_id: String = ""
     public var surcharge: Float = 0.00
@@ -193,10 +196,12 @@ extension Invoice: Decodable {
         paymentTransactionId = try container.decodeIfPresent(String.self, forKey: .paymentTransactionId) ?? ""
         processing = try container.safeBoolDecode(forKey: .processing) ?? false
         processingError = try container.decodeIfPresent(String.self, forKey: .processingError) ?? ""
+        purchaser = try container.decodeIfPresent(Purchaser.self, forKey: .purchaser) ?? Purchaser()
         purchaserId = try container.decodeIfPresent(String.self, forKey: .purchaserId) ?? ""
         purchaser_id = try container.decodeIfPresent(String.self, forKey: .purchaser_id) ?? ""
         reference = try container.decodeIfPresent(String.self, forKey: .reference) ?? ""
         retailerChargeable = try container.safeBoolDecode(forKey: .retailerChargeable) ?? false
+        retailer = try container.decodeIfPresent(Retailer.self, forKey: .retailer) ?? Retailer()
         retailerId = try container.decodeIfPresent(String.self, forKey: .retailerId) ?? ""
         retailer_id = try container.decodeIfPresent(String.self, forKey: .retailer_id) ?? ""
         sentLateNotificationAt = try container.safeBoolDecode(forKey: .sentLateNotificationAt) ?? false
@@ -204,6 +209,7 @@ extension Invoice: Decodable {
         settlementReference = try container.decodeIfPresent(String.self, forKey: .settlementReference) ?? ""
         submittedAt = try container.decodeIfPresent(String.self, forKey: .submittedAt) ?? ""
         subtotal = try container.safeFloatDecode(forKey: .subtotal) ?? 0.00
+        supplier = try container.decodeIfPresent(Supplier.self, forKey: .supplier) ?? Supplier()
         supplierId = try container.decodeIfPresent(String.self, forKey: .supplierId) ?? ""
         supplier_id = try container.decodeIfPresent(String.self, forKey: .supplier_id) ?? ""
         syncError = try container.decodeIfPresent(String.self, forKey: .syncError) ?? ""

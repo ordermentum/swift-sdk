@@ -380,6 +380,7 @@ enum CodingKeys: String, CodingKey {
     case properties
     case public_id
     case publicDirectory
+    case purchaser
     case purchaserId
     case purchaserName
     case purchaserScheduleId
