@@ -11,7 +11,7 @@ import Alamofire
 
 public enum InvoiceRouter: URLRequestConvertible {
     //Routes
-    case getInvoices(String, String, String, String, Int)
+    case getInvoices(String?, String?, String?, String?, Int)
     case getInvoice(String)
     case exportInvoice(ExportRequest)
     case getInvoiceExport(String)
