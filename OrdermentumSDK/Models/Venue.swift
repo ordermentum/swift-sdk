@@ -48,9 +48,6 @@ public struct CreateVenueRequest: Codable {
     public var email: String? = nil
     public var address: Address? = nil
     public var abn: String? = nil
-    public var contactFirstName: String? = nil
-    public var contactLastName: String? = nil
-    public var contactEmail: String? = nil
 }
 
 public struct CreateVenueResponse: Decodable {
