@@ -34,6 +34,11 @@ public struct UserProfile: Codable {
     public var verifiedAt: String = ""
 }
 
+public struct VenueNotificationResponse {
+    public var meta: Meta = Meta()
+    public var data: [VenueNotifications] = []
+}
+
 public struct Settings: Codable {
     public var accessNewRetailerUi: Bool = false
 }
@@ -68,6 +73,18 @@ public struct Notifications: Codable {
     public var enableEmail: Bool = false
     public var pushNotifications: Bool = false
     public var id: SupplierNotifications = SupplierNotifications()
+}
+
+public struct VenueNotifications: Codable {
+    public init() {}
+
+    public var title: String = ""
+    public var description: String = ""
+    public var createdAt: Date = Date()
+    public var imageURL: String = ""
+    public var read: Bool = false
+    public var permalink: String = ""
+    public var id: String = ""
 }
 
 public struct SupplierNotifications: Codable {
@@ -220,6 +237,21 @@ extension SupplierNotifications {
     }
 }
 
+extension VenueNotifications {
+    public init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        //Decode Data
+        title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
+        description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
+        imageURL = try container.decodeIfPresent(String.self, forKey: .imageURL) ?? ""
+        read = try container.safeBoolDecode(forKey: .read) ?? false
+        permalink = try container.decodeIfPresent(String.self, forKey: .permalink) ?? ""
+        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+    }
+}
+
 extension Name {
     public init(from decoder: Decoder) throws {
         //Create Container
@@ -252,5 +284,16 @@ extension Permissions {
         ordermentum = try container.decodeIfPresent([String].self, forKey: .ordermentum) ?? []
         id = try container.decodeIfPresent([String].self, forKey: .id) ?? []
         customers = try container.decodeIfPresent([String].self, forKey: .customers) ?? []
+    }
+}
+
+extension VenueNotificationResponse: Decodable {
+    public init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        //Decode Data
+        meta = try container.decodeIfPresent(Meta.self, forKey: .meta) ?? Meta()
+        data = try container.decodeIfPresent([VenueNotifications].self, forKey: .data) ?? []
     }
 }

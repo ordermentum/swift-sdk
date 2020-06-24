@@ -13,6 +13,8 @@ public enum NotificationsRouter: URLRequestConvertible {
     //Routes
     case updateNotificationSetting(String, String, [String: Bool])
     case updateAllNotificationSettings(String, SupplierNotifications)
+    case getNotification(String)
+    case readNotification(String)
     
     //Methods
     var method: HTTPMethod {
@@ -21,6 +23,10 @@ public enum NotificationsRouter: URLRequestConvertible {
             return .post
         case .updateAllNotificationSettings:
             return .post
+        case .getNotification:
+            return .get
+        case .readNotification:
+            return .patch
         }
     }
     
@@ -31,12 +37,18 @@ public enum NotificationsRouter: URLRequestConvertible {
             return "users/\(userId)/notifications/\(supplierId)"
         case .updateAllNotificationSettings(let userId, _):
             return "users/\(userId)/notifications"
+        case .getNotification:
+            return "notifications"
+        case .readNotification(let notificationId):
+            return "notifications/\(notificationId)/read"
         }
     }
     
     //Parameters
     var parameters: [String: Any] {
         switch self {
+        case .getNotification(let userId):
+            return ["userId": userId]
         default:
             return [:]
         }
@@ -49,6 +61,8 @@ public enum NotificationsRouter: URLRequestConvertible {
             return requestObject
         case .updateAllNotificationSettings(_, let requestObject):
             return requestObject
+        case .getNotification(let requestObject):
+            return requestObject
         default:
             return nil
         }
@@ -56,6 +70,11 @@ public enum NotificationsRouter: URLRequestConvertible {
     
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
+        switch self {
+        case .getNotification, .readNotification:
+            return try NotificationsClient.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
+        default:
+            return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
+        }
     }
 }
