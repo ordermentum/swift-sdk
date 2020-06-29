@@ -9,6 +9,8 @@
 import Foundation
 
 public struct TokenUpgradeRequest: Codable {
+    public init() {}
+    
     public var token: String = ""
 }
 
