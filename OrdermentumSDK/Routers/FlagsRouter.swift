@@ -42,14 +42,14 @@ public enum FlagsRouter: URLRequestConvertible {
                     "context[supplierId]": supplierIdArray,
                     "context[retailerId]": retailerId,
                     "context[userId]": userId,
-                    "isRetailer": isRetailer]
+                    "context[isRetailer]": isRetailer]
             
         case .getMarketplaceFlags(let flagsArray, let supplierId, let retailerId, let userId, let isRetailer):
             return ["flags": flagsArray,
                     "context[supplierId]": supplierId,
                     "context[retailerId]": retailerId,
                     "context[userId]": userId,
-                    "isRetailer": isRetailer]
+                    "context[isRetailer]": isRetailer]
         }
     }
     
