@@ -9,7 +9,7 @@
 import Foundation
 
 public struct TokenUpgradeRequest: Codable {
-    public var token: String!
+    public var token: String = ""
 }
 
 public struct TokenUpgradeResponse {
