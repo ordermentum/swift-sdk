@@ -11,8 +11,8 @@ import Alamofire
 
 public enum FlagsRouter: URLRequestConvertible {
     //Routes
-    case getFlags([String], [String], String, String)
-    case getMarketplaceFlags([String], String, String, String)
+    case getFlags([String], [String], String, String, Bool)
+    case getMarketplaceFlags([String], String, String, String, Bool)
     
     //Methods
     var method: HTTPMethod {
@@ -37,12 +37,19 @@ public enum FlagsRouter: URLRequestConvertible {
     //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .getFlags(let flagsArray, let supplierIdArray, let retailerId, let userId):
-            return ["flags": flagsArray, "context[supplierId]": supplierIdArray, "context[retailerId]": retailerId, "context[userId]": userId]
-        case .getMarketplaceFlags(let flagsArray, let supplierId, let retailerId, let userId):
-            return ["flags": flagsArray, "context[supplierId]": supplierId, "context[retailerId]": retailerId, "context[userId]": userId]
-        default:
-            return [:]
+        case .getFlags(let flagsArray, let supplierIdArray, let retailerId, let userId, let isRetailer):
+            return ["flags": flagsArray,
+                    "context[supplierId]": supplierIdArray,
+                    "context[retailerId]": retailerId,
+                    "context[userId]": userId,
+                    "isRetailer": isRetailer]
+            
+        case .getMarketplaceFlags(let flagsArray, let supplierId, let retailerId, let userId, let isRetailer):
+            return ["flags": flagsArray,
+                    "context[supplierId]": supplierId,
+                    "context[retailerId]": retailerId,
+                    "context[userId]": userId,
+                    "isRetailer": isRetailer]
         }
     }
     
