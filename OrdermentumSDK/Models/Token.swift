@@ -9,11 +9,11 @@
 import Foundation
 
 public struct TokenUpgradeRequest: Codable {
-    var token: String!
+    public var token: String!
 }
 
 public struct TokenUpgradeResponse {
-    var token: String?
+    public var token: String?
 }
 
 extension TokenUpgradeResponse: Decodable {
