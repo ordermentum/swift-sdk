@@ -57,6 +57,7 @@ enum CodingKeys: String, CodingKey {
     case retailerHome = "retailer-home"
     case retailerSignupCardModal = "retailer-signup-card-modal"
     case notificationCentre = "notification-centre"
+    case googleSignIn = "google-sign-in"
     
     //Generic
     case abn
