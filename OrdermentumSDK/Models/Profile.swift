@@ -34,7 +34,7 @@ public struct UserProfile: Codable {
     public var verifiedAt: String = ""
 }
 
-public struct VenueNotificationResponse {
+public struct VenueNotificationsResponse {
     public var meta: Meta = Meta()
     public var data: [VenueNotifications] = []
 }
@@ -75,7 +75,7 @@ public struct Notifications: Codable {
     public var id: SupplierNotifications = SupplierNotifications()
 }
 
-public struct VenueNotifications: Codable {
+public struct VenueNotifications {
     public init() {}
 
     public var title: String = ""
@@ -237,7 +237,7 @@ extension SupplierNotifications {
     }
 }
 
-extension VenueNotifications {
+extension VenueNotifications: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -287,7 +287,7 @@ extension Permissions {
     }
 }
 
-extension VenueNotificationResponse: Decodable {
+extension VenueNotificationsResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)

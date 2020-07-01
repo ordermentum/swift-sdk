@@ -229,6 +229,7 @@ enum CodingKeys: String, CodingKey {
     case height
     case id
     case images
+    case imageURL
     case includeOrderUpdatesInReports
     case includeWeekends
     case infos
@@ -346,6 +347,7 @@ enum CodingKeys: String, CodingKey {
     case paymentStatus
     case paymentTerms
     case paymentTransactionId
+    case permalink
     case permissions
     case phone
     case place
@@ -390,6 +392,7 @@ enum CodingKeys: String, CodingKey {
     case quantityThreshold
     case randomWeight
     case ratePrice
+    case read
     case readUrl
     case recipientEmail
     case recipientEntityName
