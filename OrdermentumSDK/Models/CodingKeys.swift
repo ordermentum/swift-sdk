@@ -420,6 +420,8 @@ enum CodingKeys: String, CodingKey {
     case retailerLegalName
     case retailerName
     case retailerPhone
+    case retailerRecipient
+    case retailerSender
     case retailerTradingName
     case retailer_id
     case retailers
@@ -475,6 +477,8 @@ enum CodingKeys: String, CodingKey {
     case supplierId
     case supplierName
     case supplierQuote
+    case supplierRecipient
+    case supplierSender
     case supplier_id
     case suppliers
     case surcharge

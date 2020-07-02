@@ -32,7 +32,10 @@ public struct VenueInvite {
     public var senderId: String = ""
     public var senderType: String = ""
     public var status: String = ""
-    public var supplier: Supplier = Supplier()
+    public var supplierSender: Supplier = Supplier()
+    public var supplierRecipient: Supplier = Supplier()
+    public var retailerSender: Retailer = Retailer()
+    public var retailerRecipient: Retailer = Retailer()
     public var updatedAt: String = ""
 }
 
@@ -63,7 +66,10 @@ extension VenueInvite: Decodable {
         approvedByName = try container.decodeIfPresent(String.self, forKey: .approvedByName) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         createdByName = try container.decodeIfPresent(String.self, forKey: .createdByName) ?? ""
-        supplier = try container.decodeIfPresent(Supplier.self, forKey: .supplier) ?? Supplier()
+        supplierSender = try container.decodeIfPresent(Supplier.self, forKey: .supplierSender) ?? Supplier()
+        supplierRecipient = try container.decodeIfPresent(Supplier.self, forKey: .supplierRecipient) ?? Supplier()
+        retailerSender = try container.decodeIfPresent(Retailer.self, forKey: .retailerSender) ?? Retailer()
+        retailerRecipient = try container.decodeIfPresent(Retailer.self, forKey: .retailerRecipient) ?? Retailer()
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
     }
 }
