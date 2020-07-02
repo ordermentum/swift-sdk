@@ -26,7 +26,7 @@ public enum AdminRouter: URLRequestConvertible {
         case .searchVenuesByLocation:
             return .get
         case .getVenueInvites:
-         return .get
+            return .get
         }
     }
 

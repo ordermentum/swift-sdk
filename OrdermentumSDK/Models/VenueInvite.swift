@@ -15,23 +15,25 @@ public struct VenueInviteResponse {
 public struct VenueInvite {
     public init() {}
     
-    public var id: String = ""
-    public var senderEntityName: String = ""
-    public var senderType: String = ""
-    public var senderId: String = ""
-    public var recipientFirstName: String = ""
-    public var recipientLastName: String = ""
-    public var recipientFullName: String = ""
-    public var recipientEmail: String = ""
-    public var recipientPhone: String = ""
-    public var recipientEntityName: String = ""
-    public var referenceId: String = ""
-    public var status: String = ""
-    public var permissions: [String] = []
-    public var isApproved: Bool = false
     public var approvedByName: String = ""
     public var createdAt: String = ""
     public var createdByName: String = ""
+    public var id: String = ""
+    public var isApproved: Bool = false
+    public var permissions: [String] = []
+    public var recipientEmail: String = ""
+    public var recipientEntityName: String = ""
+    public var recipientFirstName: String = ""
+    public var recipientFullName: String = ""
+    public var recipientLastName: String = ""
+    public var recipientPhone: String = ""
+    public var referenceId: String = ""
+    public var senderEntityName: String = ""
+    public var senderId: String = ""
+    public var senderType: String = ""
+    public var status: String = ""
+    public var supplier: Supplier = Supplier()
+    public var updatedAt: String = ""
 }
 
 extension VenueInviteResponse: Decodable {
@@ -61,5 +63,7 @@ extension VenueInvite: Decodable {
         approvedByName = try container.decodeIfPresent(String.self, forKey: .approvedByName) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         createdByName = try container.decodeIfPresent(String.self, forKey: .createdByName) ?? ""
+        supplier = try container.decodeIfPresent(Supplier.self, forKey: .supplier) ?? Supplier()
+        updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
     }
 }
