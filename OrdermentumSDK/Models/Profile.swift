@@ -165,6 +165,7 @@ extension Roles {
         superAdmin = try container.safeBoolDecode(forKey: .superAdmin) ?? false
         admin = try container.safeBoolDecode(forKey: .admin) ?? false
         retailers = try container.decodeIfPresent([RetailerRole].self, forKey: .retailers) ?? []
+        suppliers = try container.decodeIfPresent([SupplierRole].self, forKey: .suppliers) ?? []
     }
 }
 
