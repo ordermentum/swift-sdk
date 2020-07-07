@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name	= "OrdermentumSDK"
-  s.version	= "0.3.0"
+  s.version	= "0.3.1"
   s.summary	= "SwiftSDK that wraps the Ordermentum API."
   s.description	= "Ordermentum API functionality wrapped using Alamofire. Consumable by any Swift client."
   s.homepage	= "https://ordermentum.github.io/docs/"
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = "3.0"
   s.tvos.deployment_target = "10.0"
 
-  s.source       = { git: "https://github.com/ordermentum/swift-sdk.git", tag: "0.3.0" }
+  s.source       = { git: "https://github.com/ordermentum/swift-sdk.git", tag: "0.3.1" }
   s.source_files  = "OrdermentumSDK/**/*.swift"
 
 
