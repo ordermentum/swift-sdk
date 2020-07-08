@@ -16,6 +16,7 @@ public enum VenueRouter: URLRequestConvertible {
     case createVenue(CreateVenueRequest)
     case updateVenueProfile(String, VenueProfile)
     case getProfileCompletion(String)
+    case getInvite(String, String)
     case getVenueInvites(String)
     case sendVenueInvite(AddUser)
     case acceptAllInvites
@@ -25,6 +26,7 @@ public enum VenueRouter: URLRequestConvertible {
     case joinVenue(JoinVenueRequest)
     case getPendingVenues
     case updateUserPositions(String, [String: [String]])
+    case acceptInvite(String, String)
 
     //Methods
     var method: HTTPMethod {
@@ -38,6 +40,8 @@ public enum VenueRouter: URLRequestConvertible {
         case .updateVenueProfile:
             return .patch
         case .getProfileCompletion:
+            return .get
+        case .getInvite:
             return .get
         case .getVenueInvites:
             return .get
@@ -57,6 +61,8 @@ public enum VenueRouter: URLRequestConvertible {
             return .get
         case .updateUserPositions:
             return .put
+        case .acceptInvite:
+            return .post
         }
     }
 
@@ -73,6 +79,8 @@ public enum VenueRouter: URLRequestConvertible {
             return "retailers/\(retailerId)"
         case .getProfileCompletion(let retailerId):
             return "retailers/\(retailerId)/profile"
+        case .getInvite(let inviteId, _):
+            return "invites/\(inviteId)"
         case .getVenueInvites:
             return "invites"
         case .sendVenueInvite:
@@ -91,6 +99,8 @@ public enum VenueRouter: URLRequestConvertible {
             return "venues/pending-requests"
         case .updateUserPositions(let retailerId, _):
             return "retailers/\(retailerId)/user-positions"
+        case .acceptInvite(let inviteId, _):
+            return "invites/\(inviteId)/accept"
         }
     }
 
@@ -105,6 +115,10 @@ public enum VenueRouter: URLRequestConvertible {
             return ["recipientEmail": recipientEmail, "status": "approved"]
         case .searchVenue(let searchQuery):
             return ["search": searchQuery]
+        case .getInvite(_, let token):
+            return ["token": token]
+        case .acceptInvite(_, let token):
+            return ["token": token]
         default:
             return [:]
         }

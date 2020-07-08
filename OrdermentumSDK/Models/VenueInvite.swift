@@ -15,23 +15,28 @@ public struct VenueInviteResponse {
 public struct VenueInvite {
     public init() {}
     
-    public var id: String = ""
-    public var senderEntityName: String = ""
-    public var senderType: String = ""
-    public var senderId: String = ""
-    public var recipientFirstName: String = ""
-    public var recipientLastName: String = ""
-    public var recipientFullName: String = ""
-    public var recipientEmail: String = ""
-    public var recipientPhone: String = ""
-    public var recipientEntityName: String = ""
-    public var referenceId: String = ""
-    public var status: String = ""
-    public var permissions: [String] = []
-    public var isApproved: Bool = false
     public var approvedByName: String = ""
     public var createdAt: String = ""
     public var createdByName: String = ""
+    public var id: String = ""
+    public var isApproved: Bool = false
+    public var permissions: [String] = []
+    public var recipientEmail: String = ""
+    public var recipientEntityName: String = ""
+    public var recipientFirstName: String = ""
+    public var recipientFullName: String = ""
+    public var recipientLastName: String = ""
+    public var recipientPhone: String = ""
+    public var referenceId: String = ""
+    public var senderEntityName: String = ""
+    public var senderId: String = ""
+    public var senderType: String = ""
+    public var status: String = ""
+    public var supplierSender: Supplier = Supplier()
+    public var supplierRecipient: Supplier = Supplier()
+    public var retailerSender: Retailer = Retailer()
+    public var retailerRecipient: Retailer = Retailer()
+    public var updatedAt: String = ""
 }
 
 extension VenueInviteResponse: Decodable {
@@ -61,5 +66,10 @@ extension VenueInvite: Decodable {
         approvedByName = try container.decodeIfPresent(String.self, forKey: .approvedByName) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         createdByName = try container.decodeIfPresent(String.self, forKey: .createdByName) ?? ""
+        supplierSender = try container.decodeIfPresent(Supplier.self, forKey: .supplierSender) ?? Supplier()
+        supplierRecipient = try container.decodeIfPresent(Supplier.self, forKey: .supplierRecipient) ?? Supplier()
+        retailerSender = try container.decodeIfPresent(Retailer.self, forKey: .retailerSender) ?? Retailer()
+        retailerRecipient = try container.decodeIfPresent(Retailer.self, forKey: .retailerRecipient) ?? Retailer()
+        updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
     }
 }
