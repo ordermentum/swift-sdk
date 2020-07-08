@@ -42,7 +42,7 @@ public class NotificationsService {
 
     public func getNotification(userId: String, completion: @escaping (Bool, VenueNotificationsResponse?, ErrorResponse?) -> ()) {
         //Build Route
-        let route = NotificationsRouter.getNotifications(userId) as URLRequestConvertible
+        let route = VenueNotificationsRouter.getNotifications(userId) as URLRequestConvertible
 
         //Call API
         Service<VenueNotificationsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
@@ -52,10 +52,10 @@ public class NotificationsService {
 
     public func readNotification(notificationId: String, completion: @escaping (Bool, ErrorResponse?) -> ()) {
         //Build Route
-        let route = NotificationsRouter.markNotificationAsRead(notificationId) as URLRequestConvertible
+        let route = VenueNotificationsRouter.markNotificationAsRead(notificationId) as URLRequestConvertible
 
         //Call API
-        Service<VenueNotificationsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, errorObject)
         }
     }

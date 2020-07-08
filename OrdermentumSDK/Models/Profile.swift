@@ -36,7 +36,7 @@ public struct UserProfile: Codable {
 
 public struct VenueNotificationsResponse {
     public var meta: Meta = Meta()
-    public var data: [VenueNotifications] = []
+    public var data: [VenueNotification] = []
 }
 
 public struct Settings: Codable {
@@ -75,7 +75,7 @@ public struct Notifications: Codable {
     public var id: SupplierNotifications = SupplierNotifications()
 }
 
-public struct VenueNotifications {
+public struct VenueNotification {
     public init() {}
 
     public var title: String = ""
@@ -237,7 +237,7 @@ extension SupplierNotifications {
     }
 }
 
-extension VenueNotifications: Decodable {
+extension VenueNotification: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -294,6 +294,6 @@ extension VenueNotificationsResponse: Decodable {
 
         //Decode Data
         meta = try container.decodeIfPresent(Meta.self, forKey: .meta) ?? Meta()
-        data = try container.decodeIfPresent([VenueNotifications].self, forKey: .data) ?? []
+        data = try container.decodeIfPresent([VenueNotification].self, forKey: .data) ?? []
     }
 }
