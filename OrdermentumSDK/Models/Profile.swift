@@ -80,7 +80,7 @@ public struct VenueNotification {
 
     public var title: String = ""
     public var description: String = ""
-    public var createdAt: Date = Date()
+    public var createdAt: String = ""
     public var imageURL: String = ""
     public var read: Bool = false
     public var permalink: String = ""
@@ -249,6 +249,7 @@ extension VenueNotification: Decodable {
         read = try container.safeBoolDecode(forKey: .read) ?? false
         permalink = try container.decodeIfPresent(String.self, forKey: .permalink) ?? ""
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
     }
 }
 
