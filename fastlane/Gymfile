@@ -6,7 +6,7 @@
 
 # Remove the # in front of the line to enable the option
 
-scheme "Ordermentum"
+scheme "ordermentum-swift-sdk"
 configuration "Release"
 silent true
 clean true

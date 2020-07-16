@@ -1,4 +1,4 @@
-app_identifier "com.ordermentum.Ordermentum" # The bundle identifier of your app
+app_identifier "io.ordermentum.swift-sdk" # The bundle identifier of your app
 apple_id "brainstrust@ordermentum.com" # Your Apple email address
 
 team_id "4UQMG48666" # Developer Portal Team ID
