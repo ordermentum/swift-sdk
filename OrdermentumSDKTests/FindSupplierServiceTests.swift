@@ -45,5 +45,3 @@ class FindSupplierServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 }
-
-

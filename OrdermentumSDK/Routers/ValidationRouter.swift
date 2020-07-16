@@ -42,8 +42,6 @@ public enum ValidationRouter: URLRequestConvertible {
         switch self {
         case .validateItems(let requestObject):
             return requestObject
-        default:
-            return nil
         }
     }
     

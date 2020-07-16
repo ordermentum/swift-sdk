@@ -9,8 +9,8 @@
 import Foundation
 
 public struct UserProfile: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var userId: String = ""
     public var permissions: [String] = []
     public var roles: Roles = Roles()
@@ -44,8 +44,8 @@ public struct Settings: Codable {
 }
 
 public struct Roles: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var superAdmin: Bool = false
     public var admin: Bool = false
     public var retailers: [RetailerRole] = []
@@ -53,22 +53,22 @@ public struct Roles: Codable {
 }
 
 public struct RetailerRole: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var id: String = ""
     public var role: String = ""
 }
 
 public struct SupplierRole: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var id: String = ""
     public var role: String = ""
 }
 
 public struct Notifications: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var enableSMS: Bool = false
     public var enableEmail: Bool = false
     public var pushNotifications: Bool = false
@@ -88,8 +88,8 @@ public struct VenueNotification {
 }
 
 public struct SupplierNotifications: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var alerts: Bool = false
     public var enableSMS: Bool = false
     public var remittance: Bool = false
@@ -101,31 +101,31 @@ public struct SupplierNotifications: Codable {
 }
 
 public struct Name: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var first: String = ""
     public var last: String = ""
 }
 
 public struct AdminPerms: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var permissions: Permissions = Permissions()
     public var isAdmin: Bool = false
     public var isSuperAdmin: Bool = false
 }
 
 public struct Permissions: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var ordermentum: [String] = []
     public var id: [String] = []
     public var customers: [String] = []
 }
 
 public struct UpdateUserRequest: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var email: String = ""
     public var firstName: String = ""
     public var lastName: String = ""
@@ -136,7 +136,7 @@ extension UserProfile {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         userId = try container.decodeIfPresent(String.self, forKey: .userId) ?? ""
         permissions = try container.decodeIfPresent([String].self, forKey: .permissions) ?? []
@@ -151,7 +151,7 @@ extension UserProfile {
         email = try container.decodeIfPresent(String.self, forKey: .email) ?? ""
         phone = try container.decodeIfPresent(String.self, forKey: .phone) ?? ""
         defaultNotifications = try container.decodeIfPresent(SupplierNotifications.self, forKey: .defaultNotifications) ?? SupplierNotifications()
-        entityNotifications = try container.decodeIfPresent([String : SupplierNotifications].self, forKey: .entityNotifications) ?? [:]
+        entityNotifications = try container.decodeIfPresent([String: SupplierNotifications].self, forKey: .entityNotifications) ?? [:]
         parentNotifications = try container.decodeIfPresent(SupplierNotifications.self, forKey: .parentNotifications) ?? SupplierNotifications()
         notifications = try container.decodeIfPresent(Notifications.self, forKey: .notifications) ?? Notifications()
         settings = try container.decodeIfPresent(Settings.self, forKey: .settings) ?? Settings()
@@ -166,7 +166,7 @@ extension Settings {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         accessNewRetailerUi = try container.safeBoolDecode(forKey: .accessNewRetailerUi) ?? false
     }
@@ -176,7 +176,7 @@ extension Roles {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         superAdmin = try container.safeBoolDecode(forKey: .superAdmin) ?? false
         admin = try container.safeBoolDecode(forKey: .admin) ?? false
@@ -189,7 +189,7 @@ extension RetailerRole {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         role = try container.decodeIfPresent(String.self, forKey: .role) ?? ""
@@ -200,7 +200,7 @@ extension SupplierRole {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         role = try container.decodeIfPresent(String.self, forKey: .role) ?? ""
@@ -211,7 +211,7 @@ extension Notifications {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         enableSMS = try container.safeBoolDecode(forKey: .enableSMS) ?? false
         enableEmail = try container.safeBoolDecode(forKey: .enableEmail) ?? false
@@ -224,7 +224,7 @@ extension SupplierNotifications {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         alerts = try container.safeBoolDecode(forKey: .alerts) ?? false
         enableSMS = try container.safeBoolDecode(forKey: .enableSMS) ?? false
@@ -257,7 +257,7 @@ extension Name {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         first = try container.decodeIfPresent(String.self, forKey: .first) ?? ""
         last = try container.decodeIfPresent(String.self, forKey: .last) ?? ""
@@ -268,7 +268,7 @@ extension AdminPerms {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         permissions = try container.decodeIfPresent(Permissions.self, forKey: .permissions) ?? Permissions()
         isAdmin = try container.safeBoolDecode(forKey: .isAdmin) ?? false
@@ -280,7 +280,7 @@ extension Permissions {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         ordermentum = try container.decodeIfPresent([String].self, forKey: .ordermentum) ?? []
         id = try container.decodeIfPresent([String].self, forKey: .id) ?? []

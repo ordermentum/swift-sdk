@@ -58,8 +58,7 @@ class FlagsServiceTests: XCTestCase {
                 XCTAssertTrue(responseData?.retailerSignup ?? true)
                 XCTAssertTrue(responseData?.addVenue ?? true)
                 XCTAssertTrue(responseData?.projectionsV2 ?? true)
-            }
-            else {
+            } else {
                 XCTFail("Expected JSON Response to succeed, but failed")
             }
         }

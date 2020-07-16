@@ -24,29 +24,28 @@ class MarketplaceServiceTests: XCTestCase {
     func testGetMarketPlaces() {
         //Setup Request and Start Stub
         Client.instance.baseURL = ClientURL.rootTestingURL
-        let retailerId:String = self.getEnvironmentVar("RETAILER_ID") ?? ""
-        let pageSize:Int = Int(self.getEnvironmentVar("PAGE_SIZE")!) ?? 0
-        let pageNo:Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 0
-        
+        let retailerId: String = self.getEnvironmentVar("RETAILER_ID") ?? ""
+        let pageSize: Int = Int(self.getEnvironmentVar("PAGE_SIZE")!) ?? 0
+        let pageNo: Int = Int(self.getEnvironmentVar("PAGE_NO")!) ?? 0
+
         //Start Stub
         if let route = try? MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo).asURLRequest() {
             self.startStub(route, stubData: .getMarketPlaces)
         }
-        
+
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
-        
+
         Client.instance.marketplaces.getMarketplaces(retailerId: retailerId, pageSize: pageSize, pageNo: pageNo) { (result, responseData) in
             if result {
                 assert(result)
                 XCTAssertNotNil(responseData)
                 expectation.fulfill()
-            }
-            else {
+            } else {
                 XCTFail("Expected JSON Response to succeed, but failed")
             }
         }
-        
+
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }

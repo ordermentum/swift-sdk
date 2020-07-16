@@ -16,7 +16,7 @@ public class RecommendedSuppliersService {
      * Fetch the recommended suppliers as an array of categories for a retailer
      * Returns a RecommendedSuppliersResponse Object
      */
-    public func getRecommendedSuppliers(retailerId: String, completion: @escaping (Bool, RecommendedSupplierResponse?, ErrorResponse?) -> ()) {
+    public func getRecommendedSuppliers(retailerId: String, completion: @escaping (Bool, RecommendedSupplierResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = RecommendedSuppliersRouter.getRecommendedSuppliers(retailerId) as URLRequestConvertible
         
@@ -30,7 +30,7 @@ public class RecommendedSuppliersService {
      * Fetch the top recommended suppliers as an array of recommended suppliers for a retailer
      * Returns a RecommendedSupplierTopResponse Object
      */
-    public func getTopRecommendedSuppliers(retailerId: String, completion: @escaping (Bool, RecommendedSupplierTopResponse?, ErrorResponse?) -> ()) {
+    public func getTopRecommendedSuppliers(retailerId: String, completion: @escaping (Bool, RecommendedSupplierTopResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = RecommendedSuppliersRouter.getTopRecommendedSuppliers(retailerId) as URLRequestConvertible
         
@@ -44,7 +44,7 @@ public class RecommendedSuppliersService {
     * Fetch a list of pending supplier requests from a retailer
     * Returns an array of ConncetionReqeusts objects
     */
-    public func getConnectionRequests(retailerId: String, supplierId: String, searchTerm: String?, completion: @escaping (Bool, [ConnectionRequest]?, ErrorResponse?) -> ()) {
+    public func getConnectionRequests(retailerId: String, supplierId: String, searchTerm: String?, completion: @escaping (Bool, [ConnectionRequest]?, ErrorResponse?) -> Void) {
         //Build Route
         let route = RecommendedSuppliersRouter.getConnectionRequests(retailerId, supplierId, searchTerm) as URLRequestConvertible
         

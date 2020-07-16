@@ -16,7 +16,7 @@ public class AppVersionService {
      * Check for the latest required version of the iOS application
      * Returns an AppVersion object
      */
-    public func checkVersion(completion: @escaping (Bool, AppVersion?, ErrorResponse?) -> ()) {
+    public func checkVersion(completion: @escaping (Bool, AppVersion?, ErrorResponse?) -> Void) {
         //Build Route
         let route = AppVersionRouter.checkVersion as URLRequestConvertible
         

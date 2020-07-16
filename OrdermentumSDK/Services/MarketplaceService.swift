@@ -16,7 +16,7 @@ public class MarketplaceService {
      * Fetch the marketplaces for a selected retailer
      * Returns a Marketplace object
      */
-    public func getMarketplaces(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, MarketplaceResponse?, ErrorResponse?) -> ()) {
+    public func getMarketplaces(retailerId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, MarketplaceResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = MarketplaceRouter.getMarketplaces(retailerId, pageSize, pageNo) as URLRequestConvertible
         
@@ -30,7 +30,7 @@ public class MarketplaceService {
      * Fetch a single Supplier
      * Returns a Supplier object
      */
-    public func getSupplier(supplierId: String, completion: @escaping (Bool, Supplier?, ErrorResponse?) -> ()) {
+    public func getSupplier(supplierId: String, completion: @escaping (Bool, Supplier?, ErrorResponse?) -> Void) {
         //Build Route
         let route = MarketplaceRouter.getSupplier(supplierId) as URLRequestConvertible
         
@@ -44,7 +44,7 @@ public class MarketplaceService {
      * Fetch a single recommended supplier
      * Returns a RecommendedSupplier object
      */
-    public func getRecommendedSupplier(supplierId: String, completion: @escaping (Bool, RecommendedSupplier?, ErrorResponse?) -> ()) {
+    public func getRecommendedSupplier(supplierId: String, completion: @escaping (Bool, RecommendedSupplier?, ErrorResponse?) -> Void) {
         //Build Route
         let route = MarketplaceRouter.getRecommendedSupplier(supplierId) as URLRequestConvertible
         
@@ -58,7 +58,7 @@ public class MarketplaceService {
      * Fetch a list of pending supplier requests from a retailer
      * Returns an array of PendingSupplier objects
      */
-    public func getPendingSuppliers(retailerId: String, completion: @escaping (Bool, [ConnectionRequest]?, ErrorResponse?) -> ()) {
+    public func getPendingSuppliers(retailerId: String, completion: @escaping (Bool, [ConnectionRequest]?, ErrorResponse?) -> Void) {
         //Build Route
         let route = MarketplaceRouter.getPendingSuppliers(retailerId) as URLRequestConvertible
 
@@ -68,6 +68,3 @@ public class MarketplaceService {
         }
     }
 }
-
-
-

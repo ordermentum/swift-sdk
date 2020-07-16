@@ -41,13 +41,13 @@ public struct Venue {
 public struct CreateVenueRequest: Codable {
     public init() { }
 
-    public var legalName: String? = nil
-    public var tradingName: String? = nil
-    public var ownerId: String? = nil
-    public var phone: String? = nil
-    public var email: String? = nil
-    public var address: Address? = nil
-    public var abn: String? = nil
+    public var legalName: String?
+    public var tradingName: String?
+    public var ownerId: String?
+    public var phone: String?
+    public var email: String?
+    public var address: Address?
+    public var abn: String?
 }
 
 public struct CreateVenueResponse: Decodable {
@@ -300,7 +300,7 @@ extension User: Decodable {
         created_at = try container.decodeIfPresent(String.self, forKey: .created_at) ?? ""
         updated_at = try container.decodeIfPresent(String.self, forKey: .updated_at) ?? ""
         deleted_at = try container.decodeIfPresent(String.self, forKey: .deleted_at) ?? ""
-        positions = try container.decodeIfPresent([String : [String]].self, forKey: .positions) ?? [:]
+        positions = try container.decodeIfPresent([String: [String]].self, forKey: .positions) ?? [:]
     }
 }
 

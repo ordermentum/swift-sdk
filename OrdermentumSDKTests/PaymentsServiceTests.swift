@@ -21,33 +21,32 @@ class PaymentsServiceTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
+
     func testGetPaymentMethods() {
         Client.instance.baseURL = ClientURL.rootTestingURL
         let retailerId: String = self.getEnvironmentVar("RETAILER_ID") ?? ""
-        
+
         if let route = try? PaymentsRouter.getPaymentMethods(retailerId).asURLRequest() {
             self.startStub(route, stubData: .getPaymentMethods)
         }
-        
+
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
-        
+
         Client.instance.payments.getPaymentMethods(retailerId: retailerId) { (result, responseData) in
             if result {
                 assert(result)
                 expectation.fulfill()
                 XCTAssertFalse((responseData?.isEmpty ?? true))
-            }
-            else {
+            } else {
                 XCTFail("Expected JSON Response to succeed, but failed")
             }
         }
-        
+
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
-    
+
     func testGetSinglePaymentMethod() {
         Client.instance.baseURL = ClientURL.rootTestingURL
         let retailerId: String = self.getEnvironmentVar("RETAILER_ID") ?? ""
@@ -56,25 +55,24 @@ class PaymentsServiceTests: XCTestCase {
         if let route = try? PaymentsRouter.getSinglePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
             self.startStub(route, stubData: .getSinglePaymentMethods)
         }
-        
+
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
-        
-        Client.instance.payments.getSinglePaymentMethod(retailerId: retailerId, paymentMethodId: paymentMethodId) { (result, responseData) in
+
+        Client.instance.payments.getSinglePaymentMethod(retailerId: retailerId, paymentMethodId: paymentMethodId) { (result, _) in
             if result {
                 assert(result)
                 expectation.fulfill()
-            }
-            else {
+            } else {
                 XCTFail("Expected JSON Response to succeed, but failed")
             }
         }
-        
+
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
-    
-    func testCreateCardPaymentMethod(){
+
+    func testCreateCardPaymentMethod() {
         Client.instance.baseURL = ClientURL.rootTestingURL
         let retailerId: String = self.getEnvironmentVar("RETAILER_ID") ?? ""
         var requestObject: CreateCardPaymentMethodRequest = CreateCardPaymentMethodRequest()
@@ -91,17 +89,16 @@ class PaymentsServiceTests: XCTestCase {
         requestObject.isDirect = Bool(self.getEnvironmentVar("ISDIRECT")!) ?? true
         requestObject.defaultAll = Bool(self.getEnvironmentVar("DEFAULT_ALL")!) ?? true
         requestObject.userId = self.getEnvironmentVar("CARD_URSERID") ?? ""
-        
+
         if let route = try? PaymentsRouter.createCardPaymentMethod(retailerId, requestObject).asURLRequest() {
             self.startStub(route, stubData: .createCardPaymentMethod)
         }
-        
-        
+
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
-        
+
         //Call API
- 		Client.instance.payments.createCardPaymentMethod(retailerId: retailerId, requestObject: requestObject) { (result, responseData) in
+        Client.instance.payments.createCardPaymentMethod(retailerId: retailerId, requestObject: requestObject) { (result, responseData) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -125,36 +122,32 @@ class PaymentsServiceTests: XCTestCase {
                 XCTAssertFalse(responseData?.title.isEmpty ?? false)
                 XCTAssertFalse(responseData?.type.isEmpty ?? false)
                 XCTAssertFalse(responseData?.updatedAt.isEmpty ?? false)
-            }
-            else {
+            } else {
                 XCTFail("Expected JSON Response to succeed, but failed")
             }
         }
-        
+
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
-    
-    
 
     func testDeletePaymentMethod() {
         Client.instance.baseURL = ClientURL.rootTestingURL
         let retailerId: String = self.getEnvironmentVar("RETAILER_ID") ?? ""
         let paymentMethodId: String = self.getEnvironmentVar("PAYMENTMETHOD_ID") ?? ""
-        
+
         if let route = try? PaymentsRouter.deletePaymentMethod(retailerId, paymentMethodId).asURLRequest() {
             self.startStub(route, stubData: .deletePaymentMethod)
         }
-        
+
         //Build Expectation
         let expectation = XCTestExpectation(description: "Stubs network call")
-        
+
         Client.instance.payments.deletePaymentMethod(retailerId: retailerId, paymentMethodId: paymentMethodId) { (result) in
             if result {
                 assert(result)
                 expectation.fulfill()
-            }
-            else {
+            } else {
                 XCTFail("Expected JSON Response to succeed, but failed")
             }
         }

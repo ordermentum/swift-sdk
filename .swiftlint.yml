@@ -1,0 +1,34 @@
+disabled_rules:
+  - identifier_name
+  - unused_optional_binding
+  - syntactic_sugar
+  - unneeded_break_in_switch
+  - switch_case_alignment
+  - no_fallthrough_only
+  - shorthand_operator
+  - closure_parameter_position
+  - discarded_notification_center_observer
+  - for_where
+  - todo
+  - trailing_whitespace
+  - vertical_parameter_alignment
+  - control_statement
+  - force_cast
+  - force_try
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+ - Carthage
+ - Pods
+ - vendor
+line_length: 16319
+function_body_length: 400
+function_parameter_count: 20
+type_body_length: 800
+cyclomatic_complexity: 40
+file_length: 2000
+type_body_length: 800
+identifier_name: 50
+type_name:
+  min_length: 2 # only warning
+  max_length: # warning and error
+    warning: 75
+    error: 100

@@ -40,20 +40,20 @@ public struct Marketplace {
 }
 
 public struct MarketplaceProperties: Encodable {
-    public init() {}
-    
+    public init() { }
+
     public var demoSupplier: Bool = false
 }
 
 public struct MarketplaceSettings {
-    public init() {}
-    
+    public init() { }
+
     public var brand: Brand = Brand()
 }
 
 public struct PendingSupplier: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var supplier: Supplier = Supplier()
 }
 
@@ -61,7 +61,7 @@ extension MarketplaceResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         meta = try container.decodeIfPresent(Meta.self, forKey: .meta) ?? Meta()
         links = try container.decodeIfPresent(Links.self, forKey: .links) ?? Links()
@@ -73,7 +73,7 @@ extension Marketplace: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         address = try container.decodeIfPresent(Address.self, forKey: .address) ?? Address()
@@ -104,18 +104,17 @@ extension MarketplaceProperties: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         demoSupplier = try container.safeBoolDecode(forKey: .demoSupplier) ?? false
     }
 }
 
-
 extension MarketplaceSettings: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         brand = try container.decodeIfPresent(Brand.self, forKey: .brand) ?? Brand()
     }

@@ -10,32 +10,32 @@ import Foundation
 import Alamofire
 
 public class NotificationsService {
-    public init() {}
-    
+    public init() { }
+
     /**
      * Update a particular notification setting for a supplier to retailer relationship
      * Returns a ResponseBody
      */
-    public func updateNotificationSetting(userId: String, supplierId: String, updateObject: [String: Bool], completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func updateNotificationSetting(userId: String, supplierId: String, updateObject: [String: Bool], completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = NotificationsRouter.updateNotificationSetting(userId, supplierId, updateObject) as URLRequestConvertible
-        
+
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
-    
+
     /**
      * Update all notification settings for all suppliers across all venues
      * Returns a ResponseBody
      */
-    public func updateAllNotificationSettings(userId: String, updateObject: SupplierNotifications, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func updateAllNotificationSettings(userId: String, updateObject: SupplierNotifications, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = NotificationsRouter.updateAllNotificationSettings(userId, updateObject) as URLRequestConvertible
-        
+
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }

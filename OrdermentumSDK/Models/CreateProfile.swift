@@ -31,4 +31,3 @@ public struct CreateUserProfile: Codable {
     var adminPerms: AdminPerms = AdminPerms()
     var verifiedAt: String = ""
 }
-

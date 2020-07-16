@@ -24,7 +24,7 @@ public class ProfileService {
      * Fetch the currently logged in users profile
      * Returns a UserProfile
      */
-    public func getProfile(completion: @escaping (Bool, UserProfile?, ErrorResponse?) -> ()) {
+    public func getProfile(completion: @escaping (Bool, UserProfile?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProfileRouter.getProfile as URLRequestConvertible
 
@@ -38,12 +38,12 @@ public class ProfileService {
      * Takes a Profile.UpdateUserRequest object and updates the logged in user.
      * Returns a response body which can be used to check for a 200 status which indicates a success.
      */
-    public func updateProfile(userId: String, requestObject: UpdateUserRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func updateProfile(userId: String, requestObject: UpdateUserRequest, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProfileRouter.updateProfile(userId, requestObject) as URLRequestConvertible
 
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -52,12 +52,12 @@ public class ProfileService {
      * Update a batch of venue positions for a user
      * Returns a success of failure
      */
-    public func updateVeneuPositions(userId: String, requestObject: [String: [String]], completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func updateVeneuPositions(userId: String, requestObject: [String: [String]], completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProfileRouter.updateVenuePositions(userId, requestObject) as URLRequestConvertible
 
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
