@@ -15,8 +15,8 @@ public struct InvoiceResponse {
 }
 
 public struct Invoice: Encodable {
-    public init() {}
-    
+    public init() { }
+
     public var cancelledAt: String = ""
     public var chargedByUserId: String = ""
     public var charged_by_user_id: String = ""
@@ -127,19 +127,19 @@ public struct ExportRequest: Codable {
     public var supplierId: String = ""
     public var type: String = ""
     public var socketId: String = ""
-    public init() {}
+    public init() { }
 }
 
 public struct ExportRequestData: Codable {
     public var includedIds: [String] = []
     public var all: Bool = false
     public var searchQuery: String = ""
-    public init() {}
+    public init() { }
 }
 
 public struct InvoicePaymentRequest: Codable {
     public var paymentMethodId: String = ""
-    public init() {}
+    public init() { }
 }
 
 extension Invoice {
@@ -152,7 +152,7 @@ extension InvoiceResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         meta = try container.decodeIfPresent(Meta.self, forKey: .meta) ?? Meta()
         links = try container.decodeIfPresent(Links.self, forKey: .links) ?? Links()
@@ -164,7 +164,7 @@ extension Invoice: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         cancelledAt = try container.decodeIfPresent(String.self, forKey: .cancelledAt) ?? ""
         chargedByUserId = try container.decodeIfPresent(String.self, forKey: .chargedByUserId) ?? ""
@@ -230,7 +230,7 @@ extension InvoiceFrequency: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         daily = try container.safeBoolDecode(forKey: .daily) ?? false
         weekly = try container.safeBoolDecode(forKey: .weekly) ?? false
@@ -244,7 +244,7 @@ extension InvoiceSetting: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         creation = try container.safeBoolDecode(forKey: .creation) ?? false
         delivery = try container.safeBoolDecode(forKey: .delivery) ?? false
@@ -255,7 +255,7 @@ extension InvoiceDisplay: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         subtotal = try container.decodeIfPresent(String.self, forKey: .subtotal) ?? ""
         total = try container.decodeIfPresent(String.self, forKey: .total) ?? ""
@@ -277,7 +277,7 @@ extension ExportResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         completedAt = try container.decodeIfPresent(String.self, forKey: .completedAt) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
@@ -294,14 +294,14 @@ extension ExportDownloadResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         link = try container.decodeIfPresent(String.self, forKey: .link) ?? ""
     }
 }
 
 extension Invoice: AnalyticsTrackable {
-    public var trackableProperties: [String : String]? {
+    public var trackableProperties: [String: String]? {
         return ["invoiceNumber": number,
                 "invoiceTotal": String(total),
                 "invoiceTotalDue": String(totalDue)]

@@ -34,8 +34,6 @@ public enum CreditNotesRouter: URLRequestConvertible {
         switch self {
         case .getCreditNotes(let purchaserId, let pageSize, let pageNo):
             return ["purchaserId": purchaserId, "pageSize": pageSize, "pageNo": pageNo]
-        default:
-            return [:]
         }
     }
     

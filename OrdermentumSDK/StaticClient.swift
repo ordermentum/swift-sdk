@@ -43,4 +43,3 @@ public class StaticClient {
 public enum StaticClientURL {
     public static let rootURL = "https://static.ordermentum.com/"
 }
-

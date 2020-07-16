@@ -17,7 +17,7 @@ public class ValidationService {
      * current configuration.
      * Returns a Profile.UserProfile
      */
-    public func validateItems(_ requestObject: ValidationRequestBody, completion: @escaping (Bool, Validation?, ErrorResponse?) -> ()) {
+    public func validateItems(_ requestObject: ValidationRequestBody, completion: @escaping (Bool, Validation?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ValidationRouter.validateItems(requestObject) as URLRequestConvertible
         

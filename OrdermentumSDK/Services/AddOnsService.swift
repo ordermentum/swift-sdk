@@ -16,7 +16,7 @@ public class AddOnsService {
      * Get already connected add-ons
      * Returns a AddOnsResponse
      */
-    public func searchAddons(entityType: String, entityId: String, completion: @escaping (Bool, [AddOn]?, ErrorResponse?) -> ()) {
+    public func searchAddons(entityType: String, entityId: String, completion: @escaping (Bool, [AddOn]?, ErrorResponse?) -> Void) {
         //Build Route
         let route = AddOnsRouter.searchAddons(entityType, entityId) as URLRequestConvertible
         
@@ -30,7 +30,7 @@ public class AddOnsService {
      * Get non-connected add-ons
      * Returns a AddOnsDiscoverResponse
      */
-    public func discoverAddons(entityType: String, entityId: String, completion: @escaping (Bool, [AddOnsDiscover]?, ErrorResponse?) -> ()) {
+    public func discoverAddons(entityType: String, entityId: String, completion: @escaping (Bool, [AddOnsDiscover]?, ErrorResponse?) -> Void) {
         //Build Route
         let route = AddOnsRouter.discoverAddons(entityType, entityId) as URLRequestConvertible
         
@@ -44,7 +44,7 @@ public class AddOnsService {
      * Get details of an already connected add-on
      * Returns an AddOn Object
      */
-    public func readAddon(addonId: String, accountId: String, completion: @escaping (Bool, AddOn?, ErrorResponse?) -> ()) {
+    public func readAddon(addonId: String, accountId: String, completion: @escaping (Bool, AddOn?, ErrorResponse?) -> Void) {
         //Build Route
         let route = AddOnsRouter.readAddon(addonId, accountId) as URLRequestConvertible
         
@@ -58,7 +58,7 @@ public class AddOnsService {
      * Update an add-on
      * Returns an AddOn Object
      */
-    public func updateAddon(addonId: String, requestObject: AddOnUpdateObject, completion: @escaping (Bool, AddOn?, ErrorResponse?) -> ()) {
+    public func updateAddon(addonId: String, requestObject: AddOnUpdateObject, completion: @escaping (Bool, AddOn?, ErrorResponse?) -> Void) {
         //Build Route
         let route = AddOnsRouter.updateAddon(addonId, requestObject) as URLRequestConvertible
         
@@ -72,12 +72,12 @@ public class AddOnsService {
      * Disconnect an add-on
      * Returns a ResponseBody which can be used to check for a 200 response
      */
-    public func disconnectAddon(addonId: String, requestObject: AddOnDisconnectObject, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func disconnectAddon(addonId: String, requestObject: AddOnDisconnectObject, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = AddOnsRouter.disconnectAddon(addonId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }

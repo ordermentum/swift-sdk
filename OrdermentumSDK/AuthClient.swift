@@ -62,4 +62,3 @@ public enum AuthClientURL {
     public static let rootAuthURL = "https://auth.ordermentum.com/v1/"
     public static let rootAuthSandboxURL = "https://auth.ordermentum-sandbox.com/v1/"
 }
-

@@ -27,16 +27,15 @@ class ProfileServiceTest: XCTestCase {
         if let route = try? ProfileRouter.getProfile.asURLRequest() {
             self.startStub(route, stubData: .getProfile)
         }
-        
+
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
-        
-        Client.instance.profiles.getProfile { (result, responseData) in
+
+        Client.instance.profiles.getProfile { (result, _) in
             if result {
                 assert(result)
                 expectation.fulfill()
-            }
-            else {
+            } else {
                 XCTFail("Expected JSON Response to succeed, but failed")
             }
         }
@@ -44,31 +43,30 @@ class ProfileServiceTest: XCTestCase {
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
-    
+
     func testUpdateProfile() {
         Client.instance.baseURL = ClientURL.rootTestingURL
-        let userId:String = self.getEnvironmentVar("USER_ID") ?? ""
+        let userId: String = self.getEnvironmentVar("USER_ID") ?? ""
         var requestObject: UpdateUserRequest = UpdateUserRequest()
         requestObject.email = self.getEnvironmentVar("EMAIL") ?? ""
         requestObject.firstName = self.getEnvironmentVar("FIRST_NAME") ?? ""
         requestObject.lastName = self.getEnvironmentVar("LAST_NAME") ?? ""
         requestObject.phone = self.getEnvironmentVar("PHONE") ?? ""
-    
+
         if let route = try? ProfileRouter.updateProfile(userId, requestObject).asURLRequest() {
             self.startStub(route, stubData: .updateProfile)
         }
-        
+
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
 
         Client.instance.profiles.updateProfile(userId: userId, requestObject: requestObject) { (result) in
-                if result {
-                    assert(result)
-                    expectation.fulfill()
-                }
-                else {
-                    XCTFail("Expected JSON Response to succeed, but failed.")
-                }
+            if result {
+                assert(result)
+                expectation.fulfill()
+            } else {
+                XCTFail("Expected JSON Response to succeed, but failed.")
+            }
         }
 
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.

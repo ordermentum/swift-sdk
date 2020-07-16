@@ -22,14 +22,14 @@ class CreditNotesServiceTests: XCTestCase {
     func testGetCreditNotes() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
-        
+
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.creditNotes.getCreditNotes(purchaserId: "", pageSize:0, pageNo:0) { (result, responseData) in
+        Client.instance.creditNotes.getCreditNotes(purchaserId: "", pageSize: 0, pageNo: 0) { (result, _) in
             assert(result)
             expectation.fulfill()
         }
-        
+
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }

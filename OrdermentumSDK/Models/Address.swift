@@ -12,7 +12,7 @@ public struct Address: Encodable {
     public init() { }
 
     public var formatted: String = ""
-    public var id: String? = nil
+    public var id: String?
     public var name: String = ""
     public var number: String = ""
     public var type: String = ""

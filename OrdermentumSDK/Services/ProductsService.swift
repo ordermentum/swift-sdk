@@ -16,7 +16,7 @@ public class ProductsService {
      * Fetch the category directory for a supplier that a retailer is not connected to.
      * Returns a CategoryResponse object
      */
-    public func getCategoryDirectory(supplierId: String, completion: @escaping (Bool, CategoryResponse?, ErrorResponse?) -> ()) {
+    public func getCategoryDirectory(supplierId: String, completion: @escaping (Bool, CategoryResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.getCategoryDirectory(supplierId) as URLRequestConvertible
         
@@ -30,7 +30,7 @@ public class ProductsService {
      * Fetch the product directory for a supplier that a retailer is not connected to.
      * Returns a ProductResponse object
      */
-    public func getProductDirectory(supplierId: String, categoryId: String, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> ()) {
+    public func getProductDirectory(supplierId: String, categoryId: String, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.getProductDirectory(supplierId, categoryId) as URLRequestConvertible
         
@@ -44,7 +44,7 @@ public class ProductsService {
      * Fetch the product categories for a particular supplier-retailer relationship
      * Returns a Category object
      */
-    public func getProductCategories(retailerId: String, supplierId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, CategoryResponse?, ErrorResponse?) -> ()) {
+    public func getProductCategories(retailerId: String, supplierId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, CategoryResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.getProductCategories(retailerId, supplierId, pageSize, pageNo) as URLRequestConvertible
         
@@ -58,7 +58,7 @@ public class ProductsService {
      * Fetch a single category for a particular categoryId and supplier-retailer relationship
      * Returns a Category object
      */
-    public func getCategory(categoryId: String, retailerId: String, supplierId: String, completion: @escaping (Bool, CategoryResponse?, ErrorResponse?) -> ()) {
+    public func getCategory(categoryId: String, retailerId: String, supplierId: String, completion: @escaping (Bool, CategoryResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.getCategory(categoryId, retailerId, supplierId ) as URLRequestConvertible
         
@@ -72,7 +72,7 @@ public class ProductsService {
      * Fetch the products belonging to a particular category
      * Returns a ProductResponse object
      */
-    public func getProducts(categoryId: String, retailerId: String, supplierId: String, visible: Bool, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> ()) {
+    public func getProducts(categoryId: String, retailerId: String, supplierId: String, visible: Bool, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.getProducts(categoryId, retailerId, supplierId, visible, pageSize, pageNo) as URLRequestConvertible
         
@@ -86,7 +86,7 @@ public class ProductsService {
      * Fetch a single product by ID
      * Returns a Product object
      */
-    public func getProduct(productId: String, retailerId: String, supplierId: String, completion: @escaping (Bool, Product?, ErrorResponse?) -> ()) {
+    public func getProduct(productId: String, retailerId: String, supplierId: String, completion: @escaping (Bool, Product?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.getProduct(productId, retailerId, supplierId) as URLRequestConvertible
         
@@ -100,7 +100,7 @@ public class ProductsService {
      * Fetch the most ordered products belonging to a particular supplier/retailer relationship
      * Returns a ProductResponse object
      */
-    public func getMostOrderedProducts(retailerId: String, supplierId: String, visible: Bool, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> ()) {
+    public func getMostOrderedProducts(retailerId: String, supplierId: String, visible: Bool, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.getMostOrderedProducts(retailerId, supplierId, visible, pageSize, pageNo) as URLRequestConvertible
         
@@ -114,7 +114,7 @@ public class ProductsService {
      * Fetch the trending products belonging to a particular supplier/retailer relationship
      * Returns a ProductResponse object
      */
-    public func getTrendingProducts(retailerId: String, supplierId: String, visible: Bool, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> ()) {
+    public func getTrendingProducts(retailerId: String, supplierId: String, visible: Bool, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.getTrendingProducts(retailerId, supplierId, visible, pageSize, pageNo) as URLRequestConvertible
         
@@ -128,7 +128,7 @@ public class ProductsService {
      * Fetch the recommended products belonging to a particular supplier/retailer relationship
      * Returns a ProductResponse object
      */
-    public func getRecommendedProducts(retailerId: String, supplierId: String, pageSize: Int, excludedProductIdsArray: [String], completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> ()) {
+    public func getRecommendedProducts(retailerId: String, supplierId: String, pageSize: Int, excludedProductIdsArray: [String], completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.getRecommendedProducts(retailerId, supplierId, pageSize, excludedProductIdsArray) as URLRequestConvertible
 
@@ -142,7 +142,7 @@ public class ProductsService {
      * Search for products
      * Returns a list of ProductResponse
      */
-    public func searchProducts(search: String, retailerId: String, supplierId: String, visible: Bool, pageSize: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> ()) {
+    public func searchProducts(search: String, retailerId: String, supplierId: String, visible: Bool, pageSize: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.searchProducts(search, retailerId, supplierId, visible, pageSize) as URLRequestConvertible
         

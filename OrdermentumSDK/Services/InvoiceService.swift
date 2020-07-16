@@ -16,7 +16,7 @@ public class InvoiceService {
      * Get the invoices belonging to a retailer/supplier relationship
      * Returns a InvoiceResponse
      */
-    public func getInvoices(retailerId: String, supplierId: String, sortBy: String, sortOrder: String, pageNo: Int, completion: @escaping (Bool, InvoiceResponse?, ErrorResponse?) -> ()) {
+    public func getInvoices(retailerId: String, supplierId: String, sortBy: String, sortOrder: String, pageNo: Int, completion: @escaping (Bool, InvoiceResponse?, ErrorResponse?) -> Void) {
         //Build Params
         let params: [String: Any] = ["retailerId": retailerId, "supplierId": supplierId, "sortBy[\(sortBy)]": sortOrder, "pageNo": pageNo]
         
@@ -33,7 +33,7 @@ public class InvoiceService {
      * Get all the invoices available to the current logged in user.
      * Returns an InvoiceResponse
      */
-    public func getInvoices(pageNo: Int, filterName: String?, filterValue: String?, completion: @escaping (Bool, InvoiceResponse?, ErrorResponse?) -> ()) {
+    public func getInvoices(pageNo: Int, filterName: String?, filterValue: String?, completion: @escaping (Bool, InvoiceResponse?, ErrorResponse?) -> Void) {
         //Build Params
         var params: [String: Any] = ["pageNo": pageNo]
         if let dateFilter: String = filterName {
@@ -53,7 +53,7 @@ public class InvoiceService {
      * Get the invoice referenced by the invoiceID
      * Returns an Invoice
      */
-    public func getInvoice(invoiceId: String, completion: @escaping (Bool, Invoice?, ErrorResponse?) -> ()) {
+    public func getInvoice(invoiceId: String, completion: @escaping (Bool, Invoice?, ErrorResponse?) -> Void) {
         //Build Route
         let route = InvoiceRouter.getInvoice(invoiceId) as URLRequestConvertible
         
@@ -67,7 +67,7 @@ public class InvoiceService {
      * Sends a request to export an invoice
      * Returns an ExportResponse
      */
-    public func exportInvoice(_ requestObject: ExportRequest, completion: @escaping (Bool, ExportResponse?, ErrorResponse?) -> ()) {
+    public func exportInvoice(_ requestObject: ExportRequest, completion: @escaping (Bool, ExportResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = InvoiceRouter.exportInvoice(requestObject) as URLRequestConvertible
         
@@ -81,7 +81,7 @@ public class InvoiceService {
      * Download an invoice PDF file
      * Returns an ExportResponse
      */
-    public func getInvoiceExport(invoiceId: String, completion: @escaping (Bool, ExportResponse?, ErrorResponse?) -> ()) {
+    public func getInvoiceExport(invoiceId: String, completion: @escaping (Bool, ExportResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = InvoiceRouter.getInvoiceExport(invoiceId) as URLRequestConvertible
         
@@ -95,7 +95,7 @@ public class InvoiceService {
      * Get the linki to download an invoice PDF file
      * Returns an ExportResponse
      */
-    public func getExportDownload(invoiceId: String, completion: @escaping (Bool, ExportDownloadResponse?, ErrorResponse?) -> ()) {
+    public func getExportDownload(invoiceId: String, completion: @escaping (Bool, ExportDownloadResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = InvoiceRouter.getExportDownload(invoiceId) as URLRequestConvertible
         
@@ -109,12 +109,12 @@ public class InvoiceService {
      * Make payment on an invoice, used for 'Click to Pay'
      * Returns a ResponseBody which can be used to check for a 200 response
      */
-    public func applyPayment(invoiceId: String, requestObject: InvoicePaymentRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func applyPayment(invoiceId: String, requestObject: InvoicePaymentRequest, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = InvoiceRouter.applyPayment(invoiceId, requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }

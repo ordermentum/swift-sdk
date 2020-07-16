@@ -49,8 +49,6 @@ public enum NotificationsRouter: URLRequestConvertible {
             return requestObject
         case .updateAllNotificationSettings(_, let requestObject):
             return requestObject
-        default:
-            return nil
         }
     }
     

@@ -10,9 +10,9 @@ import Foundation
 
 /** Request **/
 public struct ValidationRequestBody: Codable {
-    public init() {}
-    
-    public var id: String? = nil
+    public init() { }
+
+    public var id: String?
     public var deliveryDate: String = ""
     public var lineItems: [ValidationRequestBodyLineItem] = []
     public var retailerId: String = ""
@@ -22,7 +22,7 @@ public struct ValidationRequestBody: Codable {
 }
 
 public struct ValidationRequestBodyLineItem: Codable {
-    public init() {}
+    public init() { }
     public init(productId: String, quantity: Int) {
         self.productId = productId
         self.quantity = quantity
@@ -33,8 +33,8 @@ public struct ValidationRequestBodyLineItem: Codable {
 
 /** Response **/
 public struct Validation {
-    public init() {}
-    
+    public init() { }
+
     public var cart: ValidationCart = ValidationCart()
     public var display: ValidationDisplay = ValidationDisplay()
     public var lineItems: [ValidationLineItem] = []
@@ -57,16 +57,16 @@ public struct Validation {
 }
 
 public struct ValidationCart {
-    public init() {}
-    
+    public init() { }
+
     public var errors: [ValidationMessage] = []
     public var warnings: [ValidationMessage] = []
     public var infos: [ValidationMessage] = []
 }
 
 public struct ValidationMessage {
-    public init() {}
-    
+    public init() { }
+
     public var message: String = ""
     public var type: String = ""
     public var id: String = ""
@@ -103,7 +103,7 @@ extension Validation: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         cart = try container.decodeIfPresent(ValidationCart.self, forKey: .cart) ?? ValidationCart()
         display = try container.decodeIfPresent(ValidationDisplay.self, forKey: .display) ?? ValidationDisplay()
@@ -131,7 +131,7 @@ extension ValidationCart: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         errors = try container.decodeIfPresent([ValidationMessage].self, forKey: .errors) ?? []
         warnings = try container.decodeIfPresent([ValidationMessage].self, forKey: .warnings) ?? []
@@ -143,7 +143,7 @@ extension ValidationMessage: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         message = try container.decodeIfPresent(String.self, forKey: .message) ?? ""
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
@@ -155,7 +155,7 @@ extension ValidationDisplay: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         totalDiscount = try container.decodeIfPresent(String.self, forKey: .totalDiscount) ?? ""
         totalFreight = try container.decodeIfPresent(String.self, forKey: .totalFreight) ?? ""
@@ -169,7 +169,7 @@ extension ValidationLineItem: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         productId = try container.decodeIfPresent(String.self, forKey: .productId) ?? ""
         errors = try container.decodeIfPresent([ValidationMessage].self, forKey: .errors) ?? []
@@ -184,7 +184,7 @@ extension ValidationLineItemDisplay: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         price = try container.safeFloatDecode(forKey: .price) ?? 0
         priceFromTotal = try container.safeFloatDecode(forKey: .priceFromTotal) ?? 0
@@ -204,7 +204,7 @@ extension ValidationLineItem {
                 return true
             }
         }
-        
+
         return false
     }
 }

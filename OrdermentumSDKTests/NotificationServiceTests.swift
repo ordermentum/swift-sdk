@@ -24,7 +24,7 @@ class NotificationServiceTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
+
     func testUpdateNotificationSetting() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
@@ -32,7 +32,7 @@ class NotificationServiceTests: XCTestCase {
         //Build request body and params
         let userId = ProcessInfo.processInfo.environment["USER_ID"] ?? ""
         let supplierId = ProcessInfo.processInfo.environment["SUPPLIER_ID"] ?? ""
-        var updateObject:[String: Bool] = [:]
+        var updateObject: [String: Bool] = [:]
         if let pushNotifications = ProcessInfo.processInfo.environment["PUSH_NOTIFICATIONS"] {
             updateObject["pushNotifications"] = pushNotifications.toBool()
         }
@@ -48,22 +48,22 @@ class NotificationServiceTests: XCTestCase {
         if let overdueOrders = ProcessInfo.processInfo.environment["OVERDUE_ORDERS"] {
             updateObject["overdueOrders"] = overdueOrders.toBool()
         }
-        
+
         //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
+
         //Stubbing
         if let route = try? NotificationsRouter.updateNotificationSetting(userId, supplierId, updateObject).asURLRequest() {
-            self.startStub(route, stubData: .notificationSettingsUpdate )
+            self.startStub(route, stubData: .notificationSettingsUpdate)
         }
-        
+
         //Call API
         Client.instance.notifications.updateNotificationSetting(userId: userId, supplierId: supplierId, updateObject: updateObject) { (result) in
-                assert(result)
-                expectation.fulfill()
+            assert(result)
+            expectation.fulfill()
         }
-        
+
         // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }

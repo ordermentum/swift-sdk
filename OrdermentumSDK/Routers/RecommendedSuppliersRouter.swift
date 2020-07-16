@@ -51,8 +51,6 @@ public enum RecommendedSuppliersRouter: URLRequestConvertible {
                 return ["retailerId": retailerId, "supplierId": supplierId]
             }
             return ["retailerId": retailerId, "supplierId": supplierId, "parsedStatus": parsedStatus]
-        default:
-            return [:]
         }
     }
     
@@ -65,8 +63,6 @@ public enum RecommendedSuppliersRouter: URLRequestConvertible {
             return nil
         case .getConnectionRequests:
             return nil
-        default:
-            return nil
         }
     }
     
@@ -75,4 +71,3 @@ public enum RecommendedSuppliersRouter: URLRequestConvertible {
         return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }
-

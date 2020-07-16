@@ -50,5 +50,3 @@ public enum SocialRouter: URLRequestConvertible {
         return try AuthClient.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }
-
-

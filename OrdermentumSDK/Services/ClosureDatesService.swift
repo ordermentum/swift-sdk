@@ -10,60 +10,60 @@ import Foundation
 import Alamofire
 
 public class ClosureDatesService {
-    public init() {}
-    
+    public init() { }
+
     /**
      * Get the closure periods belonging to a retailer
      * Returns a ClosurePeriodsResponse
      */
-    public func getClosurePeriods(_ retailerId: String, _ pageSize: Int, _ pageNo: Int, completion: @escaping (Bool, ClosurePeriodsResponse?, ErrorResponse?) -> ()) {
+    public func getClosurePeriods(_ retailerId: String, _ pageSize: Int, _ pageNo: Int, completion: @escaping (Bool, ClosurePeriodsResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ClosurePeriodsRouter.getClosurePeriods(retailerId, pageSize, pageNo) as URLRequestConvertible
-        
+
         //Call API
         Service<ClosurePeriodsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
-    
+
     /**
      * Create a closure period for the currently authenticated user
      * Returns a ClosurePeriodsResponse
      */
-    public func createClosurePeriod(_ requestObject: ClosurePeriod, completion: @escaping (Bool, ClosurePeriodsResponse?, ErrorResponse?) -> ()) {
+    public func createClosurePeriod(_ requestObject: ClosurePeriod, completion: @escaping (Bool, ClosurePeriodsResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ClosurePeriodsRouter.createClosurePeriod(requestObject) as URLRequestConvertible
-        
+
         //Call API
         Service<ClosurePeriodsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
-    
+
     /**
      * Update an existing closure period
      * Returns a response body which can be used to check for a 200 response
      */
-    public func updateClosurePeriod(closurePeriodId: String, requestObject: ClosurePeriod, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func updateClosurePeriod(closurePeriodId: String, requestObject: ClosurePeriod, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = ClosurePeriodsRouter.updateClosurePeriod(closurePeriodId, requestObject) as URLRequestConvertible
-        
+
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
-    
+
     /**
      * Delete an existing closure period
      * Returns a response body which can be used to check for a 200 response
      */
-    public func deleteClosurePeriod(closurePeriodId: String, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func deleteClosurePeriod(closurePeriodId: String, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = ClosurePeriodsRouter.deleteClosurePeriod(closurePeriodId) as URLRequestConvertible
-        
+
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
