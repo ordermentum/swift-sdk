@@ -60,4 +60,3 @@ public enum NotificationsClientURL {
     public static let rootNotificationURL = "https://notifications.ordermentum.com/v2/"
     public static let rootNotificationTestingURL = "https://notifications.ordermentum-sandbox.com/v2/"
 }
-
