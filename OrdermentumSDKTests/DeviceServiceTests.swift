@@ -34,7 +34,7 @@ class DeviceServiceTests: XCTestCase {
         
         //Call API
         Client.instance.baseURL = ClientURL.rootTestingURL
-        Client.instance.devices.registerDevice(requestObject) { (result) in
+        Client.instance.devices.registerDevice(requestObject) { (result, _) in
             assert(result)
             expectation.fulfill()
         }

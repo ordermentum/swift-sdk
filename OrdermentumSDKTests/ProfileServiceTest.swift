@@ -31,7 +31,7 @@ class ProfileServiceTest: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
 
-        Client.instance.profiles.getProfile { (result, _) in
+        Client.instance.profiles.getProfile { (result, _, _) in
             if result {
                 assert(result)
                 expectation.fulfill()
@@ -60,7 +60,7 @@ class ProfileServiceTest: XCTestCase {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Async Test")
 
-        Client.instance.profiles.updateProfile(userId: userId, requestObject: requestObject) { (result) in
+        Client.instance.profiles.updateProfile(userId: userId, requestObject: requestObject) { (result, _) in
             if result {
                 assert(result)
                 expectation.fulfill()
