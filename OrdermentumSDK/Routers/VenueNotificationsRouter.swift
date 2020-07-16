@@ -54,9 +54,6 @@ public enum VenueNotificationsRouter: URLRequestConvertible {
 
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        switch self {
-        default:
-            return try NotificationsClient.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
-        }
+        return try NotificationsClient.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }
