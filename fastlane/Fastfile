@@ -26,7 +26,7 @@ platform :ios do
   desc "Runs all the unit tests"
   lane :test do
     # scan(scheme: "ordermentum-swift-sdk", devices: ["iPhone X", "iPad Air"])
-    scan(workspace: "OrdermentumSDK.xcworkspace", devices: ["iPhone X"])
+    scan(scheme: "ordermentum-swift-sdk", devices: ["iPhone X"])
   end
 
   lane :lint do
