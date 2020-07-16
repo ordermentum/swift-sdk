@@ -42,8 +42,6 @@ public enum NotifyRouter: URLRequestConvertible {
         switch self {
         case .registerDevice(let requestObject):
             return requestObject
-        default:
-            return nil
         }
     }
     

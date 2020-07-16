@@ -16,7 +16,7 @@ public class AdminService {
      * Get a deeplink to the iOS/Android application that will log you in as the specified user.
      * Returns an ImpersonateResponse object
      */
-    public func impersonateUser(userId: String, completion: @escaping (Bool, ImpersonateResponse?, ErrorResponse?) -> ()) {
+    public func impersonateUser(userId: String, completion: @escaping (Bool, ImpersonateResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = AdminRouter.impersonateUser(userId) as URLRequestConvertible
 
@@ -31,7 +31,7 @@ public class AdminService {
      * This is different to VenueService.searchVenues() in that it returns actual Venue objects.
      * Returns a VenueResponse object
      */
-    public func searchVenues(searchQuery: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, VenueResponse?, ErrorResponse?) -> ()) {
+    public func searchVenues(searchQuery: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, VenueResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = AdminRouter.searchVenues(searchQuery, pageSize, pageNo) as URLRequestConvertible
 
@@ -46,7 +46,7 @@ public class AdminService {
     * This is different to VenueService.searchVenues() in that it returns actual Venue objects.
     * Returns a VenueResponse object
     */
-    public func searchVenues(latitude: Float, longitude: Float, radius: Int, pageSize: Int, completion: @escaping (Bool, VenueResponse?, ErrorResponse?) -> ()) {
+    public func searchVenues(latitude: Float, longitude: Float, radius: Int, pageSize: Int, completion: @escaping (Bool, VenueResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = AdminRouter.searchVenuesByLocation(latitude, longitude, radius, pageSize) as URLRequestConvertible
 
@@ -61,7 +61,7 @@ public class AdminService {
     * This is different to VenueService.getVenueInvites() in that it returns all invites for a venue as opposed to a user
     * Returns a VenueResponse object
     */
-    public func getVenueInvites(retailerId: String, completion: @escaping (Bool, [VenueInvite]?, ErrorResponse?) -> ()) {
+    public func getVenueInvites(retailerId: String, completion: @escaping (Bool, [VenueInvite]?, ErrorResponse?) -> Void) {
         //Build Route
         let route = AdminRouter.getVenueInvites(retailerId) as URLRequestConvertible
 

@@ -49,8 +49,6 @@ public enum DeviceRouter: URLRequestConvertible {
             return requestObject
         case .unregisterDevice(let requestObject):
             return requestObject
-        default:
-            return nil
         }
     }
     

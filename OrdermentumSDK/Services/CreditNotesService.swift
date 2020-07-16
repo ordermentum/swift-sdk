@@ -16,7 +16,7 @@ public class CreditNotesService {
      * Get the credit notes belonging to a purchaser
      * Returns a CreditNotesResponse
      */
-    public func getCreditNotes(purchaserId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, CreditNotesResponse?, ErrorResponse?) -> ()) {
+    public func getCreditNotes(purchaserId: String, pageSize: Int, pageNo: Int, completion: @escaping (Bool, CreditNotesResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = CreditNotesRouter.getCreditNotes(purchaserId, pageSize, pageNo) as URLRequestConvertible
         

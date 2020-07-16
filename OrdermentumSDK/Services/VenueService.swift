@@ -16,7 +16,7 @@ public class VenueService {
      * Fetch a single venue by id
      * Returns a Venue object
      */
-    public func getVenue(retailerId: String, completion: @escaping (Bool, Venue?, ErrorResponse?) -> ()) {
+    public func getVenue(retailerId: String, completion: @escaping (Bool, Venue?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.getVenue(retailerId) as URLRequestConvertible
 
@@ -30,7 +30,7 @@ public class VenueService {
      * Fetch the venues of the currently logged in user
      * Returns a VenueResponse object
      */
-    public func getVenues(retailerIdsArray: [String], pageSize: Int, pageNo: Int, completion: @escaping (Bool, VenueResponse?, ErrorResponse?) -> ()) {
+    public func getVenues(retailerIdsArray: [String], pageSize: Int, pageNo: Int, completion: @escaping (Bool, VenueResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.getVenues(retailerIdsArray, pageSize, pageNo) as URLRequestConvertible
 
@@ -44,7 +44,7 @@ public class VenueService {
      * Create a new venue
      * Returns a Venue object
      */
-    public func createVenues(_ requestObject: CreateVenueRequest, completion: @escaping (Bool, Venue?, ErrorResponse?) -> ()) {
+    public func createVenues(_ requestObject: CreateVenueRequest, completion: @escaping (Bool, Venue?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.createVenue(requestObject) as URLRequestConvertible
 
@@ -58,7 +58,7 @@ public class VenueService {
      * Takes a VenueProfile object and updates the selected retailer.
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */
-    public func updateVenueProfile(retailerId: String, venueProfile: VenueProfile, completion: @escaping (Bool, VenueProfile?, ErrorResponse?) -> ()) {
+    public func updateVenueProfile(retailerId: String, venueProfile: VenueProfile, completion: @escaping (Bool, VenueProfile?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.updateVenueProfile(retailerId, venueProfile) as URLRequestConvertible
 
@@ -72,7 +72,7 @@ public class VenueService {
      * Retrieve the profile completion as a percentage value
      * Returns a Venue.Completion as an optional
      */
-    public func getProfileCompletion(retailerId: String, completion: @escaping (Bool, Completion?, ErrorResponse?) -> ()) {
+    public func getProfileCompletion(retailerId: String, completion: @escaping (Bool, Completion?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.getProfileCompletion(retailerId) as URLRequestConvertible
 
@@ -86,7 +86,7 @@ public class VenueService {
      * Fetches venue invites to a user using given email
      * Returns a VenueInviteResponse
      */
-    public func checkVenueInvites(_ recipientEmail: String, completion: @escaping (Bool, [VenueInvite]?, ErrorResponse?) -> ()) {
+    public func checkVenueInvites(_ recipientEmail: String, completion: @escaping (Bool, [VenueInvite]?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.getVenueInvites(recipientEmail) as URLRequestConvertible
 
@@ -100,7 +100,7 @@ public class VenueService {
      * Send an invite to a user for a particular venue
      * Returns an AddUserResponse
      */
-    public func sendVenueInvite(_ requestObject: AddUser, completion: @escaping (Bool, AddUserResponse?, ErrorResponse?) -> ()) {
+    public func sendVenueInvite(_ requestObject: AddUser, completion: @escaping (Bool, AddUserResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.sendVenueInvite(requestObject) as URLRequestConvertible
 
@@ -114,12 +114,12 @@ public class VenueService {
      * Accepts all venue invites of the user
      * Returns success or fail
      */
-    public func acceptAllInvites(_ completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func acceptAllInvites(_ completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.acceptAllInvites as URLRequestConvertible
 
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -128,12 +128,12 @@ public class VenueService {
      * Requests to join a venue as a user
      * Returns success or fail
      */
-    public func joinVenue(_ requestObject: JoinVenueRequest, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func joinVenue(_ requestObject: JoinVenueRequest, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.joinVenue(requestObject) as URLRequestConvertible
 
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -142,7 +142,7 @@ public class VenueService {
      * Fetch the list of users that belong to a particular venue
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */
-    public func getUsers(retailerId: String, completion: @escaping (Bool, VenueUsersResponse?, ErrorResponse?) -> ()) {
+    public func getUsers(retailerId: String, completion: @escaping (Bool, VenueUsersResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.getUsers(retailerId) as URLRequestConvertible
 
@@ -156,12 +156,12 @@ public class VenueService {
      * Remove a user from a particular venue
      * Returns a VenueUsersResponse
      */
-    public func removeUser(userId: String, requestObject: RemoveUser, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func removeUser(userId: String, requestObject: RemoveUser, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.removeUser(userId, requestObject) as URLRequestConvertible
 
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -170,7 +170,7 @@ public class VenueService {
      * Search for venues given a search string
      * Returns a VenueUsersResponse
      */
-    public func searchVenues(searchQuery: String, completion: @escaping (Bool, VenueSearchResponse?, ErrorResponse?) -> ()) {
+    public func searchVenues(searchQuery: String, completion: @escaping (Bool, VenueSearchResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.searchVenue(searchQuery) as URLRequestConvertible
 
@@ -184,7 +184,7 @@ public class VenueService {
      * Fetch the pending venues of the currently logged in user
      * Returns a VenueInvite
      */
-    public func getPendingVenues(completion: @escaping (Bool, VenueInviteResponse?, ErrorResponse?) -> ()) {
+    public func getPendingVenues(completion: @escaping (Bool, VenueInviteResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.getPendingVenues as URLRequestConvertible
 
@@ -198,12 +198,12 @@ public class VenueService {
      * Update a batch of user positions within a venue
      * Returns success or fail
      */
-    public func updateUserPositions(retailerId: String, requestObject: [String: [String]], completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func updateUserPositions(retailerId: String, requestObject: [String: [String]], completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.updateUserPositions(retailerId, requestObject) as URLRequestConvertible
 
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
@@ -212,7 +212,7 @@ public class VenueService {
      * Retrieves a single invite.
      * Returns a VenueInvite object.
      */
-    public func getInvite(inviteId: String, token: String, completion: @escaping (Bool, VenueInvite?, ErrorResponse?) -> ()) {
+    public func getInvite(inviteId: String, token: String, completion: @escaping (Bool, VenueInvite?, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.getInvite(inviteId, token) as URLRequestConvertible
 
@@ -226,12 +226,12 @@ public class VenueService {
      * Accepts a single invite.
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */
-    public func acceptInvite(inviteId: String, token: String, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func acceptInvite(inviteId: String, token: String, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = VenueRouter.acceptInvite(inviteId, token) as URLRequestConvertible
 
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }

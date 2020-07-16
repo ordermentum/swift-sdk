@@ -23,53 +23,53 @@ class NPSServiceTests: XCTestCase {
     func testGetNPS() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Aysnc Test")
-        
+
         //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
+
         //Stubbing
         if let route = try? NPSRouter.getNPS.asURLRequest() {
-            self.startStub(route, stubData: .getNPS )
+            self.startStub(route, stubData: .getNPS)
         }
-        
+
         //Call API
         Client.instance.nps.getNPS { (result, response) in
             assert(result)
             XCTAssertNotNil(response)
             expectation.fulfill()
         }
-        
+
         //Wait until the expectation is fullfiled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }
-    
-    func testSendFeedback(){
+
+    func testSendFeedback() {
         //Build Expectation
         let expectation = XCTestExpectation(description: "Aysnc Test")
-        
+
         //Build request body and params
         var requestObject: NPSFeedback = NPSFeedback()
-        if let scoreString = ProcessInfo.processInfo.environment["NPS_SCORE"], let score = Int(scoreString){
+        if let scoreString = ProcessInfo.processInfo.environment["NPS_SCORE"], let score = Int(scoreString) {
             requestObject.score = score
         }
         requestObject.comment = ProcessInfo.processInfo.environment["NPS_COMMENT"] ?? ""
-        
+
         //Request setup
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
-        
+
         //Stubbing
         if let route = try? NPSRouter.sendFeedback(requestObject).asURLRequest() {
-            self.startStub(route, stubData: .sendFeedback )
+            self.startStub(route, stubData: .sendFeedback)
         }
-        
+
         //Call API
         Client.instance.nps.sendFeedback(requestObject) { (result) in
             assert(result)
             expectation.fulfill()
         }
-        
+
         //Wait until the expectation is fullfiled, with a timeout of 10 seconds.
         wait(for: [expectation], timeout: 10.0)
     }

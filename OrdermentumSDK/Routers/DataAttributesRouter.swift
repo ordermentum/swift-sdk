@@ -64,4 +64,3 @@ public enum DataAttributesRouter: URLRequestConvertible {
         return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }
-

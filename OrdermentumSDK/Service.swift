@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class Service<D: Decodable, E: Decodable> {
-    func request(route: URLRequestConvertible, completion: @escaping (Bool, D?, E?) -> ()) {
+    func request(route: URLRequestConvertible, completion: @escaping (Bool, D?, E?) -> Void) {
         AF.request(route)
             .validate()
             .responseJSON { response in

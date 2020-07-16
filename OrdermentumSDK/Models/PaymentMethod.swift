@@ -36,7 +36,7 @@ public struct PaymentMethod {
 public struct UpdatePaymentMethodRequest: Codable {
     public init() {}
     
-    public var paymentMethodId: String? = nil
+    public var paymentMethodId: String?
     public var defaultPaymentMethodType: String = ""
 }
 

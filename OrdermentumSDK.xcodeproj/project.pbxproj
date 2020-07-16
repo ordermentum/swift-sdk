@@ -340,7 +340,6 @@
 		CA5B63E522EA8BBE0057A93F /* AppVersionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionRouter.swift; sourceTree = "<group>"; };
 		CA5B63E722EA92CE0057A93F /* StaticClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticClient.swift; sourceTree = "<group>"; };
 		CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSupplierServiceTests.swift; sourceTree = "<group>"; };
-		CA6BB821225DA60300A34A01 /* ProjectionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionsServiceTests.swift; sourceTree = "<group>"; };
 		CA729729225D966F00224410 /* BoolUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolUtils.swift; sourceTree = "<group>"; };
 		CA8B4A87237E18F20066307D /* AdminRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRouter.swift; sourceTree = "<group>"; };
 		CA8B4A89237E19DF0066307D /* AdminService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminService.swift; sourceTree = "<group>"; };
@@ -622,7 +621,6 @@
 				CA2F35172255D2BD00D1118C /* AuthServiceTests.swift */,
 				CA6BB81F225D993700A34A01 /* FindSupplierServiceTests.swift */,
 				CAF246B1225C299300EDAF68 /* OrdersServiceTests.swift */,
-				CA6BB821225DA60300A34A01 /* ProjectionsServiceTests.swift */,
 				BB318617226588280028101E /* NotifyServiceTests.swift */,
 				BB318618226588280028101E /* NPSServiceTests.swift */,
 				268EE200226439E3008E10B5 /* AddOnsServiceTests.swift */,
@@ -801,6 +799,7 @@
 			buildConfigurationList = CA929F3B22555DA400E957AC /* Build configuration list for PBXNativeTarget "OrdermentumSDK" */;
 			buildPhases = (
 				90D88C2953666201AA5A8055 /* [CP] Check Pods Manifest.lock */,
+				CA90CC8424BFF59400B5A00A /* Lint */,
 				CA929F2222555DA400E957AC /* Headers */,
 				CA929F2322555DA400E957AC /* Sources */,
 				CA929F2422555DA400E957AC /* Frameworks */,
@@ -1014,6 +1013,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrdermentumSDKTests/Pods-OrdermentumSDKTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CA90CC8424BFF59400B5A00A /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

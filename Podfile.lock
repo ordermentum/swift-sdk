@@ -1,21 +1,24 @@
 PODS:
   - Alamofire (5.0.5)
   - Hippolyte (0.8.0)
+  - SwiftLint (0.39.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.2)
   - Hippolyte (~> 0.8.0)
+  - SwiftLint (~> 0.39.2)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Hippolyte
   trunk:
     - Alamofire
+    - Hippolyte
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Hippolyte: 7f1fa913662572567a5ce9094ea4bf337e49a9f4
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 5bcf8ca58649a2031f82a3031e1850059f743f93
+PODFILE CHECKSUM: 76a230d4e9be3cf21bc0dcbb20330087510ff7ee
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

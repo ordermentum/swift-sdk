@@ -17,7 +17,7 @@ public class NPSService {
      * which can be used to determine whether or not the NPS should be shown
      * Returns a NPSResponse
      */
-    public func getNPS(completion: @escaping (Bool, NPSResponse?, ErrorResponse?) -> ()) {
+    public func getNPS(completion: @escaping (Bool, NPSResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = NPSRouter.getNPS as URLRequestConvertible
         
@@ -31,12 +31,12 @@ public class NPSService {
      * Submit an NPS response to the Ordermentum server
      * Returns a ResponseBody
      */
-    public func sendFeedback(_ requestObject: NPSFeedback, completion: @escaping (Bool, ErrorResponse?) -> ()) {
+    public func sendFeedback(_ requestObject: NPSFeedback, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = NPSRouter.sendFeedback(requestObject) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }

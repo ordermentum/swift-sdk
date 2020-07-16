@@ -41,7 +41,7 @@ class ValidationServiceTest: XCTestCase {
         Client.instance.baseURL = ClientURL.rootTestingURL
         Client.instance.token = ProcessInfo.processInfo.environment["ACCESS_TOKEN"] ?? ""
         
-        ValidationService().validateItems(requestObject) { (result, responseData) in
+        ValidationService().validateItems(requestObject) { (result, _) in
             assert(result)
             expectation.fulfill()
         }

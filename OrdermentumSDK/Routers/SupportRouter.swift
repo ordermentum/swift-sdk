@@ -49,8 +49,6 @@ public enum SupportRouter: URLRequestConvertible {
             return requestObject
         case .createTicket(let requestObject):
             return requestObject
-        default:
-            return nil
         }
     }
 
@@ -59,4 +57,3 @@ public enum SupportRouter: URLRequestConvertible {
         return try SupportClient.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }
-

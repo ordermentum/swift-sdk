@@ -16,7 +16,7 @@ public class SocialService {
      * Upgrades a Google© `idToken` to an Ordermentum auth token.
      * Returns an `TokenUpgradeResponse` which can be used to authorise a user on Ordermentum
      */
-    public func upgradeGoogleToken(request: TokenUpgradeRequest, completion: @escaping (Bool, TokenUpgradeResponse?, ErrorResponse?) -> ()) {
+    public func upgradeGoogleToken(request: TokenUpgradeRequest, completion: @escaping (Bool, TokenUpgradeResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = SocialRouter.upgradeGoogleToken(request) as URLRequestConvertible
         
@@ -26,4 +26,3 @@ public class SocialService {
         }
     }
 }
-
