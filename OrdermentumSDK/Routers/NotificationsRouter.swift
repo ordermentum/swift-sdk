@@ -56,9 +56,6 @@ public enum NotificationsRouter: URLRequestConvertible {
     
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        switch self {
-        default:
-            return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
-        }
+        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
     }
 }
