@@ -1,0 +1,23 @@
+steps:
+- wait
+- name: ":cocoapods: Pods"
+  command: ". .buildkite/setup.sh && .buildkite/pods.sh"
+  agents:
+    queue: macos
+
+- wait
+- name: ":lint-roller: Lint"
+  command: ". .buildkite/setup.sh && .buildkite/lint.sh"
+  agents:
+    queue: macos
+    
+- wait
+- name: ":xcode: Unit Tests"
+  command: ". .buildkite/setup.sh && .buildkite/test.sh"
+  agents:
+    queue: macos
+
+- wait
+- name: ":lightning: Cleanup"
+  command: ".buildkite/invalidate.sh"
+  branches: "master"
