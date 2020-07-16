@@ -39,4 +39,25 @@ public class NotificationsService {
             completion(result, errorObject)
         }
     }
+
+    public func getNotification(userId: String, completion: @escaping (Bool, VenueNotificationsResponse?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = VenueNotificationsRouter.getNotifications(userId) as URLRequestConvertible
+
+        //Call API
+        Service<VenueNotificationsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+
+    public func readNotification(notificationId: String, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = VenueNotificationsRouter.markNotificationAsRead(notificationId) as URLRequestConvertible
+
+        //Call API
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
+            completion(result, errorObject)
+        }
+    }
+
 }
