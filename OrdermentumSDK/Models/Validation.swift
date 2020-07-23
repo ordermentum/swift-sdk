@@ -87,6 +87,7 @@ public struct ValidationLineItem {
     public var infos: [ValidationMessage] = []
     public var display: ValidationLineItemDisplay = ValidationLineItemDisplay()
     public var locked: Bool = false
+    public var product: Product = Product()
 }
 
 public struct ValidationLineItemDisplay {
@@ -177,6 +178,7 @@ extension ValidationLineItem: Decodable {
         infos = try container.decodeIfPresent([ValidationMessage].self, forKey: .infos) ?? []
         display = try container.decodeIfPresent(ValidationLineItemDisplay.self, forKey: .display) ?? ValidationLineItemDisplay()
         locked = try container.safeBoolDecode(forKey: .locked) ?? false
+        product = try container.decodeIfPresent(Product.self, forKey: .product) ?? Product()
     }
 }
 
