@@ -88,6 +88,7 @@ public struct ValidationLineItem {
     public var display: ValidationLineItemDisplay = ValidationLineItemDisplay()
     public var locked: Bool = false
     public var product: Product = Product()
+    public var quantity: Float = 0
 }
 
 public struct ValidationLineItemDisplay {
@@ -98,6 +99,7 @@ public struct ValidationLineItemDisplay {
     public var tax: Float = 0.00
     public var total: Float = 0.00
     public var surcharge: Float = 0.00
+    public var displayUOM: String = ""
 }
 
 extension Validation: Decodable {
@@ -179,6 +181,7 @@ extension ValidationLineItem: Decodable {
         display = try container.decodeIfPresent(ValidationLineItemDisplay.self, forKey: .display) ?? ValidationLineItemDisplay()
         locked = try container.safeBoolDecode(forKey: .locked) ?? false
         product = try container.decodeIfPresent(Product.self, forKey: .product) ?? Product()
+        quantity = try container.safeFloatDecode(forKey: .quantity) ?? 0
     }
 }
 
@@ -195,6 +198,7 @@ extension ValidationLineItemDisplay: Decodable {
         tax = try container.safeFloatDecode(forKey: .tax) ?? 0
         total = try container.safeFloatDecode(forKey: .total) ?? 0
         surcharge = try container.safeFloatDecode(forKey: .surcharge) ?? 0
+        displayUOM = try container.decodeIfPresent(String.self, forKey: .displayUOM) ?? ""
     }
 }
 
