@@ -65,6 +65,8 @@ public struct Purchaser {
     public var createdAt: String = ""
     public var updatedAt: String = ""
     public var orderedAt: String = ""
+    public var payOnPlace: Bool = false
+    public var cardOrDirect: Bool = false
 }
 
 public struct PurchaserTerms {
@@ -320,6 +322,8 @@ extension Purchaser: Decodable {
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
         orderedAt = try container.decodeIfPresent(String.self, forKey: .orderedAt) ?? ""
+        payOnPlace = try container.safeBoolDecode(forKey: .payOnPlace) ?? false
+        cardOrDirect = try container.safeBoolDecode(forKey: .cardOrDirect) ?? false
     }
 }
 

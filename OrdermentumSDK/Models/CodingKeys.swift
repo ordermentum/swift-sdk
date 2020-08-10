@@ -544,4 +544,6 @@ enum CodingKeys: String, CodingKey {
     case hasAgreed
     case agreementRequired
     case lastAgreed
+    case payOnPlace
+    case cardOrDirect
 }

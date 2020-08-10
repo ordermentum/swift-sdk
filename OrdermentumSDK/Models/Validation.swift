@@ -55,6 +55,7 @@ public struct Validation {
     public var totalFreightIncGST: Float = 0.00
     public var surcharge: Float = 0.00
     public var dueAt: String = ""
+    public var payOnPlace: Bool = false
 }
 
 public struct ValidationCart {
@@ -129,6 +130,7 @@ extension Validation: Decodable {
         totalFreightIncGST = try container.safeFloatDecode(forKey: .totalFreightIncGST) ?? 0.00
         surcharge = try container.safeFloatDecode(forKey: .surcharge) ?? 0.00
         dueAt = try container.decodeIfPresent(String.self, forKey: .dueAt) ?? ""
+        payOnPlace = try container.safeBoolDecode(forKey: .payOnPlace) ?? false
     }
 }
 
