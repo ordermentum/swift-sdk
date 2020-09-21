@@ -16,6 +16,8 @@
 		CA06925024A9606700B13EAB /* SocialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06924F24A9606700B13EAB /* SocialService.swift */; };
 		CA06925224A9618700B13EAB /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06925124A9618700B13EAB /* Token.swift */; };
 		CA06925624A964AA00B13EAB /* SocialRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06925524A964AA00B13EAB /* SocialRouter.swift */; };
+		CA22A5A025183B4A00155A92 /* MergeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA22A59F25183B4A00155A92 /* MergeStatus.swift */; };
+		CA22A5A625185E7600155A92 /* AcceptInviteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA22A5A525185E7600155A92 /* AcceptInviteResponse.swift */; };
 		CA2713FB24C00B6500C75927 /* VenueNotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2713FA24C00B6500C75927 /* VenueNotificationsRouter.swift */; };
 		CA2713FD24C00B8700C75927 /* NotificationsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2713FC24C00B8600C75927 /* NotificationsClient.swift */; };
 		CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */; };
@@ -157,6 +159,8 @@
 		CA06924F24A9606700B13EAB /* SocialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialService.swift; sourceTree = "<group>"; };
 		CA06925124A9618700B13EAB /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		CA06925524A964AA00B13EAB /* SocialRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialRouter.swift; sourceTree = "<group>"; };
+		CA22A59F25183B4A00155A92 /* MergeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeStatus.swift; sourceTree = "<group>"; };
+		CA22A5A525185E7600155A92 /* AcceptInviteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptInviteResponse.swift; sourceTree = "<group>"; };
 		CA2713FA24C00B6500C75927 /* VenueNotificationsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueNotificationsRouter.swift; sourceTree = "<group>"; };
 		CA2713FC24C00B8600C75927 /* NotificationsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsClient.swift; sourceTree = "<group>"; };
 		CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesService.swift; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 				CA929F5522555FA700E957AC /* Invoice.swift */,
 				CAD522CD22D5BC8C004033EF /* Links.swift */,
 				CA929F5B22555FA800E957AC /* Marketplace.swift */,
+				CA22A59F25183B4A00155A92 /* MergeStatus.swift */,
 				CAD522CF22D5BCA2004033EF /* Meta.swift */,
 				CA929F5222555FA700E957AC /* Notify.swift */,
 				CA929F6522555FA800E957AC /* NPS.swift */,
@@ -415,6 +420,7 @@
 				CA929F4822555FA600E957AC /* Payment.swift */,
 				CA929F5F22555FA800E957AC /* PaymentMethod.swift */,
 				CA354C49238B5EE000B19B03 /* PaymentOption.swift */,
+				CAF7562323CEBBDB0015566B /* PlatformHeaders.swift */,
 				CA929F6122555FA800E957AC /* Product.swift */,
 				CA929F5822555FA700E957AC /* Profile.swift */,
 				CA929F4A22555FA600E957AC /* Projection.swift */,
@@ -424,6 +430,7 @@
 				CA929F4422555FA500E957AC /* Supplier.swift */,
 				CA3931B024283E5400547A74 /* SupportRequest.swift */,
 				CA3931B22428427700547A74 /* SupportTicket.swift */,
+				CA06925124A9618700B13EAB /* Token.swift */,
 				CA929F4D22555FA600E957AC /* TrackingKeys.swift */,
 				CA929F5D22555FA800E957AC /* TradingHours.swift */,
 				CA929F6022555FA800E957AC /* Validation.swift */,
@@ -431,8 +438,7 @@
 				CA929F4622555FA500E957AC /* VenueInvite.swift */,
 				CA929F4922555FA600E957AC /* VenueProfile.swift */,
 				CA929F5422555FA700E957AC /* VenueSearch.swift */,
-				CAF7562323CEBBDB0015566B /* PlatformHeaders.swift */,
-				CA06925124A9618700B13EAB /* Token.swift */,
+				CA22A5A525185E7600155A92 /* AcceptInviteResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -807,9 +813,11 @@
 				CA72972A225D966F00224410 /* BoolUtils.swift in Sources */,
 				CA929F7722555FA900E957AC /* Purchaser.swift in Sources */,
 				CAF246A6225C143D00EDAF68 /* ProductsService.swift in Sources */,
+				CA22A5A025183B4A00155A92 /* MergeStatus.swift in Sources */,
 				CAF24696225B22D800EDAF68 /* FlagsService.swift in Sources */,
 				CA2F35222256D81C00D1118C /* ExperimentsService.swift in Sources */,
 				CA929F8122555FA900E957AC /* ClosurePeriod.swift in Sources */,
+				CA22A5A625185E7600155A92 /* AcceptInviteResponse.swift in Sources */,
 				CA4CF2E9225AE089006F18C8 /* NotifyRouter.swift in Sources */,
 				CAF246AC225C24D700EDAF68 /* PurchaserService.swift in Sources */,
 				CA3931B32428427700547A74 /* SupportTicket.swift in Sources */,
