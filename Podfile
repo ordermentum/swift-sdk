@@ -4,7 +4,7 @@
 target 'OrdermentumSDK' do
   use_frameworks!
   pod 'Alamofire', '~> 5.0.2'
-  pod 'SwiftLint', '~> 0.39.2'
+  pod 'SwiftLint', '~> 0.40.0'
 
   # Pods for OrdermentumSDK
 
