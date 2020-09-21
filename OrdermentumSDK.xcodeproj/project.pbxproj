@@ -17,6 +17,7 @@
 		CA06925224A9618700B13EAB /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06925124A9618700B13EAB /* Token.swift */; };
 		CA06925624A964AA00B13EAB /* SocialRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06925524A964AA00B13EAB /* SocialRouter.swift */; };
 		CA22A5A025183B4A00155A92 /* MergeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA22A59F25183B4A00155A92 /* MergeStatus.swift */; };
+		CA22A5A625185E7600155A92 /* AcceptInviteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA22A5A525185E7600155A92 /* AcceptInviteResponse.swift */; };
 		CA2713FB24C00B6500C75927 /* VenueNotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2713FA24C00B6500C75927 /* VenueNotificationsRouter.swift */; };
 		CA2713FD24C00B8700C75927 /* NotificationsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2713FC24C00B8600C75927 /* NotificationsClient.swift */; };
 		CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */; };
@@ -159,6 +160,7 @@
 		CA06925124A9618700B13EAB /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		CA06925524A964AA00B13EAB /* SocialRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialRouter.swift; sourceTree = "<group>"; };
 		CA22A59F25183B4A00155A92 /* MergeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeStatus.swift; sourceTree = "<group>"; };
+		CA22A5A525185E7600155A92 /* AcceptInviteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptInviteResponse.swift; sourceTree = "<group>"; };
 		CA2713FA24C00B6500C75927 /* VenueNotificationsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueNotificationsRouter.swift; sourceTree = "<group>"; };
 		CA2713FC24C00B8600C75927 /* NotificationsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsClient.swift; sourceTree = "<group>"; };
 		CA2F350B2255AC5D00D1118C /* ClosureDatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureDatesService.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 				CA929F4622555FA500E957AC /* VenueInvite.swift */,
 				CA929F4922555FA600E957AC /* VenueProfile.swift */,
 				CA929F5422555FA700E957AC /* VenueSearch.swift */,
+				CA22A5A525185E7600155A92 /* AcceptInviteResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -814,6 +817,7 @@
 				CAF24696225B22D800EDAF68 /* FlagsService.swift in Sources */,
 				CA2F35222256D81C00D1118C /* ExperimentsService.swift in Sources */,
 				CA929F8122555FA900E957AC /* ClosurePeriod.swift in Sources */,
+				CA22A5A625185E7600155A92 /* AcceptInviteResponse.swift in Sources */,
 				CA4CF2E9225AE089006F18C8 /* NotifyRouter.swift in Sources */,
 				CAF246AC225C24D700EDAF68 /* PurchaserService.swift in Sources */,
 				CA3931B32428427700547A74 /* SupportTicket.swift in Sources */,
