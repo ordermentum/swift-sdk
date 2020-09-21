@@ -63,6 +63,12 @@ public struct JoinVenueRequest: Codable {
     public var userId: String = ""
 }
 
+public struct AcceptInviteRequest: Codable {
+    public init() { }
+    
+    public var existingRetailer: String?
+}
+
 public struct VenueAccountSettings: Encodable {
     public init() { }
 

@@ -226,13 +226,27 @@ public class VenueService {
      * Accepts a single invite.
      * Returns a ResponseBody which can be used to check for a 200 status which indicates a success.
      */
-    public func acceptInvite(inviteId: String, token: String, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+    public func acceptInvite(inviteId: String, token: String, requestObject: AcceptInviteRequest? = nil, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
-        let route = VenueRouter.acceptInvite(inviteId, token) as URLRequestConvertible
+        let route = VenueRouter.acceptInvite(inviteId, token, requestObject) as URLRequestConvertible
 
         //Call API
         Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
             completion(result, errorObject)
+        }
+    }
+    
+    /**
+     * Retrieves the status of a merge request.
+     * Returns a MergeStatus object.
+     */
+    public func getMergeStatus(mergeId: String, completion: @escaping (Bool, MergeStatus?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = VenueRouter.getMergeStatus(mergeId) as URLRequestConvertible
+
+        //Call API
+        Service<MergeStatus, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
 }

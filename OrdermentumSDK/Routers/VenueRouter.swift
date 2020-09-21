@@ -26,7 +26,8 @@ public enum VenueRouter: URLRequestConvertible {
     case joinVenue(JoinVenueRequest)
     case getPendingVenues
     case updateUserPositions(String, [String: [String]])
-    case acceptInvite(String, String)
+    case acceptInvite(String, String, AcceptInviteRequest?)
+    case getMergeStatus(String)
 
     //Methods
     var method: HTTPMethod {
@@ -63,6 +64,8 @@ public enum VenueRouter: URLRequestConvertible {
             return .put
         case .acceptInvite:
             return .post
+        case .getMergeStatus:
+            return .get
         }
     }
 
@@ -99,8 +102,10 @@ public enum VenueRouter: URLRequestConvertible {
             return "venues/pending-requests"
         case .updateUserPositions(let retailerId, _):
             return "retailers/\(retailerId)/user-positions"
-        case .acceptInvite(let inviteId, _):
+        case .acceptInvite(let inviteId, _, _):
             return "invites/\(inviteId)/accept"
+        case .getMergeStatus(let mergeId):
+            return "retailers/merge/\(mergeId)/status"
         }
     }
 
@@ -117,7 +122,7 @@ public enum VenueRouter: URLRequestConvertible {
             return ["search": searchQuery]
         case .getInvite(_, let token):
             return ["token": token]
-        case .acceptInvite(_, let token):
+        case .acceptInvite(_, let token, _):
             return ["token": token]
         default:
             return [:]
@@ -138,6 +143,8 @@ public enum VenueRouter: URLRequestConvertible {
         case .joinVenue(let requestObject):
             return requestObject
         case .updateUserPositions(_, let requestObject):
+            return requestObject
+        case .acceptInvite(_, _, let requestObject):
             return requestObject
         default:
             return nil
