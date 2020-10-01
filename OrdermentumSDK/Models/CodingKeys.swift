@@ -131,6 +131,7 @@ enum CodingKeys: String, CodingKey {
     case color
     case comment
     case comments
+    case complete
     case completeAt
     case completedAt
     case connect
@@ -220,6 +221,7 @@ enum CodingKeys: String, CodingKey {
     case freq
     case frequency
     case fri
+    case fromRetailers
     case fullName
     case globalBakeXml
     case groupPayments
@@ -495,6 +497,7 @@ enum CodingKeys: String, CodingKey {
     case timezone
     case title
     case token
+    case toRetailer
     case total
     case totalCost
     case totalDiscount
