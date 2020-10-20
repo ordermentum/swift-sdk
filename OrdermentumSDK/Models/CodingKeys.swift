@@ -288,6 +288,7 @@ enum CodingKeys: String, CodingKey {
     case marketplacePurchaser
     case marketplaceSupplier
     case maskedNumber
+    case mergeable
     case mergeEventId
     case message
     case minQuantity

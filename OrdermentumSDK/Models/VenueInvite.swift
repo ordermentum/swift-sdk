@@ -37,6 +37,7 @@ public struct VenueInvite {
     public var retailerSender: Retailer = Retailer()
     public var retailerRecipient: Retailer = Retailer()
     public var updatedAt: String = ""
+    public var mergeable: Bool = false
 }
 
 extension VenueInviteResponse: Decodable {
@@ -71,5 +72,6 @@ extension VenueInvite: Decodable {
         retailerSender = try container.decodeIfPresent(Retailer.self, forKey: .retailerSender) ?? Retailer()
         retailerRecipient = try container.decodeIfPresent(Retailer.self, forKey: .retailerRecipient) ?? Retailer()
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
+        mergeable = try container.decodeIfPresent(Bool.self, forKey: .mergeable) ?? false
     }
 }
