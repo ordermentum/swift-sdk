@@ -202,6 +202,7 @@ enum CodingKeys: String, CodingKey {
     case entityType
     case errors
     case escalationTime
+    case eventId
     case expenseAccountCode
     case experimentId
     case externalCustomerId
@@ -395,6 +396,7 @@ enum CodingKeys: String, CodingKey {
     case pushNotifications
     case quantity
     case quantityThreshold
+    case queued
     case randomWeight
     case ratePrice
     case read
