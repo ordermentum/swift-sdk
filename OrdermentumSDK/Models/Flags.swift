@@ -30,6 +30,7 @@ public struct Flags {
     public var retailerSignupCardModal: Bool = false
     public var notificationCentre: Bool = false
     public var googleSignIn: Bool = false
+    public var couponCodes: Bool = false
 }
 
 extension Flags: Decodable {
@@ -55,5 +56,6 @@ extension Flags: Decodable {
         retailerSignupCardModal = try container.safeBoolDecode(forKey: .retailerSignupCardModal) ?? false
         notificationCentre = try container.safeBoolDecode(forKey: .notificationCentre) ?? false
         googleSignIn = try container.safeBoolDecode(forKey: .googleSignIn) ?? false
+        couponCodes = try container.safeBoolDecode(forKey: .couponCodes) ?? false
     }
 }

@@ -39,25 +39,26 @@ enum CodingKeys: String, CodingKey {
     case large
     
     //Flags
-    case findSupplier = "find-supplier"
-    case review
-    case dashboardProfile = "dashboard_profile"
-    case userInvite = "user-invite"
-    case popularProducts = "popular-products"
     case addons = "add-ons"
-    case homePopularProducts = "home-popular-products"
-    case retailerSignup = "retailer-signup"
     case addVenue = "add-venue"
-    case projectionsV2 = "projections-v2"
-    case recommendedSuppliers = "recommended-suppliers"
+    case couponCodes = "coupon-codes"
+    case dashboardProfile = "dashboard_profile"
+    case findSupplier = "find-supplier"
+    case googleSignIn = "google-sign-in"
+    case homePopularProducts = "home-popular-products"
+    case notificationCentre = "notification-centre"
     case paymentUpsellDialogCheckout = "payment-upsell-dialog-checkout"
     case paymentUpsellDialogCheckoutGiftCard = "payment-upsell-dialog-checkout-giftcard"
     case paymentUpsellDialogInvoice = "payment-upsell-dialog-invoice"
     case pendingSuppliers = "pending-suppliers"
+    case popularProducts = "popular-products"
+    case projectionsV2 = "projections-v2"
+    case recommendedSuppliers = "recommended-suppliers"
     case retailerHome = "retailer-home"
+    case retailerSignup = "retailer-signup"
     case retailerSignupCardModal = "retailer-signup-card-modal"
-    case notificationCentre = "notification-centre"
-    case googleSignIn = "google-sign-in"
+    case review
+    case userInvite = "user-invite"
     
     //Generic
     case abn
