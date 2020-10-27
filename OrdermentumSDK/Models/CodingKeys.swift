@@ -183,6 +183,7 @@ enum CodingKeys: String, CodingKey {
     case directProcessing
     case disabled
     case disconnectUrl
+    case discounts
     case display
     case displayName
     case displayUOM
@@ -190,6 +191,7 @@ enum CodingKeys: String, CodingKey {
     case dueAt
     case editable
     case editableUntil
+    case effects
     case email
     case enableDeliveryDate
     case enableEmail
@@ -232,6 +234,7 @@ enum CodingKeys: String, CodingKey {
     case hasScheduledOrder
     case hasTerms
     case height
+    case hostId
     case id
     case images
     case imageURL
@@ -467,6 +470,7 @@ enum CodingKeys: String, CodingKey {
     case SKU
     case slot
     case slug
+    case sponsored
     case sortOrder
     case standingOrders
     case startDate
@@ -494,6 +498,7 @@ enum CodingKeys: String, CodingKey {
     case surcharge
     case survey_scheduled_at
     case syncError
+    case target
     case tax
     case taxable
     case thu

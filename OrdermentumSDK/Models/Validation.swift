@@ -36,6 +36,7 @@ public struct Validation {
     public init() { }
 
     public var cart: ValidationCart = ValidationCart()
+    public var discounts: [ValidationDiscount] = []
     public var display: ValidationDisplay = ValidationDisplay()
     public var lineItems: [ValidationLineItem] = []
     public var cartErrorCount: Int = 0
@@ -64,6 +65,24 @@ public struct ValidationCart {
     public var errors: [ValidationMessage] = []
     public var warnings: [ValidationMessage] = []
     public var infos: [ValidationMessage] = []
+}
+
+public struct ValidationDiscount {
+    public init() { }
+
+    public var name: String = ""
+    public var sponsored: Bool = false
+    public var hostId: String = ""
+    public var description: String = ""
+    public var effects: [ValidationDiscountEffect] = []
+}
+
+public struct ValidationDiscountEffect {
+    public init() { }
+
+    public var type: String = ""
+    public var value: String = ""
+    public var target: String = ""
 }
 
 public struct ValidationMessage {
@@ -111,6 +130,7 @@ extension Validation: Decodable {
 
         //Decode Data
         cart = try container.decodeIfPresent(ValidationCart.self, forKey: .cart) ?? ValidationCart()
+        discounts = try container.decodeIfPresent([ValidationDiscount].self, forKey: .discounts) ?? []
         display = try container.decodeIfPresent(ValidationDisplay.self, forKey: .display) ?? ValidationDisplay()
         lineItems = try container.decodeIfPresent([ValidationLineItem].self, forKey: .lineItems) ?? []
         cartErrorCount = try container.safeIntDecode(forKey: .cartErrorCount) ?? 0
@@ -143,6 +163,32 @@ extension ValidationCart: Decodable {
         errors = try container.decodeIfPresent([ValidationMessage].self, forKey: .errors) ?? []
         warnings = try container.decodeIfPresent([ValidationMessage].self, forKey: .warnings) ?? []
         infos = try container.decodeIfPresent([ValidationMessage].self, forKey: .infos) ?? []
+    }
+}
+
+extension ValidationDiscount: Decodable {
+    public init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        //Decode Data
+        name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        sponsored = try container.decodeIfPresent(Bool.self, forKey: .sponsored) ?? false
+        hostId = try container.decodeIfPresent(String.self, forKey: .hostId) ?? ""
+        description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
+        effects = try container.decodeIfPresent([ValidationDiscountEffect].self, forKey: .effects) ?? []
+    }
+}
+
+extension ValidationDiscountEffect: Decodable {
+    public init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        //Decode Data
+        type = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        value = try container.decodeIfPresent(String.self, forKey: .sponsored) ?? ""
+        target = try container.decodeIfPresent(String.self, forKey: .target) ?? ""
     }
 }
 
