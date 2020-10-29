@@ -14,6 +14,7 @@ public struct CreateOrder: Codable {
     public var comment: String = ""
     public var deliveryDate: String = ""
     public var lineItems: [CreateOrderLineItem] = []
+    public var couponCode: String?
     public var origin: String = ""
     public var reference: String = ""
     public var retailerId: String = ""
