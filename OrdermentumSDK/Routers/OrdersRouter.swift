@@ -25,6 +25,8 @@ public enum OrdersRouter: URLRequestConvertible {
     case createFavouriteOrder(CreateFavouriteRequest)
     case scheduleOrder(String, CreatePurchaserSchedule)
     case getInstalmentsURL(String)
+    case reportIssue(ReportOrderIssueRequest)
+    case receiveOrder(String)
 
     //Methods
     var method: HTTPMethod {
@@ -57,6 +59,10 @@ public enum OrdersRouter: URLRequestConvertible {
             return .put
         case .getInstalmentsURL:
             return .get
+        case .reportIssue:
+            return .post
+        case .receiveOrder:
+            return .post
         }
     }
 
@@ -91,6 +97,10 @@ public enum OrdersRouter: URLRequestConvertible {
             return "purchaser-schedules/\(scheduleId)"
         case .getInstalmentsURL(let orderId):
             return "orders/\(orderId)/instalment"
+        case .reportIssue:
+            return "order-issues"
+        case .receiveOrder(let orderId):
+            return "orders/\(orderId)/receive"
         }
     }
 
@@ -128,6 +138,8 @@ public enum OrdersRouter: URLRequestConvertible {
         case .createFavouriteOrder(let requestObject):
             return requestObject
         case .scheduleOrder(_, let requestObject):
+            return requestObject
+        case .reportIssue(let requestObject):
             return requestObject
         default:
             return nil

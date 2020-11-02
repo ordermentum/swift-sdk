@@ -211,5 +211,32 @@ public class OrdersService {
             completion(result, responseObject, errorObject)
         }
     }
+    
+    /**
+     * Report an issue to a supplier that a retailer has with an order
+     * Returns a ResponseBody
+     */
+    public func reportIssue(requestObject: ReportOrderIssueRequest, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = OrdersRouter.reportIssue(requestObject) as URLRequestConvertible
 
+        //Call API
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
+            completion(result, errorObject)
+        }
+    }
+    
+    /**
+     * Report to a supplier that a retailer has received an order without issue.
+     * Returns a ResponseBody
+     */
+    public func receiveOrder(orderId: String, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = OrdersRouter.receiveOrder(orderId) as URLRequestConvertible
+
+        //Call API
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
+            completion(result, errorObject)
+        }
+    }
 }

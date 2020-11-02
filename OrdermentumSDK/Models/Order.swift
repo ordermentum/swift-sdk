@@ -9,8 +9,8 @@
 import Foundation
 
 public struct CreateOrder: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var comment: String = ""
     public var deliveryDate: String = ""
     public var lineItems: [CreateOrderLineItem] = []
@@ -26,8 +26,8 @@ public struct CreateOrder: Codable {
 }
 
 public struct CreateOrderLineItem: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var name: String = ""
     public var price: String = ""
     public var productId: String = ""
@@ -47,8 +47,8 @@ public struct ClassicStandingOrderResponse {
 }
 
 public struct Order: Encodable {
-    public init() {}
-    
+    public init() { }
+
     public var canMarkAsPaid: Bool = false
     public var canMarkAsUnpaid: Bool = false
     public var cancelledAt: String = ""
@@ -110,8 +110,8 @@ public struct Order: Encodable {
 }
 
 public struct LineItem: Encodable {
-    public init() {}
-    
+    public init() { }
+
     public var SKU: String = ""
     public var batchCode: String = ""
     public var createdAt: String = ""
@@ -211,8 +211,8 @@ public struct UpdatedBy: Encodable {
 }
 
 public struct CreateFavouriteRequest: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var comment: String = ""
     public var deliveryDate: String = ""
     public var lineItems: [CreateFavouriteRequestLineItem] = []
@@ -225,8 +225,8 @@ public struct CreateFavouriteRequest: Codable {
 }
 
 public struct CreateFavouriteRequestLineItem: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var name: String = ""
     public var price: Float = 0.00
     public var productId: String = ""
@@ -234,8 +234,8 @@ public struct CreateFavouriteRequestLineItem: Codable {
 }
 
 public struct CreateStandingOrder: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var lineItems: [CreateOrderLineItem] = []
     public var origin: String = ""
     public var retailerId: String = ""
@@ -244,8 +244,8 @@ public struct CreateStandingOrder: Codable {
 }
 
 public struct CreatePurchaserSchedule: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var orderId: String = ""
     public var place: Bool = true
     public var retailerId: String = ""
@@ -254,8 +254,8 @@ public struct CreatePurchaserSchedule: Codable {
 }
 
 public struct UpdateOrderRequest: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var lineItems: [UpdateOrderRequestLineItem] = []
     public var name: String = ""
     public var origin: String = ""
@@ -263,8 +263,8 @@ public struct UpdateOrderRequest: Codable {
 }
 
 public struct UpdateScheduleRequest: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var cutOff: String = ""
     public var purchaserScheduleId: String = ""
     public var runAt: String = ""
@@ -276,24 +276,32 @@ public struct UpdateScheduleRequest: Codable {
 }
 
 public struct UpdateOrderRequestLineItem: Codable {
-    public init() {}
-    
+    public init() { }
+
     public var productId: String = ""
     public var quantity: Int = 0
 }
 
 public struct InstalmentsResponse: Encodable {
-    public init() {}
-    
+    public init() { }
+
     public var success: Bool = false
     public var url: String = ""
+}
+
+public struct ReportOrderIssueRequest: Codable {
+    public init() { }
+    
+    public var orderId: String = ""
+    public var type: String = ""
+    public var comment: String = ""
 }
 
 extension OrderResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         meta = try container.decodeIfPresent(Meta.self, forKey: .meta) ?? Meta()
         links = try container.decodeIfPresent(Links.self, forKey: .link) ?? Links()
@@ -305,7 +313,7 @@ extension ClassicStandingOrderResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         meta = try container.decodeIfPresent(Meta.self, forKey: .meta) ?? Meta()
         links = try container.decodeIfPresent(Links.self, forKey: .link) ?? Links()
@@ -317,7 +325,7 @@ extension Order: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         canMarkAsPaid = try container.safeBoolDecode(forKey: .canMarkAsPaid) ?? false
         canMarkAsUnpaid = try container.safeBoolDecode(forKey: .canMarkAsUnpaid) ?? false
@@ -384,7 +392,7 @@ extension LineItem: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         SKU = try container.decodeIfPresent(String.self, forKey: .SKU) ?? ""
         batchCode = try container.decodeIfPresent(String.self, forKey: .batchCode) ?? ""
@@ -415,7 +423,7 @@ extension ClassicStandingOrder: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
@@ -435,7 +443,7 @@ extension ClassicStandingOrder: Decodable {
         nextFinishAt = try container.decodeIfPresent(String.self, forKey: .nextFinishAt) ?? ""
         scheduleId = try container.decodeIfPresent(String.self, forKey: .scheduleId) ?? ""
         nextRunDate = try container.decodeIfPresent(String.self, forKey: .nextRunDate) ?? ""
-        cancelled = try container.decodeIfPresent([String].self, forKey: .cancelled) ??  []
+        cancelled = try container.decodeIfPresent([String].self, forKey: .cancelled) ?? []
         updatedBy = try container.decodeIfPresent(UpdatedBy.self, forKey: .updatedBy) ?? UpdatedBy()
         nextRunCancelled = try container.safeBoolDecode(forKey: .nextRunCancelled) ?? false
         scheduleEnabled = try container.safeBoolDecode(forKey: .scheduleEnabled) ?? false
@@ -448,7 +456,7 @@ extension ClassicStandingOrderSchedule: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
@@ -483,7 +491,7 @@ extension ClassicStandingOrderRecurrenceInfo: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         freq = try container.decodeIfPresent(String.self, forKey: .freq) ?? ""
         byhour = try container.decodeIfPresent(String.self, forKey: .byhour) ?? ""
@@ -497,7 +505,7 @@ extension ClassicStandingOrderSupplier: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
     }
@@ -507,7 +515,7 @@ extension UpdatedBy: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         firstName = try container.decodeIfPresent(String.self, forKey: .firstName) ?? ""
         lastName = try container.decodeIfPresent(String.self, forKey: .lastName) ?? ""
@@ -519,7 +527,7 @@ extension InstalmentsResponse: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         //Decode Data
         success = try container.safeBoolDecode(forKey: .success) ?? false
         url = try container.decodeIfPresent(String.self, forKey: .url) ?? ""
@@ -546,7 +554,7 @@ extension Order {
     public func toCreateFavouriteRequest(retailerId: String, supplierId: String) -> CreateFavouriteRequest {
         //Initialize Create Favourite Request
         var requestObject: CreateFavouriteRequest = CreateFavouriteRequest()
-        
+
         //Add Line Items
         for lineItem in self.lineItems {
             //Create Line item
@@ -557,12 +565,12 @@ extension Order {
             createFavouriteLineItem.quantity = lineItem.quantity
             requestObject.lineItems.append(createFavouriteLineItem)
         }
-        
+
         //Set Favourite Object
         requestObject.retailerId = retailerId
         requestObject.supplierId = supplierId
         requestObject.type = "template"
-        
+
         return requestObject
     }
 }
