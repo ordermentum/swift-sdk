@@ -111,6 +111,7 @@ public struct ValidationLineItem {
     public var locked: Bool = false
     public var product: Product = Product()
     public var quantity: Float = 0
+    public var comment: String = ""
 }
 
 public struct ValidationLineItemDisplay {
@@ -233,6 +234,7 @@ extension ValidationLineItem: Decodable {
         locked = try container.safeBoolDecode(forKey: .locked) ?? false
         product = try container.decodeIfPresent(Product.self, forKey: .product) ?? Product()
         quantity = try container.safeFloatDecode(forKey: .quantity) ?? 0
+        comment = try container.decodeIfPresent(String.self, forKey: .comment) ?? ""
     }
 }
 

@@ -40,6 +40,7 @@ public struct AccountSettings {
     public var classicStandingOrders: Bool = false
     public var defaultSalesAccountCode: String = ""
     public var financeAvailable: Bool = false
+    public var lineItemComments: Bool = false
 }
 
 extension AccountSettings: Decodable {
@@ -76,5 +77,6 @@ extension AccountSettings: Decodable {
         classicStandingOrders = try container.safeBoolDecode(forKey: .classicStandingOrders) ?? false
         defaultSalesAccountCode = try container.safeStringIntDecode(forKey: .defaultSalesAccountCode) ?? ""
         financeAvailable = try container.safeBoolDecode(forKey: .financeAvailable) ?? false
+        lineItemComments = try container.safeBoolDecode(forKey: .lineItemComments) ?? false
     }
 }
