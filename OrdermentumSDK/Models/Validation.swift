@@ -111,7 +111,7 @@ public struct ValidationLineItem {
     public var locked: Bool = false
     public var product: Product = Product()
     public var quantity: Float = 0
-    public var comment: String = ""
+    public var comment: String?
 }
 
 public struct ValidationLineItemDisplay {
