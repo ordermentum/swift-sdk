@@ -12,8 +12,8 @@ public class ProfileServiceV2 {
     public init() { }
 
     /**
-     * Fetch the
-     * Returns a UserProfile
+     * Fetch the public fields of the signup profile (main purpose for now is to check for autoconnect)
+     * Returns a SupplierSignupProfile
      */
     public func checkProfile(code: String, supplierId: String, completion: @escaping (Bool, SupplierSignupProfile?, ErrorResponse?) -> Void) {
         //Build Route
