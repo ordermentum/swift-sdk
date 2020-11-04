@@ -72,6 +72,7 @@ public struct Order: Encodable {
     public var invoiceId: String = ""
     public var invoiceNumber: String = ""
     public var invoiceReference: String = ""
+    public var isReceivable: Bool = false
     public var isOutstanding: Bool = false
     public var isRetailerEditable: Bool = false
     public var isUpdated: Bool = false
@@ -350,6 +351,7 @@ extension Order: Decodable {
         invoiceId = try container.decodeIfPresent(String.self, forKey: .invoiceId) ?? ""
         invoiceNumber = try container.decodeIfPresent(String.self, forKey: .invoiceNumber) ?? ""
         invoiceReference = try container.decodeIfPresent(String.self, forKey: .invoiceReference) ?? ""
+        isReceivable = try container.safeBoolDecode(forKey: .isReceivable) ?? false
         isOutstanding = try container.safeBoolDecode(forKey: .isOutstanding) ?? false
         isRetailerEditable = try container.safeBoolDecode(forKey: .isRetailerEditable) ?? false
         isUpdated = try container.safeBoolDecode(forKey: .isUpdated) ?? false

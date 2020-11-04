@@ -266,6 +266,7 @@ enum CodingKeys: String, CodingKey {
     case isEditable
     case isLocked
     case isOpen
+    case isReceivable
     case isOutstanding
     case isReinstatable
     case isRetailerEditable
