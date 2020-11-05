@@ -25,6 +25,7 @@ public struct CartProduct {
     }
     public var product: Product = Product()
     public var quantity: Int = 0
+    public var comment: String? = nil
 }
 
 public struct CartOrder {
@@ -44,12 +45,14 @@ public struct CartOrder {
 
 public struct CartLineItem {
     public init() {}
-    public init(productId: String?, quantity: Int?) {
+    public init(productId: String?, quantity: Int?, comment: String?) {
         self.productId = productId
         self.quantity = quantity
+        self.comment = comment
     }
     public var productId: String?
     public var quantity: Int?
+    public var comment: String?
 }
 
 extension Cart: Encodable {

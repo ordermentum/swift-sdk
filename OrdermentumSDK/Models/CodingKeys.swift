@@ -279,6 +279,7 @@ enum CodingKeys: String, CodingKey {
     case latitude
     case leadTime
     case legalName
+    case lineItemComments
     case lineItemErrorCount
     case lineItemInfosCount
     case lineItemWarningCount
