@@ -95,3 +95,25 @@ extension Supplier: Equatable {
         return lhs.id == rhs.id
     }
 }
+
+public struct SupplierSignupProfile: Encodable {
+    public init() {}
+    
+    public var id: String = ""
+    public var code: String = ""
+    public var supplierId: String = ""
+    public var autoConnect: Bool = false
+}
+
+extension SupplierSignupProfile: Decodable {
+    public init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        //Decode Data
+        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        code = try container.decodeIfPresent(String.self, forKey: .code) ?? ""
+        supplierId = try container.decodeIfPresent(String.self, forKey: .supplierId) ?? ""
+        autoConnect = try container.safeBoolDecode(forKey: .autoConnect) ?? false
+    }
+}
