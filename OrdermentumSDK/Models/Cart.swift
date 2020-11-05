@@ -19,9 +19,10 @@ public struct Cart {
 
 public struct CartProduct {
     public init() {}
-    public init(product: Product, quantity: Int) {
+    public init(product: Product, quantity: Int, comment: String? = nil) {
         self.product = product
         self.quantity = quantity
+        self.comment = comment
     }
     public var product: Product = Product()
     public var quantity: Int = 0
