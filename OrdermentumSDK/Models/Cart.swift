@@ -25,7 +25,7 @@ public struct CartProduct {
     }
     public var product: Product = Product()
     public var quantity: Int = 0
-    public var comment: String = ""
+    public var comment: String? = nil
 }
 
 public struct CartOrder {
