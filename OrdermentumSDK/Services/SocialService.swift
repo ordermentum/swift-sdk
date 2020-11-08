@@ -25,4 +25,18 @@ public class SocialService {
             completion(result, responseObject, errorObject)
         }
     }
+    
+    /**
+     * Upgrades an apple© `identityToken` to an Ordermentum auth token.
+     * Returns an `TokenUpgradeResponse` which can be used to authorise a user on Ordermentum
+     */
+    public func upgradeAppleToken(request: TokenUpgradeRequest, completion: @escaping (Bool, TokenUpgradeResponse?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = SocialRouter.upgradeAppleToken(request) as URLRequestConvertible
+        
+        //Call API
+        Service<TokenUpgradeResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
 }

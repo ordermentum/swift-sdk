@@ -12,11 +12,14 @@ import Alamofire
 public enum SocialRouter: URLRequestConvertible {
     //Routes
     case upgradeGoogleToken(TokenUpgradeRequest)
+    case upgradeAppleToken(TokenUpgradeRequest)
 
     //Methods
     var method: HTTPMethod {
         switch self {
         case .upgradeGoogleToken:
+            return .post
+        case .upgradeAppleToken:
             return .post
         }
     }
@@ -26,6 +29,8 @@ public enum SocialRouter: URLRequestConvertible {
         switch self {
         case .upgradeGoogleToken:
             return "social/google/upgrade"
+        case .upgradeAppleToken:
+            return "social/apple/upgrade"
         }
     }
 
@@ -41,6 +46,8 @@ public enum SocialRouter: URLRequestConvertible {
     var body: Codable? {
         switch self {
         case .upgradeGoogleToken(let requestObject):
+            return requestObject
+        case .upgradeAppleToken(let requestObject):
             return requestObject
         }
     }
