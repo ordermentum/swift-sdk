@@ -16,9 +16,9 @@ public class ProductsServiceV2 {
      * Accepts: retailerId string and ProductSearchRequest obj
      * Returns a ProductResponse object
      */
-    public func getProducts(retailerId: String, requestObject: ProductSearchRequest, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
+    public func fetchProducts(retailerId: String, requestObject: ProductSearchRequest, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
         //Build Route
-        let route = ProductsRouterV2.getProducts(retailerId, requestObject) as URLRequestConvertible
+        let route = ProductsRouterV2.fetchProducts(retailerId, requestObject) as URLRequestConvertible
         
         //Call API
         Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in

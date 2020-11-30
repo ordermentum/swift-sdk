@@ -10,12 +10,12 @@ import Alamofire
 
 public enum ProductsRouterV2: URLRequestConvertible {
     //Routes
-    case getProducts(String, ProductSearchRequest)
+    case fetchProducts(String, ProductSearchRequest)
     
     //Methods
     var method: HTTPMethod {
         switch self {
-        case .getProducts:
+        case .fetchProducts:
             return .post
         }
     }
@@ -23,7 +23,7 @@ public enum ProductsRouterV2: URLRequestConvertible {
     //Paths
     var path: String {
         switch self {
-        case .getProducts(let retailerId, _):
+        case .fetchProducts(let retailerId, _):
             return "products/\(retailerId)/search"
         }
     }
@@ -39,7 +39,7 @@ public enum ProductsRouterV2: URLRequestConvertible {
     //Body
     var body: Codable? {
         switch self {
-        case .getProducts(_, let requestObject):
+        case .fetchProducts(_, let requestObject):
             return requestObject
         default:
             return nil
