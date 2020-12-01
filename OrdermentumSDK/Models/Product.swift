@@ -8,6 +8,29 @@
 
 import Foundation
 
+// Request body object for fetching products
+public struct ProductSearchRequest: Codable {
+    public init() {}
+    
+    //Init for a search request
+    public init(searchTerm: String) {
+        self.search = searchTerm
+    }
+    
+    //Init for a fetch request
+    public init(categoryId: String) {
+        self.categoryId = categoryId
+    }
+    
+    public var supplierId: String = ""
+    public var search: String?
+    public var categoryId: String?
+    
+    public var pageNo: Int = 1
+    public var pageSize: Int = 25
+    public var visible: Bool = true
+}
+
 public struct ProductResponse {
     public var meta: Meta = Meta()
     public var links: Links = Links()

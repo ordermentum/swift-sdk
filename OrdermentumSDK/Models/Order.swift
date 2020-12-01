@@ -32,7 +32,7 @@ public struct CreateOrderLineItem: Codable {
     public var price: String = ""
     public var productId: String = ""
     public var quantity: Int = 0
-    public var comment: String? = nil
+    public var comment: String?
 }
 
 public struct OrderResponse {

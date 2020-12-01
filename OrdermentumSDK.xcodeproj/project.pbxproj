@@ -10,6 +10,8 @@
 		2617F58D2553BD910088D6AF /* ClientV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2617F58C2553BD910088D6AF /* ClientV2.swift */; };
 		2617F5912553BDA60088D6AF /* ProfileRouterV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2617F5902553BDA60088D6AF /* ProfileRouterV2.swift */; };
 		2617F5952553BDC50088D6AF /* ProfileServiceV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2617F5942553BDC50088D6AF /* ProfileServiceV2.swift */; };
+		26A168272574F54B00435EF6 /* ProductsServiceV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A168262574F54B00435EF6 /* ProductsServiceV2.swift */; };
+		26A1682B2574F57E00435EF6 /* ProductsRouterV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1682A2574F57E00435EF6 /* ProductsRouterV2.swift */; };
 		26D281BF22A5FB4300D06E4E /* AppVersionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D281BE22A5FB4300D06E4E /* AppVersionService.swift */; };
 		26D281C122A5FE7700D06E4E /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D281C022A5FE7700D06E4E /* AppVersion.swift */; };
 		26EF6CC6229F79660050D1E3 /* AnalyticsTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF6CC5229F79660050D1E3 /* AnalyticsTrackable.swift */; };
@@ -153,6 +155,8 @@
 		2617F58C2553BD910088D6AF /* ClientV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientV2.swift; sourceTree = "<group>"; };
 		2617F5902553BDA60088D6AF /* ProfileRouterV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRouterV2.swift; sourceTree = "<group>"; };
 		2617F5942553BDC50088D6AF /* ProfileServiceV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileServiceV2.swift; sourceTree = "<group>"; };
+		26A168262574F54B00435EF6 /* ProductsServiceV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsServiceV2.swift; sourceTree = "<group>"; };
+		26A1682A2574F57E00435EF6 /* ProductsRouterV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsRouterV2.swift; sourceTree = "<group>"; };
 		26D281BE22A5FB4300D06E4E /* AppVersionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionService.swift; sourceTree = "<group>"; };
 		26D281C022A5FE7700D06E4E /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		26EF6CC5229F79660050D1E3 /* AnalyticsTrackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTrackable.swift; sourceTree = "<group>"; };
@@ -478,6 +482,7 @@
 				CAF24685225AE8E400EDAF68 /* OrdersRouter.swift */,
 				CAF24687225AFE4A00EDAF68 /* PaymentsRouter.swift */,
 				CAF24689225B031200EDAF68 /* ProductsRouter.swift */,
+				26A1682A2574F57E00435EF6 /* ProductsRouterV2.swift */,
 				CAF2468B225B083B00EDAF68 /* ProfileRouter.swift */,
 				2617F5902553BDA60088D6AF /* ProfileRouterV2.swift */,
 				CAF2468D225B158000EDAF68 /* ProjectionsRouter.swift */,
@@ -525,6 +530,7 @@
 				CAF246A1225B705C00EDAF68 /* OrdersService.swift */,
 				CAF246A3225C128700EDAF68 /* PaymentsService.swift */,
 				CAF246A5225C143D00EDAF68 /* ProductsService.swift */,
+				26A168262574F54B00435EF6 /* ProductsServiceV2.swift */,
 				CAF246A7225C162B00EDAF68 /* ProfileService.swift */,
 				2617F5942553BDC50088D6AF /* ProfileServiceV2.swift */,
 				CAF246A9225C185F00EDAF68 /* ProjectionsService.swift */,
@@ -783,6 +789,7 @@
 				CA2F351A2256CDDE00D1118C /* DeviceRouter.swift in Sources */,
 				CA06925624A964AA00B13EAB /* SocialRouter.swift in Sources */,
 				CAF2469C225B283600EDAF68 /* NotificationsService.swift in Sources */,
+				26A1682B2574F57E00435EF6 /* ProductsRouterV2.swift in Sources */,
 				CA2713FB24C00B6500C75927 /* VenueNotificationsRouter.swift in Sources */,
 				CA561B852383E205002E4C37 /* Impersonate.swift in Sources */,
 				CA06924E24A95F9100B13EAB /* AuthClient.swift in Sources */,
@@ -858,6 +865,7 @@
 				CAD522CE22D5BC8C004033EF /* Links.swift in Sources */,
 				CA929F7B22555FA900E957AC /* SignUp.swift in Sources */,
 				CA2F351E2256CF9A00D1118C /* DeviceService.swift in Sources */,
+				26A168272574F54B00435EF6 /* ProductsServiceV2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
