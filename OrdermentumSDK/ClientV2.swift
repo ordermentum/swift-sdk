@@ -20,6 +20,7 @@ public class ClientV2 {
 
     //Services
     public var profiles: ProfileServiceV2 = ProfileServiceV2()
+    public var products: ProductsServiceV2 = ProductsServiceV2()
 
     // MARK: Convenience Methods
     public func getHeaderToken() -> String {
