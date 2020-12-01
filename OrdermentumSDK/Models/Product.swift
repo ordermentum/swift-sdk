@@ -10,6 +10,7 @@ import Foundation
 
 // Request body object for fetching products
 public struct ProductSearchRequest: Codable {
+    public init() {}
     
     //Init for a search request
     public init(searchTerm: String) {
