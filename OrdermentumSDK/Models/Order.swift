@@ -127,7 +127,7 @@ public struct LineItem: Encodable {
     public var price: String = ""
     public var product: Product = Product()
     public var productId: String = ""
-    public var quantity: Float = 0.0
+    public var quantity: Int = 0
     public var ratePrice: String = ""
     public var subtotal: String = ""
     public var tax: String = ""
@@ -410,7 +410,7 @@ extension LineItem: Decodable {
         price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
         product = try container.decodeIfPresent(Product.self, forKey: .product) ?? Product()
         productId = try container.decodeIfPresent(String.self, forKey: .productId) ?? ""
-        quantity = try container.safeFloatDecode(forKey: .quantity) ?? 0.0
+        quantity = try container.safeIntDecode(forKey: .quantity) ?? 0
         ratePrice = try container.decodeIfPresent(String.self, forKey: .ratePrice) ?? ""
         subtotal = try container.decodeIfPresent(String.self, forKey: .subtotal) ?? ""
         tax = try container.decodeIfPresent(String.self, forKey: .tax) ?? ""
@@ -565,7 +565,7 @@ extension Order {
             createFavouriteLineItem.name = lineItem.product.name
             createFavouriteLineItem.price = Float(lineItem.product.formattedPrice) ?? 0
             createFavouriteLineItem.productId = lineItem.product.id
-            createFavouriteLineItem.quantity = Int(lineItem.quantity)
+            createFavouriteLineItem.quantity = lineItem.quantity
             requestObject.lineItems.append(createFavouriteLineItem)
         }
 
