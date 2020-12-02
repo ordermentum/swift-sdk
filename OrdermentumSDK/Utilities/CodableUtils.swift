@@ -12,10 +12,13 @@ import Alamofire
 extension KeyedDecodingContainer {
     func safeIntDecode(forKey key: K) throws -> Int? {
         do {
-            guard let string = try decodeIfPresent(String.self, forKey: key) else {
+            if let float: Float = try? (decodeIfPresent(Float.self, forKey: key) ?? 0) {
+                return Int(float)
+            } else if let string: String = try? (decodeIfPresent(String.self, forKey: key) ?? "") {
+                return Int(string)
+            } else {
                 return nil
             }
-            return Int(string)
         } catch {
             return try decodeIfPresent(Int.self, forKey: key)
         }
