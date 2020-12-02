@@ -97,6 +97,7 @@ enum CodingKeys: String, CodingKey {
     case billingEndDate
     case billingStart
     case billingStartDate
+    case body
     case brand
     case brandImages
     case bsb
