@@ -32,6 +32,13 @@ public struct UserProfile: Codable {
     public var updatedAt: String = ""
     public var adminPerms: AdminPerms = AdminPerms()
     public var verifiedAt: String = ""
+    public var intercom: Intercom = Intercom()
+}
+
+public struct Intercom: Codable {
+    public var ios: String = ""
+    public var android: String = ""
+    public var web: String = ""
 }
 
 public struct VenueNotificationsResponse {
@@ -159,6 +166,20 @@ extension UserProfile {
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
         adminPerms = try container.decodeIfPresent(AdminPerms.self, forKey: .adminPerms) ?? AdminPerms()
         verifiedAt = try container.decodeIfPresent(String.self, forKey: .verifiedAt) ?? ""
+        intercom = try container.decodeIfPresent(Intercom.self, forKey: .intercom) ?? Intercom()
+    }
+}
+
+
+extension Intercom {
+    public init(from decoder: Decoder) throws {
+        //Create Container
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        //Decode Data
+        web = try container.decodeIfPresent(String.self, forKey: .web) ?? ""
+        android = try container.decodeIfPresent(String.self, forKey: .android) ?? ""
+        ios = try container.decodeIfPresent(String.self, forKey: .ios) ?? ""
     }
 }
 
