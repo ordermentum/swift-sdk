@@ -170,7 +170,6 @@ extension UserProfile {
     }
 }
 
-
 extension Intercom {
     public init(from decoder: Decoder) throws {
         //Create Container
