@@ -180,6 +180,7 @@ enum CodingKeys: String, CodingKey {
     case deliveryInstructions
     case demoSupplier
     case description
+    case device
     case directDebit
     case directProcessing
     case disabled
@@ -453,6 +454,7 @@ enum CodingKeys: String, CodingKey {
     case scheduleId
     case scheduleName
     case schedules
+    case seenAt
     case sendInvoice
     case senderEntityName
     case senderId
