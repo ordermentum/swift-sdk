@@ -9,38 +9,24 @@
 import Foundation
 
 public struct HydrateResponse {
-    public var meta: Meta = Meta()
-    public var links: Links = Links()
-    public var data: [AbandonedCart] = []
-}
-
-public struct AbandonedCart {
+    public init() { }
+    
     public var id: String = ""
     public var supplierId: String = ""
     public var retailerId: String = ""
     public var purchaserId: String = ""
     public var userId: String = ""
     public var total: Float = 0.00
+    public var lineItems: [ValidationLineItem] = []
     public var updatedAt: String = ""
     public var createdAt: String = ""
     public var device: String = ""
-    public var seenAt: String = ""
-    public var lineItems: [ValidationLineItem] = []
+    public var supplier: Supplier = Supplier()
+    public var user: User = User()
+    public var deeplink: String = ""
 }
 
 extension HydrateResponse: Decodable {
-    public init(from decoder: Decoder) throws {
-        //Create Container
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        //Decode Data
-        meta = try container.decodeIfPresent(Meta.self, forKey: .meta) ?? Meta()
-        links = try container.decodeIfPresent(Links.self, forKey: .links) ?? Links()
-        data = try container.decodeIfPresent([AbandonedCart].self, forKey: .data) ?? []
-    }
-}
-
-extension AbandonedCart: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -52,10 +38,12 @@ extension AbandonedCart: Decodable {
         purchaserId = try container.decodeIfPresent(String.self, forKey: .purchaserId) ?? ""
         userId = try container.decodeIfPresent(String.self, forKey: .userId) ?? ""
         total = try container.decodeIfPresent(Float.self, forKey: .total) ?? 0
+        lineItems = try container.decodeIfPresent([ValidationLineItem].self, forKey: .lineItems) ?? []
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         device = try container.decodeIfPresent(String.self, forKey: .device) ?? ""
-        seenAt = try container.decodeIfPresent(String.self, forKey: .seenAt) ?? ""
-        lineItems = try container.decodeIfPresent([ValidationLineItem].self, forKey: .lineItems) ?? []
+        supplier = try container.decodeIfPresent(Supplier.self, forKey: .supplier) ?? Supplier()
+        user = try container.decodeIfPresent(User.self, forKey: .user) ?? User()
+        deeplink = try container.decodeIfPresent(String.self, forKey: .deeplink) ?? ""
     }
 }

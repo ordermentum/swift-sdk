@@ -164,6 +164,7 @@ enum CodingKeys: String, CodingKey {
     case dateLabel
     case dayStart
     case days
+    case deeplink
     case defaultDeliveryDelay
     case defaultNotifications
     case defaultPaymentMethodType

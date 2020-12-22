@@ -24,16 +24,14 @@ public enum CartRouter: URLRequestConvertible {
     //Paths
     var path: String {
         switch self {
-        case .hydrate:
-            return "cart"
+        case .hydrate(let cartId):
+            return "cart/\(cartId)"
         }
     }
     
     //Parameters
     var parameters: [String: Any] {
         switch self {
-        case .hydrate(let supplierId):
-            return ["supplierId": supplierId]
         default:
             return [:]
         }
