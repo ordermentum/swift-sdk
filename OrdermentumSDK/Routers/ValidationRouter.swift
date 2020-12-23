@@ -21,6 +21,13 @@ public enum ValidationRouter: URLRequestConvertible {
         }
     }
     
+    var version: String {
+        switch self {
+        default:
+            return "v1/"
+        }
+    }
+    
     //Paths
     var path: String {
         switch self {
@@ -47,6 +54,6 @@ public enum ValidationRouter: URLRequestConvertible {
     
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
+        return try Client.instance.urlRequest(path: version+path, method: method, parameters: parameters, body: body)
     }
 }

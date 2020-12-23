@@ -151,4 +151,19 @@ public class ProductsService {
             completion(result, responseObject, errorObject)
         }
     }
+    
+    /**
+     * Fetch for products
+     * Accepts: retailerId string and ProductSearchRequest obj
+     * Returns a ProductResponse object
+     */
+    public func fetchProducts(retailerId: String, requestObject: ProductSearchRequest, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = ProductsRouter.fetchProducts(retailerId, requestObject) as URLRequestConvertible
+        
+        //Call API
+        Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
 }

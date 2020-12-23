@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 public enum ProductsRouter: URLRequestConvertible {
-    //Routes
+    //Routes v1
     case getCategoryDirectory(String)
     case getProductDirectory(String, String)
     case getProductCategories(String, String, Int, Int)
@@ -21,30 +21,26 @@ public enum ProductsRouter: URLRequestConvertible {
     case getTrendingProducts(String, String, Bool, Int, Int)
     case getRecommendedProducts(String, String, Int, [String])
     case searchProducts(String, String, String, Bool, Int)
+    
+    //Rputes v2
+    case fetchProducts(String, ProductSearchRequest)
 
     //Methods
     var method: HTTPMethod {
         switch self {
-        case .getCategoryDirectory:
+        case .fetchProducts:
+            return .post
+        default:
             return .get
-        case .getProductDirectory:
-            return .get
-        case .getProductCategories:
-            return .get
-        case .getCategory:
-            return .get
-        case .getProduct:
-            return .get
-        case .getProducts:
-            return .get
-        case .getMostOrderedProducts:
-            return .get
-        case .getTrendingProducts:
-            return .get
-        case .getRecommendedProducts:
-            return .get
-        case .searchProducts:
-            return .get
+        }
+    }
+    
+    var version: String {
+        switch self {
+        case .fetchProducts:
+            return "v2/"
+        default:
+            return "v1/"
         }
     }
     
@@ -71,6 +67,8 @@ public enum ProductsRouter: URLRequestConvertible {
             return "products/recommendations"
         case .searchProducts:
             return "products"
+        case .fetchProducts(let retailerId, _):
+            return "products/\(retailerId)/search"
         }
     }
     
@@ -103,6 +101,8 @@ public enum ProductsRouter: URLRequestConvertible {
     //Body
     var body: Codable? {
         switch self {
+        case .fetchProducts(_, let requestObject):
+            return requestObject
         default:
             return nil
         }
@@ -110,6 +110,6 @@ public enum ProductsRouter: URLRequestConvertible {
     
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
+        return try Client.instance.urlRequest(path: version+path, method: method, parameters: parameters, body: body)
     }
 }

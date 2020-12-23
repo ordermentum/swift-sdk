@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2617F58D2553BD910088D6AF /* ClientV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2617F58C2553BD910088D6AF /* ClientV2.swift */; };
-		2617F5912553BDA60088D6AF /* ProfileRouterV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2617F5902553BDA60088D6AF /* ProfileRouterV2.swift */; };
-		2617F5952553BDC50088D6AF /* ProfileServiceV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2617F5942553BDC50088D6AF /* ProfileServiceV2.swift */; };
-		26A168272574F54B00435EF6 /* ProductsServiceV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A168262574F54B00435EF6 /* ProductsServiceV2.swift */; };
-		26A1682B2574F57E00435EF6 /* ProductsRouterV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A1682A2574F57E00435EF6 /* ProductsRouterV2.swift */; };
 		26D281BF22A5FB4300D06E4E /* AppVersionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D281BE22A5FB4300D06E4E /* AppVersionService.swift */; };
 		26D281C122A5FE7700D06E4E /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D281C022A5FE7700D06E4E /* AppVersion.swift */; };
 		26EF6CC6229F79660050D1E3 /* AnalyticsTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF6CC5229F79660050D1E3 /* AnalyticsTrackable.swift */; };
@@ -155,11 +150,6 @@
 
 /* Begin PBXFileReference section */
 		249F582D16A080253A3CC3DE /* Pods-OrdermentumSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrdermentumSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrdermentumSDK/Pods-OrdermentumSDK.debug.xcconfig"; sourceTree = "<group>"; };
-		2617F58C2553BD910088D6AF /* ClientV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientV2.swift; sourceTree = "<group>"; };
-		2617F5902553BDA60088D6AF /* ProfileRouterV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRouterV2.swift; sourceTree = "<group>"; };
-		2617F5942553BDC50088D6AF /* ProfileServiceV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileServiceV2.swift; sourceTree = "<group>"; };
-		26A168262574F54B00435EF6 /* ProductsServiceV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsServiceV2.swift; sourceTree = "<group>"; };
-		26A1682A2574F57E00435EF6 /* ProductsRouterV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsRouterV2.swift; sourceTree = "<group>"; };
 		26D281BE22A5FB4300D06E4E /* AppVersionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionService.swift; sourceTree = "<group>"; };
 		26D281C022A5FE7700D06E4E /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		26EF6CC5229F79660050D1E3 /* AnalyticsTrackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTrackable.swift; sourceTree = "<group>"; };
@@ -378,7 +368,6 @@
 			isa = PBXGroup;
 			children = (
 				CA929F96225561A400E957AC /* Client.swift */,
-				2617F58C2553BD910088D6AF /* ClientV2.swift */,
 				CA5B63E722EA92CE0057A93F /* StaticClient.swift */,
 				CAA84A4F22B1D9630092A801 /* FlagsClient.swift */,
 				CA06924D24A95F9100B13EAB /* AuthClient.swift */,
@@ -490,9 +479,7 @@
 				CAF24685225AE8E400EDAF68 /* OrdersRouter.swift */,
 				CAF24687225AFE4A00EDAF68 /* PaymentsRouter.swift */,
 				CAF24689225B031200EDAF68 /* ProductsRouter.swift */,
-				26A1682A2574F57E00435EF6 /* ProductsRouterV2.swift */,
 				CAF2468B225B083B00EDAF68 /* ProfileRouter.swift */,
-				2617F5902553BDA60088D6AF /* ProfileRouterV2.swift */,
 				CAF2468D225B158000EDAF68 /* ProjectionsRouter.swift */,
 				CAF2468F225B189C00EDAF68 /* PurchaserRouter.swift */,
 				CAA598B122A629DE006DC414 /* RecommendedSuppliersRouter.swift */,
@@ -539,9 +526,7 @@
 				CAF246A1225B705C00EDAF68 /* OrdersService.swift */,
 				CAF246A3225C128700EDAF68 /* PaymentsService.swift */,
 				CAF246A5225C143D00EDAF68 /* ProductsService.swift */,
-				26A168262574F54B00435EF6 /* ProductsServiceV2.swift */,
 				CAF246A7225C162B00EDAF68 /* ProfileService.swift */,
-				2617F5942553BDC50088D6AF /* ProfileServiceV2.swift */,
 				CAF246A9225C185F00EDAF68 /* ProjectionsService.swift */,
 				CAF246AB225C24D700EDAF68 /* PurchaserService.swift */,
 				CAA598AF22A6296F006DC414 /* RecommendedSuppliersService.swift */,
@@ -753,7 +738,6 @@
 				CA2F35242256DA1100D1118C /* FindSupplierRouter.swift in Sources */,
 				CA929F7E22555FA900E957AC /* DataAttributes.swift in Sources */,
 				CA929F7A22555FA900E957AC /* Notify.swift in Sources */,
-				2617F5952553BDC50088D6AF /* ProfileServiceV2.swift in Sources */,
 				CA2F35202256D1CB00D1118C /* ExperimentsRouter.swift in Sources */,
 				CAD522CC22D5A857004033EF /* Paginator.swift in Sources */,
 				CA929F7222555FA900E957AC /* Projection.swift in Sources */,
@@ -800,7 +784,6 @@
 				CA2F351A2256CDDE00D1118C /* DeviceRouter.swift in Sources */,
 				CA06925624A964AA00B13EAB /* SocialRouter.swift in Sources */,
 				CAF2469C225B283600EDAF68 /* NotificationsService.swift in Sources */,
-				26A1682B2574F57E00435EF6 /* ProductsRouterV2.swift in Sources */,
 				CA2713FB24C00B6500C75927 /* VenueNotificationsRouter.swift in Sources */,
 				CA561B852383E205002E4C37 /* Impersonate.swift in Sources */,
 				CA06924E24A95F9100B13EAB /* AuthClient.swift in Sources */,
@@ -850,7 +833,6 @@
 				CA929F7722555FA900E957AC /* Purchaser.swift in Sources */,
 				CAF246A6225C143D00EDAF68 /* ProductsService.swift in Sources */,
 				CA22A5A025183B4A00155A92 /* MergeStatus.swift in Sources */,
-				2617F58D2553BD910088D6AF /* ClientV2.swift in Sources */,
 				CAF24696225B22D800EDAF68 /* FlagsService.swift in Sources */,
 				CA2F35222256D81C00D1118C /* ExperimentsService.swift in Sources */,
 				CA929F8122555FA900E957AC /* ClosurePeriod.swift in Sources */,
@@ -871,13 +853,11 @@
 				CA42CA66259037E000DC0F92 /* CartRouter.swift in Sources */,
 				CA929F8D22555FA900E957AC /* NPS.swift in Sources */,
 				CA4CF2E3225AC24D006F18C8 /* InvoiceRouter.swift in Sources */,
-				2617F5912553BDA60088D6AF /* ProfileRouterV2.swift in Sources */,
 				CA929F8822555FA900E957AC /* Validation.swift in Sources */,
 				CA06925224A9618700B13EAB /* Token.swift in Sources */,
 				CAD522CE22D5BC8C004033EF /* Links.swift in Sources */,
 				CA929F7B22555FA900E957AC /* SignUp.swift in Sources */,
 				CA2F351E2256CF9A00D1118C /* DeviceService.swift in Sources */,
-				26A168272574F54B00435EF6 /* ProductsServiceV2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
