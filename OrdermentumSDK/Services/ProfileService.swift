@@ -61,4 +61,18 @@ public class ProfileService {
             completion(result, errorObject)
         }
     }
+    
+    /**
+     * Fetch the public fields of the signup profile (main purpose for now is to check for autoconnect)
+     * Returns a SupplierSignupProfile
+     */
+    public func checkProfile(code: String, supplierId: String, completion: @escaping (Bool, SupplierSignupProfile?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = ProfileRouter.checkProfile(code, supplierId) as URLRequestConvertible
+
+        //Call API
+        Service<SupplierSignupProfile, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
 }

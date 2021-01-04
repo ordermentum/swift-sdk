@@ -10,23 +10,35 @@ import Foundation
 import Alamofire
 
 public enum ProfileRouter: URLRequestConvertible {
-    //Routes
+    //Routes v1
     case getProfile
     case updateProfile(String, UpdateUserRequest)
     case updateVenuePositions(String, [String: [String]])
+    
+    //Routes v2
+    case checkProfile(String, String)
 
     //Methods
     var method: HTTPMethod {
         switch self {
-        case .getProfile:
-            return .get
         case .updateProfile:
             return .patch
         case .updateVenuePositions:
             return .put
+        default:
+            return .get
         }
     }
 
+    var version: String {
+        switch self {
+        case .checkProfile:
+            return "v2/"
+        default:
+            return "v1/"
+        }
+    }
+    
     //Paths
     var path: String {
         switch self {
@@ -36,12 +48,16 @@ public enum ProfileRouter: URLRequestConvertible {
             return "users/\(userId)"
         case .updateVenuePositions(let userId, _):
             return "users/\(userId)/positions"
+        case .checkProfile(let code, _):
+            return "profiles/check/\(code)"
         }
     }
 
     //Parameters
     var parameters: [String: Any] {
         switch self {
+        case .checkProfile(_, let id):
+            return ["supplierId": id]
         default:
             return [:]
         }
@@ -61,6 +77,6 @@ public enum ProfileRouter: URLRequestConvertible {
 
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
+        return try Client.instance.urlRequest(path: version+path, method: method, parameters: parameters, body: body)
     }
 }

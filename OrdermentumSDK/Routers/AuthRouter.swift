@@ -39,6 +39,15 @@ public enum AuthRouter: URLRequestConvertible {
         }
     }
     
+    var version: String {
+        switch self {
+        case .resetPassword: // Not on v1?
+            return ""
+        default:
+            return "v1/"
+        }
+    }
+    
     //Paths
     var path: String {
         switch self {
@@ -93,6 +102,6 @@ public enum AuthRouter: URLRequestConvertible {
     
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try Client.instance.urlRequest(path: path, method: method, parameters: parameters, body: body)
+        return try Client.instance.urlRequest(path: version+path, method: method, parameters: parameters, body: body)
     }
 }
