@@ -9,8 +9,8 @@
 import Foundation
 
 public struct Cart {
-    public init(deliveryDate: String?, lineItems: [CartLineItem]?, retailerId: String?, supplierId: String?) {}
-    
+    public init(deliveryDate: String?, lineItems: [CartLineItem]?, retailerId: String?, supplierId: String?) { }
+
     public var deliveryDate: String?
     public var lineItems: [CartLineItem]?
     public var retailerId: String?
@@ -18,7 +18,7 @@ public struct Cart {
 }
 
 public struct CartProduct {
-    public init() {}
+    public init() { }
     public init(product: Product, quantity: Int, comment: String? = nil) {
         self.product = product
         self.quantity = quantity
@@ -30,8 +30,8 @@ public struct CartProduct {
 }
 
 public struct CartOrder {
-    public init() {}
-    
+    public init() { }
+
     public var lineItems: [CartLineItem]?
     public var supplierId: String?
     public var retailerId: String?
@@ -45,7 +45,7 @@ public struct CartOrder {
 }
 
 public struct CartLineItem {
-    public init() {}
+    public init() { }
     public init(productId: String?, quantity: Int?, comment: String?) {
         self.productId = productId
         self.quantity = quantity
@@ -60,7 +60,7 @@ extension Cart: Encodable {
     public func encode(to encoder: Encoder) throws {
         //Init Container
         var container = encoder.container(keyedBy: CodingKeys.self)
-        
+
         //Encode Items
         try container.encode(deliveryDate, forKey: .deliveryDate)
         try container.encode(lineItems, forKey: .lineItems)
@@ -73,7 +73,7 @@ extension CartOrder: Encodable {
     public func encode(to encoder: Encoder) throws {
         //Init Container
         var container = encoder.container(keyedBy: CodingKeys.self)
-        
+
         //Encode Items
         try container.encode(lineItems, forKey: .lineItems)
         try container.encode(supplierId, forKey: .supplierId)
@@ -92,7 +92,7 @@ extension CartLineItem: Encodable {
     public func encode(to encoder: Encoder) throws {
         //Init Container
         var container = encoder.container(keyedBy: CodingKeys.self)
-        
+
         //Encode Items
         try container.encode(productId, forKey: .productId)
         try container.encode(quantity, forKey: .quantity)
@@ -103,7 +103,7 @@ extension CartProduct: Equatable, AnalyticsTrackable {
     public static func == (lhs: CartProduct, rhs: CartProduct) -> Bool {
         return lhs.product.id == rhs.product.id
     }
-    
+
     public var trackableProperties: [String: String]? {
         var properties: [String: String] = [:]
         properties["productId"] = product.id

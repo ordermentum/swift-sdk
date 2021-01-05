@@ -12,12 +12,15 @@ import Alamofire
 public enum CartRouter: URLRequestConvertible {
     //Routes
     case hydrate(String)
+    case populateCart(CartActionRequest)
     
     //Methods
     var method: HTTPMethod {
         switch self {
         case .hydrate:
             return .get
+        case .populateCart:
+            return .patch
         }
     }
     
@@ -33,6 +36,8 @@ public enum CartRouter: URLRequestConvertible {
         switch self {
         case .hydrate(let cartId):
             return "cart/\(cartId)"
+        case .populateCart:
+            return "cart"
         }
     }
     
@@ -47,6 +52,8 @@ public enum CartRouter: URLRequestConvertible {
     //Body
     var body: Codable? {
         switch self {
+        case .populateCart(let requestObject):
+            return requestObject
         default:
             return nil
         }
