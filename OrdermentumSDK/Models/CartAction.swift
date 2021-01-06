@@ -18,16 +18,16 @@ public enum CartActions: String {
 public struct CartActionRequest: Codable {
     public init() { }
     
-    var supplierId: String = ""
-    var retailerId: String = ""
-    var purchaserId: String = ""
-    var actions: [CartAction] = []
+    public var supplierId: String = ""
+    public var retailerId: String = ""
+    public var purchaserId: String = ""
+    public var actions: [CartAction] = []
 }
 
 public struct CartAction: Codable {
     public init() { }
 
-    var action: String = ""
-    var productId: String = ""
-    var quantity: Int = 0
+    public var action: String = ""
+    public var productId: String = ""
+    public var quantity: Int = 0
 }
