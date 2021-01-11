@@ -24,7 +24,7 @@ public enum AppVersionRouter: URLRequestConvertible {
     var version: String {
         switch self {
         default:
-            return "v1/"
+            return ""
         }
     }
     
