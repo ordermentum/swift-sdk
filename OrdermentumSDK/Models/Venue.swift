@@ -61,6 +61,7 @@ public struct JoinVenueRequest: Codable {
 
     public var recipientEntityId: String = ""
     public var userId: String = ""
+    public var source: String = "code"
 }
 
 public struct AcceptInviteRequest: Codable {
