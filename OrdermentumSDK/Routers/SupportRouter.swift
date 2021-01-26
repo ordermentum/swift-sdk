@@ -27,7 +27,7 @@ public enum SupportRouter: URLRequestConvertible {
     var version: String {
         switch self {
         default:
-            return "v1/"
+            return "v2/"
         }
     }
     

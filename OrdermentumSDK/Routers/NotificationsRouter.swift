@@ -27,7 +27,7 @@ public enum NotificationsRouter: URLRequestConvertible {
     var version: String {
         switch self {
         default:
-            return "v1/"
+            return "v2/"
         }
     }
     

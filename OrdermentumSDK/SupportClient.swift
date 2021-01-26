@@ -59,5 +59,5 @@ public class SupportClient {
 }
 
 public enum SupportClientURL {
-    public static let rootSupportURL = "https://ordermentum.zendesk.com/api/v2/"
+    public static let rootSupportURL = "https://ordermentum.zendesk.com/api/"
 }
