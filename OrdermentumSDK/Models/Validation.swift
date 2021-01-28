@@ -20,6 +20,8 @@ public struct ValidationRequestBody: Codable {
     public var type: String = ""
     public var origin: String = "retailer"
     public var couponCode: String?
+    public var cutOff: String?
+    public var scheduleId: String?
 }
 
 public struct ValidationRequestBodyLineItem: Codable {
