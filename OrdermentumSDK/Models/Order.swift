@@ -243,6 +243,8 @@ public struct CreateStandingOrder: Codable {
     public var retailerId: String = ""
     public var supplierId: String = ""
     public var type: String = ""
+    public var cutOff: String?
+    public var scheduleId: String?
 }
 
 public struct CreatePurchaserSchedule: Codable {
