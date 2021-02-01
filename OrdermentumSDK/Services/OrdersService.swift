@@ -239,4 +239,18 @@ public class OrdersService {
             completion(result, errorObject)
         }
     }
+    
+    /**
+     * Retrieves the 50 most recent activity events on an order.
+     * Returns an ActivityResponse object.
+     */
+    public func getActivity(supplierId: String, orderId: String, sortBy: String = "-1", completion: @escaping (Bool, ActivityResponse?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = OrdersRouter.getActivity(supplierId, orderId, sortBy) as URLRequestConvertible
+
+        //Call API
+        Service<ActivityResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
 }

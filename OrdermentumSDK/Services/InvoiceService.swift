@@ -118,4 +118,18 @@ public class InvoiceService {
             completion(result, errorObject)
         }
     }
+    
+    /**
+     * Retrieves the 50 most recent activity events on an invoice.
+     * Returns an ActivityResponse object.
+     */
+    public func getActivity(supplierId: String, invoiceId: String, sortBy: String = "-1", completion: @escaping (Bool, ActivityResponse?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = InvoiceRouter.getActivity(supplierId, invoiceId, sortBy) as URLRequestConvertible
+
+        //Call API
+        Service<ActivityResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
 }

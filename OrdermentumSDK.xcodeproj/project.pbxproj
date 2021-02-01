@@ -51,6 +51,7 @@
 		CA4CF2E5225ADAF6006F18C8 /* MarketplaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E4225ADAF6006F18C8 /* MarketplaceRouter.swift */; };
 		CA4CF2E7225ADC1B006F18C8 /* NotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E6225ADC1B006F18C8 /* NotificationsRouter.swift */; };
 		CA4CF2E9225AE089006F18C8 /* NotifyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4CF2E8225AE089006F18C8 /* NotifyRouter.swift */; };
+		CA5076A825C79CDD00C09B2D /* ActivityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5076A725C79CDD00C09B2D /* ActivityResponse.swift */; };
 		CA561B852383E205002E4C37 /* Impersonate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA561B842383E205002E4C37 /* Impersonate.swift */; };
 		CA5B63E622EA8BBE0057A93F /* AppVersionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5B63E522EA8BBE0057A93F /* AppVersionRouter.swift */; };
 		CA5B63E822EA92CE0057A93F /* StaticClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5B63E722EA92CE0057A93F /* StaticClient.swift */; };
@@ -202,6 +203,7 @@
 		CA4CF2E4225ADAF6006F18C8 /* MarketplaceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceRouter.swift; sourceTree = "<group>"; };
 		CA4CF2E6225ADC1B006F18C8 /* NotificationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRouter.swift; sourceTree = "<group>"; };
 		CA4CF2E8225AE089006F18C8 /* NotifyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyRouter.swift; sourceTree = "<group>"; };
+		CA5076A725C79CDD00C09B2D /* ActivityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityResponse.swift; sourceTree = "<group>"; };
 		CA561B842383E205002E4C37 /* Impersonate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impersonate.swift; sourceTree = "<group>"; };
 		CA5B63E522EA8BBE0057A93F /* AppVersionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionRouter.swift; sourceTree = "<group>"; };
 		CA5B63E722EA92CE0057A93F /* StaticClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticClient.swift; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 			children = (
 				CA22A5A525185E7600155A92 /* AcceptInviteResponse.swift */,
 				CA929F5722555FA700E957AC /* AccountSettings.swift */,
+				CA5076A725C79CDD00C09B2D /* ActivityResponse.swift */,
 				CA929F5C22555FA800E957AC /* AddOns.swift */,
 				CA929F5022555FA700E957AC /* Address.swift */,
 				26D281C022A5FE7700D06E4E /* AppVersion.swift */,
@@ -758,6 +761,7 @@
 				CAF2468E225B158000EDAF68 /* ProjectionsRouter.swift in Sources */,
 				CAF2468A225B031200EDAF68 /* ProductsRouter.swift in Sources */,
 				26D281C122A5FE7700D06E4E /* AppVersion.swift in Sources */,
+				CA5076A825C79CDD00C09B2D /* ActivityResponse.swift in Sources */,
 				CA42CA702590E1A800DC0F92 /* Hydrate.swift in Sources */,
 				CA2F350E2255ACCF00D1118C /* ClosurePeriodsRouter.swift in Sources */,
 				CA5B63E822EA92CE0057A93F /* StaticClient.swift in Sources */,

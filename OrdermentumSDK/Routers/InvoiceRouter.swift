@@ -17,6 +17,7 @@ public enum InvoiceRouter: URLRequestConvertible {
     case getInvoiceExport(String)
     case getExportDownload(String)
     case applyPayment(String, InvoicePaymentRequest)
+    case getActivity(String, String, String)
     
     //Methods
     var method: HTTPMethod {
@@ -33,6 +34,8 @@ public enum InvoiceRouter: URLRequestConvertible {
             return .get
         case .applyPayment:
             return .put
+        case .getActivity:
+            return .get
         }
     }
     
@@ -58,6 +61,8 @@ public enum InvoiceRouter: URLRequestConvertible {
             return "exports/\(invoiceId)/download"
         case .applyPayment(let invoiceId, _):
             return "invoices/\(invoiceId)/pay"
+        case .getActivity:
+            return "events"
         }
     }
     
@@ -66,6 +71,8 @@ public enum InvoiceRouter: URLRequestConvertible {
         switch self {
         case .getInvoices(let dictionary):
             return dictionary
+        case .getActivity(let supplierId, let invoiceId, let sortBy):
+            return ["supplierId": supplierId, "entityId": invoiceId, "pageSize": 50, "pageNo": 1, "group": "invoices", "sortBy[updatedAt]": sortBy]
         default:
             return [:]
         }

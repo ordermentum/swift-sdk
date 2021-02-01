@@ -27,6 +27,7 @@ public enum OrdersRouter: URLRequestConvertible {
     case getInstalmentsURL(String)
     case reportIssue(ReportOrderIssueRequest)
     case receiveOrder(String)
+    case getActivity(String, String, String)
 
     //Methods
     var method: HTTPMethod {
@@ -63,6 +64,8 @@ public enum OrdersRouter: URLRequestConvertible {
             return .post
         case .receiveOrder:
             return .post
+        case .getActivity:
+            return .get
         }
     }
 
@@ -108,6 +111,8 @@ public enum OrdersRouter: URLRequestConvertible {
             return "order-issues"
         case .receiveOrder(let orderId):
             return "orders/\(orderId)/receive"
+        case .getActivity:
+            return "events"
         }
     }
 
@@ -126,6 +131,8 @@ public enum OrdersRouter: URLRequestConvertible {
             return ["retailerId": retailerId, "supplierId": supplierId, "type": type, "sortBy[name]": sortBy, "pageNo": pageNo]
         case .getClassicStandingOrders(let retailerId, let supplierId, let enabled, let sortBy):
             return ["retailerId": retailerId, "supplierId": supplierId, "standingOrdersEnabled": enabled, "sortBy": sortBy]
+        case .getActivity(let supplierId, let orderId, let sortBy):
+            return ["supplierId": supplierId, "entityId": orderId, "pageSize": 50, "pageNo": 1, "group": "orders", "sortBy[updatedAt]": sortBy]
         default:
             return [:]
         }

@@ -68,9 +68,13 @@ enum CodingKeys: String, CodingKey {
     case accountName
     case accountSettings
     case accounting
+    case actionedBy
+    case actionedById
+    case actionedByName
     case actionLabel
     case active
     case activeRetailerIds
+    case activity
     case activityEnded
     case addTax
     case address
@@ -103,6 +107,8 @@ enum CodingKeys: String, CodingKey {
     case bsb
     case byhour
     case byminute
+    case byRetailer
+    case bySupplier
     case canCharge
     case canMarkAsPaid
     case canMarkAsUnpaid
@@ -197,6 +203,7 @@ enum CodingKeys: String, CodingKey {
     case editableUntil
     case effects
     case email
+    case emailedTo
     case enableDeliveryDate
     case enableEmail
     case enableSMS
@@ -232,7 +239,10 @@ enum CodingKeys: String, CodingKey {
     case fromRetailers
     case fullName
     case globalBakeXml
+    case group
     case groupPayments
+    case growthEngine
+    case growthEnginePlus
     case gst
     case hasAvailableDeliveries
     case hasScheduledOrder
@@ -244,6 +254,7 @@ enum CodingKeys: String, CodingKey {
     case imageURL
     case includeOrderUpdatesInReports
     case includeWeekends
+    case industryType
     case infos
     case insights
     case integrationData
@@ -328,6 +339,7 @@ enum CodingKeys: String, CodingKey {
     case orderPrefix
     case orderSchedule
     case orderStatus
+    case orderType
     case orderedAt
     case ordermentum
     case orders
