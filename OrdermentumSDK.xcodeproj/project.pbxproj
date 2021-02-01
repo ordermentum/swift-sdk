@@ -18,6 +18,7 @@
 		CA06925024A9606700B13EAB /* SocialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06924F24A9606700B13EAB /* SocialService.swift */; };
 		CA06925224A9618700B13EAB /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06925124A9618700B13EAB /* Token.swift */; };
 		CA06925624A964AA00B13EAB /* SocialRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06925524A964AA00B13EAB /* SocialRouter.swift */; };
+		CA146D9D25C77A7400B369D0 /* OrderDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA146D9C25C77A7400B369D0 /* OrderDisplay.swift */; };
 		CA22A5A025183B4A00155A92 /* MergeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA22A59F25183B4A00155A92 /* MergeStatus.swift */; };
 		CA22A5A625185E7600155A92 /* AcceptInviteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA22A5A525185E7600155A92 /* AcceptInviteResponse.swift */; };
 		CA2713FB24C00B6500C75927 /* VenueNotificationsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2713FA24C00B6500C75927 /* VenueNotificationsRouter.swift */; };
@@ -168,6 +169,7 @@
 		CA06924F24A9606700B13EAB /* SocialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialService.swift; sourceTree = "<group>"; };
 		CA06925124A9618700B13EAB /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		CA06925524A964AA00B13EAB /* SocialRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialRouter.swift; sourceTree = "<group>"; };
+		CA146D9C25C77A7400B369D0 /* OrderDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDisplay.swift; sourceTree = "<group>"; };
 		CA22A59F25183B4A00155A92 /* MergeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeStatus.swift; sourceTree = "<group>"; };
 		CA22A5A525185E7600155A92 /* AcceptInviteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptInviteResponse.swift; sourceTree = "<group>"; };
 		CA2713FA24C00B6500C75927 /* VenueNotificationsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueNotificationsRouter.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				CA929F5222555FA700E957AC /* Notify.swift */,
 				CA929F6522555FA800E957AC /* NPS.swift */,
 				CA929F6322555FA800E957AC /* Order.swift */,
+				CA146D9C25C77A7400B369D0 /* OrderDisplay.swift */,
 				CA929F4822555FA600E957AC /* Payment.swift */,
 				CA929F5F22555FA800E957AC /* PaymentMethod.swift */,
 				CA354C49238B5EE000B19B03 /* PaymentOption.swift */,
@@ -786,6 +789,7 @@
 				CA929F7922555FA900E957AC /* Image.swift in Sources */,
 				CA929F7522555FA900E957AC /* TrackingKeys.swift in Sources */,
 				CA929F7C22555FA900E957AC /* VenueSearch.swift in Sources */,
+				CA146D9D25C77A7400B369D0 /* OrderDisplay.swift in Sources */,
 				CA4CF2E7225ADC1B006F18C8 /* NotificationsRouter.swift in Sources */,
 				CA2F350C2255AC5D00D1118C /* ClosureDatesService.swift in Sources */,
 				CA929F8722555FA900E957AC /* PaymentMethod.swift in Sources */,

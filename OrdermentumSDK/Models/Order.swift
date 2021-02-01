@@ -64,7 +64,7 @@ public struct Order: Encodable {
     public var createdBy: String = ""
     public var deliveryDate: String = ""
     public var directProcessing: Bool = false
-    public var display: Display = Display()
+    public var display: OrderDisplay = OrderDisplay()
     public var dueAt: String = ""
     public var editable: Bool = false
     public var freight: Float = 0.00
@@ -345,7 +345,7 @@ extension Order: Decodable {
         createdBy = try container.decodeIfPresent(String.self, forKey: .createdBy) ?? ""
         deliveryDate = try container.decodeIfPresent(String.self, forKey: .deliveryDate) ?? ""
         directProcessing = try container.safeBoolDecode(forKey: .directProcessing) ?? false
-        display = try container.decodeIfPresent(Display.self, forKey: .display) ?? Display()
+        display = try container.decodeIfPresent(OrderDisplay.self, forKey: .display) ?? OrderDisplay()
         dueAt = try container.decodeIfPresent(String.self, forKey: .dueAt) ?? ""
         editable = try container.safeBoolDecode(forKey: .editable) ?? false
         freight = try container.safeFloatDecode(forKey: .freight) ?? 0.00

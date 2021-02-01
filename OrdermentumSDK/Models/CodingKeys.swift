@@ -187,6 +187,7 @@ enum CodingKeys: String, CodingKey {
     case disabled
     case disconnectUrl
     case discounts
+    case discountSavings
     case display
     case displayName
     case displayUOM
@@ -274,6 +275,7 @@ enum CodingKeys: String, CodingKey {
     case isReinstatable
     case isRetailerEditable
     case isSuperAdmin
+    case isUpdated
     case label
     case lastFinishedAt
     case lastInvoiceSyncedAt
@@ -523,6 +525,9 @@ enum CodingKeys: String, CodingKey {
     case totalGST
     case totalPaid
     case totalQuantity
+    case totalSavings
+    case totalSponsoredDiscount
+    case totalSupplierDiscount
     case totalWeight
     case tradingHours
     case tradingName
