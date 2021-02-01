@@ -76,6 +76,7 @@ public struct Order: Encodable {
     public var isReceivable: Bool = false
     public var isOutstanding: Bool = false
     public var isRetailerEditable: Bool = false
+    public var issue: OrderIssue?
     public var isUpdated: Bool = false
     public var label: String = ""
     public var lineItems: [LineItem] = []
@@ -357,6 +358,7 @@ extension Order: Decodable {
         isReceivable = try container.safeBoolDecode(forKey: .isReceivable) ?? false
         isOutstanding = try container.safeBoolDecode(forKey: .isOutstanding) ?? false
         isRetailerEditable = try container.safeBoolDecode(forKey: .isRetailerEditable) ?? false
+        issue = try container.decodeIfPresent(OrderIssue.self, forKey: .issue)
         isUpdated = try container.safeBoolDecode(forKey: .isUpdated) ?? false
         label = try container.decodeIfPresent(String.self, forKey: .label) ?? ""
         lineItems = try container.decodeIfPresent([LineItem].self, forKey: .lineItems) ?? []

@@ -285,6 +285,7 @@ enum CodingKeys: String, CodingKey {
     case isOutstanding
     case isReinstatable
     case isRetailerEditable
+    case issue
     case isSuperAdmin
     case isUpdated
     case label
@@ -437,6 +438,9 @@ enum CodingKeys: String, CodingKey {
     case referenceId
     case remindedAt
     case remittance
+    case reportedBy
+    case resolution
+    case resolvedAt
     case resource_type
     case restart
     case retailer
