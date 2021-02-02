@@ -56,6 +56,7 @@ public struct Invoice: Encodable {
     public var sentLateNotificationAt: Bool = false
     public var sentOverdueNotificationAt: Bool = false
     public var settlementReference: String = ""
+    public var status: String = ""
     public var submittedAt: String = ""
     public var subtotal: Float = 0.00
     public var supplier: Supplier = Supplier()
@@ -205,6 +206,7 @@ extension Invoice: Decodable {
         sentLateNotificationAt = try container.safeBoolDecode(forKey: .sentLateNotificationAt) ?? false
         sentOverdueNotificationAt = try container.safeBoolDecode(forKey: .sentOverdueNotificationAt) ?? false
         settlementReference = try container.decodeIfPresent(String.self, forKey: .settlementReference) ?? ""
+        status = try container.decodeIfPresent(String.self, forKey: .status) ?? ""
         submittedAt = try container.decodeIfPresent(String.self, forKey: .submittedAt) ?? ""
         subtotal = try container.safeFloatDecode(forKey: .subtotal) ?? 0.00
         supplier = try container.decodeIfPresent(Supplier.self, forKey: .supplier) ?? Supplier()
