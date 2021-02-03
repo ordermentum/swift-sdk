@@ -34,6 +34,7 @@ public struct Invoice: Encodable {
     public var invoiceSendAt: String = ""
     public var invoiceSentAt: String = ""
     public var invoiceSyncedAt: String = ""
+    public var issue: OrderIssue?
     public var locked: Bool = false
     public var number: String = ""
     public var orders: [Order] = []
@@ -184,6 +185,7 @@ extension Invoice: Decodable {
         invoiceSendAt = try container.decodeIfPresent(String.self, forKey: .invoiceSendAt) ?? ""
         invoiceSentAt = try container.decodeIfPresent(String.self, forKey: .invoiceSentAt) ?? ""
         invoiceSyncedAt = try container.decodeIfPresent(String.self, forKey: .invoiceSyncedAt) ?? ""
+        issue = try container.decodeIfPresent(OrderIssue.self, forKey: .issue)
         locked = try container.safeBoolDecode(forKey: .locked) ?? false
         number = try container.decodeIfPresent(String.self, forKey: .number) ?? ""
         orders = try container.decodeIfPresent([Order].self, forKey: .orders) ?? []
