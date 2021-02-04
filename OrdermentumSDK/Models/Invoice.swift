@@ -92,19 +92,26 @@ public struct InvoiceSetting: Encodable {
 }
 
 public struct InvoiceDisplay: Encodable {
-    public var subtotal: String = ""
-    public var total: String = ""
+    public init() { }
     public var totalCost: String = ""
     public var totalFreight: String = ""
+    public var subtotal: String = ""
     public var totalGST: String = ""
-    public var surcharge: String = ""
-    public var totalFreightTax: String = ""
+    public var total: String = ""
     public var totalDue: String = ""
+    public var totalFreightTax: String = ""
+    public var totalDiscount: String = ""
+    public var totalSponsoredDiscount: String = ""
+    public var totalSavings: String = ""
+    public var surcharge: String = ""
+    public var credit: String = ""
+    public var totalSupplierDiscount: String = ""
     public var date: String = ""
     public var dueAt: String = ""
     public var createdAt: String = ""
     public var billingStartDate: String = ""
     public var billingEndDate: String = ""
+    public var paymentMethod: String = ""
 }
 
 public struct ExportResponse {
@@ -261,19 +268,25 @@ extension InvoiceDisplay: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         //Decode Data
-        subtotal = try container.decodeIfPresent(String.self, forKey: .subtotal) ?? ""
-        total = try container.decodeIfPresent(String.self, forKey: .total) ?? ""
         totalCost = try container.decodeIfPresent(String.self, forKey: .totalCost) ?? ""
         totalFreight = try container.decodeIfPresent(String.self, forKey: .totalFreight) ?? ""
+        subtotal = try container.decodeIfPresent(String.self, forKey: .subtotal) ?? ""
         totalGST = try container.decodeIfPresent(String.self, forKey: .totalGST) ?? ""
-        surcharge = try container.decodeIfPresent(String.self, forKey: .surcharge) ?? ""
-        totalFreightTax = try container.decodeIfPresent(String.self, forKey: .totalFreightTax) ?? ""
+        total = try container.decodeIfPresent(String.self, forKey: .total) ?? ""
         totalDue = try container.decodeIfPresent(String.self, forKey: .totalDue) ?? ""
+        totalFreightTax = try container.decodeIfPresent(String.self, forKey: .totalFreightTax) ?? ""
+        totalDiscount = try container.decodeIfPresent(String.self, forKey: .totalDiscount) ?? ""
+        totalSponsoredDiscount = try container.decodeIfPresent(String.self, forKey: .totalSponsoredDiscount) ?? ""
+        totalSavings = try container.decodeIfPresent(String.self, forKey: .totalSavings) ?? ""
+        surcharge = try container.decodeIfPresent(String.self, forKey: .surcharge) ?? ""
+        credit = try container.decodeIfPresent(String.self, forKey: .credit) ?? ""
+        totalSupplierDiscount = try container.decodeIfPresent(String.self, forKey: .totalSupplierDiscount) ?? ""
         date = try container.decodeIfPresent(String.self, forKey: .date) ?? ""
         dueAt = try container.decodeIfPresent(String.self, forKey: .dueAt) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
         billingStartDate = try container.decodeIfPresent(String.self, forKey: .billingStartDate) ?? ""
         billingEndDate = try container.decodeIfPresent(String.self, forKey: .billingEndDate) ?? ""
+        paymentMethod = try container.decodeIfPresent(String.self, forKey: .paymentMethod) ?? ""
     }
 }
 
