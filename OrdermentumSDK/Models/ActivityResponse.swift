@@ -42,8 +42,8 @@ public struct ActivityEventData {
     public var number: String = ""
     public var emailedTo: String?
     public var orderType: String = ""
-    public var byRetailer: String = ""
-    public var bySupplier: String = ""
+    public var byRetailer: Bool = false
+    public var bySupplier: Bool = false
     public var growthEngine: Bool?
     public var industryType: String?
     public var supplierName: String?
@@ -99,8 +99,8 @@ extension ActivityEventData: Decodable {
         number = try container.decodeIfPresent(String.self, forKey: .number) ?? ""
         emailedTo = try container.decodeIfPresent(String.self, forKey: .emailedTo)
         orderType = try container.decodeIfPresent(String.self, forKey: .orderType) ?? ""
-        byRetailer = try container.decodeIfPresent(String.self, forKey: .byRetailer) ?? ""
-        bySupplier = try container.decodeIfPresent(String.self, forKey: .bySupplier) ?? ""
+        byRetailer = try container.safeBoolDecode(forKey: .byRetailer) ?? false
+        bySupplier = try container.safeBoolDecode(forKey: .bySupplier) ?? false
         growthEngine = try container.safeBoolDecode(forKey: .growthEngine)
         growthEnginePlus = try container.safeBoolDecode(forKey: .growthEnginePlus)
         industryType = try container.decodeIfPresent(String.self, forKey: .industryType)
