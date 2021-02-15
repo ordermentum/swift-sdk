@@ -265,6 +265,9 @@ public struct UpdateOrderRequest: Codable {
     public var name: String = ""
     public var origin: String = ""
     public var type: String = ""
+    public var cutOff: String?
+    public var deliveryDate: String?
+    public var scheduleId: String?
 }
 
 public struct UpdateScheduleRequest: Codable {
