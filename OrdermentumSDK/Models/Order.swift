@@ -299,10 +299,16 @@ public struct InstalmentsResponse: Encodable {
 
 public struct ReportOrderIssueRequest: Codable {
     public init() { }
-    
+
     public var orderId: String = ""
     public var type: String = ""
     public var comment: String = ""
+}
+
+public struct ResolveIssueRequest: Codable {
+    public init() { }
+
+    public var resolution: String = "Resolved by retailer without reason."
 }
 
 extension OrderResponse: Decodable {

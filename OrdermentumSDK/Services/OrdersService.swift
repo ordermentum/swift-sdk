@@ -227,6 +227,20 @@ public class OrdersService {
     }
     
     /**
+     * Resolves the current issue on an order. Provides a default resolution string.
+     * Returns a ResponseBody
+     */
+    public func resolveIssue(orderId: String, requestObject: ResolveIssueRequest, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = OrdersRouter.resolveIssue(orderId, requestObject) as URLRequestConvertible
+
+        //Call API
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
+            completion(result, errorObject)
+        }
+    }
+    
+    /**
      * Report to a supplier that a retailer has received an order without issue.
      * Returns a ResponseBody
      */

@@ -26,6 +26,7 @@ public enum OrdersRouter: URLRequestConvertible {
     case scheduleOrder(String, CreatePurchaserSchedule)
     case getInstalmentsURL(String)
     case reportIssue(ReportOrderIssueRequest)
+    case resolveIssue(String, ResolveIssueRequest)
     case receiveOrder(String)
     case getActivity(String, String, String)
 
@@ -61,6 +62,8 @@ public enum OrdersRouter: URLRequestConvertible {
         case .getInstalmentsURL:
             return .get
         case .reportIssue:
+            return .post
+        case .resolveIssue:
             return .post
         case .receiveOrder:
             return .post
@@ -109,6 +112,8 @@ public enum OrdersRouter: URLRequestConvertible {
             return "orders/\(orderId)/instalment"
         case .reportIssue:
             return "order-issues"
+        case .resolveIssue(let orderId, _):
+            return "orders/\(orderId)/resolve-issue"
         case .receiveOrder(let orderId):
             return "orders/\(orderId)/receive"
         case .getActivity:
@@ -154,6 +159,8 @@ public enum OrdersRouter: URLRequestConvertible {
         case .scheduleOrder(_, let requestObject):
             return requestObject
         case .reportIssue(let requestObject):
+            return requestObject
+        case .resolveIssue(_, let requestObject):
             return requestObject
         default:
             return nil
