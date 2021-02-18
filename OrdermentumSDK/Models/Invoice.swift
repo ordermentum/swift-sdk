@@ -18,6 +18,7 @@ public struct Invoice: Encodable {
     public init() { }
 
     public var cancelledAt: String = ""
+    public var canRequestPaymentMethod: Bool = false
     public var chargedByUserId: String = ""
     public var charged_by_user_id: String = ""
     public var createdAt: String = ""
@@ -30,6 +31,7 @@ public struct Invoice: Encodable {
     public var dueAt: String = ""
     public var display: InvoiceDisplay = InvoiceDisplay()
     public var externalId: String = ""
+    public var hasRequestedPaymentMethod: Bool = false
     public var id: String = ""
     public var invoiceSendAt: String = ""
     public var invoiceSentAt: String = ""

@@ -112,6 +112,7 @@ enum CodingKeys: String, CodingKey {
     case canCharge
     case canMarkAsPaid
     case canMarkAsUnpaid
+    case canRequestPaymentMethod
     case cancelled
     case cancelledAt
     case cancelledByName
@@ -245,6 +246,7 @@ enum CodingKeys: String, CodingKey {
     case growthEnginePlus
     case gst
     case hasAvailableDeliveries
+    case hasRequestedPaymentMethod
     case hasScheduledOrder
     case hasTerms
     case height

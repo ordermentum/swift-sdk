@@ -132,4 +132,14 @@ public class InvoiceService {
             completion(result, responseObject, errorObject)
         }
     }
+    
+    public func requestPayment(invoiceId: String, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = InvoiceRouter.requestPayment(invoiceId) as URLRequestConvertible
+        
+        //Call API
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
+            completion(result, errorObject)
+        }
+    }
 }
