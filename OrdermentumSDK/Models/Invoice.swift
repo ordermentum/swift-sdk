@@ -178,6 +178,7 @@ extension Invoice: Decodable {
 
         //Decode Data
         cancelledAt = try container.decodeIfPresent(String.self, forKey: .cancelledAt) ?? ""
+        canRequestPaymentMethod = try container.safeBoolDecode(forKey: .canRequestPaymentMethod) ?? false
         chargedByUserId = try container.decodeIfPresent(String.self, forKey: .chargedByUserId) ?? ""
         charged_by_user_id = try container.decodeIfPresent(String.self, forKey: .charged_by_user_id) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
@@ -190,6 +191,7 @@ extension Invoice: Decodable {
         dueAt = try container.decodeIfPresent(String.self, forKey: .dueAt) ?? ""
         display = try container.decodeIfPresent(InvoiceDisplay.self, forKey: .display) ?? InvoiceDisplay()
         externalId = try container.decodeIfPresent(String.self, forKey: .externalId) ?? ""
+        hasRequestedPaymentMethod = try container.safeBoolDecode(forKey: .hasRequestedPaymentMethod) ?? false
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         invoiceSendAt = try container.decodeIfPresent(String.self, forKey: .invoiceSendAt) ?? ""
         invoiceSentAt = try container.decodeIfPresent(String.self, forKey: .invoiceSentAt) ?? ""
