@@ -128,6 +128,7 @@ enum CodingKeys: String, CodingKey {
     case categories
     case category
     case chargable
+    case chargeAt
     case chargedAt
     case chargedBy
     case chargedByUser

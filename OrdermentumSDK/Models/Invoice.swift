@@ -19,6 +19,7 @@ public struct Invoice: Encodable {
 
     public var cancelledAt: String = ""
     public var canRequestPaymentMethod: Bool = false
+    public var chargeAt: String?
     public var chargedByUserId: String = ""
     public var charged_by_user_id: String = ""
     public var createdAt: String = ""
@@ -179,6 +180,7 @@ extension Invoice: Decodable {
         //Decode Data
         cancelledAt = try container.decodeIfPresent(String.self, forKey: .cancelledAt) ?? ""
         canRequestPaymentMethod = try container.safeBoolDecode(forKey: .canRequestPaymentMethod) ?? false
+        chargeAt = try container.decodeIfPresent(String.self, forKey: .chargeAt)
         chargedByUserId = try container.decodeIfPresent(String.self, forKey: .chargedByUserId) ?? ""
         charged_by_user_id = try container.decodeIfPresent(String.self, forKey: .charged_by_user_id) ?? ""
         createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt) ?? ""
