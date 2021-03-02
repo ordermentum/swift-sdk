@@ -30,6 +30,43 @@ public class InvoiceService {
     }
     
     /**
+     * Get the invoices belonging to a retailer
+     * Returns a InvoiceResponse
+     */
+    public func getInvoices(retailerId: String, sortBy: String?, sortOrder: String?, pageNo: Int, pageSize: Int, completion: @escaping (Bool, InvoiceResponse?, ErrorResponse?) -> Void) {
+        //Build Params
+        var params: [String: Any] = [:]
+        params["retailerId"] = retailerId
+        params["pageNo"] = pageNo
+        params["pageSize"] = pageSize
+        if let sortByKey: String = sortBy, let sortByValue: String = sortOrder {
+            params["sortBy[\(sortByKey)]"] = sortByValue
+        }
+        
+        //Build Route
+        let route = InvoiceRouter.getInvoices(params) as URLRequestConvertible
+        
+        //Call API
+        Service<InvoiceResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
+     * Get invoices based on arbitrary key values
+     * Returns a InvoiceResponse
+     */
+    public func getInvoices(params: [String: Any], completion: @escaping (Bool, InvoiceResponse?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = InvoiceRouter.getInvoices(params) as URLRequestConvertible
+        
+        //Call API
+        Service<InvoiceResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    /**
      * Get all the invoices available to the current logged in user.
      * Returns an InvoiceResponse
      */
