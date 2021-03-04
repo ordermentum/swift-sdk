@@ -575,6 +575,7 @@ enum CodingKeys: String, CodingKey {
     case venueTypes
     case verifiedAt
     case version
+    case videoUrl
     case visibilityGroup
     case visibilityGroupId
     case visible

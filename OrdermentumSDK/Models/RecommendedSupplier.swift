@@ -52,6 +52,7 @@ public struct RecommendedSupplierDataAttributes {
     public var primaryCategory: String = ""
     public var primaryProducts: String = ""
     public var promotedCategories: [String] = []
+    public var videoUrl: String = ""
 }
 
 public struct RecommendedSupplierAccountSettings {
@@ -113,6 +114,7 @@ extension RecommendedSupplierDataAttributes: Decodable {
         primaryCategory = try container.decodeIfPresent(String.self, forKey: .primaryCategory) ?? ""
         primaryProducts = try container.decodeIfPresent(String.self, forKey: .primaryProducts) ?? ""
         promotedCategories = try container.decodeIfPresent([String].self, forKey: .promotedCategories) ?? []
+        videoUrl = try container.decodeIfPresent(String.self, forKey: .videoUrl) ?? ""
     }
 }
 
