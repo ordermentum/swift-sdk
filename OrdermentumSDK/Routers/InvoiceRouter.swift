@@ -41,7 +41,7 @@ public enum InvoiceRouter: URLRequestConvertible {
         case .requestPayment:
             return .post
         case .markAsPaid(_, let paid):
-            return paid ? .delete : .put
+            return paid ? .put : .delete
         }
     }
     
