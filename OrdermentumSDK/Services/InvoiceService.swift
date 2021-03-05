@@ -179,4 +179,19 @@ public class InvoiceService {
             completion(result, errorObject)
         }
     }
+    
+    /// Allows a retailer to mark an invoice as paid or unpaid. This does not necessarily mean that an invoice is in fact paid.
+    /// - Parameters:
+    ///   - invoiceId: The invoice that is being marked for payment
+    ///   - paid: Whether the invoice is to marked as paid or unpaid
+    ///   - completion: Async completion handler notifying that the request has completed. Contains success, data and error objects.
+    public func markAsPaid(invoiceId: String, paid: Bool, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = InvoiceRouter.markAsPaid(invoiceId, paid) as URLRequestConvertible
+        
+        //Call API
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
+            completion(result, errorObject)
+        }
+    }
 }

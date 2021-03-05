@@ -377,6 +377,8 @@ enum CodingKeys: String, CodingKey {
     case paymentMethodTypes
     case paymentRecurrence
     case paymentSchedule
+    case paymentSentAt
+    case paymentSentBy
     case paymentStatus
     case paymentTerms
     case paymentTransactionId

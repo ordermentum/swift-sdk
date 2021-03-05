@@ -47,6 +47,8 @@ public struct Invoice: Encodable {
     public var paymentMethod: String = ""
     public var paymentMethodId: String = ""
     public var paymentStatus: String = ""
+    public var paymentSentAt: String?
+    public var paymentSentBy: String?
     public var paymentTransactionId: String = ""
     public var processing: Bool = false
     public var processingError: String = ""
@@ -207,6 +209,8 @@ extension Invoice: Decodable {
         payable = try container.safeBoolDecode(forKey: .payable) ?? false
         paymentMethod = try container.decodeIfPresent(String.self, forKey: .paymentMethod) ?? ""
         paymentMethodId = try container.decodeIfPresent(String.self, forKey: .paymentMethodId) ?? ""
+        paymentSentAt = try container.decodeIfPresent(String.self, forKey: .paymentSentAt)
+        paymentSentBy = try container.decodeIfPresent(String.self, forKey: .paymentSentBy)
         paymentStatus = try container.decodeIfPresent(String.self, forKey: .paymentStatus) ?? ""
         paymentTransactionId = try container.decodeIfPresent(String.self, forKey: .paymentTransactionId) ?? ""
         processing = try container.safeBoolDecode(forKey: .processing) ?? false
