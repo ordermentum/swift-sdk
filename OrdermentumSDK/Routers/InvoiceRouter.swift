@@ -72,7 +72,7 @@ public enum InvoiceRouter: URLRequestConvertible {
         case .requestPayment(let invoiceId):
             return "invoices/\(invoiceId)/payment-request"
         case .markAsPaid(let invoiceId, _):
-            return "invoice/\(invoiceId)/payment-sent"
+            return "invoices/\(invoiceId)/payment-sent"
         }
     }
     
