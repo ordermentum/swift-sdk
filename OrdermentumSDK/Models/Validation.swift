@@ -31,7 +31,7 @@ public struct ValidationRequestBodyLineItem: Codable {
         self.quantity = quantity
         self.id = id
     }
-    public var id: String = ""
+    public var id: String?
     public var productId: String = ""
     public var quantity: Int = 0
 }
