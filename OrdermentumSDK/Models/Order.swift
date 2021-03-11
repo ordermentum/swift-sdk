@@ -137,6 +137,7 @@ public struct LineItem: Encodable {
     public var totalWeight: Float = 0
     public var updatedAt: String = ""
     public var weight: Float = 0
+    public var id: String = ""
 }
 
 public struct ClassicStandingOrder {
@@ -288,6 +289,7 @@ public struct UpdateOrderRequestLineItem: Codable {
 
     public var productId: String = ""
     public var quantity: Int = 0
+    public var id: String = ""
 }
 
 public struct InstalmentsResponse: Encodable {
@@ -432,6 +434,7 @@ extension LineItem: Decodable {
         totalWeight = try container.safeFloatDecode(forKey: .totalWeight) ?? 0
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
         weight = try container.safeFloatDecode(forKey: .weight) ?? 0
+        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
     }
 }
 
