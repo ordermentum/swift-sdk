@@ -138,6 +138,7 @@ public struct LineItem: Encodable {
     public var updatedAt: String = ""
     public var weight: Float = 0
     public var id: String = ""
+    public var randomWeight: Bool = false
 }
 
 public struct ClassicStandingOrder {
@@ -435,6 +436,7 @@ extension LineItem: Decodable {
         updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) ?? ""
         weight = try container.safeFloatDecode(forKey: .weight) ?? 0
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        randomWeight = try container.safeBoolDecode(forKey: .randomWeight) ?? false
     }
 }
 
