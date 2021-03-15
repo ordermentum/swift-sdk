@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 public typealias PaginatorCompletion = (Paginator) -> Void
 
