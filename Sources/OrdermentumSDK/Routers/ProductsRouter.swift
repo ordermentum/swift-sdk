@@ -21,7 +21,7 @@ public enum ProductsRouter: URLRequestConvertible {
     case getTrendingProducts(String, String, Bool, Int, Int)
     case getRecommendedProducts(String, String, Int, [String])
     case searchProducts(String, String, String, Bool, Int)
-    case getVariants(String)
+    case getVariants(String, String)
     
     //Rputes v2
     case fetchProducts(String, ProductSearchRequest)
@@ -70,8 +70,8 @@ public enum ProductsRouter: URLRequestConvertible {
             return "products"
         case .fetchProducts(let retailerId, _):
             return "products/\(retailerId)/search"
-        case .getVariants(let productId):
-            return "products/\(productId)/variants"
+        case .getVariants(let purchaserId, let productId):
+            return "purchasers/\(purchaserId)/products/\(productId)/variants"
         }
     }
     
