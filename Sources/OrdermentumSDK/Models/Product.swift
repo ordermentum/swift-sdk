@@ -67,6 +67,9 @@ public struct Product: Encodable {
     public var outOfStock: Bool = false
     public var poa: Bool = false
     public var paymentOptions: [PaymentOption] = []
+    public var hasVariants: Bool = false
+    public var variants: [ProductVariantPreview] = []
+    public var variant: ProductVariantPreview? = nil
 }
 
 public struct Display: Encodable {
@@ -121,6 +124,9 @@ extension Product: Decodable {
         outOfStock = try container.safeBoolDecode(forKey: .outOfStock) ?? false
         poa = try container.safeBoolDecode(forKey: .poa) ?? false
         paymentOptions = try container.decodeIfPresent([PaymentOption].self, forKey: .paymentOptions) ?? []
+        hasVariants = try container.safeBoolDecode(forKey: .hasVariants) ?? false
+        variants = try container.decodeIfPresent([ProductVariantPreview].self, forKey: .variants) ?? []
+        variant = try container.decodeIfPresent(ProductVariantPreview.self, forKey: .variant) ?? nil
     }
 }
 

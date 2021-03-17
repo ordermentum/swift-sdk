@@ -166,4 +166,18 @@ public class ProductsService {
             completion(result, responseObject, errorObject)
         }
     }
+    
+    /// GET's the variants associated to a product. Will always retrun at least one variant even if product does not have variants setup, being the product itself represented as a variant.
+    /// - Parameters:
+    ///   - productId: The id of the product that should be used to fetch variants
+    ///   - completion: Async callback containing result, response and error objects.
+    public func getVariants(productId: String, completion: @escaping (Bool, VariantsResponse?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = ProductsRouter.getVariants(productId) as URLRequestConvertible
+        
+        //Call API
+        Service<VariantsResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
 }
