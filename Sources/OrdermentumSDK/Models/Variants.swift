@@ -48,6 +48,7 @@ public struct ProductVariant {
     public var updated_by_id: String? = nil
     public var deleted_by_id: String? = nil
     public var price: String = ""
+    public var display: Display = Display()
 }
 
 public struct ProductVariantPreview: Encodable {
@@ -105,6 +106,7 @@ extension ProductVariant: Decodable {
         updated_by_id = try container.decodeIfPresent(String.self, forKey: .updated_by_id) ?? nil
         deleted_by_id = try container.decodeIfPresent(String.self, forKey: .deleted_by_id) ?? nil
         price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
+        display = try container.decodeIfPresent(Display.self, forKey: .display) ?? Display()
     }
 }
 
