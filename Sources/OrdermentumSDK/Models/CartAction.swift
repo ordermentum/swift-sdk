@@ -30,4 +30,5 @@ public struct CartAction: Codable {
     public var action: String = ""
     public var productId: String = ""
     public var quantity: Int = 0
+    public var variantId: String?
 }
