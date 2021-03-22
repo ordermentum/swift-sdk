@@ -19,14 +19,14 @@ public struct Cart {
 
 public struct CartProduct {
     public init() { }
-    public init(product: Product, quantity: Int, comment: String? = nil, id: String? = "", variantId: String? = nil) {
-        self.product = product
+    public init(productId: String, quantity: Int, comment: String? = nil, id: String? = "", variantId: String? = nil) {
+        self.productId = productId
         self.quantity = quantity
         self.comment = comment
         self.id = id
         self.variantId = variantId
     }
-    public var product: Product = Product()
+    public var productId: String = ""
     public var quantity: Int = 0
     public var comment: String?
     public var id: String?
@@ -105,13 +105,12 @@ extension CartLineItem: Encodable {
 
 extension CartProduct: Equatable, AnalyticsTrackable {
     public static func == (lhs: CartProduct, rhs: CartProduct) -> Bool {
-        return lhs.product.id == rhs.product.id
+        return lhs.productId == rhs.productId
     }
 
     public var trackableProperties: [String: String]? {
         var properties: [String: String] = [:]
-        properties["productId"] = product.id
-        properties["productName"] = product.name
+        properties["productId"] = productId
         return properties
     }
 }
