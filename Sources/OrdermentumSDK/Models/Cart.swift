@@ -19,16 +19,18 @@ public struct Cart {
 
 public struct CartProduct {
     public init() { }
-    public init(product: Product, quantity: Int, comment: String? = nil, id: String? = "") {
+    public init(product: Product, quantity: Int, comment: String? = nil, id: String? = "", variantId: String? = nil) {
         self.product = product
         self.quantity = quantity
         self.comment = comment
         self.id = id
+        self.variantId = variantId
     }
     public var product: Product = Product()
     public var quantity: Int = 0
     public var comment: String?
     public var id: String?
+    public var variantId: String?
 }
 
 public struct CartOrder {
