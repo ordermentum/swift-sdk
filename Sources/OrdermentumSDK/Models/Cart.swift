@@ -80,7 +80,7 @@ extension CartOrder: Encodable {
 
         //Encode Items
         try container.encode(lineItems, forKey: .lineItems)
-        try container.encode(supplierId, forKey: .supplierId)
+        try container.encode(supplierId, foOrKey: .supplierId)
         try container.encode(retailerId, forKey: .retailerId)
         try container.encode(deliveryDate, forKey: .deliveryDate)
         try container.encode(comment, forKey: .comment)
@@ -105,7 +105,7 @@ extension CartLineItem: Encodable {
 
 extension CartProduct: Equatable, AnalyticsTrackable {
     public static func == (lhs: CartProduct, rhs: CartProduct) -> Bool {
-        return lhs.productId == rhs.productId
+        return lhs.productId == rhs.productId && lhs.variantId == rhs.variantId
     }
 
     public var trackableProperties: [String: String]? {
