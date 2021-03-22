@@ -80,7 +80,7 @@ extension CartOrder: Encodable {
 
         //Encode Items
         try container.encode(lineItems, forKey: .lineItems)
-        try container.encode(supplierId, foOrKey: .supplierId)
+        try container.encode(supplierId, forKey: .supplierId)
         try container.encode(retailerId, forKey: .retailerId)
         try container.encode(deliveryDate, forKey: .deliveryDate)
         try container.encode(comment, forKey: .comment)
