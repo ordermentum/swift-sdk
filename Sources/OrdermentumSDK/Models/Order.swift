@@ -28,9 +28,8 @@ public struct CreateOrder: Codable {
 public struct CreateOrderLineItem: Codable {
     public init() { }
 
-    public var name: String = ""
-    public var price: String = ""
     public var productId: String = ""
+    public var variantId: String?
     public var quantity: Int = 0
     public var comment: String?
 }
