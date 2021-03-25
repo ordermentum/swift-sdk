@@ -114,9 +114,9 @@ public class ProductsService {
      * Fetch the trending products belonging to a particular supplier/retailer relationship
      * Returns a ProductResponse object
      */
-    public func getTrendingProducts(retailerId: String, supplierId: String, visible: Bool, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
+    public func getTrendingProducts(retailerId: String, supplierId: String, excluding: [String], visible: Bool, pageSize: Int, pageNo: Int, completion: @escaping (Bool, ProductResponse?, ErrorResponse?) -> Void) {
         //Build Route
-        let route = ProductsRouter.getTrendingProducts(retailerId, supplierId, visible, pageSize, pageNo) as URLRequestConvertible
+        let route = ProductsRouter.getTrendingProducts(retailerId, supplierId, excluding, visible, pageSize, pageNo) as URLRequestConvertible
         
         //Call API
         Service<ProductResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in

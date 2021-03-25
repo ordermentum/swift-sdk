@@ -18,11 +18,11 @@ public enum ProductsRouter: URLRequestConvertible {
     case getProduct(String, String, String)
     case getProducts(String, String, String, Bool, Int, Int)
     case getMostOrderedProducts(String, String, Bool, Int, Int)
-    case getTrendingProducts(String, String, Bool, Int, Int)
+    case getTrendingProducts(String, String, [String], Bool, Int, Int)
     case getRecommendedProducts(String, String, Int, [String])
     case searchProducts(String, String, String, Bool, Int)
     case getVariants(String, String)
-    
+
     //Rputes v2
     case fetchProducts(String, ProductSearchRequest)
 
@@ -35,7 +35,7 @@ public enum ProductsRouter: URLRequestConvertible {
             return .get
         }
     }
-    
+
     var version: String {
         switch self {
         case .fetchProducts:
@@ -44,7 +44,7 @@ public enum ProductsRouter: URLRequestConvertible {
             return "v1/"
         }
     }
-    
+
     //Paths
     var path: String {
         switch self {
@@ -74,7 +74,7 @@ public enum ProductsRouter: URLRequestConvertible {
             return "purchasers/\(purchaserId)/products/\(productId)/variants"
         }
     }
-    
+
     //Parameters
     var parameters: [String: Any] {
         switch self {
@@ -90,8 +90,8 @@ public enum ProductsRouter: URLRequestConvertible {
             return ["categoryId": categoryId, "retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize, "pageNo": pageNo]
         case .getMostOrderedProducts(let retailerId, let supplierId, let visible, let pageSize, let pageNo):
             return ["retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize, "pageNo": pageNo]
-        case .getTrendingProducts(let retailerId, let supplierId, let visible, let pageSize, let pageNo):
-            return ["retailerId": retailerId, "supplierId": supplierId, "visible": visible, "pageSize": pageSize, "pageNo": pageNo]
+        case .getTrendingProducts(let retailerId, let supplierId, let excluding, let visible, let pageSize, let pageNo):
+            return ["retailerId": retailerId, "supplierId": supplierId, "id__not": excluding, "visible": visible, "pageSize": pageSize, "pageNo": pageNo]
         case .getRecommendedProducts(let retailerId, let supplierId, let pageSize, let productsArray):
             return ["retailerId": retailerId, "supplierId": supplierId, "pageSize": pageSize, "id__not": productsArray]
         case .searchProducts(let search, let retailerId, let supplierId, let visible, let pageSize):
@@ -100,7 +100,7 @@ public enum ProductsRouter: URLRequestConvertible {
             return [:]
         }
     }
-    
+
     //Body
     var body: Codable? {
         switch self {
@@ -110,9 +110,9 @@ public enum ProductsRouter: URLRequestConvertible {
             return nil
         }
     }
-    
+
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try Client.instance.urlRequest(path: version+path, method: method, parameters: parameters, body: body)
+        return try Client.instance.urlRequest(path: version + path, method: method, parameters: parameters, body: body)
     }
 }
