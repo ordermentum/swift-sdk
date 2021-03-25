@@ -110,6 +110,7 @@ public struct ValidationDisplay {
 
 public struct ValidationLineItem {
     public var productId: String = ""
+    public var variantId: String?
     public var errors: [ValidationMessage] = []
     public var warnings: [ValidationMessage] = []
     public var infos: [ValidationMessage] = []
