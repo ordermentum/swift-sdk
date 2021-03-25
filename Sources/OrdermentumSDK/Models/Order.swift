@@ -138,6 +138,7 @@ public struct LineItem: Encodable {
     public var weight: Float = 0
     public var id: String = ""
     public var randomWeight: Bool = false
+    public var variantId: String?
 }
 
 public struct ClassicStandingOrder {
