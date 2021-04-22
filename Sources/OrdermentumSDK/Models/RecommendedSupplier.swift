@@ -64,6 +64,11 @@ public struct RecommendedSupplierAccountSettings {
     public var connectionEmail: String = ""
     public var publicDirectory: Bool = false
     public var showDirectoryPrice: Bool = false
+    public var marketplaceLabel: String = ""
+    public var textColor: String = ""
+    public var backgroundColor: String = ""
+    public var darkTextColor: String = ""
+    public var darkBackgroundColor: String = ""
 }
 
 extension RecommendedSupplierResponse: Decodable {
@@ -127,6 +132,11 @@ extension RecommendedSupplierAccountSettings: Decodable {
         connectionEmail = try container.decodeIfPresent(String.self, forKey: .connectionEmail) ?? ""
         publicDirectory = try container.safeBoolDecode(forKey: .publicDirectory) ?? false
         showDirectoryPrice = try container.safeBoolDecode(forKey: .showDirectoryPrice) ?? false
+        marketplaceLabel = try container.decodeIfPresent(String.self, forKey: .marketplaceLabel) ?? ""
+        textColor = try container.decodeIfPresent(String.self, forKey: .textColor) ?? ""
+        backgroundColor = try container.decodeIfPresent(String.self, forKey: .backgroundColor) ?? ""
+        darkTextColor = try container.decodeIfPresent(String.self, forKey: .darkTextColor) ?? ""
+        darkBackgroundColor = try container.decodeIfPresent(String.self, forKey: .darkBackgroundColor) ?? ""
     }
 }
 
