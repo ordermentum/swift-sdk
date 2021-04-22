@@ -13,20 +13,20 @@ enum CodingKeys: String, CodingKey {
     case meta
     case links
     case data
-    
+
     // Meta
     case totalResults
     case totalPages
     case pageSize
     case pageNo
-    
+
     //Links
     case linksSelf = "self"
     case first
     case next
     case prev
     case last
-    
+
     //Image
     case secure_url
     case original
@@ -37,7 +37,7 @@ enum CodingKeys: String, CodingKey {
     case small
     case medium
     case large
-    
+
     //Flags
     case addons = "add-ons"
     case addVenue = "add-venue"
@@ -59,7 +59,7 @@ enum CodingKeys: String, CodingKey {
     case retailerSignupCardModal = "retailer-signup-card-modal"
     case review
     case userInvite = "user-invite"
-    
+
     //Generic
     case abn
     case accessNewRetailerUi
@@ -92,6 +92,7 @@ enum CodingKeys: String, CodingKey {
     case attacheXml
     case autoConnect
     case availableDeliveries
+    case backgroundColor
     case bankConfigured
     case banking
     case basePrice
@@ -170,6 +171,8 @@ enum CodingKeys: String, CodingKey {
     case cutOffPassed
     case cutOffTime
     case daily
+    case darkBackgroundColor
+    case darkTextColor
     case dataAttributes
     case date
     case dateLabel
@@ -320,6 +323,7 @@ enum CodingKeys: String, CodingKey {
     case longitude
     case looseCount
     case marketplace
+    case marketplaceLabel
     case marketplacePurchaser
     case marketplaceSupplier
     case maskedNumber
@@ -543,6 +547,7 @@ enum CodingKeys: String, CodingKey {
     case tax
     case taxable
     case taxType
+    case textColor
     case thu
     case timeZone
     case timezone
