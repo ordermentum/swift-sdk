@@ -35,6 +35,7 @@ public struct FindSupplierReferralRequest: Codable {
     public var retailerId: String = ""
     public var name: String = ""
     public var phone: String = ""
+    public var contactName: String = ""
     public var userId: String = ""
     public var message: String = ""
     public var source: String = ""
