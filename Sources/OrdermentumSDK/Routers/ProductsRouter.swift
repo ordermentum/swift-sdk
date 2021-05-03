@@ -82,7 +82,7 @@ public enum ProductsRouter: URLRequestConvertible {
             return ["categoryId": categoryId]
         case .getProductCategories(let retailerId, let supplierId, let pageSize, let pageNo):
             return ["retailerId": retailerId, "supplierId": supplierId, "pageSize": pageSize, "pageNo": pageNo]
-        case .getCategory(_, let supplierId, let retailerId):
+        case .getCategory(_, let retailerId, let supplierId):
             return ["retailerId": retailerId, "supplierId": supplierId]
         case .getProduct(_, let retailerId, let supplierId):
             return ["retailerId": retailerId, "supplierId": supplierId]
