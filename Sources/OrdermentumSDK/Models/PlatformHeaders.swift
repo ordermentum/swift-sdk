@@ -15,4 +15,5 @@ public struct PlatformHeaders: Encodable {
     public var deviceModel: String = ""
     public var deviceType: String = ""
     public var appVersion: String = ""
+    public var sessionId: String = ""
 }
