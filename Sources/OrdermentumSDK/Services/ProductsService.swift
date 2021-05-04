@@ -58,12 +58,12 @@ public class ProductsService {
      * Fetch a single category for a particular categoryId and supplier-retailer relationship
      * Returns a Category object
      */
-    public func getCategory(categoryId: String, retailerId: String, supplierId: String, completion: @escaping (Bool, CategoryResponse?, ErrorResponse?) -> Void) {
+    public func getCategory(categoryId: String, retailerId: String, supplierId: String, completion: @escaping (Bool, Category?, ErrorResponse?) -> Void) {
         //Build Route
         let route = ProductsRouter.getCategory(categoryId, retailerId, supplierId ) as URLRequestConvertible
         
         //Call API
-        Service<CategoryResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+        Service<Category, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }
