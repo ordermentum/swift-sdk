@@ -437,6 +437,7 @@ extension LineItem: Decodable {
         weight = try container.safeFloatDecode(forKey: .weight) ?? 0
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         randomWeight = try container.safeBoolDecode(forKey: .randomWeight) ?? false
+        variantId = try container.decodeIfPresent(String.self, forKey: .variantId) ?? ""
     }
 }
 
