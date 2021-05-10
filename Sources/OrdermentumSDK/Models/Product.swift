@@ -77,6 +77,7 @@ public struct Display: Encodable {
     public var price: String = ""
     public var unitPrice: String = ""
     public var uom: String = ""
+    public var ratePrice: String = ""
 }
 
 extension ProductResponse: Decodable {
@@ -138,6 +139,7 @@ extension Display: Decodable {
         price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
         unitPrice = try container.decodeIfPresent(String.self, forKey: .unitPrice) ?? ""
         uom = try container.decodeIfPresent(String.self, forKey: .uom) ?? ""
+        ratePrice = try container.decodeIfPresent(String.self, forKey: .ratePrice) ?? ""
     }
 }
 
