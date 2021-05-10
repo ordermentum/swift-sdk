@@ -232,9 +232,8 @@ public struct CreateFavouriteRequest: Codable {
 public struct CreateFavouriteRequestLineItem: Codable {
     public init() { }
 
-    public var name: String = ""
-    public var price: Float = 0.00
     public var productId: String = ""
+    public var variantId: String?
     public var quantity: Int = 0
 }
 
