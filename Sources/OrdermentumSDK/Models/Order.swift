@@ -580,10 +580,9 @@ extension Order {
         for lineItem in self.lineItems {
             //Create Line item
             var createFavouriteLineItem: CreateFavouriteRequestLineItem = CreateFavouriteRequestLineItem()
-            createFavouriteLineItem.name = lineItem.product.name
-            createFavouriteLineItem.price = Float(lineItem.product.formattedPrice) ?? 0
             createFavouriteLineItem.productId = lineItem.product.id
             createFavouriteLineItem.quantity = lineItem.quantity
+            createFavouriteLineItem.variantId = lineItem.variantId
             requestObject.lineItems.append(createFavouriteLineItem)
         }
 
