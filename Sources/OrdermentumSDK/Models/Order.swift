@@ -288,7 +288,7 @@ public struct UpdateOrderRequestLineItem: Codable {
     public init() { }
 
     public var productId: String = ""
-    public var variantId: String = ""
+    public var variantId: String?
     public var quantity: Int = 0
     public var id: String = ""
 }
