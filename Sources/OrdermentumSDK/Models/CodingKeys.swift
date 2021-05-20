@@ -592,6 +592,7 @@ enum CodingKeys: String, CodingKey {
     case user_id
     case value
     case valueThreshold
+    case variantId
     case venue
     case venueTypes
     case verifiedAt

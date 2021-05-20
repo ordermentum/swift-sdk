@@ -245,6 +245,7 @@ extension ValidationLineItem: Decodable {
         quantity = try container.safeFloatDecode(forKey: .quantity) ?? 0
         comment = try container.decodeIfPresent(String.self, forKey: .comment) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        variantId = try container.decodeIfPresent(String.self, forKey: .variantId) ?? ""
     }
 }
 
