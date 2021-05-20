@@ -119,6 +119,7 @@ public struct ValidationLineItem {
     public var product: Product = Product()
     public var quantity: Float = 0
     public var comment: String?
+    public var name: String?
 }
 
 public struct ValidationLineItemDisplay {
@@ -130,6 +131,7 @@ public struct ValidationLineItemDisplay {
     public var total: Float = 0.00
     public var surcharge: Float = 0.00
     public var displayUOM: String = ""
+    public var ratePrice: String = ""
 }
 
 extension Validation: Decodable {
@@ -242,6 +244,7 @@ extension ValidationLineItem: Decodable {
         product = try container.decodeIfPresent(Product.self, forKey: .product) ?? Product()
         quantity = try container.safeFloatDecode(forKey: .quantity) ?? 0
         comment = try container.decodeIfPresent(String.self, forKey: .comment) ?? ""
+        name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
     }
 }
 
@@ -259,6 +262,7 @@ extension ValidationLineItemDisplay: Decodable {
         total = try container.safeFloatDecode(forKey: .total) ?? 0
         surcharge = try container.safeFloatDecode(forKey: .surcharge) ?? 0
         displayUOM = try container.decodeIfPresent(String.self, forKey: .displayUOM) ?? ""
+        ratePrice = try container.decodeIfPresent(String.self, forKey: .ratePrice) ?? ""
     }
 }
 
