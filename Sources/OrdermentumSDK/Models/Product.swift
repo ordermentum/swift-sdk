@@ -70,6 +70,7 @@ public struct Product: Encodable {
     public var hasVariants: Bool = false
     public var variants: [ProductVariantPreview] = []
     public var variant: ProductVariantPreview? = nil
+    public var variantId: String? = nil
 }
 
 public struct Display: Encodable {
@@ -128,6 +129,7 @@ extension Product: Decodable {
         hasVariants = try container.safeBoolDecode(forKey: .hasVariants) ?? false
         variants = try container.decodeIfPresent([ProductVariantPreview].self, forKey: .variants) ?? []
         variant = try container.decodeIfPresent(ProductVariantPreview.self, forKey: .variant) ?? nil
+        variantId = try container.decodeIfPresent(String.self, forKey: .variantId) ?? nil
     }
 }
 
