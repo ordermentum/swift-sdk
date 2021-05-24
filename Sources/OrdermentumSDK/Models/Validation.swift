@@ -26,16 +26,18 @@ public struct ValidationRequestBody: Codable {
 
 public struct ValidationRequestBodyLineItem: Codable {
     public init() { }
-    public init(productId: String, quantity: Int, id: String, variantId: String? = nil) {
+    public init(productId: String, quantity: Int, id: String, variantId: String? = nil, comment: String? = nil) {
         self.productId = productId
         self.quantity = quantity
         self.id = id
         self.variantId = variantId
+        self.comment = comment
     }
     public var id: String?
     public var productId: String = ""
     public var quantity: Int = 0
     public var variantId: String?
+    public var comment: String?
 }
 
 /** Response **/
