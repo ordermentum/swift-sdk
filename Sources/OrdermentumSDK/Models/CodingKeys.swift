@@ -491,6 +491,7 @@ enum CodingKeys: String, CodingKey {
     case sameDeliveryAndBillingAddress
     case sat
     case schedule
+    case scheduled
     case scheduleEnabled
     case scheduleId
     case scheduleName

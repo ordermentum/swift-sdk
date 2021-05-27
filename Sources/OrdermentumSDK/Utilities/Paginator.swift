@@ -10,7 +10,7 @@ import Foundation
 
 public typealias PaginatorCompletion = (Paginator) -> Void
 
-public protocol PaginatorDelegate: class {
+public protocol PaginatorDelegate: AnyObject {
     func paginatorFetch(_ sender: Paginator)
 }
 
