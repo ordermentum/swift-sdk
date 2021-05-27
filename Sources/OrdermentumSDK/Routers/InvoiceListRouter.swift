@@ -63,6 +63,6 @@ public enum InvoiceListRouter: URLRequestConvertible {
     
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try Client.instance.urlRequest(path: version+path, method: method, parameters: parameters, body: body, timeout: timeout)
+        return try DocumentumClient.instance.urlRequest(path: version+path, method: method, parameters: parameters, body: body, timeout: timeout)
     }
 }
