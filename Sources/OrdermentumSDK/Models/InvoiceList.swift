@@ -24,6 +24,7 @@ public struct ListInvoice {
     public var total: String = ""
     public var date: String = ""
     public var dueAt: String = ""
+    public var paidAt: String? = nil
     public var supplierId: String? = nil
     public var supplierName: String? = nil
     public var scheduled: Bool = false
@@ -54,6 +55,7 @@ extension ListInvoice: Decodable {
         total = try container.decodeIfPresent(String.self, forKey: .total) ?? ""
         date = try container.decodeIfPresent(String.self, forKey: .date) ?? ""
         dueAt = try container.decodeIfPresent(String.self, forKey: .dueAt) ?? ""
+        paidAt = try container.decodeIfPresent(String.self, forKey: .paidAt) ?? nil
         supplierId = try container.decodeIfPresent(String.self, forKey: .supplierId) ?? nil
         supplierName = try container.decodeIfPresent(String.self, forKey: .supplierName) ?? nil
         scheduled = try container.safeBoolDecode(forKey: .scheduled) ?? false
