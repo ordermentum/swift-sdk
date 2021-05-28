@@ -8,14 +8,12 @@
 import Foundation
 import Alamofire
 
-public class DocumentumService {
-    public init() { }
-    
+public enum DocumentumService {
     /// Get invoices based on arbitrary key/value pairs
     /// - Parameters:
     ///   - params: Dictionary of `[String: Any]` values that can be used to filter invoices
     ///   - completion: Completion block containing the invoice response data
-    public func getInvoices(params: [String: Any], completion: @escaping (Bool, InvoiceListResponse?, ErrorResponse?) -> Void) {
+    public static func getInvoices(params: [String: Any], completion: @escaping (Bool, InvoiceListResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = InvoiceListRouter.getInvoices(params) as URLRequestConvertible
         
