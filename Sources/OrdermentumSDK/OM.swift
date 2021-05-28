@@ -1,32 +1,43 @@
 //
-//  DocumentumClient.swift
-//  
+//  File.swift
 //
-//  Created by Brandon Stillitano on 27/5/21.
-///
+//
+//  Created by Brandon Stillitano on 28/5/21.
+//
 
 import Foundation
+
 import Alamofire
 
-public class DocumentumClient {
+public class Endpoints {
+    public init() { }
+
+    public var auth: String = ""
+    public var documentum: String = ""
+    public var flags: String = ""
+    public var ordermentum: String = ""
+    public var support: String = ""
+}
+
+public class OM {
     //Data
-    public var baseURL: String = ""
     public var token: String = ""
     public var headers: [String: String] = [:]
-    
+    public var endpoints: Endpoints = Endpoints()
+
     //Private Init to Stop Re-Initialisation
-    private init() {}
-    public static let instance = DocumentumClient()
-    
+    private init() { }
+    public static let instance = OM()
+
     //Services
-    public var documentum: DocumentumService = DocumentumService()
-    
+    public var documentum = DocumentumService.self
+
     // MARK: Convenience Methods
     public func getHeaderToken() -> String {
         return String(format: "Bearer \(token)")
     }
 
-    public func urlRequest(path: String, method: HTTPMethod, parameters: Parameters, body: Codable?, timeout: Int = 10) throws -> URLRequest {
+    public func urlRequest(baseURL: String, path: String, method: HTTPMethod, parameters: Parameters, body: Codable?, timeout: Int = 10) throws -> URLRequest {
         //Setup Data
         let url = try baseURL.asURL()
         let timeoutSeconds: Int = timeout
@@ -54,9 +65,4 @@ public class DocumentumClient {
                                arrayEncoding: .brackets,
                                boolEncoding: .literal).encode(request, with: parameters.filter { $0.value != nil })
     }
-}
-
-public enum DocumentumClientURL {
-    public static let rootURL = "https://documentum.ordermentum.com/"
-    public static let rootTestingURL = "https://documentum.ordermentum-sandbox.com/"
 }

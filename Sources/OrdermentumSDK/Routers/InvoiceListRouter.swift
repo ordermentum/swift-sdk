@@ -20,12 +20,19 @@ public enum InvoiceListRouter: URLRequestConvertible {
         }
     }
     
+    //Base URL
+    var baseURL: String {
+        return OM.instance.endpoints.documentum
+    }
+    
+    //Version
     var version: String {
         switch self {
         default:
             return "v1/"
         }
     }
+    
     
     //Paths
     var path: String {
@@ -63,6 +70,6 @@ public enum InvoiceListRouter: URLRequestConvertible {
     
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try DocumentumClient.instance.urlRequest(path: version+path, method: method, parameters: parameters, body: body, timeout: timeout)
+        return try OM.instance.urlRequest(baseURL: baseURL, path: version+path, method: method, parameters: parameters, body: body, timeout: timeout)
     }
 }
