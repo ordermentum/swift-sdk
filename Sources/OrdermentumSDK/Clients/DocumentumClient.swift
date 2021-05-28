@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-public class DocumentumClient {
+internal class DocumentumClient {
     //Data
     public var baseURL: String = ""
     public var token: String = ""
