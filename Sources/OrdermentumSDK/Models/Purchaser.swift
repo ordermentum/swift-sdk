@@ -257,6 +257,7 @@ public struct CreatePurchaserRequest: Codable {
     public var supplierId: String = ""
     public var retailerId: String = ""
     public var voucherCode: String? = nil
+    public var isTrading: Bool = false
 }
 
 extension PurchaserResponse: Decodable {
