@@ -105,7 +105,7 @@ public enum DocumentumRouter: URLRequestConvertible {
 
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        let optionalPath: String? = signedURL == nil ? nil : version + path
+        let optionalPath: String? = signedURL == nil ? version + path : nil
         return try OM.instance.urlRequest(baseURL: signedURL ?? baseURL, path: optionalPath, method: method, parameters: parameters, body: body, contentType: contentType, timeout: timeout)
     }
 }
