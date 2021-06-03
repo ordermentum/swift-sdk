@@ -38,8 +38,8 @@ public enum DocumentumService {
         let route = DocumentumRouter.uploadFile(url, data) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
-            completion(result, responseObject, errorObject)
+        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
+            completion(result, errorObject)
         }
     }
 }
