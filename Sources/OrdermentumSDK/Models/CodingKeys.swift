@@ -211,6 +211,7 @@ enum CodingKeys: String, CodingKey {
     case displayUOM
     case dob
     case dueAt
+    case dueDate
     case editable
     case editableUntil
     case effects
@@ -587,6 +588,7 @@ enum CodingKeys: String, CodingKey {
     case updated_at
     case updated_by_id
     case updateUrl
+    case uploadUrls
     case url
     case user
     case userId
