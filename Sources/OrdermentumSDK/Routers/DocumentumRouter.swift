@@ -26,6 +26,16 @@ public enum DocumentumRouter: URLRequestConvertible {
         }
     }
     
+    //Auth
+    var requiresAuthorization: Bool {
+        switch self {
+        case .uploadFile:
+            return false
+        default:
+            return true
+        }
+    }
+    
     //Signed URL
     var signedURL: String? {
         switch self {
@@ -106,6 +116,13 @@ public enum DocumentumRouter: URLRequestConvertible {
     //Builder
     public func asURLRequest() throws -> URLRequest {
         let optionalPath: String? = signedURL == nil ? version + path : nil
-        return try OM.instance.urlRequest(baseURL: signedURL ?? baseURL, path: optionalPath, method: method, parameters: parameters, body: body, contentType: contentType, timeout: timeout)
+        return try OM.instance.urlRequest(baseURL: signedURL ?? baseURL,
+                                          path: optionalPath,
+                                          method: method,
+                                          parameters: parameters,
+                                          body: body,
+                                          contentType: contentType,
+                                          timeout: timeout,
+                                          requiresAuthorization: requiresAuthorization)
     }
 }
