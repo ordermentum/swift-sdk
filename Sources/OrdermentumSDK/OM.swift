@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import Alamofire
 
 public class Endpoints {
@@ -37,17 +36,17 @@ public class OM {
         return String(format: "Bearer \(token)")
     }
 
-    public func urlRequest(baseURL: String, path: String, method: HTTPMethod, parameters: Parameters, body: Codable?, timeout: Int = 10) throws -> URLRequest {
+    public func urlRequest(baseURL: String, path: String?, method: HTTPMethod, parameters: Parameters, body: Codable?, contentType: ContentType, timeout: Int = 10) throws -> URLRequest {
         //Setup Data
         let url = try baseURL.asURL()
         let timeoutSeconds: Int = timeout
 
         //Build Request
-        var request = URLRequest(url: url.appendingPathComponent(path))
+        var request = URLRequest(url: url.appendingPathComponent(path ?? ""))
         request.httpMethod = method.rawValue
         request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
         request.httpBody = body?.toJSONData()
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
 
         //Set Headers
