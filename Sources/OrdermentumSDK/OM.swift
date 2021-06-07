@@ -62,6 +62,6 @@ public class OM {
         //Set Conditional Body
         return try URLEncoding(destination: .queryString,
                                arrayEncoding: .brackets,
-                               boolEncoding: .literal).encode(request, with: parameters.filter { $0.value != nil })
+                               boolEncoding: .literal).encode(request, with: parameters)
     }
 }
