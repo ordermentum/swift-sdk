@@ -13,16 +13,16 @@ class Service<D: Decodable, E: Decodable> {
     func request(route: URLRequestConvertible, completion: @escaping (Bool, D?, E?) -> Void) {
         AF.request(route)
             .validate()
-            .responseJSON { response in
-            handleResponse(response, completion: completion)
+            .responseJSON { [weak self] response in
+                self?.handleResponse(response, completion: completion)
         }
     }
 
     func upload(_ data: Data, route: URLRequestConvertible, completion: @escaping (Bool, D?, E?) -> Void) {
         AF.upload(data, with: route)
             .validate()
-            .responseJSON { response in
-            handleResponse(response, completion: completion)
+            .responseJSON { [weak self] response in
+                self?.handleResponse(response, completion: completion)
         }
     }
 
