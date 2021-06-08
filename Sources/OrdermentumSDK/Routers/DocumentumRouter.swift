@@ -26,6 +26,16 @@ public enum DocumentumRouter: URLRequestConvertible {
         }
     }
     
+    //Encoding
+    var percentEncoding: Bool {
+        switch self {
+        case .uploadFile:
+            return false
+        default:
+            return true
+        }
+    }
+    
     //Auth
     var requiresAuthorization: Bool {
         switch self {
@@ -123,6 +133,7 @@ public enum DocumentumRouter: URLRequestConvertible {
                                           body: body,
                                           contentType: contentType,
                                           timeout: timeout,
-                                          requiresAuthorization: requiresAuthorization)
+                                          requiresAuthorization: requiresAuthorization,
+                                          percentEncoding: percentEncoding)
     }
 }
