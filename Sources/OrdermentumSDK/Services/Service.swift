@@ -18,14 +18,6 @@ class Service<D: Decodable, E: Decodable> {
         }
     }
 
-    func upload(_ data: Data, route: URLRequestConvertible, completion: @escaping (Bool, D?, E?) -> Void) {
-        AF.upload(data, with: route)
-            .validate()
-            .responseJSON { response in
-                self.handleResponse(response, completion: completion)
-        }
-    }
-
     private func handleResponse(_ response: AFDataResponse<Any>, completion: @escaping (Bool, D?, E?) -> Void) {
         switch response.result {
         case .success:
