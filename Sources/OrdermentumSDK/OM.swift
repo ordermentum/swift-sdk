@@ -60,7 +60,7 @@ public class OM {
         }
 
         //Set Conditional Body
-        return try URLEncoding(destination: requiresAuthorization ? .httpBody : .queryString,
+        return try URLEncoding(destination: .queryString,
                                arrayEncoding: .brackets,
                                boolEncoding: .literal).encode(request, with: parameters)
     }
