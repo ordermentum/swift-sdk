@@ -63,6 +63,6 @@ public class OM {
         return try DynamicURLEncoding(destination: .queryString,
                                       arrayEncoding: .brackets,
                                       boolEncoding: .literal,
-                                      percentEncoding: percentEncoding).encode(request, with: parameters)
+                                      percentEncoding: percentEncoding).encode(request, with: parameters.isEmpty ? nil : parameters)
     }
 }
