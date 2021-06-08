@@ -46,12 +46,12 @@ public class OM {
         request.httpMethod = method.rawValue
         request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
         request.httpBody = body?.toJSONData()
-        request.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+//        request.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
+//        request.setValue("application/json", forHTTPHeaderField: "Accept")
 
         //Set Headers
         for header in headers {
-            request.setValue(header.value, forHTTPHeaderField: header.key)
+//            request.setValue(header.value, forHTTPHeaderField: header.key)
         }
 
         //Set Token
