@@ -26,8 +26,8 @@ public enum DocumentumRouter: URLRequestConvertible {
         }
     }
     
-    //Auth
-    var requiresAuthorization: Bool {
+    //Headers
+    var includeHeaders: Bool {
         switch self {
         case .uploadFile:
             return false
@@ -123,6 +123,6 @@ public enum DocumentumRouter: URLRequestConvertible {
                                           body: body,
                                           contentType: contentType,
                                           timeout: timeout,
-                                          requiresAuthorization: requiresAuthorization)
+                                          includeHeaders: includeHeaders)
     }
 }

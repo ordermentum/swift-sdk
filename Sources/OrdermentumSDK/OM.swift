@@ -36,7 +36,7 @@ public class OM {
         return String(format: "Bearer \(token)")
     }
 
-    public func urlRequest(baseURL: String, path: String?, method: HTTPMethod, parameters: Parameters, body: Codable?, contentType: ContentType, timeout: Int = 10, requiresAuthorization: Bool = true) throws -> URLRequest {
+    public func urlRequest(baseURL: String, path: String?, method: HTTPMethod, parameters: Parameters, body: Codable?, contentType: ContentType, timeout: Int = 10, includeHeaders: Bool = true) throws -> URLRequest {
         //Setup Data
         let url = try baseURL.asURL()
         let timeoutSeconds: Int = timeout
@@ -46,18 +46,21 @@ public class OM {
         request.httpMethod = method.rawValue
         request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
         request.httpBody = body?.toJSONData()
-        request.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
 
         //Set Headers
-        for header in headers {
-            request.setValue(header.value, forHTTPHeaderField: header.key)
+        if includeHeaders {
+            request.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
+            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            for header in headers {
+                request.setValue(header.value, forHTTPHeaderField: header.key)
+            }
+            if !token.isEmpty {
+                request.setValue(getHeaderToken(), forHTTPHeaderField: "Authorization")
+            }
         }
 
         //Set Token
-        if !token.isEmpty && requiresAuthorization {
-            request.setValue(getHeaderToken(), forHTTPHeaderField: "Authorization")
-        }
+        
 
         //Set Conditional Body
         return try URLEncoding(destination: .queryString,
