@@ -42,7 +42,12 @@ public class OM {
         let timeoutSeconds: Int = timeout
 
         //Build Request
-        var request = URLRequest(url: url.appendingPathComponent(path ?? ""))
+        var request: URLRequest!
+        if path != nil {
+            request = URLRequest(url: url.appendingPathComponent(path ?? ""))
+        } else {
+            request = URLRequest(url: url)
+        }
         request.httpMethod = method.rawValue
         request.timeoutInterval = TimeInterval(timeoutSeconds * 1000)
         request.httpBody = body?.toJSONData()
