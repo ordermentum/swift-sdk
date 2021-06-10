@@ -12,7 +12,7 @@ public enum DocumentumRouter: URLRequestConvertible {
     //Routes
     case getInvoices([String: Any])
     case createInvoice(CreateInvoiceRequest)
-    case uploadFile(String, String)
+    case uploadFile(String, Data)
 
     //Methods
     var method: HTTPMethod {
@@ -23,16 +23,6 @@ public enum DocumentumRouter: URLRequestConvertible {
             return .post
         case .uploadFile:
             return .put
-        }
-    }
-    
-    //Encoding
-    var percentEncoding: Bool {
-        switch self {
-        case .uploadFile:
-            return false
-        default:
-            return true
         }
     }
     
@@ -133,7 +123,6 @@ public enum DocumentumRouter: URLRequestConvertible {
                                           body: body,
                                           contentType: contentType,
                                           timeout: timeout,
-                                          requiresAuthorization: requiresAuthorization,
-                                          percentEncoding: percentEncoding)
+                                          requiresAuthorization: requiresAuthorization)
     }
 }

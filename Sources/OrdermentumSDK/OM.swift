@@ -36,7 +36,7 @@ public class OM {
         return String(format: "Bearer \(token)")
     }
 
-    public func urlRequest(baseURL: String, path: String?, method: HTTPMethod, parameters: Parameters, body: Codable?, contentType: ContentType, timeout: Int = 10, requiresAuthorization: Bool = true, percentEncoding: Bool = true) throws -> URLRequest {
+    public func urlRequest(baseURL: String, path: String?, method: HTTPMethod, parameters: Parameters, body: Codable?, contentType: ContentType, timeout: Int = 10, requiresAuthorization: Bool = true) throws -> URLRequest {
         //Setup Data
         let url = try baseURL.asURL()
         let timeoutSeconds: Int = timeout
@@ -65,9 +65,8 @@ public class OM {
         }
 
         //Set Conditional Body
-        return try DynamicURLEncoding(destination: .queryString,
-                                      arrayEncoding: .brackets,
-                                      boolEncoding: .literal,
-                                      percentEncoding: percentEncoding).encode(request, with: parameters.isEmpty ? nil : parameters)
+        return try URLEncoding(destination: .queryString,
+                               arrayEncoding: .brackets,
+                               boolEncoding: .literal).encode(request, with: parameters.isEmpty ? nil : parameters)
     }
 }

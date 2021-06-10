@@ -33,12 +33,12 @@ public enum DocumentumService {
         }
     }
     
-    public static func uploadFile(url: String, data: String, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+    public static func uploadFile(url: String, data: Data, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = DocumentumRouter.uploadFile(url, data) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().upload(data, route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
