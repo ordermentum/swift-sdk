@@ -62,14 +62,14 @@ public enum DocumentumRouter: URLRequestConvertible {
     }
 
     //Paths
-    var path: String {
+    var path: String? {
         switch self {
         case .getInvoices:
             return "invoices"
         case .createInvoice:
             return "external_invoices"
         case .uploadFile:
-            return ""
+            return nil
         }
     }
 
@@ -99,7 +99,7 @@ public enum DocumentumRouter: URLRequestConvertible {
         case .createInvoice(let requestObject):
             return requestObject
         case .uploadFile(_, let data):
-            return data.base64EncodedString()
+            return data
         default:
             return nil
         }
@@ -115,7 +115,7 @@ public enum DocumentumRouter: URLRequestConvertible {
 
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        let optionalPath: String? = signedURL == nil ? version + path : nil
+        let optionalPath: String? = signedURL == nil ? version + (path ?? "") : nil
         return try OM.instance.urlRequest(baseURL: signedURL ?? baseURL,
                                           path: optionalPath,
                                           method: method,

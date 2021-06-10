@@ -38,7 +38,7 @@ public enum DocumentumService {
         let route = DocumentumRouter.uploadFile(url, data) as URLRequestConvertible
         
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, _, errorObject) in
+        Service<EmptyDecodable, ErrorResponse>().upload(data, route: route) { (result, _, errorObject) in
             completion(result, errorObject)
         }
     }
