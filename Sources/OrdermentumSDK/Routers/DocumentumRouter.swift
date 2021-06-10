@@ -12,7 +12,7 @@ public enum DocumentumRouter: URLRequestConvertible {
     //Routes
     case getInvoices([String: Any])
     case createInvoice(CreateInvoiceRequest)
-    case uploadFile(String, Data)
+    case uploadFile(String, String)
 
     //Methods
     var method: HTTPMethod {
@@ -109,7 +109,7 @@ public enum DocumentumRouter: URLRequestConvertible {
         case .createInvoice(let requestObject):
             return requestObject
         case .uploadFile(_, let data):
-            return data.utf8String()
+            return data
         default:
             return nil
         }
