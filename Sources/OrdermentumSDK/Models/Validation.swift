@@ -22,6 +22,7 @@ public struct ValidationRequestBody: Codable {
     public var couponCode: String?
     public var cutOff: String?
     public var scheduleId: String?
+    public var paymentMethodId: String?
 }
 
 public struct ValidationRequestBodyLineItem: Codable {
