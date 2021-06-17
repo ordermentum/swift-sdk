@@ -73,11 +73,11 @@ public enum DocumentumRouter: URLRequestConvertible {
         case .getInvoices:
             return "invoices"
         case .getExternalInvoice(let id):
-            return "external_invoice/\(id)"
+            return "external_invoices/\(id)"
         case .createInvoice:
             return "external_invoices"
         case .updateExternalInvoice(let id, _):
-            return "external_invoice/\(id)"
+            return "external_invoices/\(id)"
         case .uploadFile:
             return nil
         }
