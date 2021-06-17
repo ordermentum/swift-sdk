@@ -47,7 +47,7 @@ extension ExperimentsData: Decodable {
         id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         meta = try container.decodeIfPresent([String: String].self, forKey: .meta) ?? [:]
-        slot = try container.decodeIfPresent(String.self, forKey: .slot) ?? ""
+        slot = try container.decodeIfPresent(String.self, forKey: .slotName) ?? ""
     }
 }
 

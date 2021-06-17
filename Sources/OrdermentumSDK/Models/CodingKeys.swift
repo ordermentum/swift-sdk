@@ -517,6 +517,7 @@ enum CodingKeys: String, CodingKey {
     case single
     case SKU
     case slot
+    case slotName = "slot-name"
     case slug
     case sortOrder
     case sponsored
