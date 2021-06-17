@@ -11,6 +11,8 @@ import Alamofire
 public enum DocumentumRouter: URLRequestConvertible {
     //Routes
     case getInvoices([String: Any])
+    case getExternalInvoice(String)
+    case updateExternalInvoice(String, ExternalInvoice)
     case createInvoice(CreateInvoiceRequest)
     case uploadFile(String, Data)
 
@@ -19,8 +21,12 @@ public enum DocumentumRouter: URLRequestConvertible {
         switch self {
         case .getInvoices:
             return .get
+        case .getExternalInvoice:
+            return .get
         case .createInvoice:
             return .post
+        case .updateExternalInvoice:
+            return .put
         case .uploadFile:
             return .put
         }
@@ -66,8 +72,12 @@ public enum DocumentumRouter: URLRequestConvertible {
         switch self {
         case .getInvoices:
             return "invoices"
+        case .getExternalInvoice(let id):
+            return "external_invoices/\(id)"
         case .createInvoice:
             return "external_invoices"
+        case .updateExternalInvoice(let id, _):
+            return "external_invoices/\(id)"
         case .uploadFile:
             return nil
         }
@@ -97,6 +107,8 @@ public enum DocumentumRouter: URLRequestConvertible {
     var body: Codable? {
         switch self {
         case .createInvoice(let requestObject):
+            return requestObject
+        case .updateExternalInvoice(_, let requestObject):
             return requestObject
         case .uploadFile(_, let data):
             return data

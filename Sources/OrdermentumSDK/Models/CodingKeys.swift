@@ -408,6 +408,7 @@ enum CodingKeys: String, CodingKey {
     case plan
     case poa
     case pos
+    case potentialSupplier
     case positions
     case postcode
     case price
@@ -517,6 +518,7 @@ enum CodingKeys: String, CodingKey {
     case single
     case SKU
     case slot
+    case slotName = "slotName"
     case slug
     case sortOrder
     case sponsored
@@ -549,6 +551,7 @@ enum CodingKeys: String, CodingKey {
     case target
     case tax
     case taxable
+    case taxAmount
     case taxType
     case textColor
     case thu
