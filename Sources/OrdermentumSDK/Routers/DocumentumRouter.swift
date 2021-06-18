@@ -12,7 +12,7 @@ public enum DocumentumRouter: URLRequestConvertible {
     //Routes
     case getInvoices([String: Any])
     case getExternalInvoice(String)
-    case updateExternalInvoice(String, ExternalInvoice)
+    case updateExternalInvoice(String, ExternalInvoiceUpdateRequest)
     case createInvoice(CreateInvoiceRequest)
     case uploadFile(String, Data)
 
