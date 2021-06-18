@@ -33,7 +33,7 @@ public enum DocumentumService {
         }
     }
 
-    public static func updateExternalInvoice(invoiceId: String, request: ExternalInvoice, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+    public static func updateExternalInvoice(invoiceId: String, request: ExternalInvoiceUpdateRequest, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = DocumentumRouter.updateExternalInvoice(invoiceId, request) as URLRequestConvertible
 

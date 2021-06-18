@@ -33,6 +33,18 @@ public struct ExternalSupplier: Encodable {
     public var new: Bool = false
 }
 
+public struct ExternalInvoiceUpdateRequest: Codable {
+    public init() { }
+
+    var supplierId: String? = nil
+    var invoiceNumber: String? = nil
+    var state: String = ""
+    var total: String? = nil
+    var taxAmount: String? = nil
+    var date: String? = nil
+    var dueDate: String? = nil
+}
+
 extension ExternalInvoice: Decodable {
     public init(from decoder: Decoder) throws {
         //Create Container
