@@ -87,7 +87,7 @@ public enum DocumentumRouter: URLRequestConvertible {
         case .uploadFile:
             return nil
         case .getExternalSuppliers:
-            return "external_invoices"
+            return "external_suppliers"
         case .createExternalSupplier:
             return "external_suppliers"
         }
