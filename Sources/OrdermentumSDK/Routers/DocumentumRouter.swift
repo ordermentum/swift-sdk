@@ -15,6 +15,8 @@ public enum DocumentumRouter: URLRequestConvertible {
     case updateExternalInvoice(String, ExternalInvoiceUpdateRequest)
     case createInvoice(CreateInvoiceRequest)
     case uploadFile(String, Data)
+    case getExternalSuppliers(Int, Int, String, [String]?, String)
+    case createExternalSupplier(CreateExternalSupplierRequest)
 
     //Methods
     var method: HTTPMethod {
@@ -29,9 +31,13 @@ public enum DocumentumRouter: URLRequestConvertible {
             return .put
         case .uploadFile:
             return .put
+        case .getExternalSuppliers:
+            return .get
+        case .createExternalSupplier:
+            return .post
         }
     }
-    
+
     //Auth
     var requiresAuthorization: Bool {
         switch self {
@@ -41,7 +47,7 @@ public enum DocumentumRouter: URLRequestConvertible {
             return true
         }
     }
-    
+
     //Signed URL
     var signedURL: String? {
         switch self {
@@ -80,6 +86,10 @@ public enum DocumentumRouter: URLRequestConvertible {
             return "external_invoices/\(id)"
         case .uploadFile:
             return nil
+        case .getExternalSuppliers:
+            return "external_invoices"
+        case .createExternalSupplier:
+            return "external_suppliers"
         }
     }
 
@@ -88,11 +98,13 @@ public enum DocumentumRouter: URLRequestConvertible {
         switch self {
         case .getInvoices(let dictionary):
             return dictionary
+        case .getExternalSuppliers(let pageNo, let pageSize, let retailerId, let supplierId, let name):
+            return ["pageNo": pageNo, "pageSize": pageSize, "retailerId": retailerId, "supplierId": supplierId ?? [], "name": name]
         default:
             return [:]
         }
     }
-    
+
     //Content-Type
     var contentType: ContentType {
         switch self {
@@ -112,6 +124,8 @@ public enum DocumentumRouter: URLRequestConvertible {
             return requestObject
         case .uploadFile(_, let data):
             return data
+        case .createExternalSupplier(let requestObject):
+            return requestObject
         default:
             return nil
         }
