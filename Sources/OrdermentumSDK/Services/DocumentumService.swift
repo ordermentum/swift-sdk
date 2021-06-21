@@ -63,7 +63,7 @@ public enum DocumentumService {
         }
     }
 
-    public static func getExternalSuppliers(name: String, retailerId: String, supplierIds: [String]? = nil, pageNo: Int = 0, pageSize: Int = 25, completion: @escaping (Bool, ExternalSuppliersResponse?, ErrorResponse?) -> Void) {
+    public static func getExternalSuppliers(name: String, retailerId: String, supplierIds: [String]? = nil, pageNo: Int = 1, pageSize: Int = 25, completion: @escaping (Bool, ExternalSuppliersResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = DocumentumRouter.getExternalSuppliers(pageNo, pageSize, retailerId, supplierIds, name) as URLRequestConvertible
 
