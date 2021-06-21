@@ -62,4 +62,24 @@ public enum DocumentumService {
             completion(result, errorObject)
         }
     }
+
+    public static func getExternalSuppliers(name: String, retailerId: String, supplierIds: [String]? = nil, pageNo: Int = 0, pageSize: Int = 25, completion: @escaping (Bool, ExternalSuppliersResponse?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = DocumentumRouter.getExternalSuppliers(pageNo, pageSize, retailerId, supplierIds, name) as URLRequestConvertible
+
+        //Call API
+        Service<ExternalSuppliersResponse, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+
+    public static func createExternalSupplier(requestObject: CreateExternalSupplierRequest, completion: @escaping (Bool, ExternalSupplier?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = DocumentumRouter.createExternalSupplier(requestObject) as URLRequestConvertible
+
+        //Call API
+        Service<ExternalSupplier, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
 }
