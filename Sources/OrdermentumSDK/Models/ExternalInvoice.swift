@@ -83,6 +83,7 @@ extension ExternalInvoice: Decodable {
         dueDate = try container.decodeIfPresent(String.self, forKey: .dueDate) ?? nil
         invoiceNumber = try container.decodeIfPresent(String.self, forKey: .invoiceNumber) ?? nil
         potentialSupplier = try container.decodeIfPresent(ExternalSupplier.self, forKey: .potentialSupplier) ?? nil
+        externalSupplier = try container.decodeIfPresent(ExternalSupplier.self, forKey: .externalSupplier) ?? nil
         downloadUrl = try container.decodeIfPresent(String.self, forKey: .downloadUrl) ?? nil
         syncStatus = try container.decodeIfPresent(SyncStatus.self, forKey: .syncStatus) ?? SyncStatus()
     }
