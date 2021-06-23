@@ -33,13 +33,13 @@ public enum DocumentumService {
         }
     }
 
-    public static func updateExternalInvoice(invoiceId: String, request: ExternalInvoiceUpdateRequest, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+    public static func updateExternalInvoice(invoiceId: String, request: ExternalInvoiceUpdateRequest, completion: @escaping (Bool, ExternalInvoice?, ErrorResponse?) -> Void) {
         //Build Route
         let route = DocumentumRouter.updateExternalInvoice(invoiceId, request) as URLRequestConvertible
 
         //Call API
-        Service<EmptyDecodable, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
-            completion(result, errorObject)
+        Service<ExternalInvoice, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
         }
     }
 
@@ -79,6 +79,16 @@ public enum DocumentumService {
 
         //Call API
         Service<ExternalSupplier, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
+            completion(result, responseObject, errorObject)
+        }
+    }
+    
+    public static func markExternalInvoiceAsPaid(invoiceId: String, requestObject: UpdateExternalInvoicePaymentRequest, completion: @escaping (Bool, ExternalInvoice?, ErrorResponse?) -> Void) {
+        //Build Route
+        let route = DocumentumRouter.markExternalInvoiceAsPaid(invoiceId, requestObject) as URLRequestConvertible
+
+        //Call API
+        Service<ExternalInvoice, ErrorResponse>().request(route: route) { (result, responseObject, errorObject) in
             completion(result, responseObject, errorObject)
         }
     }

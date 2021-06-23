@@ -17,6 +17,7 @@ public enum DocumentumRouter: URLRequestConvertible {
     case uploadFile(String, Data)
     case getExternalSuppliers(Int, Int, String, [String]?, String)
     case createExternalSupplier(CreateExternalSupplierRequest)
+    case markExternalInvoiceAsPaid(String, UpdateExternalInvoicePaymentRequest)
 
     //Methods
     var method: HTTPMethod {
@@ -35,6 +36,8 @@ public enum DocumentumRouter: URLRequestConvertible {
             return .get
         case .createExternalSupplier:
             return .post
+        case .markExternalInvoiceAsPaid:
+            return .put
         }
     }
 
@@ -90,6 +93,8 @@ public enum DocumentumRouter: URLRequestConvertible {
             return "external_suppliers"
         case .createExternalSupplier:
             return "external_suppliers"
+        case .markExternalInvoiceAsPaid(let id, _):
+            return "external_invoices/\(id)"
         }
     }
 
@@ -125,6 +130,8 @@ public enum DocumentumRouter: URLRequestConvertible {
         case .uploadFile(_, let data):
             return data
         case .createExternalSupplier(let requestObject):
+            return requestObject
+        case .markExternalInvoiceAsPaid(_, let requestObject):
             return requestObject
         default:
             return nil
