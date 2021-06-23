@@ -234,6 +234,7 @@ enum CodingKeys: String, CodingKey {
     case experimentId
     case externalCustomerId
     case externalId
+    case externalSupplier
     case fileType
     case financeAvailable
     case firstName
@@ -273,6 +274,7 @@ enum CodingKeys: String, CodingKey {
     case infos
     case insights
     case integrationData
+    case integrations
     case interval
     case invoice
     case invoiceEmailDelay
@@ -521,6 +523,7 @@ enum CodingKeys: String, CodingKey {
     case slotName = "slotName"
     case slug
     case sortOrder
+    case source
     case sponsored
     case standingOrders
     case startDate
@@ -547,7 +550,10 @@ enum CodingKeys: String, CodingKey {
     case supplier_id
     case surcharge
     case survey_scheduled_at
+    case syncedAt
     case syncError
+    case syncFailedAt
+    case syncStatus
     case target
     case tax
     case taxable
