@@ -29,6 +29,7 @@ public struct ListInvoice {
     public var supplierName: String? = nil
     public var scheduled: Bool = false
     public var type: String = ""
+    public var state: String? = nil
 }
 
 extension InvoiceListResponse: Decodable {
@@ -60,5 +61,6 @@ extension ListInvoice: Decodable {
         supplierName = try container.decodeIfPresent(String.self, forKey: .supplierName) ?? nil
         scheduled = try container.safeBoolDecode(forKey: .scheduled) ?? false
         type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
+        state = try container.decodeIfPresent(String.self, forKey: .state) ?? nil
     }
 }
