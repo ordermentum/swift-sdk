@@ -9,14 +9,12 @@
 import Foundation
 import Alamofire
 
-public class CartService {
-    public init() { }
-
+public enum CartService {
     /**
      * Checks the current logged in user against the given `cartId` for an abandoned cart.
      * Returns a `HydrateResponse` object which can be used to populate the local cart
      */
-    public func hydrateCart(cartId: String, completion: @escaping (Bool, HydrateResponse?, ErrorResponse?) -> Void) {
+    public static func hydrateCart(cartId: String, completion: @escaping (Bool, HydrateResponse?, ErrorResponse?) -> Void) {
         //Build Route
         let route = CartRouter.hydrate(cartId) as URLRequestConvertible
 
@@ -30,7 +28,7 @@ public class CartService {
     /// - Parameters:
     ///   - requestObject: An object representing the actions taken on the cart for a given supplier/retailer/purchaser relationship
     ///   - completion: Completion block allowing for asynchronous callback handling.
-    public func populateCart(_ requestObject: CartActionRequest, completion: @escaping (Bool, ErrorResponse?) -> Void) {
+    public static func populateCart(_ requestObject: CartActionRequest, completion: @escaping (Bool, ErrorResponse?) -> Void) {
         //Build Route
         let route = CartRouter.populateCart(requestObject) as URLRequestConvertible
 
