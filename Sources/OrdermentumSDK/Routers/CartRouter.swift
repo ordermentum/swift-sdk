@@ -13,7 +13,7 @@ public enum CartRouter: URLRequestConvertible {
     //Routes
     case hydrate(String)
     case populateCart(CartActionRequest)
-    
+
     //Methods
     var method: HTTPMethod {
         switch self {
@@ -23,14 +23,28 @@ public enum CartRouter: URLRequestConvertible {
             return .patch
         }
     }
-    
+
+    //Auth
+    var requiresAuthorization: Bool {
+        switch self {
+        default:
+            return true
+        }
+    }
+
+    //Base URL
+    var baseURL: String {
+        return OM.instance.endpoints.cart
+    }
+
+    //Versions
     var version: String {
         switch self {
         default:
             return "v1/"
         }
     }
-    
+
     //Paths
     var path: String {
         switch self {
@@ -40,7 +54,7 @@ public enum CartRouter: URLRequestConvertible {
             return "cart"
         }
     }
-    
+
     //Parameters
     var parameters: [String: Any] {
         switch self {
@@ -48,7 +62,7 @@ public enum CartRouter: URLRequestConvertible {
             return [:]
         }
     }
-    
+
     //Body
     var body: Codable? {
         switch self {
@@ -58,9 +72,32 @@ public enum CartRouter: URLRequestConvertible {
             return nil
         }
     }
-    
+
+    //Content-Type
+    var contentType: ContentType {
+        switch self {
+        default:
+            return .json
+        }
+    }
+
+    //Timeout
+    var timeout: Int {
+        switch self {
+        default:
+            return 10
+        }
+    }
+
     //Builder
     public func asURLRequest() throws -> URLRequest {
-        return try Client.instance.urlRequest(path: version+path, method: method, parameters: parameters, body: body)
+        return try OM.instance.urlRequest(baseURL: baseURL,
+                                          path: version + (path ?? ""),
+                                          method: method,
+                                          parameters: parameters,
+                                          body: body,
+                                          contentType: contentType,
+                                          timeout: timeout,
+                                          requiresAuthorization: requiresAuthorization)
     }
 }

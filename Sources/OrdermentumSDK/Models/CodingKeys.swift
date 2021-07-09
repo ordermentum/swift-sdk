@@ -60,6 +60,7 @@ enum CodingKeys: String, CodingKey {
     case review
     case userInvite = "user-invite"
     case retailerHomeSupplierSearch = "retailer-home-supplier-search"
+    case cartService = "cart-service"
 
     //Generic
     case abn

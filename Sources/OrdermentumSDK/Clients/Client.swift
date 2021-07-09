@@ -23,7 +23,6 @@ public class Client {
     public var admin: AdminService = AdminService()
     public var addons: AddOnsService = AddOnsService()
     public var auth: AuthService = AuthService()
-    public var cart: CartService = CartService()
     public var closureDates: ClosureDatesService = ClosureDatesService()
     public var creditNotes: CreditNotesService = CreditNotesService()
     public var dataAttributes: DataAttributesService = DataAttributesService()

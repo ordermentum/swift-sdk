@@ -16,6 +16,7 @@ public class Endpoints {
     public var flags: String = ""
     public var ordermentum: String = ""
     public var support: String = ""
+    public var cart: String = ""
 }
 
 public class OM {
@@ -30,6 +31,7 @@ public class OM {
 
     //Services
     public var documentum = DocumentumService.self
+    public var cart = CartService.self
 
     // MARK: Convenience Methods
     public func getHeaderToken() -> String {
