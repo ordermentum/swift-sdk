@@ -518,7 +518,7 @@ extension ClassicStandingOrderRecurrenceInfo: Decodable {
         freq = try container.decodeIfPresent(String.self, forKey: .freq) ?? ""
         byhour = try container.decodeIfPresent(String.self, forKey: .byhour) ?? ""
         byminute = try container.decodeIfPresent(String.self, forKey: .byminute) ?? ""
-        interval = try container.decodeIfPresent(String.self, forKey: .interval) ?? ""
+        interval = try container.safeStringIntDecode(forKey: .interval) ?? ""
         timezone = try container.decodeIfPresent(String.self, forKey: .timezone) ?? ""
     }
 }
